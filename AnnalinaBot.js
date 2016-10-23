@@ -65,7 +65,6 @@ function getCommand(message) {
 annalina.bot.on("message", function(message) {
     if (message.channel.type === "text" && message.channel.name === annalina.nutakuChannelName 
             && message.author.id != annalina.bot.user.id) {
-        console.log("different person");
         annalina.hasNewMessage = true;
     }
     var command = getCommand(message);
@@ -85,8 +84,10 @@ annalina.bot.on("message", function(message) {
 });
 
 annalina.greetings = [
-    "Good morning, sensei~",
-    "Sensei, let's work hard today!"
+    // "Good morning, sensei~",
+    // "Sensei, let's work hard today!",
+    // "Annalina will be your secretary today"
+    "I'm Annalina. Nice to meet you. I'll be your secretary today."
 ];
 
 annalina.idleTalks = [

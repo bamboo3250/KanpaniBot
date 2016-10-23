@@ -95,7 +95,6 @@ Employee.prototype.handleMaintenanceCommand = function(message) {
             var endTime = new Date(maintenanceList[i].endTime);
             text += "**" + maintenanceList[i].name + "**\n";
 
-            console.log(now.valueOf() + " " + startTime.valueOf() + " " + endTime.valueOf());
             if (now.valueOf() < startTime.valueOf()) {
                 var time = this.parseTime(startTime.valueOf() - now.valueOf());
                 text += "Start in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
@@ -157,7 +156,7 @@ Employee.prototype.ready = function() {
             this.greeting(channels[i]);
         } 
     }
-    this.setIdleTalk();
+    //this.setIdleTalk();
 }
 
 module.exports = new Employee();
