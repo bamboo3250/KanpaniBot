@@ -49,6 +49,8 @@ Employee.prototype.handleEventCommand = function(message) {
             eventList = this.dmmEventList;
         } else if (message.channel.name === this.nutakuChannelName) {
             eventList = this.nutakuEventList;
+        } else {
+            return;
         }
 
         var text = "\n" + eventList.length + " active event(s)\n";
@@ -83,6 +85,8 @@ Employee.prototype.handleMaintenanceCommand = function(message) {
             maintenanceList = this.dmmMaintenanceList;
         } else if (message.channel.name === this.nutakuChannelName) {
             maintenanceList = this.nutakuMaintenanceList;
+        } else {
+            return;
         }
 
         var text = "\n";
