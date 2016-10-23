@@ -1,0 +1,26 @@
+{
+  "name": "annalinabot",
+  "version": "1.0.0",
+  "description": "bot for KG discord chat",
+  "main": "AnnalinaBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bamboo3250/AnnalinaBot.git"
+  },
+  "keywords": [
+    "Annalina",
+    "KG"
+  ],
+  "author": "bamboo3250",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bamboo3250/AnnalinaBot/issues"
+  },
+  "homepage": "https://github.com/bamboo3250/AnnalinaBot#readme",
+  "dependencies": {
+    "discord.js": "^9.3.0"
+  }
+}
