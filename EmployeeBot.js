@@ -51,7 +51,7 @@ Employee.prototype.handleEventCommand = function(message) {
             eventList = this.nutakuEventList;
         }
 
-        var text = "\n";
+        var text = "\n" + eventList.length + " active event(s)\n";
         for(var i=0;i<eventList.length;i++) {
             var startTime = new Date(eventList[i].startTime);
             var endTime = new Date(eventList[i].endTime);
