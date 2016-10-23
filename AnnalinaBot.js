@@ -87,7 +87,7 @@ annalina.greetings = [
     // "Good morning, sensei~",
     // "Sensei, let's work hard today!",
     // "Annalina will be your secretary today"
-    "I'm Annalina. Nice to meet you. I'll be your secretary today."
+    "I'm Annalina. Nice to meet you. I'll be in your care today."
 ];
 
 annalina.idleTalks = [
