@@ -1,7 +1,7 @@
 var Discord = require("discord.js");
 
 function Employee() {
-    this.dmmChannelName = "dmm_games_r18";
+    this.dmmChannelName = "dmm_games";
     this.nutakuChannelName = "kanpani_girls";
     this.bot = new Discord.Client();
     this.dmmEventList = [
