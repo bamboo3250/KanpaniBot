@@ -63,7 +63,8 @@ function getCommand(message) {
 }
 
 annalina.bot.on("message", function(message) {
-    if (message.author.id != annalina.bot.user.id) {
+    if (message.channel.type === "text" && message.channel.name === annalina.nutakuChannelName 
+            && message.author.id != annalina.bot.user.id) {
         console.log("different person");
         annalina.hasNewMessage = true;
     }
