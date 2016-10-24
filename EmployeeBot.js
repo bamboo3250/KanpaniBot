@@ -35,6 +35,24 @@ function Employee() {
     this.nutakuMaintenanceList = [];
     this.greetings = [];
     this.idleTalks = [];
+    this.commonGreetings = [
+        "Hi",
+        "Hi, how are you?",
+        "Hello"
+    ];
+    this.commonGoodMorning = [
+        "Good Morning"
+    ];
+    this.commonGoodNight = [
+        "Good Night",
+        "Have a sweet dream",
+        "See you again"
+    ];
+    this.commonThanks = [
+        "You are welcomed :heart:",
+        "No problem",
+    ];
+    
     this.hasNewMessage = false;
 }
 
@@ -146,23 +164,49 @@ Employee.prototype.handleMaintenanceCommand = function(message) {
     }
 }
 
+Employee.prototype.handleBasicGreetingCommand = function(message) {
+    var text = message.content.trim().toLowerCase();
+    if (text === "~hi" || text === "~hello") {
+        var text = this.getRandomMessages(this.commonGreetings);
+        message.reply(text);
+    } else if (text === "~gm" || text === "~goodmorning") {
+        var text = this.getRandomMessages(this.commonGoodMorning);
+        message.reply(text);
+    } else if (text === "~gn" || text === "~goodnight") {
+        var text = this.getRandomMessages(this.commonGoodNight);
+        message.reply(text);
+    } else if (text === "~thank" || text === "~thanks" || text === "tks") {
+        var text = this.getRandomMessages(this.commonThanks);
+        message.reply(text);
+    }
+}
+
 Employee.prototype.handleCommonCommand = function(message) {
     this.handleEventCommand(message);
     this.handleMaintenanceCommand(message);
     this.handleDailyCommand(message);
+    this.handleBasicGreetingCommand(message);
+}
+
+Employee.prototype.getRandomMessages = function(messageList) {
+    var length = messageList.length;
+    if (length > 0) {
+        return messageList[Math.floor(Math.random() * length)];    
+    }
+    return "";
 }
 
 Employee.prototype.sayRandomMessages = function(channel, messageList) {
     var length = messageList.length;
     if (length > 0) {
-        channel.sendMessage(messageList[Math.floor(Math.random() * length)]);    
+        var message = this.getRandomMessages(messageList);
+        channel.sendMessage(message);    
     }
 }
 
 Employee.prototype.greeting = function(channel) {
     this.sayRandomMessages(channel, this.greetings);
 }
-
 
 Employee.prototype.setIdleTalk = function() {
     this.hasNewMessage = false;

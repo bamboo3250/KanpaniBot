@@ -84,10 +84,10 @@ annalina.bot.on("message", function(message) {
 });
 
 annalina.greetings = [
-    // "Good morning, sensei~",
-    // "Sensei, let's work hard today!",
-    // "Annalina will be your secretary today"
-    "I'm Annalina. Nice to meet you. I'll be in your care today."
+    "Good morning, Sensei~",
+    "Sensei, let's work hard today!",
+    "Annalina will be your secretary today",
+    "Annalina will be in your care today."
 ];
 
 annalina.idleTalks = [
@@ -95,6 +95,21 @@ annalina.idleTalks = [
     "I love magic. Magic is my life. :heart:",
     "Huh... You can't... If you touch that place... :confounded:"
 ];
+
+annalina.commonGoodMorning = annalina.commonGoodMorning.concat([
+    "Good Morning, Sensei"
+]);
+
+annalina.commonGoodNight = annalina.commonGoodNight.concat([
+    "Good Night, Sensei",
+    "Have a sweet dream, Sensei",
+    "See you again, Sensei",
+]);
+
+annalina.commonThanks = annalina.commonThanks.concat([
+    "You are welcomed, Sensei :heart:",
+]);
+
 
 annalina.bot.on("ready", function() {
     annalina.ready();
