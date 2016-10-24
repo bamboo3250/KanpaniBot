@@ -1,6 +1,6 @@
 var annalina = require('./EmployeeBot');
 var config = require('./config');
-
+var dialog = require('./Dialog');
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
  */
@@ -83,33 +83,11 @@ annalina.bot.on("message", function(message) {
     }
 });
 
-annalina.greetings = [
-    "Good morning, Sensei~",
-    "Sensei, let's work hard today!",
-    "Annalina will be your secretary today",
-    "Annalina will be in your care today."
-];
-
-annalina.idleTalks = [
-    "If you are free now, do you want me to tell your fortune? :kwink:",
-    "I love magic. Magic is my life. :heart:",
-    "Huh... You can't... If you touch that place... :confounded:"
-];
-
-annalina.commonGoodMorning = annalina.commonGoodMorning.concat([
-    "Good Morning, Sensei"
-]);
-
-annalina.commonGoodNight = annalina.commonGoodNight.concat([
-    "Good Night, Sensei",
-    "Have a sweet dream, Sensei",
-    "See you again, Sensei",
-]);
-
-annalina.commonThanks = annalina.commonThanks.concat([
-    "You are welcomed, Sensei :heart:",
-]);
-
+annalina.greetings = dialog.annalina.greetings;
+annalina.idleTalks = dialog.annalina.idleTalks;
+annalina.commonGoodMorning = annalina.commonGoodMorning.concat(dialog.annalina.commonGoodMorning);
+annalina.commonGoodNight = annalina.commonGoodNight.concat(dialog.annalina.commonGoodNight);
+annalina.commonThanks = annalina.commonThanks.concat(dialog.annalina.commonThanks);
 
 annalina.bot.on("ready", function() {
     annalina.ready();
