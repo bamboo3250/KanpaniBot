@@ -54,6 +54,7 @@ function Employee() {
     ];
     
     this.hasNewMessage = false;
+    this.lastTimeGreeting = 0;
 }
 
 Employee.prototype.parseTime = function(millisec) {
@@ -164,24 +165,43 @@ Employee.prototype.handleMaintenanceCommand = function(message) {
     }
 }
 
+function isAlphabet(c) {
+    return ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z');
+}
+
+function cleanText(text) {
+    return text.replace(/[^A-Za-z]+/g,' ').trim().replace(/\s+/g,' ');
+}
+
 Employee.prototype.handleBasicGreetingCommand = function(message) {
     var text = message.content.trim().toLowerCase();
-    if (text === "~hi" || text === "~hello") {
-        var text = this.getRandomMessages(this.commonGreetings);
-        message.reply(text);
-    } else if (text === "~gm" || text === "~goodmorning") {
-        var text = this.getRandomMessages(this.commonGoodMorning);
-        message.reply(text);
-    } else if (text === "~gn" || text === "~goodnight") {
-        var text = this.getRandomMessages(this.commonGoodNight);
-        message.reply(text);
-    } else if (text === "~thank" || text === "~thanks" || text === "tks") {
-        var text = this.getRandomMessages(this.commonThanks);
-        message.reply(text);
+    cleanedText = cleanText(text);
+    console.log(cleanedText);
+    if (cleanedText === "") return;
+    var now = new Date();
+    if (now.valueOf() - this.lastTimeGreeting < 30*1000) return;
+
+    if (cleanedText === "hi" || cleanedText === "hello") {
+        var reply = this.getRandomMessages(this.commonGreetings);
+        message.channel.sendMessage(reply);
+        this.lastTimeGreeting = now.valueOf();
+    } else if (cleanedText === "gm" || cleanedText === "good morning" || cleanedText === "morning") {
+        var reply = this.getRandomMessages(this.commonGoodMorning);
+        message.channel.sendMessage(reply);
+        this.lastTimeGreeting = now.valueOf();
+    } else if (cleanedText === "gn" || cleanedText === "good night" || cleanedText === "nite" || cleanedText === "night") {
+        var reply = this.getRandomMessages(this.commonGoodNight);
+        message.channel.sendMessage(reply);
+        this.lastTimeGreeting = now.valueOf();
+    } else if (text === "~thank" || text === "~thanks" || text === "~tks") {
+        var reply = this.getRandomMessages(this.commonThanks);
+        message.channel.sendMessage(reply);
+        this.lastTimeGreeting = now.valueOf();
     }
 }
 
 Employee.prototype.handleCommonCommand = function(message) {
+    if (message.author.bot === true) return;
     this.handleEventCommand(message);
     this.handleMaintenanceCommand(message);
     this.handleDailyCommand(message);
