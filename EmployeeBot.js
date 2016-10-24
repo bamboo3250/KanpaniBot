@@ -24,6 +24,14 @@ function Employee() {
             endTime: "Oct 28 2016 17:00:00 GMT+0900"
         }
     ];
+    this.nutakuDaily = {
+        name: "Nutaku Daily Draw Reset",
+        time: "Oct 20 2016 4:00:00 GMT+0000",   
+    };
+    this.dmmDaily = {
+        name: "DMM Daily Draw Reset",
+        time: "Oct 20 2016 4:00:00 GMT+0900",   
+    };
     this.nutakuMaintenanceList = [];
     this.greetings = [];
     this.idleTalks = [];
@@ -75,6 +83,33 @@ Employee.prototype.handleEventCommand = function(message) {
     }
 }
 
+Employee.prototype.handleDailyCommand = function(message) {
+
+    var text = message.content.trim().toLowerCase();
+    if (text === "~daily") {
+        var now = new Date();
+        var dailyEvent = null;
+        if (message.channel.name === this.dmmChannelName) {
+            dailyEvent = this.dmmDaily;
+        } else if (message.channel.name === this.nutakuChannelName) {
+            dailyEvent = this.nutakuDaily;
+        } else {
+            return;
+        }
+
+        var startTime = new Date(dailyEvent.time);
+        text = "\n**" + dailyEvent.name + "**\n";
+
+        var nextDaily = Math.floor((now.valueOf() - startTime.valueOf())/(24*60*60*1000)) + 1;
+        nextDaily = startTime.valueOf() + nextDaily*(24*60*60*1000) - now.valueOf();
+
+        var time = this.parseTime(nextDaily);
+        text += "Reset in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
+                + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
+        message.channel.sendMessage(text);
+    }
+}
+
 Employee.prototype.handleMaintenanceCommand = function(message) {
 
     var text = message.content.trim().toLowerCase();
@@ -114,6 +149,7 @@ Employee.prototype.handleMaintenanceCommand = function(message) {
 Employee.prototype.handleCommonCommand = function(message) {
     this.handleEventCommand(message);
     this.handleMaintenanceCommand(message);
+    this.handleDailyCommand(message);
 }
 
 Employee.prototype.sayRandomMessages = function(channel, messageList) {
