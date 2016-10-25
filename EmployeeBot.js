@@ -26,12 +26,14 @@ function Employee() {
     ];
     this.nutakuDaily = {
         name: "Nutaku Daily Draw Reset",
-        time: "Oct 20 2016 4:00:00 GMT+0000",   
+        time: "Oct 20 2016 4:00:00 GMT+0000",
     };
     this.dmmDaily = {
         name: "DMM Daily Draw Reset",
-        time: "Oct 20 2016 4:00:00 GMT+0900",   
+        time: "Oct 20 2016 4:00:00 GMT+0900", 
     };
+    this.nutakuDailyRemind = "Oct 20 2016 3:45:00 GMT+0000";
+    this.dmmDailyRemind = "Oct 20 2016 3:45:00 GMT+0900";
     this.nutakuMaintenanceList = [];
     this.greetings = [];
     this.idleTalks = [];
@@ -112,11 +114,18 @@ Employee.prototype.handleEventCommand = function(message) {
     }
 }
 
+function getTimeUntilDaily(timeInString) {
+    var startTime = new Date(timeInString);
+    var now = new Date();
+    var timeUntil = Math.floor((now.valueOf() - startTime.valueOf())/(24*60*60*1000)) + 1;
+    timeUntil = startTime.valueOf() + timeUntil*(24*60*60*1000) - now.valueOf();
+    return timeUntil;
+}
+
 Employee.prototype.handleDailyCommand = function(message) {
 
     var text = message.content.trim().toLowerCase();
     if (text === "~daily") {
-        var now = new Date();
         var dailyEvent = null;
         if (message.channel.name === this.dmmChannelName) {
             dailyEvent = this.dmmDaily;
@@ -126,12 +135,7 @@ Employee.prototype.handleDailyCommand = function(message) {
             return;
         }
 
-        var startTime = new Date(dailyEvent.time);
-        text = "\n**" + dailyEvent.name + "**\n";
-
-        var nextDaily = Math.floor((now.valueOf() - startTime.valueOf())/(24*60*60*1000)) + 1;
-        nextDaily = startTime.valueOf() + nextDaily*(24*60*60*1000) - now.valueOf();
-
+        nextDaily = getTimeUntilDaily(dailyEvent.time)
         var time = this.parseTime(nextDaily);
         text += "Reset in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
                 + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
@@ -186,7 +190,7 @@ function cleanText(text) {
 Employee.prototype.handleBasicGreetingCommand = function(message) {
     var text = message.content.trim().toLowerCase();
     cleanedText = cleanText(text);
-    console.log(cleanedText);
+    
     if (cleanedText === "") return;
     var now = new Date();
 
@@ -278,6 +282,39 @@ Employee.prototype.setIdleTalk = function() {
     }, time);  // 15 - 30 mins
 }
 
+Employee.prototype.setDailyDrawReminderForNutaku = function() {
+    var time = getTimeUntilDaily(this.nutakuDailyRemind); 
+    var that = this;
+    console.log("time: " + time);
+    setTimeout(function() {
+        var channels = that.bot.channels.array();
+        for(var i=0;i<channels.length;i++) {
+            if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
+                channels[i].sendMessage("**Reminder: 15 minutes until Nutaku Daily Draw Reset**")
+            }
+        }
+        setTimeout(function(){
+            that.setDailyDrawReminderForNutaku();    
+        }, 30*1000);
+    }, time);
+}
+
+Employee.prototype.setDailyDrawReminderForDmm = function() {
+    var time = getTimeUntilDaily(this.dmmDailyRemind); 
+    var that = this;
+    setTimeout(function() {
+        var channels = that.bot.channels.array();
+        for(var i=0;i<channels.length;i++) {
+            if (channels[i].type === "text" && channels[i].name === that.dmmChannelName) {
+                channels[i].sendMessage("**Reminder: 15 minutes until DMM Daily Draw Reset**")
+            }
+        }
+        setTimeout(function(){
+            that.setDailyDrawReminderForDmm();
+        }, 30*1000);
+    }, time);
+}
+
 Employee.prototype.ready = function() {
     console.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
     console.log("-----");
@@ -288,6 +325,8 @@ Employee.prototype.ready = function() {
         } 
     }
     //this.setIdleTalk();
+    this.setDailyDrawReminderForNutaku();
+    this.setDailyDrawReminderForDmm();
 }
 
 module.exports = new Employee();
