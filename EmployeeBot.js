@@ -54,7 +54,17 @@ function Employee() {
     ];
     
     this.hasNewMessage = false;
-    this.lastTimeGreeting = 0;
+    this.lastTimeSayingHi = 0;
+    this.lastTimeGoodMorning = 0;
+    this.lastTimeGoodNight = 0;
+    this.lastTimeThanks = 0;
+    this.lastTimeSayingHiToPlayers = {
+    };
+    this.lastTimeGoodMorningToPlayers = {
+    };
+    this.lastTimeGoodNightToPlayers = {
+    };
+    
 }
 
 Employee.prototype.parseTime = function(millisec) {
@@ -179,24 +189,45 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
     console.log(cleanedText);
     if (cleanedText === "") return;
     var now = new Date();
-    if (now.valueOf() - this.lastTimeGreeting < 30*1000) return;
 
     if (cleanedText === "hi" || cleanedText === "hello") {
+        if (now.valueOf() - this.lastTimeSayingHi < 60*1000) return;
+        if (typeof this.lastTimeSayingHiToPlayers[message.author.id] == "undefined") {
+            this.lastTimeSayingHiToPlayers[message.author.id] = 0;
+        }
+        if (now.valueOf() - this.lastTimeSayingHiToPlayers[message.author.id] < 6*60*60*1000) return;
+        this.lastTimeSayingHiToPlayers[message.author.id] = now.valueOf();
+
         var reply = this.getRandomMessages(this.commonGreetings);
         message.channel.sendMessage(reply);
-        this.lastTimeGreeting = now.valueOf();
+        this.lastTimeSayingHi = now.valueOf();
     } else if (cleanedText === "gm" || cleanedText === "good morning" || cleanedText === "morning") {
+        if (now.valueOf() - this.lastTimeGoodMorning < 60*1000) return;
+        if (typeof this.lastTimeGoodMorningToPlayers[message.author.id] == "undefined") {
+            this.lastTimeGoodMorningToPlayers[message.author.id] = 0;
+        }
+        if (now.valueOf() - this.lastTimeGoodMorningToPlayers[message.author.id] < 6*60*60*1000) return;
+        this.lastTimeGoodMorningToPlayers[message.author.id] = now.valueOf();
+        
         var reply = this.getRandomMessages(this.commonGoodMorning);
         message.channel.sendMessage(reply);
-        this.lastTimeGreeting = now.valueOf();
+        this.lastTimeGoodMorning = now.valueOf();
     } else if (cleanedText === "gn" || cleanedText === "good night" || cleanedText === "nite" || cleanedText === "night") {
+        if (now.valueOf() - this.lastTimeGoodNight < 60*1000) return;
+        if (typeof this.lastTimeGoodNightToPlayers[message.author.id] == "undefined") {
+            this.lastTimeGoodNightToPlayers[message.author.id] = 0;
+        }
+        if (now.valueOf() - this.lastTimeGoodNightToPlayers[message.author.id] < 6*60*60*1000) return;
+        this.lastTimeGoodNightToPlayers[message.author.id] = now.valueOf();
+        
         var reply = this.getRandomMessages(this.commonGoodNight);
         message.channel.sendMessage(reply);
-        this.lastTimeGreeting = now.valueOf();
+        this.lastTimeGoodNight = now.valueOf();
     } else if (text === "~thank" || text === "~thanks" || text === "~tks") {
+        if (now.valueOf() - this.lastTimeThanks < 60*1000) return;
         var reply = this.getRandomMessages(this.commonThanks);
         message.channel.sendMessage(reply);
-        this.lastTimeGreeting = now.valueOf();
+        this.lastTimeThanks = now.valueOf();
     }
 }
 
