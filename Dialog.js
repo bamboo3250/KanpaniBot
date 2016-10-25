@@ -43,6 +43,12 @@ module.exports = {
             "My sources say no",
             "Outlook not so good",
             "Very doubtful"
+        ],
+        decline: [
+            "You have used up all your orbs today. Please ask me again next time.",
+            "Too bad, no more orbs for you.",
+            "Please come again tomorrow.",
+            "You really want to know that bad?"
         ]
     }
 }

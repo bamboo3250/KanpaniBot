@@ -30,9 +30,35 @@ function getCurrentTime() {
 }
 
 var answerTexts = dialog.annalina.answers;
+var remainingOrb = {};
+var MAX_ORB = 5;
+var decline = dialog.annalina.decline;
 
 function handleQuestion(message) {
-    message.reply(answerTexts[randomInt(answerTexts.length)]);
+    var authorId = message.author.id;
+    if (typeof remainingOrb[authorId] === "undefined") {
+        remainingOrb[authorId] = MAX_ORB;
+    }
+    if (remainingOrb[authorId] > 0) {
+        remainingOrb[authorId]--;
+        var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
+        text += "Remaining orbs: ";
+        for(var i=0;i<remainingOrb[authorId];i++) text += ":crystal_ball:";
+        message.reply(text);    
+    } else {
+        message.reply(decline[randomInt(decline.length)]);
+    }
+    
+}
+
+function handleOrbCommand(message) {
+    var authorId = message.author.id;
+    if (typeof remainingOrb[authorId] === "undefined") {
+        remainingOrb[authorId] = MAX_ORB;
+    }
+    var text = "\nYour remaining orbs: ";
+    for(var i=0;i<remainingOrb[authorId];i++) text += ":crystal_ball:";
+    message.reply(text);
 }
 
 function getCommand(message) {
@@ -50,6 +76,9 @@ annalina.bot.on("message", function(message) {
     switch (command) {
     case "~question":
         handleQuestion(message);
+        break;
+    case "~orb":
+        handleOrbCommand(message);
         break;
     // case "~test":
     //     var channel = message.channel;
