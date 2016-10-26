@@ -235,12 +235,22 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
     }
 }
 
+Employee.prototype.handleSpecialCase = function(message) {
+    if (message.author.id === "147305572012654592") {   // uzies special case
+        var text = message.content.trim().toLowerCase();
+        if (text === ":p" || text === ";p") {
+            message.channel.sendMessage(text);
+        }
+    }
+}
+
 Employee.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     this.handleEventCommand(message);
     this.handleMaintenanceCommand(message);
     this.handleDailyCommand(message);
     this.handleBasicGreetingCommand(message);
+    this.handleSpecialCase(message);
 }
 
 Employee.prototype.getRandomMessages = function(messageList) {
