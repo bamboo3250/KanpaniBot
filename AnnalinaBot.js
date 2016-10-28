@@ -37,35 +37,19 @@ function handleQuestion(message) {
     if (typeof annalina.remainingBread[authorId] === "undefined") {
         annalina.remainingBread[authorId] = annalina.maxBread;
     }
+    if (message.guild) {
+        const breadEmoji = message.guild.emojis.find('name', 'kbread');
 
-    const breadEmoji = message.guild.emojis.find('name', 'kbread');
-
-    if (annalina.remainingBread[authorId] > 0) {
-        annalina.remainingBread[authorId]--;
-        annalina.total_bread++;
-        var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
-        text += "Remaining Bread: " + breadEmoji + " x" + annalina.remainingBread[authorId];
-        message.reply(text);
-    } else {
-        message.reply(decline[randomInt(decline.length)]);
+        if (annalina.remainingBread[authorId] > 0) {
+            annalina.remainingBread[authorId]--;
+            annalina.total_bread++;
+            var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
+            text += "Remaining Bread: " + breadEmoji + " x" + annalina.remainingBread[authorId];
+            message.reply(text);
+        } else {
+            message.reply(decline[randomInt(decline.length)]);
+        }    
     }
-    
-}
-
-function handleBreadCommand(message) {
-    var authorId = message.author.id;
-    if (typeof annalina.remainingBread[authorId] === "undefined") {
-        annalina.remainingBread[authorId] = annalina.maxBread;
-    }
-    const breadEmoji = message.guild.emojis.find('name', 'kbread');
-
-    var text = "\nYour remaining bread: " + breadEmoji + " x" + annalina.remainingBread[authorId];
-    message.reply(text);
-}
-
-function handleTotalBreadCommand(message) {
-    if (message.author.id != "162995652152786944") return;
-    message.reply("\nTotal bread received: " + total_bread);
 }
 
 function getCommand(message) {
@@ -83,12 +67,6 @@ annalina.bot.on("message", function(message) {
     switch (command) {
     case "~question":
         handleQuestion(message);
-        break;
-    case "~bread":
-        handleBreadCommand(message);
-        break;
-    case "~totalbread":
-        handleTotalBreadCommand(message);
         break;
     // case "~test":
     //     var channel = message.channel;

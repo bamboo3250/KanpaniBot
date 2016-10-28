@@ -6,13 +6,9 @@ function Employee() {
     this.bot = new Discord.Client();
     this.dmmEventList = [
         {
-            name: "Triple Throne Campaign",
-            startTime: "Oct 21 2016 17:00:00 GMT+0900",
-            endTime: "Oct 28 2016 13:00:00 GMT+0900"
-        }, {
-            name: "Demon From Another World - Season 5",
-            startTime: "Oct 7 2016 17:00:00 GMT+0900",
-            endTime: "Oct 28 2016 13:00:00 GMT+0900"
+            name: "Hotsprings, Monique, and Bath Towels",
+            startTime: "Oct 28 2016 17:00:00 GMT+0900",
+            endTime: "Nov 18 2016 13:00:00 GMT+0900"
         }
     ];
     this.nutakuEventList = [
@@ -20,8 +16,8 @@ function Employee() {
     this.dmmMaintenanceList = [
         {
             name: "DMM Maintenance",
-            startTime: "Oct 28 2016 13:00:00 GMT+0900",
-            endTime: "Oct 28 2016 17:00:00 GMT+0900"
+            startTime: "Nov 18 2016 13:00:00 GMT+0900",
+            endTime: "Nov 18 2016 17:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
@@ -253,6 +249,55 @@ Employee.prototype.handleSleepCommand = function(message) {
     //this.bot.destroy();
 }
 
+
+Employee.prototype.handleBreadCommand = function(message) {
+    var text = message.content.trim().toLowerCase();
+    if (text === "~bread") {
+        var authorId = message.author.id;
+        if (typeof this.remainingBread[authorId] === "undefined") {
+            this.remainingBread[authorId] = this.maxBread;
+        }
+        if (message.guild) {
+            const breadEmoji = message.guild.emojis.find('name', 'kbread');
+
+            var text = "\nYour remaining bread: " + breadEmoji + " x" + this.remainingBread[authorId];
+            message.reply(text);
+        }
+    }
+}
+
+Employee.prototype.handleTotalBreadCommand = function(message) {
+    if (message.author.id != "162995652152786944") return;
+    var text = message.content.trim().toLowerCase();
+    if (text === "~totalbread") {
+        message.reply("\nTotal bread received: " + this.total_bread);
+    }
+}
+
+Employee.prototype.handleAssignRoleCommand = function(message) {
+    var text = message.content.trim().toLowerCase();
+    var member = message.member;
+    if (member) {
+        var nutakuRole = message.guild.roles.find('name', 'Nutaku');
+        var dmmRole = message.guild.roles.find('name', 'DMM');
+        switch(text) {
+        case '~setnutaku':
+            member.addRole(nutakuRole);
+            break;
+        case '~removenutaku':
+            member.removeRole(nutakuRole);
+            break;
+        case '~setdmm':
+            member.addRole(dmmRole);
+            break;
+        case '~removedmm':
+            member.removeRole(dmmRole);
+            break;
+        }
+
+    }
+}
+
 Employee.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     this.handleEventCommand(message);
@@ -260,6 +305,9 @@ Employee.prototype.handleCommonCommand = function(message) {
     this.handleDailyCommand(message);
     this.handleBasicGreetingCommand(message);
     //this.handleSleepCommand(message);
+    this.handleBreadCommand(message);
+    this.handleTotalBreadCommand(message);
+    this.handleAssignRoleCommand(message);
     this.handleSpecialCase(message);
 }
 
@@ -310,7 +358,8 @@ Employee.prototype.setDailyDrawReminderForNutaku = function() {
         var channels = that.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
-                channels[i].sendMessage("**Reminder: 15 minutes until Nutaku Daily Draw Reset**")
+                var nutakuRole = channels[i].guild.roles.find('name', 'Nutaku');
+                channels[i].sendMessage(nutakuRole + " **Reminder: 15 minutes until Nutaku Daily Draw Reset**")
             }
         }
         setTimeout(function(){
@@ -326,7 +375,8 @@ Employee.prototype.setDailyDrawReminderForDmm = function() {
         var channels = that.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === that.dmmChannelName) {
-                channels[i].sendMessage("**Reminder: 15 minutes until DMM Daily Draw Reset**")
+                var dmmRole = channels[i].guild.roles.find('name', 'DMM');
+                channels[i].sendMessage(dmmRole + "**Reminder: 15 minutes until DMM Daily Draw Reset**")
             }
         }
         setTimeout(function(){
