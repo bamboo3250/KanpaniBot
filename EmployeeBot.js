@@ -8,11 +8,11 @@ function Employee() {
         {
             name: "Triple Throne Campaign",
             startTime: "Oct 21 2016 17:00:00 GMT+0900",
-            endTime: "Oct 28 2016 14:00:00 GMT+0900"
+            endTime: "Oct 28 2016 13:00:00 GMT+0900"
         }, {
             name: "Demon From Another World - Season 5",
             startTime: "Oct 7 2016 17:00:00 GMT+0900",
-            endTime: "Oct 28 2016 14:00:00 GMT+0900"
+            endTime: "Oct 28 2016 13:00:00 GMT+0900"
         }
     ];
     this.nutakuEventList = [
@@ -20,7 +20,7 @@ function Employee() {
     this.dmmMaintenanceList = [
         {
             name: "DMM Maintenance",
-            startTime: "Oct 28 2016 14:00:00 GMT+0900",
+            startTime: "Oct 28 2016 13:00:00 GMT+0900",
             endTime: "Oct 28 2016 17:00:00 GMT+0900"
         }
     ];
@@ -134,7 +134,7 @@ Employee.prototype.handleDailyCommand = function(message) {
         } else {
             return;
         }
-
+        text = "\n**" + dailyEvent.name + "**\n";
         nextDaily = getTimeUntilDaily(dailyEvent.time)
         var time = this.parseTime(nextDaily);
         text += "Reset in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
@@ -199,7 +199,7 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
         if (typeof this.lastTimeSayingHiToPlayers[message.author.id] == "undefined") {
             this.lastTimeSayingHiToPlayers[message.author.id] = 0;
         }
-        if (now.valueOf() - this.lastTimeSayingHiToPlayers[message.author.id] < 6*60*60*1000) return;
+        if (now.valueOf() - this.lastTimeSayingHiToPlayers[message.author.id] < 60*60*1000) return;
         this.lastTimeSayingHiToPlayers[message.author.id] = now.valueOf();
 
         var reply = this.getRandomMessages(this.commonGreetings);
@@ -210,7 +210,7 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
         if (typeof this.lastTimeGoodMorningToPlayers[message.author.id] == "undefined") {
             this.lastTimeGoodMorningToPlayers[message.author.id] = 0;
         }
-        if (now.valueOf() - this.lastTimeGoodMorningToPlayers[message.author.id] < 6*60*60*1000) return;
+        if (now.valueOf() - this.lastTimeGoodMorningToPlayers[message.author.id] < 60*60*1000) return;
         this.lastTimeGoodMorningToPlayers[message.author.id] = now.valueOf();
         
         var reply = this.getRandomMessages(this.commonGoodMorning);
@@ -221,13 +221,13 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
         if (typeof this.lastTimeGoodNightToPlayers[message.author.id] == "undefined") {
             this.lastTimeGoodNightToPlayers[message.author.id] = 0;
         }
-        if (now.valueOf() - this.lastTimeGoodNightToPlayers[message.author.id] < 6*60*60*1000) return;
+        if (now.valueOf() - this.lastTimeGoodNightToPlayers[message.author.id] < 60*60*1000) return;
         this.lastTimeGoodNightToPlayers[message.author.id] = now.valueOf();
         
         var reply = this.getRandomMessages(this.commonGoodNight);
         message.channel.sendMessage(reply);
         this.lastTimeGoodNight = now.valueOf();
-    } else if (text === "~thank" || text === "~thanks" || text === "~tks") {
+    } else if (text === "~thank" || text === "~thanks" || text === "~tks" || text === "~ty") {
         if (now.valueOf() - this.lastTimeThanks < 60*1000) return;
         var reply = this.getRandomMessages(this.commonThanks);
         message.channel.sendMessage(reply);
@@ -244,12 +244,19 @@ Employee.prototype.handleSpecialCase = function(message) {
     }
 }
 
+Employee.prototype.handleSleepCommand = function(message) {
+    if (message.author.id != "162995652152786944") return;
+    //message.channel.sendMessage("I'm going to sleep now~");
+    //this.bot.destroy();
+}
+
 Employee.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     this.handleEventCommand(message);
     this.handleMaintenanceCommand(message);
     this.handleDailyCommand(message);
     this.handleBasicGreetingCommand(message);
+    //this.handleSleepCommand(message);
     this.handleSpecialCase(message);
 }
 
