@@ -66,7 +66,10 @@ function Employee() {
     };
     this.lastTimeGoodNightToPlayers = {
     };
-    
+    this.maxBread = 10;
+    this.remainingBread = {};
+    this.total_bread = 0;
+
 }
 
 Employee.prototype.parseTime = function(millisec) {

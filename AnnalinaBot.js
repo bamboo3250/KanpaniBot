@@ -30,25 +30,21 @@ function getCurrentTime() {
 }
 
 var answerTexts = dialog.annalina.answers;
-var remainingBread = {};
-var MAX_BREAD = 10;
 var decline = dialog.annalina.decline;
-var total_bread = 0;
 
 function handleQuestion(message) {
     var authorId = message.author.id;
-    if (typeof remainingBread[authorId] === "undefined") {
-        remainingBread[authorId] = MAX_BREAD;
+    if (typeof annalina.remainingBread[authorId] === "undefined") {
+        annalina.remainingBread[authorId] = annalina.maxBread;
     }
 
     const breadEmoji = message.guild.emojis.find('name', 'kbread');
 
-    if (remainingBread[authorId] > 0) {
-        remainingBread[authorId]--;
-        total_bread++;
+    if (annalina.remainingBread[authorId] > 0) {
+        annalina.remainingBread[authorId]--;
+        annalina.total_bread++;
         var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
-        text += "Remaining Bread: ";
-        for(var i=0;i<remainingBread[authorId];i++) text += breadEmoji;
+        text += "Remaining Bread: " + breadEmoji + " x" + annalina.remainingBread[authorId];
         message.reply(text);
     } else {
         message.reply(decline[randomInt(decline.length)]);
@@ -58,13 +54,12 @@ function handleQuestion(message) {
 
 function handleBreadCommand(message) {
     var authorId = message.author.id;
-    if (typeof remainingBread[authorId] === "undefined") {
-        remainingBread[authorId] = MAX_BREAD;
+    if (typeof annalina.remainingBread[authorId] === "undefined") {
+        annalina.remainingBread[authorId] = annalina.maxBread;
     }
     const breadEmoji = message.guild.emojis.find('name', 'kbread');
 
-    var text = "\nYour remaining bread: ";
-    for(var i=0;i<remainingBread[authorId];i++) text += breadEmoji;
+    var text = "\nYour remaining bread: " + breadEmoji + " x" + annalina.remainingBread[authorId];
     message.reply(text);
 }
 
