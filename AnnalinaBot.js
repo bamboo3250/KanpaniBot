@@ -30,35 +30,47 @@ function getCurrentTime() {
 }
 
 var answerTexts = dialog.annalina.answers;
-var remainingOrb = {};
-var MAX_ORB = 5;
+var remainingBread = {};
+var MAX_BREAD = 10;
 var decline = dialog.annalina.decline;
+var total_bread = 0;
 
 function handleQuestion(message) {
     var authorId = message.author.id;
-    if (typeof remainingOrb[authorId] === "undefined") {
-        remainingOrb[authorId] = MAX_ORB;
+    if (typeof remainingBread[authorId] === "undefined") {
+        remainingBread[authorId] = MAX_BREAD;
     }
-    if (remainingOrb[authorId] > 0) {
-        remainingOrb[authorId]--;
+
+    const breadEmoji = message.guild.emojis.find('name', 'kbread');
+
+    if (remainingBread[authorId] > 0) {
+        remainingBread[authorId]--;
+        total_bread++;
         var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
-        text += "Remaining orbs: ";
-        for(var i=0;i<remainingOrb[authorId];i++) text += ":crystal_ball:";
-        message.reply(text);    
+        text += "Remaining Bread: ";
+        for(var i=0;i<remainingBread[authorId];i++) text += breadEmoji;
+        message.reply(text);
     } else {
         message.reply(decline[randomInt(decline.length)]);
     }
     
 }
 
-function handleOrbCommand(message) {
+function handleBreadCommand(message) {
     var authorId = message.author.id;
-    if (typeof remainingOrb[authorId] === "undefined") {
-        remainingOrb[authorId] = MAX_ORB;
+    if (typeof remainingBread[authorId] === "undefined") {
+        remainingBread[authorId] = MAX_BREAD;
     }
-    var text = "\nYour remaining orbs: ";
-    for(var i=0;i<remainingOrb[authorId];i++) text += ":crystal_ball:";
+    const breadEmoji = message.guild.emojis.find('name', 'kbread');
+
+    var text = "\nYour remaining bread: ";
+    for(var i=0;i<remainingBread[authorId];i++) text += breadEmoji;
     message.reply(text);
+}
+
+function handleTotalBreadCommand(message) {
+    if (message.author.id != "162995652152786944") return;
+    message.reply("\nTotal bread received: " + total_bread);
 }
 
 function getCommand(message) {
@@ -77,8 +89,11 @@ annalina.bot.on("message", function(message) {
     case "~question":
         handleQuestion(message);
         break;
-    case "~orb":
-        handleOrbCommand(message);
+    case "~bread":
+        handleBreadCommand(message);
+        break;
+    case "~totalbread":
+        handleTotalBreadCommand(message);
         break;
     // case "~test":
     //     var channel = message.channel;
