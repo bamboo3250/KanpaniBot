@@ -288,7 +288,8 @@ Employee.prototype.handleTotalBreadCommand = function(message) {
 Employee.prototype.handleAssignRoleCommand = function(message) {
     var text = message.content.trim().toLowerCase();
     var member = message.member;
-    
+    if (member == null) return;
+
     switch(text) {
     case '~setnutaku':
         if (this.preventPM(message)) return;
