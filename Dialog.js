@@ -50,5 +50,17 @@ module.exports = {
             "Please come again tomorrow.",
             "You really want to know that bad?"
         ]
+    }, 
+    elsa: {
+        greetings: [
+            //"Good morning",
+            //"Let's work hard today!",
+            "Elsa will be your secretary today",
+            "Elsa will be in your care today."
+        ],
+        idleTalks: [],
+        commonGoodMorning: [],
+        commonGoodNight: [],
+        commonThanks: []
     }
 }
