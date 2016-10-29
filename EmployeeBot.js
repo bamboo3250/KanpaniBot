@@ -395,7 +395,7 @@ Employee.prototype.setDailyDrawReminderForNutaku = function() {
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
                 var nutakuRole = channels[i].guild.roles.find('name', 'Nutaku');
-                channels[i].sendMessage(nutakuRole + "\n**Reminder: 15 minutes until Nutaku Daily Draw Reset**")
+                channels[i].sendMessage(nutakuRole + "\n**Reminder: 15 minutes until Daily Draw Reset**")
             }
         }
         setTimeout(function(){
@@ -412,7 +412,7 @@ Employee.prototype.setDailyDrawReminderForDmm = function() {
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === that.dmmChannelName) {
                 var dmmRole = channels[i].guild.roles.find('name', 'DMM');
-                channels[i].sendMessage(dmmRole + "\n**Reminder: 15 minutes until DMM Daily Draw Reset**")
+                channels[i].sendMessage(dmmRole + "\n**Reminder: 15 minutes until Daily Draw Reset**")
             }
         }
         setTimeout(function(){
