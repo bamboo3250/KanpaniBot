@@ -20,15 +20,6 @@ function randomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-function updateLastTimeReplied(message) {
-    lastTimeReplied[message.channel.name] = getCurrentTime();
-}
-
-function getCurrentTime() {
-    var now = new Date();
-    return now.getTime();
-}
-
 var answerTexts = dialog.annalina.answers;
 var decline = dialog.annalina.decline;
 
@@ -37,18 +28,17 @@ function handleQuestion(message) {
     if (typeof annalina.remainingBread[authorId] === "undefined") {
         annalina.remainingBread[authorId] = annalina.maxBread;
     }
-    if (message.guild) {
-        const breadEmoji = message.guild.emojis.find('name', 'kbread');
+    if (annalina.preventPM(message)) return;
 
-        if (annalina.remainingBread[authorId] > 0) {
-            annalina.remainingBread[authorId]--;
-            annalina.total_bread++;
-            var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
-            text += "Remaining Bread: " + breadEmoji + " x" + annalina.remainingBread[authorId];
-            message.reply(text);
-        } else {
-            message.reply(decline[randomInt(decline.length)]);
-        }    
+    if (annalina.remainingBread[authorId] > 0) {
+        annalina.remainingBread[authorId]--;
+        annalina.total_bread++;
+        var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
+        const breadEmoji = message.guild.emojis.find('name', 'kbread');
+        text += "Remaining Bread: " + breadEmoji + " x" + annalina.remainingBread[authorId];
+        message.reply(text);
+    } else {
+        message.reply(decline[randomInt(decline.length)]);
     }
 }
 
@@ -89,3 +79,7 @@ annalina.bot.on("ready", function() {
     annalina.ready();
 });
 annalina.bot.login(config.annalina);
+
+process.on("unhandledRejection", err => {
+  console.error("Uncaught Promise Error: \n" + err.stack);
+});

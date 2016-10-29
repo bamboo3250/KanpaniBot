@@ -39,14 +39,18 @@ function Employee() {
         "Hello"
     ];
     this.commonGoodMorning = [
-        "Good Morning"
+        "Good Morning",
+        "Good Morning :sunflower: "
     ];
     this.commonGoodNight = [
         "Good Night",
         "Have a sweet dream",
+        "Good Night :crescent_moon: ",
+        "Have a sweet dream :crescent_moon: ",
         "See you again"
     ];
     this.commonThanks = [
+        "You are welcomed",
         "You are welcomed :heart:",
         "No problem",
     ];
@@ -56,16 +60,13 @@ function Employee() {
     this.lastTimeGoodMorning = 0;
     this.lastTimeGoodNight = 0;
     this.lastTimeThanks = 0;
-    this.lastTimeSayingHiToPlayers = {
-    };
-    this.lastTimeGoodMorningToPlayers = {
-    };
-    this.lastTimeGoodNightToPlayers = {
-    };
+    this.lastTimeSayingHiToPlayers = {};
+    this.lastTimeGoodMorningToPlayers = {};
+    this.lastTimeGoodNightToPlayers = {};
     this.maxBread = 10;
     this.remainingBread = {};
     this.total_bread = 0;
-
+    this.firstTimeReady = true;
 }
 
 Employee.prototype.parseTime = function(millisec) {
@@ -77,39 +78,51 @@ Employee.prototype.parseTime = function(millisec) {
     };
 }
 
+Employee.prototype.isPM = function(message) {
+    return ((typeof message.guild === "undefined") || message.guild == null);
+}
+
+Employee.prototype.preventPM = function(message) {
+    if (this.isPM(message)) {
+        message.reply("You can't ask me in Private Message.");
+        return true;
+    } else return false;
+}
+
 Employee.prototype.handleEventCommand = function(message) {
 
     var text = message.content.trim().toLowerCase();
-    if (text === "~event") {
-        var now = new Date();
-        var eventList = [];
-        if (message.channel.name === this.dmmChannelName) {
-            eventList = this.dmmEventList;
-        } else if (message.channel.name === this.nutakuChannelName) {
-            eventList = this.nutakuEventList;
-        } else {
-            return;
-        }
+    if (text !== "~event") return;
+    if (this.preventPM(message)) return;
 
-        var text = "\n" + eventList.length + " active event(s)\n";
-        for(var i=0;i<eventList.length;i++) {
-            var startTime = new Date(eventList[i].startTime);
-            var endTime = new Date(eventList[i].endTime);
-            text += "**" + eventList[i].name + "**\n";
+    var now = new Date();
+    var eventList = [];
+    if (message.channel.name === this.dmmChannelName) {
+        eventList = this.dmmEventList;
+    } else if (message.channel.name === this.nutakuChannelName) {
+        eventList = this.nutakuEventList;
+    } else {
+        return;
+    }
 
-            if (now.valueOf() < startTime.valueOf()) {
-                var time = this.parseTime(startTime.valueOf() - now.valueOf());
-                text += "Start in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
-                        + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
-            } else if (startTime.valueOf() <= now.valueOf() && now.valueOf() <= endTime.valueOf()) {
-                var time = this.parseTime(endTime.valueOf() - now.valueOf());
-                text += "End in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
-                        + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
-            } 
-        }
-        if (text.length > 1) {
-            message.channel.sendMessage(text);
-        }
+    text = "\n" + eventList.length + " active event(s)\n";
+    for(var i=0;i<eventList.length;i++) {
+        var startTime = new Date(eventList[i].startTime);
+        var endTime = new Date(eventList[i].endTime);
+        text += "**" + eventList[i].name + "**\n";
+
+        if (now.valueOf() < startTime.valueOf()) {
+            var time = this.parseTime(startTime.valueOf() - now.valueOf());
+            text += "Start in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
+                    + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
+        } else if (startTime.valueOf() <= now.valueOf() && now.valueOf() <= endTime.valueOf()) {
+            var time = this.parseTime(endTime.valueOf() - now.valueOf());
+            text += "End in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
+                    + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
+        } 
+    }
+    if (text.length > 1) {
+        message.channel.sendMessage(text);
     }
 }
 
@@ -124,62 +137,60 @@ function getTimeUntilDaily(timeInString) {
 Employee.prototype.handleDailyCommand = function(message) {
 
     var text = message.content.trim().toLowerCase();
-    if (text === "~daily") {
-        var dailyEvent = null;
-        if (message.channel.name === this.dmmChannelName) {
-            dailyEvent = this.dmmDaily;
-        } else if (message.channel.name === this.nutakuChannelName) {
-            dailyEvent = this.nutakuDaily;
-        } else {
-            return;
-        }
-        text = "\n**" + dailyEvent.name + "**\n";
-        nextDaily = getTimeUntilDaily(dailyEvent.time)
-        var time = this.parseTime(nextDaily);
-        text += "Reset in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
-                + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
-        message.channel.sendMessage(text);
+    if (text !== "~daily") return;
+    if (this.preventPM(message)) return;
+
+    var dailyEvent = null;
+    if (message.channel.name === this.dmmChannelName) {
+        dailyEvent = this.dmmDaily;
+    } else if (message.channel.name === this.nutakuChannelName) {
+        dailyEvent = this.nutakuDaily;
+    } else {
+        return;
     }
+    text = "\n**" + dailyEvent.name + "**\n";
+    nextDaily = getTimeUntilDaily(dailyEvent.time)
+    var time = this.parseTime(nextDaily);
+    text += "Reset in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
+            + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
+    message.channel.sendMessage(text);
 }
 
 Employee.prototype.handleMaintenanceCommand = function(message) {
 
     var text = message.content.trim().toLowerCase();
-    if (text === "~maint" || text === "~maintenance") {
-        var now = new Date();
-        var maintenanceList = [];
-        if (message.channel.name === this.dmmChannelName) {
-            maintenanceList = this.dmmMaintenanceList;
-        } else if (message.channel.name === this.nutakuChannelName) {
-            maintenanceList = this.nutakuMaintenanceList;
-        } else {
-            return;
-        }
+    if (text !== "~maint" && text !== "~maintenance") return;
+    if (this.preventPM(message)) return;
 
-        var text = "\n";
-        for(var i=0;i<maintenanceList.length;i++) {
-            var startTime = new Date(maintenanceList[i].startTime);
-            var endTime = new Date(maintenanceList[i].endTime);
-            text += "**" + maintenanceList[i].name + "**\n";
-
-            if (now.valueOf() < startTime.valueOf()) {
-                var time = this.parseTime(startTime.valueOf() - now.valueOf());
-                text += "Start in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
-                        + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
-            } else if (startTime.valueOf() <= now.valueOf() && now.valueOf() <= endTime.valueOf()) {
-                var time = this.parseTime(endTime.valueOf() - now.valueOf());
-                text += "End in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
-                        + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
-            } 
-        }
-        if (text.length > 1) {
-            message.channel.sendMessage(text);
-        }
+    var now = new Date();
+    var maintenanceList = [];
+    if (message.channel.name === this.dmmChannelName) {
+        maintenanceList = this.dmmMaintenanceList;
+    } else if (message.channel.name === this.nutakuChannelName) {
+        maintenanceList = this.nutakuMaintenanceList;
+    } else {
+        return;
     }
-}
 
-function isAlphabet(c) {
-    return ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z');
+    text = "\n";
+    for(var i=0;i<maintenanceList.length;i++) {
+        var startTime = new Date(maintenanceList[i].startTime);
+        var endTime = new Date(maintenanceList[i].endTime);
+        text += "**" + maintenanceList[i].name + "**\n";
+
+        if (now.valueOf() < startTime.valueOf()) {
+            var time = this.parseTime(startTime.valueOf() - now.valueOf());
+            text += "Start in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
+                    + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
+        } else if (startTime.valueOf() <= now.valueOf() && now.valueOf() <= endTime.valueOf()) {
+            var time = this.parseTime(endTime.valueOf() - now.valueOf());
+            text += "End in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
+                    + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
+        } 
+    }
+    if (text.length > 1) {
+        message.channel.sendMessage(text);
+    }
 }
 
 function cleanText(text) {
@@ -193,7 +204,7 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
     if (cleanedText === "") return;
     var now = new Date();
 
-    if (cleanedText === "hi" || cleanedText === "hello") {
+    if (cleanedText === "hi" || cleanedText === "hello" || cleanedText === "hai") {
         if (now.valueOf() - this.lastTimeSayingHi < 60*1000) return;
         if (typeof this.lastTimeSayingHiToPlayers[message.author.id] == "undefined") {
             this.lastTimeSayingHiToPlayers[message.author.id] = 0;
@@ -252,17 +263,17 @@ Employee.prototype.handleSleepCommand = function(message) {
 
 Employee.prototype.handleBreadCommand = function(message) {
     var text = message.content.trim().toLowerCase();
-    if (text === "~bread") {
-        var authorId = message.author.id;
-        if (typeof this.remainingBread[authorId] === "undefined") {
-            this.remainingBread[authorId] = this.maxBread;
-        }
-        if (message.guild) {
-            const breadEmoji = message.guild.emojis.find('name', 'kbread');
+    if (text !== "~bread") return;
+    if (this.preventPM(message)) return;
 
-            var text = "\nYour remaining bread: " + breadEmoji + " x" + this.remainingBread[authorId];
-            message.reply(text);
-        }
+    var authorId = message.author.id;
+    if (typeof this.remainingBread[authorId] === "undefined") {
+        this.remainingBread[authorId] = this.maxBread;
+    }
+    if (message.guild) {
+        const breadEmoji = message.guild.emojis.find('name', 'kbread');
+        text = "\nYour remaining bread: " + breadEmoji + " x" + this.remainingBread[authorId];
+        message.reply(text);
     }
 }
 
@@ -277,24 +288,48 @@ Employee.prototype.handleTotalBreadCommand = function(message) {
 Employee.prototype.handleAssignRoleCommand = function(message) {
     var text = message.content.trim().toLowerCase();
     var member = message.member;
-    if (member) {
-        var nutakuRole = message.guild.roles.find('name', 'Nutaku');
-        var dmmRole = message.guild.roles.find('name', 'DMM');
-        switch(text) {
-        case '~setnutaku':
-            member.addRole(nutakuRole);
-            break;
-        case '~removenutaku':
-            member.removeRole(nutakuRole);
-            break;
-        case '~setdmm':
-            member.addRole(dmmRole);
-            break;
-        case '~removedmm':
-            member.removeRole(dmmRole);
-            break;
-        }
+    
+    switch(text) {
+    case '~setnutaku':
+        if (this.preventPM(message)) return;
 
+        var nutakuRole = message.guild.roles.find('name', 'Nutaku');
+        member.addRole(nutakuRole).then(output => {
+            message.reply("Nutaku Role added.");
+        }).catch(err => {
+            message.reply("Sorry, I don't have permission to add this Role.");
+        });
+        break;
+    case '~removenutaku':
+        if (this.preventPM(message)) return;
+
+        var nutakuRole = message.guild.roles.find('name', 'Nutaku');
+        member.removeRole(nutakuRole).then(output => {
+            message.reply("Nutaku Role removed.");
+        }).catch(err => {
+            message.reply("Sorry, I don't have permission to remove this Role.");
+        });
+        break;
+    case '~setdmm':
+        if (this.preventPM(message)) return;
+
+        var dmmRole = message.guild.roles.find('name', 'DMM');
+        member.addRole(dmmRole).then(output => {
+            message.reply("DMM Role added.");
+        }).catch(err => {
+            message.reply("Sorry, I don't have permission to add this Role.");
+        });
+        break;
+    case '~removedmm':
+        if (this.preventPM(message)) return;
+
+        var dmmRole = message.guild.roles.find('name', 'DMM');
+        member.removeRole(dmmRole).then(output => {
+            message.reply("DMM Role removed.");
+        }).catch(err => {
+            message.reply("Sorry, I don't have permission to remove this Role.");
+        });
+        break;
     }
 }
 
@@ -331,24 +366,24 @@ Employee.prototype.greeting = function(channel) {
     this.sayRandomMessages(channel, this.greetings);
 }
 
-Employee.prototype.setIdleTalk = function() {
-    this.hasNewMessage = false;
-    var time = Math.floor(Math.random() * (15*60*1000) + 15*60*1000);
-    console.log(time);
-    var that = this;
-    setTimeout(function() {
-        console.log("triggered " + that.hasNewMessage);
-        if (that.hasNewMessage) {
-            var channels = that.bot.channels.array();
-            for(var i=0;i<channels.length;i++) {
-                if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
-                    that.sayRandomMessages(channels[i], that.idleTalks);
-                }
-            }
-        }
-        that.setIdleTalk();
-    }, time);  // 15 - 30 mins
-}
+// Employee.prototype.setIdleTalk = function() {
+//     this.hasNewMessage = false;
+//     var time = Math.floor(Math.random() * (15*60*1000) + 15*60*1000);
+//     console.log(time);
+//     var that = this;
+//     setTimeout(function() {
+//         console.log("triggered " + that.hasNewMessage);
+//         if (that.hasNewMessage) {
+//             var channels = that.bot.channels.array();
+//             for(var i=0;i<channels.length;i++) {
+//                 if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
+//                     that.sayRandomMessages(channels[i], that.idleTalks);
+//                 }
+//             }
+//         }
+//         that.setIdleTalk();
+//     }, time);  // 15 - 30 mins
+// }
 
 Employee.prototype.setDailyDrawReminderForNutaku = function() {
     var time = getTimeUntilDaily(this.nutakuDailyRemind); 
@@ -359,7 +394,7 @@ Employee.prototype.setDailyDrawReminderForNutaku = function() {
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
                 var nutakuRole = channels[i].guild.roles.find('name', 'Nutaku');
-                channels[i].sendMessage(nutakuRole + " **Reminder: 15 minutes until Nutaku Daily Draw Reset**")
+                channels[i].sendMessage(nutakuRole + "\n**Reminder: 15 minutes until Nutaku Daily Draw Reset**")
             }
         }
         setTimeout(function(){
@@ -376,7 +411,7 @@ Employee.prototype.setDailyDrawReminderForDmm = function() {
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === that.dmmChannelName) {
                 var dmmRole = channels[i].guild.roles.find('name', 'DMM');
-                channels[i].sendMessage(dmmRole + "**Reminder: 15 minutes until DMM Daily Draw Reset**")
+                channels[i].sendMessage(dmmRole + "\n**Reminder: 15 minutes until DMM Daily Draw Reset**")
             }
         }
         setTimeout(function(){
@@ -386,17 +421,22 @@ Employee.prototype.setDailyDrawReminderForDmm = function() {
 }
 
 Employee.prototype.ready = function() {
-    console.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
-    console.log("-----");
-    var channels = this.bot.channels.array();
-    for(var i=0;i<channels.length;i++) {
-        if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
-            this.greeting(channels[i]);
-        } 
+    if (this.firstTimeReady) {
+        console.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
+        console.log("-----");
+        var channels = this.bot.channels.array();
+        for(var i=0;i<channels.length;i++) {
+            if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
+                this.greeting(channels[i]);
+            } 
+        }
+        //this.setIdleTalk();
+        this.setDailyDrawReminderForNutaku();
+        this.setDailyDrawReminderForDmm();
+        this.firstTimeReady = false;
+    } else {
+        console.log("Bot is restarted");
     }
-    //this.setIdleTalk();
-    this.setDailyDrawReminderForNutaku();
-    this.setDailyDrawReminderForDmm();
 }
 
 module.exports = new Employee();
