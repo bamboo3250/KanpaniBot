@@ -45,8 +45,8 @@ module.exports = {
             "Very doubtful"
         ],
         decline: [
-            "You have used up all your orbs today. Please ask me again next time.",
-            "Too bad, no more orbs for you.",
+            "You have used up all your bread today. Please ask me again next time.",
+            "Too bad, no more bread for you.",
             "Please come again tomorrow.",
             "You really want to know that bad?"
         ]
@@ -61,6 +61,12 @@ module.exports = {
         idleTalks: [],
         commonGoodMorning: [],
         commonGoodNight: [],
-        commonThanks: []
+        commonThanks: [],
+        decline: [
+            "You have used up all your bread today. Please pat me again next time.",
+            "That is enough for today.",
+            "Pat me again tomorrow.",
+            "You really want that bad?"
+        ]
     }
 }

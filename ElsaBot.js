@@ -1,6 +1,7 @@
 var elsa = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
+var fs = require('fs');
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
  */
@@ -24,62 +25,182 @@ var lastTimePat = {};
 var affection = {};
 var touches = [
     {
-        point: -30,
-        text: ""
-    },{
         point: -20,
-        text: ""
+        text: "You are touching me too much! >\"<"
     },{
         point: -10,
-        text: ""
+        text: "Yaaa... I'm weak that place... Hey!"
     },{
-        point: 0,
-        text: ""
+        point: -5,
+        text: "Hey, you are messing my hair >.<"
+    },{
+        point: 1,
+        text: "You have nothing else to do, don't you?"
+    },{
+        point: 2,
+        text: "I don't dislike you patting me tho"
     },{
         point: 3,
-        text: ""
+        text: "Is patting me that fun?"
     },{
         point: 5,
-        text: ""
+        text: "Does patting my head feel good to you?"
     },{
-        point: 13,
-        text: ""
-    },{
-        point: 17,
-        text: ""
-    },{
-        point: 19,
-        text: ""
-    },{
-        point: 21,
+        point: 7,
         text: "You sure do love tails... Hmm.. What is so fun about it..?"
     },{
-        point: 29,
-        text: ""
-    },{
-        point: 33,
-        text: ""
-    },{
-        point: 0,
-        text: ""
+        point: 11,
+        text: "Your touch is so warm and gentle, I like it :heart:"
     }
 ];
 
+var status = [
+    {
+        start: -100,
+        end: -1,
+        text: "Elsa feels scared when seeing you."
+    },{
+        start: 0,
+        end: 9,
+        text: "Elsa only thinks of you as her boss."
+    },{
+        start: 10,
+        end: 19,
+        text: "Elsa is getting used to your touch."
+    },{
+        start: 20,
+        end: 29,
+        text: "Elsa feels comfortable with your hands."
+    },{
+        start: 30,
+        end: 39,
+        text: "Elsa enjoys working under you."
+    },{
+        start: 40,
+        end: 49,
+        text: "Elsa wants to play with you everyday."
+    },{
+        start: 50,
+        end: 69,
+        text: "Elsa wants you to pat her more."
+    },{
+        start: 70,
+        end: 89,
+        text: "Elsa feels happy when staying by your side."
+    },{
+        start: 90,
+        end: 94,
+        text: "Elsa feels anxious when you are not by her side."
+    },{
+        start: 95,
+        end: 100,
+        text: "Elsa now entrusts her life to you."
+    }
+];
+
+var decline = dialog.elsa.decline;
+
+function saveAffection() {
+    var textToWrite = JSON.stringify(affection, null, 4);
+    fs.writeFile("affection.js", textToWrite, function(err) {
+        if(err) return console.log(err);
+        console.log("The file was saved!");
+    }); 
+}
+
+function loadAffection() {
+    fs.readFile('affection.js', 'utf8', function (err, data) {
+        if (err) return;
+        affection = JSON.parse(data);
+        console.log(affection);
+    });
+}
+
 function handlePatCommand(message) {
     var userId = message.author.id;
-    if (typeof lastTimePat[userId] == "undefined") {
-        lastTimePat[userId] = 0;
-        affection[userId] = 0;
-    }
+    if (typeof lastTimePat[userId] === "undefined") lastTimePat[userId] = 0;
+    if (typeof affection[userId] === "undefined") affection[userId] = 0;
+    if (typeof elsa.remainingBread[userId] === "undefined") elsa.remainingBread[userId] = elsa.maxBread;
     if (elsa.preventPM(message)) return;
 
-    var now = new Date();
-    if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
-
+    if (elsa.remainingBread[userId] > 0) {
+        var now = new Date();
+        var index = 0;
+        if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
+            index = randomIntRange(0, 2);
+        } else {
+            index = randomIntRange(1, 8);
+        }
+        var point = affection[userId] + touches[index].point;
+        affection[userId] = Math.max(Math.min(point, 100), -100);
+        var text = touches[index].text + "\n";
+        text += "Affection: " + affection[userId] + "/100 (" + touches[index].point + ")\n";
+        const breadEmoji = message.guild.emojis.find('name', 'kbread');
+        text += "Remaining Bread: " + breadEmoji + " x" + elsa.remainingBread[userId];
+        message.reply(text);
+        elsa.remainingBread[userId]--;
+        lastTimePat[userId] = now.valueOf();
+        saveAffection();
+        
     } else {
-
+        message.reply(decline[randomInt(decline.length)]);
     }
-    lastTimePat[userId] = now.valueOf();
+}
+
+function handleStatusCommand(message) {
+    var userId = message.author.id;
+    if (typeof lastTimePat[userId] == "undefined") lastTimePat[userId] = 0;
+    if (typeof affection[userId] == "undefined") affection[userId] = 0;
+    if (elsa.preventPM(message)) return;
+
+    for(var i=0;i<status.length;i++) {
+        if (status[i].start <= affection[userId] && affection[userId] <= status[i].end) {
+            var text = status[i].text + "\n";
+            text += "Affection: " + affection[userId] + "/100";
+            message.reply(text);
+            return;
+        }
+    }
+}
+
+function handleRankingCommand(message) {
+    if (elsa.preventPM(message)) return;
+    var result = [];
+    for (key in affection) {
+        result.push({
+            userId: key,
+            point: affection[key]
+        });
+    }
+    result.sort(function(a, b) {
+        return b.point - a.point;
+    })
+    var count = 0;
+    var text = "Top 10 players Elsa likes the most:\n";
+    for(var i=0;i<Math.min(result.length, 10);i++) {
+        if (i==0 || result[i-1].point != result[i].point) count = i;
+        var member = message.guild.members.find('id', result[i].userId);
+        if (member) {
+            text += (count+1) + ". " + member.user.username + " (" + result[i].point + ")\n";
+        }
+    }
+    message.channel.sendMessage(text);
+}
+
+function handleReduceCommand(message) {
+    if (!elsa.isAdmin(message)) return;
+    for(key in affection) {
+        if (affection[key] > 0) {
+            affection[key] = Math.floor(affection[key]/2);
+        }
+    }
+    saveAffection();
+}
+
+function handleResetCommand(message) {
+    if (!elsa.isAdmin(message)) return;
+    affection = {};
+    saveAffection();
 }
 
 elsa.bot.on("message", function(message) {
@@ -87,14 +208,22 @@ elsa.bot.on("message", function(message) {
             && message.author.id != elsa.bot.user.id) {
         elsa.hasNewMessage = true;
     }
-    var command = getCommand(message);
+    var command = message.content.trim().toLowerCase();
     switch (command) {
     case "~pat":
         handlePatCommand(message);
         break;
     case "~status":
+        handleStatusCommand(message);
         break;
-    case "~ranking":
+    case "~rank":
+        handleRankingCommand(message);
+        break;
+    case "~reduce":
+        handleReduceCommand(message);
+        break;
+    case "~reset":
+        handleResetCommand(message);
         break;
     default:
         elsa.handleCommonCommand(message);
@@ -110,6 +239,7 @@ elsa.commonThanks = elsa.commonThanks.concat(dialog.elsa.commonThanks);
 
 elsa.bot.on("ready", function() {
     elsa.ready();
+    loadAffection();
 });
 elsa.bot.login(config.elsa);
 

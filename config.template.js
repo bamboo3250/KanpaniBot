@@ -1,5 +1,6 @@
 var config = {
-    annalina: "PutYourTokenHere"
+    annalina: "PutYourTokenHere",
+    elsa: "PutYourTokenHere"
 };
 
 module.exports = config;

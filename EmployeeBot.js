@@ -254,6 +254,10 @@ Employee.prototype.handleSpecialCase = function(message) {
     }
 }
 
+Employee.prototype.isAdmin = function(message) {
+    return (message.author.id === "162995652152786944");
+}
+
 Employee.prototype.handleSleepCommand = function(message) {
     if (message.author.id != "162995652152786944") return;
     //message.channel.sendMessage("I'm going to sleep now~");
@@ -278,7 +282,7 @@ Employee.prototype.handleBreadCommand = function(message) {
 }
 
 Employee.prototype.handleTotalBreadCommand = function(message) {
-    if (message.author.id != "162995652152786944") return;
+    if (!this.isAdmin(message)) return;
     var text = message.content.trim().toLowerCase();
     if (text === "~totalbread") {
         message.reply("\nTotal bread received: " + this.total_bread);
