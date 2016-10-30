@@ -57,6 +57,10 @@ var touches = [
 var status = [
     {
         start: -100,
+        end: -100,
+        text: "Elsa thinks you are the worst."
+    },{
+        start: -99,
         end: -1,
         text: "Elsa feels scared when seeing you."
     },{
