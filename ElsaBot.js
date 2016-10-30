@@ -25,13 +25,13 @@ var lastTimePat = {};
 var affection = {};
 var touches = [
     {
-        point: -20,
+        point: -15,
         text: "You are touching me too much! >\"<"
     },{
-        point: -10,
+        point: -5,
         text: "Yaaa... I'm weak that place... Hey!"
     },{
-        point: -5,
+        point: -3,
         text: "Hey, you are messing my hair >.<"
     },{
         point: 1,
