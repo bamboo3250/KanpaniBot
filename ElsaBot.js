@@ -133,12 +133,13 @@ function handlePatCommand(message) {
         }
         var point = affection[userId] + touches[index].point;
         affection[userId] = Math.max(Math.min(point, 100), -100);
+        elsa.remainingBread[userId]--;
+        
         var text = touches[index].text + "\n";
-        text += "Affection: " + affection[userId] + "/100 (" + touches[index].point + ")\n";
+        text += "Affection: " + affection[userId] + "/100 (" + (touches[index].point>=0?"+":"") + touches[index].point + ")\n";
         const breadEmoji = message.guild.emojis.find('name', 'kbread');
         text += "Remaining Bread: " + breadEmoji + " x" + elsa.remainingBread[userId];
         message.reply(text);
-        elsa.remainingBread[userId]--;
         lastTimePat[userId] = now.valueOf();
         saveAffection();
         
