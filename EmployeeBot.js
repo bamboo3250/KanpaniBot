@@ -68,7 +68,7 @@ function Employee() {
     this.trickortreat = [
         "",
         "*gives* :candy:",
-        "*gives* :cookies:",
+        "*gives* :cookie:",
         ":p",
         ";p",
     ];
@@ -498,7 +498,7 @@ Employee.prototype.ready = function() {
         var channels = this.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
-                this.greeting(channels[i]);
+                //this.greeting(channels[i]);
             } 
         }
         //this.setIdleTalk();
