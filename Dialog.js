@@ -53,8 +53,8 @@ module.exports = {
     }, 
     elsa: {
         greetings: [
-            //"Good morning",
-            //"Let's work hard today!",
+            "Good morning",
+            "Let's work hard today!",
             "Elsa will be your secretary today",
             "Elsa will be in your care today."
         ],
