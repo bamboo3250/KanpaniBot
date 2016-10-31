@@ -54,6 +54,24 @@ function Employee() {
         "You are welcomed :heart:",
         "No problem",
     ];
+    this.halloween = [
+        "Happy Halloween",
+        "Happy Halloween :jack_o_lantern:",
+        "Happy Halloween :ghost:",
+        "Happy Halloween :spider_web:",
+        "Happy Halloween :bat:",
+        ":jack_o_lantern:",
+        ":ghost:",
+        ":spider_web: ",
+        ":bat: "
+    ];
+    this.trickortreat = [
+        "",
+        "*gives* :candy:",
+        "*gives* :cookies:",
+        ":p",
+        ";p",
+    ];
     
     this.hasNewMessage = false;
     this.lastTimeSayingHi = 0;
@@ -63,6 +81,8 @@ function Employee() {
     this.lastTimeSayingHiToPlayers = {};
     this.lastTimeGoodMorningToPlayers = {};
     this.lastTimeGoodNightToPlayers = {};
+    this.lastTimeGiveCandyToPlayers = {};
+
     this.maxBread = 10;
     this.remainingBread = {};
     this.total_bread = 0;
@@ -193,8 +213,12 @@ Employee.prototype.handleMaintenanceCommand = function(message) {
     }
 }
 
+function removeExtraSpace(text) {
+    return text.trim().replace(/\s+/g,' ');
+}
+
 function cleanText(text) {
-    return text.replace(/[^A-Za-z]+/g,' ').trim().replace(/\s+/g,' ');
+    return removeExtraSpace(text.replace(/[^A-Za-z]+/g,' '));
 }
 
 Employee.prototype.handleBasicGreetingCommand = function(message) {
@@ -203,36 +227,37 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
     
     if (cleanedText === "") return;
     var now = new Date();
+    var userId = message.author.id;
 
     if (cleanedText === "hi" || cleanedText === "hello" || cleanedText === "hai") {
         if (now.valueOf() - this.lastTimeSayingHi < 60*1000) return;
-        if (typeof this.lastTimeSayingHiToPlayers[message.author.id] == "undefined") {
-            this.lastTimeSayingHiToPlayers[message.author.id] = 0;
+        if (typeof this.lastTimeSayingHiToPlayers[userId] == "undefined") {
+            this.lastTimeSayingHiToPlayers[userId] = 0;
         }
-        if (now.valueOf() - this.lastTimeSayingHiToPlayers[message.author.id] < 60*60*1000) return;
-        this.lastTimeSayingHiToPlayers[message.author.id] = now.valueOf();
+        if (now.valueOf() - this.lastTimeSayingHiToPlayers[userId] < 60*60*1000) return;
+        this.lastTimeSayingHiToPlayers[userId] = now.valueOf();
 
         var reply = this.getRandomMessages(this.commonGreetings);
         message.channel.sendMessage(reply);
         this.lastTimeSayingHi = now.valueOf();
     } else if (cleanedText === "gm" || cleanedText === "good morning" || cleanedText === "morning") {
         if (now.valueOf() - this.lastTimeGoodMorning < 60*1000) return;
-        if (typeof this.lastTimeGoodMorningToPlayers[message.author.id] == "undefined") {
-            this.lastTimeGoodMorningToPlayers[message.author.id] = 0;
+        if (typeof this.lastTimeGoodMorningToPlayers[userId] == "undefined") {
+            this.lastTimeGoodMorningToPlayers[userId] = 0;
         }
-        if (now.valueOf() - this.lastTimeGoodMorningToPlayers[message.author.id] < 60*60*1000) return;
-        this.lastTimeGoodMorningToPlayers[message.author.id] = now.valueOf();
+        if (now.valueOf() - this.lastTimeGoodMorningToPlayers[userId] < 60*60*1000) return;
+        this.lastTimeGoodMorningToPlayers[userId] = now.valueOf();
         
         var reply = this.getRandomMessages(this.commonGoodMorning);
         message.channel.sendMessage(reply);
         this.lastTimeGoodMorning = now.valueOf();
     } else if (cleanedText === "gn" || cleanedText === "good night" || cleanedText === "nite" || cleanedText === "night") {
         if (now.valueOf() - this.lastTimeGoodNight < 60*1000) return;
-        if (typeof this.lastTimeGoodNightToPlayers[message.author.id] == "undefined") {
-            this.lastTimeGoodNightToPlayers[message.author.id] = 0;
+        if (typeof this.lastTimeGoodNightToPlayers[userId] == "undefined") {
+            this.lastTimeGoodNightToPlayers[userId] = 0;
         }
-        if (now.valueOf() - this.lastTimeGoodNightToPlayers[message.author.id] < 60*60*1000) return;
-        this.lastTimeGoodNightToPlayers[message.author.id] = now.valueOf();
+        if (now.valueOf() - this.lastTimeGoodNightToPlayers[userId] < 60*60*1000) return;
+        this.lastTimeGoodNightToPlayers[userId] = now.valueOf();
         
         var reply = this.getRandomMessages(this.commonGoodNight);
         message.channel.sendMessage(reply);
@@ -242,6 +267,22 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
         var reply = this.getRandomMessages(this.commonThanks);
         message.channel.sendMessage(reply);
         this.lastTimeThanks = now.valueOf();
+    } else if (cleanedText === "happy halloween") {
+        var reply = this.getRandomMessages(this.halloween);
+        message.channel.sendMessage(reply);
+    } else if (cleanedText === "trick or treat" || cleanedText === "treat or trick") {
+        if (typeof this.lastTimeGiveCandyToPlayers[userId] == "undefined") {
+            this.lastTimeGiveCandyToPlayers[userId] = 0;
+        }
+        if (now.valueOf() - this.lastTimeGiveCandyToPlayers[userId] < 60*1000) return;
+
+        var reply = this.getRandomMessages(this.trickortreat);
+        if (reply === "") {
+            this.remainingBread[userId]++;
+            reply = "*gives* :bread:"
+        }
+        message.reply(reply);
+        this.lastTimeGiveCandyToPlayers[userId] = now.valueOf();
     }
 }
 
@@ -338,6 +379,30 @@ Employee.prototype.handleAssignRoleCommand = function(message) {
     }
 }
 
+function getIdFromMention(text) {
+    if (text.length < 3) return "";
+    if (text.startsWith("<@") && text.endsWith(">")) {
+        return text.substring(2, text.length - 1);
+    } else return "";
+}
+
+Employee.prototype.handleGiveBreadCommand = function(message) {
+    var text = removeExtraSpace(message.content.trim().toLowerCase());
+    var args = text.split(" ");
+    if (args[0] !== "~givebread") return;
+    if (args.length < 2) return;
+    var giverId = message.author.id;
+    var receiverId = getIdFromMention(args[1]);
+    if (receiverId === "") return;
+
+    if (typeof this.remainingBread[giverId] === "undefined") this.remainingBread[giverId] = this.maxBread;
+    if (typeof this.remainingBread[receiverId] === "undefined") this.remainingBread[receiverId] = this.maxBread;
+    if (this.remainingBread[giverId] > 0) {
+        this.remainingBread[giverId]--;
+        this.remainingBread[receiverId]++;
+    }
+}
+
 Employee.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     this.handleEventCommand(message);
@@ -348,6 +413,7 @@ Employee.prototype.handleCommonCommand = function(message) {
     this.handleBreadCommand(message);
     this.handleTotalBreadCommand(message);
     this.handleAssignRoleCommand(message);
+    this.handleGiveBreadCommand(message);
     this.handleSpecialCase(message);
 }
 
