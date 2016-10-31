@@ -205,6 +205,7 @@ function handleRankingCommand(message) {
     for(var i=0;i<Math.min(result.length, 10);i++) {
         if (i==0 || result[i-1].point != result[i].point) count = i;
         var member = message.guild.members.find('id', result[i].userId);
+        console.log(member);
         if (member) {
             text += (count+1) + ". " + member.user.username + " (" + result[i].point + ")\n";
         }
