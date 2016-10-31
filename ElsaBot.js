@@ -58,11 +58,27 @@ var status = [
     {
         start: -100,
         end: -100,
-        text: "Elsa thinks you are the worst."
+        text: "Elsa hates you now!!!"
     },{
         start: -99,
-        end: -1,
+        end: -91,
+        text: "Elsa thinks you are the worst."
+    },{
+        start: -90,
+        end: -71,
         text: "Elsa feels scared when seeing you."
+    },{
+        start: -70,
+        end: -21,
+        text: "Elsa is trying to hide from you."
+    },{
+        start: -20,
+        end: -11,
+        text: "Elsa feels uncomfortable with you."
+    },{
+        start: -10,
+        end: -1,
+        text: "Elsa feels annoyed a bit."
     },{
         start: 0,
         end: 9,
@@ -125,13 +141,13 @@ function handlePatCommand(message) {
     if (typeof lastTimePat[userId] === "undefined") lastTimePat[userId] = 0;
     if (typeof affection[userId] === "undefined") affection[userId] = 0;
     if (typeof elsa.remainingBread[userId] === "undefined") elsa.remainingBread[userId] = elsa.maxBread;
-    if (elsa.preventPM(message)) return;
+    //if (elsa.preventPM(message)) return;
 
     if (elsa.remainingBread[userId] > 0) {
         var now = new Date();
         var index = 0;
         if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
-            index = randomIntRange(0, 2);
+            index = randomIntRange(0, 3);
         } else {
             index = randomIntRange(1, 8);
         }
@@ -141,8 +157,13 @@ function handlePatCommand(message) {
         
         var text = touches[index].text + "\n";
         text += "Affection: " + affection[userId] + "/100 (" + (touches[index].point>=0?"+":"") + touches[index].point + ")\n";
-        const breadEmoji = message.guild.emojis.find('name', 'kbread');
-        text += "Remaining Bread: " + breadEmoji + " x" + elsa.remainingBread[userId];
+        if (elsa.isPM(message)) {
+            text += "Remaining Bread: " + elsa.remainingBread[userId];
+        } else {
+            const breadEmoji = message.guild.emojis.find('name', 'kbread');
+            text += "Remaining Bread: " + breadEmoji + " x" + elsa.remainingBread[userId];    
+        }
+        
         message.reply(text);
         lastTimePat[userId] = now.valueOf();
         saveAffection();
@@ -156,7 +177,6 @@ function handleStatusCommand(message) {
     var userId = message.author.id;
     if (typeof lastTimePat[userId] == "undefined") lastTimePat[userId] = 0;
     if (typeof affection[userId] == "undefined") affection[userId] = 0;
-    if (elsa.preventPM(message)) return;
 
     for(var i=0;i<status.length;i++) {
         if (status[i].start <= affection[userId] && affection[userId] <= status[i].end) {
@@ -195,9 +215,7 @@ function handleRankingCommand(message) {
 function handleReduceCommand(message) {
     if (!elsa.isAdmin(message)) return;
     for(key in affection) {
-        if (affection[key] > 0) {
-            affection[key] = Math.floor(affection[key]/2);
-        }
+        affection[key] = Math.floor(affection[key]/2);
     }
     saveAffection();
 }
