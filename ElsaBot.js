@@ -197,11 +197,13 @@ function handleRankingCommand(message) {
             point: affection[key]
         });
     }
+    console.log(result);
     result.sort(function(a, b) {
         return b.point - a.point;
     })
     var count = 0;
     var text = "Top 10 players Elsa likes the most:\n";
+    console.log(result);
     for(var i=0;i<Math.min(result.length, 10);i++) {
         if (i==0 || result[i-1].point != result[i].point) count = i;
         var member = message.guild.members.find('id', result[i].userId);
