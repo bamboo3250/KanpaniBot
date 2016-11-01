@@ -140,9 +140,7 @@ function handlePatCommand(message) {
     var userId = message.author.id;
     if (typeof lastTimePat[userId] === "undefined") lastTimePat[userId] = 0;
     if (typeof affection[userId] === "undefined") affection[userId] = 0;
-    if (typeof elsa.remainingBread[userId] === "undefined") elsa.remainingBread[userId] = elsa.maxBread;
-    //if (elsa.preventPM(message)) return;
-
+    
     if (elsa.remainingBread[userId] > 0) {
         var now = new Date();
         var index = 0;
@@ -154,15 +152,11 @@ function handlePatCommand(message) {
         var point = affection[userId] + touches[index].point;
         affection[userId] = Math.max(Math.min(point, 100), -100);
         elsa.remainingBread[userId]--;
+        elsa.total_bread++;
         
         var text = touches[index].text + "\n";
         text += "Affection: " + affection[userId] + "/100 (" + (touches[index].point>=0?"+":"") + touches[index].point + ")\n";
-        if (elsa.isPM(message)) {
-            text += "Remaining Bread: " + elsa.remainingBread[userId];
-        } else {
-            const breadEmoji = message.guild.emojis.find('name', 'kbread');
-            text += "Remaining Bread: " + breadEmoji + " x" + elsa.remainingBread[userId];    
-        }
+        text += elsa.createRemainingBreadLine(message);
         
         message.reply(text);
         lastTimePat[userId] = now.valueOf();
@@ -238,6 +232,8 @@ elsa.bot.on("message", function(message) {
             && message.author.id != elsa.bot.user.id) {
         elsa.hasNewMessage = true;
     }
+    elsa.initBreadIfNeed(message.author.id);
+
     var command = message.content.trim().toLowerCase();
     switch (command) {
     case "~pat":

@@ -54,24 +54,24 @@ function Employee() {
         "You are welcomed :heart:",
         "No problem",
     ];
-    this.halloween = [
-        "Happy Halloween",
-        "Happy Halloween :jack_o_lantern:",
-        "Happy Halloween :ghost:",
-        "Happy Halloween :spider_web:",
-        "Happy Halloween :bat:",
-        ":jack_o_lantern:",
-        ":ghost:",
-        ":spider_web: ",
-        ":bat: "
-    ];
-    this.trickortreat = [
-        "",
-        "*gives* :candy:",
-        "*gives* :cookie:",
-        ":p",
-        ";p",
-    ];
+    // this.halloween = [
+    //     "Happy Halloween",
+    //     "Happy Halloween :jack_o_lantern:",
+    //     "Happy Halloween :ghost:",
+    //     "Happy Halloween :spider_web:",
+    //     "Happy Halloween :bat:",
+    //     ":jack_o_lantern:",
+    //     ":ghost:",
+    //     ":spider_web: ",
+    //     ":bat: "
+    // ];
+    // this.trickortreat = [
+    //     "",
+    //     "*gives* :candy:",
+    //     "*gives* :cookie:",
+    //     ":p",
+    //     ";p",
+    // ];
     
     this.hasNewMessage = false;
     this.lastTimeSayingHi = 0;
@@ -83,9 +83,12 @@ function Employee() {
     this.lastTimeGoodNightToPlayers = {};
     this.lastTimeGiveCandyToPlayers = {};
 
-    this.maxBread = 10;
+    this.startBread = 3;
+    this.cappedBread = 5;
+    this.replenishTime = 60*60*1000; // 1 hour
     this.remainingBread = {};
     this.total_bread = 0;
+
     this.firstTimeReady = true;
 }
 
@@ -267,23 +270,24 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
         var reply = this.getRandomMessages(this.commonThanks);
         message.channel.sendMessage(reply);
         this.lastTimeThanks = now.valueOf();
-    } else if (cleanedText === "happy halloween") {
-        var reply = this.getRandomMessages(this.halloween);
-        message.channel.sendMessage(reply);
-    } else if (cleanedText === "trick or treat" || cleanedText === "treat or trick") {
-        if (typeof this.lastTimeGiveCandyToPlayers[userId] == "undefined") {
-            this.lastTimeGiveCandyToPlayers[userId] = 0;
-        }
-        if (now.valueOf() - this.lastTimeGiveCandyToPlayers[userId] < 60*1000) return;
+    } 
+    // else if (cleanedText === "happy halloween") {
+    //     var reply = this.getRandomMessages(this.halloween);
+    //     message.channel.sendMessage(reply);
+    // } else if (cleanedText === "trick or treat" || cleanedText === "treat or trick") {
+    //     if (typeof this.lastTimeGiveCandyToPlayers[userId] == "undefined") {
+    //         this.lastTimeGiveCandyToPlayers[userId] = 0;
+    //     }
+    //     if (now.valueOf() - this.lastTimeGiveCandyToPlayers[userId] < 60*1000) return;
 
-        var reply = this.getRandomMessages(this.trickortreat);
-        if (reply === "") {
-            this.remainingBread[userId]++;
-            reply = "*gives* :bread:"
-        }
-        message.reply(reply);
-        this.lastTimeGiveCandyToPlayers[userId] = now.valueOf();
-    }
+    //     var reply = this.getRandomMessages(this.trickortreat);
+    //     if (reply === "") {
+    //         this.remainingBread[userId]++;
+    //         reply = "*gives* :bread:"
+    //     }
+    //     message.reply(reply);
+    //     this.lastTimeGiveCandyToPlayers[userId] = now.valueOf();
+    // }
 }
 
 Employee.prototype.handleSpecialCase = function(message) {
@@ -305,21 +309,28 @@ Employee.prototype.handleSleepCommand = function(message) {
     //this.bot.destroy();
 }
 
+Employee.prototype.initBreadIfNeed = function(userId) {
+    if (typeof this.remainingBread[userId] === "undefined") {
+        this.remainingBread[userId] = this.startBread;
+    }
+}
+
+Employee.prototype.createRemainingBreadLine = function(message) {
+    var userId = message.author.id;
+    if (this.isPM(message)) {
+        return "Remaining Bread: " + this.remainingBread[userId];
+    } else {
+        const breadEmoji = message.guild.emojis.find('name', 'kbread');
+        return "Remaining Bread: " + breadEmoji + " x" + this.remainingBread[userId];    
+    }
+}
 
 Employee.prototype.handleBreadCommand = function(message) {
     var text = message.content.trim().toLowerCase();
     if (text !== "~bread") return;
-    if (this.preventPM(message)) return;
-
+    
     var authorId = message.author.id;
-    if (typeof this.remainingBread[authorId] === "undefined") {
-        this.remainingBread[authorId] = this.maxBread;
-    }
-    if (message.guild) {
-        const breadEmoji = message.guild.emojis.find('name', 'kbread');
-        text = "\nYour remaining bread: " + breadEmoji + " x" + this.remainingBread[authorId];
-        message.reply(text);
-    }
+    message.reply(this.createRemainingBreadLine(message));
 }
 
 Employee.prototype.handleTotalBreadCommand = function(message) {
@@ -395,11 +406,11 @@ Employee.prototype.handleGiveBreadCommand = function(message) {
     var receiverId = getIdFromMention(args[1]);
     if (receiverId === "") return;
 
-    if (typeof this.remainingBread[giverId] === "undefined") this.remainingBread[giverId] = this.maxBread;
-    if (typeof this.remainingBread[receiverId] === "undefined") this.remainingBread[receiverId] = this.maxBread;
+    this.initBreadIfNeed(receiverId);
     if (this.remainingBread[giverId] > 0) {
         this.remainingBread[giverId]--;
         this.remainingBread[receiverId]++;
+        message.reply("Your bread has been transfered.");
     }
 }
 
@@ -491,6 +502,22 @@ Employee.prototype.setDailyDrawReminderForDmm = function() {
     }, time);
 }
 
+Employee.prototype.setBreadRegeneration = function() {
+    var that = this;
+    setTimeout(function() {
+        for(key in that.remainingBread) {
+            if (that.remainingBread[key] < that.cappedBread) {
+                that.remainingBread[key]++;
+            }
+        }
+        if (that.startBread < that.cappedBread) {
+            that.startBread++;
+        }
+        console.log("1 bread is given to each player");
+        that.setBreadRegeneration();
+    }, that.replenishTime);
+}
+
 Employee.prototype.ready = function() {
     if (this.firstTimeReady) {
         console.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
@@ -498,16 +525,41 @@ Employee.prototype.ready = function() {
         var channels = this.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
-                //this.greeting(channels[i]);
-            } 
+                this.greeting(channels[i]);
+            }
         }
         //this.setIdleTalk();
         this.setDailyDrawReminderForNutaku();
         this.setDailyDrawReminderForDmm();
+        this.setBreadRegeneration();
         this.firstTimeReady = false;
     } else {
         console.log("Bot is restarted");
     }
 }
 
-module.exports = new Employee();
+var employee = new Employee();
+
+employee.bot.on('guildMemberAdd', (guild, member) => {
+    var channels = guild.channels.array();
+    for(var i=0;i<channels.length;i++) {
+        if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
+            var text = "**" + member.user.username + "** has joined.\n";
+            text += "Member count: " + member.guild.memberCount;
+            channels[i].sendMessage(text);
+        } 
+    }
+});
+
+employee.bot.on('guildMemberRemove', (guild, member) => {
+    var channels = guild.channels.array();
+    for(var i=0;i<channels.length;i++) {
+        if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
+            var text = "**" + member.user.username + "** has leaved.\n";
+            text += "Member count: " + guild.memberCount;
+            channels[i].sendMessage(text);
+        } 
+    }
+});
+
+module.exports = employee;

@@ -25,17 +25,12 @@ var decline = dialog.annalina.decline;
 
 function handleQuestion(message) {
     var authorId = message.author.id;
-    if (typeof annalina.remainingBread[authorId] === "undefined") {
-        annalina.remainingBread[authorId] = annalina.maxBread;
-    }
-    if (annalina.preventPM(message)) return;
-
+    
     if (annalina.remainingBread[authorId] > 0) {
         annalina.remainingBread[authorId]--;
         annalina.total_bread++;
         var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
-        const breadEmoji = message.guild.emojis.find('name', 'kbread');
-        text += "Remaining Bread: " + breadEmoji + " x" + annalina.remainingBread[authorId];
+        text += annalina.createRemainingBreadLine(message);
         message.reply(text);
     } else {
         message.reply(decline[randomInt(decline.length)]);
@@ -53,6 +48,8 @@ annalina.bot.on("message", function(message) {
             && message.author.id != annalina.bot.user.id) {
         annalina.hasNewMessage = true;
     }
+    annalina.initBreadIfNeed(message.author.id);
+
     var command = getCommand(message);
     switch (command) {
     case "~question":
