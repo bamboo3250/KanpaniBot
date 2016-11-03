@@ -85,7 +85,7 @@ function Employee() {
 
     this.startBread = 3;
     this.cappedBread = 5;
-    this.replenishTime = 60*60*1000; // 1 hour
+    this.replenishTime = 2*60*60*1000; // 2 hours
     this.remainingBread = {};
     this.total_bread = 0;
 
