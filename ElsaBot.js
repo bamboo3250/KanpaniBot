@@ -119,17 +119,18 @@ var status = [
 ];
 
 var decline = dialog.elsa.decline;
+var affectionFileName = "affection.json";
 
 function saveAffection() {
     var textToWrite = JSON.stringify(affection, null, 4);
-    fs.writeFile("affection.js", textToWrite, function(err) {
+    fs.writeFile(affectionFileName, textToWrite, function(err) {
         if(err) return console.log(err);
         console.log("The file was saved!");
     }); 
 }
 
 function loadAffection() {
-    fs.readFile('affection.js', 'utf8', function (err, data) {
+    fs.readFile(affectionFileName, 'utf8', function (err, data) {
         if (err) return;
         affection = JSON.parse(data);
         console.log(affection);
