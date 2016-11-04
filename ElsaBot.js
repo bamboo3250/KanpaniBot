@@ -137,6 +137,30 @@ function loadAffection() {
     });
 }
 
+const REWARD_ROLE_NAME = 'Ally of Kemomin';
+
+function updateRole(message, userId) {
+    if (elsa.isPM(message)) return;
+    var allyRole = message.guild.roles.find('name', REWARD_ROLE_NAME);
+    var member = message.member;
+    if (allyRole == null) return;
+    if (member == null) return;
+
+    if (affection[userId] >= 100) {
+        member.addRole(allyRole).then(guildMember => {
+            console.log("Ally Role added.");
+        }).catch(err => {
+            console.log("Sorry, I don't have permission to add this Role.");
+        });
+    } else {
+        member.removeRole(allyRole).then(guildMember => {
+            console.log("Ally Role removed.");
+        }).catch(err => {
+            console.log("Sorry, I don't have permission to remove this Role.");
+        });
+    }
+}
+
 function handlePatCommand(message) {
     var userId = message.author.id;
     if (typeof lastTimePat[userId] === "undefined") lastTimePat[userId] = 0;
@@ -162,7 +186,7 @@ function handlePatCommand(message) {
         message.reply(text);
         lastTimePat[userId] = now.valueOf();
         saveAffection();
-        
+        updateRole(message, userId);
     } else {
         message.reply(decline[randomInt(decline.length)]);
     }
@@ -178,6 +202,7 @@ function handleStatusCommand(message) {
             var text = status[i].text + "\n";
             text += "Affection: " + affection[userId] + "/100";
             message.reply(text);
+            updateRole(message, userId);
             return;
         }
     }
@@ -191,6 +216,7 @@ function handleRankingCommand(message) {
             userId: key,
             point: affection[key]
         });
+        updateRole(message, key);
     }
     result.sort(function(a, b) {
         return b.point - a.point;
