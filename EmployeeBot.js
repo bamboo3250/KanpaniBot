@@ -471,9 +471,9 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
                                     .write(imageName, function() {
                                         var channel = message.channel;
                                         console.log("Finished downloading");
-                                        if (channel.type === "text") {
+                                        if (channel.type === "text" || channel.type === "dm") {
                                             var emojiName = 'k' + employee.getClass().toLowerCase();
-                                            const classEmoji = message.guild.emojis.find('name', emojiName);
+                                            const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
                                             console.log(emojiName + ": " + classEmoji);
                                             var text = "\n";
                                             text += "Employee **No." + employee._no + "**\n";
