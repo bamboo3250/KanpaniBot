@@ -31,12 +31,8 @@ Employee.prototype.isEx = function() {
     return parseInt(this._id.substring(4,5)) == 9;
 }
 
-Employee.prototype.getFullBodyImageURL = function() {
-    return this.DOMAIN + "/img/character/" + this._id + "/illust/full.png";
-}
-
-Employee.prototype.getPhotoImageURL = function() {
-    return this.DOMAIN + "/img/character/" + this._id + "/illust/photo.png";
+Employee.prototype.getIllustURL = function(category) {
+    return this.DOMAIN + "/img/character/" + this._id + "/illust/" + category + ".png";
 }
 
 Employee.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, isCW = false, weaponId = 11) {

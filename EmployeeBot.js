@@ -434,49 +434,58 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
     } else {
         employee = new Employee(employee);
 
-        var fullBodyUrl = employee.getFullBodyImageURL();
-        var photoUrl = employee.getPhotoImageURL();
+        var bustupUrl = employee.getIllustURL("bustup");
         var star = 6;
         if (employee.getBaseRarity() === 5) star++;
         var enemySpriteUrl = employee.getSpriteImageURL(star, true, true);
         var allySpriteUrl = employee.getSpriteImageURL(star, false, true);
 
-        var fullBodyFileName = "full/" + employee._id + ".png";
-        var photoFileName = "photo/" + employee._id + ".png";
+        var bustupFileName = "bustup/" + employee._id + ".png";
         var enemySpriteFileName = "enemy/" + employee.getSpriteImageName(6, true);
         var allySpriteFileName = "ally/" + employee.getSpriteImageName(6, true);
 
         var that = this;
         this.imageDownloader.download(enemySpriteUrl, enemySpriteFileName, function() {
             that.imageDownloader.download(allySpriteUrl, allySpriteFileName, function() {
+                that.imageDownloader.download(bustupUrl, bustupFileName, function() {
+                    Jimp.read(enemySpriteFileName, function (err, image) {
+                        var enemySpriteImage = image;
+                        Jimp.read(allySpriteFileName, function (err, image) {
+                            var allySpriteImage = image;
+                            Jimp.read(bustupFileName, function (err, image) {
+                                var bustupImage = image;
 
-                Jimp.read(enemySpriteFileName, function (err, image) {
-                    var enemySpriteImage = image;
-                    Jimp.read(allySpriteFileName, function (err, image) {
-                        var allySpriteImage = image;
-                        allySpriteImage.crop(0, 0, 360, 270);
-                        enemySpriteImage.crop(0, 0, 360, 270);
+                                allySpriteImage.crop(0, 0, 360, 270);
+                                enemySpriteImage.crop(0, 0, 360, 270);
+                                bustupImage.resize(Jimp.AUTO, 600).opacity(0.3);
 
-                        var imageName = "chara/" + employee._id + ".png";
-                        var image = new Jimp(480, 290, function (err, image) {
-                            image.composite(enemySpriteImage, 160, 0)
-                            .composite(allySpriteImage, -60, 40)
-                            .write(imageName, function() {
-                                var channel = message.channel;
-                                console.log("Finished downloading");
-                                if (channel.type === "text") {
-                                    var emojiName = 'k' + employee.getClass().toLowerCase();
-                                    const classEmoji = message.guild.emojis.find('name', emojiName);
-                                    console.log(emojiName + ": " + classEmoji);
-                                    var text = "\n";
-                                    text += "Employee **No." + employee._no + "**\n";
-                                    text += "Name: **" + employee.fullName + " (" + employee.japaneseName + ")**\n";
-                                    text += "Class: **" + employee.getClass() + "** " +  (classEmoji != null? classEmoji : "") + "\n";
-                                    text += "Rarity: ";
-                                    for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
-                                    text += "\n";
-                                    channel.sendFile(imageName, "png", text);
-                                }    
+                                var imageName = "chara/" + employee._id + ".png";
+                                var image = new Jimp(480, 290, function (err, image) {
+
+                                    image.composite(bustupImage, 
+                                        -Math.floor((bustupImage.bitmap.width - image.bitmap.width)/2), 
+                                        -Math.floor((bustupImage.bitmap.height - image.bitmap.height)/2)
+                                    )
+                                    .composite(enemySpriteImage, 160, 0)
+                                    .composite(allySpriteImage, -60, 40)
+                                    .write(imageName, function() {
+                                        var channel = message.channel;
+                                        console.log("Finished downloading");
+                                        if (channel.type === "text") {
+                                            var emojiName = 'k' + employee.getClass().toLowerCase();
+                                            const classEmoji = message.guild.emojis.find('name', emojiName);
+                                            console.log(emojiName + ": " + classEmoji);
+                                            var text = "\n";
+                                            text += "Employee **No." + employee._no + "**\n";
+                                            text += "Name: **" + employee.fullName + " (" + employee.japaneseName + ")**\n";
+                                            text += "Class: **" + employee.getClass() + "** " +  (classEmoji != null? classEmoji : "") + "\n";
+                                            text += "Rarity: ";
+                                            for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
+                                            text += "\n";
+                                            channel.sendFile(imageName, "png", text);
+                                        }    
+                                    });
+                                });
                             });
                         });
                     });
