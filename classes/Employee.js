@@ -41,12 +41,9 @@ Employee.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, isCW =
     }
     if (parseInt(weaponId) < 10) weaponId = "0" + weaponId;
     weaponId = this._id.substring(2,3) + weaponId;
-    if (isCW && this.cwId != 0) {
-        weaponId = "8" + weaponId;
-    } else {
-        weaponId = "0" + weaponId;
-    }
-    weaponId = "30" + weaponId;
+    weaponId = (isCW && this.cwId != 0 ? "8" : "0") + weaponId;
+    weaponId = (this.isEx() ? "9" : "0") + weaponId;
+    weaponId = "3" + weaponId;
     return this.DOMAIN + "/img/character/" + this._id + "/" + (isEnemy? "enemy" : "ally") + "/" + star + "_" + weaponId + "_idle.png";
 }
 

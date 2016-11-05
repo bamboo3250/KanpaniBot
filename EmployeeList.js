@@ -220,7 +220,7 @@ var employees = [
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 1, _id: "10349001_eea406c9", fullName: "Liliana Bartek", japaneseName: "リリアナ・バールテク", commonNames: ["Liliana"], cwId: 1,
+        _no: 1, _id: "10349001_eea406c9", fullName: "Liliana Bartek", japaneseName: "リリアナ・バールテク", commonNames: ["Ex Liliana"], cwId: 1,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },
@@ -362,7 +362,7 @@ var employees = [
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 4, _id: "10849001_49dac68d", fullName: "Aurora Hard", japaneseName: "アウロラ・ホード", commonNames: ["Aurora"], cwId: 1,
+        _no: 4, _id: "10849001_49dac68d", fullName: "Aurora Hard", japaneseName: "アウロラ・ホード", commonNames: ["Ex Aurora"], cwId: 1,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },
@@ -446,7 +446,7 @@ var employees = [
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 3, _id: "10239001_c7e95cf6", fullName: "Aoi Shimon", japaneseName: "アオイ・シモン", commonNames: ["Aoi"], cwId: 1,
+        _no: 3, _id: "10239001_c7e95cf6", fullName: "Aoi Shimon", japaneseName: "アオイ・シモン", commonNames: ["Ex Aoi"], cwId: 1,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },
@@ -602,7 +602,7 @@ var employees = [
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 2, _id: "10639001_ed7dca28", fullName: "Tina Grenville", japaneseName: "ティナ・グレンヴィル", commonNames: ["Tina"], cwId: 1,
+        _no: 2, _id: "10639001_ed7dca28", fullName: "Tina Grenville", japaneseName: "ティナ・グレンヴィル", commonNames: ["Ex Tina"], cwId: 1,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },

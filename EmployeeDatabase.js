@@ -18,7 +18,7 @@ EmployeeDatabase.prototype.isEx = function(employeeId) {
 EmployeeDatabase.prototype.getEmployeeByCommonName = function(commonName) {
     commonName = commonName.trim().toLowerCase();
     for(var i=0;i<this.employeeList.length;i++) {
-        if (!this.isEx(this.employeeList[i]._id) && this.contains(this.employeeList[i].commonNames, commonName)) {
+        if (this.contains(this.employeeList[i].commonNames, commonName)) {
             return this.employeeList[i];
         }
     }

@@ -464,19 +464,20 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
 
                                     image.composite(bustupImage, 
                                         -Math.floor((bustupImage.bitmap.width - image.bitmap.width)/2), 
-                                        -Math.floor((bustupImage.bitmap.height - image.bitmap.height)/2)
+                                        -Math.floor((bustupImage.bitmap.height - image.bitmap.height)/2) - 20
                                     )
                                     .composite(enemySpriteImage, 160, 0)
                                     .composite(allySpriteImage, -60, 40)
+                                    .crop(1, 0, 478, 290)
                                     .write(imageName, function() {
                                         var channel = message.channel;
                                         console.log("Finished downloading");
                                         if (channel.type === "text" || channel.type === "dm") {
                                             var emojiName = 'k' + employee.getClass().toLowerCase();
                                             const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
-                                            console.log(emojiName + ": " + classEmoji);
+                                            //console.log(emojiName + ": " + classEmoji);
                                             var text = "\n";
-                                            text += "Employee **No." + employee._no + "**\n";
+                                            text += "Employee **No." + (employee.isEx()?"EX":"") + employee._no + "**\n";
                                             text += "Name: **" + employee.fullName + " (" + employee.japaneseName + ")**\n";
                                             text += "Class: **" + employee.getClass() + "** " +  (classEmoji != null? classEmoji : "") + "\n";
                                             text += "Rarity: ";
