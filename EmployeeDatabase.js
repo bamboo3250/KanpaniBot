@@ -688,286 +688,262 @@ var employees = [
     },
 
     {
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 44, id: "10120001_c31d7899", fullName: "Sophie Vieuille", japaneseName: "ソフィ・ヴュイーヨ", commonNames: ["Sophie"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 37, id: "10120002_b803fa7a", fullName: "Lise Baudrier", japaneseName: "リーズ・ボードリエ", commonNames: ["Lise", "Lize"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 51, id: "10120003_27d979e4", fullName: "Laetitia Borrel", japaneseName: "レティシア・ボレル", commonNames: ["Laetitia"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 26, id: "10120004_4e3effbc", fullName: "Flavie D'Ivry", japaneseName: "フラヴィ・ディヴリー", commonNames: ["Flavie"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
-        baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 45, id: "10220001_314a9561", fullName: "Aoi Shimon", japaneseName: "アオイ・シモン", commonNames: ["Aoi"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 33, id: "10220002_4a541782", fullName: "Rin Manaka", japaneseName: "リン・マナカ", commonNames: ["Rin"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 27, id: "10220003_d58e941c", fullName: "Kirino Sina", japaneseName: "キリノ・シイナ", commonNames: ["Kirino"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 52, id: "10220004_bc691244", fullName: "Kou Kutsuki", japaneseName: "コウ・クツキ", commonNames: ["Kou"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 32, id: "10320001_d65733f6", fullName: "Alena Ciganek", japaneseName: "アレナ・ツィガーネク", commonNames: ["Alena"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 34, id: "10320002_ad49b115", fullName: "Sara Bruzek", japaneseName: "サーラ・ブルージェク", commonNames: ["Sara"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 30, id: "10320003_3293328b", fullName: "Romana Ledvina", japaneseName: "ロマナ・レドヴィナ", commonNames: ["Romana"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 48, id: "10320004_5b74b4d3", fullName: "Dita Dolejsi", japaneseName: "ディタ・ドレイシー", commonNames: ["Dita"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 54, id: "10420001_0e9448d0", fullName: "Tea De Vita", japaneseName: "テーア・デ・ヴィータ", commonNames: ["Tea"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 50, id: "10420002_758aca33", fullName: "Marica Iommi", japaneseName: "マリカ・イオンミ", commonNames: ["Marica"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 38, id: "10420003_ea5049ad", fullName: "Romina Bassi", japaneseName: "ロミーナ・バッシ", commonNames: ["Romina"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 39, id: "10420004_83b7cff5", fullName: "Giusta Mari", japaneseName: "ジュスタ・マーリ", commonNames: ["Giusta"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 56, id: "10520001_e989ee47", fullName: "Ilse Adenauer", japaneseName: "イルゼ・アデナウアー", commonNames: ["Ilse"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 35, id: "10520002_92976ca4", fullName: "Lena Lehmkuhl", japaneseName: "レーナ・レームクール", commonNames: ["Lena"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 49, id: "10520003_0d4def3a", fullName: "Kaja Quantz", japaneseName: "カーヤ・クヴァンツ", commonNames: ["Kaja"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 25, id: "10520004_64aa6962", fullName: "Teresia Wieck", japaneseName: "テレージア・ヴィーク", commonNames: ["Teresia"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 42, id: "10620001_1bde03bf", fullName: "Sadie Salk", japaneseName: "セイディ・ソーク", commonNames: ["Sadie"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 36, id: "10620002_60c0815c", fullName: "Jenna Mill", japaneseName: "ジェナ・ミル", commonNames: ["Jenna"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 55, id: "10620003_ff1a02c2", fullName: "Ivy Abel", japaneseName: "アイヴィー・エイベル", commonNames: ["Ivy"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 43, id: "10620004_96fd849a", fullName: "Tina Grenville", japaneseName: "ティナ・グレンヴィル", commonNames: ["Tina"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 29, id: "10720001_fcc3a528", fullName: "Amaria Haila", japaneseName: "アマリア・ハイラ", commonNames: ["Amaria"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 41, id: "10720002_87dd27cb", fullName: "Kaarina Narhi", japaneseName: "カーリナ・ナルヒ", commonNames: ["Kaarina"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 40, id: "10720003_1807a455", fullName: "Pulum Ekroos", japaneseName: "プルム・エクルース", commonNames: ["Pulum"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 53, id: "10720004_71e0220d", fullName: "Mervi Niilora", japaneseName: "メルヴィ・ニーロラ", commonNames: ["Mervi"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 28, id: "10820001_7129f3b2", fullName: "Hilde Gardeerud", japaneseName: "ヒルダ・ヤーデルード", commonNames: ["Hilde"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 46, id: "10820002_0a377151", fullName: "Tilda Bladh", japaneseName: "ティルダ・ブラード", commonNames: ["Tilda"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 31, id: "10820003_95edf2cf", fullName: "Felicia Falk", japaneseName: "フェリシア・ファルク", commonNames: ["Felicia"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 47, id: "10820004_fc0a7497", fullName: "Fanny Stenius", japaneseName: "ファンヌ・ステニウス", commonNames: ["Fanny"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 3, id: "10110001_f6f0ceca", fullName: "Viviane Dore", japaneseName: "ヴィヴィアーヌ・ドレ", commonNames: ["Viviane"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 20, id: "10110002_8dee4c29", fullName: "Nina Arouet", japaneseName: "ニナ・アルエ", commonNames: ["Nina"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 12, id: "10110003_1234cfb7", fullName: "Lelia Llotte", japaneseName: "レリア・ロロット", commonNames: ["Lelia"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 6, id: "10210001_04a72332", fullName: "Haruka Mikuriya", japaneseName: "ハルカ・ミクリヤ", commonNames: ["Haruka"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 7, id: "10210002_7fb9a1d1", fullName: "Kikyou Miura", japaneseName: "キキョウ・ミウラ", commonNames: ["Kikyou"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 14, id: "10210003_e063224f", fullName: "Madoka Muguruma", japaneseName: "マドカ・ムグルマ", commonNames: ["Madoka"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 15, id: "10310001_e3ba85a5", fullName: "Eva Charvat", japaneseName: "エヴァ・ハルバート", commonNames: ["Eva"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 1, id: "10310002_98a40746", fullName: "Alice Brejcha", japaneseName: "アリツェ・ブレイハ", commonNames: ["Alice"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 19, id: "10310003_077e84d8", fullName: "Dagmar Jenik", japaneseName: "ダグマル・イエニーク", commonNames: ["Dagmar"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 18, id: "10410001_3b79fe83", fullName: "Claudia Capua", japaneseName: "クラウディア・カプア", commonNames: ["Claudia"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 21, id: "10410002_40677c60", fullName: "Flavia Scirea", japaneseName: "フラヴィア・シレア", commonNames: ["Flavia"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 23, id: "10410003_dfbdfffe", fullName: "Edda Creti", japaneseName: "エッダ・クレーティ", commonNames: ["Edda"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 8, id: "10510001_dc645814", fullName: "Jenny Meie", japaneseName: "イェニー・マイエ", commonNames: ["Jenny"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 9, id: "10510002_a77adaf7", fullName: "Romilda Bork", japaneseName: "ロミルダ・ボルク", commonNames: ["Romilda"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 17, id: "10510003_38a05969", fullName: "Iris Bernet", japaneseName: "イーリス・ベルネット", commonNames: ["Iris"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 24, id: "10610001_2e33b5ec", fullName: "Claire D'Arcy", japaneseName: "クレア・ダーシー", commonNames: ["Claire"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 2, id: "10610002_552d370f", fullName: "Phyllis Ennis", japaneseName: "フィリス・エニス", commonNames: ["Phyllis"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 4, id: "10610003_caf7b491", fullName: "Karen Vaughan", japaneseName: "カレン・ヴォーン", commonNames: ["Karen"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 22, id: "10710001_c92e137b", fullName: "Lilli Haanpaa", japaneseName: "リッリ・ハーンパー", commonNames: ["Lilli"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 10, id: "10710002_b2309198", fullName: "Oili Huhtala", japaneseName: "オイリ・フフタラ", commonNames: ["Oili"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 13, id: "10710003_2dea1206", fullName: "Loviisa Kiesi", japaneseName: "ロヴィーサ・キエシ", commonNames: ["Loviisa"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+    },
+
+    {
+        _no: 11, id: "10810001_44c445e1", fullName: "Svea Warg", japaneseName: "スヴェア・ヴァリ", commonNames: ["Svea"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 16, id: "10810002_3fdac702", fullName: "Doris Rehn", japaneseName: "ドリス・レーン", commonNames: ["Doris"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
+        _no: 5, id: "10810003_a000449c", fullName: "Ronja Edwall", japaneseName: "ロニヤ・エドヴァール", commonNames: ["Ronja"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
-    },{
+    },
+
+    {
         _no: 0, id: "", fullName: "", japaneseName: "", commonNames: [""], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
