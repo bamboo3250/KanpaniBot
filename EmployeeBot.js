@@ -1,9 +1,15 @@
 var Discord = require("discord.js");
+var employeeDatabase = require('./EmployeeDatabase');
+var Employee = require('./classes/Employee');
+var imageDownloader = require('./ImageDownloader');
 
-function Employee() {
+function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
     this.nutakuChannelName = "kanpani_girls";
     this.bot = new Discord.Client();
+    this.employeeDatabase = employeeDatabase;
+    this.imageDownloader = imageDownloader;
+
     this.dmmEventList = [
         {
             name: "Hotsprings, Monique, and Bath Towels",
@@ -92,7 +98,7 @@ function Employee() {
     this.firstTimeReady = true;
 }
 
-Employee.prototype.parseTime = function(millisec) {
+EmployeeBot.prototype.parseTime = function(millisec) {
     return {
         day: Math.floor(millisec/(24*60*60*1000)),
         hour: Math.floor((millisec%(24*60*60*1000))/(60*60*1000)),
@@ -101,18 +107,18 @@ Employee.prototype.parseTime = function(millisec) {
     };
 }
 
-Employee.prototype.isPM = function(message) {
+EmployeeBot.prototype.isPM = function(message) {
     return ((typeof message.guild === "undefined") || message.guild == null);
 }
 
-Employee.prototype.preventPM = function(message) {
+EmployeeBot.prototype.preventPM = function(message) {
     if (this.isPM(message)) {
         message.reply("You can't ask me in Private Message.");
         return true;
     } else return false;
 }
 
-Employee.prototype.handleEventCommand = function(message) {
+EmployeeBot.prototype.handleEventCommand = function(message) {
 
     var text = message.content.trim().toLowerCase();
     if (text !== "~event") return;
@@ -157,7 +163,7 @@ function getTimeUntilDaily(timeInString) {
     return timeUntil;
 }
 
-Employee.prototype.handleDailyCommand = function(message) {
+EmployeeBot.prototype.handleDailyCommand = function(message) {
 
     var text = message.content.trim().toLowerCase();
     if (text !== "~daily") return;
@@ -179,7 +185,7 @@ Employee.prototype.handleDailyCommand = function(message) {
     message.channel.sendMessage(text);
 }
 
-Employee.prototype.handleMaintenanceCommand = function(message) {
+EmployeeBot.prototype.handleMaintenanceCommand = function(message) {
 
     var text = message.content.trim().toLowerCase();
     if (text !== "~maint" && text !== "~maintenance") return;
@@ -224,7 +230,7 @@ function cleanText(text) {
     return removeExtraSpace(text.replace(/[^A-Za-z]+/g,' '));
 }
 
-Employee.prototype.handleBasicGreetingCommand = function(message) {
+EmployeeBot.prototype.handleBasicGreetingCommand = function(message) {
     var text = message.content.trim().toLowerCase();
     cleanedText = cleanText(text);
     
@@ -290,7 +296,7 @@ Employee.prototype.handleBasicGreetingCommand = function(message) {
     // }
 }
 
-Employee.prototype.handleSpecialCase = function(message) {
+EmployeeBot.prototype.handleSpecialCase = function(message) {
     if (message.author.id === "147305572012654592") {   // uzies special case
         var text = message.content.trim().toLowerCase();
         if (text === ":p" || text === ";p") {
@@ -299,23 +305,23 @@ Employee.prototype.handleSpecialCase = function(message) {
     }
 }
 
-Employee.prototype.isAdmin = function(message) {
+EmployeeBot.prototype.isAdmin = function(message) {
     return (message.author.id === "162995652152786944");
 }
 
-Employee.prototype.handleSleepCommand = function(message) {
+EmployeeBot.prototype.handleSleepCommand = function(message) {
     if (message.author.id != "162995652152786944") return;
     //message.channel.sendMessage("I'm going to sleep now~");
     //this.bot.destroy();
 }
 
-Employee.prototype.initBreadIfNeed = function(userId) {
+EmployeeBot.prototype.initBreadIfNeed = function(userId) {
     if (typeof this.remainingBread[userId] === "undefined") {
         this.remainingBread[userId] = this.startBread;
     }
 }
 
-Employee.prototype.createRemainingBreadLine = function(message) {
+EmployeeBot.prototype.createRemainingBreadLine = function(message) {
     var userId = message.author.id;
     if (this.isPM(message)) {
         return "Remaining Bread: " + this.remainingBread[userId];
@@ -325,7 +331,7 @@ Employee.prototype.createRemainingBreadLine = function(message) {
     }
 }
 
-Employee.prototype.handleBreadCommand = function(message) {
+EmployeeBot.prototype.handleBreadCommand = function(message) {
     var text = message.content.trim().toLowerCase();
     if (text !== "~bread") return;
     
@@ -333,7 +339,7 @@ Employee.prototype.handleBreadCommand = function(message) {
     message.reply(this.createRemainingBreadLine(message));
 }
 
-Employee.prototype.handleTotalBreadCommand = function(message) {
+EmployeeBot.prototype.handleTotalBreadCommand = function(message) {
     if (!this.isAdmin(message)) return;
     var text = message.content.trim().toLowerCase();
     if (text === "~totalbread") {
@@ -341,7 +347,7 @@ Employee.prototype.handleTotalBreadCommand = function(message) {
     }
 }
 
-Employee.prototype.handleAssignRoleCommand = function(message) {
+EmployeeBot.prototype.handleAssignRoleCommand = function(message) {
     var text = message.content.trim().toLowerCase();
     var member = message.member;
     if (member == null) return;
@@ -397,7 +403,7 @@ function getIdFromMention(text) {
     } else return "";
 }
 
-Employee.prototype.handleGiveBreadCommand = function(message) {
+EmployeeBot.prototype.handleGiveBreadCommand = function(message) {
     var text = removeExtraSpace(message.content.trim().toLowerCase());
     var args = text.split(" ");
     if (args[0] !== "~givebread") return;
@@ -414,7 +420,35 @@ Employee.prototype.handleGiveBreadCommand = function(message) {
     }
 }
 
-Employee.prototype.handleCommonCommand = function(message) {
+EmployeeBot.prototype.handleCharaCommand = function(message) {
+    var text = message.content.trim().toLowerCase();
+    if (!text.startsWith("~chara ")) return;
+    
+    var name = removeExtraSpace(cleanText(text.substring(6)));
+    if (name === "") return;
+
+    var employee = this.employeeDatabase.getEmployeeByCommonName(name);
+    if (employee == null) {
+        message.reply("No information.");
+    } else {
+        employee = new Employee(employee);
+
+        var fullBodyUrl = employee.getFullBodyImageURL();
+        var photoUrl = employee.getPhotoImageURL();
+        var spriteUrl = employee.getSpriteImageURL(6, true);
+        var fullBodyFileName = "full/" + employee._id + ".png";
+        var photoFileName = "photo/" + employee._id + ".png";
+        this.imageDownloader.download(photoUrl, photoFileName, function() {
+            var channel = message.channel;
+            console.log("Finished downloading");
+            if (channel.type === "text") {
+                channel.sendFile(photoFileName, "png", "test content");
+            }
+        });
+    }
+}
+
+EmployeeBot.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     this.handleEventCommand(message);
     this.handleMaintenanceCommand(message);
@@ -425,10 +459,11 @@ Employee.prototype.handleCommonCommand = function(message) {
     this.handleTotalBreadCommand(message);
     this.handleAssignRoleCommand(message);
     this.handleGiveBreadCommand(message);
+    this.handleCharaCommand(message);
     this.handleSpecialCase(message);
 }
 
-Employee.prototype.getRandomMessages = function(messageList) {
+EmployeeBot.prototype.getRandomMessages = function(messageList) {
     var length = messageList.length;
     if (length > 0) {
         return messageList[Math.floor(Math.random() * length)];    
@@ -436,7 +471,7 @@ Employee.prototype.getRandomMessages = function(messageList) {
     return "";
 }
 
-Employee.prototype.sayRandomMessages = function(channel, messageList) {
+EmployeeBot.prototype.sayRandomMessages = function(channel, messageList) {
     var length = messageList.length;
     if (length > 0) {
         var message = this.getRandomMessages(messageList);
@@ -444,11 +479,11 @@ Employee.prototype.sayRandomMessages = function(channel, messageList) {
     }
 }
 
-Employee.prototype.greeting = function(channel) {
+EmployeeBot.prototype.greeting = function(channel) {
     this.sayRandomMessages(channel, this.greetings);
 }
 
-// Employee.prototype.setIdleTalk = function() {
+// EmployeeBot.prototype.setIdleTalk = function() {
 //     this.hasNewMessage = false;
 //     var time = Math.floor(Math.random() * (15*60*1000) + 15*60*1000);
 //     console.log(time);
@@ -467,7 +502,7 @@ Employee.prototype.greeting = function(channel) {
 //     }, time);  // 15 - 30 mins
 // }
 
-Employee.prototype.setDailyDrawReminderForNutaku = function() {
+EmployeeBot.prototype.setDailyDrawReminderForNutaku = function() {
     var time = getTimeUntilDaily(this.nutakuDailyRemind); 
     var that = this;
     console.log("time: " + time);
@@ -485,7 +520,7 @@ Employee.prototype.setDailyDrawReminderForNutaku = function() {
     }, time);
 }
 
-Employee.prototype.setDailyDrawReminderForDmm = function() {
+EmployeeBot.prototype.setDailyDrawReminderForDmm = function() {
     var time = getTimeUntilDaily(this.dmmDailyRemind); 
     var that = this;
     setTimeout(function() {
@@ -502,7 +537,7 @@ Employee.prototype.setDailyDrawReminderForDmm = function() {
     }, time);
 }
 
-Employee.prototype.setBreadRegeneration = function() {
+EmployeeBot.prototype.setBreadRegeneration = function() {
     var that = this;
     setTimeout(function() {
         for(key in that.remainingBread) {
@@ -518,7 +553,7 @@ Employee.prototype.setBreadRegeneration = function() {
     }, that.replenishTime);
 }
 
-Employee.prototype.ready = function() {
+EmployeeBot.prototype.ready = function() {
     if (this.firstTimeReady) {
         console.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
         console.log("-----");
@@ -538,7 +573,7 @@ Employee.prototype.ready = function() {
     }
 }
 
-var employee = new Employee();
+var employee = new EmployeeBot();
 
 employee.bot.on('guildMemberAdd', (guild, member) => {
     var channels = guild.channels.array();

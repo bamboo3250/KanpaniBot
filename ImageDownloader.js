@@ -1,15 +1,23 @@
 var http = require('http');
 var fs = require('fs');
 
-function FileDownloader() {
-    this.download()
+function ImageDownloader() {
 }
 
+ImageDownloader.prototype.download = function(urlToDownload, fileName, callback) {
+    fs.access(fileName, fs.F_OK, function(err) {
+        if (err) {
+            var file = fs.createWriteStream(fileName);
+            console.log("Downloading File.");
+            var request = http.get(urlToDownload, function(response) {
+                  response.pipe(file);
+                  callback();
+            });
+        } else {
+            console.log("File existed.");
+            callback();
+        }
+    });
+}
 
-
-var file = fs.createWriteStream("file.jpg");
-var request = http.get("http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg", function(response) {
-  response.pipe(file);
-});
-
-module.exports = new Employee();
+module.exports = new ImageDownloader();
