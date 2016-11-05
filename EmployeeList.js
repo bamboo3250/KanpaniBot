@@ -122,7 +122,7 @@ var employees = [
     },
 
     {
-        _no: 109, _id: "10850001_bf790f1a", fullName: "Ann-Marie Ek", japaneseName: "アン＝マリー・エク", commonNames: ["Ann-Marie"], cwId: 12,
+        _no: 109, _id: "10850001_bf790f1a", fullName: "Ann-Marie Ek", japaneseName: "アン＝マリー・エク", commonNames: ["Ann-Marie", "Ann Marie"], cwId: 12,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
@@ -130,7 +130,7 @@ var employees = [
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 173, _id: "10850003_5bbd0e67", fullName: "Sarah-Moon Kjaell", japaneseName: "サラ＝ムーン・シエル", commonNames: ["Sarah-Moon", "Sara-Moon"], cwId: 0,
+        _no: 173, _id: "10850003_5bbd0e67", fullName: "Sarah-Moon Kjaell", japaneseName: "サラ＝ムーン・シエル", commonNames: ["Sarah-Moon", "Sara-Moon", "Sarah Moon", "Sara Moon"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{

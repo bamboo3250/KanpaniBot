@@ -8,10 +8,15 @@ ImageDownloader.prototype.download = function(urlToDownload, fileName, callback)
     fs.access(fileName, fs.F_OK, function(err) {
         if (err) {
             var file = fs.createWriteStream(fileName);
-            console.log("Downloading File.");
+            console.log("Downloading File: " + urlToDownload);
             var request = http.get(urlToDownload, function(response) {
-                  response.pipe(file);
-                  callback();
+                console.log("statusCode: " + response.statusCode);
+                console.log("content-type: " + response.headers['content-type']);
+                
+                response.pipe(file);
+                response.on('end', () => {
+                    callback();
+                });
             });
         } else {
             console.log("File existed.");

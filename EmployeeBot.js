@@ -2,6 +2,7 @@ var Discord = require("discord.js");
 var employeeDatabase = require('./EmployeeDatabase');
 var Employee = require('./classes/Employee');
 var imageDownloader = require('./ImageDownloader');
+var Jimp = require("jimp");
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -435,15 +436,52 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
 
         var fullBodyUrl = employee.getFullBodyImageURL();
         var photoUrl = employee.getPhotoImageURL();
-        var spriteUrl = employee.getSpriteImageURL(6, true);
+        var star = 6;
+        if (employee.getBaseRarity() === 5) star++;
+        var enemySpriteUrl = employee.getSpriteImageURL(star, true, true);
+        var allySpriteUrl = employee.getSpriteImageURL(star, false, true);
+
         var fullBodyFileName = "full/" + employee._id + ".png";
         var photoFileName = "photo/" + employee._id + ".png";
-        this.imageDownloader.download(photoUrl, photoFileName, function() {
-            var channel = message.channel;
-            console.log("Finished downloading");
-            if (channel.type === "text") {
-                channel.sendFile(photoFileName, "png", "test content");
-            }
+        var enemySpriteFileName = "enemy/" + employee.getSpriteImageName(6, true);
+        var allySpriteFileName = "ally/" + employee.getSpriteImageName(6, true);
+
+        var that = this;
+        this.imageDownloader.download(enemySpriteUrl, enemySpriteFileName, function() {
+            that.imageDownloader.download(allySpriteUrl, allySpriteFileName, function() {
+
+                Jimp.read(enemySpriteFileName, function (err, image) {
+                    var enemySpriteImage = image;
+                    Jimp.read(allySpriteFileName, function (err, image) {
+                        var allySpriteImage = image;
+                        allySpriteImage.crop(0, 0, 360, 270);
+                        enemySpriteImage.crop(0, 0, 360, 270);
+
+                        var imageName = "chara/" + employee._id + ".png";
+                        var image = new Jimp(480, 290, function (err, image) {
+                            image.composite(enemySpriteImage, 160, 0)
+                            .composite(allySpriteImage, -60, 40)
+                            .write(imageName, function() {
+                                var channel = message.channel;
+                                console.log("Finished downloading");
+                                if (channel.type === "text") {
+                                    var emojiName = 'k' + employee.getClass().toLowerCase();
+                                    const classEmoji = message.guild.emojis.find('name', emojiName);
+                                    console.log(emojiName + ": " + classEmoji);
+                                    var text = "\n";
+                                    text += "Employee **No." + employee._no + "**\n";
+                                    text += "Name: **" + employee.fullName + " (" + employee.japaneseName + ")**\n";
+                                    text += "Class: **" + employee.getClass() + "** " +  (classEmoji != null? classEmoji : "") + "\n";
+                                    text += "Rarity: ";
+                                    for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
+                                    text += "\n";
+                                    channel.sendFile(imageName, "png", text);
+                                }    
+                            });
+                        });
+                    });
+                });
+            });
         });
     }
 }
