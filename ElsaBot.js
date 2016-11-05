@@ -28,10 +28,10 @@ var touches = [
         point: -15,
         text: "You are touching me too much! >\"<"
     },{
-        point: -5,
+        point: -7,
         text: "Yaaa... I'm weak that place... Hey!"
     },{
-        point: -3,
+        point: -5,
         text: "Hey, you are messing my hair >.<"
     },{
         point: 1,
@@ -49,7 +49,7 @@ var touches = [
         point: 7,
         text: "You sure do love tails... Hmm.. What is so fun about it..?"
     },{
-        point: 11,
+        point: 9,
         text: "Your touch is so warm and gentle, I like it :heart:"
     }
 ];
