@@ -165,7 +165,8 @@ function handlePatCommand(message) {
     var userId = message.author.id;
     if (typeof lastTimePat[userId] === "undefined") lastTimePat[userId] = 0;
     if (typeof affection[userId] === "undefined") affection[userId] = 0;
-    
+    if (message.channel.name === elsa.dmmChannelName) return;
+
     if (elsa.remainingBread[userId] > 0) {
         var now = new Date();
         var index = 0;
