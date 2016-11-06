@@ -1,6 +1,6 @@
 var Discord = require("discord.js");
 var employeeDatabase = require('./EmployeeDatabase');
-var Employee = require('./classes/Employee');
+var EmployeeInfo = require('./classes/EmployeeInfo');
 var imageDownloader = require('./ImageDownloader');
 var Jimp = require("jimp");
 
@@ -432,7 +432,7 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
     if (employee == null) {
         message.reply("No information.");
     } else {
-        employee = new Employee(employee);
+        employee = new EmployeeInfo(employee);
 
         var bustupUrl = employee.getIllustURL("bustup");
         var star = 6;
@@ -441,18 +441,21 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
         var allySpriteUrl = employee.getSpriteImageURL(star, false, true);
 
         var bustupFileName = "bustup/" + employee._id + ".png";
-        var enemySpriteFileName = "enemy/" + employee.getSpriteImageName(6, true);
-        var allySpriteFileName = "ally/" + employee.getSpriteImageName(6, true);
+        var enemySpriteFileName = "enemy/" + employee.getSpriteImageName(star, true);
+        var allySpriteFileName = "ally/" + employee.getSpriteImageName(star, true);
 
         var that = this;
         this.imageDownloader.download(enemySpriteUrl, enemySpriteFileName, function() {
             that.imageDownloader.download(allySpriteUrl, allySpriteFileName, function() {
                 that.imageDownloader.download(bustupUrl, bustupFileName, function() {
                     Jimp.read(enemySpriteFileName, function (err, image) {
+                        if (err) { console.log(err); return }
                         var enemySpriteImage = image;
                         Jimp.read(allySpriteFileName, function (err, image) {
+                            if (err) { console.log(err); return }
                             var allySpriteImage = image;
                             Jimp.read(bustupFileName, function (err, image) {
+                                if (err) { console.log(err); return }
                                 var bustupImage = image;
 
                                 allySpriteImage.crop(0, 0, 360, 270);

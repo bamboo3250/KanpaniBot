@@ -58,7 +58,7 @@ var employees = [
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 201, _id: "10450003_2400b505", fullName: "Michaela Jaccardo", japaneseName: "ミカエラ・ザッカルド", commonNames: ["Michaela"], cwId: 21,
+        _no: 201, _id: "10450003_2400b505", fullName: "Michaela Jaccardo", japaneseName: "ミカエラ・ザッカルド", commonNames: ["Michaela", "Mikaela"], cwId: 21,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{

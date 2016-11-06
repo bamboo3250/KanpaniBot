@@ -1,4 +1,4 @@
-var Employee = function(employeeInfo) {
+var EmployeeInfo = function(employeeInfo) {
     this.DOMAIN = "http://img4.kanpani.jp";
 
     this._no = employeeInfo._no;
@@ -11,7 +11,7 @@ var Employee = function(employeeInfo) {
     this.cwId = employeeInfo.cwId;
 }
 
-Employee.prototype.getClass = function() {
+EmployeeInfo.prototype.getClass = function() {
     var classValue = parseInt(this._id.substring(2,3));
     if (classValue === 1) return "Fighter";
     if (classValue === 2) return "Ronin";
@@ -23,19 +23,19 @@ Employee.prototype.getClass = function() {
     return "Magician";
 }
 
-Employee.prototype.getBaseRarity = function() {
+EmployeeInfo.prototype.getBaseRarity = function() {
     return parseInt(this._id.substring(3,4));
 }
 
-Employee.prototype.isEx = function() {
+EmployeeInfo.prototype.isEx = function() {
     return parseInt(this._id.substring(4,5)) == 9;
 }
 
-Employee.prototype.getIllustURL = function(category) {
+EmployeeInfo.prototype.getIllustURL = function(category) {
     return this.DOMAIN + "/img/character/" + this._id + "/illust/" + category + ".png";
 }
 
-Employee.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, isCW = false, weaponId = 11) {
+EmployeeInfo.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, isCW = false, weaponId = 11) {
     if (isCW && this.cwId != 0) {
         weaponId = this.cwId;
     }
@@ -47,7 +47,7 @@ Employee.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, isCW =
     return this.DOMAIN + "/img/character/" + this._id + "/" + (isEnemy? "enemy" : "ally") + "/" + star + "_" + weaponId + "_idle.png";
 }
 
-Employee.prototype.getSpriteImageName = function(star = 6, isCW = false, weaponId = 11) {
+EmployeeInfo.prototype.getSpriteImageName = function(star = 6, isCW = false, weaponId = 11) {
     if (isCW && this.cwId != 0) {
         weaponId = this.cwId;
     }
@@ -63,4 +63,4 @@ Employee.prototype.getSpriteImageName = function(star = 6, isCW = false, weaponI
 }
 
 
-module.exports = Employee;
+module.exports = EmployeeInfo;

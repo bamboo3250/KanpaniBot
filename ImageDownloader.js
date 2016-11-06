@@ -12,7 +12,8 @@ ImageDownloader.prototype.download = function(urlToDownload, fileName, callback)
             var request = http.get(urlToDownload, function(response) {
                 console.log("statusCode: " + response.statusCode);
                 console.log("content-type: " + response.headers['content-type']);
-                
+                if (response.statusCode != 200) return;
+
                 response.pipe(file);
                 response.on('end', () => {
                     callback();
