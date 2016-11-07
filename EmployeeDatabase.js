@@ -29,7 +29,7 @@ function getMinimumEditDistance(name1, name2) {
     name1 = "#" + name1.trim().toLowerCase();
     name2 = "#" + name2.trim().toLowerCase();
     if (name2.startsWith(name1)) return 0;
-    
+
     var distance = [];
     for(var i=0;i<name1.length;i++) {
         distance.push([]);
@@ -42,10 +42,10 @@ function getMinimumEditDistance(name1, name2) {
             if (name1[i] === name2[j]) {
                 distance[i][j] = Math.min(distance[i][j], distance[i-1][j-1]);
             } else {
-                distance[i][j] = Math.min(distance[i][j], distance[i-1][j-1]+5);
+                distance[i][j] = Math.min(distance[i][j], distance[i-1][j-1]+2);
             }
-            distance[i][j] = Math.min(distance[i][j], distance[i-1][j]+2);
-            distance[i][j] = Math.min(distance[i][j], distance[i][j-1]+2);
+            distance[i][j] = Math.min(distance[i][j], distance[i-1][j]+1);
+            distance[i][j] = Math.min(distance[i][j], distance[i][j-1]+1);
         }
     }
     return distance[name1.length-1][name2.length-1];

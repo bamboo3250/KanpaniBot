@@ -442,6 +442,13 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
         message.reply(text);
 
     } else {
+        var userId = message.author.id;
+        if (this.remainingBread[userId] <= 0) {
+            message.reply("You don't have enough bread.");
+            return;
+        }
+        this.remainingBread[userId]--;
+
         employee = new EmployeeInfo(employee);
 
         var bustupUrl = employee.getIllustURL("bustup");
@@ -490,7 +497,7 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
                                             const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
                                             //console.log(emojiName + ": " + classEmoji);
                                             var text = "\n";
-                                            text += "Employee **No." + (employee.isEx()?"EX":"") + employee._no + "**\n";
+                                            text += "Employee **No." + (employee.isEx()?"EX":"") + (employee._no == 0? "???":employee._no)  + "**\n";
                                             text += "Name: **" + employee.fullName + " (" + employee.japaneseName + ")**\n";
                                             text += "Class: **" + employee.getClass() + "** " +  (classEmoji != null? classEmoji : "") + "\n";
                                             text += "Rarity: ";
