@@ -434,7 +434,22 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
 
     var employee = this.employeeDatabase.getEmployeeByCommonName(name);
     if (employee == null) {
-        var suggestions = this.employeeDatabase.getSuggestions(name);
+        var classId = -1;
+        if (name == "fighter") classId = 1;
+        if (name == "ronin") classId = 2;
+        if (name == "archer") classId = 3;
+        if (name == "soldier") classId = 4;
+        if (name == "warrior") classId = 5;
+        if (name == "cleric" || name == "healer") classId = 6;
+        if (name == "rogue" || name == "assassin") classId = 7;
+        if (name == "magician" || name == "mage") classId = 8;
+
+        var suggestions = [];
+        if (classId > 0) {
+            suggestions = this.employeeDatabase.getSuggestionsByClass(classId);
+        } else {
+            suggestions = this.employeeDatabase.getSuggestionsByName(name);
+        }
         text = "Do you mean: ";
         for(var i=0;i<suggestions.length;i++) {
             text += "**" + suggestions[i] + "**" + (i<suggestions.length-1 ? (i<suggestions.length-2?", ":" or ") : "?");
