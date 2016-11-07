@@ -458,11 +458,13 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
 
     } else {
         var userId = message.author.id;
-        if (this.remainingBread[userId] <= 0) {
-            message.reply("You don't have enough bread.");
-            return;
+        if (!this.isPM(message)) {
+            if (this.remainingBread[userId] <= 0) {
+                message.reply("You don't have enough bread.");
+                return;
+            }
+            this.remainingBread[userId]--;    
         }
-        this.remainingBread[userId]--;
 
         employee = new EmployeeInfo(employee);
 
