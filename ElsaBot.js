@@ -35,10 +35,10 @@ var touches = [
         text: "Hey, you are messing my hair >.<"
     },{
         point: 1,
-        text: "You have nothing else to do, don't you?"
+        text: "You have nothing else to do, do you?"
     },{
         point: 2,
-        text: "I don't dislike you patting me tho"
+        text: "I don't dislike you patting me though."
     },{
         point: 3,
         text: "Is patting me that fun?"
