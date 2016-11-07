@@ -425,12 +425,22 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
     var text = message.content.trim().toLowerCase();
     if (!text.startsWith("~chara ")) return;
     
-    var name = removeExtraSpace(cleanText(text.substring(6)));
+    var name = removeExtraSpace(text.substring(6));
     if (name === "") return;
+    if (name.length > 100) {
+        message.reply("The name is too long!");
+        return;
+    }
 
     var employee = this.employeeDatabase.getEmployeeByCommonName(name);
     if (employee == null) {
-        message.reply("No information.");
+        var suggestions = this.employeeDatabase.getSuggestions(name);
+        text = "Do you mean: ";
+        for(var i=0;i<suggestions.length;i++) {
+            text += "**" + suggestions[i] + "**" + (i<suggestions.length-1 ? (i<suggestions.length-2?", ":" or ") : "?");
+        }
+        message.reply(text);
+
     } else {
         employee = new EmployeeInfo(employee);
 
