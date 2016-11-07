@@ -139,13 +139,13 @@ function loadAffection() {
 
 const REWARD_ROLE_NAME = 'Ally of Kemomin';
 
-function updateRole(message, userId) {
+function updateRole(message, member) {
+    if (member == null) return;
     if (elsa.isPM(message)) return;
     var allyRole = message.guild.roles.find('name', REWARD_ROLE_NAME);
-    var member = message.member;
     if (allyRole == null) return;
-    if (member == null) return;
-
+    
+    var userId = member.id;
     if (affection[userId] >= 100) {
         member.addRole(allyRole).then(guildMember => {
             console.log("Ally Role added.");
@@ -187,7 +187,7 @@ function handlePatCommand(message) {
         message.reply(text);
         lastTimePat[userId] = now.valueOf();
         saveAffection();
-        updateRole(message, userId);
+        updateRole(message, message.member);
     } else {
         message.reply(decline[randomInt(decline.length)]);
     }
@@ -203,7 +203,7 @@ function handleStatusCommand(message) {
             var text = status[i].text + "\n";
             text += "Affection: " + affection[userId] + "/100";
             message.reply(text);
-            updateRole(message, userId);
+            updateRole(message, message.member);
             return;
         }
     }
@@ -217,7 +217,6 @@ function handleRankingCommand(message) {
             userId: key,
             point: affection[key]
         });
-        updateRole(message, key);
     }
     result.sort(function(a, b) {
         return b.point - a.point;
@@ -233,12 +232,14 @@ function handleRankingCommand(message) {
                 text += (count+1) + ". " + member.user.username + " (" + result[i].point + ")\n";
             }
         }
+        for(var i=0;i<result.length;i++) {
+            var member = guild.members.find('id', result[i].userId);
+            if (member) updateRole(message, member);
+        }
         message.channel.sendMessage(text);
     }).catch(err => {
         message.channel.sendMessage("Fetching member error!");
     });
-
-    
 }
 
 function handleReduceCommand(message) {
