@@ -18,7 +18,7 @@ var employees = [
     },
 
     {
-        _no: 112, _id: "10250001_ff1a69c9", fullName: "Sion Seto", japaneseName: "シオン・セト", commonNames: ["Sion"], cwId: 14,
+        _no: 112, _id: "10250001_ff1a69c9", fullName: "Sion Seto", japaneseName: "シオン・セト", commonNames: ["Sion", "Shion"], cwId: 14,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
@@ -44,7 +44,7 @@ var employees = [
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 207, _id: "10350004_9524487b", fullName: "Canahart Vinokurov", japaneseName: "カナハ・ヴィノクロフ", commonNames: ["Canahart", "Canaha"], cwId: 0,
+        _no: 207, _id: "10350004_9524487b", fullName: "Canahart Vinokurov", japaneseName: "カナハ・ヴィノクロフ", commonNames: ["Canahart", "Canaha", "Kanaha"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },
@@ -62,7 +62,7 @@ var employees = [
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 185, _id: "10450004_4de7335d", fullName: "Cinzia Ghiglia", japaneseName: "シンツィア・ギリア", commonNames: ["Cinzia", "Cinthia"], cwId: 0,
+        _no: 185, _id: "10450004_4de7335d", fullName: "Cinzia Ghiglia", japaneseName: "シンツィア・ギリア", commonNames: ["Cinzia", "Cinthia", "Cynzia", "Cynthia"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },
@@ -678,7 +678,7 @@ var employees = [
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
-        _no: 162, _id: "10830009_f1506aca", fullName: "Siv Roman", japaneseName: "シーヴ・ルーマン", commonNames: ["Siv"], cwId: 0,
+        _no: 162, _id: "10830009_f1506aca", fullName: "Siv Roman", japaneseName: "シーヴ・ルーマン", commonNames: ["Siv", "Syv"], cwId: 0,
         baseStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0}
     },{
