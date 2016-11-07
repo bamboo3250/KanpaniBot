@@ -26,9 +26,12 @@ EmployeeDatabase.prototype.getEmployeeByCommonName = function(commonName) {
 }
 
 function getMinimumEditDistance(name1, name2) {
-    name1 = "#" + name1.trim().toLowerCase();
-    name2 = "#" + name2.trim().toLowerCase();
+    name1 = name1.trim().toLowerCase();
+    name2 = name2.trim().toLowerCase();
     if (name2.startsWith(name1)) return 0;
+    if (name2.endsWith(name1)) return 0;
+    name1 = "#" + name1;
+    name2 = "#" + name2;
 
     var distance = [];
     for(var i=0;i<name1.length;i++) {
@@ -94,7 +97,7 @@ EmployeeDatabase.prototype.getSuggestionsByName = function(commonName) {
 EmployeeDatabase.prototype.getSuggestionsByClass = function(classId) {
     var resultList = [];
     for(var i=0;i<this.employeeList.length;i++) {
-        var employeeId = this.employeeList[i].id;
+        var employeeId = this.employeeList[i]._id;
         if (parseInt(employeeId.substring(2,3)) == classId) {
             resultList.push(this.employeeList[i].commonNames[0]);
         }
