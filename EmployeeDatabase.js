@@ -26,10 +26,10 @@ EmployeeDatabase.prototype.getEmployeeByCommonName = function(commonName) {
 }
 
 function getMinimumEditDistance(name1, name2) {
-    if (name2.startsWith(name1)) return 0;
-
     name1 = "#" + name1.trim().toLowerCase();
     name2 = "#" + name2.trim().toLowerCase();
+    if (name2.startsWith(name1)) return 0;
+    
     var distance = [];
     for(var i=0;i<name1.length;i++) {
         distance.push([]);
