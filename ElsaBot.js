@@ -118,7 +118,7 @@ var status = [
     }
 ];
 
-var decline = dialog.elsa.decline;
+elsa.declineNotEnoughBread = elsa.declineNotEnoughBread.concat(dialog.elsa.decline);
 var affectionFileName = "affection.json";
 
 function saveAffection() {
@@ -166,31 +166,27 @@ function handlePatCommand(message) {
     if (typeof lastTimePat[userId] === "undefined") lastTimePat[userId] = 0;
     if (typeof affection[userId] === "undefined") affection[userId] = 0;
     if (message.channel.name === elsa.dmmChannelName) return;
+    if (!elsa.consumeBread(message)) return;
 
-    if (elsa.remainingBread[userId] > 0) {
-        var now = new Date();
-        var index = 0;
-        if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
-            index = randomIntRange(0, 3);
-        } else {
-            index = randomIntRange(1, 8);
-        }
-        var point = affection[userId] + touches[index].point;
-        affection[userId] = Math.max(Math.min(point, 100), -100);
-        elsa.remainingBread[userId]--;
-        elsa.total_bread++;
-        
-        var text = touches[index].text + "\n";
-        text += "Affection: " + affection[userId] + "/100 (" + (touches[index].point>=0?"+":"") + touches[index].point + ")\n";
-        text += elsa.createRemainingBreadLine(message);
-        
-        message.reply(text);
-        lastTimePat[userId] = now.valueOf();
-        saveAffection();
-        updateRole(message, message.member);
+    var now = new Date();
+    var index = 0;
+    if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
+        index = randomIntRange(0, 3);
     } else {
-        message.reply(decline[randomInt(decline.length)]);
+        index = randomIntRange(1, 8);
     }
+    var point = affection[userId] + touches[index].point;
+    affection[userId] = Math.max(Math.min(point, 100), -100);
+    elsa.total_bread++;
+    
+    var text = touches[index].text + "\n";
+    text += "Affection: " + affection[userId] + "/100 (" + (touches[index].point>=0?"+":"") + touches[index].point + ")\n";
+    text += elsa.createRemainingBreadLine(message);
+    
+    message.reply(text);
+    lastTimePat[userId] = now.valueOf();
+    saveAffection();
+    updateRole(message, message.member);
 }
 
 function handleStatusCommand(message) {

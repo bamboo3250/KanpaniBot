@@ -3,6 +3,7 @@ var employeeDatabase = require('./EmployeeDatabase');
 var EmployeeInfo = require('./classes/EmployeeInfo');
 var imageDownloader = require('./ImageDownloader');
 var Jimp = require("jimp");
+var fs = require('fs');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -95,6 +96,11 @@ function EmployeeBot() {
     this.replenishTime = 2*60*60*1000; // 2 hours
     this.remainingBread = {};
     this.total_bread = 0;
+    this.declineNotEnoughBread = [
+        "You don't have enough bread."
+    ];
+
+    this.hasSoul = {};
 
     this.firstTimeReady = true;
 }
@@ -298,11 +304,97 @@ EmployeeBot.prototype.handleBasicGreetingCommand = function(message) {
     // }
 }
 
+EmployeeBot.prototype.checkNoSoul = function(message) {
+    var userId = message.author.id;
+    if (typeof this.hasSoul[userId] === "undefined") this.hasSoul[userId] = true;
+    if (!this.hasSoul[userId]) {
+        message.reply("Your Soul has been taken. You can't use bread now.");
+        return true;
+    }
+    return false;
+}
+
+function checkCanManageSoul(message) {
+    if (message.author.id != "146556639342755840") {
+        message.guild.fetchMember("146556639342755840").then(member => {
+            message.reply("You are not qualified for this. Only " + member + " is allowed to manage your souls.");
+        }).catch(err => {
+            console.log("Error in fetching member. " + err)
+        });
+        return false;
+    }
+    return true;
+}
+
 EmployeeBot.prototype.handleSpecialCase = function(message) {
     if (message.author.id === "147305572012654592") {   // uzies special case
         var text = message.content.trim().toLowerCase();
         if (text === ":p" || text === ";p") {
             message.channel.sendMessage(text);
+        }
+        return;
+    }
+
+    var text = message.content.trim().toLowerCase();
+    if (text.startsWith("-eatsoul ")) {
+        if (this.preventPM(message)) return;
+        if (!checkCanManageSoul(message)) return;
+
+        const breadEmoji = message.guild.emojis.find('name', 'kbread');
+        const lolEmoji = message.guild.emojis.find('name', 'klol');
+
+        var content = text.substring(9);
+        var targetId = getIdFromMention(content);
+        if (targetId === "") return;
+        if (targetId === message.author.id) {
+            message.channel.sendMessage("Ewww " + message.author + ", that's disgusting... Are you sure you want to do that?");
+            return;
+        }
+
+        if (typeof this.hasSoul[targetId] === "undefined") this.hasSoul[targetId] = true;
+        if (this.hasSoul[targetId]) {
+            this.hasSoul[targetId] = false;
+            this.saveSoul();
+
+            message.guild.fetchMember(targetId).then(targetMember => {
+                message.channel.sendMessage(targetMember + " is now haunted. " + message.author + " devoured your Soul :ghost: and rendered the " + breadEmoji + " useless! " + lolEmoji);
+            }).catch(err => {
+                console.log("Error in fetching member. " + err)
+            });
+        } else {
+            message.channel.sendMessage(message.author + ", I understand that your hunger is insatiable, but only one Soul :ghost: for each person. Relax a bit!")
+        }
+        
+    } else if (text.startsWith("-givesoul ")) {
+        if (this.preventPM(message)) return;
+        if (!checkCanManageSoul(message)) return;
+
+        const breadEmoji = message.guild.emojis.find('name', 'kbread');
+
+        var content = text.substring(10);
+        var targetId = getIdFromMention(content);
+        if (targetId === "") return;
+        if (targetId === message.author.id) {
+            message.channel.sendMessage("Whose soul should I get for you, master " + message.author + "?");
+            return;
+        }
+
+        if (typeof this.hasSoul[targetId] === "undefined") this.hasSoul[targetId] = true;
+        if (!this.hasSoul[targetId]) {
+            this.hasSoul[targetId] = true;
+            this.saveSoul();
+
+            message.guild.fetchMember(targetId).then(targetMember => {
+                message.channel.sendMessage(message.author + " decided to return the Soul :ghost: back to " + targetMember + ". Use it wisely. The same with the " + breadEmoji + "!");
+            }).catch(err => {
+                console.log("Error in fetching member.")
+            });
+        } else {
+            message.guild.fetchMember(targetId).then(targetMember => {
+                message.channel.sendMessage(targetMember + " already has a Soul :ghost: . There's only so many that can fit in a single body.")    
+            }).catch(err => {
+                console.log("Error in fetching member.")
+            });
         }
     }
 }
@@ -405,6 +497,19 @@ function getIdFromMention(text) {
     } else return "";
 }
 
+EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
+    var userId = message.author.id;
+    this.initBreadIfNeed(userId);
+    if (this.checkNoSoul(message)) return false;
+    if (this.remainingBread[userId] >= amount) {
+        this.remainingBread[userId] -= amount;
+        return true;
+    } else {
+        message.reply("You don't have enough bread.");
+        return false;
+    }
+}
+
 EmployeeBot.prototype.handleGiveBreadCommand = function(message) {
     var text = removeExtraSpace(message.content.trim().toLowerCase());
     var args = text.split(" ");
@@ -414,11 +519,10 @@ EmployeeBot.prototype.handleGiveBreadCommand = function(message) {
     var receiverId = getIdFromMention(args[1]);
     if (receiverId === "") return;
 
-    this.initBreadIfNeed(receiverId);
-    if (this.remainingBread[giverId] > 0) {
-        this.remainingBread[giverId]--;
+    if (this.consumeBread(message, 1)) {
+        this.initBreadIfNeed(receiverId);
         this.remainingBread[receiverId]++;
-        message.reply("Your bread has been transfered.");
+        message.reply(this.declineNotEnoughBread[randomInt(this.declineNotEnoughBread.length)]);
     }
 }
 
@@ -458,14 +562,7 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
         message.reply(text);
 
     } else {
-        var userId = message.author.id;
-        if (!this.isPM(message)) {
-            if (this.remainingBread[userId] <= 0) {
-                message.reply("You don't have enough bread.");
-                return;
-            }
-            this.remainingBread[userId]--;    
-        }
+        if (!this.isPM(message) && !this.consumeBread(message, 1)) return;
 
         employee = new EmployeeInfo(employee);
 
@@ -639,6 +736,25 @@ EmployeeBot.prototype.setBreadRegeneration = function() {
     }, that.replenishTime);
 }
 
+var soulFileName = "soul.json";
+
+EmployeeBot.prototype.saveSoul = function() {
+    var textToWrite = JSON.stringify(this.hasSoul, null, 4);
+    fs.writeFile(soulFileName, textToWrite, function(err) {
+        if(err) return console.log(err);
+        console.log("The Soul file was saved!");
+    }); 
+}
+
+EmployeeBot.prototype.loadSoul = function() {
+    var that = this;
+    fs.readFile(soulFileName, 'utf8', function (err, data) {
+        if (err) return;
+        that.hasSoul = JSON.parse(data);
+        console.log("Soul file:");
+    });
+}
+
 EmployeeBot.prototype.ready = function() {
     if (this.firstTimeReady) {
         console.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
@@ -654,6 +770,7 @@ EmployeeBot.prototype.ready = function() {
         this.setDailyDrawReminderForDmm();
         this.setBreadRegeneration();
         this.firstTimeReady = false;
+        this.loadSoul();
     } else {
         console.log("Bot is restarted");
     }

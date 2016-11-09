@@ -21,20 +21,16 @@ function randomInt(max) {
 }
 
 var answerTexts = dialog.annalina.answers;
-var decline = dialog.annalina.decline;
+annalina.declineNotEnoughBread = annalina.declineNotEnoughBread.concat(dialog.annalina.decline);
 
 function handleQuestion(message) {
     var authorId = message.author.id;
+    if (!annalina.consumeBread(message)) return;
     
-    if (annalina.remainingBread[authorId] > 0) {
-        annalina.remainingBread[authorId]--;
-        annalina.total_bread++;
-        var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
-        text += annalina.createRemainingBreadLine(message);
-        message.reply(text);
-    } else {
-        message.reply(decline[randomInt(decline.length)]);
-    }
+    annalina.total_bread++;
+    var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
+    text += annalina.createRemainingBreadLine(message);
+    message.reply(text);
 }
 
 function getCommand(message) {
@@ -55,11 +51,6 @@ annalina.bot.on("message", function(message) {
     case "~question":
         handleQuestion(message);
         break;
-    // case "~test":
-    //     var channel = message.channel;
-    //     if (channel.type === "text") {
-    //         channel.sendFile("./Ran_damaged.png", "png", "test content");
-    //     }
     default:
         annalina.handleCommonCommand(message);
         break;
