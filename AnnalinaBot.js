@@ -1,24 +1,7 @@
 var annalina = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
-/**
- * Returns a random number between min (inclusive) and max (exclusive)
- */
-function randomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-/**
- * Returns a random integer between min (inclusive) and max (inclusive)
- * Using Math.round() will give you a non-uniform distribution!
- */
-function randomIntRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+var helper = require('./FunctionHelper');
 
 var answerTexts = dialog.annalina.answers;
 annalina.declineNotEnoughBread = annalina.declineNotEnoughBread.concat(dialog.annalina.decline);
@@ -28,7 +11,7 @@ function handleQuestion(message) {
     if (!annalina.consumeBread(message)) return;
     
     annalina.total_bread++;
-    var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
+    var text = answerTexts[helper.randomInt(answerTexts.length)] + "\n\n";
     text += annalina.createRemainingBreadLine(message);
     message.reply(text);
 }

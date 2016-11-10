@@ -4,6 +4,7 @@ var EmployeeInfo = require('./classes/EmployeeInfo');
 var imageDownloader = require('./ImageDownloader');
 var Jimp = require("jimp");
 var fs = require('fs');
+var helper = require('./FunctionHelper')
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -105,15 +106,6 @@ function EmployeeBot() {
     this.firstTimeReady = true;
 }
 
-EmployeeBot.prototype.parseTime = function(millisec) {
-    return {
-        day: Math.floor(millisec/(24*60*60*1000)),
-        hour: Math.floor((millisec%(24*60*60*1000))/(60*60*1000)),
-        min: Math.floor((millisec%(60*60*1000))/(60*1000)),
-        sec: Math.floor((millisec%(60*1000))/(1000))
-    };
-}
-
 EmployeeBot.prototype.isPM = function(message) {
     return ((typeof message.guild === "undefined") || message.guild == null);
 }
@@ -148,11 +140,11 @@ EmployeeBot.prototype.handleEventCommand = function(message) {
         text += "**" + eventList[i].name + "**\n";
 
         if (now.valueOf() < startTime.valueOf()) {
-            var time = this.parseTime(startTime.valueOf() - now.valueOf());
+            var time = helper.parseTime(startTime.valueOf() - now.valueOf());
             text += "Start in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
                     + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
         } else if (startTime.valueOf() <= now.valueOf() && now.valueOf() <= endTime.valueOf()) {
-            var time = this.parseTime(endTime.valueOf() - now.valueOf());
+            var time = helper.parseTime(endTime.valueOf() - now.valueOf());
             text += "End in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
                     + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
         } 
@@ -160,14 +152,6 @@ EmployeeBot.prototype.handleEventCommand = function(message) {
     if (text.length > 1) {
         message.channel.sendMessage(text);
     }
-}
-
-function getTimeUntilDaily(timeInString) {
-    var startTime = new Date(timeInString);
-    var now = new Date();
-    var timeUntil = Math.floor((now.valueOf() - startTime.valueOf())/(24*60*60*1000)) + 1;
-    timeUntil = startTime.valueOf() + timeUntil*(24*60*60*1000) - now.valueOf();
-    return timeUntil;
 }
 
 EmployeeBot.prototype.handleDailyCommand = function(message) {
@@ -185,8 +169,8 @@ EmployeeBot.prototype.handleDailyCommand = function(message) {
         return;
     }
     text = "\n**" + dailyEvent.name + "**\n";
-    nextDaily = getTimeUntilDaily(dailyEvent.time)
-    var time = this.parseTime(nextDaily);
+    nextDaily = helper.getTimeUntilDaily(dailyEvent.time);
+    var time = helper.parseTime(nextDaily);
     text += "Reset in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
             + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
     message.channel.sendMessage(text);
@@ -215,11 +199,11 @@ EmployeeBot.prototype.handleMaintenanceCommand = function(message) {
         text += "**" + maintenanceList[i].name + "**\n";
 
         if (now.valueOf() < startTime.valueOf()) {
-            var time = this.parseTime(startTime.valueOf() - now.valueOf());
+            var time = helper.parseTime(startTime.valueOf() - now.valueOf());
             text += "Start in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
                     + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
         } else if (startTime.valueOf() <= now.valueOf() && now.valueOf() <= endTime.valueOf()) {
-            var time = this.parseTime(endTime.valueOf() - now.valueOf());
+            var time = helper.parseTime(endTime.valueOf() - now.valueOf());
             text += "End in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
                     + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
         } 
@@ -229,17 +213,9 @@ EmployeeBot.prototype.handleMaintenanceCommand = function(message) {
     }
 }
 
-function removeExtraSpace(text) {
-    return text.trim().replace(/\s+/g,' ');
-}
-
-function cleanText(text) {
-    return removeExtraSpace(text.replace(/[^A-Za-z]+/g,' '));
-}
-
 EmployeeBot.prototype.handleBasicGreetingCommand = function(message) {
     var text = message.content.trim().toLowerCase();
-    cleanedText = cleanText(text);
+    cleanedText = helper.cleanText(text);
     
     if (cleanedText === "") return;
     var now = new Date();
@@ -344,7 +320,7 @@ EmployeeBot.prototype.handleSpecialCase = function(message) {
         const lolEmoji = message.guild.emojis.find('name', 'klol');
 
         var content = text.substring(9);
-        var targetId = getIdFromMention(content);
+        var targetId = helper.getIdFromMention(content);
         if (targetId === "") return;
         if (targetId === message.author.id) {
             message.channel.sendMessage("Ewww " + message.author + ", that's disgusting... Are you sure you want to do that?");
@@ -372,7 +348,7 @@ EmployeeBot.prototype.handleSpecialCase = function(message) {
         const breadEmoji = message.guild.emojis.find('name', 'kbread');
 
         var content = text.substring(10);
-        var targetId = getIdFromMention(content);
+        var targetId = helper.getIdFromMention(content);
         if (targetId === "") return;
         if (targetId === message.author.id) {
             message.channel.sendMessage("Whose soul should I get for you, master " + message.author + "?");
@@ -490,13 +466,6 @@ EmployeeBot.prototype.handleAssignRoleCommand = function(message) {
     }
 }
 
-function getIdFromMention(text) {
-    if (text.length < 3) return "";
-    if (text.startsWith("<@") && text.endsWith(">")) {
-        return text.substring(2, text.length - 1);
-    } else return "";
-}
-
 EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
     var userId = message.author.id;
     this.initBreadIfNeed(userId);
@@ -511,18 +480,51 @@ EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
 }
 
 EmployeeBot.prototype.handleGiveBreadCommand = function(message) {
-    var text = removeExtraSpace(message.content.trim().toLowerCase());
+    var text = helper.removeExtraSpace(message.content.trim().toLowerCase());
     var args = text.split(" ");
     if (args[0] !== "~givebread") return;
-    if (args.length < 2) return;
+    if (args.length < 2 || args.length > 3) return;
     var giverId = message.author.id;
-    var receiverId = getIdFromMention(args[1]);
-    if (receiverId === "") return;
 
-    if (this.consumeBread(message, 1)) {
+    var receiverId = "";
+    var amount = 1;
+
+    if (args.length === 2) {
+        receiverId = helper.getIdFromMention(args[1]);
+        if (receiverId === "") return;
+    } else if (args.length === 3) {
+        if (!isNaN(args[1]) && helper.isMention(args[2])) {
+            amount = Math.floor(parseInt(args[1]));
+            // amount = Math.min(amount, this.remainingBread[giverId]);
+            // amount = Math.max(amount, 1);
+            receiverId = helper.getIdFromMention(args[2]);
+        } else if (!isNaN(args[2]) && helper.isMention(args[1])) {
+            amount = Math.floor(parseInt(args[2]));
+            // amount = Math.min(amount, this.remainingBread[giverId]);
+            // amount = Math.max(amount, 1);
+            receiverId = helper.getIdFromMention(args[1]);
+        } else {
+            return;
+        }
+    }
+    
+    if (amount < 1) {
+        message.reply("The amount of bread should be at least 1.");
+        return;
+    } else if (amount > this.remainingBread[giverId]) {
+        var text = "The amount of bread should not be more than what you have.";
+        if (this.remainingBread[giverId] <= 0) {
+            message.reply("You have **no Bread**. " + text);
+        } else {
+            message.reply("You only have **" + this.remainingBread[giverId] + " Bread**. " + text);
+        }
+        return;
+    }
+
+    if (this.consumeBread(message, amount)) {
         this.initBreadIfNeed(receiverId);
-        this.remainingBread[receiverId]++;
-        message.reply(this.declineNotEnoughBread[randomInt(this.declineNotEnoughBread.length)]);
+        this.remainingBread[receiverId] += amount;
+        message.reply(amount + " Bread has been transfered.");
     }
 }
 
@@ -530,7 +532,7 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
     var text = message.content.trim().toLowerCase();
     if (!text.startsWith("~chara ")) return;
     
-    var name = removeExtraSpace(text.substring(6));
+    var name = helper.removeExtraSpace(text.substring(6));
     if (name === "") return;
     if (name.length > 100) {
         message.reply("The name is too long!");
@@ -686,7 +688,7 @@ EmployeeBot.prototype.greeting = function(channel) {
 // }
 
 EmployeeBot.prototype.setDailyDrawReminderForNutaku = function() {
-    var time = getTimeUntilDaily(this.nutakuDailyRemind); 
+    var time = helper.getTimeUntilDaily(this.nutakuDailyRemind); 
     var that = this;
     console.log("time: " + time);
     setTimeout(function() {
@@ -704,7 +706,7 @@ EmployeeBot.prototype.setDailyDrawReminderForNutaku = function() {
 }
 
 EmployeeBot.prototype.setDailyDrawReminderForDmm = function() {
-    var time = getTimeUntilDaily(this.dmmDailyRemind); 
+    var time = helper.getTimeUntilDaily(this.dmmDailyRemind); 
     var that = this;
     setTimeout(function() {
         var channels = that.bot.channels.array();

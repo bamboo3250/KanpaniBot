@@ -2,24 +2,7 @@ var elsa = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
 var fs = require('fs');
-/**
- * Returns a random number between min (inclusive) and max (exclusive)
- */
-function randomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-/**
- * Returns a random integer between min (inclusive) and max (inclusive)
- * Using Math.round() will give you a non-uniform distribution!
- */
-function randomIntRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+var helper = require('./FunctionHelper');
 
 var lastTimePat = {};
 var affection = {};
@@ -171,9 +154,9 @@ function handlePatCommand(message) {
     var now = new Date();
     var index = 0;
     if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
-        index = randomIntRange(0, 3);
+        index = helper.randomIntRange(0, 3);
     } else {
-        index = randomIntRange(1, 8);
+        index = helper.randomIntRange(1, 8);
     }
     var point = affection[userId] + touches[index].point;
     affection[userId] = Math.max(Math.min(point, 100), -100);
