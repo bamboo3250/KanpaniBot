@@ -2,24 +2,7 @@ var elsa = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
 var fs = require('fs');
-/**
- * Returns a random number between min (inclusive) and max (exclusive)
- */
-function randomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-/**
- * Returns a random integer between min (inclusive) and max (inclusive)
- * Using Math.round() will give you a non-uniform distribution!
- */
-function randomIntRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+var helper = require('./FunctionHelper');
 
 var lastTimePat = {};
 var affection = {};
@@ -28,17 +11,17 @@ var touches = [
         point: -15,
         text: "You are touching me too much! >\"<"
     },{
-        point: -5,
+        point: -7,
         text: "Yaaa... I'm weak that place... Hey!"
     },{
-        point: -3,
+        point: -5,
         text: "Hey, you are messing my hair >.<"
     },{
         point: 1,
-        text: "You have nothing else to do, don't you?"
+        text: "You have nothing else to do, do you?"
     },{
         point: 2,
-        text: "I don't dislike you patting me tho"
+        text: "I don't dislike you patting me though."
     },{
         point: 3,
         text: "Is patting me that fun?"
@@ -49,7 +32,7 @@ var touches = [
         point: 7,
         text: "You sure do love tails... Hmm.. What is so fun about it..?"
     },{
-        point: 11,
+        point: 9,
         text: "Your touch is so warm and gentle, I like it :heart:"
     }
 ];
@@ -118,53 +101,75 @@ var status = [
     }
 ];
 
-var decline = dialog.elsa.decline;
+elsa.declineNotEnoughBread = elsa.declineNotEnoughBread.concat(dialog.elsa.decline);
+var affectionFileName = "affection.json";
 
 function saveAffection() {
     var textToWrite = JSON.stringify(affection, null, 4);
-    fs.writeFile("affection.js", textToWrite, function(err) {
+    fs.writeFile(affectionFileName, textToWrite, function(err) {
         if(err) return console.log(err);
         console.log("The file was saved!");
     }); 
 }
 
 function loadAffection() {
-    fs.readFile('affection.js', 'utf8', function (err, data) {
+    fs.readFile(affectionFileName, 'utf8', function (err, data) {
         if (err) return;
         affection = JSON.parse(data);
         console.log(affection);
     });
 }
 
+const REWARD_ROLE_NAME = 'Ally of Kemomin';
+
+function updateRole(message, member) {
+    if (member == null) return;
+    if (elsa.isPM(message)) return;
+    var allyRole = message.guild.roles.find('name', REWARD_ROLE_NAME);
+    if (allyRole == null) return;
+    
+    var userId = member.id;
+    if (affection[userId] >= 100) {
+        member.addRole(allyRole).then(guildMember => {
+            console.log("Ally Role added.");
+        }).catch(err => {
+            console.log("Sorry, I don't have permission to add this Role.");
+        });
+    } else {
+        member.removeRole(allyRole).then(guildMember => {
+            console.log("Ally Role removed.");
+        }).catch(err => {
+            console.log("Sorry, I don't have permission to remove this Role.");
+        });
+    }
+}
+
 function handlePatCommand(message) {
     var userId = message.author.id;
     if (typeof lastTimePat[userId] === "undefined") lastTimePat[userId] = 0;
     if (typeof affection[userId] === "undefined") affection[userId] = 0;
-    
-    if (elsa.remainingBread[userId] > 0) {
-        var now = new Date();
-        var index = 0;
-        if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
-            index = randomIntRange(0, 3);
-        } else {
-            index = randomIntRange(1, 8);
-        }
-        var point = affection[userId] + touches[index].point;
-        affection[userId] = Math.max(Math.min(point, 100), -100);
-        elsa.remainingBread[userId]--;
-        elsa.total_bread++;
-        
-        var text = touches[index].text + "\n";
-        text += "Affection: " + affection[userId] + "/100 (" + (touches[index].point>=0?"+":"") + touches[index].point + ")\n";
-        text += elsa.createRemainingBreadLine(message);
-        
-        message.reply(text);
-        lastTimePat[userId] = now.valueOf();
-        saveAffection();
-        
+    if (message.channel.name === elsa.dmmChannelName) return;
+    if (!elsa.consumeBread(message)) return;
+
+    var now = new Date();
+    var index = 0;
+    if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
+        index = helper.randomIntRange(0, 3);
     } else {
-        message.reply(decline[randomInt(decline.length)]);
+        index = helper.randomIntRange(1, 8);
     }
+    var point = affection[userId] + touches[index].point;
+    affection[userId] = Math.max(Math.min(point, 100), -100);
+    elsa.total_bread++;
+    
+    var text = touches[index].text + "\n";
+    text += "Affection: " + affection[userId] + "/100 (" + (touches[index].point>=0?"+":"") + touches[index].point + ")\n";
+    text += elsa.createRemainingBreadLine(message);
+    
+    message.reply(text);
+    lastTimePat[userId] = now.valueOf();
+    saveAffection();
+    updateRole(message, message.member);
 }
 
 function handleStatusCommand(message) {
@@ -177,6 +182,7 @@ function handleStatusCommand(message) {
             var text = status[i].text + "\n";
             text += "Affection: " + affection[userId] + "/100";
             message.reply(text);
+            updateRole(message, message.member);
             return;
         }
     }
@@ -205,12 +211,14 @@ function handleRankingCommand(message) {
                 text += (count+1) + ". " + member.user.username + " (" + result[i].point + ")\n";
             }
         }
+        for(var i=0;i<result.length;i++) {
+            var member = guild.members.find('id', result[i].userId);
+            if (member) updateRole(message, member);
+        }
         message.channel.sendMessage(text);
     }).catch(err => {
         message.channel.sendMessage("Fetching member error!");
     });
-
-    
 }
 
 function handleReduceCommand(message) {

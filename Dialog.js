@@ -45,9 +45,9 @@ module.exports = {
             "Very doubtful"
         ],
         decline: [
-            "You have used up all your bread today. Please ask me again next time.",
+            "You have used up all your bread. Please ask me again later.",
             "Too bad, no more bread for you.",
-            "Please come again tomorrow.",
+            "Please come again later.",
             "You really want to know that bad?"
         ]
     }, 
@@ -63,10 +63,10 @@ module.exports = {
         commonGoodNight: [],
         commonThanks: [],
         decline: [
-            "You have used up all your bread today. Please pat me again next time.",
-            "That is enough for today.",
-            "Pat me again tomorrow.",
-            "You really want that bad?"
+            "You have used up all your bread. Please pat me again later.",
+            "That is enough for now.",
+            "Pat me again later.",
+            "You really want to pat me that bad?"
         ]
     }
 }

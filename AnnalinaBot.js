@@ -1,40 +1,19 @@
 var annalina = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
-/**
- * Returns a random number between min (inclusive) and max (exclusive)
- */
-function randomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-/**
- * Returns a random integer between min (inclusive) and max (inclusive)
- * Using Math.round() will give you a non-uniform distribution!
- */
-function randomIntRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+var helper = require('./FunctionHelper');
 
 var answerTexts = dialog.annalina.answers;
-var decline = dialog.annalina.decline;
+annalina.declineNotEnoughBread = annalina.declineNotEnoughBread.concat(dialog.annalina.decline);
 
 function handleQuestion(message) {
     var authorId = message.author.id;
+    if (!annalina.consumeBread(message)) return;
     
-    if (annalina.remainingBread[authorId] > 0) {
-        annalina.remainingBread[authorId]--;
-        annalina.total_bread++;
-        var text = answerTexts[randomInt(answerTexts.length)] + "\n\n";
-        text += annalina.createRemainingBreadLine(message);
-        message.reply(text);
-    } else {
-        message.reply(decline[randomInt(decline.length)]);
-    }
+    annalina.total_bread++;
+    var text = answerTexts[helper.randomInt(answerTexts.length)] + "\n\n";
+    text += annalina.createRemainingBreadLine(message);
+    message.reply(text);
 }
 
 function getCommand(message) {
@@ -55,11 +34,6 @@ annalina.bot.on("message", function(message) {
     case "~question":
         handleQuestion(message);
         break;
-    // case "~test":
-    //     var channel = message.channel;
-    //     if (channel.type === "text") {
-    //         channel.sendFile("./Ran_damaged.png", "png", "test content");
-    //     }
     default:
         annalina.handleCommonCommand(message);
         break;
