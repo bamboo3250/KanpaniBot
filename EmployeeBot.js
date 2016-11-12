@@ -1,7 +1,7 @@
 var Discord = require("discord.js");
-var employeeDatabase = require('./EmployeeDatabase');
-var EmployeeInfo = require('./classes/EmployeeInfo');
-var imageDownloader = require('./ImageDownloader');
+var employeeDatabase = require('./database/EmployeeDatabase');
+var Employee = require('./classes/Employee');
+var imageHelper = require('./ImageHelper');
 var Jimp = require("jimp");
 var fs = require('fs');
 var helper = require('./FunctionHelper')
@@ -11,7 +11,7 @@ function EmployeeBot() {
     this.nutakuChannelName = "kanpani_girls";
     this.bot = new Discord.Client();
     this.employeeDatabase = employeeDatabase;
-    this.imageDownloader = imageDownloader;
+    this.imageHelper = imageHelper;
 
     this.dmmEventList = [
         {
@@ -566,7 +566,7 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
     } else {
         if (!this.isPM(message) && !this.consumeBread(message, 1)) return;
 
-        employee = new EmployeeInfo(employee);
+        employee = new Employee(employee);
 
         var bustupUrl = employee.getIllustURL("bustup");
         var star = 6;
@@ -574,58 +574,52 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
         var enemySpriteUrl = employee.getSpriteImageURL(star, true, true);
         var allySpriteUrl = employee.getSpriteImageURL(star, false, true);
 
-        var bustupFileName = "bustup/" + employee._id + ".png";
-        var enemySpriteFileName = "enemy/" + employee.getSpriteImageName(star, true);
-        var allySpriteFileName = "ally/" + employee.getSpriteImageName(star, true);
+        var bustupFileName = "images/bustup/" + employee._id + ".png";
+        var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(star, true);
+        var allySpriteFileName = "images/ally/" + employee.getSpriteImageName(star, true);
 
         var that = this;
-        this.imageDownloader.download(enemySpriteUrl, enemySpriteFileName, function() {
-            that.imageDownloader.download(allySpriteUrl, allySpriteFileName, function() {
-                that.imageDownloader.download(bustupUrl, bustupFileName, function() {
-                    Jimp.read(enemySpriteFileName, function (err, image) {
-                        if (err) { console.log(err); return }
-                        var enemySpriteImage = image;
-                        Jimp.read(allySpriteFileName, function (err, image) {
-                            if (err) { console.log(err); return }
-                            var allySpriteImage = image;
-                            Jimp.read(bustupFileName, function (err, image) {
-                                if (err) { console.log(err); return }
-                                var bustupImage = image;
+        var queue = [
+            { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName},
+            { fileToDownload: allySpriteUrl,    fileToSave: allySpriteFileName},
+            { fileToDownload: bustupUrl,        fileToSave: bustupFileName}
+        ];
+        this.imageHelper.download(queue, function() {
+            that.imageHelper.read([enemySpriteFileName, allySpriteFileName, bustupFileName], function (err, imageList) {
+                if (err) { console.log(err); return }
+                enemySpriteImage = imageList[0];
+                allySpriteImage = imageList[1];
+                bustupImage = imageList[2];
 
-                                allySpriteImage.crop(0, 0, 360, 270);
-                                enemySpriteImage.crop(0, 0, 360, 270);
-                                bustupImage.resize(Jimp.AUTO, 600).opacity(0.3);
+                allySpriteImage.crop(0, 0, 360, 270);
+                enemySpriteImage.crop(0, 0, 360, 270);
+                bustupImage.resize(Jimp.AUTO, 600).opacity(0.3);
 
-                                var imageName = "chara/" + employee._id + ".png";
-                                var image = new Jimp(480, 290, function (err, image) {
+                var imageName = "images/chara/" + employee._id + ".png";
+                var image = new Jimp(480, 290, function (err, image) {
 
-                                    image.composite(bustupImage, 
-                                        -Math.floor((bustupImage.bitmap.width - image.bitmap.width)/2), 
-                                        -Math.floor((bustupImage.bitmap.height - image.bitmap.height)/2) - 20
-                                    )
-                                    .composite(enemySpriteImage, 160, 0)
-                                    .composite(allySpriteImage, -60, 40)
-                                    .crop(1, 0, 478, 290)
-                                    .write(imageName, function() {
-                                        var channel = message.channel;
-                                        console.log("Finished downloading");
-                                        if (channel.type === "text" || channel.type === "dm") {
-                                            var emojiName = 'k' + employee.getClass().toLowerCase();
-                                            const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
-                                            //console.log(emojiName + ": " + classEmoji);
-                                            var text = "\n";
-                                            text += "Employee **No." + (employee.isEx()?"EX":"") + (employee._no == 0? "???":employee._no)  + "**\n";
-                                            text += "Name: **" + employee.fullName + " (" + employee.japaneseName + ")**\n";
-                                            text += "Class: **" + employee.getClass() + "** " +  (classEmoji != null? classEmoji : "") + "\n";
-                                            text += "Rarity: ";
-                                            for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
-                                            text += "\n";
-                                            channel.sendFile(imageName, "png", text);
-                                        }    
-                                    });
-                                });
-                            });
-                        });
+                    image.composite(bustupImage, 
+                        -Math.floor((bustupImage.bitmap.width - image.bitmap.width)/2), 
+                        -Math.floor((bustupImage.bitmap.height - image.bitmap.height)/2) - 20
+                    )
+                    .composite(enemySpriteImage, 160, 0)
+                    .composite(allySpriteImage, -60, 40)
+                    .crop(1, 0, 478, 290)
+                    .write(imageName, function() {
+                        var channel = message.channel;
+                        if (channel.type === "text" || channel.type === "dm") {
+                            var emojiName = 'k' + employee.getClass().toLowerCase();
+                            const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
+                            
+                            var text = "\n";
+                            text += "Employee **No." + (employee.isEx()?"EX":"") + (employee._no == 0? "???":employee._no)  + "**\n";
+                            text += "Name: **" + employee.fullName + " (" + employee.japaneseName + ")**\n";
+                            text += "Class: **" + employee.getClass() + "** " +  (classEmoji != null? classEmoji : "") + "\n";
+                            text += "Rarity: ";
+                            for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
+                            text += "\n";
+                            channel.sendFile(imageName, "png", text);
+                        }    
                     });
                 });
             });

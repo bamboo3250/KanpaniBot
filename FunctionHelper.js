@@ -56,4 +56,16 @@ FunctionHelper.prototype.randomInt = function(max) {
     return Math.floor(Math.random() * max);
 }
 
+FunctionHelper.prototype.randomDist = function(distribution) {
+    var total = 0;
+    for(var i=0;i<distribution.length;i++) total += distribution[i];
+    var randomNum = this.randomInt(total);
+    for(var i=0;i<distribution.length;i++) {
+        console.log(randomNum + " " + distribution[i]);
+        if (randomNum < distribution[i]) return i;
+        randomNum -= distribution[i];
+    }
+    return distribution.length - 1;
+}
+
 module.exports = new FunctionHelper();

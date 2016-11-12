@@ -25,6 +25,17 @@ EmployeeDatabase.prototype.getEmployeeByCommonName = function(commonName) {
     return null;
 }
 
+EmployeeDatabase.prototype.getEmployeesByRarirty = function(rarity) {
+    var result = [];
+    for(var i=0;i<this.employeeList.length;i++) {
+        if (parseInt(this.employeeList[i]._id.substring(3,4)) === rarity) {
+            result.push(this.employeeList[i]);
+        }
+    }
+    return result;
+}
+
+
 function getMinimumEditDistance(name1, name2) {
     name1 = name1.trim().toLowerCase();
     name2 = name2.trim().toLowerCase();
