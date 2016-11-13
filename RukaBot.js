@@ -80,11 +80,11 @@ function handleRollCommand(message) {
                 resume.print(font, 20, 273, "Use \"~take\" to select this employee.");
 
                 resume.write(resumeFileName, function() {
-                    if (!ruka.consumeBread(message)) return;
-                    rollResult[message.author.id] = rolledEmployee._id;
-                    
                     var channel = message.channel;
                     if (channel.type === "text" || channel.type === "dm") {
+                        if (!ruka.consumeBread(message)) return;
+                        rollResult[message.author.id] = rolledEmployee._id;
+                    
                         channel.sendFile(resumeFileName, "png", "The resume is in! " + message.author);
                     }    
                 });
