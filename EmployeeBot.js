@@ -626,7 +626,12 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
             { fileToDownload: allySpriteUrl,    fileToSave: allySpriteFileName},
             { fileToDownload: bustupUrl,        fileToSave: bustupFileName}
         ];
-        this.imageHelper.download(queue, function() {
+        this.imageHelper.download(queue, function(err) {
+            if (err) {
+                message.reply("Error happened. Try again.");
+                return;
+            }
+
             that.imageHelper.read([enemySpriteFileName, allySpriteFileName, bustupFileName], function (err, imageList) {
                 if (err) { console.log(err); return }
                 enemySpriteImage = imageList[0];
