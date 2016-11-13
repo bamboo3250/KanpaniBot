@@ -68,5 +68,23 @@ module.exports = {
             "Pat me again later.",
             "You really want to pat me that bad?"
         ]
+    },
+    ruka: {
+        greetings: [
+            "Good morning, Boss",
+            "Let's work hard today!",
+            "Ruka will be your secretary today",
+            "Ruka will be in your care today."
+        ],
+        idleTalks: [],
+        commonGoodMorning: [],
+        commonGoodNight: [],
+        commonThanks: [],
+        decline: [
+            "You have used up all your bread. Please roll again later.",
+            "That is enough for now.",
+            "You can roll again later.",
+            "You really want to hire a new employee that bad?"
+        ]
     }
 }

@@ -1,5 +1,13 @@
-*.png
+images/ally/*.png
+images/enemy/*.png
+images/bustup/*.png
+images/chara/*.png
+images/full/*.png
+images/photo/*.png
+images/resume/*.png
 config.js
 affection.js
 affection.json
 soul.json
+images/me/
+player.json
