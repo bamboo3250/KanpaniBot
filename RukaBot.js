@@ -47,7 +47,7 @@ function handleRollCommand(message) {
             var classImage = imageList[2];
             var normalStarImage = imageList[3];
             var highlightStarImage = imageList[4];
-            var resume = imageList[5]
+            var resume = imageList[5];
 
             var resumeFileName = "images/resume/" + rolledEmployee._id + ".png";
 
