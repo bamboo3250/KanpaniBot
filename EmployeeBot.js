@@ -696,7 +696,7 @@ EmployeeBot.prototype.handleMeCommand = function(message) {
     ];
     this.imageHelper.download(queue, function(err) {
         if (err) {
-            message.reply("Envelope got lost. Try again.");
+            message.reply("Error happened. Try again.");
             return;
         }
 

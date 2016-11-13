@@ -13,9 +13,7 @@ var rollResult = {};
 function handleRollCommand(message) {
     var text = message.content.trim().toLowerCase();
     if (text != "~roll") return;
-    if (!ruka.consumeBread(message)) return;
-
-
+    
     var rarity = helper.randomDist([17, 17, 10, 5, 1]) + 1;
     var employeeList = ruka.employeeDatabase.getEmployeesByRarirty(rarity);
     var rolledEmployee = new Employee(employeeList[helper.randomInt(employeeList.length)]);
@@ -37,7 +35,12 @@ function handleRollCommand(message) {
     var normalStarFileName = "images/misc/normalStar.png";
     var highlightStarFileName = "images/misc/highlightStar.png";
     var resumeFileName = "images/misc/resumeForm.png";
-    ruka.imageHelper.download(queue, function() {
+    ruka.imageHelper.download(queue, function(err) {
+        if (err) {
+            message.reply("Envelope got lost. Try again.");
+            return;
+        }
+
         ruka.imageHelper.read([photoFileName, spriteFileName, classFileName, normalStarFileName, highlightStarFileName, resumeFileName], function (err, imageList) {
             if (err) { console.log(err); return }
             var photoImage = imageList[0];
@@ -78,6 +81,8 @@ function handleRollCommand(message) {
                 resume.print(font, 20, 273, "Use \"~take\" to select this employee.");
 
                 resume.write(resumeFileName, function() {
+                    if (!ruka.consumeBread(message)) return;
+
                     var channel = message.channel;
                     if (channel.type === "text" || channel.type === "dm") {
                         channel.sendFile(resumeFileName, "png", "The resume is in! " + message.author);
