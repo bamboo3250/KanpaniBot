@@ -689,7 +689,12 @@ EmployeeBot.prototype.handleMeCommand = function(message) {
     var queue = [
         { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName}
     ];
-    this.imageHelper.download(queue, function() {
+    this.imageHelper.download(queue, function(err) {
+        if (err) {
+            message.reply("Envelope got lost. Try again.");
+            return;
+        }
+
         var itemCellFileName = "images/misc/itemCell.png";
         var backgroundFileName = "images/misc/background/" + that.backgroundFileNames[helper.randomInt(that.backgroundFileNames.length)];
 

@@ -29,7 +29,7 @@ function ImageHelper() {
 
 ImageHelper.prototype.download = function(queue, callback) {
     if (queue.length <= 0) {
-        callback();
+        callback(null);
         return;
     }
     var that = this;
@@ -50,7 +50,9 @@ ImageHelper.prototype.download = function(queue, callback) {
                     thisQueue.shift();
                     that.download(thisQueue, callback);
                 });
-            });
+            }).on('error', (err) => {
+                callback(err);
+            });;
         } else {
             console.log("File existed.");
             thisQueue.shift();
