@@ -39,6 +39,30 @@ EmployeeInfo.prototype.getBaseRarity = function() {
     return parseInt(this._id.substring(3,4));
 }
 
+EmployeeInfo.prototype.getRarity = function() {
+    var rarity = 1;
+    if (this.levelCached < 10) {
+        rarity = 1;
+    } else if (this.levelCached < 20) {
+        rarity = 2;
+    } else if (this.levelCached < 30) {
+        rarity = 3;
+    } else if (this.levelCached < 50) {
+        rarity = 4;
+    } else if (this.levelCached < 70) {
+        rarity = 5;
+    } else if (this.levelCached < 90) {
+        rarity = 6;
+    } else {
+        if (this.getBaseRarity() == 5) {
+            rarity = 7;
+        } else {
+            rarity = 6;
+        }
+    }
+    return Math.max(this.getBaseRarity(), rarity);
+}
+
 EmployeeInfo.prototype.isEx = function() {
     return parseInt(this._id.substring(4,5)) == 9;
 }

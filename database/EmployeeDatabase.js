@@ -25,6 +25,15 @@ EmployeeDatabase.prototype.getEmployeeByCommonName = function(commonName) {
     return null;
 }
 
+EmployeeDatabase.prototype.getEmployeeById = function(employeeId) {
+    for(var i=0;i<this.employeeList.length;i++) {
+        if (this.employeeList[i]._id === employeeId) {
+            return this.employeeList[i];
+        }
+    }
+    return null;
+}
+
 EmployeeDatabase.prototype.getEmployeesByRarirty = function(rarity) {
     var result = [];
     for(var i=0;i<this.employeeList.length;i++) {

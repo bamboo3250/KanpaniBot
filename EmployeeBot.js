@@ -102,8 +102,50 @@ function EmployeeBot() {
     ];
 
     this.hasSoul = {};
+    this.player = {};
 
     this.firstTimeReady = true;
+
+    this.backgroundFileNames = [
+        "arena.jpg",
+        "battlefield_01.jpg",
+        "battlefield_02.png",
+        "beach_01.jpg",
+        "beach_02.jpg",
+        "beach_03.jpg",
+        "cape.jpg",
+        "cave_01.jpg",
+        "cave_02.jpg",
+        "cave_03.jpg",
+        "classroom.jpg",
+        "desert.jpg",
+        "elf_village.jpg",
+        "farm_road.jpg",
+        "festival_01.png",
+        "forest_01.jpg",
+        "forest_02.jpg",
+        "forest_03.jpg",
+        "graveyard.jpg",
+        "hot_spring_01.jpg",
+        "hot_spring_02.jpg",
+        "hot_spring_03.jpg",
+        "hot_spring_04.jpg",
+        "kemomin_forest.jpg",
+        "labyrinth_01.jpg",
+        "labyrinth_02.jpg",
+        "labyrinth_03.jpg",
+        "labyrinth_04.jpg",
+        "open_deck.jpg",
+        "orphanage.jpg",
+        "promotion.png",
+        "ship.jpg",
+        "shrine.jpg",
+        "theater.jpg",
+        "town_road_01.jpg",
+        "town_road_02.jpg",
+        "town_road_03.jpg",
+        "volcano.jpg"
+    ];
 }
 
 EmployeeBot.prototype.isPM = function(message) {
@@ -627,6 +669,129 @@ EmployeeBot.prototype.handleCharaCommand = function(message) {
     }
 }
 
+EmployeeBot.prototype.handleMeCommand = function(message) {
+    var text = message.content.trim().toLowerCase();
+    if (text != "~me") return;
+
+    var userId = message.author.id;
+    if (typeof this.player[userId] === "undefined") {
+        message.reply("You haven't selected your character.");
+        return;
+    }
+
+    var employee = new Employee(this.employeeDatabase.getEmployeeById(this.player[userId].characterId));
+    employee.setExp(this.player[userId].exp);
+
+    var enemySpriteUrl = employee.getSpriteImageURL(employee.getRarity(), true, false, 2);
+    var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(employee.getRarity(), false, 2);
+    
+    var that = this;
+    var queue = [
+        { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName}
+    ];
+    this.imageHelper.download(queue, function() {
+        var itemCellFileName = "images/misc/itemCell.png";
+        var backgroundFileName = "images/misc/background/" + that.backgroundFileNames[helper.randomInt(that.backgroundFileNames.length)];
+
+        that.imageHelper.read([enemySpriteFileName, itemCellFileName, backgroundFileName], function (err, imageList) {
+            if (err) { console.log(err); return }
+            enemySpriteImage = imageList[0];
+            itemCellImage = imageList[1];
+            backgroundImage = imageList[2];
+
+            backgroundImage.crop(250,100, 310,270);
+            enemySpriteImage.crop(20, 0, 310, 270);
+
+            backgroundImage.composite(enemySpriteImage, 0, 0)
+            .composite(itemCellImage, 10, 10)
+            .composite(itemCellImage, 10, 60)
+            .composite(itemCellImage, 10, 110);
+
+            var imageName = "images/me/" + message.author.id + ".png";
+            backgroundImage.write(imageName, function() {
+                var channel = message.channel;
+                if (channel.type === "text" || channel.type === "dm") {
+                    
+                    var emojiName = 'k' + employee.getClass().toLowerCase();
+                    const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
+                    const hpEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'khp'));
+                    const atkEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'katk'));
+                    const defEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kdef'));
+                    const matkEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kmatk'));
+                    const mdefEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kmdef'));
+
+                    var text = "\n";
+                    text += "Player: **" + message.author.username + "**\n";
+                    text += "Character: **" + employee.fullName + "** (Lv.**" + employee.levelCached  + "**)\n";
+                    text += "Rarity: ";
+                    for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
+                    text += "\n";
+
+                    text += "Class: **" + employee.getClass() + "** " + (classEmoji != null? classEmoji : "")  + "\n";
+                    text += "Exp: **" + employee.exp + "**\n";
+                    text += (hpEmoji != null? hpEmoji + " " : "") + "HP: **" + employee.getHP() + "**\n";
+                    text += (atkEmoji != null? atkEmoji + " " : "") + "Atk: **" + employee.getAtk() + "**\t";
+                    text += (matkEmoji != null? matkEmoji + " " : "") + "M.Atk: **" + employee.getMAtk() + "**\n";
+                    text += (defEmoji != null? defEmoji + " " : "") + "Def: **" + employee.getDef() + "**\t";
+                    text += (mdefEmoji != null? mdefEmoji + " " : "") + "M.Def: **" + employee.getMDef() + "**\n";
+
+                    if (that.isPM(message)) {
+                        text += "**STR: " + employee.getSTR() + "**\t\t";
+                        text += "**INT: " + employee.getINT() + "**\n";
+                        text += "**VIT: " + employee.getVIT() + "**\t\t";
+                        text += "**PIE: " + employee.getPIE() + "**\n";
+                        text += "**AGI: " + employee.getAGI() + "**\t\t";
+                        text += "**LUK: " + employee.getLUK() + "**\n";
+                        text += "**DEX: " + employee.getDEX() + "**\n";
+                    }
+                    channel.sendFile(imageName, "png", text);
+                }
+            });
+        });
+    });
+}
+
+
+EmployeeBot.prototype.handleTopCommand = function(message) {
+    var text = message.content.trim().toLowerCase();
+    if (text != "~top") return;
+    if (this.preventPM(message)) return;
+
+    var result = [];
+    for (key in this.player) {
+        var employee = new Employee(this.employeeDatabase.getEmployeeById(this.player[key].characterId));
+        employee.setExp(this.player[key].exp);
+        result.push({
+            userId: key,
+            employee: employee
+        });
+    }
+    result.sort(function(a, b) {
+        if (a.employee.levelCached != b.employee.levelCached) {
+            return b.employee.levelCached - b.employee.levelCached;    
+        } else {
+            return b.employee.getBaseRarity() - a.employee.getBaseRarity();
+        }
+    })
+    var count = 0;
+    var text = "Top 10 players:\n";
+    
+    message.guild.fetchMembers().then(guild => {
+        for(var i=0;i<Math.min(result.length, 10);i++) {
+            if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
+            var member = guild.members.find('id', result[i].userId);
+            var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
+            const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
+            if (member) {
+                text += (count+1) + ". " + member.user.username + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**)\n";
+            }
+        }
+        message.channel.sendMessage(text);
+    }).catch(err => {
+        message.channel.sendMessage("Fetching member error! " + err);
+    });
+}
+
 EmployeeBot.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     this.handleEventCommand(message);
@@ -639,6 +804,8 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
     this.handleAssignRoleCommand(message);
     this.handleGiveBreadCommand(message);
     this.handleCharaCommand(message);
+    this.handleMeCommand(message);
+    this.handleTopCommand(message);
     this.handleSpecialCase(message);
 }
 
@@ -751,6 +918,32 @@ EmployeeBot.prototype.loadSoul = function() {
     });
 }
 
+var playerFileName = "player.json";
+
+EmployeeBot.prototype.savePlayer = function() {
+    var textToWrite = JSON.stringify(this.player, null, 4);
+    fs.writeFile(playerFileName, textToWrite, function(err) {
+        if(err) return console.log(err);
+        console.log("The file was saved!");
+    }); 
+}
+
+EmployeeBot.prototype.loadPlayer = function() {
+    var that = this;
+    fs.readFile(playerFileName, 'utf8', function (err, data) {
+        if (err) return;
+        try {
+            that.player = JSON.parse(data);
+            console.log(that.player);    
+        }
+        catch (err) {
+            that.player = {};
+            console.log(err);
+        }
+        
+    });
+}
+
 EmployeeBot.prototype.ready = function() {
     if (this.firstTimeReady) {
         console.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
@@ -767,6 +960,7 @@ EmployeeBot.prototype.ready = function() {
         this.setBreadRegeneration();
         this.firstTimeReady = false;
         this.loadSoul();
+        this.loadPlayer();
     } else {
         console.log("Bot is restarted");
     }

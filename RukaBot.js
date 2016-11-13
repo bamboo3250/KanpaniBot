@@ -3,39 +3,21 @@ var config = require('./config');
 var dialog = require('./Dialog');
 var fs = require('fs');
 var helper = require('./FunctionHelper');
-var employeeDatabase = require('./database/EmployeeDatabase');
 var Employee = require('./classes/Employee');
-var imageHelper = require('./ImageHelper');
 var Jimp = require("jimp");
 
 ruka.declineNotEnoughBread = ruka.declineNotEnoughBread.concat(dialog.ruka.decline);
-var playerFileName = "player.json";
-var player = {};
 
-function savePlayer() {
-    var textToWrite = JSON.stringify(player, null, 4);
-    fs.writeFile(playerFileName, textToWrite, function(err) {
-        if(err) return console.log(err);
-        console.log("The file was saved!");
-    }); 
-}
-
-function loadPlayer() {
-    fs.readFile(playerFileName, 'utf8', function (err, data) {
-        if (err) return;
-        player = JSON.parse(data);
-        console.log(player);
-    });
-}
+var rollResult = {};
 
 function handleRollCommand(message) {
     var text = message.content.trim().toLowerCase();
     if (text != "~roll") return;
 
     var rarity = helper.randomDist([17, 17, 10, 5, 1]) + 1;
-    var employeeList = employeeDatabase.getEmployeesByRarirty(rarity);
+    var employeeList = ruka.employeeDatabase.getEmployeesByRarirty(rarity);
     var rolledEmployee = new Employee(employeeList[helper.randomInt(employeeList.length)]);
-    rolledEmployee.setExp(100000000)
+    rollResult[message.author.id] = rolledEmployee._id;
 
     var photoUrl = rolledEmployee.getIllustURL('photo');
     var photoFileName = "images/photo/" + rolledEmployee._id + ".png";
@@ -53,8 +35,8 @@ function handleRollCommand(message) {
     var normalStarFileName = "images/misc/normalStar.png";
     var highlightStarFileName = "images/misc/highlightStar.png";
     var resumeFileName = "images/misc/resumeForm.png";
-    imageHelper.download(queue, function() {
-        imageHelper.read([photoFileName, spriteFileName, classFileName, normalStarFileName, highlightStarFileName, resumeFileName], function (err, imageList) {
+    ruka.imageHelper.download(queue, function() {
+        ruka.imageHelper.read([photoFileName, spriteFileName, classFileName, normalStarFileName, highlightStarFileName, resumeFileName], function (err, imageList) {
             if (err) { console.log(err); return }
             var photoImage = imageList[0];
             var spriteImage = imageList[1];
@@ -96,17 +78,7 @@ function handleRollCommand(message) {
                 resume.write(resumeFileName, function() {
                     var channel = message.channel;
                     if (channel.type === "text" || channel.type === "dm") {
-                        // var emojiName = 'k' + employee.getClass().toLowerCase();
-                        // const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
-                        
-                        // var text = "\n";
-                        // text += "Employee **No." + (employee.isEx()?"EX":"") + (employee._no == 0? "???":employee._no)  + "**\n";
-                        // text += "Name: **" + employee.fullName + " (" + employee.japaneseName + ")**\n";
-                        // text += "Class: **" + employee.getClass() + "** " +  (classEmoji != null? classEmoji : "") + "\n";
-                        // text += "Rarity: ";
-                        // for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
-                        // text += "\n";
-                        channel.sendFile(resumeFileName, "png", "");
+                        channel.sendFile(resumeFileName, "png", "The resume is in! " + message.author);
                     }    
                 });
             });
@@ -114,10 +86,51 @@ function handleRollCommand(message) {
     });
 }
 
+function handleTakeCommand(message) {
+    var text = message.content.trim().toLowerCase();
+    if (text != "~take") return;
+    var userId = message.author.id;
+
+    if (typeof rollResult[userId] === "undefined" || rollResult[userId] === null) {
+        message.reply("You have to roll first.");
+        rollResult[userId] = null;
+        return;
+    }
+
+    if (typeof ruka.player[userId] === "undefined") {
+        ruka.player[userId] = {
+            characterId: "",
+            exp: 0,
+            equipedWeapon: null,
+            equipedArmor: null,
+            equipedAccessory: null,
+            materialList: [],
+            weaponList: [],
+            armorList: [],
+            accessoryList: []
+        };
+    }
+    ruka.player[userId].characterId = rollResult[userId];
+    ruka.player[userId].exp = Math.floor(ruka.player[userId].exp/2);
+    if (ruka.player[userId].equipedWeapon) {
+        ruka.player[userId].weaponList.push(ruka.player[userId].equipedWeapon);
+        ruka.player[userId].equipedWeapon = null;
+    }
+    if (ruka.player[userId].equipedArmor) {
+        ruka.player[userId].armorList.push(ruka.player[userId].equipedArmor);
+        ruka.player[userId].equipedArmor = null;
+    }
+    ruka.savePlayer();
+    var employee = new Employee(ruka.employeeDatabase.getEmployeeById(rollResult[userId]));
+    message.reply("Congratulation! You have selected **" + employee.fullName + "** as your character.");
+    rollResult[userId] = null;
+}
+
 ruka.bot.on("message", function(message) {
     ruka.initBreadIfNeed(message.author.id);
 
     handleRollCommand(message);
+    handleTakeCommand(message);
     ruka.handleCommonCommand(message);
 });
 
@@ -129,7 +142,6 @@ ruka.commonThanks = ruka.commonThanks.concat(dialog.ruka.commonThanks);
 
 ruka.bot.on("ready", function() {
     ruka.ready();
-    loadPlayer();
 });
 ruka.bot.login(config.ruka);
 
