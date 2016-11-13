@@ -17,7 +17,6 @@ function handleRollCommand(message) {
     var rarity = helper.randomDist([17, 17, 10, 5, 1]) + 1;
     var employeeList = ruka.employeeDatabase.getEmployeesByRarirty(rarity);
     var rolledEmployee = new Employee(employeeList[helper.randomInt(employeeList.length)]);
-    rollResult[message.author.id] = rolledEmployee._id;
 
     var photoUrl = rolledEmployee.getIllustURL('photo');
     var photoFileName = "images/photo/" + rolledEmployee._id + ".png";
@@ -82,7 +81,8 @@ function handleRollCommand(message) {
 
                 resume.write(resumeFileName, function() {
                     if (!ruka.consumeBread(message)) return;
-
+                    rollResult[message.author.id] = rolledEmployee._id;
+                    
                     var channel = message.channel;
                     if (channel.type === "text" || channel.type === "dm") {
                         channel.sendFile(resumeFileName, "png", "The resume is in! " + message.author);
