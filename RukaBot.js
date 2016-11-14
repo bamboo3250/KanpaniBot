@@ -40,11 +40,23 @@ function handleRollCommand(message) {
     ruka.imageHelper.download(queue, function(err) {
         if (err) {
             message.reply("Envelope got lost. Try again.");
+            console.log(err); 
             return;
         }
-
-        ruka.imageHelper.read([photoFileName, spriteFileName, classFileName, normalStarFileName, highlightStarFileName, resumeFileName], function (err, imageList) {
-            if (err) { console.log(err); return }
+        var imageFileNameQueue = [
+            photoFileName, 
+            spriteFileName, 
+            classFileName, 
+            normalStarFileName, 
+            highlightStarFileName, 
+            resumeFileName
+        ];
+        ruka.imageHelper.read(imageFileNameQueue, function (err, imageList) {
+            if (err) { 
+                message.reply("Envelope got lost. Try again.");
+                console.log(err); 
+                return 
+            }
             var photoImage = imageList[0];
             var spriteImage = imageList[1];
             var classImage = imageList[2];
@@ -59,10 +71,10 @@ function handleRollCommand(message) {
             Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function (font) {
                 resume.print(font, 240, 102, rolledEmployee.fullName);
 
-                resume.composite(photoImage, 18, 90)
+                resume.composite(classImage, 232, 140)
                 .composite(spriteImage, -20, 50)
-                .composite(classImage, 232, 140);
-
+                .composite(photoImage, 18, 90);
+                
                 for(var i=0;i<(rolledEmployee.getBaseRarity() === 5?7:6);i++) {
                     if (i < rolledEmployee.getBaseRarity()) {
                         resume.composite(highlightStarImage, 270+ i*13, 160);
