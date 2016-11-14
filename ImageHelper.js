@@ -5,28 +5,6 @@ var Jimp = require("jimp");
 function ImageHelper() {
 }
 
-// ImageDownloader.prototype.download = function(urlToDownload, fileName, callback) {
-//     fs.access(fileName, fs.F_OK, function(err) {
-//         if (err) {
-//             var file = fs.createWriteStream(fileName);
-//             console.log("Downloading File: " + urlToDownload);
-//             var request = http.get(urlToDownload, function(response) {
-//                 console.log("statusCode: " + response.statusCode);
-//                 console.log("content-type: " + response.headers['content-type']);
-//                 if (response.statusCode != 200) return;
-
-//                 response.pipe(file);
-//                 response.on('end', () => {
-//                     callback();
-//                 });
-//             });
-//         } else {
-//             console.log("File existed.");
-//             callback();
-//         }
-//     });
-// }
-
 ImageHelper.prototype.download = function(queue, callback) {
     if (queue.length <= 0) {
         callback(null);
@@ -69,7 +47,19 @@ ImageHelper.prototype.read = function(queue, callback, curResult = []) {
     var that = this;
     Jimp.read(queue[0], function (err, image) {
         if (err) { console.log(err); 
-            callback(err, curResult);
+            var falseImage = queue[0];
+            fs.unlink(falseImage, (err) => {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                console.log('successfully deleted ' + falseImage);
+            });
+            image = new Jimp(1024, 1024, 0xFFFFFF00, function (err, image) {
+                queue.shift();
+                curResult.push(image);
+                that.read(queue, callback, curResult);
+            });
             return;
         }
         queue.shift();

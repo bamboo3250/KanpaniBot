@@ -61,7 +61,6 @@ FunctionHelper.prototype.randomDist = function(distribution) {
     for(var i=0;i<distribution.length;i++) total += distribution[i];
     var randomNum = this.randomInt(total);
     for(var i=0;i<distribution.length;i++) {
-        console.log(randomNum + " " + distribution[i]);
         if (randomNum < distribution[i]) return i;
         randomNum -= distribution[i];
     }
