@@ -17,7 +17,7 @@ function EmployeeBot() {
         {
             name: "Hotsprings, Monique, and Bath Towels",
             startTime: "Oct 28 2016 17:00:00 GMT+0900",
-            endTime: "Nov 18 2016 13:00:00 GMT+0900"
+            endTime: "Nov 18 2016 14:00:00 GMT+0900"
         }
     ];
     this.nutakuEventList = [
@@ -25,8 +25,8 @@ function EmployeeBot() {
     this.dmmMaintenanceList = [
         {
             name: "DMM Maintenance",
-            startTime: "Nov 11 2016 14:00:00 GMT+0900",
-            endTime: "Nov 11 2016 17:00:00 GMT+0900"
+            startTime: "Nov 18 2016 14:00:00 GMT+0900",
+            endTime: "Nov 18 2016 17:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
