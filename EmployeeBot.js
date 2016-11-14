@@ -144,6 +144,7 @@ function EmployeeBot() {
         "town_road_01.jpg",
         "town_road_02.jpg",
         "town_road_03.jpg",
+        "training_place.jpg",
         "volcano.jpg"
     ];
 }

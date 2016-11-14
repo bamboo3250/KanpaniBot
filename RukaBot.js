@@ -13,6 +13,9 @@ var rollResult = {};
 function handleRollCommand(message) {
     var text = message.content.trim().toLowerCase();
     if (text != "~roll") return;
+    if (message.channel.name === ruka.dmmChannelName || message.channel.name === ruka.nutakuChannelName) {
+        return;
+    }
     
     var rarity = helper.randomDist([17, 17, 10, 5, 1]) + 1;
     var employeeList = ruka.employeeDatabase.getEmployeesByRarirty(rarity);
