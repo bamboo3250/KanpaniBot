@@ -72,8 +72,8 @@ function handleRollCommand(message) {
                 resume.print(font, 240, 102, rolledEmployee.fullName);
 
                 resume.composite(classImage, 232, 140)
-                .composite(spriteImage, -20, 50)
-                .composite(photoImage, 18, 90);
+                    .composite(spriteImage, -20, 50)
+                    .composite(photoImage, 18, 90);
                 
                 for(var i=0;i<(rolledEmployee.getBaseRarity() === 5?7:6);i++) {
                     if (i < rolledEmployee.getBaseRarity()) {

@@ -221,6 +221,57 @@ function handleRankingCommand(message) {
     });
 }
 
+function handleMyRankingCommand(message) {
+    if (elsa.preventPM(message)) return;
+    var result = [];
+    for (key in affection) {
+        result.push({
+            userId: key,
+            point: affection[key]
+        });
+    }
+    result.sort(function(a, b) {
+        return b.point - a.point;
+    })
+    
+    message.guild.fetchMembers().then(guild => {
+
+        var userId = message.author.id;
+        var userOrder = 0;
+        for(;userOrder<result.length;userOrder++) {
+            if (result[userOrder].userId === userId) break;
+        }
+        if (userOrder == result.length) {
+            message.reply("You are not in the ranking.");
+            return;
+        } else {
+            var count = 0;
+            var text = "Your ranking:\n";
+            var lower_bound = Math.min(userOrder + 4, result.length-1);
+            var upper_bound = Math.max(lower_bound - 9, 0);
+            for(var i=0;i<result.length;i++) {
+                if (i==0 || result[i-1].point != result[i].point) count = i;
+                var member = guild.members.find('id', result[i].userId);
+                if (member && (upper_bound <= i) && (i<=lower_bound)) {
+                    if (i === userOrder) {
+                        text += "**" + (count+1) + ". " + member.user.username + " (" + result[i].point + ")**\n";
+                    } else {
+                        text += (count+1) + ". " + member.user.username + " (" + result[i].point + ")\n";    
+                    }
+                }
+            }
+        }
+
+        for(var i=0;i<result.length;i++) {
+            var member = guild.members.find('id', result[i].userId);
+            if (member) updateRole(message, member);
+        }
+        message.channel.sendMessage(text);
+    }).catch(err => {
+        message.channel.sendMessage("Fetching member error!");
+    });
+}
+
 function handleReduceCommand(message) {
     if (!elsa.isAdmin(message)) return;
     for(key in affection) {
@@ -252,6 +303,9 @@ elsa.bot.on("message", function(message) {
         break;
     case "~rank":
         handleRankingCommand(message);
+        break;
+    case "~myrank":
+        handleMyRankingCommand(message);
         break;
     case "~reduce":
         handleReduceCommand(message);
