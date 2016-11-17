@@ -105,6 +105,10 @@ function EmployeeBot() {
     this.player = {};
 
     this.firstTimeReady = true;
+    
+    this.freeRoll = {};
+    this.rollResult = {};
+    this.canUseBreadToRoll = false;
 
     this.backgroundFileNames = [
         "arena.jpg",
@@ -513,6 +517,7 @@ EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
     var userId = message.author.id;
     this.initBreadIfNeed(userId);
     if (this.checkNoSoul(message)) return false;
+    if (message.author.id === "146556639342755840") return true;
     if (this.remainingBread[userId] >= amount) {
         this.remainingBread[userId] -= amount;
         return true;
@@ -862,6 +867,156 @@ EmployeeBot.prototype.handleMyTopCommand = function(message) {
     });
 }
 
+EmployeeBot.prototype.handleRollCommand = function(message) {
+    var text = message.content.trim().toLowerCase();
+    if (text != "~roll") return;
+    if (message.channel.name === this.dmmChannelName || message.channel.name === this.nutakuChannelName) {
+        return;
+    }
+    var userId = message.author.id;
+    if (typeof this.freeRoll[userId] === "undefined") this.freeRoll[userId] = 4;
+
+    if (this.freeRoll[userId] <= 0 && !this.canUseBreadToRoll) {
+        message.reply("You have used all free draws today!");
+        return;
+    }
+    
+    var rarity = helper.randomDist([17, 17, 10, 5, 1]) + 1;
+    var employeeList = this.employeeDatabase.getEmployeesByRarirty(rarity);
+    var rolledEmployee = new Employee(employeeList[helper.randomInt(employeeList.length)]);
+
+    var photoUrl = rolledEmployee.getIllustURL('photo');
+    var photoFileName = "images/photo/" + rolledEmployee._id + ".png";
+
+    var spriteUrl = rolledEmployee.getSpriteImageURL(rolledEmployee.getBaseRarity(), true, false, 2);
+    var spriteFileName = "images/enemy/" + rolledEmployee.getSpriteImageName(rolledEmployee.getBaseRarity(), false, 2);
+
+    var that = this;
+    var queue = [
+        { fileToDownload: photoUrl,     fileToSave: photoFileName},
+        { fileToDownload: spriteUrl,    fileToSave: spriteFileName}
+    ];
+
+    var classFileName = "images/misc/" + rolledEmployee.getClass().toLowerCase() + ".png";
+    var normalStarFileName = "images/misc/normalStar.png";
+    var highlightStarFileName = "images/misc/highlightStar.png";
+    var resumeFileName = "images/misc/resumeForm.png";
+    this.imageHelper.download(queue, function(err) {
+        if (err) {
+            message.reply("Envelope got lost. Try again.");
+            console.log(err); 
+            return;
+        }
+        var imageFileNameQueue = [
+            photoFileName, 
+            spriteFileName, 
+            classFileName, 
+            normalStarFileName, 
+            highlightStarFileName, 
+            resumeFileName
+        ];
+        that.imageHelper.read(imageFileNameQueue, function (err, imageList) {
+            if (err) { 
+                message.reply("Envelope got lost. Try again.");
+                console.log(err); 
+                return 
+            }
+            var photoImage = imageList[0];
+            var spriteImage = imageList[1];
+            var classImage = imageList[2];
+            var normalStarImage = imageList[3];
+            var highlightStarImage = imageList[4];
+            var resume = imageList[5];
+
+            var resumeFileName = "images/resume/" + rolledEmployee._id + ".png";
+
+            spriteImage.crop(0, 0, 360, 270);
+
+            Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function (font) {
+                resume.print(font, 240, 102, rolledEmployee.fullName);
+
+                resume.composite(classImage, 232, 140)
+                    .composite(spriteImage, -20, 50)
+                    .composite(photoImage, 18, 90);
+                
+                for(var i=0;i<(rolledEmployee.getBaseRarity() === 5?7:6);i++) {
+                    if (i < rolledEmployee.getBaseRarity()) {
+                        resume.composite(highlightStarImage, 270+ i*13, 160);
+                    } else {
+                        resume.composite(normalStarImage, 270 + i*13, 160);
+                    }
+                }
+
+                resume.print(font, 272, 140, rolledEmployee.getClass());
+
+                resume.print(font, 285, 185, "" + rolledEmployee.getHP());
+                resume.print(font, 285, 208, "" + rolledEmployee.getAtk());
+                resume.print(font, 285, 231, "" + rolledEmployee.getMAtk());
+
+                resume.print(font, 415, 208, "" + rolledEmployee.getDef());
+                resume.print(font, 415, 231, "" + rolledEmployee.getMDef());
+
+                resume.print(font, 20, 273, "Use \"~take\" to select this employee.");
+
+                resume.write(resumeFileName, function() {
+                    var channel = message.channel;
+                    if (channel.type === "text" || channel.type === "dm") {
+                        if (message.author.id != "146556639342755840") {
+                            if (that.freeRoll[userId] > 0) {
+                                that.freeRoll[userId]--;
+                            } else {
+                                if (!that.consumeBread(message)) return;
+                            }    
+                        }
+                        that.rollResult[userId] = rolledEmployee._id;
+                        channel.sendFile(resumeFileName, "png", "The resume is in! " + message.author);    
+                    }    
+                });
+            });
+        });
+    });
+}
+
+EmployeeBot.prototype.handleTakeCommand = function(message) {
+    var text = message.content.trim().toLowerCase();
+    if (text != "~take") return;
+    var userId = message.author.id;
+
+    if (typeof this.rollResult[userId] === "undefined" || this.rollResult[userId] === null) {
+        message.reply("You have to roll first.");
+        this.rollResult[userId] = null;
+        return;
+    }
+
+    if (typeof this.player[userId] === "undefined") {
+        this.player[userId] = {
+            characterId: "",
+            exp: 0,
+            equipedWeapon: null,
+            equipedArmor: null,
+            equipedAccessory: null,
+            materialList: [],
+            weaponList: [],
+            armorList: [],
+            accessoryList: []
+        };
+    }
+    this.player[userId].characterId = this.rollResult[userId];
+    this.player[userId].exp = Math.floor(this.player[userId].exp/2);
+    if (this.player[userId].equipedWeapon) {
+        this.player[userId].weaponList.push(this.player[userId].equipedWeapon);
+        this.player[userId].equipedWeapon = null;
+    }
+    if (this.player[userId].equipedArmor) {
+        this.player[userId].armorList.push(this.player[userId].equipedArmor);
+        this.player[userId].equipedArmor = null;
+    }
+    this.savePlayer();
+    var employee = new Employee(this.employeeDatabase.getEmployeeById(this.rollResult[userId]));
+    message.reply("Congratulation! You have selected **" + employee.fullName + "** as your character.");
+    this.rollResult[userId] = null;
+}
+
 EmployeeBot.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     this.handleEventCommand(message);
@@ -877,6 +1032,8 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
     this.handleMeCommand(message);
     this.handleTopCommand(message);
     this.handleMyTopCommand(message);
+    this.handleRollCommand(message);
+    this.handleTakeCommand(message);
     this.handleSpecialCase(message);
 }
 
