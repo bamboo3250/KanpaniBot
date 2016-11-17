@@ -249,6 +249,7 @@ function handleMyRankingCommand(message) {
             var text = "Your ranking:\n";
             var lower_bound = Math.min(userOrder + 4, result.length-1);
             var upper_bound = Math.max(lower_bound - 9, 0);
+            lower_bound = Math.min(upper_bound + 9, result.length-1);
             for(var i=0;i<result.length;i++) {
                 if (i==0 || result[i-1].point != result[i].point) count = i;
                 var member = guild.members.find('id', result[i].userId);
