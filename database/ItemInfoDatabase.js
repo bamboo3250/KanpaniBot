@@ -6,7 +6,7 @@ function ItemDatabase() {
 
 ItemDatabase.prototype.getItemInfoByName = function(name) {
     for(var i=0;i<this.itemList.length;i++) {
-        if (this.itemList[i].itemName === name)) return this.itemList[i];
+        if (this.itemList[i].itemName === name) return this.itemList[i];
     }
     return null;
 }

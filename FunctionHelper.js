@@ -56,6 +56,11 @@ FunctionHelper.prototype.randomInt = function(max) {
     return Math.floor(Math.random() * max);
 }
 
+FunctionHelper.prototype.randomObject = function(list) {
+    if (list.length <= 0) return null;
+    return list[this.randomInt(list.length)];
+}
+
 FunctionHelper.prototype.randomDist = function(distribution) {
     var total = 0;
     for(var i=0;i<distribution.length;i++) total += distribution[i];

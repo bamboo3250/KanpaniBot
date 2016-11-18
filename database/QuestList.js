@@ -48,7 +48,7 @@ var quests = [
         levelRequired: 5, timeCost: 15, goldCost: 0, breadCost: 1, 
         goldReward: 200, breadReward: 0, exp: 254, bonusExp: 0, numItemDrop: 9,
         dropList: [
-            "Tree Branch"
+            "Tree Branch",
             "Rare Silver Coin"
         ]
     },

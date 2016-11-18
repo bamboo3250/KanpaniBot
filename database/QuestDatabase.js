@@ -7,7 +7,7 @@ function QuestDatabase() {
 QuestDatabase.prototype.getQuestByName = function(name) {
     for(var i=0;i<this.questList.length;i++) {
         for(var j=0;j<this.questList[i].commonNames.length;j++) {
-            if (this.questList[i].commonNames[j] === name)) return this.questList[i];
+            if (this.questList[i].commonNames[j] === name) return this.questList[i];
         }
     }
     return null;

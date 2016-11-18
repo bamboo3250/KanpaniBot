@@ -1,10 +1,6 @@
 var ruka = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
-var fs = require('fs');
-var helper = require('./FunctionHelper');
-var Employee = require('./classes/Employee');
-var Jimp = require("jimp");
 
 ruka.declineNotEnoughBread = ruka.declineNotEnoughBread.concat(dialog.ruka.decline);
 
