@@ -121,7 +121,7 @@ function EmployeeBot() {
 
     this.startBread = 3;
     this.cappedBread = 5;
-    this.replenishTime = 2*60*60*1000; // 2 hours
+    this.replenishTime = 60*60*1000; // 1 hours
     this.remainingBread = {};
     this.total_bread = 0;
     this.declineNotEnoughBread = [

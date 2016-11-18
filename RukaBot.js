@@ -17,8 +17,6 @@ ruka.commonGoodMorning = ruka.commonGoodMorning.concat(dialog.ruka.commonGoodMor
 ruka.commonGoodNight = ruka.commonGoodNight.concat(dialog.ruka.commonGoodNight);
 ruka.commonThanks = ruka.commonThanks.concat(dialog.ruka.commonThanks);
 
-ruka.replenishTime = 60*60*1000;
-
 ruka.bot.on("ready", function() {
     ruka.ready();
 });

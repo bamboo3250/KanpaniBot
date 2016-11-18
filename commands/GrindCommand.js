@@ -159,7 +159,6 @@ module.exports = {
                     });
                 });
             });
-        }, //quest.timeCost*
-        30*1000);
+        }, quest.timeCost*60*1000);
     }
 }
