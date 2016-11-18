@@ -26,17 +26,23 @@ module.exports = {
 
             var itemCellFileName = "images/misc/itemCell.png";
             var backgroundFileName = "images/misc/background/" + bot.backgroundFileNames[bot.functionHelper.randomInt(bot.backgroundFileNames.length)];
+            var shadowFileName = "images/misc/shadow.png";
 
-            bot.imageHelper.read([enemySpriteFileName, itemCellFileName, backgroundFileName], function (err, imageList) {
+            bot.imageHelper.read([enemySpriteFileName, itemCellFileName, backgroundFileName, shadowFileName], function (err, imageList) {
                 if (err) { console.log(err); return }
                 enemySpriteImage = imageList[0];
                 itemCellImage = imageList[1];
                 backgroundImage = imageList[2];
+                shadowImage = imageList[3];
 
                 backgroundImage.crop(250,100, 310,270);
                 enemySpriteImage.crop(20, 0, 310, 270);
 
-                backgroundImage.composite(enemySpriteImage, 0, 0)
+                shadowImage.scale(0.5);
+
+                backgroundImage
+                .composite(shadowImage, 105, 165)
+                .composite(enemySpriteImage, 0, 0)
                 .composite(itemCellImage, 10, 10)
                 .composite(itemCellImage, 10, 60)
                 .composite(itemCellImage, 10, 110);
