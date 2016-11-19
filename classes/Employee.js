@@ -87,6 +87,10 @@ EmployeeInfo.prototype.setExp = function(expToSet) {
     }
 }
 
+EmployeeInfo.prototype.addExp = function(expToAdd) {
+    this.setExp(this.exp + expToAdd);
+}
+
 EmployeeInfo.prototype.getVIT = function() {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     var slope = (this.maxStats._vit - this.baseStats._vit) / (maxLevel - 1);

@@ -1,10 +1,6 @@
 var ruka = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
-var fs = require('fs');
-var helper = require('./FunctionHelper');
-var Employee = require('./classes/Employee');
-var Jimp = require("jimp");
 
 ruka.declineNotEnoughBread = ruka.declineNotEnoughBread.concat(dialog.ruka.decline);
 
@@ -20,8 +16,6 @@ ruka.idleTalks = dialog.ruka.idleTalks;
 ruka.commonGoodMorning = ruka.commonGoodMorning.concat(dialog.ruka.commonGoodMorning);
 ruka.commonGoodNight = ruka.commonGoodNight.concat(dialog.ruka.commonGoodNight);
 ruka.commonThanks = ruka.commonThanks.concat(dialog.ruka.commonThanks);
-
-ruka.replenishTime = 60*60*1000;
 
 ruka.bot.on("ready", function() {
     ruka.ready();

@@ -112,7 +112,7 @@ var employees = [
         baseStats: { _str: 26, _vit: 6, _agi: 34, _dex: 22, _int: 1, _pie: 3, _luk: 22},
         maxStats: { _str: 344, _vit: 187, _agi: 434, _dex: 332, _int: 161, _pie: 174, _luk: 274}
     },{
-        _no: 159, _id: "10750003_d65758fd", fullName: "Armonica Rehula", japaneseName: "アルモニカ・レフラ", commonNames: ["Armonica"], cwId: 0,
+        _no: 159, _id: "10750003_d65758fd", fullName: "Armonica Rehula", japaneseName: "アルモニカ・レフラ", commonNames: ["Armonica"], cwId: 20,
         baseStats: { _str: 25, _vit: 6, _agi: 35, _dex: 23, _int: 1, _pie: 3, _luk: 21},
         maxStats: { _str: 344, _vit: 187, _agi: 434, _dex: 332, _int: 161, _pie: 174, _luk: 274}
     },{
@@ -264,7 +264,7 @@ var employees = [
         baseStats: { _str: 34, _vit: 12, _agi: 11, _dex: 4, _int: 2, _pie: 2, _luk: 13},
         maxStats: { _str: 475, _vit: 275, _agi: 214, _dex: 161, _int: 151, _pie: 171, _luk: 276}
     },{
-        _no: 139, _id: "10540003_6696839c", fullName: "Melnor Hir", japaneseName: "メルノア・ヒア", commonNames: ["Melnor"], cwId: 0,
+        _no: 139, _id: "10540003_6696839c", fullName: "Melnor Hir", japaneseName: "メルノア・ヒア", commonNames: ["Melnor"], cwId: 23,
         baseStats: { _str: 32, _vit: 14, _agi: 13, _dex: 3, _int: 2, _pie: 2, _luk: 12},
         maxStats: { _str: 473, _vit: 277, _agi: 225, _dex: 160, _int: 151, _pie: 171, _luk: 275}
     },{
@@ -294,7 +294,7 @@ var employees = [
         baseStats: { _str: 9, _vit: 13, _agi: 9, _dex: 6, _int: 10, _pie: 25, _luk: 8},
         maxStats: { _str: 166, _vit: 245, _agi: 213, _dex: 210, _int: 299, _pie: 394, _luk: 212}
     },{
-        _no: 140, _id: "10640003_94c16e64", fullName: "Ainnor Hir", japaneseName: "アイノア・ヒア", commonNames: ["Ainnor"], cwId: 0,
+        _no: 140, _id: "10640003_94c16e64", fullName: "Ainnor Hir", japaneseName: "アイノア・ヒア", commonNames: ["Ainnor"], cwId: 18,
         baseStats: { _str: 9, _vit: 14, _agi: 9, _dex: 6, _int: 9, _pie: 26, _luk: 7},
         maxStats: { _str: 166, _vit: 246, _agi: 213, _dex: 210, _int: 290, _pie: 395, _luk: 219}
     },{
