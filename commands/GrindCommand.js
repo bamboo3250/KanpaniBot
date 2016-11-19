@@ -58,19 +58,34 @@ module.exports = {
             var text = "The quest has finished!\n\n";
             text += "=================MISSION REPORT=================\n\n";
             text += "Mission: **" + quest.name + "** (**" + quest.commonNames[0] + "**)\n";
-            var expGained = quest.exp + bot.functionHelper.randomInt(quest.bonusExp + 1);
+
+            var chanceToSuccess = 70;
+            for(var i=0;i<quest.advantage.length;i++) {
+                if (quest.advantage[i] == employee.getClassId()) chanceToSuccess = 90;
+            }
+            chanceToSuccess = Math.min(100, chanceToSuccess + (employee.levelCached - quest.levelRequired));
+            var isSuccess = bot.functionHelper.randomInt(100) < chanceToSuccess;
+            text += "Status: **" + (isSuccess?"SUCCESS :white_check_mark: ":"FAIL :x:") + "**\n";
+
+            var extraExp = Math.floor(quest.exp*0.1);
+            var expGained = (isSuccess ? quest.exp + bot.functionHelper.randomInt(extraExp + 1) : 0);
+            var goldGained = (isSuccess ? quest.goldReward : 0);
+            var breadGained = (isSuccess ? quest.breadReward : 0);
             text += "EXP gained: **" + expGained + "**\n";
-            text += "Gold: **" + quest.goldReward + "**   Bread: **" + quest.breadReward + "**\n";
+            text += "Gold: **" + goldGained + "**   Bread: **" + breadGained + "**\n";
             text += "Item Drop:\n";
 
             var backupItemDropText = "";
 
             var drop = {};
-            for(var i=0;i<quest.numItemDrop;i++) {
-                var itemName = bot.functionHelper.randomObject(quest.dropList);
-                if (typeof drop[itemName] === "undefined") drop[itemName] = 0;
-                drop[itemName]++;
+            if (isSuccess) {
+                for(var i=0;i<quest.numItemDrop;i++) {
+                    var itemName = bot.functionHelper.randomObject(quest.dropList);
+                    if (typeof drop[itemName] === "undefined") drop[itemName] = 0;
+                    drop[itemName]++;
+                }    
             }
+            
 
             var preLevel = employee.levelCached;
             player.exp += expGained;
@@ -78,9 +93,8 @@ module.exports = {
             var isLevelUp = (preLevel < employee.levelCached)
             var levelUpText = "Congratulations! Your level has increased to **" + employee.levelCached + "**";
             
-            player.gold += quest.goldReward;
-            bot.remainingBread[userId] = Math.min(bot.remainingBread[userId] + quest.breadReward, bot.cappedBread);
-            
+            player.gold += goldGained;
+            bot.remainingBread[userId] = Math.min(bot.remainingBread[userId] + breadGained, bot.cappedBread);
 
             var itemNameList = [];
             for(key in drop) {
