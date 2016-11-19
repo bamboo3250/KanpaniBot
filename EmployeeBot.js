@@ -40,20 +40,11 @@ function EmployeeBot() {
     this.playerManager = playerManager;
     this.functionHelper = helper;
 
-    this.dmmEventList = [
-        {
-            name: "Hotsprings, Monique, and Bath Towels",
-            startTime: "Oct 28 2016 17:00:00 GMT+0900",
-            endTime: "Nov 18 2016 14:00:00 GMT+0900"
-        }
-    ];
-    this.nutakuEventList = [
-    ];
     this.dmmMaintenanceList = [
         {
             name: "DMM Maintenance",
-            startTime: "Nov 18 2016 14:00:00 GMT+0900",
-            endTime: "Nov 18 2016 17:00:00 GMT+0900"
+            startTime: "Nov 25 2016 14:00:00 GMT+0900",
+            endTime: "Nov 25 2016 17:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
