@@ -17,7 +17,7 @@ module.exports = {
         }
         result.sort(function(a, b) {
             if (a.employee.levelCached != b.employee.levelCached) {
-                return b.employee.levelCached - b.employee.levelCached;    
+                return b.employee.levelCached - a.employee.levelCached;    
             } else {
                 return b.employee.getBaseRarity() - a.employee.getBaseRarity();
             }
