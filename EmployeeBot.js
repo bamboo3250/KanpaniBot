@@ -114,6 +114,7 @@ function EmployeeBot() {
     this.cappedBread = 5;
     this.replenishTime = 60*60*1000; // 1 hours
     this.remainingBread = {};
+    this.breadReceived = {};
     this.total_bread = 0;
     this.declineNotEnoughBread = [
         "You don't have enough bread."
