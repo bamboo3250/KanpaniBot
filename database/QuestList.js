@@ -62,7 +62,7 @@ var quests = [
             "Star Fragment"
         ]
     },{
-        commonNames: ["1-2-2", "1-2"], name: "Handle Personal Information with Care", 
+        commonNames: ["1-2-2", "2-2"], name: "Handle Personal Information with Care", 
         levelRequired: 7, timeCost: 16, goldCost: 0, breadCost: 1, 
         goldReward: 221, breadReward: 0, exp: 616, bonusExp: 0, numItemDrop: 4,
         dropList: [

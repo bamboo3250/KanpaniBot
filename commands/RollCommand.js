@@ -90,7 +90,7 @@ module.exports = {
                     resume.print(font, 415, 208, "" + rolledEmployee.getDef());
                     resume.print(font, 415, 231, "" + rolledEmployee.getMDef());
 
-                    resume.print(font, 20, 273, "Use \"~take\" to select bot employee.");
+                    resume.print(font, 20, 273, "Use \"~take\" to select this employee.");
 
                     resume.write(resumeFileName, function() {
                         var channel = message.channel;
