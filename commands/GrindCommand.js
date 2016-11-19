@@ -34,7 +34,7 @@ module.exports = {
         if (bot.runQuestStatus[userId].quest != "") {
             var remainingTime = bot.runQuestStatus[userId].endTime - now.valueOf();
             var time = bot.functionHelper.parseTime(remainingTime);
-            message.reply("You are running quest " + bot.runQuestStatus[userId].quest + ". It will end in **" + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s)":"") + "**");
+            message.reply("You are running quest " + bot.runQuestStatus[userId].quest + ". It will end in **" + (time.min>0? time.min + " min(s) ":"") + (time.sec + " sec(s)") + "**");
             return;
         }
 

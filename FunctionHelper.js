@@ -29,6 +29,7 @@ FunctionHelper.prototype.getTimeUntilDaily = function(timeInString) {
 
 
 FunctionHelper.prototype.parseTime = function(millisec) {
+    millisec = Math.max(millisec, 0);
     return {
         day: Math.floor(millisec/(24*60*60*1000)),
         hour: Math.floor((millisec%(24*60*60*1000))/(60*60*1000)),
