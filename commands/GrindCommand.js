@@ -131,7 +131,7 @@ module.exports = {
                     return;
                 }
                 bot.imageHelper.read(itemFileNameList, function (err, imageList) {
-                    if (err) {
+                    if (err || imageList.length == 0) {
                         message.author.sendMessage(text + backupItemDropText);
                         if (isLevelUp) {
                             setTimeout(function() {
@@ -141,21 +141,21 @@ module.exports = {
                         return;
                     }
 
-                    const ITEM_CELL_WIDTH = 250;
+                    const ITEM_CELL_WIDTH = 100;
                     const ITEM_CELL_HEIGHT = 60;
+                    const NUM_COL = 4;
 
-                    var imageWidth = ITEM_CELL_WIDTH*2;
-                    var imageHeight = Math.ceil(imageList.length/2) * ITEM_CELL_HEIGHT;
+                    var imageWidth = ITEM_CELL_WIDTH*NUM_COL;
+                    var imageHeight = Math.ceil(imageList.length/NUM_COL) * ITEM_CELL_HEIGHT;
 
                     var image = new Jimp(imageWidth, imageHeight, function (err, image) {
                         Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function (font) {
                             
                             for(var i=0;i<imageList.length;i++) {
-                                var row = Math.floor(i/2);
-                                var col = i%2;
+                                var row = Math.floor(i/NUM_COL);
+                                var col = i%NUM_COL;
                                 image.composite(imageList[i], 10 + col*ITEM_CELL_WIDTH, 10 + row*ITEM_CELL_HEIGHT);
-                                image.print(font, 70 + col*ITEM_CELL_WIDTH, 10 + row*60, itemInfoList[i].itemName);
-                                image.print(font, 70 + col*ITEM_CELL_WIDTH, 35 + row*60, "x" + drop[itemInfoList[i].itemName]);
+                                image.print(font, 65 + col*ITEM_CELL_WIDTH, 40 + row*60, "x" + drop[itemInfoList[i].itemName]);
                             }
                             var imageName = "images/inventory/" + userId + ".png";
                             image.write(imageName, function() {
