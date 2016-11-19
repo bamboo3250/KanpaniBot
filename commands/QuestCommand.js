@@ -14,7 +14,7 @@ module.exports = {
                 result.push(questList[i].commonNames[0]);
             }
         }
-        var text = "Avaiable quest(s) for your level: upto **" + result[result.length-1] + "**";
+        var text = "Available quest(s) for your level: upto **" + result[result.length-1] + "**";
         message.reply(text);
     }
 }
