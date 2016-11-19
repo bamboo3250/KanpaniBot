@@ -5,6 +5,8 @@ module.exports = {
     handle: function(message, bot) {
         var text = message.content.trim().toLowerCase();
         if (!text.startsWith("~grind ")) return;
+        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) return;
+
         var questName = text.substring(7).trim().toLowerCase();
         var quest = bot.questDatabase.getQuestByName(questName);
         if (quest == null) {
