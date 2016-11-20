@@ -438,7 +438,7 @@ var quests = [
     },
 
     {
-        commonNames: ["1-6-1", "1-6-1"], name: "June Bride", 
+        commonNames: ["1-6-1", "6-1"], name: "June Bride", 
         levelRequired: 34, timeCost: 41, goldCost: 0, breadCost: 1, 
         goldReward: 730, breadReward: 0, exp: 2099, advantage: [5], numItemDrop: 18,
         dropList: [
@@ -512,7 +512,7 @@ var quests = [
             "Ruby"
         ]
     },{
-        commonNames: ["1-6-7", "1-6-7"], name: "It Takes Two to Make a Quarrel", 
+        commonNames: ["1-6-7", "6-7"], name: "It Takes Two to Make a Quarrel", 
         levelRequired: 40, timeCost: 48, goldCost: 0, breadCost: 1, 
         goldReward: 850, breadReward: 0, exp: 2755, advantage: [7, 8], numItemDrop: 18,
         dropList: [
