@@ -2,7 +2,8 @@ module.exports = {
     handle: function(message, bot) {
         var text = message.content.trim().toLowerCase();
         if (text !== "~quest") return;
-
+        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) return;
+        
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
         if (player === null) {
