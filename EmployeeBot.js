@@ -130,6 +130,7 @@ function EmployeeBot() {
     this.canUseBreadToRoll = false;
 
     this.runQuestStatus = {};
+    this.freeMe = {};
 
     this.backgroundFileNames = [
         "arena.jpg",

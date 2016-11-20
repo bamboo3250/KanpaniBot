@@ -10,7 +10,19 @@ module.exports = {
             return;
         }
 
+        if (typeof bot.freeMe[userId] === "undefined") bot.freeMe[userId] = 2;
+
         var employee = bot.createEmployeeFromPlayer(player);
+        var goldToDeduct = employee.levelCached * 1000;
+        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) {
+            goldToDeduct *= 2;
+        }
+        if (bot.isPM(message) || bot.freeMe[userId] > 0) goldToDeduct = 0;
+
+        if (player.gold < goldToDeduct) {
+            message.reply("You need " + goldToDeduct + " Gold to use this command.");
+            return;
+        }
 
         var enemySpriteUrl = employee.getSpriteImageURL(employee.getRarity(), true, false, 2);
         var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(employee.getRarity(), false, 2);
@@ -60,6 +72,16 @@ module.exports = {
                         const matkEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kmatk'));
                         const mdefEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kmdef'));
 
+                        if (player.gold < goldToDeduct) {
+                            message.reply("You need " + goldToDeduct + " Gold to use this command.");
+                            return;
+                        }
+                        if (!bot.isPM(message) && bot.freeMe[userId] > 0) {
+                            bot.freeMe[userId]--;
+                        }
+                        player.gold -= goldToDeduct;
+                        bot.savePlayer();
+                        
                         var text = "\n";
                         text += "Player: **" + message.author.username + "** (:moneybag:: **" + player.gold + "**)\n";
                         text += "Character: **" + employee.fullName + "** (Lv.**" + employee.levelCached  + "**)\n";
