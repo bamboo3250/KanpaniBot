@@ -41,7 +41,7 @@ module.exports = {
                 var upper_bound = Math.max(lower_bound - 9, 0);
                 lower_bound = Math.min(upper_bound + 9, result.length-1);
                 for(var i=0;i<result.length;i++) {
-                    if (i==0 || result[i-1].point != result[i].point) count = i;
+                    if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
                     var member = guild.members.find('id', result[i].userId);
                     var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
                     const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
