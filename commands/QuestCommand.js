@@ -5,6 +5,10 @@ module.exports = {
 
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
+        if (player === null) {
+            message.reply("You haven't selected your character.");
+            return;
+        }
         var employee = bot.createEmployeeFromPlayer(player);
 
         var questList = bot.questDatabase.questList;
