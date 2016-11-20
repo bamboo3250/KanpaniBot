@@ -16,6 +16,12 @@ module.exports = {
         if (player === null) {
             player = bot.playerManager.createNewPlayer(userId);
         }
+
+        if (bot.runQuestStatus[userId].quest != "") {
+            message.reply("You cannot change your character while doing quest.");
+            return;
+        }
+
         player.characterId = bot.rollResult[userId];
         player.exp = Math.floor(player.exp/2);
         if (player.equipedWeapon) {
