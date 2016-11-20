@@ -2,7 +2,7 @@ var quests = [
     {
         commonNames: ["1-1-1", "1-1"], name: "Starting a Mercenary Business", 
         levelRequired: 1, timeCost: 9, goldCost: 0, breadCost: 1, 
-        goldReward: 100, breadReward: 0, exp: 112, advantage: [1], numItemDrop: 3,
+        goldReward: 100, breadReward: 0, exp: 112, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 3,
         dropList: [
             "Copper Ore", 
             "Rare Silver Coin"
@@ -10,12 +10,12 @@ var quests = [
     },{
         commonNames: ["1-1-2", "1-2"], name: "Bottle Slimers Ravage the Fields", 
         levelRequired: 2, timeCost: 10, goldCost: 0, breadCost: 1, 
-        goldReward: 100, breadReward: 0, exp: 92, advantage: [2], numItemDrop: 4,
+        goldReward: 100, breadReward: 0, exp: 92, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
         dropList: ["Water"]
     },{
         commonNames: ["1-1-3", "1-3"], name: "10,000G Night View For You", 
         levelRequired: 3, timeCost: 10, goldCost: 0, breadCost: 1, 
-        goldReward: 110, breadReward: 0, exp: 102, advantage: [3], numItemDrop: 6,
+        goldReward: 110, breadReward: 0, exp: 102, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Tree Branch", 
             "Old Silver Coin"
@@ -23,22 +23,22 @@ var quests = [
     },{
         commonNames: ["1-1-4", "1-4"], name: "Do You Like Chickbat Meat?", 
         levelRequired: 3, timeCost: 11, goldCost: 0, breadCost: 1, 
-        goldReward: 121, breadReward: 0, exp: 132, advantage: [4], numItemDrop: 6,
+        goldReward: 121, breadReward: 0, exp: 132, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: ["Mountain Goat Horn"]
     },{
         commonNames: ["1-1-5", "1-5"], name: "Trouble In the Sewer Cave", 
         levelRequired: 4, timeCost: 12, goldCost: 0, breadCost: 1, 
-        goldReward: 134, breadReward: 0, exp: 150, advantage: [5], numItemDrop: 6,
+        goldReward: 134, breadReward: 0, exp: 150, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: ["Mountain Goat Horn"]
     },{
         commonNames: ["1-1-6", "1-6"], name: "Drunkard Blacksmith's Workshop", 
         levelRequired: 4, timeCost: 13, goldCost: 0, breadCost: 1, 
-        goldReward: 148, breadReward: 0, exp: 135, advantage: [6], numItemDrop: 3,
+        goldReward: 148, breadReward: 0, exp: 135, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 3,
         dropList: ["Copper Ore"]
     },{
         commonNames: ["1-1-7", "1-7"], name: "Trendy Chickbat Liqour", 
         levelRequired: 5, timeCost: 14, goldCost: 0, breadCost: 1, 
-        goldReward: 163, breadReward: 0, exp: 190, advantage: [7], numItemDrop: 6,
+        goldReward: 163, breadReward: 0, exp: 190, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Old Silver Coin", 
             "Star Fragment"
@@ -46,7 +46,7 @@ var quests = [
     },{
         commonNames: ["1-1-8", "1-8"], name: "Company Blacksmith's Workshop", 
         levelRequired: 5, timeCost: 15, goldCost: 0, breadCost: 1, 
-        goldReward: 200, breadReward: 0, exp: 254, advantage: [8], numItemDrop: 9,
+        goldReward: 200, breadReward: 0, exp: 254, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 9,
         dropList: [
             "Tree Branch",
             "Rare Silver Coin"
@@ -56,7 +56,7 @@ var quests = [
     {
         commonNames: ["1-2-1", "2-1"], name: "Revenge of the Chickbat", 
         levelRequired: 6, timeCost: 15, goldCost: 0, breadCost: 1, 
-        goldReward: 210, breadReward: 0, exp: 590, advantage: [1], numItemDrop: 6,
+        goldReward: 210, breadReward: 0, exp: 590, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Crystal", 
             "Star Fragment"
@@ -64,7 +64,7 @@ var quests = [
     },{
         commonNames: ["1-2-2", "2-2"], name: "Handle Personal Information with Care", 
         levelRequired: 7, timeCost: 16, goldCost: 0, breadCost: 1, 
-        goldReward: 221, breadReward: 0, exp: 616, advantage: [2], numItemDrop: 4,
+        goldReward: 221, breadReward: 0, exp: 616, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
         dropList: [
             "Soft Leather", 
             "Ruby"
@@ -72,7 +72,7 @@ var quests = [
     },{
         commonNames: ["1-2-3", "2-3"], name: "Operation Clockback", 
         levelRequired: 8, timeCost: 16, goldCost: 0, breadCost: 1, 
-        goldReward: 233, breadReward: 0, exp: 657, advantage: [3], numItemDrop: 4,
+        goldReward: 233, breadReward: 0, exp: 657, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
         dropList: [
             "Silver Coin Purse", 
             "Turquoise", 
@@ -81,7 +81,7 @@ var quests = [
     },{
         commonNames: ["1-2-4", "2-4"], name: "Trade Ship Construction Rush", 
         levelRequired: 8, timeCost: 18, goldCost: 0, breadCost: 1, 
-        goldReward: 245, breadReward: 0, exp: 730, advantage: [4], numItemDrop: 6,
+        goldReward: 245, breadReward: 0, exp: 730, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Water", 
             "Soft Leather", 
@@ -90,7 +90,7 @@ var quests = [
     },{
         commonNames: ["1-2-5", "2-5"], name: "Trade Ship Construction Rush - Stone", 
         levelRequired: 9, timeCost: 19, goldCost: 0, breadCost: 1, 
-        goldReward: 258, breadReward: 0, exp: 697, advantage: [5], numItemDrop: 6,
+        goldReward: 258, breadReward: 0, exp: 697, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Soft Leather", 
             "Ruby"
@@ -98,7 +98,7 @@ var quests = [
     },{
         commonNames: ["1-2-6", "2-6"], name: "Drunkard on the Ship", 
         levelRequired: 9, timeCost: 20, goldCost: 0, breadCost: 1, 
-        goldReward: 271, breadReward: 0, exp: 873, advantage: [6], numItemDrop: 6,
+        goldReward: 271, breadReward: 0, exp: 873, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Silver Coin Purse", 
             "Rare Silver Coin", 
@@ -108,7 +108,7 @@ var quests = [
     },{
         commonNames: ["1-2-7", "2-7"], name: "Assisting the Magic Researcher", 
         levelRequired: 10, timeCost: 21, goldCost: 0, breadCost: 1, 
-        goldReward: 285, breadReward: 0, exp: 840, advantage: [7, 8], numItemDrop: 6,
+        goldReward: 285, breadReward: 0, exp: 840, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Ruby", 
             "Mountain Goat Horn"
@@ -116,7 +116,7 @@ var quests = [
     },{
         commonNames: ["1-2-8", "2-8"], name: "Pacifist of the Magic School", 
         levelRequired: 10, timeCost: 22, goldCost: 0, breadCost: 1, 
-        goldReward: 300, breadReward: 0, exp: 786, advantage: [8], numItemDrop: 6,
+        goldReward: 300, breadReward: 0, exp: 786, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Pure White Cloth", 
             "Crystal", 
@@ -525,6 +525,36 @@ var quests = [
             "Ruby", 
             "Topaz", 
             "Diamond"
+        ]
+    },
+
+    {
+        commonNames: ["labyrinth", "lab"], name: "Phantom Labyrinth", 
+        levelRequired: 25, timeCost: 60, goldCost: 20000, breadCost: 0, 
+        goldReward: 0, breadReward: 1, exp: 675, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 25,
+        dropList: [
+            "Beautiful Cloth", 
+            "Luxurious Cloth", 
+            "Evergreen Oak Branch",
+            "Maple Branch",
+            "Water Buffalo Horn", 
+            "Unicorn Horn", 
+            "Clear Water", 
+            "Shimmering Water", 
+            "Crescent Moon Fragment",
+            "Half Moon Fragment", 
+            "Iron Ore",
+            "Silver Ore",
+            "Tanned Leather",
+            "Hard Leather",
+            "Labyrinth Fragment", 
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment"
         ]
     },
 

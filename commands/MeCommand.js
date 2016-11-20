@@ -20,7 +20,7 @@ module.exports = {
         if (bot.isPM(message) || bot.freeMe[userId] > 0) goldToDeduct = 0;
 
         if (player.gold < goldToDeduct) {
-            message.reply("You need " + goldToDeduct + " Gold to use this command.");
+            message.reply("You need to pay **" + goldToDeduct + " Gold** to use this command.");
             return;
         }
 
@@ -73,7 +73,7 @@ module.exports = {
                         const mdefEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kmdef'));
 
                         if (player.gold < goldToDeduct) {
-                            message.reply("You need " + goldToDeduct + " Gold to use this command.");
+                            message.reply("You need to pay **" + goldToDeduct + " Gold** to use this command.");
                             return;
                         }
                         if (!bot.isPM(message) && bot.freeMe[userId] > 0) {
