@@ -5,8 +5,9 @@ function ItemDatabase() {
 }
 
 ItemDatabase.prototype.getItemInfoByName = function(name) {
+    var lowerCaseName = name.toLowerCase();
     for(var i=0;i<this.itemList.length;i++) {
-        if (this.itemList[i].itemName === name) return this.itemList[i];
+        if (this.itemList[i].itemName.toLowerCase() === lowerCaseName) return this.itemList[i];
     }
     return null;
 }

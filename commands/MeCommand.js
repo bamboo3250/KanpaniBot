@@ -61,8 +61,7 @@ module.exports = {
                         const mdefEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kmdef'));
 
                         var text = "\n";
-                        text += "Player: **" + message.author.username + "**\n";
-                        text += "Gold: **" + player.gold + "**\n";
+                        text += "Player: **" + message.author.username + "** (:moneybag:: **" + player.gold + "**)\n";
                         text += "Character: **" + employee.fullName + "** (Lv.**" + employee.levelCached  + "**)\n";
                         text += "Rarity: ";
                         for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";

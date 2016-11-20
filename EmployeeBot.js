@@ -28,6 +28,7 @@ var grindCommand = require('./commands/GrindCommand');
 var totalBreadCommand = require('./commands/TotalBreadCommand');
 var questCommand = require('./commands/QuestCommand');
 var inventoryCommand = require('./commands/InventoryCommand');
+var sellCommand = require('./commands/SellCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -263,6 +264,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
     totalBreadCommand.handle(message, this);
     questCommand.handle(message, this);
     inventoryCommand.handle(message, this);
+    sellCommand.handle(message, this);
 }
 
 EmployeeBot.prototype.getRandomMessages = function(messageList) {
