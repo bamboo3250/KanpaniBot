@@ -51,7 +51,18 @@ module.exports = {
         bot.runQuestStatus[userId].quest = quest.commonNames[0];
         bot.runQuestStatus[userId].endTime = now.valueOf() + quest.timeCost*60*1000;
 
-        message.reply("The quest " + quest.commonNames[0] + " has started. It will end in **" + quest.timeCost + " minutes**.");
+        var chanceToSuccess = 70;
+        for(var i=0;i<quest.advantage.length;i++) {
+            if (quest.advantage[i] == employee.getClassId()) chanceToSuccess = 90;
+        }
+        chanceToSuccess = Math.min(100, chanceToSuccess + (employee.levelCached - quest.levelRequired));
+
+        var text = "The quest " + quest.commonNames[0] + " has started. It will end in **" + quest.timeCost + " minutes**.\n";
+        if (chanceToSuccess < 85) {
+            text += "**Warning**: you might have a little trouble while doing this quest!";
+        }
+        message.reply(text);
+
         setTimeout(function() {
             bot.runQuestStatus[userId] = {
                 quest: "", endTime: -1
@@ -61,11 +72,7 @@ module.exports = {
             text += "=================MISSION REPORT=================\n\n";
             text += "Mission: **" + quest.name + "** (**" + quest.commonNames[0] + "**)\n";
 
-            var chanceToSuccess = 70;
-            for(var i=0;i<quest.advantage.length;i++) {
-                if (quest.advantage[i] == employee.getClassId()) chanceToSuccess = 90;
-            }
-            chanceToSuccess = Math.min(100, chanceToSuccess + (employee.levelCached - quest.levelRequired));
+            
             var isSuccess = bot.functionHelper.randomInt(100) < chanceToSuccess;
             text += "Status: **" + (isSuccess?"SUCCESS :white_check_mark: ":"FAIL :x:") + "**\n";
 
@@ -175,6 +182,8 @@ module.exports = {
                     });
                 });
             });
-        }, quest.timeCost*60*1000);
+        }, 
+        10*1000);
+        //quest.timeCost*60*1000);
     }
 }
