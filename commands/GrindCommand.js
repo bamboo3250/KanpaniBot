@@ -182,8 +182,6 @@ module.exports = {
                     });
                 });
             });
-        }, 
-        10*1000);
-        //quest.timeCost*60*1000);
+        }, quest.timeCost*60*1000);
     }
 }
