@@ -1,5 +1,35 @@
 var quests = [
     {
+        commonNames: ["labyrinth", "lab"], name: "Phantom Labyrinth", 
+        levelRequired: 25, timeCost: 60, goldCost: 20000, breadCost: 0, 
+        goldReward: 0, breadReward: 1, exp: 675, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 25,
+        dropList: [
+            "Beautiful Cloth", 
+            "Luxurious Cloth", 
+            "Evergreen Oak Branch",
+            "Maple Branch",
+            "Water Buffalo Horn", 
+            "Unicorn Horn", 
+            "Clear Water", 
+            "Shimmering Water", 
+            "Crescent Moon Fragment",
+            "Half Moon Fragment", 
+            "Iron Ore",
+            "Silver Ore",
+            "Tanned Leather",
+            "Hard Leather",
+            "Labyrinth Fragment", 
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment",
+            "Labyrinth Fragment"
+        ]
+    },
+
+    {
         commonNames: ["1-1-1", "1-1"], name: "Starting a Mercenary Business", 
         levelRequired: 1, timeCost: 9, goldCost: 0, breadCost: 1, 
         goldReward: 100, breadReward: 0, exp: 112, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 3,
@@ -525,36 +555,6 @@ var quests = [
             "Ruby", 
             "Topaz", 
             "Diamond"
-        ]
-    },
-
-    {
-        commonNames: ["labyrinth", "lab"], name: "Phantom Labyrinth", 
-        levelRequired: 25, timeCost: 60, goldCost: 20000, breadCost: 0, 
-        goldReward: 0, breadReward: 1, exp: 675, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 25,
-        dropList: [
-            "Beautiful Cloth", 
-            "Luxurious Cloth", 
-            "Evergreen Oak Branch",
-            "Maple Branch",
-            "Water Buffalo Horn", 
-            "Unicorn Horn", 
-            "Clear Water", 
-            "Shimmering Water", 
-            "Crescent Moon Fragment",
-            "Half Moon Fragment", 
-            "Iron Ore",
-            "Silver Ore",
-            "Tanned Leather",
-            "Hard Leather",
-            "Labyrinth Fragment", 
-            "Labyrinth Fragment",
-            "Labyrinth Fragment",
-            "Labyrinth Fragment",
-            "Labyrinth Fragment",
-            "Labyrinth Fragment",
-            "Labyrinth Fragment",
-            "Labyrinth Fragment"
         ]
     },
 
