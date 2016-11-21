@@ -559,6 +559,255 @@ var quests = [
     },
 
     {
+        commonNames: ["1-7-1", "7-1"], name: "Ann's Necklace", 
+        levelRequired: 41, timeCost: 0, goldCost: 0, breadCost: 1, 
+        goldReward: 870, breadReward: 0, exp: 3248, advantage: [5], numItemDrop: 21,
+        dropList: [
+            "Beautiful Cloth", 
+            "Luxurious Cloth", 
+            "Ominous Cloth", 
+            "Hard Leather", 
+            "Unicorn Horn", 
+            "Aquamarine", 
+            "Topaz", 
+            "Turquoise", 
+            "Black Pearl"
+        ]
+    },{
+        commonNames: ["1-7-2", "7-2"], name: "Teacher of Lost Children", 
+        levelRequired: 41, timeCost: 50, goldCost: 0, breadCost: 1, 
+        goldReward: 890, breadReward: 0, exp: 3098, advantage: [1], numItemDrop: 21,
+        dropList: [
+            "Aquamarine", 
+            "Crystal", 
+            "Half Moon Fragment", 
+            "Hard Leather", 
+            "Ruby", 
+            "Tanned Leather", 
+            "Topaz", 
+            "Turquoise"
+        ]
+    },{
+        commonNames: ["1-7-3", "7-3"], name: "Return of the Banshee", 
+        levelRequired: 42, timeCost: 50, goldCost: 0, breadCost: 1, 
+        goldReward: 910, breadReward: 0, exp: 3264, advantage: [2], numItemDrop: 28,
+        dropList: [
+            "Evergreen Oak Branch", 
+            "Maple Branch", 
+            "Ebony Branch", 
+            "Shimmering Water", 
+            "Hard Leather", 
+            "Luxurious Leather", 
+            "Crystal", 
+            "Ruby", 
+            "Aquamarine", 
+            "Topaz", 
+            "Black Pearl"
+        ]
+    },{
+        commonNames: ["1-7-4", "7-4"], name: "Mysterious Summoner", 
+        levelRequired: 42, timeCost: 50, goldCost: 0, breadCost: 1, 
+        goldReward: 930, breadReward: 0, exp: 2991, advantage: [3], numItemDrop: 21,
+        dropList: [
+            "Aquamarine", 
+            "Black Pearl", 
+            "Magical Water", 
+            "Ruby", 
+            "Shimmering Water", 
+            "Turquoise"
+        ]
+    },{
+        commonNames: ["1-7-5", "7-5"], name: "Refurbishing the Trade Ship", 
+        levelRequired: 43, timeCost: 50, goldCost: 0, breadCost: 1, 
+        goldReward: 950, breadReward: 0, exp: 4092, advantage: [6], numItemDrop: 21,
+        dropList: [
+            "Crescent Moon Fragment", 
+            "Half Moon Fragment", 
+            "Full Moon Fragment", 
+            "Aquamarine", 
+            "Turquoise"
+        ]
+    },{
+        commonNames: ["1-7-6", "7-6"], name: "Get Backers", 
+        levelRequired: 43, timeCost: 50, goldCost: 0, breadCost: 1, 
+        goldReward: 970, breadReward: 0, exp: 3347, advantage: [4], numItemDrop: 21,
+        dropList: [
+            "Water Buffalo Horn", 
+            "Chimera Horn", 
+            "Turquoise", 
+            "Black Pearl"
+        ]
+    },{
+        commonNames: ["1-7-7", "7-7"], name: "Dragon Slayer of the Caves", 
+        levelRequired: 44, timeCost: 50, goldCost: 0, breadCost: 1, 
+        goldReward: 990, breadReward: 0, exp: 3483, advantage: [7, 8], numItemDrop: 21,
+        dropList: [
+            "Aquamarine", 
+            "Black Pearl", 
+            "Crystal", 
+            "Gold Ore", 
+            "Iron Ore", 
+            "Ruby", 
+            "Topaz"
+        ]
+    },{
+        commonNames: ["1-7-8", "7-8"], name: "The Summoner Has a Situation", 
+        levelRequired: 45, timeCost: 50, goldCost: 0, breadCost: 1, 
+        goldReward: 1010, breadReward: 0, exp: 3644, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 21,
+        dropList: [
+            "Aquamarine", 
+            "Black Pearl", 
+            "Chimera Horn", 
+            "Crystal", 
+            "Gold Ore", 
+            "Ruby", 
+            "Topaz"
+        ]
+    },
+
+    {
+        commonNames: ["1-8-1", "8-1"], name: "Birthday Present", 
+        levelRequired: 46, timeCost: 55, goldCost: 0, breadCost: 1, 
+        goldReward: 1010, breadReward: 0, exp: 3741, advantage: [7], numItemDrop: 24,
+        dropList: [
+            "Star Fragment", 
+            "Crescent Moon Fragment", 
+            "Half Moon Fragment", 
+            "Full Moon Fragment", 
+            "Unicorn Horn", 
+            "Aquamarine", 
+            "Ruby", 
+            "Garnet", 
+            "Diamond", 
+            "Emerald", 
+            "Lapis Lazuli"
+        ]
+    },{
+        commonNames: ["1-8-2", "8-2"], name: "Knight Test Preparations - Weapons -", 
+        levelRequired: 46, timeCost: 55, goldCost: 0, breadCost: 1, 
+        goldReward: 1030, breadReward: 0, exp: 3822, advantage: [1, 2, 7], numItemDrop: 24,
+        dropList: [
+            "Chimera Horn", 
+            "Gold Ore", 
+            "Black Pearl", 
+            "Lapis Lazuli", 
+            "Diamond", 
+            "Emerald", 
+            "Garnet", 
+            "Rose Quartz", 
+            "Magical Water"
+        ]
+    },{
+        commonNames: ["1-8-3", "8-3"], name: "Knight Test Preparations - Armor -", 
+        levelRequired: 47, timeCost: 55, goldCost: 0, breadCost: 1, 
+        goldReward: 1050, breadReward: 0, exp: 3658, advantage: [5], numItemDrop: 24,
+        dropList: [
+            "Black Pearl", 
+            "Chimera Horn", 
+            "Diamond", 
+            "Emerald", 
+            "Gold Ore", 
+            "Hard Leather", 
+            "Iron Ore", 
+            "Lapis Lazuli", 
+            "Luxurious Leather", 
+            "Rose Quartz", 
+            "Ruby", 
+            "Silver Ore", 
+            "Tanned Leather", 
+            "Garnet"
+        ]
+    },{
+        commonNames: ["1-8-4", "8-4"], name: "Cleanup In Front of the Lab", 
+        levelRequired: 47, timeCost: 55, goldCost: 0, breadCost: 1, 
+        goldReward: 1070, breadReward: 0, exp: 4191, advantage: [4], numItemDrop: 24,
+        dropList: [
+            "Chimera Horn", 
+            "Diamond", 
+            "Emerald", 
+            "Garnet", 
+            "Gold Ore", 
+            "Iron Ore", 
+            "Magical Water", 
+            "Rose Quartz", 
+            "Silver Ore", 
+            "Turquoise", 
+            "Black Pearl", 
+            "Lapis Lazuli"
+        ]
+    },{
+        commonNames: ["1-8-5", "8-5"], name: "Weapons Collector", 
+        levelRequired: 48, timeCost: 55, goldCost: 0, breadCost: 1, 
+        goldReward: 1090, breadReward: 0, exp: 3613, advantage: [3], numItemDrop: 16,
+        dropList: [
+            "Beautiful Cloth", 
+            "Black Pearl", 
+            "Ebony Branch", 
+            "Emerald", 
+            "Garnet", 
+            "Lapis Lazuli", 
+            "Luxurious Cloth", 
+            "Ominous Cloth", 
+            "Rose Quartz", 
+            "Ruby", 
+            "Turquoise"
+        ]
+    },{
+        commonNames: ["1-8-6", "8-6"], name: "Forest of the Dead Secret Area", 
+        levelRequired: 48, timeCost: 55, goldCost: 0, breadCost: 1, 
+        goldReward: 1110, breadReward: 0, exp: 3890, advantage: [1, 2], numItemDrop: 24,
+        dropList: [
+            "Chimera Horn", 
+            "Diamond", 
+            "Emerald", 
+            "Full Moon Fragment", 
+            "Garnet", 
+            "Lapis Lazuli", 
+            "Topaz", 
+            "Unicorn Horn", 
+            "Water Buffalo Horn"
+        ]
+    },{
+        commonNames: ["1-8-7", "8-7"], name: "The Summoner's Situation", 
+        levelRequired: 49, timeCost: 55, goldCost: 0, breadCost: 1, 
+        goldReward: 1130, breadReward: 0, exp: 4309, advantage: [8], numItemDrop: 24,
+        dropList: [
+            "Black Pearl", 
+            "Clear Water", 
+            "Crystal", 
+            "Diamond", 
+            "Ebony Branch", 
+            "Emerald", 
+            "Magical Water", 
+            "Ominous Cloth", 
+            "Rose Quartz", 
+            "Ruby", 
+            "Shimmering Water", 
+            "Topaz", 
+            "Turquoise"
+        ]
+    },{
+        commonNames: ["1-8-8", "8-8"], name: "Necromancer", 
+        levelRequired: 50, timeCost: 55, goldCost: 0, breadCost: 1, 
+        goldReward: 1150, breadReward: 0, exp: 4412, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 24,
+        dropList: [
+            "Chimera Horn", 
+            "Crystal", 
+            "Diamond", 
+            "Emerald", 
+            "Full Moon Fragment", 
+            "Garnet", 
+            "Gold Ore", 
+            "Lapis Lazuli", 
+            "Magical Water", 
+            "Rose Quartz", 
+            "Topaz"
+        ]
+    },
+
+
+
+    {
         commonNames: ["", ""], name: "", 
         levelRequired: 1, timeCost: 0, goldCost: 0, breadCost: 1, 
         goldReward: 0, breadReward: 0, exp: 0, advantage: [], numItemDrop: 0,
