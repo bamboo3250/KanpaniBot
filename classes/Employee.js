@@ -83,7 +83,7 @@ EmployeeInfo.prototype.setExp = function(expToSet) {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     this.exp = Math.min(expToSet, expForLevel[maxLevel-1]);
     this.levelCached = maxLevel;
-    for(var i=0;i<expForLevel.length;i++) {
+    for(var i=0;i<maxLevel;i++) {
         if (this.exp <expForLevel[i]) {
             this.levelCached = i;
             break;
@@ -93,6 +93,16 @@ EmployeeInfo.prototype.setExp = function(expToSet) {
 
 EmployeeInfo.prototype.addExp = function(expToAdd) {
     this.setExp(this.exp + expToAdd);
+}
+
+EmployeeInfo.prototype.getExpToNextLevel = function() {
+    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
+    for(var i=0;i<maxLevel;i++) {
+        if (this.exp <expForLevel[i]) {
+            return expForLevel[i] - this.exp;
+        }
+    }
+    return 0;
 }
 
 EmployeeInfo.prototype.getVIT = function() {
