@@ -805,8 +805,6 @@ var quests = [
         ]
     },
 
-
-
     {
         commonNames: ["", ""], name: "", 
         levelRequired: 1, timeCost: 0, goldCost: 0, breadCost: 1, 

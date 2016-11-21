@@ -58,9 +58,7 @@ module.exports = {
         chanceToSuccess = Math.min(100, chanceToSuccess + (employee.levelCached - quest.levelRequired));
 
         var text = "The quest " + quest.commonNames[0] + " has started. It will end in **" + quest.timeCost + " minutes**.\n";
-        if (chanceToSuccess < 85) {
-            text += "**Warning**: you might have a little trouble while doing this quest!";
-        }
+        text += "Chance of Success: **" + chanceToSuccess + "%**";
         message.reply(text);
 
         setTimeout(function() {
