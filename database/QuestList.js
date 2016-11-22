@@ -42,7 +42,7 @@ var quests = [
             "Rare Silver Coin",
             "Copper Ore", 
             "Rare Silver Coin",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-1-2", "1-2"], name: "Bottle Slimers Ravage the Fields", 
@@ -57,7 +57,7 @@ var quests = [
             "Water",
             "Water",
             "Water",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-1-3", "1-3"], name: "10,000G Night View For You", 
@@ -72,7 +72,7 @@ var quests = [
             "Old Silver Coin",
             "Tree Branch", 
             "Old Silver Coin",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-1-4", "1-4"], name: "Do You Like Chickbat Meat?", 
@@ -117,7 +117,7 @@ var quests = [
             "Copper Ore",
             "Copper Ore",
             "Copper Ore",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-1-7", "1-7"], name: "Trendy Chickbat Liqour", 
@@ -132,7 +132,7 @@ var quests = [
             "Star Fragment",
             "Old Silver Coin", 
             "Star Fragment",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-1-8", "1-8"], name: "Company Blacksmith's Workshop", 
@@ -147,7 +147,7 @@ var quests = [
             "Rare Silver Coin",
             "Tree Branch",
             "Rare Silver Coin",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },
 
@@ -198,7 +198,7 @@ var quests = [
             "Silver Coin Purse", 
             "Turquoise", 
             "Soft Leather",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-2-4", "2-4"], name: "Trade Ship Construction Rush", 
@@ -217,7 +217,7 @@ var quests = [
             "Water", 
             "Soft Leather", 
             "Crystal",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-2-5", "2-5"], name: "Trade Ship Construction Rush - Stone", 
@@ -232,7 +232,7 @@ var quests = [
             "Ruby",
             "Soft Leather", 
             "Ruby",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-2-6", "2-6"], name: "Drunkard on the Ship", 
@@ -293,7 +293,7 @@ var quests = [
             "Crystal", 
             "Ruby", 
             "Turquoise",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },
 
@@ -322,7 +322,7 @@ var quests = [
             "Crystal", 
             "Onyx", 
             "Rare Silver Coin",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-3-2", "3-2"], name: "Monster House", 
@@ -345,7 +345,7 @@ var quests = [
             "Ruby", 
             "Onyx", 
             "Clear Water",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-3-3", "3-3"], name: "The Wolf and the Hunter Guild Chief", 
@@ -434,7 +434,7 @@ var quests = [
             "Tanned Leather", 
             "Turquoise", 
             "Water Buffalo Horn",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-3-6", "3-6"], name: "Newbie Treasure Hunter", 
@@ -465,7 +465,7 @@ var quests = [
             "Beautiful Cloth", 
             "Ruby", 
             "Iron Ore",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-3-7", "3-7"], name: "Slimer Steak, Rare", 
@@ -496,7 +496,7 @@ var quests = [
             "Ruby", 
             "Turquoise", 
             "Water Buffalo Horn",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-3-8", "3-8"], name: "The Smiling Knight of the Round Table", 
@@ -611,7 +611,7 @@ var quests = [
             "Turquoise", 
             "Topaz", 
             "Tanned Leather",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-4-3", "4-3"], name: "Kemomin's Trial", 
@@ -650,7 +650,7 @@ var quests = [
             "Turquoise", 
             "Onyx", 
             "Evergreen Oak Branch",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-4-4", "4-4"], name: "Kemomin's Final Trial", 
@@ -689,7 +689,7 @@ var quests = [
             "Aquamarine", 
             "Water Buffalo Horn", 
             "Turquoise",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-4-5", "4-5"], name: "Transferee from a New Frontier", 
@@ -810,7 +810,7 @@ var quests = [
             "Ruby", 
             "Iron Ore", 
             "Beautiful Cloth",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-4-8", "4-8"], name: "The Duchy's Thirteenth Knight of the Round Table", 
@@ -837,7 +837,7 @@ var quests = [
             "Onyx", 
             "Aquamarine", 
             "Turquoise",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },
     
@@ -878,7 +878,7 @@ var quests = [
             "Ruby", 
             "Aquamarine", 
             "Water Buffalo Horn",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-5-2", "5-2"], name: "It's All for My Older Brother", 
@@ -1011,7 +1011,7 @@ var quests = [
             "Maple Branch", 
             "Water Buffalo Horn", 
             "Unicorn Horn",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-5-5", "5-5"], name: "The Dreaming Young Archer", 
@@ -1046,7 +1046,7 @@ var quests = [
             "Turquoise", 
             "Onyx", 
             "Tanned Leather",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-5-6", "5-6"], name: "Screaming Alcohol", 
@@ -1085,7 +1085,7 @@ var quests = [
             "Turquoise", 
             "Unicorn Horn", 
             "Water Buffalo Horn",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-5-7", "5-7"], name: "Royal Holy Knights", 
@@ -1192,7 +1192,7 @@ var quests = [
             "Aquamarine", 
             "Topaz", 
             "Turquoise",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-6-3", "6-3"], name: "Forbidden Love", 
@@ -1231,7 +1231,7 @@ var quests = [
             "Onyx", 
             "Topaz", 
             "Aquamarine",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-6-4", "6-4"], name: "King Perogg Ravages the Fields", 
@@ -1270,7 +1270,7 @@ var quests = [
             "Ruby", 
             "Shimmering Water", 
             "Turquoise",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-6-5", "6-5"], name: "The Phantom Thief of Justice Appears!", 
@@ -1371,7 +1371,7 @@ var quests = [
             "Ruby", 
             "Topaz", 
             "Diamond",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },
 
@@ -1416,7 +1416,7 @@ var quests = [
             "Topaz", 
             "Turquoise", 
             "Black Pearl",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-7-2", "7-2"], name: "Teacher of Lost Children", 
@@ -1455,7 +1455,7 @@ var quests = [
             "Tanned Leather", 
             "Topaz", 
             "Turquoise",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-7-3", "7-3"], name: "Return of the Banshee", 
@@ -1564,7 +1564,7 @@ var quests = [
             "Full Moon Fragment", 
             "Aquamarine", 
             "Turquoise",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-7-6", "7-6"], name: "Get Backers", 
@@ -1587,7 +1587,7 @@ var quests = [
             "Chimera Horn", 
             "Turquoise", 
             "Black Pearl",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-7-7", "7-7"], name: "Dragon Slayer of the Caves", 
@@ -1622,7 +1622,7 @@ var quests = [
             "Iron Ore", 
             "Ruby", 
             "Topaz",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-7-8", "7-8"], name: "The Summoner Has a Situation", 
@@ -1753,7 +1753,7 @@ var quests = [
             "Garnet", 
             "Rose Quartz", 
             "Magical Water",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-8-3", "8-3"], name: "Knight Test Preparations - Armor -", 
@@ -1816,7 +1816,7 @@ var quests = [
             "Silver Ore", 
             "Tanned Leather", 
             "Garnet",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },{
         commonNames: ["1-8-4", "8-4"], name: "Cleanup In Front of the Lab", 
@@ -1871,7 +1871,7 @@ var quests = [
             "Turquoise", 
             "Black Pearl", 
             "Lapis Lazuli",
-            "Scientific Thaumaturgy Forge﻿"
+            "Forge﻿"
         ]
     },{
         commonNames: ["1-8-5", "8-5"], name: "Weapons Collector", 
@@ -2024,7 +2024,7 @@ var quests = [
             "Shimmering Water", 
             "Topaz", 
             "Turquoise",
-            "1st Anniversary Weapon Hammer"
+            "1st Anni. W. Hammer"
         ]
     },{
         commonNames: ["1-8-8", "8-8"], name: "Necromancer", 
@@ -2075,7 +2075,7 @@ var quests = [
             "Magical Water", 
             "Rose Quartz", 
             "Topaz",
-            "1st Anniversary Accessory Hammer"
+            "1st Anni. Acc. Hammer"
         ]
     },
 
