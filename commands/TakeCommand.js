@@ -17,6 +17,12 @@ module.exports = {
             player = bot.playerManager.createNewPlayer(userId);
         }
 
+        if (typeof bot.runQuestStatus[userId] === "undefined") {
+            bot.runQuestStatus[userId] = {
+                quest: "", endTime: -1
+            };
+        }
+
         if (bot.runQuestStatus[userId].quest != "") {
             message.reply("You cannot change your character while doing quest.");
             return;
