@@ -107,16 +107,20 @@ var affectionFileName = "affection.json";
 function saveAffection() {
     var textToWrite = JSON.stringify(affection, null, 4);
     fs.writeFile(affectionFileName, textToWrite, function(err) {
-        if(err) return console.log(err);
-        console.log("The file was saved!");
+        if(err) {
+            elsa.log(err);
+            return;
+        }
     }); 
 }
 
 function loadAffection() {
     fs.readFile(affectionFileName, 'utf8', function (err, data) {
-        if (err) return;
+        if (err) {
+            elsa.log(err);
+            return;
+        }
         affection = JSON.parse(data);
-        console.log(affection);
     });
 }
 
@@ -131,15 +135,13 @@ function updateRole(message, member) {
     var userId = member.id;
     if (affection[userId] >= 100) {
         member.addRole(allyRole).then(guildMember => {
-            console.log("Ally Role added.");
         }).catch(err => {
-            console.log("Sorry, I don't have permission to add this Role.");
+            elsa.log("Sorry, I don't have permission to add this Role.");
         });
     } else {
         member.removeRole(allyRole).then(guildMember => {
-            console.log("Ally Role removed.");
         }).catch(err => {
-            console.log("Sorry, I don't have permission to remove this Role.");
+            elsa.log("Sorry, I don't have permission to remove this Role.");
         });
     }
 }
@@ -331,7 +333,3 @@ elsa.bot.on("ready", function() {
     loadAffection();
 });
 elsa.bot.login(config.elsa);
-
-process.on("unhandledRejection", err => {
-  console.error("Uncaught Promise Error: \n" + err.stack);
-});

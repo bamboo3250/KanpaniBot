@@ -38,7 +38,7 @@ module.exports = {
         bot.imageHelper.download(queue, function(err) {
             if (err) {
                 message.reply("Envelope got lost. Try again.");
-                console.log(err); 
+                bot.log(err); 
                 return;
             }
             var imageFileNameQueue = [
@@ -52,7 +52,7 @@ module.exports = {
             bot.imageHelper.read(imageFileNameQueue, function (err, imageList) {
                 if (err) { 
                     message.reply("Envelope got lost. Try again.");
-                    console.log(err); 
+                    bot.log(err); 
                     return 
                 }
                 var photoImage = imageList[0];

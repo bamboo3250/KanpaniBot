@@ -60,12 +60,14 @@ module.exports = {
             bot.imageHelper.download(queue, function(err) {
                 if (err) {
                     message.reply("Error happened. Try again.");
+                    bot.log(err);
                     return;
                 }
 
                 bot.imageHelper.read([enemySpriteFileName, allySpriteFileName, bustupFileName], function (err, imageList) {
                     if (err) {
                         message.reply("Error happened. Try again.");
+                        bot.log(err);
                         return;
                     }
                     enemySpriteImage = imageList[0];

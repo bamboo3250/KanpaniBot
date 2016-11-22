@@ -21,7 +21,3 @@ ruka.bot.on("ready", function() {
     ruka.ready();
 });
 ruka.bot.login(config.ruka);
-
-process.on("unhandledRejection", err => {
-  console.error("Uncaught Promise Error: \n" + err.stack);
-});

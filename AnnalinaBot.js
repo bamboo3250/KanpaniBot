@@ -50,7 +50,3 @@ annalina.bot.on("ready", function() {
     annalina.ready();
 });
 annalina.bot.login(config.annalina);
-
-process.on("unhandledRejection", err => {
-  console.error("Uncaught Promise Error: \n" + err.stack);
-});

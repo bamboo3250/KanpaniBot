@@ -17,10 +17,10 @@ ImageHelper.prototype.download = function(queue, callback) {
     fs.access(filePathToSave, fs.F_OK, function(err) {
         if (err) {
             var file = fs.createWriteStream(filePathToSave);
-            console.log("Downloading File: " + filePathToDownload);
+            // console.log("Downloading File: " + filePathToDownload);
             var request = http.get(filePathToDownload, function(response) {
-                console.log("statusCode: " + response.statusCode);
-                console.log("content-type: " + response.headers['content-type']);
+                // console.log("statusCode: " + response.statusCode);
+                // console.log("content-type: " + response.headers['content-type']);
                 if (response.statusCode != 200) return;
 
                 response.pipe(file);
@@ -32,7 +32,7 @@ ImageHelper.prototype.download = function(queue, callback) {
                 callback(err);
             });;
         } else {
-            console.log("File existed.");
+            // console.log("File existed.");
             thisQueue.shift();
             that.download(thisQueue, callback);
         }
@@ -46,7 +46,8 @@ ImageHelper.prototype.read = function(queue, callback, curResult = []) {
     }
     var that = this;
     Jimp.read(queue[0], function (err, image) {
-        if (err) { console.log(err); 
+        if (err) { 
+            console.log(err); 
             var falseImage = queue[0];
             fs.unlink(falseImage, (err) => {
                 if (err) {

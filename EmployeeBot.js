@@ -132,6 +132,8 @@ function EmployeeBot() {
     this.runQuestStatus = {};
     this.freeMe = {};
 
+    this.logChannel = null;
+
     this.backgroundFileNames = [
         "arena.jpg",
         "battlefield_01.jpg",
@@ -248,24 +250,29 @@ EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
 EmployeeBot.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     
-    dailyCommand.handle(message, this);
-    maintenanceCommand.handle(message, this);
-    basicGreetingCommand.handle(message, this);
-    specialCommand.handle(message, this);
-    breadCommand.handle(message, this);
-    assignRoleCommand.handle(message, this);
-    giveBreadCommand.handle(message, this);
-    charaCommand.handle(message, this);
-    meCommand.handle(message, this);
-    topCommand.handle(message, this);
-    myTopCommand.handle(message, this);
-    rollCommand.handle(message, this);
-    takeCommand.handle(message, this);
-    grindCommand.handle(message, this);
-    totalBreadCommand.handle(message, this);
-    questCommand.handle(message, this);
-    inventoryCommand.handle(message, this);
-    sellCommand.handle(message, this);
+    try {
+        dailyCommand.handle(message, this);
+        maintenanceCommand.handle(message, this);
+        basicGreetingCommand.handle(message, this);
+        specialCommand.handle(message, this);
+        breadCommand.handle(message, this);
+        assignRoleCommand.handle(message, this);
+        giveBreadCommand.handle(message, this);
+        charaCommand.handle(message, this);
+        meCommand.handle(message, this);
+        topCommand.handle(message, this);
+        myTopCommand.handle(message, this);
+        rollCommand.handle(message, this);
+        takeCommand.handle(message, this);
+        grindCommand.handle(message, this);
+        totalBreadCommand.handle(message, this);
+        questCommand.handle(message, this);
+        inventoryCommand.handle(message, this);
+        sellCommand.handle(message, this);
+    }
+    catch (err) {
+        this.log("===========COMMAND ERROR========\n" + err.stack);
+    }
 }
 
 EmployeeBot.prototype.getRandomMessages = function(messageList) {
@@ -288,29 +295,9 @@ EmployeeBot.prototype.greeting = function(channel) {
     this.sayRandomMessages(channel, this.greetings);
 }
 
-// EmployeeBot.prototype.setIdleTalk = function() {
-//     this.hasNewMessage = false;
-//     var time = Math.floor(Math.random() * (15*60*1000) + 15*60*1000);
-//     console.log(time);
-//     var that = this;
-//     setTimeout(function() {
-//         console.log("triggered " + that.hasNewMessage);
-//         if (that.hasNewMessage) {
-//             var channels = that.bot.channels.array();
-//             for(var i=0;i<channels.length;i++) {
-//                 if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
-//                     that.sayRandomMessages(channels[i], that.idleTalks);
-//                 }
-//             }
-//         }
-//         that.setIdleTalk();
-//     }, time);  // 15 - 30 mins
-// }
-
 EmployeeBot.prototype.setDailyDrawReminderForNutaku = function() {
     var time = helper.getTimeUntilDaily(this.nutakuDailyRemind); 
     var that = this;
-    console.log("time: " + time);
     setTimeout(function() {
         var channels = that.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
@@ -349,37 +336,43 @@ EmployeeBot.prototype.setBreadRegeneration = function() {
             that.remainingBread[key] = Math.min(that.remainingBread[key] + 1, that.cappedBread);
         }
         that.startBread = Math.min(that.startBread + 1, that.cappedBread);
-        console.log("1 bread is given to each player");
+        that.log("1 bread is given to each player");
         that.setBreadRegeneration();
     }, that.replenishTime);
 }
 
 var soulFileName = "soul.json";
-
 EmployeeBot.prototype.saveSoul = function() {
     var textToWrite = JSON.stringify(this.hasSoul, null, 4);
+    var that = this;
     fs.writeFile(soulFileName, textToWrite, function(err) {
-        if(err) return console.log(err);
-        console.log("The Soul file was saved!");
+        if(err) {
+            that.log(err);
+            return;
+        }
     }); 
 }
 
 EmployeeBot.prototype.loadSoul = function() {
     var that = this;
     fs.readFile(soulFileName, 'utf8', function (err, data) {
-        if (err) return;
+        if (err) {
+            that.log(err);
+            return;
+        }
         that.hasSoul = JSON.parse(data);
-        console.log("Soul file:");
     });
 }
 
 var playerFileName = "player.json";
-
 EmployeeBot.prototype.savePlayer = function() {
     var textToWrite = JSON.stringify(this.playerManager.playerDict, null, 4);
+    var that = this;
     fs.writeFile(playerFileName, textToWrite, function(err) {
-        if(err) return console.log(err);
-        console.log("The file was saved!");
+        if(err) {
+            that.log(err);
+            return;  
+        } 
     }); 
 }
 
@@ -389,11 +382,10 @@ EmployeeBot.prototype.loadPlayer = function() {
         if (err) return;
         try {
             that.playerManager.playerDict = JSON.parse(data);
-            console.log(that.playerManager.playerDict);    
         }
         catch (err) {
             that.playerManager.playerDict = {};
-            console.log(err);
+            that.log(err);
         }
         // migration
         for(key in that.playerManager.playerDict) {
@@ -407,16 +399,65 @@ EmployeeBot.prototype.loadPlayer = function() {
     });
 }
 
+var runQuestStatusFileName = "runQuestStatus.json";
+EmployeeBot.prototype.saveRunQuestStatus = function() {
+    var textToWrite = JSON.stringify(this.runQuestStatus, null, 4);
+    var that = this;
+    fs.writeFile(runQuestStatusFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadRunQuestStatus = function() {
+    var that = this;
+    fs.readFile(runQuestStatusFileName, 'utf8', function (err, data) {
+        if (err) return;
+        try {
+            that.runQuestStatus = JSON.parse(data);
+        }
+        catch (err) {
+            that.runQuestStatus = {};
+            that.log(err);
+        }
+        
+        var guilds = that.bot.guilds.array();
+        for(var i=0;i<guilds.length;i++) {
+            guilds[i].fetchMembers().then(guild => {
+                var members = guild.members.array();
+
+                for(var i=0;i<members.length;i++) {
+                    var userId = members[i].id;
+                    if ((typeof that.runQuestStatus[userId] !== "undefined") && (that.runQuestStatus[userId].quest != "")) {
+                        members[i].user.sendMessage("Your quest has been cancelled! Please run again.");
+                        that.log("Notified user " + members[i].user.username);
+                    }
+                }
+                that.runQuestStatus = {};
+                that.saveRunQuestStatus();
+            }).catch(err => {
+                that.log("[loadRunQuestStatus] Fetching member error!");
+            });
+        }
+    });
+}
+
 EmployeeBot.prototype.ready = function() {
     if (this.firstTimeReady) {
-        console.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
-        console.log("-----");
         var channels = this.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
                 this.greeting(channels[i]);
             }
+            if (channels[i].type === "text" && channels[i].name === "log") {
+                this.logChannel = channels[i];
+            } 
         }
+        this.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
+        this.log("-----");
+        
         //this.setIdleTalk();
         this.setDailyDrawReminderForNutaku();
         this.setDailyDrawReminderForDmm();
@@ -424,9 +465,14 @@ EmployeeBot.prototype.ready = function() {
         this.firstTimeReady = false;
         this.loadSoul();
         this.loadPlayer();
+        this.loadRunQuestStatus();
     } else {
-        console.log("Bot is restarted");
+        this.log("Bot is restarted");
     }
+}
+
+EmployeeBot.prototype.log = function(text) {
+    if (this.logChannel) this.logChannel.sendMessage(text);
 }
 
 var employee = new EmployeeBot();
@@ -451,6 +497,14 @@ employee.bot.on('guildMemberRemove', (guild, member) => {
             channels[i].sendMessage(text);
         } 
     }
+});
+
+process.on('uncaughtException', function (err) {
+    employee.log('Uncaught Exception: ' + err.stack);
+});
+
+process.on("unhandledRejection", err => {
+  console.error("Uncaught Promise Error: \n" + err.stack);
 });
 
 module.exports = employee;

@@ -56,7 +56,8 @@ module.exports = {
                 message.channel.sendMessage(text);
             }
         }).catch(err => {
-            message.channel.sendMessage("Fetching member error! " + err);
+            message.channel.sendMessage("Fetching member error!");
+            bot.log(err)
         });
     }
 }

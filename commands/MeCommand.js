@@ -33,6 +33,7 @@ module.exports = {
         bot.imageHelper.download(queue, function(err) {
             if (err) {
                 message.reply("Error happened. Try again.");
+                bot.log(err);
                 return;
             }
 
@@ -41,7 +42,11 @@ module.exports = {
             var shadowFileName = "images/misc/shadow.png";
 
             bot.imageHelper.read([enemySpriteFileName, itemCellFileName, backgroundFileName, shadowFileName], function (err, imageList) {
-                if (err) { console.log(err); return }
+                if (err) {
+                    message.reply("Error happened. Try again.");
+                    bot.log(err); 
+                    return;
+                }
                 enemySpriteImage = imageList[0];
                 itemCellImage = imageList[1];
                 backgroundImage = imageList[2];

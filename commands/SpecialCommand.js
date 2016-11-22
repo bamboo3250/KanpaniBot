@@ -44,7 +44,7 @@ module.exports = {
                 message.guild.fetchMember(targetId).then(targetMember => {
                     message.channel.sendMessage(targetMember + " is now haunted. " + message.author + " devoured your Soul :ghost: and rendered the " + breadEmoji + " useless! " + lolEmoji);
                 }).catch(err => {
-                    console.log("Error in fetching member. " + err)
+                    bot.log("Error in fetching member. " + err)
                 });
             } else {
                 message.channel.sendMessage(message.author + ", I understand that your hunger is insatiable, but only one Soul :ghost: for each person. Relax a bit!")
@@ -72,13 +72,13 @@ module.exports = {
                 message.guild.fetchMember(targetId).then(targetMember => {
                     message.channel.sendMessage(message.author + " decided to return the Soul :ghost: back to " + targetMember + ". Use it wisely. The same with the " + breadEmoji + "!");
                 }).catch(err => {
-                    console.log("Error in fetching member.")
+                    bot.log("Error in fetching member.")
                 });
             } else {
                 message.guild.fetchMember(targetId).then(targetMember => {
                     message.channel.sendMessage(targetMember + " already has a Soul :ghost: . There's only so many that can fit in a single body.")    
                 }).catch(err => {
-                    console.log("Error in fetching member.")
+                    bot.log("Error in fetching member.")
                 });
             }
         }

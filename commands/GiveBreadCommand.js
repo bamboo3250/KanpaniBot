@@ -15,13 +15,9 @@ module.exports = {
         } else if (args.length === 3) {
             if (!isNaN(args[1]) && bot.functionHelper.isMention(args[2])) {
                 amount = Math.floor(parseInt(args[1]));
-                // amount = Math.min(amount, bot.remainingBread[giverId]);
-                // amount = Math.max(amount, 1);
                 receiverId = bot.functionHelper.getIdFromMention(args[2]);
             } else if (!isNaN(args[2]) && bot.functionHelper.isMention(args[1])) {
                 amount = Math.floor(parseInt(args[2]));
-                // amount = Math.min(amount, bot.remainingBread[giverId]);
-                // amount = Math.max(amount, 1);
                 receiverId = bot.functionHelper.getIdFromMention(args[1]);
             } else {
                 return;

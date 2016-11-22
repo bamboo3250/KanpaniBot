@@ -50,6 +50,7 @@ module.exports = {
 
         bot.runQuestStatus[userId].quest = quest.commonNames[0];
         bot.runQuestStatus[userId].endTime = now.valueOf() + quest.timeCost*60*1000;
+        bot.saveRunQuestStatus();
 
         var chanceToSuccess = 70;
         for(var i=0;i<quest.advantage.length;i++) {
@@ -65,10 +66,11 @@ module.exports = {
             bot.runQuestStatus[userId] = {
                 quest: "", endTime: -1
             };
+            bot.saveRunQuestStatus();
 
             var text = "The quest has finished!\n\n";
             text += "=================MISSION REPORT=================\n\n";
-            text += "Mission: **" + quest.name + "** (**" + quest.commonNames[0] + "**)\n";
+            text += "Mission: **" + quest1.name + "** (**" + quest.commonNames[0] + "**)\n";
 
             
             var isSuccess = bot.functionHelper.randomInt(100) < chanceToSuccess;
