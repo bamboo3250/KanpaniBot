@@ -161,6 +161,18 @@ var itemInfos = [
 
     {
         _id: "80000101_1", itemName: "Labyrinth Fragment", price: 50
+    },
+
+    {
+        _id: "40090003_1", itemName: "1st Anniversary Weapon Hammer", price: 0
+    },{
+        _id: "40090004_1", itemName: "1st Anniversary Accessory Hammer", price: 0
+    },{
+        _id: "10101003_1", itemName: "Scientific Thaumaturgy Forge﻿", price: 0
+    },{
+        _id: "19101001_1", itemName: "Gold Mailbox", price: 0
+    },{
+        _id: "19101002_1", itemName: "Silver Mailbox", price: 0
     }
 ];
 
