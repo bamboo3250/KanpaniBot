@@ -78,6 +78,8 @@ module.exports = {
 
             var extraExp = Math.floor(quest.exp*0.1);
             var expGained = (isSuccess ? quest.exp + bot.functionHelper.randomInt(extraExp + 1) : 0);
+            expGained *= 2; // double exp
+
             var goldGained = (isSuccess ? quest.goldReward : 0);
             var breadGained = (isSuccess ? quest.breadReward : 0);
             text += "EXP gained: **" + expGained + "**\n";
