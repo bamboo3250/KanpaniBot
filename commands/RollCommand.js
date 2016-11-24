@@ -16,7 +16,22 @@ module.exports = {
             return;
         }
         
-        var rarity = bot.functionHelper.randomDist([17, 17, 10, 5, 1]) + 1;
+        var distribution = [17, 17, 10, 5, 1];
+
+        if (typeof bot.mailboxEffect[userId] === "undefined") {
+            bot.mailboxEffect[userId] = {
+                itemName: "",
+                endTime: 0
+            }
+        }
+
+        if (bot.mailboxEffect[userId].itemName === "Gold Mailbox") {
+            distribution = [0, 10, 20, 13, 7];
+        } else if (bot.mailboxEffect[userId].itemName === "Silver Mailbox") {
+            distribution = [9, 11, 16, 10, 4];
+        }
+
+        var rarity = bot.functionHelper.randomDist(distribution) + 1;
         var employeeList = bot.employeeDatabase.getEmployeesByRarirty(rarity);
         var rolledEmployee = new Employee(employeeList[bot.functionHelper.randomInt(employeeList.length)]);
 

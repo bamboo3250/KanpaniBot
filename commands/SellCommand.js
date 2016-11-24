@@ -39,11 +39,8 @@ module.exports = {
             return;
         }
         var goldGained = materialInfo.price * amount;
-        player.materialList[materialInfo.itemName] -= amount;
-        if (player.materialList[materialInfo.itemName] == 0) {
-            delete player.materialList[materialInfo.itemName];
-        }
         player.gold += goldGained;
+        bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
         bot.savePlayer();
         var text = "You have sold " + amount + " " + materialInfo.itemName + " for **" + goldGained + " Gold**.\n";
         text += "Your Gold: **" + player.gold + "**";

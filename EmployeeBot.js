@@ -29,6 +29,7 @@ var totalBreadCommand = require('./commands/TotalBreadCommand');
 var questCommand = require('./commands/QuestCommand');
 var inventoryCommand = require('./commands/InventoryCommand');
 var sellCommand = require('./commands/SellCommand');
+var useCommand = require('./commands/UseCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -131,6 +132,7 @@ function EmployeeBot() {
 
     this.runQuestStatus = {};
     this.freeMe = {};
+    this.mailboxEffect = {};
 
     this.logChannel = null;
 
@@ -269,6 +271,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         questCommand.handle(message, this);
         inventoryCommand.handle(message, this);
         sellCommand.handle(message, this);
+        useCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -504,7 +507,7 @@ process.on('uncaughtException', function (err) {
 });
 
 process.on("unhandledRejection", err => {
-  console.error("Uncaught Promise Error: \n" + err.stack);
+    employee.log("Uncaught Promise Error: \n" + err.stack);
 });
 
 module.exports = employee;
