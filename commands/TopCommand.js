@@ -28,7 +28,7 @@ module.exports = {
         message.guild.fetchMembers().then(guild => {
             for(var i=0;i<Math.min(result.length, 10);i++) {
                 if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
-                var member = guild.members.find('id', result[i].userId);
+                var member = guild.members.get(result[i].userId);
                 var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
                 const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
                 if (member) {

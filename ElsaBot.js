@@ -208,13 +208,13 @@ function handleRankingCommand(message) {
     message.guild.fetchMembers().then(guild => {
         for(var i=0;i<Math.min(result.length, 10);i++) {
             if (i==0 || result[i-1].point != result[i].point) count = i;
-            var member = guild.members.find('id', result[i].userId);
+            var member = guild.members.get(result[i].userId);
             if (member) {
                 text += (count+1) + ". " + member.user.username + " (" + result[i].point + ")\n";
             }
         }
         for(var i=0;i<result.length;i++) {
-            var member = guild.members.find('id', result[i].userId);
+            var member = guild.members.get(result[i].userId);
             if (member) updateRole(message, member);
         }
         message.channel.sendMessage(text);

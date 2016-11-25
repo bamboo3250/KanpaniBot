@@ -398,6 +398,12 @@ EmployeeBot.prototype.loadPlayer = function() {
             if (that.playerManager.playerDict[key].materialList instanceof Array) {
                 that.playerManager.playerDict[key].materialList = {};
             }
+            for(key in that.playerManager.playerDict[key].materialList) {
+                if (key.startsWith("Forge")) {
+                    that.playerManager.playerDict[key].materialList["Forge"] = that.playerManager.playerDict[key].materialList[key];
+                    delete that.playerManager.playerDict[key].materialList[key];
+                }
+            }
         }
     });
 }
