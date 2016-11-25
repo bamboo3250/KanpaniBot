@@ -486,8 +486,8 @@ EmployeeBot.prototype.log = function(text) {
 
 var employee = new EmployeeBot();
 
-employee.bot.on('guildMemberAdd', (guild, member) => {
-    var channels = guild.channels.array();
+employee.bot.on('guildMemberAdd', (member) => {
+    var channels = member.guild.channels.array();
     for(var i=0;i<channels.length;i++) {
         if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
             var text = "**" + member.user.username + "** has joined.\n";
@@ -497,12 +497,12 @@ employee.bot.on('guildMemberAdd', (guild, member) => {
     }
 });
 
-employee.bot.on('guildMemberRemove', (guild, member) => {
-    var channels = guild.channels.array();
+employee.bot.on('guildMemberRemove', (member) => {
+    var channels = member.guild.channels.array();
     for(var i=0;i<channels.length;i++) {
         if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
             var text = "**" + member.user.username + "** has leaved.\n";
-            text += "Member count: " + guild.memberCount;
+            text += "Member count: " + member.guild.memberCount;
             channels[i].sendMessage(text);
         } 
     }
