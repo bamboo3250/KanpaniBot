@@ -33,9 +33,6 @@ PlayerManager.prototype.spendItem = function(userId, itemName, amount = 1) {
     if (typeof player.materialList[itemName] === "undefined") return;
     
     player.materialList[itemName] -= amount;
-    if (player.materialList[itemName] == 0) {
-        delete player.materialList[itemName];
-    }
 }
 
 module.exports = new PlayerManager();
