@@ -1,4 +1,6 @@
-# SuperAgent
+# SuperAgent [![Build Status](https://travis-ci.org/visionmedia/superagent.svg?branch=master)](https://travis-ci.org/visionmedia/superagent)
+
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/shtylman-superagent.svg)](https://saucelabs.com/u/shtylman-superagent)
 
 SuperAgent is a small progressive __client-side__ HTTP request library, and __Node.js__ module with the same API, sporting many high-level HTTP client features. View the [docs](http://visionmedia.github.io/superagent/).
 
@@ -10,12 +12,6 @@ node:
 
 ```
 $ npm install superagent
-```
-
-component:
-
-```
-$ component install visionmedia/superagent
 ```
 
 Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmedia/superagent/wiki/SuperAgent-for-Webpack)
@@ -54,12 +50,13 @@ var request = require('superagent');
 var prefix = require('superagent-prefix')('/static');
 
 request
-.get('/some-url')
-.use(prefix) // Prefixes *only* this request
-.use(nocache) // Prevents caching of *only* this request
-.end(function(err, res){
+  .get('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
+  .use(prefix) // Prefixes *only* this request
+  .use(nocache) // Prevents caching of *only* this request
+  .end(function(err, res){
     // Do something
-});
+  });
 ```
 
 Existing plugins:
@@ -121,8 +118,6 @@ Edit tests and refresh your browser. You do not have to restart the test runner.
 **npm (for browserify)** is handled via the `package.json` `browser` field which allows users to install SuperAgent via npm, reference it from their browser code with `require('superagent')`, and then build their own application bundle via `browserify`, which will use `lib/client.js` as the SuperAgent entrypoint.
 
 **bower** is configured via the `bower.json` file. Bower installs files directly from git/github without any transformation.
-
-**component** is configured via the `component.json` file.
 
 ## License
 

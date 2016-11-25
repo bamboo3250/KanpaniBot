@@ -38,7 +38,20 @@ module.exports = {
             message.reply(text);
 
         } else {
-            if (!bot.isPM(message) && !bot.consumeBread(message, 1)) return;
+            var goldToDeduct = 10000;
+            if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) {
+                goldToDeduct *= 2;
+            }
+            if (bot.isPM(message)) goldToDeduct = 0;
+
+            var userId = message.author.id;
+            var player = bot.playerManager.getPlayer(userId);
+            var playerGold = 0;
+            if (player) playerGold = player.gold;
+            if (playerGold < goldToDeduct) {
+                message.reply("You need to pay **" + goldToDeduct + " Gold** to use this command.");
+                return;
+            }
 
             employee = new Employee(employee);
 
@@ -102,6 +115,10 @@ module.exports = {
                                 for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
                                 text += "\n";
                                 channel.sendFile(imageName, "png", text);
+                                if (player) {
+                                    player.gold -= goldToDeduct;
+                                    bot.savePlayer();
+                                }
                             }    
                         });
                     });

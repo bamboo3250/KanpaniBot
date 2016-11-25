@@ -40,11 +40,11 @@ module.exports = {
             }
             return;
         }
-        console.log(receiverId);
+        
         var guild = message.guild;
         if (guild) {
-            var receiver = guild.members.find('id', receiverId);
-            console.log(receiver.user);
+            var receiver = guild.members.get(receiverId);
+            
             if (!receiver || receiver.user.presence.status === "offline") {
                 message.reply("You can't send bread to that member.");
                 return;
