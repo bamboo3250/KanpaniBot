@@ -254,7 +254,7 @@ function handleMyRankingCommand(message) {
             lower_bound = Math.min(upper_bound + 9, result.length-1);
             for(var i=0;i<result.length;i++) {
                 if (i==0 || result[i-1].point != result[i].point) count = i;
-                var member = guild.members.find('id', result[i].userId);
+                var member = guild.members.get(result[i].userId);
                 if (member && (upper_bound <= i) && (i<=lower_bound)) {
                     if (i === userOrder) {
                         text += "**" + (count+1) + ". " + member.user.username + " (" + result[i].point + ")**\n";
@@ -266,7 +266,7 @@ function handleMyRankingCommand(message) {
         }
 
         for(var i=0;i<result.length;i++) {
-            var member = guild.members.find('id', result[i].userId);
+            var member = guild.members.get(result[i].userId);
             if (member) updateRole(message, member);
         }
         message.channel.sendMessage(text);
