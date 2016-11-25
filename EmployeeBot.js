@@ -401,6 +401,10 @@ EmployeeBot.prototype.loadPlayer = function() {
             for(materialKey in that.playerManager.playerDict[key].materialList) {
                 if (materialKey.startsWith("Forge")) {
                     that.playerManager.playerDict[key].materialList["Forge"] = that.playerManager.playerDict[key].materialList[materialKey];
+                }
+            }
+            for(materialKey in that.playerManager.playerDict[key].materialList) {
+                if (materialKey.startsWith("Forge") && (materialKey != "Forge")) {
                     delete that.playerManager.playerDict[key].materialList[materialKey];
                 }
             }
