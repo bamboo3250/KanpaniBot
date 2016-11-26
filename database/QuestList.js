@@ -560,7 +560,7 @@ var quests = [
 
     {
         commonNames: ["1-7-1", "7-1"], name: "Ann's Necklace", 
-        levelRequired: 41, timeCost: 0, goldCost: 0, breadCost: 1, 
+        levelRequired: 41, timeCost: 50, goldCost: 0, breadCost: 1, 
         goldReward: 870, breadReward: 0, exp: 3248, advantage: [5], numItemDrop: 21,
         dropList: [
             "Beautiful Cloth", 
