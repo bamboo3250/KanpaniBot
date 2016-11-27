@@ -37,4 +37,24 @@ WeaponDatabase.prototype.getWeaponByCodeName = function(codeName, classId) {
     return null;
 }
 
+WeaponDatabase.prototype.getWeaponById = function(id) {
+    for(key in this.weaponDict) {
+        var weaponList = this.weaponDict[key];
+        for(var i=0;i<weaponList.length;i++) {
+            if (weaponList[i]._id == id) return weaponList[i];
+        }
+    }
+    return null;
+}
+
+WeaponDatabase.prototype.getCodeNameForWeapon = function(id) {
+    for(key in this.weaponDict) {
+        var weaponList = this.weaponDict[key];
+        for(var i=0;i<weaponList.length;i++) {
+            if (weaponList[i]._id === id) return key;
+        }
+    }
+    return null;
+}
+
 module.exports = new WeaponDatabase();

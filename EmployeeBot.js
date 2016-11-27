@@ -33,6 +33,7 @@ var inventoryCommand = require('./commands/InventoryCommand');
 var sellCommand = require('./commands/SellCommand');
 var useCommand = require('./commands/UseCommand');
 var craftCommand = require('./commands/CraftCommand');
+var myWeaponCommand = require('./commands/MyWeaponCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -278,6 +279,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         sellCommand.handle(message, this);
         useCommand.handle(message, this);
         craftCommand.handle(message, this);
+        myWeaponCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);

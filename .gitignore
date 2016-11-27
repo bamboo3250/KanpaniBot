@@ -8,6 +8,7 @@ images/resume/*.png
 images/item/
 images/inventory/
 images/equipment/
+images/myweapon/
 images/me/
 config.js
 affection.js
