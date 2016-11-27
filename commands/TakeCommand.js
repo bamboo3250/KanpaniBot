@@ -31,13 +31,13 @@ module.exports = {
         player.characterId = bot.rollResult[userId];
         player.exp = Math.floor(player.exp/2);
         if (player.equipedWeapon) {
-            player.weaponList.push(player.equipedWeapon);
+            bot.playerManager.addWeapon(userId, player.equipedWeapon._id, player.equipedWeapon.plus);
             player.equipedWeapon = null;
         }
-        if (player.equipedArmor) {
-            player.armorList.push(player.equipedArmor);
-            player.equipedArmor = null;
-        }
+        // if (player.equipedArmor) {
+        //     player.armorList.push(player.equipedArmor);
+        //     player.equipedArmor = null;
+        // }
         bot.savePlayer();
         var employee = new Employee(bot.employeeDatabase.getEmployeeById(bot.rollResult[userId]));
         message.reply("Congratulations! You have selected **" + employee.fullName + "** as your character.");
