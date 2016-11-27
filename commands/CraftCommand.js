@@ -49,9 +49,9 @@ module.exports = {
 
         var weapon = null;
         var weaponResult = bot.weaponDatabase.getWeaponByCodeName(weaponCode, classId);
-        if (!weaponResult) {
-            weaponResult = bot.weaponDatabase.getWeaponByName(weaponCode);
-        }
+        // if (!weaponResult) {
+        //     weaponResult = bot.weaponDatabase.getWeaponByName(weaponCode);
+        // }
         if (!weaponResult) {
             message.reply("No information.")
             return;

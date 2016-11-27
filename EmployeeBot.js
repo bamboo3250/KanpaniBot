@@ -34,6 +34,7 @@ var sellCommand = require('./commands/SellCommand');
 var useCommand = require('./commands/UseCommand');
 var craftCommand = require('./commands/CraftCommand');
 var myWeaponCommand = require('./commands/MyWeaponCommand');
+var equipCommand = require('./commands/EquipCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -252,6 +253,11 @@ EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
     var employee = new Employee(employeeInfo);
     employee.setExp(player.exp);
 
+    if (player.equipedWeapon) {
+        var weapon = this.weaponDatabase.getWeaponById(player.equipedWeapon._id);
+        employee.weapon = weapon.stats["+" + player.equipedWeapon.plus];
+    }
+
     return employee;
 }
 
@@ -280,6 +286,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         useCommand.handle(message, this);
         craftCommand.handle(message, this);
         myWeaponCommand.handle(message, this);
+        equipCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);

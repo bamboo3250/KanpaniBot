@@ -53,4 +53,24 @@ PlayerManager.prototype.addWeapon = function(userId, weaponId, plus) {
     player.weaponList[weaponId]["+" + plus]++;
 }
 
+PlayerManager.prototype.equipWeapon = function(userId, weaponId, plus) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (typeof player.weaponList[weaponId] === "undefined") return;
+    if (typeof player.weaponList[weaponId]["+" + plus] === "undefined") return;
+    if (player.weaponList[weaponId]["+" + plus] <= 0) return;
+    
+    if (player.equipedWeapon) {
+        this.addWeapon(userId, player.equipedWeapon._id, player.equipedWeapon.plus);
+        player.equipedWeapon = null;
+    }
+
+    player.equipedWeapon = {
+        _id: weaponId,
+        plus: plus
+    }
+    player.weaponList[weaponId]["+" + plus]--;
+}
+
+
 module.exports = new PlayerManager();

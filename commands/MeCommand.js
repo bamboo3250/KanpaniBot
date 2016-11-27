@@ -30,6 +30,17 @@ module.exports = {
         var queue = [
             { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName}
         ];
+        var weaponFileName = null;
+        if (player.equipedWeapon) {
+            var weaponId = player.equipedWeapon._id;
+            var plus = player.equipedWeapon.plus;
+            var weaponIconUrl = bot.urlHelper.getEquipmentIconUrl(weaponId, plus, "small");
+            weaponFileName = "images/equipment/small/" + weaponId + "0" + plus + "_1.png";
+            queue.push({
+                fileToDownload: weaponIconUrl,   fileToSave: weaponFileName
+            })
+        }   
+        
         bot.imageHelper.download(queue, function(err) {
             if (err) {
                 message.reply("Error happened. Try again.");
@@ -41,7 +52,17 @@ module.exports = {
             var backgroundFileName = "images/misc/background/" + bot.backgroundFileNames[bot.functionHelper.randomInt(bot.backgroundFileNames.length)];
             var shadowFileName = "images/misc/shadow.png";
 
-            bot.imageHelper.read([enemySpriteFileName, itemCellFileName, backgroundFileName, shadowFileName], function (err, imageList) {
+            var fileNameQueue = [
+                enemySpriteFileName, 
+                itemCellFileName, 
+                backgroundFileName, 
+                shadowFileName
+            ];
+
+            if (weaponFileName) {
+                fileNameQueue.push(weaponFileName)
+            }
+            bot.imageHelper.read(fileNameQueue, function (err, imageList) {
                 if (err) {
                     message.reply("Error happened. Try again.");
                     bot.log(err); 
@@ -51,6 +72,11 @@ module.exports = {
                 itemCellImage = imageList[1];
                 backgroundImage = imageList[2];
                 shadowImage = imageList[3];
+
+                var weaponImage = null;
+                if (weaponFileName) {
+                    weaponImage = imageList[4];
+                }
 
                 backgroundImage.crop(250,100, 310,270);
                 enemySpriteImage.crop(20, 0, 310, 270);
@@ -63,6 +89,10 @@ module.exports = {
                 .composite(itemCellImage, 10, 10)
                 .composite(itemCellImage, 10, 60)
                 .composite(itemCellImage, 10, 110);
+
+                if (weaponImage) {
+                    backgroundImage.composite(weaponImage, 10, 10);
+                }
 
                 var imageName = "images/me/" + message.author.id + ".png";
                 backgroundImage.write(imageName, function() {
@@ -101,8 +131,13 @@ module.exports = {
                         text += (matkEmoji != null? matkEmoji + " " : "") + "M.Atk: **" + employee.getMAtk() + "**\n";
                         text += (defEmoji != null? defEmoji + " " : "") + "Def: **" + employee.getDef() + "**\t";
                         text += (mdefEmoji != null? mdefEmoji + " " : "") + "M.Def: **" + employee.getMDef() + "**\n";
+                        text += "CRIT: **" + employee.getCrit() + "**\tHIT: **" + employee.getHit() + "**\tEVA: **" + employee.getEva() + "**\n";
+                        text += "\n======SKILLS======\n";
+                        text += "Front Skill: " + employee.getFrontSkill() + "\n";                    
+                        text += "Back Skill: " + employee.getBackSkill() + "\n";
 
                         if (bot.isPM(message)) {
+                            text += "\n====BASE STATS====\n";
                             text += "**STR: " + employee.getSTR() + "**\t\t";
                             text += "**INT: " + employee.getINT() + "**\n";
                             text += "**VIT: " + employee.getVIT() + "**\t\t";
