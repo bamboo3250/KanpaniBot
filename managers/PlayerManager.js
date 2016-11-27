@@ -13,7 +13,7 @@ PlayerManager.prototype.createNewPlayer = function(userId) {
         equipedArmor: null,
         equipedAccessory: null,
         materialList: {},
-        weaponList: [],
+        weaponList: {},
         armorList: [],
         accessoryList: []
     };
@@ -33,6 +33,24 @@ PlayerManager.prototype.spendItem = function(userId, itemName, amount = 1) {
     if (typeof player.materialList[itemName] === "undefined") return;
     
     player.materialList[itemName] -= amount;
+}
+
+PlayerManager.prototype.spendGold = function(userId, amount = 0) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (amount <= 0) return;
+    player.gold -= amount;
+}
+
+PlayerManager.prototype.addWeapon = function(userId, weaponId, plus) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (typeof player.weaponList[weaponId] === "undefined") {
+        player.weaponList[weaponId] = {
+            "+0": 0, "+1": 0, "+2": 0, "+3": 0, "+4": 0, 
+        }
+    }
+    player.weaponList[weaponId]["+" + plus]++;
 }
 
 module.exports = new PlayerManager();

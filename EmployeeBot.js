@@ -3,13 +3,15 @@ var Discord = require("discord.js");
 var employeeDatabase = require('./database/EmployeeDatabase');
 var questDatabase = require('./database/QuestDatabase');
 var itemInfoDatabase = require('./database/ItemInfoDatabase');
+var weaponDatabase = require('./database/WeaponDatabase');
 var Employee = require('./classes/Employee');
 
 var playerManager = require('./managers/PlayerManager');
 
-var imageHelper = require('./ImageHelper');
+var imageHelper = require('./helpers/ImageHelper');
+var functionHelper = require('./helpers/FunctionHelper');
+var urlHelper = require('./helpers/UrlHelper');
 var fs = require('fs');
-var helper = require('./FunctionHelper')
 
 var dailyCommand = require('./commands/DailyCommand');
 var maintenanceCommand = require('./commands/MaintenanceCommand');
@@ -30,6 +32,7 @@ var questCommand = require('./commands/QuestCommand');
 var inventoryCommand = require('./commands/InventoryCommand');
 var sellCommand = require('./commands/SellCommand');
 var useCommand = require('./commands/UseCommand');
+var craftCommand = require('./commands/CraftCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -38,10 +41,12 @@ function EmployeeBot() {
     this.employeeDatabase = employeeDatabase;
     this.questDatabase = questDatabase;
     this.itemInfoDatabase = itemInfoDatabase;
+    this.weaponDatabase = weaponDatabase;
     this.imageHelper = imageHelper;
+    this.functionHelper = functionHelper;
+    this.urlHelper = urlHelper;
     this.playerManager = playerManager;
-    this.functionHelper = helper;
-
+    
     this.dmmMaintenanceList = [
         {
             name: "DMM Maintenance",
@@ -272,6 +277,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         inventoryCommand.handle(message, this);
         sellCommand.handle(message, this);
         useCommand.handle(message, this);
+        craftCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -299,7 +305,7 @@ EmployeeBot.prototype.greeting = function(channel) {
 }
 
 EmployeeBot.prototype.setDailyDrawReminderForNutaku = function() {
-    var time = helper.getTimeUntilDaily(this.nutakuDailyRemind); 
+    var time = this.functionHelper.getTimeUntilDaily(this.nutakuDailyRemind); 
     var that = this;
     setTimeout(function() {
         var channels = that.bot.channels.array();
@@ -316,7 +322,7 @@ EmployeeBot.prototype.setDailyDrawReminderForNutaku = function() {
 }
 
 EmployeeBot.prototype.setDailyDrawReminderForDmm = function() {
-    var time = helper.getTimeUntilDaily(this.dmmDailyRemind); 
+    var time = this.functionHelper.getTimeUntilDaily(this.dmmDailyRemind); 
     var that = this;
     setTimeout(function() {
         var channels = that.bot.channels.array();
@@ -398,15 +404,8 @@ EmployeeBot.prototype.loadPlayer = function() {
             if (that.playerManager.playerDict[key].materialList instanceof Array) {
                 that.playerManager.playerDict[key].materialList = {};
             }
-            for(materialKey in that.playerManager.playerDict[key].materialList) {
-                if (materialKey.startsWith("Forge")) {
-                    that.playerManager.playerDict[key].materialList["Forge"] = that.playerManager.playerDict[key].materialList[materialKey];
-                }
-            }
-            for(materialKey in that.playerManager.playerDict[key].materialList) {
-                if (materialKey.startsWith("Forge") && (materialKey != "Forge")) {
-                    delete that.playerManager.playerDict[key].materialList[materialKey];
-                }
+            if (that.playerManager.playerDict[key].weaponList instanceof Array) {
+                that.playerManager.playerDict[key].weaponList = {};
             }
         }
     });

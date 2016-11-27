@@ -2,7 +2,6 @@ var elsa = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
 var fs = require('fs');
-var helper = require('./FunctionHelper');
 
 var lastTimePat = {};
 var affection = {};
@@ -156,9 +155,9 @@ function handlePatCommand(message) {
     var now = new Date();
     var index = 0;
     if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
-        index = helper.randomIntRange(0, 3);
+        index = elsa.functionHelper.randomIntRange(0, 3);
     } else {
-        index = helper.randomIntRange(1, 8);
+        index = elsa.functionHelper.randomIntRange(1, 8);
     }
     var point = affection[userId] + touches[index].point;
     affection[userId] = Math.max(Math.min(point, 100), -100);

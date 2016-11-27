@@ -1,7 +1,6 @@
 var annalina = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
-var helper = require('./FunctionHelper');
 
 var answerTexts = dialog.annalina.answers;
 annalina.declineNotEnoughBread = annalina.declineNotEnoughBread.concat(dialog.annalina.decline);
@@ -11,7 +10,7 @@ function handleQuestion(message) {
     if (!annalina.consumeBread(message)) return;
     
     annalina.total_bread++;
-    var text = answerTexts[helper.randomInt(answerTexts.length)] + "\n\n";
+    var text = answerTexts[annalina.functionHelper.randomInt(answerTexts.length)] + "\n\n";
     text += annalina.createRemainingBreadLine(message);
     message.reply(text);
 }

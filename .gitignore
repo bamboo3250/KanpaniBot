@@ -5,12 +5,13 @@ images/chara/*.png
 images/full/*.png
 images/photo/*.png
 images/resume/*.png
+images/item/
+images/inventory/
+images/equipment/
+images/me/
 config.js
 affection.js
 affection.json
 soul.json
-images/me/
 player.json
-images/item/
-images/inventory/
 runQuestStatus.json
