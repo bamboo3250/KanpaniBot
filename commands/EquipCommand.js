@@ -52,11 +52,11 @@ module.exports = {
         }
 
         if (typeof player.weaponList[weaponResult._id] === "undefined") {
-            message.reply("You don't have that weapon.");
+            message.reply("You don't have any **" + weaponResult.weaponName + "**.");
             return;
         }
-        if (typeof player.weaponList[weaponResult._id]["+" + plus] === "undefined") {
-            message.reply("You don't have that weapon.");
+        if (typeof player.weaponList[weaponResult._id]["+" + plus] === "undefined" || player.weaponList[weaponResult._id]["+" + plus] <= 0) {
+            message.reply("You don't have any **" + weaponResult.weaponName + " +" + plus + "**.");
             return;
         }
         bot.playerManager.equipWeapon(userId, weaponResult._id, plus);
