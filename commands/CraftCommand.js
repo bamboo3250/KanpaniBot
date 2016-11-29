@@ -84,8 +84,10 @@ module.exports = {
 
         var distribution = [20, 35, 35, 10];    // tier 1
         if (weaponResult.tier == 2) {
-            distribution = [50, 39, 10, 1];
-        }
+            distribution = [55, 35, 9, 1];
+        } else if (weaponResult.tier == 3) {
+            distribution = [120, 70, 9, 1];
+        } 
         var plus = bot.functionHelper.randomDist(distribution);
 
         var weaponUrl = bot.urlHelper.getEquipmentIconUrl(weaponResult._id, plus);
