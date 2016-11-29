@@ -351,7 +351,8 @@ EmployeeBot.prototype.setBreadRegeneration = function() {
     var that = this;
     setTimeout(function() {
         for(key in that.remainingBread) {
-            that.remainingBread[key] = Math.min(that.remainingBread[key] + 1, that.cappedBread);
+            var userId = key;
+            that.remainingBread[userId] = Math.min(that.remainingBread[userId] + 1, that.cappedBread);
         }
         that.startBread = Math.min(that.startBread + 1, that.cappedBread);
         that.log("1 bread is given to each player");
@@ -407,14 +408,15 @@ EmployeeBot.prototype.loadPlayer = function() {
         }
         // migration
         for(key in that.playerManager.playerDict) {
+            var userId = key;
             if (typeof that.playerManager.playerDict[key].gold === "undefined") {
-                that.playerManager.playerDict[key].gold = 0;
+                that.playerManager.playerDict[userId].gold = 0;
             }
-            if (that.playerManager.playerDict[key].materialList instanceof Array) {
-                that.playerManager.playerDict[key].materialList = {};
+            if (that.playerManager.playerDict[userId].materialList instanceof Array) {
+                that.playerManager.playerDict[userId].materialList = {};
             }
-            if (that.playerManager.playerDict[key].weaponList instanceof Array) {
-                that.playerManager.playerDict[key].weaponList = {};
+            if (that.playerManager.playerDict[userId].weaponList instanceof Array) {
+                that.playerManager.playerDict[userId].weaponList = {};
             }
         }
     });

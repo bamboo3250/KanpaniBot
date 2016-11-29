@@ -107,12 +107,13 @@ module.exports = {
 
             var itemNameList = [];
             for(key in drop) {
-                itemNameList.push(key);
-                backupItemDropText += key + " x" + drop[key] + "\n";
-                if (typeof player.materialList[key] === "undefined") {
-                    player.materialList[key] = 0;
+                var itemName = key;
+                itemNameList.push(itemName);
+                backupItemDropText += itemName + " x" + drop[itemName] + "\n";
+                if (typeof player.materialList[itemName] === "undefined") {
+                    player.materialList[itemName] = 0;
                 }
-                player.materialList[key] += drop[key];
+                player.materialList[itemName] += drop[itemName];
             }
             bot.savePlayer();
 

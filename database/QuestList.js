@@ -806,6 +806,113 @@ var quests = [
     },
 
     {
+        commonNames: ["1-9-1", "9-1"], name: "Monster of the Forest?", 
+        levelRequired: 51, timeCost: 60, goldCost: 0, breadCost: 1, 
+        goldReward: 1170, breadReward: 0, exp: 4070, advantage: [3], numItemDrop: 27,
+        dropList: [
+            "Beautiful Cloth", 
+            "Black Pearl", 
+            "Diamond", 
+            "Ebony Branch", 
+            "Garnet", 
+            "Luxurious Cloth", 
+            "Ominous Cloth", 
+            "Turquoise"
+        ]
+    },{
+        commonNames: ["1-9-2", "9-2"], name: "Mysterio Competition", 
+        levelRequired: 51, timeCost: 60, goldCost: 0, breadCost: 1, 
+        goldReward: 1190, breadReward: 0, exp: 4406, advantage: [1], numItemDrop: 27,
+        dropList: [
+            "Chimera Horn", 
+            "Emerald", 
+            "Gold Ore", 
+            "Lapis Lazuli", 
+            "Rose Quartz", 
+            "Topaz", 
+            "Turquoise", 
+            "Unicorn Horn", 
+            "Water Buffalo Horn", 
+            "Full Moon Fragment"
+        ]
+    },{
+        commonNames: ["1-9-3", "9-3"], name: "Living Dead", 
+        levelRequired: 52, timeCost: 60, goldCost: 0, breadCost: 1, 
+        goldReward: 1210, breadReward: 0, exp: 4652, advantage: [4], numItemDrop: 27,
+        dropList: [
+            "Aquamarine", 
+            "Black Pearl", 
+            "Chimera Horn", 
+            "Diamond", 
+            "Emerald", 
+            "Garnet", 
+            "Hard Leather", 
+            "Magical Water", 
+            "Lapis Lazuli", 
+            "Luxurious Leather", 
+            "Rose Quartz", 
+            "Tanned Leather", 
+            "Topaz"
+        ]
+    },{
+        commonNames: ["1-9-4", "9-4"], name: "Ann's Ring", 
+        levelRequired: 52, timeCost: 60, goldCost: 0, breadCost: 1, 
+        goldReward: 1230, breadReward: 0, exp: 4532, advantage: [7, 8], numItemDrop: 27,
+        dropList: [
+            "Clear Water", 
+            "Diamond", 
+            "Garnet", 
+            "Magical Water", 
+            "Ominous Cloth", 
+            "Onyx", 
+            "Shimmering Water"
+        ]
+    },{
+        commonNames: ["1-9-5", "9-5"], name: "Dubious Request", 
+        levelRequired: 53, timeCost: 60, goldCost: 0, breadCost: 1, 
+        goldReward: 1250, breadReward: 0, exp: 4696, advantage: [6, 8], numItemDrop: 27,
+        dropList: [
+            "Ebony Branch", 
+            "Gold Ore", 
+            "Lapis Lazuli", 
+            "Maple Branch", 
+            "Rose Quartz"
+        ]
+    },{
+        commonNames: ["1-9-6", "9-6"], name: "Volcano Job", 
+        levelRequired: 54, timeCost: 60, goldCost: 0, breadCost: 1, 
+        goldReward: 1270, breadReward: 0, exp: 4209, advantage: [5], numItemDrop: 27,
+        dropList: [
+            "Chimera Horn", 
+            "Crescent Moon Fragment", 
+            "Crystal", 
+            "Diamond", 
+            "Ebony Branch", 
+            "Emerald", 
+            "Full Moon Fragment", 
+            "Half Moon Fragment", 
+            "Luxurious Leather", 
+            "Rose Quartz"
+        ]
+    },{
+        commonNames: ["1-9-7", "9-7"], name: "Ruins of the Holy Maiden", 
+        levelRequired: 55, timeCost: 60, goldCost: 0, breadCost: 1, 
+        goldReward: 1290, breadReward: 0, exp: 4823, advantage: [2], numItemDrop: 27,
+        dropList: [
+            "Black Pearl", 
+            "Diamond", 
+            "Emerald", 
+            "Garnet", 
+            "Gold Ore", 
+            "Iron Ore", 
+            "Lapis Lazuli", 
+            "Luxurious Leather", 
+            "Rose Quartz", 
+            "Silver Ore"
+        ]
+    },
+
+    {
         commonNames: ["", ""], name: "", 
         levelRequired: 1, timeCost: 0, goldCost: 0, breadCost: 1, 
         goldReward: 0, breadReward: 0, exp: 0, advantage: [], numItemDrop: 0,

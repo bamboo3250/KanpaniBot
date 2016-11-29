@@ -24,9 +24,15 @@ module.exports = {
             return;
         }
 
-        var enemySpriteUrl = employee.getSpriteImageURL(employee.getRarity(), true, false, 2);
-        var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(employee.getRarity(), false, 2);
+        var weaponModel = "02";
+        if (player.equipedWeapon) {
+            var weapon = bot.weaponDatabase.getWeaponById(player.equipedWeapon._id);
+            weaponModel = weapon.modelId;    
+        }
         
+        var enemySpriteUrl = employee.getSpriteImageURL(employee.getRarity(), true, false, weaponModel);
+        var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(employee.getRarity(), false, weaponModel);
+
         var queue = [
             { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName}
         ];

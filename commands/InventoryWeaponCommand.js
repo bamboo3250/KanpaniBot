@@ -23,6 +23,10 @@ module.exports = {
         for(key in player.weaponList) {
             var weaponId = key;
             var weapon = bot.weaponDatabase.getWeaponById(weaponId);
+            if (!weapon) {
+                bot.log("Cannot find Weapon with ID: " + weaponId);
+                continue;
+            }
             for(var i=0;i<5;i++) {
                 if (player.weaponList[weaponId]["+" + i] > 0) {
                     weaponIdList.push({

@@ -248,7 +248,7 @@ EmployeeInfo.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, is
     if (isCW && this.cwId != 0) {
         weaponId = this.cwId;
     }
-    if (parseInt(weaponId) < 10) weaponId = "0" + weaponId;
+    if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
     weaponId = this._id.substring(2,3) + weaponId;
     weaponId = (isCW && this.cwId != 0 ? "8" : "0") + weaponId;
     weaponId = (this.isEx() && isCW && this.cwId != 0 ? "9" : "0") + weaponId;
@@ -260,7 +260,7 @@ EmployeeInfo.prototype.getSpriteImageName = function(star = 6, isCW = false, wea
     if (isCW && this.cwId != 0) {
         weaponId = this.cwId;
     }
-    if (parseInt(weaponId) < 10) weaponId = "0" + weaponId;
+    if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
     weaponId = this._id.substring(2,3) + weaponId;
     weaponId = (isCW && this.cwId != 0 ? "8" : "0") + weaponId;
     weaponId = (this.isEx() && isCW && this.cwId != 0 ? "9" : "0") + weaponId;

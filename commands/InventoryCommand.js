@@ -19,9 +19,10 @@ module.exports = {
         var backupItemDropText = "";
         var itemNameList = [];
         for(key in player.materialList) {
-            if (player.materialList[key] > 0) {
-                itemNameList.push(key);
-                backupItemDropText += key + " x" + player.materialList[key] + "\n";    
+            var materialName = key;
+            if (player.materialList[materialName] > 0) {
+                itemNameList.push(materialName);
+                backupItemDropText += materialName + " x" + player.materialList[materialName] + "\n";    
             }
         }
 
