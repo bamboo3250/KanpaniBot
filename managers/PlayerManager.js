@@ -32,14 +32,14 @@ PlayerManager.prototype.spendItem = function(userId, itemName, amount = 1) {
     if (amount <= 0) return;
     if (typeof player.materialList[itemName] === "undefined") return;
     
-    player.materialList[itemName] -= amount;
+    player.materialList[itemName] = Math.max(0, player.materialList[itemName] - amount);
 }
 
 PlayerManager.prototype.spendGold = function(userId, amount = 0) {
     var player = this.getPlayer(userId);
     if (!player) return;
     if (amount <= 0) return;
-    player.gold -= amount;
+    player.gold = Math.max(0, player.gold - amount);
 }
 
 PlayerManager.prototype.addWeapon = function(userId, weaponId, plus) {

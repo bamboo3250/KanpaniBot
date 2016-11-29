@@ -125,15 +125,19 @@ module.exports = {
                         setTimeout(function() {
                             message.channel.sendMessage("Kan...");
                             setTimeout(function() {
-                                for(var i=0;i<weaponResult.recipe.length;i++) {
-                                    var materialName = weaponResult.recipe[i].materialName;
-                                    var amount = weaponResult.recipe[i].amount;
-                                    bot.playerManager.spendItem(userId, materialName, amount);
+                                if (hasEnoughMaterial(player, weaponResult.recipe) {
+                                    for(var i=0;i<weaponResult.recipe.length;i++) {
+                                        var materialName = weaponResult.recipe[i].materialName;
+                                        var amount = weaponResult.recipe[i].amount;
+                                        bot.playerManager.spendItem(userId, materialName, amount);
+                                    }
+                                    bot.playerManager.spendGold(userId, weaponResult.devCost);
+                                    bot.playerManager.addWeapon(userId, weaponResult._id, plus);
+                                    bot.savePlayer();
+                                    message.channel.sendFile(weaponFileName, "png", "");
+                                } else {
+                                    message.reply("You don't have enough material!");
                                 }
-                                bot.playerManager.spendGold(userId, weaponResult.devCost);
-                                bot.playerManager.addWeapon(userId, weaponResult._id, plus);
-                                bot.savePlayer();
-                                message.channel.sendFile(weaponFileName, "png", "");
                             }, 500);
                         }, 1000);   
                     }, 1000);        
