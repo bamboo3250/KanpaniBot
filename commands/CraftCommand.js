@@ -39,7 +39,7 @@ module.exports = {
         }
         weaponCode = bot.functionHelper.removeExtraSpace(weaponCode);
 
-        if ((category != "weapon")) {
+        if ((category != "weapon") && (category != "wp")) {
             message.reply("The weapon category is not correct.")
             return;
         }

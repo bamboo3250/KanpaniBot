@@ -3,7 +3,8 @@ var Jimp = require("jimp");
 module.exports = {
     handle: function(message, bot) {
         var command = message.content.trim().toLowerCase();
-        if (command !== "~inventory weapon" && (!command.startsWith("~inventory weapon "))) return;
+        if (command !== "~inventory weapon" && (!command.startsWith("~inventory weapon "))
+            && command !== "~inventory wp" && (!command.startsWith("~inventory wp "))) return;
         if (!bot.isPM(message)) {
             message.reply("You can only check your Weapons in Private Message.");
             return;
@@ -58,8 +59,10 @@ module.exports = {
         var NUM_WEAPONS_PER_PAGE = 10;
         var totalPage = Math.ceil(weaponIdList.length/NUM_WEAPONS_PER_PAGE);
         var pageNo = 1;
-        if (command.startsWith("~inventory weapon ")) {
-            var page = command.substring(18);
+        if (command.startsWith("~inventory weapon ") || command.startsWith("~inventory wp ")) {
+            var pageNumStartIndex = 18;
+            if (command.startsWith("~inventory wp ")) pageNumStartIndex = 14;
+            var page = command.substring(pageNumStartIndex);
             if (!isNaN(page)) {
                 page = parseInt(page);
                 page = Math.max(page, 1);
