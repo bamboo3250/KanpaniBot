@@ -54,9 +54,19 @@ module.exports = {
 
         var chanceToSuccess = 70;
         for(var i=0;i<quest.advantage.length;i++) {
-            if (quest.advantage[i] == employee.getClassId()) chanceToSuccess = 90;
+            if (quest.advantage[i] == employee.getClassId()) chanceToSuccess = 85;
         }
-        chanceToSuccess = Math.min(100, chanceToSuccess + (employee.levelCached - quest.levelRequired));
+        var bonusFromLevel = employee.levelCached - quest.levelRequired;
+        var bonusFromWeapon = 0;
+        if (player.equipedWeapon) {
+            var weapon = bot.weaponDatabase.getWeaponById(player.equipedWeapon._id);
+            var weaponStats = weapon.stats["+" + player.equipedWeapon.plus];
+            var sumStat = weaponStats.patk + weaponStats.pdef + weaponStats.matk + weaponStats.mdef;
+            sumStat += weaponStats.crit + weaponStats.hit + weaponStats.eva;
+            bonusFromWeapon = Math.floor(sumStat / 100);
+        }
+
+        chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon);
 
         var text = "The quest " + quest.commonNames[0] + " has started. It will end in **" + quest.timeCost + " minutes**.\n";
         text += "Chance of Success: **" + chanceToSuccess + "%**";

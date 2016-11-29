@@ -127,7 +127,7 @@ module.exports = {
                         setTimeout(function() {
                             message.channel.sendMessage("Kan...");
                             setTimeout(function() {
-                                if (hasEnoughMaterial(player, weaponResult.recipe) {
+                                if (hasEnoughMaterial(player, weaponResult.recipe)) {
                                     for(var i=0;i<weaponResult.recipe.length;i++) {
                                         var materialName = weaponResult.recipe[i].materialName;
                                         var amount = weaponResult.recipe[i].amount;
