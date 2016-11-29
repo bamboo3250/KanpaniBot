@@ -1,5 +1,21 @@
 var Employee = require('../classes/Employee');
 
+function sendTop(message, bot, result) {
+    var count = 0;
+    var text = "Top 10 players:\n";
+        
+    for(var i=0;i<Math.min(result.length, 10);i++) {
+        if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
+        var memberName = bot.memberNameDict[message.author.id];
+        var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
+        const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
+        if (memberName) {
+            text += (count+1) + ". " + memberName + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**)\n";
+        }
+    }
+    message.channel.sendMessage(text);
+}
+
 module.exports = {
     handle: function(message, bot) {
         var text = message.content.trim().toLowerCase();
@@ -23,23 +39,13 @@ module.exports = {
                 return b.employee.getBaseRarity() - a.employee.getBaseRarity();
             }
         })
-        var count = 0;
-        var text = "Top 10 players:\n";
         
         message.guild.fetchMembers().then(guild => {
-            for(var i=0;i<Math.min(result.length, 10);i++) {
-                if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
-                var member = guild.members.get(result[i].userId);
-                var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
-                const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
-                if (member) {
-                    text += (count+1) + ". " + member.user.username + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**)\n";
-                }
-            }
-            message.channel.sendMessage(text);
+            bot.updateMemberNameDict(guild.members);
+            sendTop(message, bot, result);
         }).catch(err => {
-            message.channel.sendMessage("Fetching member error!");
-            bot.log(err);
+            sendTop(message, bot, result);
+            bot.log("[Top] Fetching member error!\n" + err);
         });
     }
 }

@@ -129,6 +129,7 @@ function EmployeeBot() {
         "You don't have enough bread."
     ];
 
+    this.memberNameDict = {};
     this.hasSoul = {};
 
     this.firstTimeReady = true;
@@ -434,6 +435,13 @@ EmployeeBot.prototype.saveRunQuestStatus = function() {
     }); 
 }
 
+EmployeeBot.prototype.updateMemberNameDict = function(memberList) {
+    var members = memberList.array();
+    for(var i=0;i<members.length;i++) {
+        this.memberNameDict[members[i].id] = members[i].user.username;
+    }
+}
+
 EmployeeBot.prototype.loadRunQuestStatus = function() {
     var that = this;
     fs.readFile(runQuestStatusFileName, 'utf8', function (err, data) {
@@ -449,6 +457,7 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
         var guilds = that.bot.guilds.array();
         for(var i=0;i<guilds.length;i++) {
             guilds[i].fetchMembers().then(guild => {
+                // that.updateMemberNameDict(guild.members);
                 var members = guild.members.array();
 
                 for(var i=0;i<members.length;i++) {
@@ -476,11 +485,26 @@ EmployeeBot.prototype.ready = function() {
             }
             if (channels[i].type === "text" && channels[i].name === "log") {
                 this.logChannel = channels[i];
-            } 
+            }
         }
-        this.log("Bot is on. Serving on " + this.bot.channels.array().length + " channels");
-        this.log("-----");
+        var text = "Bot is on. Serving on " + channels.length + " channels\n";
+        for(var i=0;i<channels.length;i++) {
+            var channelName = (channels[i].name ? channels[i].name : channels[i].recipient.username);
+            text += (i+1) + ". " + channelName + " (" + (channels[i].guild ? channels[i].guild.name : "PM") + ")\n";
+        }
+        text += "-----";
+        this.log(text);
         
+        var that = this;
+        var guilds = this.bot.guilds.array();
+        for(var i=0;i<guilds.length;i++) {
+            guilds[i].fetchMembers().then(guild => {
+                that.updateMemberNameDict(guild.members);
+            }).catch(err => {
+                that.log("[ready] Fetching member error!");
+            });
+        }
+
         //this.setIdleTalk();
         this.setDailyDrawReminderForNutaku();
         this.setDailyDrawReminderForDmm();
