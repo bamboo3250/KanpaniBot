@@ -524,7 +524,9 @@ EmployeeBot.prototype.ready = function() {
         this.firstTimeReady = false;
         this.loadSoul();
         this.loadPlayer();
-        this.loadRunQuestStatus();
+        setTimeout(function() {
+            that.loadRunQuestStatus();    
+        }, 5000);
     } else {
         this.log("Bot is restarted");
     }

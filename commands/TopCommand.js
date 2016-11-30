@@ -6,7 +6,7 @@ function sendTop(message, bot, result) {
         
     for(var i=0;i<Math.min(result.length, 10);i++) {
         if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
-        var memberName = bot.memberNameDict[message.author.id];
+        var memberName = bot.memberNameDict[result[i-1].userId];
         var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
         const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
         if (memberName) {
