@@ -480,7 +480,7 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
                 that.runQuestStatus = {};
                 that.saveRunQuestStatus();
             }).catch(err => {
-                that.log("[loadRunQuestStatus] Fetching member error!");
+                that.log("[loadRunQuestStatus] Fetching member error!\n" + err);
             });
         }
     });
@@ -491,7 +491,7 @@ EmployeeBot.prototype.ready = function() {
         var channels = this.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
             if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
-                this.greeting(channels[i]);
+                //this.greeting(channels[i]);
             }
             if (channels[i].type === "text" && channels[i].name === "log") {
                 this.logChannel = channels[i];
@@ -508,10 +508,12 @@ EmployeeBot.prototype.ready = function() {
         var that = this;
         var guilds = this.bot.guilds.array();
         for(var i=0;i<guilds.length;i++) {
+            that.log("[ready] Fetching members in" + guilds[i].name);
             guilds[i].fetchMembers().then(guild => {
                 that.updateMemberNameDict(guild.members);
+                that.log("[ready] Finished Fetching members");
             }).catch(err => {
-                that.log("[ready] Fetching member error!");
+                that.log("[ready] Fetching member error!\n" + err);
             });
         }
 
