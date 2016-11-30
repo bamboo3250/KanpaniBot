@@ -808,16 +808,16 @@ module.exports = {
             _id: "310505", armorName: "Silver Belt", commonNames: ["Silver Belt"],
             classId: 5, type: "story", stats: {
                 "+0": {
-                    patk: 0, pdef: 50, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 17
+                    patk: 0, pdef: 50, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 21
                 },
                 "+1": {
-                    patk: 0, pdef: 60, matk: 0, mdef: 15, crit: 13, hit: 0, eva: 17
+                    patk: 0, pdef: 60, matk: 0, mdef: 15, crit: 13, hit: 0, eva: 21
                 },
                 "+2": {
-                    patk: 0, pdef: 70, matk: 0, mdef: 20, crit: 21, hit: 0, eva: 17
+                    patk: 0, pdef: 70, matk: 0, mdef: 20, crit: 21, hit: 0, eva: 21
                 },
                 "+3": {
-                    patk: 0, pdef: 80, matk: 0, mdef: 25, crit: 34, hit: 0, eva: 17
+                    patk: 0, pdef: 80, matk: 0, mdef: 25, crit: 31, hit: 0, eva: 21
                 }
             },
             devCost: 6300, levelRequired: 20, tier: 3, recipe: [

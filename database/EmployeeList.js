@@ -62,7 +62,7 @@ var employees = [
         baseStats: { _str: 18, _vit: 52, _agi: 8, _dex: 11, _int: 8, _pie: 5, _luk: 7},
         maxStats: { _str: 272, _vit: 527, _agi: 180, _dex: 263, _int: 178, _pie: 299, _luk: 176}
     },{
-        _no: 185, _id: "10450004_4de7335d", fullName: "Cinzia Ghiglia", japaneseName: "シンツィア・ギリア", commonNames: ["Cinzia", "Cinthia", "Cynzia", "Cynthia"], cwId: 0,
+        _no: 185, _id: "10450004_4de7335d", fullName: "Cinzia Ghiglia", japaneseName: "シンツィア・ギリア", commonNames: ["Cinzia", "Cinthia", "Cynzia", "Cynthia"], cwId: 23,
         baseStats: { _str: 18, _vit: 49, _agi: 10, _dex: 11, _int: 7, _pie: 9, _luk: 7},
         maxStats: { _str: 272, _vit: 527, _agi: 180, _dex: 263, _int: 178, _pie: 299, _luk: 176}
     },
@@ -442,7 +442,7 @@ var employees = [
         baseStats: { _str: 17, _vit: 8, _agi: 14, _dex: 10, _int: 3, _pie: 3, _luk: 4},
         maxStats: { _str: 359, _vit: 245, _agi: 328, _dex: 253, _int: 149, _pie: 158, _luk: 205}
     },{
-        _no: 165, _id: "10230010_1c33e231", fullName: "Recca Kujo", japaneseName: "レッカ・クジョウ", commonNames: ["Recca"], cwId: 0,
+        _no: 165, _id: "10230010_1c33e231", fullName: "Recca Kujo", japaneseName: "レッカ・クジョウ", commonNames: ["Recca"], cwId: 22,
         baseStats: { _str: 17, _vit: 7, _agi: 13, _dex: 9, _int: 2, _pie: 2, _luk: 4},
         maxStats: { _str: 359, _vit: 245, _agi: 328, _dex: 253, _int: 149, _pie: 158, _luk: 205}
     },{
@@ -666,7 +666,7 @@ var employees = [
         baseStats: { _str: 3, _vit: 3, _agi: 9, _dex: 9, _int: 21, _pie: 6, _luk: 4},
         maxStats: { _str: 158, _vit: 149, _agi: 240, _dex: 240, _int: 458, _pie: 237, _luk: 204}
     },{
-        _no: 150, _id: "10830006_bd45e5e4", fullName: "Lelek Mach", japaneseName: "レレク・マハ", commonNames: ["Lelek"], cwId: 0,
+        _no: 150, _id: "10830006_bd45e5e4", fullName: "Lelek Mach", japaneseName: "レレク・マハ", commonNames: ["Lelek"], cwId: 15,
         baseStats: { _str: 3, _vit: 3, _agi: 8, _dex: 9, _int: 21, _pie: 6, _luk: 5},
         maxStats: { _str: 158, _vit: 149, _agi: 240, _dex: 240, _int: 458, _pie: 237, _luk: 204}
     },{
