@@ -20,7 +20,7 @@ module.exports = {
             return;
         }
         var category = commandArgs[1];
-        var weaponCode = commandArgs[2];
+        var equipmentCode = commandArgs[2];
         var plus = 0;
         if (commandArgs.length > 3) {
             plus = commandArgs[commandArgs.length-1];
@@ -36,31 +36,50 @@ module.exports = {
             }
         }
 
-        if ((category != "weapon") && (category != "wp")) {
-            message.reply("The weapon category is not correct.")
+        if ((category != "ar") && (category != "wp")) {
+            message.reply("The equipment category is not correct. It should be `wp` for weapon or `ar` for armor.")
             return;
         }
 
         var employee = bot.createEmployeeFromPlayer(player);
         var classId = employee.getClassId();
 
-        var weapon = null;
-        var weaponResult = bot.weaponDatabase.getWeaponByCodeName(weaponCode, classId);
-        if (!weaponResult) {
+        var equipmentResult = null;
+        if (category == "wp") {
+            equipmentResult = bot.weaponDatabase.getWeaponByCodeName(equipmentCode, classId);
+        } else if (category == "ar") {
+            equipmentResult = bot.armorDatabase.getArmorByCodeName(equipmentCode, classId);
+        }
+        if (!equipmentResult) {
             message.reply("No information.")
             return;
         }
 
-        if (typeof player.weaponList[weaponResult._id] === "undefined") {
-            message.reply("You don't have any **" + weaponResult.weaponName + "**.");
+        var equipmentName = "";
+        var equipmentList = {};
+        if (category == "wp") {
+            equipmentName = equipmentResult.weaponName;
+            equipmentList = player.weaponList;
+        } else if (category == "ar") {
+            equipmentName = equipmentResult.armorName;
+            equipmentList = player.armorList;
+        }
+
+        if (typeof equipmentList[equipmentResult._id] === "undefined") {
+
+            message.reply("You don't have any **" + equipmentName + "**.");
             return;
         }
-        if (typeof player.weaponList[weaponResult._id]["+" + plus] === "undefined" || player.weaponList[weaponResult._id]["+" + plus] <= 0) {
-            message.reply("You don't have any **" + weaponResult.weaponName + " +" + plus + "**.");
+        if (typeof equipmentList[equipmentResult._id]["+" + plus] === "undefined" || equipmentList[equipmentResult._id]["+" + plus] <= 0) {
+            message.reply("You don't have any **" + equipmentName + " +" + plus + "**.");
             return;
         }
-        bot.playerManager.equipWeapon(userId, weaponResult._id, plus);
+        if (category == "wp") {
+            bot.playerManager.equipWeapon(userId, equipmentResult._id, plus);
+        } else if (category == "ar") {
+            bot.playerManager.equipArmor(userId, equipmentResult._id, plus);
+        }
         bot.savePlayer();
-        message.reply("You have equipped **" + weaponResult.weaponName + " +" + plus + "**");
+        message.reply("You have equipped **" + equipmentName + " +" + plus + "**");
     }
 }

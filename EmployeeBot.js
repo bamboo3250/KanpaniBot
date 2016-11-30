@@ -4,6 +4,7 @@ var employeeDatabase = require('./database/EmployeeDatabase');
 var questDatabase = require('./database/QuestDatabase');
 var itemInfoDatabase = require('./database/ItemInfoDatabase');
 var weaponDatabase = require('./database/WeaponDatabase');
+var armorDatabase = require('./database/ArmorDatabase');
 var Employee = require('./classes/Employee');
 
 var playerManager = require('./managers/PlayerManager');
@@ -33,7 +34,7 @@ var inventoryCommand = require('./commands/InventoryCommand');
 var sellCommand = require('./commands/SellCommand');
 var useCommand = require('./commands/UseCommand');
 var craftCommand = require('./commands/CraftCommand');
-var inventoryWeaponCommand = require('./commands/InventoryWeaponCommand');
+var inventoryEquipmentCommand = require('./commands/InventoryEquipmentCommand');
 var equipCommand = require('./commands/EquipCommand');
 
 function EmployeeBot() {
@@ -44,6 +45,7 @@ function EmployeeBot() {
     this.questDatabase = questDatabase;
     this.itemInfoDatabase = itemInfoDatabase;
     this.weaponDatabase = weaponDatabase;
+    this.armorDatabase = armorDatabase;
     this.imageHelper = imageHelper;
     this.functionHelper = functionHelper;
     this.urlHelper = urlHelper;
@@ -259,6 +261,11 @@ EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
         employee.weapon = weapon.stats["+" + player.equipedWeapon.plus];
     }
 
+    if (player.equipedArmor) {
+        var armor = this.armorDatabase.getArmorById(player.equipedArmor._id);
+        employee.armor = armor.stats["+" + player.equipedArmor.plus];
+    }
+
     return employee;
 }
 
@@ -286,7 +293,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         sellCommand.handle(message, this);
         useCommand.handle(message, this);
         craftCommand.handle(message, this);
-        inventoryWeaponCommand.handle(message, this);
+        inventoryEquipmentCommand.handle(message, this);
         equipCommand.handle(message, this);
     }
     catch (err) {
@@ -418,6 +425,9 @@ EmployeeBot.prototype.loadPlayer = function() {
             }
             if (that.playerManager.playerDict[userId].weaponList instanceof Array) {
                 that.playerManager.playerDict[userId].weaponList = {};
+            }
+            if (that.playerManager.playerDict[userId].armorList instanceof Array) {
+                that.playerManager.playerDict[userId].armorList = {};
             }
         }
     });

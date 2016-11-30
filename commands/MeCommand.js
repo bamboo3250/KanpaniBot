@@ -45,6 +45,16 @@ module.exports = {
             queue.push({
                 fileToDownload: weaponIconUrl,   fileToSave: weaponFileName
             })
+        }
+        var armorFileName = null;
+        if (player.equipedArmor) {
+            var armorId = player.equipedArmor._id;
+            var plus = player.equipedArmor.plus;
+            var armorIconUrl = bot.urlHelper.getEquipmentIconUrl(armorId, plus, "small");
+            armorFileName = "images/equipment/small/" + armorId + "0" + plus + "_1.png";
+            queue.push({
+                fileToDownload: armorIconUrl,   fileToSave: armorFileName
+            })
         }   
         
         bot.imageHelper.download(queue, function(err) {
@@ -66,7 +76,14 @@ module.exports = {
             ];
 
             if (weaponFileName) {
-                fileNameQueue.push(weaponFileName)
+                fileNameQueue.push(weaponFileName);
+            } else {
+                fileNameQueue.push(null);
+            }
+            if (armorFileName) {
+                fileNameQueue.push(armorFileName);
+            } else {
+                fileNameQueue.push(null);
             }
             bot.imageHelper.read(fileNameQueue, function (err, imageList) {
                 if (err) {
@@ -79,10 +96,8 @@ module.exports = {
                 backgroundImage = imageList[2];
                 shadowImage = imageList[3];
 
-                var weaponImage = null;
-                if (weaponFileName) {
-                    weaponImage = imageList[4];
-                }
+                var weaponImage = imageList[4];
+                var armorImage = imageList[5];
 
                 backgroundImage.crop(250,100, 310,270);
                 enemySpriteImage.crop(20, 0, 310, 270);
@@ -96,9 +111,8 @@ module.exports = {
                 .composite(itemCellImage, 10, 60)
                 .composite(itemCellImage, 10, 110);
 
-                if (weaponImage) {
-                    backgroundImage.composite(weaponImage, 10, 10);
-                }
+                if (weaponImage) backgroundImage.composite(weaponImage, 10, 10);
+                if (armorImage) backgroundImage.composite(armorImage, 10, 60);
 
                 var imageName = "images/me/" + message.author.id + ".png";
                 backgroundImage.write(imageName, function() {
