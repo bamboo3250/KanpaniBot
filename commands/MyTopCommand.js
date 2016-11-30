@@ -17,7 +17,7 @@ function sendMyTop(message, bot, result) {
         lower_bound = Math.min(upper_bound + 9, result.length-1);
         for(var i=0;i<result.length;i++) {
             if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
-            var memberName = bot.memberNameDict[result[i-1].userId];
+            var memberName = bot.memberNameDict[result[i].userId];
             var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
             const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
             if (memberName && (upper_bound <= i) && (i<=lower_bound)) {
