@@ -49,6 +49,7 @@ ImageHelper.prototype.read = function(queue, callback, curResult = []) {
         curResult.push(null);
         queue.shift();
         that.read(queue, callback, curResult);
+        return;
     }
     Jimp.read(queue[0], function (err, image) {
         if (err) { 
