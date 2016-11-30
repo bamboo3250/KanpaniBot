@@ -63,10 +63,18 @@ module.exports = {
             var weaponStats = weapon.stats["+" + player.equipedWeapon.plus];
             var sumStat = weaponStats.patk + weaponStats.pdef + weaponStats.matk + weaponStats.mdef;
             sumStat += weaponStats.crit + weaponStats.hit + weaponStats.eva;
-            bonusFromWeapon = Math.floor(sumStat / 100);
+            bonusFromWeapon = Math.floor(sumStat * 6 / (quest.timeCost*10));
+        }
+        var bonusFromArmor = 0;
+        if (player.equipedArmor) {
+            var armor = bot.armorDatabase.getArmorById(player.equipedArmor._id);
+            var armorStats = armor.stats["+" + player.equipedArmor.plus];
+            var sumStat = armorStats.patk + armorStats.pdef + armorStats.matk + armorStats.mdef;
+            sumStat += armorStats.crit + armorStats.hit + armorStats.eva;
+            bonusFromArmor = Math.floor(sumStat * 6 / (quest.timeCost*10));
         }
 
-        chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon);
+        chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon + bonusFromArmor);
 
         var text = "The quest " + quest.commonNames[0] + " has started. It will end in **" + quest.timeCost + " minutes**.\n";
         text += "Chance of Success: **" + chanceToSuccess + "%**";
