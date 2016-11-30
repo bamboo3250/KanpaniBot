@@ -717,7 +717,7 @@ module.exports = {
                     patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 0, hit: 16, eva: 16
                 },
                 "+3": {
-                    patk: 0, pdef: 110, matk: 0, mdef: 120, crit: 0, hit: 23, eva: 16
+                    patk: 0, pdef: 110, matk: 0, mdef: 110, crit: 0, hit: 23, eva: 16
                 }
             },
             devCost: 6300, levelRequired: 16, tier: 3, recipe: [
@@ -902,6 +902,462 @@ module.exports = {
                 },{
                     materialName: "Aquamarine",
                     amount: 1
+                }
+            ]
+        }
+    ],
+
+    "r6": [
+        {
+            _id: "310106", armorName: "Platinum Mail", commonNames: ["Platinum Mail"],
+            classId: 1, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 60, matk: 0, mdef: 60, crit: 0, hit: 0, eva: 20
+                },
+                "+1": {
+                    patk: 0, pdef: 80, matk: 0, mdef: 80, crit: 0, hit: 20, eva: 20
+                },
+                "+2": {
+                    patk: 0, pdef: 100, matk: 0, mdef: 100, crit: 0, hit: 20, eva: 20
+                },
+                "+3": {
+                    patk: 0, pdef: 120, matk: 0, mdef: 120, crit: 0, hit: 30, eva: 20
+                }
+            },
+            devCost: 15840, levelRequired: 21, tier: 3, recipe: [
+                {
+                    materialName: "Half Moon Fragment",
+                    amount: 1
+                },{
+                    materialName: "Topaz",
+                    amount: 1
+                },{
+                    materialName: "Maple Branch",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310206", armorName: "Ghostly Armor", commonNames: ["Ghostly Armor"],
+            classId: 2, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 48, matk: 0, mdef: 36, crit: 0, hit: 0, eva: 20
+                },
+                "+1": {
+                    patk: 0, pdef: 68, matk: 0, mdef: 52, crit: 40, hit: 0, eva: 32
+                },
+                "+2": {
+                    patk: 0, pdef: 88, matk: 0, mdef: 68, crit: 60, hit: 0, eva: 64
+                },
+                "+3": {
+                    patk: 0, pdef: 110, matk: 0, mdef: 84, crit: 80, hit: 0, eva: 80
+                }
+            },
+            devCost: 15840, levelRequired: 21, tier: 3, recipe: [
+                {
+                    materialName: "Hard Leather",
+                    amount: 1
+                },{
+                    materialName: "Topaz",
+                    amount: 1
+                },{
+                    materialName: "Shimmering Water",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310306", armorName: "Platinum Plate", commonNames: ["Platinum Plate"],
+            classId: 3, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 36, matk: 0, mdef: 36, crit: 0, hit: 0, eva: 17
+                },
+                "+1": {
+                    patk: 0, pdef: 58, matk: 0, mdef: 38, crit: 0, hit: 17, eva: 17
+                },
+                "+2": {
+                    patk: 0, pdef: 76, matk: 0, mdef: 40, crit: 0, hit: 20, eva: 17
+                },
+                "+3": {
+                    patk: 0, pdef: 90, matk: 0, mdef: 42, crit: 0, hit: 23, eva: 17
+                }
+            },
+            devCost: 15840, levelRequired: 22, tier: 3, recipe: [
+                {
+                    materialName: "Hard Leather",
+                    amount: 1
+                },{
+                    materialName: "Topaz",
+                    amount: 1
+                },{
+                    materialName: "Silver Ore",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310406", armorName: "Duel Helm", commonNames: ["Duel Helm"],
+            classId: 4, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 96, matk: 0, mdef: 60, crit: 0, hit: 0, eva: 17
+                },
+                "+1": {
+                    patk: 0, pdef: 98, matk: 0, mdef: 60, crit: 0, hit: 40, eva: 17
+                },
+                "+2": {
+                    patk: 0, pdef: 100, matk: 0, mdef: 60, crit: 0, hit: 60, eva: 17
+                },
+                "+3": {
+                    patk: 0, pdef: 102, matk: 0, mdef: 60, crit: 0, hit: 80, eva: 17
+                }
+            },
+            devCost: 15840, levelRequired: 24, tier: 3, recipe: [
+                {
+                    materialName: "Shimmering Water",
+                    amount: 1
+                },{
+                    materialName: "Topaz",
+                    amount: 1
+                },{
+                    materialName: "Silver Ore",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310506", armorName: "Berserker Belt", commonNames: ["Berserker Belt"],
+            classId: 5, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 60, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 25
+                },
+                "+1": {
+                    patk: 0, pdef: 70, matk: 0, mdef: 20, crit: 16, hit: 0, eva: 25
+                },
+                "+2": {
+                    patk: 0, pdef: 80, matk: 0, mdef: 25, crit: 32, hit: 0, eva: 25
+                },
+                "+3": {
+                    patk: 0, pdef: 100, matk: 0, mdef: 30, crit: 55, hit: 0, eva: 42
+                }
+            },
+            devCost: 15840, levelRequired: 26, tier: 3, recipe: [
+                {
+                    materialName: "Hard Leather",
+                    amount: 1
+                },{
+                    materialName: "Topaz",
+                    amount: 1
+                },{
+                    materialName: "Luxurious Cloth",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310606", armorName: "Mysterious Veil", commonNames: ["Mysterious Veil"],
+            classId: 6, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 36, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 17
+                },
+                "+1": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 100, crit: 0, hit: 0, eva: 30
+                },
+                "+2": {
+                    patk: 0, pdef: 48, matk: 0, mdef: 116, crit: 0, hit: 0, eva: 43
+                },
+                "+3": {
+                    patk: 0, pdef: 54, matk: 0, mdef: 132, crit: 0, hit: 0, eva: 56
+                }
+            },
+            devCost: 15840, levelRequired: 28, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Cloth",
+                    amount: 1
+                },{
+                    materialName: "Topaz",
+                    amount: 1
+                },{
+                    materialName: "Unicorn Horn",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310706", armorName: "Kaiser Gauntlets", commonNames: ["Kaiser Gauntlets"],
+            classId: 7, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 36, matk: 0, mdef: 36, crit: 0, hit: 0, eva: 17
+                },
+                "+1": {
+                    patk: 0, pdef: 46, matk: 0, mdef: 46, crit: 0, hit: 0, eva: 25
+                },
+                "+2": {
+                    patk: 0, pdef: 56, matk: 0, mdef: 56, crit: 0, hit: 0, eva: 33
+                },
+                "+3": {
+                    patk: 0, pdef: 66, matk: 0, mdef: 66, crit: 0, hit: 0, eva: 41
+                }
+            },
+            devCost: 15840, levelRequired: 30, tier: 3, recipe: [
+                {
+                    materialName: "Unicorn Horn",
+                    amount: 1
+                },{
+                    materialName: "Topaz",
+                    amount: 1
+                },{
+                    materialName: "Half Moon Fragment",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310806", armorName: "Philosopher's Hat", commonNames: ["Philosopher's Hat"],
+            classId: 8, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 24, matk: 0, mdef: 72, crit: 0, hit: 0, eva: 14
+                },
+                "+1": {
+                    patk: 0, pdef: 27, matk: 0, mdef: 92, crit: 0, hit: 0, eva: 19
+                },
+                "+2": {
+                    patk: 0, pdef: 30, matk: 0, mdef: 112, crit: 0, hit: 0, eva: 24
+                },
+                "+3": {
+                    patk: 0, pdef: 33, matk: 0, mdef: 132, crit: 0, hit: 0, eva: 29
+                }
+            },
+            devCost: 15840, levelRequired: 30, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Cloth",
+                    amount: 1
+                },{
+                    materialName: "Topaz",
+                    amount: 1
+                },{
+                    materialName: "Hard Leather",
+                    amount: 1
+                }
+            ]
+        }
+    ],
+
+    "r7": [
+        {
+            _id: "310107", armorName: "Phantom Mail", commonNames: ["Phantom Mail"],
+            classId: 1, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 80, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 27
+                },
+                "+1": {
+                    patk: 0, pdef: 100, matk: 0, mdef: 100, crit: 0, hit: 27, eva: 27
+                },
+                "+2": {
+                    patk: 0, pdef: 120, matk: 0, mdef: 120, crit: 0, hit: 27, eva: 27
+                },
+                "+3": {
+                    patk: 0, pdef: 140, matk: 0, mdef: 140, crit: 0, hit: 40, eva: 27
+                }
+            },
+            devCost: 23040, levelRequired: 35, tier: 3, recipe: [
+                {
+                    materialName: "Half Moon Fragment",
+                    amount: 2
+                },{
+                    materialName: "Turquoise",
+                    amount: 1
+                },{
+                    materialName: "Maple Branch",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310207", armorName: "Legendary Armor \"Hotaru-shiki\"", commonNames: ["Legendary Armor \"Hotaru-shiki\""],
+            classId: 2, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 64, matk: 0, mdef: 48, crit: 0, hit: 0, eva: 27
+                },
+                "+1": {
+                    patk: 0, pdef: 94, matk: 0, mdef: 66, crit: 50, hit: 0, eva: 35
+                },
+                "+2": {
+                    patk: 0, pdef: 124, matk: 0, mdef: 84, crit: 70, hit: 0, eva: 71
+                },
+                "+3": {
+                    patk: 0, pdef: 154, matk: 0, mdef: 102, crit: 90, hit: 0, eva: 85
+                }
+            },
+            devCost: 23040, levelRequired: 36, tier: 3, recipe: [
+                {
+                    materialName: "Hard Leather",
+                    amount: 2
+                },{
+                    materialName: "Turquoise",
+                    amount: 1
+                },{
+                    materialName: "Shimmering Water",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310307", armorName: "Soul Breastplate", commonNames: ["Soul Breastplate"],
+            classId: 3, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 48, matk: 0, mdef: 48, crit: 0, hit: 0, eva: 21
+                },
+                "+1": {
+                    patk: 0, pdef: 68, matk: 0, mdef: 51, crit: 0, hit: 21, eva: 21
+                },
+                "+2": {
+                    patk: 0, pdef: 88, matk: 0, mdef: 54, crit: 0, hit: 25, eva: 21
+                },
+                "+3": {
+                    patk: 0, pdef: 108, matk: 0, mdef: 57, crit: 0, hit: 29, eva: 21
+                }
+            },
+            devCost: 23040, levelRequired: 37, tier: 3, recipe: [
+                {
+                    materialName: "Hard Leather",
+                    amount: 2
+                },{
+                    materialName: "Turquoise",
+                    amount: 1
+                },{
+                    materialName: "Silver Ore",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310407", armorName: "Crystal Helm", commonNames: ["Crystal Helm"],
+            classId: 4, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 128, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 24
+                },
+                "+1": {
+                    patk: 0, pdef: 131, matk: 0, mdef: 80, crit: 0, hit: 50, eva: 24
+                },
+                "+2": {
+                    patk: 0, pdef: 134, matk: 0, mdef: 80, crit: 0, hit: 70, eva: 24
+                },
+                "+3": {
+                    patk: 0, pdef: 137, matk: 0, mdef: 80, crit: 0, hit: 90, eva: 24
+                }
+            },
+            devCost: 23040, levelRequired: 39, tier: 3, recipe: [
+                {
+                    materialName: "Shimmering Water",
+                    amount: 2
+                },{
+                    materialName: "Turquoise",
+                    amount: 1
+                },{
+                    materialName: "Silver Ore",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310507", armorName: "Platinum Belt", commonNames: ["Platinum Belt"],
+            classId: 5, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 80, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 30
+                },
+                "+1": {
+                    patk: 0, pdef: 100, matk: 0, mdef: 30, crit: 18, hit: 0, eva: 30
+                },
+                "+2": {
+                    patk: 0, pdef: 120, matk: 0, mdef: 40, crit: 36, hit: 0, eva: 30
+                },
+                "+3": {
+                    patk: 0, pdef: 140, matk: 0, mdef: 50, crit: 43, hit: 0, eva: 30
+                }
+            },
+            devCost: 23040, levelRequired: 34, tier: 3, recipe: [
+                {
+                    materialName: "Hard Leather",
+                    amount: 2
+                },{
+                    materialName: "Turquoise",
+                    amount: 1
+                },{
+                    materialName: "Luxurious Cloth",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310607", armorName: "Magical Veil", commonNames: ["Magical Veil"],
+            classId: 6, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 48, matk: 0, mdef: 112, crit: 0, hit: 0, eva: 21
+                },
+                "+1": {
+                    patk: 0, pdef: 55, matk: 0, mdef: 130, crit: 0, hit: 0, eva: 36
+                },
+                "+2": {
+                    patk: 0, pdef: 62, matk: 0, mdef: 148, crit: 0, hit: 0, eva: 51
+                },
+                "+3": {
+                    patk: 0, pdef: 69, matk: 0, mdef: 166, crit: 0, hit: 0, eva: 66
+                }
+            },
+            devCost: 23040, levelRequired: 38, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Cloth",
+                    amount: 2
+                },{
+                    materialName: "Turquoise",
+                    amount: 1
+                },{
+                    materialName: "Unicorn Horn",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310707", armorName: "Assassin Gauntlets", commonNames: ["Assassin Gauntlets"],
+            classId: 7, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 48, matk: 0, mdef: 48, crit: 0, hit: 0, eva: 21
+                },
+                "+1": {
+                    patk: 0, pdef: 60, matk: 0, mdef: 60, crit: 0, hit: 0, eva: 31
+                },
+                "+2": {
+                    patk: 0, pdef: 72, matk: 0, mdef: 72, crit: 0, hit: 0, eva: 41
+                },
+                "+3": {
+                    patk: 0, pdef: 84, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 51
+                }
+            },
+            devCost: 23040, levelRequired: 40, tier: 3, recipe: [
+                {
+                    materialName: "Unicorn Horn",
+                    amount: 2
+                },{
+                    materialName: "Turquoise",
+                    amount: 1
+                },{
+                    materialName: "Half Moon Fragment",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310807", armorName: "Silver Powder Hat", commonNames: ["Silver Powder Hat"],
+            classId: 8, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 32, matk: 0, mdef: 96, crit: 0, hit: 0, eva: 18
+                },
+                "+1": {
+                    patk: 0, pdef: 36, matk: 0, mdef: 121, crit: 0, hit: 0, eva: 28
+                },
+                "+2": {
+                    patk: 0, pdef: 40, matk: 0, mdef: 146, crit: 0, hit: 0, eva: 38
+                },
+                "+3": {
+                    patk: 0, pdef: 44, matk: 0, mdef: 171, crit: 0, hit: 0, eva: 48
+                }
+            },
+            devCost: 23040, levelRequired: 40, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Cloth",
+                    amount: 2
+                },{
+                    materialName: "Turquoise",
+                    amount: 1
+                },{
+                    materialName: "Hard Leather",
+                    amount: 2
                 }
             ]
         }
