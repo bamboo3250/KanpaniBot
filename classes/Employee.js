@@ -17,6 +17,7 @@ var EmployeeInfo = function(employeeInfo) {
     this.weapon = null;
     this.armor = null;
     this.accessory = null;
+    this.element = "";
 }
 
 EmployeeInfo.prototype.getClassId = function() {

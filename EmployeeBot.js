@@ -269,6 +269,7 @@ EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
     if (player.equipedArmor) {
         var armor = this.armorDatabase.getArmorById(player.equipedArmor._id);
         employee.armor = armor.stats["+" + player.equipedArmor.plus];
+        employee.element = armor.element;
     }
 
     return employee;

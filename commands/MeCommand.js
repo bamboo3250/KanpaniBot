@@ -127,6 +127,8 @@ module.exports = {
                         const matkEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kmatk'));
                         const mdefEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kmdef'));
 
+                        const elementEmoji = (message.guild == null ? employee.element : message.guild.emojis.find('name', 'k' + employee.element));
+
                         if (player.gold < goldToDeduct) {
                             message.reply("You need to pay **" + goldToDeduct + " Gold** to use this command.");
                             return;
@@ -139,7 +141,7 @@ module.exports = {
                         
                         var text = "\n";
                         text += "Player: **" + message.author.username + "** (:moneybag:: **" + player.gold + "**)\n";
-                        text += "Character: **" + employee.fullName + "** (Lv.**" + employee.levelCached  + "**)\n";
+                        text += "Character: **" + employee.fullName + "** (" + (elementEmoji?elementEmoji+", ":"") + "Lv.**" + employee.levelCached  + "**)\n";
                         text += "Rarity: ";
                         for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
                         text += "\n";
