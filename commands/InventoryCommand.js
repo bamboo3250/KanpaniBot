@@ -83,10 +83,7 @@ module.exports = {
                         }
                         var imageName = "images/inventory/" + userId + ".png";
                         image.write(imageName, function() {
-                            var channel = message.channel;
-                            if (channel.type === "text" || channel.type === "dm") {
-                                message.author.sendFile(imageName, "png", text);
-                            }   
+                            message.author.sendFile(imageName, "png", text);
                         });
                     });
                 });

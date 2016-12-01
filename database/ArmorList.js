@@ -1361,6 +1361,690 @@ module.exports = {
                 }
             ]
         }
+    ],
+
+    "r8": [
+        {
+            _id: "310108", armorName: "Ignition Mail", commonNames: ["Ignition Mail"],
+            classId: 1, type: "story", element: "fire", stats: {
+                "+0": {
+                    patk: 0, pdef: 70, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 35
+                },
+                "+1": {
+                    patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 0, hit: 35, eva: 35
+                },
+                "+2": {
+                    patk: 0, pdef: 110, matk: 0, mdef: 110, crit: 0, hit: 35, eva: 35
+                },
+                "+3": {
+                    patk: 0, pdef: 130, matk: 0, mdef: 130, crit: 0, hit: 50, eva: 35
+                }
+            },
+            devCost: 36450, levelRequired: 41, tier: 3, recipe: [
+                {
+                    materialName: "Full Moon Fragment",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Ebony Branch",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310208", armorName: "Crimson Armor \"Homura-mai\"", commonNames: ["Crimson Armor \"Homura-mai\""],
+            classId: 2, type: "story", element: "fire", stats: {
+                "+0": {
+                    patk: 0, pdef: 56, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 35
+                },
+                "+1": {
+                    patk: 0, pdef: 86, matk: 0, mdef: 62, crit: 40, hit: 0, eva: 65
+                },
+                "+2": {
+                    patk: 0, pdef: 116, matk: 0, mdef: 82, crit: 60, hit: 0, eva: 85
+                },
+                "+3": {
+                    patk: 0, pdef: 146, matk: 0, mdef: 102, crit: 80, hit: 0, eva: 110
+                }
+            },
+            devCost: 36450, levelRequired: 42, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Magical Water",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310308", armorName: "Flame Plate", commonNames: ["Flame Plate"],
+            classId: 3, type: "story", element: "fire", stats: {
+                "+0": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 29
+                },
+                "+1": {
+                    patk: 0, pdef: 62, matk: 0, mdef: 45, crit: 0, hit: 29, eva: 29
+                },
+                "+2": {
+                    patk: 0, pdef: 82, matk: 0, mdef: 48, crit: 0, hit: 33, eva: 29
+                },
+                "+3": {
+                    patk: 0, pdef: 102, matk: 0, mdef: 51, crit: 0, hit: 37, eva: 29
+                }
+            },
+            devCost: 36450, levelRequired: 42, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Gold Ore",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310408", armorName: "Purgatory Helmet", commonNames: ["Purgatory Helmet"],
+            classId: 4, type: "story", element: "fire", stats: {
+                "+0": {
+                    patk: 0, pdef: 112, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 32
+                },
+                "+1": {
+                    patk: 0, pdef: 115, matk: 0, mdef: 70, crit: 0, hit: 40, eva: 32
+                },
+                "+2": {
+                    patk: 0, pdef: 118, matk: 0, mdef: 70, crit: 0, hit: 60, eva: 32
+                },
+                "+3": {
+                    patk: 0, pdef: 121, matk: 0, mdef: 70, crit: 0, hit: 80, eva: 32
+                }
+            },
+            devCost: 36450, levelRequired: 43, tier: 3, recipe: [
+                {
+                    materialName: "Magical Water",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Gold Ore",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310508", armorName: "Belt of Crimson Claws", commonNames: ["Belt of Crimson Claws"],
+            classId: 5, type: "story", element: "fire", stats: {
+                "+0": {
+                    patk: 0, pdef: 70, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 42
+                },
+                "+1": {
+                    patk: 0, pdef: 80, matk: 0, mdef: 20, crit: 33, hit: 0, eva: 42
+                },
+                "+2": {
+                    patk: 0, pdef: 90, matk: 0, mdef: 25, crit: 43, hit: 0, eva: 42
+                },
+                "+3": {
+                    patk: 0, pdef: 100, matk: 0, mdef: 30, crit: 55, hit: 0, eva: 42
+                }
+            },
+            devCost: 36450, levelRequired: 41, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Ominous Cloth",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310608", armorName: "Crimson Veil", commonNames: ["Crimson Veil"],
+            classId: 6, type: "story", element: "fire", stats: {
+                "+0": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 98, crit: 0, hit: 0, eva: 29
+                },
+                "+1": {
+                    patk: 0, pdef: 49, matk: 0, mdef: 114, crit: 0, hit: 0, eva: 35
+                },
+                "+2": {
+                    patk: 0, pdef: 56, matk: 0, mdef: 130, crit: 0, hit: 0, eva: 41
+                },
+                "+3": {
+                    patk: 0, pdef: 63, matk: 0, mdef: 146, crit: 0, hit: 0, eva: 47
+                }
+            },
+            devCost: 36450, levelRequired: 43, tier: 3, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310708", armorName: "Volcano Gauntlets", commonNames: ["Volcano Gauntlets"],
+            classId: 7, type: "story", element: "fire", stats: {
+                "+0": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 29
+                },
+                "+1": {
+                    patk: 0, pdef: 54, matk: 0, mdef: 54, crit: 0, hit: 0, eva: 39
+                },
+                "+2": {
+                    patk: 0, pdef: 66, matk: 0, mdef: 66, crit: 0, hit: 0, eva: 49
+                },
+                "+3": {
+                    patk: 0, pdef: 78, matk: 0, mdef: 78, crit: 0, hit: 0, eva: 59
+                }
+            },
+            devCost: 36450, levelRequired: 44, tier: 3, recipe: [
+                {
+                    materialName: "Chimera Horn",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Full Moon Fragment",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310808", armorName: "Hat of the Crimson Lotus", commonNames: ["Hat of the Crimson Lotus"],
+            classId: 8, type: "story", element: "fire", stats: {
+                "+0": {
+                    patk: 0, pdef: 28, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 26
+                },
+                "+1": {
+                    patk: 0, pdef: 32, matk: 0, mdef: 104, crit: 0, hit: 0, eva: 36
+                },
+                "+2": {
+                    patk: 0, pdef: 36, matk: 0, mdef: 124, crit: 0, hit: 0, eva: 46
+                },
+                "+3": {
+                    patk: 0, pdef: 40, matk: 0, mdef: 144, crit: 0, hit: 0, eva: 56
+                }
+            },
+            devCost: 36450, levelRequired: 44, tier: 3, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Luxurious Leather",
+                    amount: 1
+                }
+            ]
+        }
+    ],
+
+    "r9": [
+        {
+            _id: "310109", armorName: "Sapphire Mail", commonNames: ["Sapphire Mail"],
+            classId: 1, type: "story", element: "ice", stats: {
+                "+0": {
+                    patk: 0, pdef: 70, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 44
+                },
+                "+1": {
+                    patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 0, hit: 44, eva: 44
+                },
+                "+2": {
+                    patk: 0, pdef: 110, matk: 0, mdef: 110, crit: 0, hit: 44, eva: 44
+                },
+                "+3": {
+                    patk: 0, pdef: 130, matk: 0, mdef: 130, crit: 0, hit: 55, eva: 44
+                }
+            },
+            devCost: 46980, levelRequired: 48, tier: 3, recipe: [
+                {
+                    materialName: "Full Moon Fragment",
+                    amount: 2
+                },{
+                    materialName: "Rose Quartz",
+                    amount: 1
+                },{
+                    materialName: "Ebony Branch",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310209", armorName: "Azure Armor \"Seisui\"", commonNames: ["Azure Armor \"Seisui\""],
+            classId: 2, type: "story", element: "ice", stats: {
+                "+0": {
+                    patk: 0, pdef: 56, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 35
+                },
+                "+1": {
+                    patk: 0, pdef: 86, matk: 0, mdef: 62, crit: 40, hit: 0, eva: 65
+                },
+                "+2": {
+                    patk: 0, pdef: 116, matk: 0, mdef: 82, crit: 60, hit: 0, eva: 85
+                },
+                "+3": {
+                    patk: 0, pdef: 146, matk: 0, mdef: 102, crit: 80, hit: 0, eva: 110
+                }
+            },
+            devCost: 46980, levelRequired: 48, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 2
+                },{
+                    materialName: "Lapis Lazuli",
+                    amount: 1
+                },{
+                    materialName: "Magical Water",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310309", armorName: "Breastplate of Fire and Ice", commonNames: ["Breastplate of Fire and Ice"],
+            classId: 3, type: "story", element: "ice", stats: {
+                "+0": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 37
+                },
+                "+1": {
+                    patk: 0, pdef: 62, matk: 0, mdef: 45, crit: 0, hit: 29, eva: 37
+                },
+                "+2": {
+                    patk: 0, pdef: 82, matk: 0, mdef: 48, crit: 0, hit: 33, eva: 37
+                },
+                "+3": {
+                    patk: 0, pdef: 102, matk: 0, mdef: 51, crit: 0, hit: 37, eva: 37
+                }
+            },
+            devCost: 46980, levelRequired: 48, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 2
+                },{
+                    materialName: "Lapis Lazuli",
+                    amount: 1
+                },{
+                    materialName: "Gold Ore",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310409", armorName: "Hoarfrost Helmet", commonNames: ["Hoarfrost Helmet"],
+            classId: 4, type: "story", element: "ice", stats: {
+                "+0": {
+                    patk: 0, pdef: 112, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 41
+                },
+                "+1": {
+                    patk: 0, pdef: 115, matk: 0, mdef: 70, crit: 0, hit: 40, eva: 41
+                },
+                "+2": {
+                    patk: 0, pdef: 118, matk: 0, mdef: 70, crit: 0, hit: 60, eva: 41
+                },
+                "+3": {
+                    patk: 0, pdef: 121, matk: 0, mdef: 70, crit: 0, hit: 80, eva: 41
+                }
+            },
+            devCost: 46980, levelRequired: 47, tier: 3, recipe: [
+                {
+                    materialName: "Magical Water",
+                    amount: 2
+                },{
+                    materialName: "Garnet",
+                    amount: 1
+                },{
+                    materialName: "Gold Ore",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310509", armorName: "Belt of Crystal Ice", commonNames: ["Belt of Crystal Ice"],
+            classId: 5, type: "story", element: "ice", stats: {
+                "+0": {
+                    patk: 0, pdef: 70, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 51
+                },
+                "+1": {
+                    patk: 0, pdef: 80, matk: 0, mdef: 20, crit: 33, hit: 0, eva: 51
+                },
+                "+2": {
+                    patk: 0, pdef: 90, matk: 0, mdef: 25, crit: 43, hit: 0, eva: 51
+                },
+                "+3": {
+                    patk: 0, pdef: 100, matk: 0, mdef: 30, crit: 55, hit: 0, eva: 51
+                }
+            },
+            devCost: 46980, levelRequired: 47, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 2
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                },{
+                    materialName: "Ominous Cloth",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310609", armorName: "Frost Veil", commonNames: ["Frost Veil"],
+            classId: 6, type: "story", element: "ice", stats: {
+                "+0": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 98, crit: 0, hit: 0, eva: 37
+                },
+                "+1": {
+                    patk: 0, pdef: 49, matk: 0, mdef: 114, crit: 0, hit: 0, eva: 45
+                },
+                "+2": {
+                    patk: 0, pdef: 56, matk: 0, mdef: 130, crit: 0, hit: 0, eva: 53
+                },
+                "+3": {
+                    patk: 0, pdef: 63, matk: 0, mdef: 146, crit: 0, hit: 0, eva: 71
+                }
+            },
+            devCost: 46980, levelRequired: 50, tier: 3, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 2
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310709", armorName: "Sapphire Gauntlets", commonNames: ["Sapphire Gauntlets"],
+            classId: 7, type: "story", element: "ice", stats: {
+                "+0": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 37
+                },
+                "+1": {
+                    patk: 0, pdef: 54, matk: 0, mdef: 54, crit: 0, hit: 0, eva: 47
+                },
+                "+2": {
+                    patk: 0, pdef: 66, matk: 0, mdef: 66, crit: 0, hit: 0, eva: 57
+                },
+                "+3": {
+                    patk: 0, pdef: 78, matk: 0, mdef: 78, crit: 0, hit: 0, eva: 67
+                }
+            },
+            devCost: 46980, levelRequired: 46, tier: 3, recipe: [
+                {
+                    materialName: "Chimera Horn",
+                    amount: 2
+                },{
+                    materialName: "Lapis Lazuli",
+                    amount: 1
+                },{
+                    materialName: "Full Moon Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310809", armorName: "Hat of the Great Ocean", commonNames: ["Hat of the Great Ocean"],
+            classId: 8, type: "story", element: "ice", stats: {
+                "+0": {
+                    patk: 0, pdef: 28, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 34
+                },
+                "+1": {
+                    patk: 0, pdef: 32, matk: 0, mdef: 104, crit: 0, hit: 0, eva: 44
+                },
+                "+2": {
+                    patk: 0, pdef: 36, matk: 0, mdef: 124, crit: 0, hit: 0, eva: 54
+                },
+                "+3": {
+                    patk: 0, pdef: 40, matk: 0, mdef: 144, crit: 0, hit: 0, eva: 64
+                }
+            },
+            devCost: 46980, levelRequired: 49, tier: 3, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 2
+                },{
+                    materialName: "Emerald",
+                    amount: 1
+                },{
+                    materialName: "Luxurious Leather",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
+    "r10": [
+        {
+            _id: "310110", armorName: "Storm Mail", commonNames: ["Storm Mail"],
+            classId: 1, type: "story", element: "wind", stats: {
+                "+0": {
+                    patk: 0, pdef: 70, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 44
+                },
+                "+1": {
+                    patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 0, hit: 44, eva: 44
+                },
+                "+2": {
+                    patk: 0, pdef: 110, matk: 0, mdef: 110, crit: 0, hit: 44, eva: 44
+                },
+                "+3": {
+                    patk: 0, pdef: 130, matk: 0, mdef: 130, crit: 0, hit: 55, eva: 44
+                }
+            },
+            devCost: 46980, levelRequired: 51, tier: 3, recipe: [
+                {
+                    materialName: "Full Moon Fragment",
+                    amount: 2
+                },{
+                    materialName: "Rose Quartz",
+                    amount: 1
+                },{
+                    materialName: "Ebony Branch",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310210", armorName: "Jade Armor \"Fujin\"", commonNames: ["Jade Armor \"Fujin\""],
+            classId: 2, type: "story", element: "wind", stats: {
+                "+0": {
+                    patk: 0, pdef: 56, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 35
+                },
+                "+1": {
+                    patk: 0, pdef: 86, matk: 0, mdef: 62, crit: 40, hit: 0, eva: 65
+                },
+                "+2": {
+                    patk: 0, pdef: 116, matk: 0, mdef: 82, crit: 60, hit: 0, eva: 85
+                },
+                "+3": {
+                    patk: 0, pdef: 146, matk: 0, mdef: 102, crit: 80, hit: 0, eva: 110
+                }
+            },
+            devCost: 46980, levelRequired: 55, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 2
+                },{
+                    materialName: "Lapis Lazuli",
+                    amount: 1
+                },{
+                    materialName: "Magical Water",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310310", armorName: "Storm Plate", commonNames: ["Storm Plate"],
+            classId: 3, type: "story", element: "wind", stats: {
+                "+0": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 37
+                },
+                "+1": {
+                    patk: 0, pdef: 62, matk: 0, mdef: 45, crit: 0, hit: 29, eva: 37
+                },
+                "+2": {
+                    patk: 0, pdef: 82, matk: 0, mdef: 48, crit: 0, hit: 33, eva: 37
+                },
+                "+3": {
+                    patk: 0, pdef: 102, matk: 0, mdef: 51, crit: 0, hit: 37, eva: 37
+                }
+            },
+            devCost: 46980, levelRequired: 51, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 2
+                },{
+                    materialName: "Lapis Lazuli",
+                    amount: 1
+                },{
+                    materialName: "Gold Ore",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310410", armorName: "Storm Helmet", commonNames: ["Storm Helmet"],
+            classId: 4, type: "story", element: "wind", stats: {
+                "+0": {
+                    patk: 0, pdef: 112, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 41
+                },
+                "+1": {
+                    patk: 0, pdef: 115, matk: 0, mdef: 70, crit: 0, hit: 40, eva: 41
+                },
+                "+2": {
+                    patk: 0, pdef: 118, matk: 0, mdef: 70, crit: 0, hit: 60, eva: 41
+                },
+                "+3": {
+                    patk: 0, pdef: 121, matk: 0, mdef: 70, crit: 0, hit: 80, eva: 41
+                }
+            },
+            devCost: 46980, levelRequired: 52, tier: 3, recipe: [
+                {
+                    materialName: "Magical Water",
+                    amount: 2
+                },{
+                    materialName: "Garnet",
+                    amount: 1
+                },{
+                    materialName: "Gold Ore",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310510", armorName: "Belt of Biting Wind", commonNames: ["Belt of Biting Wind"],
+            classId: 5, type: "story", element: "wind", stats: {
+                "+0": {
+                    patk: 0, pdef: 70, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 51
+                },
+                "+1": {
+                    patk: 0, pdef: 80, matk: 0, mdef: 20, crit: 33, hit: 0, eva: 51
+                },
+                "+2": {
+                    patk: 0, pdef: 90, matk: 0, mdef: 25, crit: 43, hit: 0, eva: 51
+                },
+                "+3": {
+                    patk: 0, pdef: 100, matk: 0, mdef: 30, crit: 55, hit: 0, eva: 51
+                }
+            },
+            devCost: 46980, levelRequired: 54, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 2
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                },{
+                    materialName: "Ominous Cloth",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310610", armorName: "Wyndham Veil", commonNames: ["Wyndham Veil"],
+            classId: 6, type: "story", element: "wind", stats: {
+                "+0": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 98, crit: 0, hit: 0, eva: 37
+                },
+                "+1": {
+                    patk: 0, pdef: 49, matk: 0, mdef: 114, crit: 0, hit: 0, eva: 45
+                },
+                "+2": {
+                    patk: 0, pdef: 56, matk: 0, mdef: 130, crit: 0, hit: 0, eva: 53
+                },
+                "+3": {
+                    patk: 0, pdef: 63, matk: 0, mdef: 146, crit: 0, hit: 0, eva: 71
+                }
+            },
+            devCost: 46980, levelRequired: 53, tier: 3, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 2
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310710", armorName: "Wyndham Gauntlets", commonNames: ["Wyndham Gauntlets"],
+            classId: 7, type: "story", element: "wind", stats: {
+                "+0": {
+                    patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 37
+                },
+                "+1": {
+                    patk: 0, pdef: 54, matk: 0, mdef: 54, crit: 0, hit: 0, eva: 47
+                },
+                "+2": {
+                    patk: 0, pdef: 66, matk: 0, mdef: 66, crit: 0, hit: 0, eva: 57
+                },
+                "+3": {
+                    patk: 0, pdef: 78, matk: 0, mdef: 78, crit: 0, hit: 0, eva: 67
+                }
+            },
+            devCost: 46980, levelRequired: 52, tier: 3, recipe: [
+                {
+                    materialName: "Chimera Horn",
+                    amount: 2
+                },{
+                    materialName: "Lapis Lazuli",
+                    amount: 1
+                },{
+                    materialName: "Full Moon Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "310810", armorName: "Hat of the Tornado", commonNames: ["Hat of the Tornado"],
+            classId: 8, type: "story", element: "wind", stats: {
+                "+0": {
+                    patk: 0, pdef: 28, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 34
+                },
+                "+1": {
+                    patk: 0, pdef: 32, matk: 0, mdef: 104, crit: 0, hit: 0, eva: 44
+                },
+                "+2": {
+                    patk: 0, pdef: 36, matk: 0, mdef: 124, crit: 0, hit: 0, eva: 54
+                },
+                "+3": {
+                    patk: 0, pdef: 40, matk: 0, mdef: 144, crit: 0, hit: 0, eva: 64
+                }
+            },
+            devCost: 46980, levelRequired: 52, tier: 3, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 2
+                },{
+                    materialName: "Emerald",
+                    amount: 1
+                },{
+                    materialName: "Luxurious Leather",
+                    amount: 2
+                }
+            ]
+        }
     ]
 
 
