@@ -8,6 +8,7 @@ var armorDatabase = require('./database/ArmorDatabase');
 var Employee = require('./classes/Employee');
 
 var playerManager = require('./managers/PlayerManager');
+var userManager = require('./managers/UserManager');
 
 var imageHelper = require('./helpers/ImageHelper');
 var functionHelper = require('./helpers/FunctionHelper');
@@ -41,16 +42,20 @@ function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
     this.nutakuChannelName = "kanpani_girls";
     this.bot = new Discord.Client();
+    
     this.employeeDatabase = employeeDatabase;
     this.questDatabase = questDatabase;
     this.itemInfoDatabase = itemInfoDatabase;
     this.weaponDatabase = weaponDatabase;
     this.armorDatabase = armorDatabase;
+    
     this.imageHelper = imageHelper;
     this.functionHelper = functionHelper;
     this.urlHelper = urlHelper;
-    this.playerManager = playerManager;
     
+    this.playerManager = playerManager;
+    this.userManager = userManager;
+
     this.dmmMaintenanceList = [
         {
             name: "DMM Maintenance",
@@ -455,7 +460,10 @@ EmployeeBot.prototype.updateMemberNameDict = function(memberList) {
 EmployeeBot.prototype.loadRunQuestStatus = function() {
     var that = this;
     fs.readFile(runQuestStatusFileName, 'utf8', function (err, data) {
-        if (err) return;
+        if (err) {
+            that.log("[loadRunQuestStatus] " + err);
+            return;
+        }
         try {
             that.runQuestStatus = JSON.parse(data);
         }
@@ -463,26 +471,21 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
             that.runQuestStatus = {};
             that.log(err);
         }
-        
-        var guilds = that.bot.guilds.array();
-        for(var i=0;i<guilds.length;i++) {
-            guilds[i].fetchMembers().then(guild => {
-                // that.updateMemberNameDict(guild.members);
-                var members = guild.members.array();
+        var text = "";
+        for(key in that.userManager.members) {
+            var userId = key;
+            var member = that.userManager.members[userId];
 
-                for(var i=0;i<members.length;i++) {
-                    var userId = members[i].id;
-                    if ((typeof that.runQuestStatus[userId] !== "undefined") && (that.runQuestStatus[userId].quest != "")) {
-                        members[i].user.sendMessage("Your quest has been cancelled! Please run again.");
-                        that.log("Notified user " + members[i].user.username);
-                    }
-                }
-                that.runQuestStatus = {};
-                that.saveRunQuestStatus();
-            }).catch(err => {
-                that.log("[loadRunQuestStatus] Fetching member error!\n" + err);
-            });
+            if ((typeof that.runQuestStatus[userId] !== "undefined") && (that.runQuestStatus[userId].quest != "")) {
+                var questName = that.runQuestStatus[userId].quest;
+                var endTime = that.runQuestStatus[userId].endTime;
+                var now = new Date();
+                var remainingTime = endTime - now.valueOf();
+                grindCommand.runQuest(that, questName, member.user, false, remainingTime);
+                text += "Resume quest " + questName + " for player " + member.user.username + ". Remaining Time: " + remainingTime + "\n";
+            }
         }
+        if (text != "") that.log(text);
     });
 }
 
@@ -490,9 +493,9 @@ EmployeeBot.prototype.ready = function() {
     if (this.firstTimeReady) {
         var channels = this.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
-            if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
-                //this.greeting(channels[i]);
-            }
+            // if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
+            //     // this.greeting(channels[i]);
+            // }
             if (channels[i].type === "text" && channels[i].name === "log") {
                 this.logChannel = channels[i];
             }
@@ -506,16 +509,6 @@ EmployeeBot.prototype.ready = function() {
         this.log(text);
         
         var that = this;
-        var guilds = this.bot.guilds.array();
-        for(var i=0;i<guilds.length;i++) {
-            that.log("[ready] Fetching members in" + guilds[i].name);
-            guilds[i].fetchMembers().then(guild => {
-                that.updateMemberNameDict(guild.members);
-                that.log("[ready] Finished Fetching members");
-            }).catch(err => {
-                that.log("[ready] Fetching member error!\n" + err);
-            });
-        }
 
         //this.setIdleTalk();
         this.setDailyDrawReminderForNutaku();
@@ -524,9 +517,9 @@ EmployeeBot.prototype.ready = function() {
         this.firstTimeReady = false;
         this.loadSoul();
         this.loadPlayer();
-        setTimeout(function() {
-            that.loadRunQuestStatus();    
-        }, 5000);
+        this.userManager.fetchAllMembers(this, function() {
+            that.loadRunQuestStatus();
+        });
     } else {
         this.log("Bot is restarted");
     }

@@ -120,9 +120,7 @@ module.exports = {
                     Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function (font) {
                         image.opacity(0.4);
                         var startIndex = (pageNo-1)*NUM_EQUIPMENT_PER_PAGE;
-                        console.log(imageList.length);
                         for(var i=startIndex;i<Math.min(imageList.length, pageNo*NUM_EQUIPMENT_PER_PAGE);i++) {
-                            console.log(i);
                             var row = Math.floor((i-startIndex)/NUM_COL);
                             var col = (i-startIndex)%NUM_COL;
                             var equipment = null;

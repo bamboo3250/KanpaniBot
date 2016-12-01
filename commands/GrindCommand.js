@@ -2,55 +2,18 @@ var Employee = require('../classes/Employee');
 var Jimp = require("jimp");
 
 module.exports = {
-    handle: function(message, bot) {
-        var text = message.content.trim().toLowerCase();
-        if (!text.startsWith("~grind ")) return;
-        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) return;
-
-        var questName = text.substring(7).trim().toLowerCase();
-        var quest = bot.questDatabase.getQuestByName(questName);
-        if (quest == null) {
-            message.reply("No information.");
-            return;
-        }
-        var userId = message.author.id;
+    runQuest: function(bot, questName, user, message, time) {
+        var userId = user.id;
         var player = bot.playerManager.getPlayer(userId);
-        if (player == null) {
-            message.reply("You haven't selected your character.");
-            return;
-        }
+        var quest = bot.questDatabase.getQuestByName(questName);
         var employee = bot.createEmployeeFromPlayer(player);
-        if (employee.levelCached < quest.levelRequired) {
-            message.reply("Your level (**Lv." + employee.levelCached + "**) is too low for this quest. The minimum is **Lv." + quest.levelRequired + "**.");
+
+        if (quest == null) {
+            bot.log("No quest named " + questName);
             return;
         }
 
-        if (typeof bot.runQuestStatus[userId] === "undefined") {
-            bot.runQuestStatus[userId] = {
-                quest: "", endTime: -1
-            };
-        }
-
-        var now = new Date();
-
-        if (bot.runQuestStatus[userId].quest != "") {
-            var remainingTime = bot.runQuestStatus[userId].endTime - now.valueOf();
-            var time = bot.functionHelper.parseTime(remainingTime);
-            message.reply("You are running quest " + bot.runQuestStatus[userId].quest + ". It will end in **" + (time.min>0? time.min + " min(s) ":"") + (time.sec + " sec(s)") + "**");
-            return;
-        }
-
-        if (player.gold < quest.goldCost) {
-            message.reply("You don't have enough Gold.");
-            return;
-        }
-        if (!bot.consumeBread(message, quest.breadCost)) return;
-        player.gold -= quest.goldCost;
-        bot.savePlayer();
-
-        bot.runQuestStatus[userId].quest = quest.commonNames[0];
-        bot.runQuestStatus[userId].endTime = now.valueOf() + quest.timeCost*60*1000;
-        bot.saveRunQuestStatus();
+        time = Math.max(0, time);
 
         var chanceToSuccess = 70;
         for(var i=0;i<quest.advantage.length;i++) {
@@ -76,9 +39,11 @@ module.exports = {
 
         chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon + bonusFromArmor);
 
-        var text = "The quest " + quest.commonNames[0] + " has started. It will end in **" + quest.timeCost + " minutes**.\n";
-        text += "Chance of Success: **" + chanceToSuccess + "%**";
-        message.reply(text);
+        if (message) {
+            var text = "The quest " + quest.commonNames[0] + " has started. It will end in **" + quest.timeCost + " minutes**.\n";
+            text += "Chance of Success: **" + chanceToSuccess + "%**";
+            message.reply(text);    
+        }
 
         setTimeout(function() {
             bot.runQuestStatus[userId] = {
@@ -150,20 +115,20 @@ module.exports = {
 
             bot.imageHelper.download(queue, function(err) {
                 if (err) {
-                    message.author.sendMessage(text + backupItemDropText);
+                    user.sendMessage(text + backupItemDropText);
                     if (isLevelUp) {
                         setTimeout(function() {
-                            message.author.sendMessage(levelUpText);
+                            user.sendMessage(levelUpText);
                         }, 5*1000);
                     }
                     return;
                 }
                 bot.imageHelper.read(itemFileNameList, function (err, imageList) {
                     if (err || imageList.length == 0) {
-                        message.author.sendMessage(text + backupItemDropText);
+                        user.sendMessage(text + backupItemDropText);
                         if (isLevelUp) {
                             setTimeout(function() {
-                                message.author.sendMessage(levelUpText);
+                                user.sendMessage(levelUpText);
                             }, 5*1000);
                         }
                         return;
@@ -187,20 +152,71 @@ module.exports = {
                             }
                             var imageName = "images/inventory/" + userId + ".png";
                             image.write(imageName, function() {
-                                var channel = message.channel;
-                                if (channel.type === "text" || channel.type === "dm") {
-                                    message.author.sendFile(imageName, "png", text);
-                                    if (isLevelUp) {
-                                        setTimeout(function() {
-                                            message.author.sendMessage(levelUpText);
-                                        }, 5*1000);
-                                    }
+                                user.sendFile(imageName, "png", text);
+                                if (isLevelUp) {
+                                    setTimeout(function() {
+                                        user.sendMessage(levelUpText);
+                                    }, 5*1000);
                                 }   
                             });
                         });
                     });
                 });
             });
-        }, quest.timeCost*60*1000);
+        }, time);
+
+    },
+
+    handle: function(message, bot) {
+        var text = message.content.trim().toLowerCase();
+        if (!text.startsWith("~grind ")) return;
+        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) return;
+
+        var questName = text.substring(7).trim().toLowerCase();
+        var quest = bot.questDatabase.getQuestByName(questName);
+        if (quest == null) {
+            message.reply("No information.");
+            return;
+        }
+        var userId = message.author.id;
+        var player = bot.playerManager.getPlayer(userId);
+        if (player == null) {
+            message.reply("You haven't selected your character.");
+            return;
+        }
+        var employee = bot.createEmployeeFromPlayer(player);
+        if (employee.levelCached < quest.levelRequired) {
+            message.reply("Your level (**Lv." + employee.levelCached + "**) is too low for this quest. The minimum is **Lv." + quest.levelRequired + "**.");
+            return;
+        }
+
+        if (typeof bot.runQuestStatus[userId] === "undefined") {
+            bot.runQuestStatus[userId] = {
+                quest: "", endTime: -1
+            };
+        }
+
+        var now = new Date();
+
+        if (bot.runQuestStatus[userId].quest != "") {
+            var remainingTime = bot.runQuestStatus[userId].endTime - now.valueOf();
+            var time = bot.functionHelper.parseTime(remainingTime);
+            message.reply("You are running quest " + bot.runQuestStatus[userId].quest + ". It will end in **" + (time.min>0? time.min + " min(s) ":"") + (time.sec + " sec(s)") + "**");
+            return;
+        }
+
+        if (player.gold < quest.goldCost) {
+            message.reply("You don't have enough Gold.");
+            return;
+        }
+        if (!bot.consumeBread(message, quest.breadCost)) return;
+        player.gold -= quest.goldCost;
+        bot.savePlayer();
+
+        bot.runQuestStatus[userId].quest = quest.commonNames[0];
+        bot.runQuestStatus[userId].endTime = now.valueOf() + quest.timeCost*60*1000;
+        bot.saveRunQuestStatus();
+
+        this.runQuest(bot, questName, message.author, message, quest.timeCost*60*1000);
     }
 }
