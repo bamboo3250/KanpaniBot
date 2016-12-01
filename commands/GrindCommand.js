@@ -86,6 +86,7 @@ module.exports = {
             var levelUpText = "Congratulations! Your level has increased to **" + employee.levelCached + "**";
             
             player.gold += goldGained;
+            bot.initBreadIfNeed(userId);
             bot.remainingBread[userId] = Math.min(bot.remainingBread[userId] + breadGained, bot.cappedBread);
 
             var itemNameList = [];

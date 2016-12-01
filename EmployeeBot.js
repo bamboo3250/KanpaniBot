@@ -479,6 +479,7 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
         var text = "";
         for(key in that.userManager.members) {
             var userId = key;
+            that.initBreadIfNeed(userId);
             var member = that.userManager.members[userId];
 
             if ((typeof that.runQuestStatus[userId] !== "undefined") && (that.runQuestStatus[userId].quest != "")) {
