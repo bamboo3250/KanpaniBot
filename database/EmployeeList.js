@@ -253,6 +253,10 @@ var employees = [
         _no: 194, _id: "10440007_937221b0", fullName: "Ashtena Rothe", japaneseName: "アシュテナ・ロッテ", commonNames: ["Ashtena"], cwId: 0,
         baseStats: { _str: 14, _vit: 31, _agi: 8, _dex: 10, _int: 9, _pie: 4, _luk: 4},
         maxStats: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161}
+    },{
+        _no: 5, _id: "10449001_36677def", fullName: "Luna Diana", japaneseName: "ルーナ・ディアーナ", commonNames: ["Ex Luna"], cwId: 1,
+        baseStats: { _str: 20, _vit: 50, _agi: 12, _dex: 10, _int: 1, _pie: 10, _luk: 1},
+        maxStats: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161}
     },
 
     {
@@ -360,6 +364,10 @@ var employees = [
     },{
         _no: 208, _id: "10840006_7315194c", fullName: "Berit Richter", japaneseName: "ベリト・リヒター", commonNames: ["Berit"], cwId: 0,
         baseStats: { _str: 3, _vit: 1, _agi: 15, _dex: 14, _int: 33, _pie: 8, _luk: 5},
+        maxStats: { _str: 153, _vit: 153, _agi: 234, _dex: 247, _int: 477, _pie: 233, _luk: 216}
+    },{
+        _no: 210, _id: "10840007_eccf9ad2", fullName: "Estel Nardahl", japaneseName: "エステル・ノルダール", commonNames: ["Estel"], cwId: 0,
+        baseStats: { _str: 3, _vit: 1, _agi: 22, _dex: 14, _int: 32, _pie: 8, _luk: 5},
         maxStats: { _str: 153, _vit: 153, _agi: 234, _dex: 247, _int: 477, _pie: 233, _luk: 216}
     },{
         _no: 4, _id: "10849001_49dac68d", fullName: "Aurora Hard", japaneseName: "アウロラ・ホード", commonNames: ["Ex Aurora"], cwId: 1,
@@ -591,6 +599,10 @@ var employees = [
         maxStats: { _str: 161, _vit: 238, _agi: 208, _dex: 204, _int: 279, _pie: 386, _luk: 216}
     },{
         _no: 136, _id: "10630007_48689677", fullName: "Lottie Royle", japaneseName: "ロッティ・ロイル", commonNames: ["Lottie"], cwId: 16,
+        baseStats: { _str: 5, _vit: 8, _agi: 7, _dex: 5, _int: 7, _pie: 18, _luk: 5},
+        maxStats: { _str: 160, _vit: 238, _agi: 207, _dex: 218, _int: 280, _pie: 386, _luk: 205}
+    },{
+        _no: 211, _id: "10630008_047d1959", fullName: "Norma Sheen", japaneseName: "ノーマ・シーン", commonNames: ["Norma"], cwId: 0,
         baseStats: { _str: 5, _vit: 8, _agi: 7, _dex: 5, _int: 7, _pie: 18, _luk: 5},
         maxStats: { _str: 160, _vit: 238, _agi: 207, _dex: 218, _int: 280, _pie: 386, _luk: 205}
     },{
