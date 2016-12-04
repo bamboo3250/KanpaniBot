@@ -497,7 +497,11 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
                 var endTime = that.runQuestStatus[userId].endTime;
                 var now = new Date();
                 var remainingTime = endTime - now.valueOf();
-                grindCommand.runQuest(that, questName, member.user, false, remainingTime);
+                var bread = -1;
+                if (typeof that.runQuestStatus[userId].bread != "undefined") {
+                    bread = that.runQuestStatus[userId].bread;
+                }
+                grindCommand.runQuest(that, questName, bread, member.user, false, remainingTime);
                 text += "Resume quest " + questName + " for player " + member.user.username + ". Remaining Time: " + remainingTime + "\n";
             }
         }

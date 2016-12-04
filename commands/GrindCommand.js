@@ -2,7 +2,7 @@ var Employee = require('../classes/Employee');
 var Jimp = require("jimp");
 
 module.exports = {
-    runQuest: function(bot, questName, user, message, time) {
+    runQuest: function(bot, questName, bread, user, message, timeInMillis) {
         var userId = user.id;
         var player = bot.playerManager.getPlayer(userId);
         var quest = bot.questDatabase.getQuestByName(questName);
@@ -13,7 +13,9 @@ module.exports = {
             return;
         }
 
-        time = Math.max(0, time);
+        timeInMillis = Math.max(0, timeInMillis);
+        var modifier = 1;
+        if (quest.breadCost != 0) modifier = bread / quest.breadCost;
 
         var chanceToSuccess = 70;
         for(var i=0;i<quest.advantage.length;i++) {
@@ -48,14 +50,15 @@ module.exports = {
         chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon + bonusFromArmor + bonusFromAccessory);
 
         if (message) {
-            var text = "The quest " + quest.commonNames[0] + " has started. It will end in **" + quest.timeCost + " minutes**.\n";
+            var time = bot.functionHelper.parseTime(timeInMillis);
+            var text = "The quest " + quest.commonNames[0] + " has started. It will end in **" + time + "**.\n";
             text += "Chance of Success: **" + chanceToSuccess + "%**";
             message.reply(text);
         }
 
         setTimeout(function() {
             bot.runQuestStatus[userId] = {
-                quest: "", endTime: -1
+                quest: "", endTime: -1, bread: 0
             };
             bot.saveRunQuestStatus();
 
@@ -68,8 +71,8 @@ module.exports = {
             text += "Status: **" + (isSuccess?"SUCCESS :white_check_mark: ":"FAIL :x:") + "**\n";
 
             var extraExp = Math.floor(quest.exp*0.1);
-            var expGained = (isSuccess ? quest.exp + bot.functionHelper.randomInt(extraExp + 1) : 0);
-            var goldGained = (isSuccess ? quest.goldReward : 0);
+            var expGained = Math.floor((isSuccess ? quest.exp + bot.functionHelper.randomInt(extraExp + 1) : 0) * modifier);
+            var goldGained = Math.floor((isSuccess ? quest.goldReward : 0) * modifier);
             var breadGained = (isSuccess ? quest.breadReward : 0);
             text += "EXP gained: **" + expGained + "**\n";
             text += "Gold: **" + goldGained + "**   Bread: **" + breadGained + "**\n";
@@ -79,7 +82,8 @@ module.exports = {
 
             var drop = {};
             if (isSuccess) {
-                for(var i=0;i<quest.numItemDrop;i++) {
+                var numDrop = Math.floor(quest.numItemDrop * modifier);
+                for(var i=0;i<numDrop;i++) {
                     var itemName = bot.functionHelper.randomObject(quest.dropList);
                     if (typeof drop[itemName] === "undefined") drop[itemName] = 0;
                     drop[itemName]++;
@@ -188,15 +192,21 @@ module.exports = {
 
     handle: function(message, bot) {
         var text = message.content.trim().toLowerCase();
-        if (!text.startsWith("~grind ")) return;
+        if (!text.startsWith("~grind ") && !text.startsWith("~fullgrind ")) return;
         if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) return;
 
-        var questName = text.substring(7).trim().toLowerCase();
+        var isFullGrind = text.startsWith("~fullgrind ");
+        var questName = text.substring(7 + (isFullGrind?4:0)).trim().toLowerCase();
         var quest = bot.questDatabase.getQuestByName(questName);
         if (quest == null) {
             message.reply("No information.");
             return;
         }
+        if (isFullGrind && quest.name === "Phantom Labyrinth") {
+            message.reply("You cannot use Full Grind for Phantom Labyrinth.");
+            return;
+        }
+
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
         if (player == null) {
@@ -211,7 +221,7 @@ module.exports = {
 
         if (typeof bot.runQuestStatus[userId] === "undefined") {
             bot.runQuestStatus[userId] = {
-                quest: "", endTime: -1
+                quest: "", endTime: -1, bread: 0
             };
         }
 
@@ -220,23 +230,34 @@ module.exports = {
         if (bot.runQuestStatus[userId].quest != "") {
             var remainingTime = bot.runQuestStatus[userId].endTime - now.valueOf();
             var time = bot.functionHelper.parseTime(remainingTime);
-            message.reply("You are running quest " + bot.runQuestStatus[userId].quest + ". It will end in **" + (time.min>0? time.min + " min(s) ":"") + (time.sec + " sec(s)") + "**");
+            message.reply("You are running quest " + bot.runQuestStatus[userId].quest + ". It will end in **" + time + "**");
             return;
         }
 
-        if (player.gold < quest.goldCost) {
+        var modifier = 1;
+        if (isFullGrind && quest.breadCost != 0) {
+            modifier = bot.remainingBread[userId] / quest.breadCost;
+        }
+
+        var goldNeeded = Math.floor(quest.goldCost * modifier);
+        var breadNeeded = Math.floor(quest.breadCost * modifier);
+        var timeCost = Math.floor(quest.timeCost * 60 * modifier);
+
+        if (player.gold < goldNeeded) {
             message.reply("You don't have enough Gold.");
             return;
         }
-        if (!bot.consumeBread(message, quest.breadCost)) return;
-        player.gold -= quest.goldCost;
+
+        if (!bot.consumeBread(message, breadNeeded)) return;
+        player.gold -= goldNeeded;
         bot.savePlayer();
 
         bot.runQuestStatus[userId].quest = quest.commonNames[0];
-        bot.runQuestStatus[userId].endTime = now.valueOf() + quest.timeCost*60*1000;
+        bot.runQuestStatus[userId].endTime = now.valueOf() + timeCost * 1000;
+        bot.runQuestStatus[userId].bread = breadNeeded;
         bot.saveRunQuestStatus();
         bot.log(message.author.username + " " + text + " " + (new Date()));
 
-        this.runQuest(bot, questName, message.author, message, quest.timeCost*60*1000);
+        this.runQuest(bot, questName, breadNeeded, message.author, message, timeCost * 1000);
     }
 }

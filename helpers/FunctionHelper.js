@@ -27,15 +27,23 @@ FunctionHelper.prototype.getTimeUntilDaily = function(timeInString) {
     return timeUntil;
 }
 
+function KGTime(timeInMillis = 0) {
+    timeInMillis = Math.max(timeInMillis, 0);
+    this.day = Math.floor(timeInMillis/(24*60*60*1000));
+    this.hour = Math.floor((timeInMillis%(24*60*60*1000))/(60*60*1000));
+    this.min = Math.floor((timeInMillis%(60*60*1000))/(60*1000));
+    this.sec = Math.floor((timeInMillis%(60*1000))/(1000));
+}
+
+KGTime.prototype.toString = function() {
+    return (this.day>0? this.day + " day(s) ":"") 
+            + (this.hour>0? this.hour + " hour(s) ":"") 
+            + (this.min>0? this.min + " min(s) ":"") 
+            + this.sec + " sec(s)";
+}
 
 FunctionHelper.prototype.parseTime = function(millisec) {
-    millisec = Math.max(millisec, 0);
-    return {
-        day: Math.floor(millisec/(24*60*60*1000)),
-        hour: Math.floor((millisec%(24*60*60*1000))/(60*60*1000)),
-        min: Math.floor((millisec%(60*60*1000))/(60*1000)),
-        sec: Math.floor((millisec%(60*1000))/(1000))
-    };
+    return new KGTime(millisec);
 }
 
 /**

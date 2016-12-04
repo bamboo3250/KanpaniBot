@@ -93,7 +93,7 @@ module.exports = {
         if (equipmentResult.tier == 2) {
             distribution = [55, 35, 9, 1];
         } else if (equipmentResult.tier == 3) {
-            distribution = [210, 170, 19, 1];
+            distribution = [200, 160, 39, 1];
         } 
         var plus = bot.functionHelper.randomDist(distribution);
 
