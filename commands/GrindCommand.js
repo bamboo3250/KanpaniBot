@@ -15,6 +15,7 @@ module.exports = {
 
         timeInMillis = Math.max(0, timeInMillis);
         var modifier = 1;
+        if (bread < 0) bread = quest.breadCost;
         if (quest.breadCost != 0) modifier = bread / quest.breadCost;
 
         var chanceToSuccess = 70;
@@ -69,6 +70,7 @@ module.exports = {
             
             var isSuccess = bot.functionHelper.randomInt(100) < chanceToSuccess;
             text += "Status: **" + (isSuccess?"SUCCESS :white_check_mark: ":"FAIL :x:") + "**\n";
+            text += "Modifier: **x" + modifier + "**\n";
 
             var extraExp = Math.floor(quest.exp*0.1);
             var expGained = Math.floor((isSuccess ? quest.exp + bot.functionHelper.randomInt(extraExp + 1) : 0) * modifier);
@@ -186,7 +188,7 @@ module.exports = {
                 
             }
             
-        }, time);
+        }, timeInMillis);
 
     },
 
