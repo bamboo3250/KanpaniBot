@@ -121,7 +121,6 @@ module.exports = {
                 })
                 itemFileNameList.push(itemFileName);
             }
-            bot.log(message.author.username + " " + quest.commonNames[0] + " finished " + (new Date()));
 
             bot.imageHelper.download(queue, function(err) {
                 if (err) {
@@ -173,6 +172,10 @@ module.exports = {
                     });
                 });
             });
+            if (message.author && quest) {
+                bot.log(message.author.username + " " + quest.commonNames[0] + " finished " + (new Date()));    
+            }
+            
         }, time);
 
     },
