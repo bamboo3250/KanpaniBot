@@ -35,6 +35,18 @@ PlayerManager.prototype.spendItem = function(userId, itemName, amount = 1) {
     player.materialList[itemName] = Math.max(0, player.materialList[itemName] - amount);
 }
 
+PlayerManager.prototype.addItem = function(userId, itemName, amount = 1) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (amount <= 0) return;
+    if (typeof player.materialList[itemName] === "undefined") {
+        player.materialList[itemName] = 0;
+    }
+    
+    player.materialList[itemName] = Math.max(0, player.materialList[itemName] + amount);
+}
+
+
 PlayerManager.prototype.spendGold = function(userId, amount = 0) {
     var player = this.getPlayer(userId);
     if (!player) return;

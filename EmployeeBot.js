@@ -39,7 +39,8 @@ var craftCommand = require('./commands/CraftCommand');
 var inventoryEquipmentCommand = require('./commands/InventoryEquipmentCommand');
 var equipCommand = require('./commands/EquipCommand');
 var reportCommand = require('./commands/ReportCommand');
-
+var setDailyGiftCommand = require('./commands/SetDailyGiftCommand');
+var dailyGiftCommand = require('./commands/DailyGiftCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -143,6 +144,11 @@ function EmployeeBot() {
     this.memberNameDict = {};
     this.hasSoul = {};
     this.report = {};
+    this.dailyGift = {
+        item: "",
+        quantity: 0,
+        playerReceived: {}
+    };
 
     this.firstTimeReady = true;
     
@@ -312,6 +318,8 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         inventoryEquipmentCommand.handle(message, this);
         equipCommand.handle(message, this);
         reportCommand.handle(message, this);
+        setDailyGiftCommand.handle(message, this);
+        dailyGiftCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -453,6 +461,34 @@ EmployeeBot.prototype.loadPlayer = function() {
     });
 }
 
+var dailyGiftFileName = "dailygift.json";
+EmployeeBot.prototype.saveDailyGift = function() {
+    var textToWrite = JSON.stringify(this.dailyGift, null, 4);
+    var that = this;
+    fs.writeFile(dailyGiftFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadDailyGift = function() {
+    var that = this;
+    fs.readFile(dailyGiftFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadDailyGift] Read file error.\n" + err);
+            return;
+        }
+        try {
+            that.dailyGift = JSON.parse(data);
+        }
+        catch (err) {
+            that.log(err);
+        }
+    });
+}
+
 var runQuestStatusFileName = "runQuestStatus.json";
 EmployeeBot.prototype.saveRunQuestStatus = function() {
     var textToWrite = JSON.stringify(this.runQuestStatus, null, 4);
@@ -509,6 +545,16 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
     });
 }
 
+EmployeeBot.prototype.sendMessageToMainChannel = function(text) {
+    var channels = this.bot.channels.array();
+    for(var i=0;i<channels.length;i++) {
+        if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
+            channels[i].sendMessage(text);
+            return;
+        }
+    }
+}
+
 EmployeeBot.prototype.ready = function() {
     if (this.firstTimeReady) {
         var channels = this.bot.channels.array();
@@ -537,6 +583,7 @@ EmployeeBot.prototype.ready = function() {
         this.firstTimeReady = false;
         this.loadSoul();
         this.loadPlayer();
+        this.loadDailyGift();
         this.userManager.fetchAllMembers(this, function() {
             that.loadRunQuestStatus();
         });

@@ -55,7 +55,7 @@ module.exports = {
         } else if (category == "ar") {
             equipmentResult = bot.armorDatabase.getArmorByCodeName(equipmentCode, classId);
         } else if (category == "acc") {
-            equipmentResult = bot.accessoryDatabase.getAccessoryByName(equipmentCode, classId);
+            equipmentResult = bot.accessoryDatabase.getAccessoryByName(equipmentCode);
         }
         if (!equipmentResult) {
             message.reply("No information.")
