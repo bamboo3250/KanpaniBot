@@ -39,7 +39,7 @@ module.exports = {
         }
         equipmentCode = bot.functionHelper.removeExtraSpace(equipmentCode);
 
-        if ((category != "wp") && (category != "ar")) {
+        if ((category != "wp") && (category != "ar") && (category != "acc")) {
             message.reply("The equipment category is not correct.")
             return;
         }
@@ -52,6 +52,8 @@ module.exports = {
             equipmentResult = bot.weaponDatabase.getWeaponByCodeName(equipmentCode, classId);    
         } else if (category === "ar") {
             equipmentResult = bot.armorDatabase.getArmorByCodeName(equipmentCode, classId);    
+        } else if (category === "acc") {
+            equipmentResult = bot.accessoryDatabase.getAccessoryByName(equipmentCode);
         }
         
         // if (!equipmentResult) {
@@ -128,6 +130,8 @@ module.exports = {
                     equipmentName = equipmentResult.weaponName;
                 } else if (category == "ar") {
                     equipmentName = equipmentResult.armorName;
+                } else if (category == "acc") {
+                    equipmentName = equipmentResult.accessoryName;
                 }
                 text += "Crafting **" + equipmentName + "**...";
                 message.channel.sendMessage(text);
@@ -149,6 +153,8 @@ module.exports = {
                                         bot.playerManager.addWeapon(userId, equipmentResult._id, plus);    
                                     } else if (category === "ar") {
                                         bot.playerManager.addArmor(userId, equipmentResult._id, plus);    
+                                    } else if (category === "acc") {
+                                        bot.playerManager.addAccessory(userId, equipmentResult._id, plus);    
                                     }
                                     
                                     bot.savePlayer();

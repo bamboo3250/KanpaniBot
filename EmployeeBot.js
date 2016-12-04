@@ -5,6 +5,7 @@ var questDatabase = require('./database/QuestDatabase');
 var itemInfoDatabase = require('./database/ItemInfoDatabase');
 var weaponDatabase = require('./database/WeaponDatabase');
 var armorDatabase = require('./database/ArmorDatabase');
+var accessoryDatabase = require('./database/AccessoryDatabase');
 var Employee = require('./classes/Employee');
 
 var playerManager = require('./managers/PlayerManager');
@@ -50,7 +51,8 @@ function EmployeeBot() {
     this.itemInfoDatabase = itemInfoDatabase;
     this.weaponDatabase = weaponDatabase;
     this.armorDatabase = armorDatabase;
-    
+    this.accessoryDatabase = accessoryDatabase;
+
     this.imageHelper = imageHelper;
     this.functionHelper = functionHelper;
     this.urlHelper = urlHelper;
@@ -275,6 +277,11 @@ EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
         employee.element = armor.element;
     }
 
+    if (player.equipedAccessory) {
+        var accessory = this.accessoryDatabase.getAccessoryById(player.equipedAccessory._id);
+        employee.accessory = accessory.stats["+" + player.equipedAccessory.plus];
+    }
+
     return employee;
 }
 
@@ -438,6 +445,9 @@ EmployeeBot.prototype.loadPlayer = function() {
             }
             if (that.playerManager.playerDict[userId].armorList instanceof Array) {
                 that.playerManager.playerDict[userId].armorList = {};
+            }
+            if (that.playerManager.playerDict[userId].accessoryList instanceof Array) {
+                that.playerManager.playerDict[userId].accessoryList = {};
             }
         }
     });

@@ -36,13 +36,21 @@ module.exports = {
             sumStat += armorStats.crit + armorStats.hit + armorStats.eva;
             bonusFromArmor = Math.floor(sumStat * 6 / (quest.timeCost*10));
         }
+        var bonusFromAccessory = 0;
+        if (player.equipedAccessory) {
+            var accessory = bot.accessoryDatabase.getAccessoryById(player.equipedAccessory._id);
+            var accessoryStats = accessory.stats["+" + player.equipedAccessory.plus];
+            var sumStat = accessoryStats.patk + accessoryStats.pdef + accessoryStats.matk + accessoryStats.mdef;
+            sumStat += accessoryStats.crit + accessoryStats.hit + accessoryStats.eva;
+            bonusFromAccessory = Math.floor(sumStat * 6 / (quest.timeCost*10));
+        }
 
-        chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon + bonusFromArmor);
+        chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon + bonusFromArmor + bonusFromAccessory);
 
         if (message) {
             var text = "The quest " + quest.commonNames[0] + " has started. It will end in **" + quest.timeCost + " minutes**.\n";
             text += "Chance of Success: **" + chanceToSuccess + "%**";
-            message.reply(text);    
+            message.reply(text);
         }
 
         setTimeout(function() {
@@ -113,6 +121,7 @@ module.exports = {
                 })
                 itemFileNameList.push(itemFileName);
             }
+            bot.log(message.author.username + " " + quest.commonNames[0] + " finished " + (new Date()));
 
             bot.imageHelper.download(queue, function(err) {
                 if (err) {
@@ -217,6 +226,7 @@ module.exports = {
         bot.runQuestStatus[userId].quest = quest.commonNames[0];
         bot.runQuestStatus[userId].endTime = now.valueOf() + quest.timeCost*60*1000;
         bot.saveRunQuestStatus();
+        bot.log(message.author.username + " " + text + " " + (new Date()));
 
         this.runQuest(bot, questName, message.author, message, quest.timeCost*60*1000);
     }

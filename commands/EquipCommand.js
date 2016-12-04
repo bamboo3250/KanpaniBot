@@ -20,7 +20,12 @@ module.exports = {
             return;
         }
         var category = commandArgs[1];
-        var equipmentCode = commandArgs[2];
+        var equipmentCode = "";
+        for(var i=2;i<commandArgs.length-1;i++) {
+            equipmentCode += commandArgs[i] + " ";
+        }
+        equipmentCode = bot.functionHelper.removeExtraSpace(equipmentCode);
+
         var plus = 0;
         if (commandArgs.length > 3) {
             plus = commandArgs[commandArgs.length-1];
@@ -36,8 +41,8 @@ module.exports = {
             }
         }
 
-        if ((category != "ar") && (category != "wp")) {
-            message.reply("The equipment category is not correct. It should be `wp` for weapon or `ar` for armor.")
+        if ((category != "ar") && (category != "wp") && (category != "acc")) {
+            message.reply("The equipment category is not correct. It should be `wp` for weapon, `ar` for armor or `acc` for accessory.")
             return;
         }
 
@@ -49,6 +54,8 @@ module.exports = {
             equipmentResult = bot.weaponDatabase.getWeaponByCodeName(equipmentCode, classId);
         } else if (category == "ar") {
             equipmentResult = bot.armorDatabase.getArmorByCodeName(equipmentCode, classId);
+        } else if (category == "acc") {
+            equipmentResult = bot.accessoryDatabase.getAccessoryByName(equipmentCode, classId);
         }
         if (!equipmentResult) {
             message.reply("No information.")
@@ -63,6 +70,9 @@ module.exports = {
         } else if (category == "ar") {
             equipmentName = equipmentResult.armorName;
             equipmentList = player.armorList;
+        } else if (category == "acc") {
+            equipmentName = equipmentResult.accessoryName;
+            equipmentList = player.accessoryList;
         }
 
         if (typeof equipmentList[equipmentResult._id] === "undefined") {
@@ -78,6 +88,8 @@ module.exports = {
             bot.playerManager.equipWeapon(userId, equipmentResult._id, plus);
         } else if (category == "ar") {
             bot.playerManager.equipArmor(userId, equipmentResult._id, plus);
+        } else if (category == "acc") {
+            bot.playerManager.equipAccessory(userId, equipmentResult._id, plus);
         }
         bot.savePlayer();
         message.reply("You have equipped **" + equipmentName + " +" + plus + "**");

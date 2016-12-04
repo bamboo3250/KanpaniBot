@@ -614,7 +614,7 @@ var employees = [
         baseStats: { _str: 5, _vit: 9, _agi: 7, _dex: 5, _int: 6, _pie: 17, _luk: 4},
         maxStats: { _str: 160, _vit: 238, _agi: 207, _dex: 218, _int: 280, _pie: 386, _luk: 205}
     },{
-        _no: 2, _id: "10639001_ed7dca28", fullName: "[The Last Child of God] Tina Grenville", japaneseName: "[神の末子] ティナ・グレンヴィル", commonNames: ["Ex Tina"], cwId: 1,
+        _no: 2, _id: "10639001_ed7dca28", fullName: "[The God's Last Child] Tina Grenville", japaneseName: "[神の末子] ティナ・グレンヴィル", commonNames: ["Ex Tina"], cwId: 1,
         baseStats: { _str: 6, _vit: 9, _agi: 9, _dex: 5, _int: 7, _pie: 21, _luk: 6},
         maxStats: { _str: 160, _vit: 238, _agi: 207, _dex: 218, _int: 280, _pie: 386, _luk: 205}
     },

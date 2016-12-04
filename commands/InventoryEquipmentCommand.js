@@ -4,12 +4,13 @@ module.exports = {
     handle: function(message, bot) {
         var command = bot.functionHelper.removeExtraSpace(message.content.trim().toLowerCase());
         if (command !== "~inventory ar" && (!command.startsWith("~inventory ar "))
-            && command !== "~inventory wp" && (!command.startsWith("~inventory wp "))) return;
+            && command !== "~inventory wp" && (!command.startsWith("~inventory wp "))
+            && command !== "~inventory acc" && (!command.startsWith("~inventory acc "))) return;
         if (!bot.isPM(message)) {
             message.reply("You can only check your equipment in Private Message.");
             return;
         }
-        var category = command.substring(11, 13);
+        var category = command.substring(11, 13 + (command.startsWith("~inventory acc")?1:0));
 
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
@@ -27,6 +28,8 @@ module.exports = {
             equipmentList = player.weaponList;
         } else if (category == "ar") {
             equipmentList = player.armorList;
+        } else if (category == "acc") {
+            equipmentList = player.accessoryList;
         }
 
         for(key in equipmentList) {
@@ -36,6 +39,8 @@ module.exports = {
                 equipment = bot.weaponDatabase.getWeaponById(equipmentId);    
             } else if (category == "ar") {
                 equipment = bot.armorDatabase.getArmorById(equipmentId);    
+            } else if (category == "acc") {
+                equipment = bot.accessoryDatabase.getAccessoryById(equipmentId);    
             }
             
             if (!equipment) {
@@ -52,6 +57,8 @@ module.exports = {
                         backupText += equipment.weaponName + " +" + i + "(Amount: " + player.weaponList[equipmentId]["+" + i] +")\n";        
                     } else if (category == "ar") {
                         backupText += equipment.armorName + " +" + i + "(Amount: " + player.armorList[equipmentId]["+" + i] +")\n";    
+                    } else if (category == "acc") {
+                        backupText += equipment.accessoryName + " +" + i + "(Amount: " + player.accessoryList[equipmentId]["+" + i] +")\n";    
                     }
                     
                 }
@@ -128,6 +135,8 @@ module.exports = {
                                 equipment = bot.weaponDatabase.getWeaponById(equipmentIdList[i]._id);    
                             } else if (category == "ar") {
                                 equipment = bot.armorDatabase.getArmorById(equipmentIdList[i]._id);    
+                            } else if (category == "acc") {
+                                equipment = bot.accessoryDatabase.getAccessoryById(equipmentIdList[i]._id);    
                             }
                             
                             var codeName = null;
@@ -135,6 +144,8 @@ module.exports = {
                                 codeName = bot.weaponDatabase.getCodeNameForWeapon(equipmentIdList[i]._id);
                             } else if (category == "ar") {
                                 codeName = bot.armorDatabase.getCodeNameForArmor(equipmentIdList[i]._id);
+                            } else if (category == "acc") {
+                                codeName = bot.accessoryDatabase.getCodeNameForAccessory(equipmentIdList[i]._id);
                             }
                             
                             if (!codeName) {
@@ -148,6 +159,8 @@ module.exports = {
                                 equipmentName = equipment.weaponName;
                             } else if (category == "ar") {
                                 equipmentName = equipment.armorName;
+                            } else if (category == "acc") {
+                                equipmentName = equipment.accessoryName;
                             }
                             image.print(font, 55 + col*ITEM_CELL_WIDTH, 7 + row*ITEM_CELL_HEIGHT, equipmentName + " +" + equipmentIdList[i].plus + " " + codeName);
                             image.print(font, 55 + col*ITEM_CELL_WIDTH, 27 + row*ITEM_CELL_HEIGHT, "x" + equipmentList[equipment._id]["+" + equipmentIdList[i].plus]);

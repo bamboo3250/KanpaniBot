@@ -55,6 +55,16 @@ module.exports = {
             queue.push({
                 fileToDownload: armorIconUrl,   fileToSave: armorFileName
             })
+        }
+        var accessoryFileName = null;
+        if (player.equipedAccessory) {
+            var accId = player.equipedAccessory._id;
+            var plus = player.equipedAccessory.plus;
+            var accessoryIconUrl = bot.urlHelper.getEquipmentIconUrl(accId, plus, "small");
+            accessoryFileName = "images/equipment/small/" + accId + "0" + plus + "_1.png";
+            queue.push({
+                fileToDownload: accessoryIconUrl,   fileToSave: accessoryFileName
+            })
         }   
         
         bot.imageHelper.download(queue, function(err) {
@@ -85,6 +95,12 @@ module.exports = {
             } else {
                 fileNameQueue.push(null);
             }
+            if (accessoryFileName) {
+                fileNameQueue.push(accessoryFileName);
+            } else {
+                fileNameQueue.push(null);
+            }
+
             bot.imageHelper.read(fileNameQueue, function (err, imageList) {
                 if (err) {
                     message.reply("Error happened. Try again.");
@@ -98,6 +114,7 @@ module.exports = {
 
                 var weaponImage = imageList[4];
                 var armorImage = imageList[5];
+                var accessoryImage = imageList[6];
 
                 backgroundImage.crop(250,100, 310,270);
                 enemySpriteImage.crop(20, 0, 310, 270);
@@ -113,6 +130,7 @@ module.exports = {
 
                 if (weaponImage) backgroundImage.composite(weaponImage, 10, 10);
                 if (armorImage) backgroundImage.composite(armorImage, 10, 60);
+                if (accessoryImage) backgroundImage.composite(accessoryImage, 10, 110);
 
                 var imageName = "images/me/" + message.author.id + ".png";
                 backgroundImage.write(imageName, function() {

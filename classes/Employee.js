@@ -166,15 +166,16 @@ EmployeeInfo.prototype.getAtk = function() {
     var classId = this.getClassId();
     var weaponStats = (this.weapon ? this.weapon.patk : 0);
     var armorStats = (this.armor ? this.armor.patk : 0);
-    
-    if (classId === 1) return this.getSTR() + weaponStats + armorStats + 6;
-    if (classId === 2) return this.getSTR() + weaponStats + armorStats + 20;
-    if (classId === 3) return this.getDEX() + weaponStats + armorStats + 10;
-    if (classId === 4) return this.getSTR() + weaponStats + armorStats + 3;
-    if (classId === 5) return this.getSTR() + weaponStats + armorStats + 16;
-    if (classId === 6) return this.getDEX() + weaponStats + armorStats;
-    if (classId === 7) return this.getSTR() + weaponStats + armorStats + 6;
-    if (classId === 8) return this.getSTR() + weaponStats + armorStats;
+    var accessoryStats = (this.accessory ? this.accessory.patk : 0);
+
+    if (classId === 1) return this.getSTR() + weaponStats + armorStats + accessoryStats + 6;
+    if (classId === 2) return this.getSTR() + weaponStats + armorStats + accessoryStats + 20;
+    if (classId === 3) return this.getDEX() + weaponStats + armorStats + accessoryStats + 10;
+    if (classId === 4) return this.getSTR() + weaponStats + armorStats + accessoryStats + 3;
+    if (classId === 5) return this.getSTR() + weaponStats + armorStats + accessoryStats + 16;
+    if (classId === 6) return this.getDEX() + weaponStats + armorStats + accessoryStats;
+    if (classId === 7) return this.getSTR() + weaponStats + armorStats + accessoryStats + 6;
+    if (classId === 8) return this.getSTR() + weaponStats + armorStats + accessoryStats;
     return 9999;
 }
 
@@ -182,15 +183,16 @@ EmployeeInfo.prototype.getDef = function() {
     var classId = this.getClassId();
     var weaponStats = (this.weapon ? this.weapon.pdef : 0);
     var armorStats = (this.armor ? this.armor.pdef : 0);
+    var accessoryStats = (this.accessory ? this.accessory.pdef : 0);
 
-    if (classId === 1) return this.getVIT() + weaponStats + armorStats + 6;
-    if (classId === 2) return this.getVIT() + weaponStats + armorStats;
-    if (classId === 3) return this.getVIT() + weaponStats + armorStats;
-    if (classId === 4) return this.getVIT() + weaponStats + armorStats + 4;
-    if (classId === 5) return this.getVIT() + weaponStats + armorStats;
-    if (classId === 6) return this.getVIT() + weaponStats + armorStats + 3;
-    if (classId === 7) return this.getVIT() + weaponStats + armorStats;
-    if (classId === 8) return this.getVIT() + weaponStats + armorStats;
+    if (classId === 1) return this.getVIT() + weaponStats + armorStats + accessoryStats + 6;
+    if (classId === 2) return this.getVIT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 3) return this.getVIT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 4) return this.getVIT() + weaponStats + armorStats + accessoryStats + 4;
+    if (classId === 5) return this.getVIT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 6) return this.getVIT() + weaponStats + armorStats + accessoryStats + 3;
+    if (classId === 7) return this.getVIT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 8) return this.getVIT() + weaponStats + armorStats + accessoryStats;
     return 9999;
 }
 
@@ -198,15 +200,16 @@ EmployeeInfo.prototype.getMAtk = function() {
     var classId = this.getClassId();
     var weaponStats = (this.weapon ? this.weapon.matk : 0);
     var armorStats = (this.armor ? this.armor.matk : 0);
+    var accessoryStats = (this.accessory ? this.accessory.matk : 0);
 
-    if (classId === 1) return this.getINT() + weaponStats + armorStats;
-    if (classId === 2) return this.getINT() + weaponStats + armorStats;
-    if (classId === 3) return this.getINT() + weaponStats + armorStats;
-    if (classId === 4) return this.getINT() + weaponStats + armorStats;
-    if (classId === 5) return this.getINT() + weaponStats + armorStats;
-    if (classId === 6) return this.getPIE() + weaponStats + armorStats + 8;
-    if (classId === 7) return this.getINT() + weaponStats + armorStats;
-    if (classId === 8) return this.getINT() + weaponStats + armorStats + 9;
+    if (classId === 1) return this.getINT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 2) return this.getINT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 3) return this.getINT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 4) return this.getINT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 5) return this.getINT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 6) return this.getPIE() + weaponStats + armorStats + accessoryStats + 8;
+    if (classId === 7) return this.getINT() + weaponStats + armorStats + accessoryStats;
+    if (classId === 8) return this.getINT() + weaponStats + armorStats + accessoryStats + 9;
     return 9999;
 }
 
@@ -214,34 +217,41 @@ EmployeeInfo.prototype.getMDef = function() {
     var classId = this.getClassId();
     var weaponStats = (this.weapon ? this.weapon.mdef : 0);
     var armorStats = (this.armor ? this.armor.mdef : 0);
+    var accessoryStats = (this.accessory ? this.accessory. mdef : 0);
 
-    if (classId === 1) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + 7;
-    if (classId === 2) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats;
-    if (classId === 3) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats;
-    if (classId === 4) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats;
-    if (classId === 5) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats;
-    if (classId === 6) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + 3;
-    if (classId === 7) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats;
-    if (classId === 8) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats;
+    if (classId === 1) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + accessoryStats + 7;
+    if (classId === 2) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + accessoryStats;
+    if (classId === 3) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + accessoryStats;
+    if (classId === 4) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + accessoryStats;
+    if (classId === 5) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + accessoryStats;
+    if (classId === 6) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + accessoryStats + 3;
+    if (classId === 7) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + accessoryStats;
+    if (classId === 8) return Math.max(this.getINT(), this.getPIE()) + weaponStats + armorStats + accessoryStats;
     return 9999;
 }
 
 EmployeeInfo.prototype.getCrit = function() {
     var weaponStats = (this.weapon ? this.weapon.crit : 0);
     var armorStats = (this.armor ? this.armor.crit : 0);
-    return weaponStats + armorStats;
+    var accessoryStats = (this.accessory ? this.accessory.crit : 0);
+
+    return weaponStats + armorStats + accessoryStats;
 }
 
 EmployeeInfo.prototype.getHit = function() {
     var weaponStats = (this.weapon ? this.weapon.hit : 0);
     var armorStats = (this.armor ? this.armor.hit : 0);
-    return weaponStats + armorStats;
+    var accessoryStats = (this.accessory ? this.accessory.hit : 0);
+
+    return weaponStats + armorStats + accessoryStats;
 }
 
 EmployeeInfo.prototype.getEva = function() {
     var weaponStats = (this.weapon ? this.weapon.eva : 0);
     var armorStats = (this.armor ? this.armor.eva : 0);
-    return weaponStats + armorStats;
+    var accessoryStats = (this.accessory ? this.accessory.eva : 0);
+
+    return weaponStats + armorStats + accessoryStats;
 }
 
 EmployeeInfo.prototype.getFrontSkill = function() {
