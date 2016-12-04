@@ -173,8 +173,13 @@ module.exports = {
                 });
             });
             if (userId && quest) {
-                var user = bot.userManager.getUser(userId);
-                bot.log(user.username + " " + quest.commonNames[0] + " finished " + (new Date()));    
+                var thisUser = bot.userManager.getUser(userId);
+                if (thisUser) {
+                    bot.log(thisUser.username + " " + quest.commonNames[0] + " finished " + (new Date()));        
+                } else {
+                    bot.log("User of " + userId + " is null.");   
+                }
+                
             }
             
         }, time);
