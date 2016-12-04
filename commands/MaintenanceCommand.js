@@ -22,12 +22,10 @@ module.exports = {
 
             if (now.valueOf() < startTime.valueOf()) {
                 var time = bot.functionHelper.parseTime(startTime.valueOf() - now.valueOf());
-                text += "Start in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
-                        + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
+                text += "Start in: " + time + "\n\n";
             } else if (startTime.valueOf() <= now.valueOf() && now.valueOf() <= endTime.valueOf()) {
                 var time = bot.functionHelper.parseTime(endTime.valueOf() - now.valueOf());
-                text += "End in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
-                        + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
+                text += "End in: " + time + "\n\n";
             } 
         }
         if (text.length > 1) {

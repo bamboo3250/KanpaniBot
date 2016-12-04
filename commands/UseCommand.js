@@ -47,8 +47,7 @@ module.exports = {
             if (bot.mailboxEffect[userId].itemName != "") {
                 var remainingTime = bot.mailboxEffect[userId].endTime - now.valueOf();
                 var time = bot.functionHelper.parseTime(remainingTime);
-                var timeText = (time.min > 0 ? time.min + " minute(s) " : "") + time.sec + " second(s).";
-                message.reply("You have already been under effect of another mailbox! It will end in **" + timeText + "**");
+                message.reply("You have already been under effect of another mailbox! It will end in **" + time + "**");
                 return;
             }
             var effectDuration = 15*60*1000;    // 15 mins

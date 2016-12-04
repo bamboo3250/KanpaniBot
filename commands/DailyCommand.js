@@ -15,8 +15,7 @@ module.exports = {
         text = "\n**" + dailyEvent.name + "**\n";
         nextDaily = bot.functionHelper.getTimeUntilDaily(dailyEvent.time);
         var time = bot.functionHelper.parseTime(nextDaily);
-        text += "Reset in: " + (time.day>0? time.day + " day(s) ":"") + (time.hour>0? time.hour + " hour(s) ":"") 
-                + (time.min>0? time.min + " min(s) ":"") + (time.sec>0? time.sec + " sec(s) ":"") + "\n\n";
+        text += "Reset in: " + time + "\n\n";
         message.channel.sendMessage(text);
     }
 }
