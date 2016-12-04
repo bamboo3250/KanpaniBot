@@ -172,8 +172,9 @@ module.exports = {
                     });
                 });
             });
-            if (message.author && quest) {
-                bot.log(message.author.username + " " + quest.commonNames[0] + " finished " + (new Date()));    
+            if (userId && quest) {
+                var username = bot.userManager.getUser(userId);
+                bot.log(username + " " + quest.commonNames[0] + " finished " + (new Date()));    
             }
             
         }, time);
