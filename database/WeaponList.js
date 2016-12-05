@@ -2370,5 +2370,241 @@ module.exports = {
         }
     ],
 
+    "r11": [
+        {
+            _id: "3001091", modelId: "09", weaponName: "Painbringer", commonNames: ["Painbringer"],
+            classId: 1, type: "story", stats: {
+                "+0": {
+                    patk: 106, pdef: 58, matk: 0, mdef: 70, crit: 11, hit: 27, eva: 0,
+                    frontSkill: "Double Slash", backSkill: "Slash"
+                },
+                "+1": {
+                    patk: 144, pdef: 77, matk: 0, mdef: 93, crit: 11, hit: 27, eva: 0,
+                    frontSkill: "Power Slash", backSkill: "Slash"
+                },
+                "+2": {
+                    patk: 183, pdef: 95, matk: 0, mdef: 115, crit: 11, hit: 27, eva: 0,
+                    frontSkill: "Power Slash", backSkill: "V Slash"
+                },
+                "+3": {
+                    patk: 259, pdef: 124, matk: 0, mdef: 151, crit: 11, hit: 27, eva: 0,
+                    frontSkill: "Raging", backSkill: "V Slash"
+                }
+            },
+            devCost: 32400, levelRequired: 56, tier: 3, recipe: [
+                {
+                    materialName: "Gold Ore",
+                    amount: 4
+                },{
+                    materialName: "Magical Water",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3002091", modelId: "09", weaponName: "Mamorigatana \"Bloodless\"", commonNames: ["Mamorigatana \"Bloodless\""],
+            classId: 2, type: "story", stats: {
+                "+0": {
+                    patk: 141, pdef: 20, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 10,
+                    frontSkill: "Iaido Slash", backSkill: "Slash"
+                },
+                "+1": {
+                    patk: 181, pdef: 30, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 20,
+                    frontSkill: "100 Demon Slayer", backSkill: "Slash"
+                },
+                "+2": {
+                    patk: 223, pdef: 40, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 30,
+                    frontSkill: "100 Demon Slayer", backSkill: "Cleave"
+                },
+                "+3": {
+                    patk: 279, pdef: 60, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 40,
+                    frontSkill: "Unsheathing Technique Destroyer", backSkill: "Cleave"
+                }
+            },
+            devCost: 32400, levelRequired: 59, tier: 3, recipe: [
+                {
+                    materialName: "Full Moon Fragment",
+                    amount: 3
+                },{
+                    materialName: "Magical Water",
+                    amount: 4
+                }
+            ]
+        },{
+            _id: "3003091", modelId: "09", weaponName: "Bow of Futility", commonNames: ["Bow of Futility"],
+            classId: 3, type: "story", stats: {
+                "+0": {
+                    patk: 115, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 44, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Spread Shot"
+                },
+                "+1": {
+                    patk: 153, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 44, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Spread Shot"
+                },
+                "+2": {
+                    patk: 195, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 44, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Spread Shot"
+                },
+                "+3": {
+                    patk: 253, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 44, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Purge Impact"
+                }
+            },
+            devCost: 32400, levelRequired: 57, tier: 3, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 3
+                },{
+                    materialName: "Ebony Branch",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3004091", modelId: "09", weaponName: "Piercing Spear \"Stinger\"", commonNames: ["Piercing Spear \"Stinger\""],
+            classId: 4, type: "story", stats: {
+                "+0": {
+                    patk: 116, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 24, eva: 0,
+                    frontSkill: "Full-On Collision", backSkill: "Spear Jab"
+                },
+                "+1": {
+                    patk: 154, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 24, eva: 0,
+                    frontSkill: "Double Dragon Strike", backSkill: "Spear Jab"
+                },
+                "+2": {
+                    patk: 203, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 24, eva: 0,
+                    frontSkill: "Double Dragon Strike", backSkill: "Double Strike"
+                },
+                "+3": {
+                    patk: 279, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 24, eva: 0,
+                    frontSkill: "Pale Moonlight", backSkill: "Double Strike"
+                }
+            },
+            devCost: 32400, levelRequired: 58, tier: 3, recipe: [
+                {
+                    materialName: "Gold Ore",
+                    amount: 3
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 4
+                }
+            ]
+        },{
+            _id: "3005091", modelId: "09", weaponName: "Demon Hammer Ukon", commonNames: ["Demon Hammer Ukon"],
+            classId: 5, type: "story", stats: {
+                "+0": {
+                    patk: 170, pdef: 0, matk: 0, mdef: 0, crit: 50, hit: 24, eva: 0,
+                    frontSkill: "Hammerfall", backSkill: "Crash"
+                },
+                "+1": {
+                    patk: 229, pdef: 0, matk: 0, mdef: 0, crit: 60, hit: 24, eva: 0,
+                    frontSkill: "Force Impact", backSkill: "Crash"
+                },
+                "+2": {
+                    patk: 291, pdef: 0, matk: 0, mdef: 0, crit: 70, hit: 24, eva: 0,
+                    frontSkill: "Force Impact", backSkill: "Swing"
+                },
+                "+3": {
+                    patk: 375, pdef: 0, matk: 0, mdef: 0, crit: 80, hit: 24, eva: 0,
+                    frontSkill: "Fury's Toll", backSkill: "Swing"
+                }
+            },
+            devCost: 32400, levelRequired: 57, tier: 3, recipe: [
+                {
+                    materialName: "Ebony Branch",
+                    amount: 3
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 4
+                }
+            ]
+        },{
+            _id: "3006091", modelId: "09", weaponName: "Necrolidac", commonNames: ["Necrolidac"],
+            classId: 6, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 41, matk: 135, mdef: 41, crit: 16, hit: 51, eva: 0,
+                    frontSkill: "Knock", backSkill: "Heavenly Breath"
+                },
+                "+1": {
+                    patk: 0, pdef: 54, matk: 180, mdef: 54, crit: 16, hit: 51, eva: 0,
+                    frontSkill: "Knock", backSkill: "Heavenly Breath"
+                },
+                "+2": {
+                    patk: 0, pdef: 69, matk: 230, mdef: 69, crit: 16, hit: 51, eva: 0,
+                    frontSkill: "Knock", backSkill: "Heavenly Breath"
+                },
+                "+3": {
+                    patk: 0, pdef: 92, matk: 300, mdef: 92, crit: 16, hit: 51, eva: 0,
+                    frontSkill: "Knock", backSkill: "Heavenly Breath"
+                }
+            },
+            devCost: 32400, levelRequired: 56, tier: 3, recipe: [
+                {
+                    materialName: "Gold Ore",
+                    amount: 4
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3007091", modelId: "09", weaponName: "Timonia", commonNames: ["Timonia"],
+            classId: 7, type: "story", stats: {
+                "+0": {
+                    patk: 101, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 33, eva: 54,
+                    frontSkill: "Hayate", backSkill: "Throwing Knife"
+                },
+                "+1": {
+                    patk: 134, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 38, eva: 54,
+                    frontSkill: "Hayate", backSkill: "Throwing Knife"
+                },
+                "+2": {
+                    patk: 134, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 43, eva: 54,
+                    frontSkill: "Hayate", backSkill: "Throwing Knife"
+                },
+                "+3": {
+                    patk: 226, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 54, eva: 54,
+                    frontSkill: "Killer Fang", backSkill: "Throwing Knife"
+                }
+            },
+            devCost: 32400, levelRequired: 60, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 3
+                },{
+                    materialName: "Full Moon Fragment",
+                    amount: 4
+                }
+            ]
+        },{
+            _id: "3008091", modelId: "09", weaponName: "Rod of Bounty \"Elemental\"", commonNames: ["Rod of Bounty \"Elemental\"", "Elemental"],
+            classId: 8, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 0, matk: 142, mdef: 0, crit: 12, hit: 44, eva: 0,
+                    frontSkill: "Fire Ball", backSkill: "Fire Ball"
+                },
+                "+1": {
+                    patk: 0, pdef: 0, matk: 192, mdef: 0, crit: 12, hit: 44, eva: 0,
+                    frontSkill: "Cold Lance", backSkill: "Cold Lance"
+                },
+                "+2": {
+                    patk: 0, pdef: 0, matk: 244, mdef: 0, crit: 12, hit: 44, eva: 0,
+                    frontSkill: "Stone Claw", backSkill: "Stone Claw"
+                },
+                "+3": {
+                    patk: 0, pdef: 0, matk: 316, mdef: 0, crit: 12, hit: 44, eva: 0,
+                    frontSkill: "Thunder Arrow", backSkill: "Thunder Arrow"
+                }
+            },
+            devCost: 32400, levelRequired: 56, tier: 3, recipe: [
+                {
+                    materialName: "Ebony Branch",
+                    amount: 4
+                },{
+                    materialName: "Full Moon Fragment",
+                    amount: 3
+                }
+            ]
+        }
+    ]
+
 
 };
