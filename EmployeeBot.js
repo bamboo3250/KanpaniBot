@@ -41,6 +41,7 @@ var equipCommand = require('./commands/EquipCommand');
 var reportCommand = require('./commands/ReportCommand');
 var setDailyGiftCommand = require('./commands/SetDailyGiftCommand');
 var dailyGiftCommand = require('./commands/DailyGiftCommand');
+var effectCommand = require('./commands/EffectCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -322,6 +323,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         reportCommand.handle(message, this);
         setDailyGiftCommand.handle(message, this);
         dailyGiftCommand.handle(message, this);
+        effectCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -535,12 +537,13 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
                 var endTime = that.runQuestStatus[userId].endTime;
                 var now = new Date();
                 var remainingTime = endTime - now.valueOf();
+                var time = that.functionHelper.parseTime(remainingTime);
                 var bread = -1;
                 if (typeof that.runQuestStatus[userId].bread != "undefined") {
                     bread = that.runQuestStatus[userId].bread;
                 }
                 grindCommand.runQuest(that, questName, bread, member.user, false, remainingTime);
-                text += "Resume quest " + questName + " for player " + member.user.username + ". Remaining Time: " + remainingTime + "\n";
+                text += "Resume quest " + questName + " for player " + member.user.username + " (Bread: " + bread + "). Remaining Time: " + time + "\n";
             }
         }
         if (text != "") that.log(text);
