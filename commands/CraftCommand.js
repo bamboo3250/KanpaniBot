@@ -99,7 +99,7 @@ module.exports = {
         if (equipmentResult.tier == 2) {
             distribution = [55, 35, 9, 1];
         } else if (equipmentResult.tier == 3) {
-            distribution = [200, 160, 39, 1];
+            distribution = [100, 60, 39, 1];
         } 
 
         // Hammer effect
