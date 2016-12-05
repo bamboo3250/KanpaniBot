@@ -175,15 +175,15 @@ module.exports = {
                     });
                 });
             });
-            if (userId && quest) {
-                var thisUser = bot.userManager.getUser(userId);
-                if (thisUser) {
-                    bot.log(thisUser.username + " " + quest.commonNames[0] + " finished " + (new Date()));        
-                } else {
-                    bot.log("User of " + userId + " is null.");   
-                }
+            // if (userId && quest) {
+            //     var thisUser = bot.userManager.getUser(userId);
+            //     if (thisUser) {
+            //         bot.log(thisUser.username + " " + quest.commonNames[0] + " finished " + (new Date()));        
+            //     } else {
+            //         bot.log("User of " + userId + " is null.");   
+            //     }
                 
-            }
+            // }
             
         }, timeInMillis);
 
@@ -255,7 +255,7 @@ module.exports = {
         bot.runQuestStatus[userId].endTime = now.valueOf() + timeCost * 1000;
         bot.runQuestStatus[userId].bread = breadNeeded;
         bot.saveRunQuestStatus();
-        bot.log(message.author.username + " " + text + " " + (new Date()));
+        // bot.log(message.author.username + " " + text + " " + (new Date()));
 
         this.runQuest(bot, questName, breadNeeded, message.author, message, timeCost * 1000);
     }
