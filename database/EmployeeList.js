@@ -220,7 +220,7 @@ var employees = [
         baseStats: { _str: 1, _vit: 4, _agi: 27, _dex: 30, _int: 6, _pie: 1, _luk: 8},
         maxStats: { _str: 162, _vit: 209, _agi: 388, _dex: 460, _int: 159, _pie: 160, _luk: 174}
     },{
-        _no: 1, _id: "10349001_eea406c9", fullName: "[Apprentice of The Spirit] Liliana Bartek", japaneseName: "[精霊の熾徒]リリアナ・バールテク", commonNames: ["Ex Liliana"], cwId: 1,
+        _no: 1, _id: "10349001_eea406c9", fullName: "[Apprentice of The Spirit] Liliana Bartek", japaneseName: "[精霊の熾徒]リリアナ・バールテク", commonNames: ["Ex Liliana", "Liliana EX"], cwId: 1,
         baseStats: { _str: 9, _vit: 6, _agi: 28, _dex: 38, _int: 4, _pie: 5, _luk: 6},
         maxStats: { _str: 162, _vit: 209, _agi: 388, _dex: 460, _int: 159, _pie: 160, _luk: 174}
     },
@@ -254,7 +254,7 @@ var employees = [
         baseStats: { _str: 14, _vit: 31, _agi: 8, _dex: 10, _int: 9, _pie: 4, _luk: 4},
         maxStats: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161}
     },{
-        _no: 5, _id: "10449001_36677def", fullName: "[The Quiet Blue Flame] Luna Diana", japaneseName: "[静かなる蒼炎] ルーナ・ディアーナ", commonNames: ["Ex Luna"], cwId: 1,
+        _no: 5, _id: "10449001_36677def", fullName: "[The Quiet Blue Flame] Luna Diana", japaneseName: "[静かなる蒼炎] ルーナ・ディアーナ", commonNames: ["Ex Luna", "Luna EX"], cwId: 1,
         baseStats: { _str: 20, _vit: 50, _agi: 12, _dex: 10, _int: 1, _pie: 10, _luk: 1},
         maxStats: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161}
     },
@@ -370,7 +370,7 @@ var employees = [
         baseStats: { _str: 3, _vit: 1, _agi: 22, _dex: 14, _int: 32, _pie: 8, _luk: 5},
         maxStats: { _str: 153, _vit: 153, _agi: 234, _dex: 247, _int: 477, _pie: 233, _luk: 216}
     },{
-        _no: 4, _id: "10849001_49dac68d", fullName: "Aurora Hard", japaneseName: "アウロラ・ホード", commonNames: ["Ex Aurora"], cwId: 1,
+        _no: 4, _id: "10849001_49dac68d", fullName: "Aurora Hard", japaneseName: "アウロラ・ホード", commonNames: ["Ex Aurora", "Aurora EX"], cwId: 1,
         baseStats: { _str: 4, _vit: 6, _agi: 14, _dex: 14, _int: 34, _pie: 8, _luk: 5},
         maxStats: { _str: 153, _vit: 153, _agi: 234, _dex: 247, _int: 477, _pie: 233, _luk: 216}
     },
@@ -454,7 +454,7 @@ var employees = [
         baseStats: { _str: 17, _vit: 7, _agi: 13, _dex: 9, _int: 2, _pie: 2, _luk: 4},
         maxStats: { _str: 359, _vit: 245, _agi: 328, _dex: 253, _int: 149, _pie: 158, _luk: 205}
     },{
-        _no: 3, _id: "10239001_c7e95cf6", fullName: "Aoi Shimon", japaneseName: "アオイ・シモン", commonNames: ["Ex Aoi"], cwId: 1,
+        _no: 3, _id: "10239001_c7e95cf6", fullName: "Aoi Shimon", japaneseName: "アオイ・シモン", commonNames: ["Ex Aoi", "Aoi EX"], cwId: 1,
         baseStats: { _str: 20, _vit: 6, _agi: 16, _dex: 10, _int: 4, _pie: 2, _luk: 4},
         maxStats: { _str: 359, _vit: 245, _agi: 328, _dex: 253, _int: 149, _pie: 158, _luk: 205}
     },
@@ -614,7 +614,7 @@ var employees = [
         baseStats: { _str: 5, _vit: 9, _agi: 7, _dex: 5, _int: 6, _pie: 17, _luk: 4},
         maxStats: { _str: 160, _vit: 238, _agi: 207, _dex: 218, _int: 280, _pie: 386, _luk: 205}
     },{
-        _no: 2, _id: "10639001_ed7dca28", fullName: "[The God's Last Child] Tina Grenville", japaneseName: "[神の末子] ティナ・グレンヴィル", commonNames: ["Ex Tina"], cwId: 1,
+        _no: 2, _id: "10639001_ed7dca28", fullName: "[The God's Last Child] Tina Grenville", japaneseName: "[神の末子] ティナ・グレンヴィル", commonNames: ["Ex Tina", "Tina EX"], cwId: 1,
         baseStats: { _str: 6, _vit: 9, _agi: 9, _dex: 5, _int: 7, _pie: 21, _luk: 6},
         maxStats: { _str: 160, _vit: 238, _agi: 207, _dex: 218, _int: 280, _pie: 386, _luk: 205}
     },
