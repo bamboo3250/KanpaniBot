@@ -913,6 +913,102 @@ var quests = [
     },
 
     {
+        commonNames: ["1-10-1", "10-1"], name: "Comrade in Arms", 
+        levelRequired: 56, timeCost: 65, goldCost: 0, breadCost: 1, 
+        goldReward: 1310, breadReward: 0, exp: 4803, advantage: [1], numItemDrop: 30,
+        dropList: [
+            "Crescent Moon Fragment",
+            "Full Moon Fragment",
+            "Half Moon Fragment",
+            "Crystal",
+            "Emerald",
+            "Diamond",
+            "Rose Quartz"
+        ]
+    },{
+        commonNames: ["1-10-2", "10-2"], name: "Ann's Bracelet", 
+        levelRequired: 56, timeCost: 65, goldCost: 0, breadCost: 1, 
+        goldReward: 1330, breadReward: 0, exp: 4843, advantage: [6, 8], numItemDrop: 30,
+        dropList: [
+            "Evergreen Oak Branch", 
+            "Maple Branch", 
+            "Ebony Branch", 
+            "Ominous Cloth", 
+            "Ruby", 
+            "Black Pearl", 
+            "Lapis Lazuli", 
+            "Rose Quartz"
+        ]
+    },{
+        commonNames: ["1-10-3", "10-3"], name: "Work Abroad", 
+        levelRequired: 57, timeCost: 65, goldCost: 0, breadCost: 1, 
+        goldReward: 1350, breadReward: 0, exp: 5174, advantage: [3], numItemDrop: 30,
+        dropList: [
+            "Clear Water", 
+            "Garnet", 
+            "Luxurious Leather", 
+            "Onyx", 
+            "Shimmering Water"
+        ]
+    },{
+        commonNames: ["1-10-4", "10-4"], name: "Employee Dispatch", 
+        levelRequired: 57, timeCost: 65, goldCost: 0, breadCost: 1, 
+        goldReward: 1370, breadReward: 0, exp: 5478, advantage: [5], numItemDrop: 30,
+        dropList: [
+            "Aquamarine", 
+            "Black Pearl", 
+            "Diamond", 
+            "Ebony Branch", 
+            "Gold Ore", 
+            "Iron Ore", 
+            "Chimera Horn", 
+            "Luxurious Leather", 
+            "Silver Ore", 
+            "Rose Quartz"
+        ]
+    },{
+        commonNames: ["1-10-5", "10-5"], name: "Reunion", 
+        levelRequired: 58, timeCost: 65, goldCost: 0, breadCost: 1, 
+        goldReward: 1390, breadReward: 0, exp: 5639, advantage: [4], numItemDrop: 30,
+        dropList: [
+            "Emerald", 
+            "Hard Leather", 
+            "Lapis Lazuli", 
+            "Luxurious Leather", 
+            "Magical Water", 
+            "Rose Quartz", 
+            "Tanned Leather", 
+            "Topaz"
+        ]
+    },{
+        commonNames: ["1-10-6", "10-6"], name: "Magical Crystal", 
+        levelRequired: 59, timeCost: 65, goldCost: 0, breadCost: 1, 
+        goldReward: 1410, breadReward: 0, exp: 5041, advantage: [2], numItemDrop: 30,
+        dropList: [
+            "Chimera Horn", 
+            "Unicorn Horn", 
+            "Turquoise",
+            "Black Pearl",
+            "Diamond",
+            "Garnet"
+        ]
+    },{
+        commonNames: ["1-10-7", "10-7"], name: "Transfer Portal", 
+        levelRequired: 60, timeCost: 65, goldCost: 0, breadCost: 1, 
+        goldReward: 1430, breadReward: 0, exp: 5428, advantage: [7, 8], numItemDrop: 20,
+        dropList: [
+            "Full Moon Fragment", 
+            "Diamond", 
+            "Emerald", 
+            "Lapis Lazuli", 
+            "Beautiful Cloth", 
+            "Luxurious Cloth", 
+            "Ominous Cloth", 
+            "Rose Quartz"
+        ]
+    },
+
+    {
         commonNames: ["", ""], name: "", 
         levelRequired: 1, timeCost: 0, goldCost: 0, breadCost: 1, 
         goldReward: 0, breadReward: 0, exp: 0, advantage: [], numItemDrop: 0,
