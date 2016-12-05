@@ -108,10 +108,7 @@ module.exports = {
                 var itemName = key;
                 itemNameList.push(itemName);
                 backupItemDropText += itemName + " x" + drop[itemName] + "\n";
-                if (typeof player.materialList[itemName] === "undefined") {
-                    player.materialList[itemName] = 0;
-                }
-                player.materialList[itemName] += drop[itemName];
+                bot.playerManager.addItem(userId, itemName, drop[itemName]);
             }
             bot.savePlayer();
 
