@@ -1,11 +1,12 @@
 var Employee = require('../classes/Employee');
 
-function hasEnoughMaterial(player, recipe) {
+function hasEnoughMaterial(player, recipe, hasForgeEffect) {
     var hasEnough = true;
     for(var i=0;i<recipe.length;i++) {
         var materialAmount = player.materialList[recipe[i].materialName];
         if (typeof materialAmount === "undefined") return false;
-        if (materialAmount < recipe[i].amount) return false;        
+        var amountNeed = Math.ceil(recipe[i].amount * (hasForgeEffect?0.5:1));
+        if (materialAmount < amountNeed) return false;        
     }
     return true;
 }
@@ -69,16 +70,21 @@ module.exports = {
             return;
         }
 
-        if (player.gold < equipmentResult.devCost) {
-            message.reply("You need **" + equipmentResult.devCost + " Gold** to craft this equipment!");
+        var hasForgeEffect = (typeof bot.forgeEffect[userId] !== "undefined" && bot.forgeEffect[userId].itemName !== "");
+        var modifier = (hasForgeEffect?0.5:1);
+        var goldNeeded = Math.ceil(equipmentResult.devCost * (hasForgeEffect?0.5:1));
+
+        if (player.gold < goldNeeded) {
+            message.reply("You need **" + goldNeeded + " Gold** to craft this equipment!");
             return;
         }
 
-        if (!hasEnoughMaterial(player, equipmentResult.recipe)) {
+        if (!hasEnoughMaterial(player, equipmentResult.recipe, hasForgeEffect)) {
             var text = "You don't have enough material! The recipe requires:\n";
             for(var i=0;i<equipmentResult.recipe.length;i++) {
                 var materialName = equipmentResult.recipe[i].materialName;
-                text += equipmentResult.recipe[i].amount + " " + materialName;
+                var amountNeed = Math.ceil(equipmentResult.recipe[i].amount * modifier);
+                text += amountNeed + " " + materialName;
                 var playerMaterialAmount = 0;
                 if (typeof player.materialList[materialName] != "undefined") {
                     playerMaterialAmount = player.materialList[materialName];
@@ -95,6 +101,17 @@ module.exports = {
         } else if (equipmentResult.tier == 3) {
             distribution = [200, 160, 39, 1];
         } 
+
+        // Hammer effect
+        if (typeof bot.hammerEffect[userId] !== "undefined" && bot.hammerEffect[userId].itemName !== "") {
+            var hammerName = bot.hammerEffect[userId].itemName;
+            if (category === "wp" && (hammerName === "1st Anni. W. Hammer")) {
+                distribution[0] = 0;
+            } else if (category === "acc" && (hammerName === "1st Anni. Acc. Hammer")) {
+                distribution[0] = 0;
+            }
+        }
+
         var plus = bot.functionHelper.randomDist(distribution);
 
         var equipmentUrl = bot.urlHelper.getEquipmentIconUrl(equipmentResult._id, plus);
@@ -119,12 +136,12 @@ module.exports = {
                 var text = "You have used ";
                 for(var i=0;i<equipmentResult.recipe.length;i++) {
                     var materialName = equipmentResult.recipe[i].materialName;
-                    var amount = equipmentResult.recipe[i].amount;
-                    text += "**" + amount + " " + materialName + "**";
+                    var amountNeed = Math.ceil(equipmentResult.recipe[i].amount * modifier);
+                    text += "**" + amountNeed + " " + materialName + "**";
                     if (i < equipmentResult.recipe.length-1) text += ", "
                 }
                 if (equipmentResult.recipe.length > 0) text += " and ";
-                text += "**" + equipmentResult.devCost + " Gold**.\n";
+                text += "**" + goldNeeded + " Gold**.\n";
                 var equipmentName = "";
                 if (category == "wp") {
                     equipmentName = equipmentResult.weaponName;
@@ -145,10 +162,10 @@ module.exports = {
                                 if (hasEnoughMaterial(player, equipmentResult.recipe)) {
                                     for(var i=0;i<equipmentResult.recipe.length;i++) {
                                         var materialName = equipmentResult.recipe[i].materialName;
-                                        var amount = equipmentResult.recipe[i].amount;
-                                        bot.playerManager.spendItem(userId, materialName, amount);
+                                        var amountNeed = Math.ceil(equipmentResult.recipe[i].amount * modifier);
+                                        bot.playerManager.spendItem(userId, materialName, amountNeed);
                                     }
-                                    bot.playerManager.spendGold(userId, equipmentResult.devCost);
+                                    bot.playerManager.spendGold(userId, goldNeeded);
                                     if (category === "wp") {
                                         bot.playerManager.addWeapon(userId, equipmentResult._id, plus);    
                                     } else if (category === "ar") {

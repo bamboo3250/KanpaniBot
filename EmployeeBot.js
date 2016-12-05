@@ -159,6 +159,8 @@ function EmployeeBot() {
     this.runQuestStatus = {};
     this.freeMe = {};
     this.mailboxEffect = {};
+    this.hammerEffect = {};
+    this.forgeEffect = {};
 
     this.logChannel = null;
 
