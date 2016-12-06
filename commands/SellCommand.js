@@ -2,6 +2,10 @@ module.exports = {
     handle: function(message, bot) {
         var command = message.content.trim().toLowerCase();
         if (!command.startsWith("~sell ")) return;
+        if (!bot.isPM(message)) {
+            message.reply("You can only sell items in Private Message.");
+            return;
+        }
 
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
