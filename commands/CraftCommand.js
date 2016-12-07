@@ -105,9 +105,11 @@ module.exports = {
         // Hammer effect
         if (typeof bot.hammerEffect[userId] !== "undefined" && bot.hammerEffect[userId].itemName !== "") {
             var hammerName = bot.hammerEffect[userId].itemName;
-            if (category === "wp" && (hammerName === "1st Anni. W. Hammer")) {
+            if (category === "wp" && (hammerName === "1st Anni. W. Hammer" || hammerName === "Weapon Hammer")) {
                 distribution[0] = 0;
-            } else if (category === "acc" && (hammerName === "1st Anni. Acc. Hammer")) {
+            } else if (category === "ar" && (hammerName === "Armor Hammer")) {
+                distribution[0] = 0;
+            } else if (category === "acc" && (hammerName === "1st Anni. Acc. Hammer" || hammerName === "Accessory Hammer")) {
                 distribution[0] = 0;
             }
         }
@@ -159,7 +161,7 @@ module.exports = {
                         setTimeout(function() {
                             message.channel.sendMessage("Kan...");
                             setTimeout(function() {
-                                if (hasEnoughMaterial(player, equipmentResult.recipe)) {
+                                if (hasEnoughMaterial(player, equipmentResult.recipe, hasForgeEffect)) {
                                     for(var i=0;i<equipmentResult.recipe.length;i++) {
                                         var materialName = equipmentResult.recipe[i].materialName;
                                         var amountNeed = Math.ceil(equipmentResult.recipe[i].amount * modifier);

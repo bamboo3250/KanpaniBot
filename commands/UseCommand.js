@@ -16,7 +16,10 @@ function isMailbox(itemName) {
 function isHammer(itemName) {
     var itemListList = [
         "1st Anni. W. Hammer",
-        "1st Anni. Acc. Hammer"
+        "1st Anni. Acc. Hammer",
+        "Weapon Hammer",
+        "Armor Hammer",
+        "Accessory Hammer"
     ];
     return contains(itemListList, itemName);
 }

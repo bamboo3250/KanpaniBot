@@ -173,7 +173,17 @@ var itemInfos = [
         _id: "19101001_1", itemName: "Gold Mailbox", price: 0
     },{
         _id: "19101002_1", itemName: "Silver Mailbox", price: 0
+    },
+
+    {
+        _id: "50003101_1", itemName: "Accessory Hammer", price: 0
+    },{
+        _id: "50003102_1", itemName: "Weapon Hammer", price: 0
+    },{
+        _id: "50003103_1", itemName: "Armor Hammer", price: 0
     }
+
+
 ];
 
 module.exports = itemInfos;
