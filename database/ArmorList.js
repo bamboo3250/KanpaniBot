@@ -2045,7 +2045,186 @@ module.exports = {
                 }
             ]
         }
-    ]
+    ],
 
+    "labyrinth": [
+        {
+            _id: "3101140", armorName: "Labyrinth Mail", commonNames: ["Labyrinth Mail"],
+            classId: 1, type: "story", element: "", stats: {
+                "+0": {
+                    patk: 0, pdef: 55, matk: 0, mdef: 55, crit: 0, hit: 8, eva: 8
+                },
+                "+1": {
+                    patk: 0, pdef: 85, matk: 0, mdef: 85, crit: 0, hit: 18, eva: 18
+                },
+                "+2": {
+                    patk: 0, pdef: 125, matk: 0, mdef: 125, crit: 0, hit: 27, eva: 27
+                },
+                "+3": {
+                    patk: 0, pdef: 150, matk: 0, mdef: 150, crit: 0, hit: 35, eva: 40
+                }
+            },
+            devCost: 20000, levelRequired: 60, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3102140", armorName: "Labyrinth Armor", commonNames: ["Labyrinth Armor"],
+            classId: 2, type: "story", element: "", stats: {
+                "+0": {
+                    patk: 0, pdef: 43, matk: 0, mdef: 32, crit: 10, hit: 0, eva: 15
+                },
+                "+1": {
+                    patk: 0, pdef: 70, matk: 0, mdef: 58, crit: 35, hit: 0, eva: 35
+                },
+                "+2": {
+                    patk: 0, pdef: 130, matk: 0, mdef: 90, crit: 60, hit: 0, eva: 62
+                },
+                "+3": {
+                    patk: 0, pdef: 172, matk: 0, mdef: 112, crit: 85, hit: 0, eva: 90
+                }
+            },
+            devCost: 20000, levelRequired: 60, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3103140", armorName: "Labyrinth Plate", commonNames: ["Labyrinth Plate"],
+            classId: 3, type: "story", element: "", stats: {
+                "+0": {
+                    patk: 0, pdef: 34, matk: 0, mdef: 34, crit: 0, hit: 10, eva: 16
+                },
+                "+1": {
+                    patk: 0, pdef: 63, matk: 0, mdef: 45, crit: 0, hit: 15, eva: 15
+                },
+                "+2": {
+                    patk: 0, pdef: 92, matk: 0, mdef: 56, crit: 0, hit: 20, eva: 25
+                },
+                "+3": {
+                    patk: 0, pdef: 115, matk: 0, mdef: 70, crit: 0, hit: 37, eva: 35
+                }
+            },
+            devCost: 20000, levelRequired: 60, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3104140", armorName: "Labyrinth Helm", commonNames: ["Labyrinth Helm"],
+            classId: 4, type: "story", element: "", stats: {
+                "+0": {
+                    patk: 0, pdef: 85, matk: 0, mdef: 56, crit: 0, hit: 0, eva: 11
+                },
+                "+1": {
+                    patk: 0, pdef: 103, matk: 0, mdef: 64, crit: 0, hit: 35, eva: 19
+                },
+                "+2": {
+                    patk: 0, pdef: 135, matk: 0, mdef: 85, crit: 0, hit: 73, eva: 25
+                },
+                "+3": {
+                    patk: 0, pdef: 160, matk: 0, mdef: 92, crit: 0, hit: 85, eva: 28
+                }
+            },
+            devCost: 20000, levelRequired: 60, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3105140", armorName: "Labyrinth Belt", commonNames: ["Labyrinth Belt"],
+            classId: 5, type: "story", element: "", stats: {
+                "+0": {
+                    patk: 0, pdef: 55, matk: 0, mdef: 0, crit: 5, hit: 0, eva: 20
+                },
+                "+1": {
+                    patk: 0, pdef: 75, matk: 0, mdef: 25, crit: 18, hit: 0, eva: 20
+                },
+                "+2": {
+                    patk: 0, pdef: 125, matk: 0, mdef: 45, crit: 36, hit: 0, eva: 30
+                },
+                "+3": {
+                    patk: 0, pdef: 150, matk: 0, mdef: 55, crit: 48, hit: 0, eva: 45
+                }
+            },
+            devCost: 20000, levelRequired: 60, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3106140", armorName: "Labyrinth Veil", commonNames: ["Labyrinth Veil"],
+            classId: 6, type: "story", element: "", stats: {
+                "+0": {
+                    patk: 0, pdef: 32, matk: 0, mdef: 73, crit: 0, hit: 0, eva: 10
+                },
+                "+1": {
+                    patk: 0, pdef: 45, matk: 0, mdef: 105, crit: 0, hit: 0, eva: 25
+                },
+                "+2": {
+                    patk: 0, pdef: 63, matk: 0, mdef: 150, crit: 0, hit: 0, eva: 54
+                },
+                "+3": {
+                    patk: 0, pdef: 75, matk: 0, mdef: 174, crit: 0, hit: 0, eva: 65
+                }
+            },
+            devCost: 20000, levelRequired: 60, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3107140", armorName: "Labyrinth Gauntlets", commonNames: ["Labyrinth Gauntlets"],
+            classId: 7, type: "story", element: "", stats: {
+                "+0": {
+                    patk: 0, pdef: 32, matk: 0, mdef: 32, crit: 0, hit: 0, eva: 12
+                },
+                "+1": {
+                    patk: 0, pdef: 49, matk: 0, mdef: 47, crit: 0, hit: 0, eva: 30
+                },
+                "+2": {
+                    patk: 0, pdef: 74, matk: 0, mdef: 73, crit: 0, hit: 0, eva: 46
+                },
+                "+3": {
+                    patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 0, hit: 0, eva: 55
+                }
+            },
+            devCost: 20000, levelRequired: 60, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3108140", armorName: "Labyrinth Hat", commonNames: ["Labyrinth Hat"],
+            classId: 8, type: "story", element: "", stats: {
+                "+0": {
+                    patk: 0, pdef: 22, matk: 0, mdef: 62, crit: 0, hit: 0, eva: 8
+                },
+                "+1": {
+                    patk: 0, pdef: 30, matk: 0, mdef: 94, crit: 0, hit: 0, eva: 20
+                },
+                "+2": {
+                    patk: 0, pdef: 41, matk: 0, mdef: 149, crit: 0, hit: 0, eva: 35
+                },
+                "+3": {
+                    patk: 0, pdef: 50, matk: 0, mdef: 190, crit: 0, hit: 0, eva: 45
+                }
+            },
+            devCost: 20000, levelRequired: 60, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        }
+    ]
 
 };
