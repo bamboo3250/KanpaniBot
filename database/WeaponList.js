@@ -2604,6 +2604,218 @@ module.exports = {
                 }
             ]
         }
+    ],
+
+    "labyrinth": [
+        {
+            _id: "340100", modelId: "07", weaponName: "Labyrinth Blade", commonNames: ["Labyrinth Blade"],
+            classId: 1, type: "story", stats: {
+                "+0": {
+                    patk: 59, pdef: 49, matk: 0, mdef: 62, crit: 8, hit: 16, eva: 0,
+                    frontSkill: "Power Slash", backSkill: "V Slash"
+                },
+                "+1": {
+                    patk: 79, pdef: 69, matk: 0, mdef: 82, crit: 8, hit: 16, eva: 0,
+                    frontSkill: "Double Slash", backSkill: "V Slash"
+                },
+                "+2": {
+                    patk: 101, pdef: 83, matk: 0, mdef: 102, crit: 8, hit: 16, eva: 0,
+                    frontSkill: "Flame Edge", backSkill: "Cross Edge"
+                },
+                "+3": {
+                    patk: 170, pdef: 140, matk: 0, mdef: 168, crit: 12, hit: 24, eva: 0,
+                    frontSkill: "Holy Scourge", backSkill: "Cross Edge"
+                }
+            },
+            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "340200", modelId: "07", weaponName: "Meikyuyoha", commonNames: ["Meikyuyoha"],
+            classId: 2, type: "story", stats: {
+                "+0": {
+                    patk: 112, pdef: 0, matk: 0, mdef: 0, crit: 21, hit: 21, eva: 0,
+                    frontSkill: "Helmet Splitter", backSkill: "Cleave"
+                },
+                "+1": {
+                    patk: 143, pdef: 0, matk: 0, mdef: 0, crit: 21, hit: 21, eva: 0,
+                    frontSkill: "Iaido Slash", backSkill: "Cleave"
+                },
+                "+2": {
+                    patk: 175, pdef: 0, matk: 0, mdef: 0, crit: 21, hit: 21, eva: 0,
+                    frontSkill: "100 Demon Slayer", backSkill: "Heavenly Sword"
+                },
+                "+3": {
+                    patk: 283, pdef: 0, matk: 0, mdef: 0, crit: 21, hit: 21, eva: 0,
+                    frontSkill: "Secret Blade Maiyasha", backSkill: "Heavenly Sword"
+                }
+            },
+            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "340300", modelId: "07", weaponName: "Labyrinth Arrow", commonNames: ["Labyrinth Arrow"],
+            classId: 3, type: "story", stats: {
+                "+0": {
+                    patk: 80, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 30, eva: 0,
+                    frontSkill: "Twin Shot", backSkill: "Chain Shot"
+                },
+                "+1": {
+                    patk: 121, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 30, eva: 0,
+                    frontSkill: "Triple Shot", backSkill: "Charge Arrow"
+                },
+                "+2": {
+                    patk: 153, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 30, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Spread Shot"
+                },
+                "+3": {
+                    patk: 252, pdef: 0, matk: 0, mdef: 0, crit: 6, hit: 40, eva: 0,
+                    frontSkill: "Charge Arrow", backSkill: "Spread Shot"
+                }
+            },
+            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "340400", modelId: "07", weaponName: "Labyrinth Halberd", commonNames: ["Labyrinth Halberd"],
+            classId: 4, type: "story", stats: {
+                "+0": {
+                    patk: 27, pdef: 68, matk: 0, mdef: 0, crit: 3, hit: 13, eva: 0,
+                    frontSkill: "Double Dragon Strike", backSkill: "Spear Jab"
+                },
+                "+1": {
+                    patk: 28, pdef: 97, matk: 0, mdef: 0, crit: 3, hit: 13, eva: 0,
+                    frontSkill: "Cyclone", backSkill: "Spear Jab"
+                },
+                "+2": {
+                    patk: 47, pdef: 129, matk: 0, mdef: 0, crit: 5, hit: 19, eva: 0,
+                    frontSkill: "Guren Spear", backSkill: "Double Strike"
+                },
+                "+3": {
+                    patk: 83, pdef: 235, matk: 0, mdef: 0, crit: 5, hit: 21, eva: 0,
+                    frontSkill: "Pale Moonlight", backSkill: "Double Strike"
+                }
+            },
+            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "340500", modelId: "07", weaponName: "Labyrinth Axe", commonNames: ["Labyrinth Axe"],
+            classId: 5, type: "story", stats: {
+                "+0": {
+                    patk: 149, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 12, eva: 0,
+                    frontSkill: "Force Impact", backSkill: "Swing"
+                },
+                "+1": {
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 12, eva: 0,
+                    frontSkill: "War Rage", backSkill: "Swing"
+                },
+                "+2": {
+                    patk: 261, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 12, eva: 0,
+                    frontSkill: "Grand Down", backSkill: "Swing"
+                },
+                "+3": {
+                    patk: 430, pdef: 0, matk: 0, mdef: 0, crit: 27, hit: 21, eva: 0,
+                    frontSkill: "Dimension", backSkill: "Swing"
+                }
+            },
+            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "340600", modelId: "07", weaponName: "Labyrinth Mace", commonNames: ["Labyrinth Mace"],
+            classId: 6, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 28, matk: 72, mdef: 28, crit: 10, hit: 37, eva: 0,
+                    frontSkill: "Knock", backSkill: "Prayer"
+                },
+                "+1": {
+                    patk: 0, pdef: 39, matk: 98, mdef: 39, crit: 10, hit: 37, eva: 0,
+                    frontSkill: "Knock", backSkill: "Prayer"
+                },
+                "+2": {
+                    patk: 0, pdef: 50, matk: 125, mdef: 50, crit: 10, hit: 37, eva: 0,
+                    frontSkill: "Knock", backSkill: "Prayer"
+                },
+                "+3": {
+                    patk: 0, pdef: 70, matk: 164, mdef: 70, crit: 16, hit: 50, eva: 0,
+                    frontSkill: "Knock", backSkill: "Healing Light"
+                }
+            },
+            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "340700", modelId: "07", weaponName: "Labyrinth Dualblades", commonNames: ["Labyrinth Dualblades"],
+            classId: 7, type: "story", stats: {
+                "+0": {
+                    patk: 66, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 21, eva: 39,
+                    frontSkill: "Shadow Run", backSkill: "Throwing Knife"
+                },
+                "+1": {
+                    patk: 87, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 26, eva: 39,
+                    frontSkill: "Crouching Tiger Formation", backSkill: "Throwing Knife"
+                },
+                "+2": {
+                    patk: 88, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 30, eva: 39,
+                    frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
+                },
+                "+3": {
+                    patk: 188, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 51, eva: 51,
+                    frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
+                }
+            },
+            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "340800", modelId: "07", weaponName: "Labyrinth Wand", commonNames: ["Labyrinth Wand"],
+            classId: 8, type: "story", stats: {
+                "+0": {
+                    patk: 0, pdef: 0, matk: 83, mdef: 0, crit: 9, hit: 24, eva: 0,
+                    frontSkill: "Flame Field", backSkill: "Flame Field"
+                },
+                "+1": {
+                    patk: 0, pdef: 0, matk: 112, mdef: 0, crit: 9, hit: 24, eva: 0,
+                    frontSkill: "Ice Strike", backSkill: "Ice Strike"
+                },
+                "+2": {
+                    patk: 0, pdef: 0, matk: 146, mdef: 0, crit: 9, hit: 24, eva: 0,
+                    frontSkill: "Tornado", backSkill: "Tornado"
+                },
+                "+3": {
+                    patk: 0, pdef: 0, matk: 183, mdef: 0, crit: 12, hit: 38, eva: 0,
+                    frontSkill: "Blizzard", backSkill: "Blizzard"
+                }
+            },
+            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
+                }
+            ]
+        }
     ]
 
 
