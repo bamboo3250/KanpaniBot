@@ -6,7 +6,7 @@ function AccessoryDatabase() {
 
 function hasName(accessory, name) {
     var lowerCaseName = name.toLowerCase();
-    // if (accessory.accessoryName.toLowerCase() == lowerCaseName) return true;
+    if (accessory.accessoryName.toLowerCase() == lowerCaseName) return true;
     for(var i=0;i<accessory.commonNames.length;i++) {
         if (accessory.commonNames[i].toLowerCase() == lowerCaseName) return true;
     }

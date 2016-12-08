@@ -50,7 +50,7 @@ PlayerManager.prototype.removeArmor = function(userId, armorId, plus, amount = 1
     if (amount <= 0) return;
     if (typeof player.armorList[armorId] === "undefined") return;
     
-    player.weaponList[armorId]["+"+plus] = Math.max(0, player.weaponList[armorId]["+"+plus] - amount);
+    player.armorList[armorId]["+"+plus] = Math.max(0, player.armorList[armorId]["+"+plus] - amount);
 }
 
 PlayerManager.prototype.removeAccessory = function(userId, accessoryId, plus, amount = 1) {

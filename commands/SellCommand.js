@@ -3,19 +3,19 @@ function parseCommand(args) {
     var itemPlus = 0;
 
     itemName = "";
-    for(var i=2;i<args.length + (commandArgs[commandArgs.length-1].startsWith("+")?-1:0);i++) itemName += args[i] + " ";
+    for(var i=2;i<args.length + (args[args.length-1].startsWith("+")?-1:0);i++) itemName += args[i] + " ";
     itemName = itemName.trim();
         
     if (args.length > 3) {
-        plus = commandArgs[commandArgs.length-1];
-        if (!plus.startsWith("+")) {
-            plus = 0;
+        itemPlus = args[args.length-1];
+        if (!itemPlus.startsWith("+")) {
+            itemPlus = 0;
         } else {
-            plus = plus.substring(1);
-            if (isNaN(plus)) {
-                plus = 0;
+            itemPlus = itemPlus.substring(1);
+            if (isNaN(itemPlus)) {
+                itemPlus = 0;
             } else {
-                plus = parseInt(plus);
+                itemPlus = parseInt(itemPlus);
             }
         }
     }
@@ -99,35 +99,35 @@ module.exports = {
             }
             itemPrice = itemInfo.price;
         } else if (itemType === "weapon") {
-            var amountPlayerHas = (typeof player.weaponList[itemInfo._id] === "undefined"?0:weaponList[itemInfo._id]["+"+parsedItem.itemPlus]);
+            var amountPlayerHas = (typeof player.weaponList[itemInfo._id] === "undefined"?0:player.weaponList[itemInfo._id]["+"+parsedItem.itemPlus]);
             if (amountPlayerHas == 0) {
-                message.reply("You don't have any " + itemName);
+                message.reply("You don't have any " + itemName + " +" + parsedItem.itemPlus);
                 return;
             }
             if (amount > amountPlayerHas) {
-                message.reply("You can't sell more than **" + amountPlayerHas + " " + itemName + "**!");
+                message.reply("You can't sell more than **" + amountPlayerHas + " " + itemName + " +" + parsedItem.itemPlus + "**!");
                 return;
             }
             itemPrice = itemInfo.stats["+"+parsedItem.itemPlus].price;
         } else if (itemType === "armor") {
-            var amountPlayerHas = (typeof player.armorList[itemInfo._id] === "undefined"?0:armorList[itemInfo._id]["+"+parsedItem.itemPlus]);
+            var amountPlayerHas = (typeof player.armorList[itemInfo._id] === "undefined"?0:player.armorList[itemInfo._id]["+"+parsedItem.itemPlus]);
             if (amountPlayerHas == 0) {
-                message.reply("You don't have any " + itemName);
+                message.reply("You don't have any " + itemName + " +" + parsedItem.itemPlus);
                 return;
             }
             if (amount > amountPlayerHas) {
-                message.reply("You can't sell more than **" + amountPlayerHas + " " + itemName + "**!");
+                message.reply("You can't sell more than **" + amountPlayerHas + " " + itemName + " +" + parsedItem.itemPlus + "**!");
                 return;
             }
             itemPrice = itemInfo.stats["+"+parsedItem.itemPlus].price;
         } else if (itemType === "accessory") {
-            var amountPlayerHas = (typeof player.accessoryList[itemInfo._id] === "undefined"?0:accessoryList[itemInfo._id]["+"+parsedItem.itemPlus]);
+            var amountPlayerHas = (typeof player.accessoryList[itemInfo._id] === "undefined"?0:player.accessoryList[itemInfo._id]["+"+parsedItem.itemPlus]);
             if (amountPlayerHas == 0) {
-                message.reply("You don't have any " + itemName);
+                message.reply("You don't have any " + itemName + " +" + parsedItem.itemPlus);
                 return;
             }
             if (amount > amountPlayerHas) {
-                message.reply("You can't sell more than **" + amountPlayerHas + " " + itemName + "**!");
+                message.reply("You can't sell more than **" + amountPlayerHas + " " + itemName + " +" + parsedItem.itemPlus + "**!");
                 return;
             }
             itemPrice = itemInfo.stats["+"+parsedItem.itemPlus].price;
