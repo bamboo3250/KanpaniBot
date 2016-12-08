@@ -446,20 +446,15 @@ EmployeeBot.prototype.loadPlayer = function() {
         // migration
         for(key in that.playerManager.playerDict) {
             var userId = key;
-            if (typeof that.playerManager.playerDict[key].gold === "undefined") {
-                that.playerManager.playerDict[userId].gold = 0;
+            var player = that.playerManager.playerDict[userId];
+            var characterClassId = player.characterId.substring(2,3);
+            if (characterClassId != player.equipedWeapon._id.substring(3,4)) {
+                that.playerManager.unequipWeapon(userId);
+                that.log("Unequip Weapon for " + that.userManager.getUser(userId).username);
             }
-            if (that.playerManager.playerDict[userId].materialList instanceof Array) {
-                that.playerManager.playerDict[userId].materialList = {};
-            }
-            if (that.playerManager.playerDict[userId].weaponList instanceof Array) {
-                that.playerManager.playerDict[userId].weaponList = {};
-            }
-            if (that.playerManager.playerDict[userId].armorList instanceof Array) {
-                that.playerManager.playerDict[userId].armorList = {};
-            }
-            if (that.playerManager.playerDict[userId].accessoryList instanceof Array) {
-                that.playerManager.playerDict[userId].accessoryList = {};
+            if (characterClassId != player.equipedArmor._id.substring(3,4)) {
+                that.playerManager.unequipArmor(userId);
+                that.log("Unequip Armor for " + that.userManager.getUser(userId).username);
             }
         }
     });

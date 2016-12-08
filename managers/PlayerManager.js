@@ -122,16 +122,21 @@ PlayerManager.prototype.equipWeapon = function(userId, weaponId, plus) {
     if (typeof player.weaponList[weaponId]["+" + plus] === "undefined") return;
     if (player.weaponList[weaponId]["+" + plus] <= 0) return;
     
-    if (player.equipedWeapon) {
-        this.addWeapon(userId, player.equipedWeapon._id, player.equipedWeapon.plus);
-        player.equipedWeapon = null;
-    }
-
+    this.unequipWeapon(userId);
     player.equipedWeapon = {
         _id: weaponId,
         plus: plus
     }
     player.weaponList[weaponId]["+" + plus]--;
+}
+
+PlayerManager.prototype.unequipWeapon = function(userId) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (player.equipedWeapon) {
+        this.addWeapon(userId, player.equipedWeapon._id, player.equipedWeapon.plus);
+        player.equipedWeapon = null;
+    }
 }
 
 PlayerManager.prototype.equipArmor = function(userId, armorId, plus) {
@@ -141,16 +146,21 @@ PlayerManager.prototype.equipArmor = function(userId, armorId, plus) {
     if (typeof player.armorList[armorId]["+" + plus] === "undefined") return;
     if (player.armorList[armorId]["+" + plus] <= 0) return;
     
-    if (player.equipedArmor) {
-        this.addArmor(userId, player.equipedArmor._id, player.equipedArmor.plus);
-        player.equipedArmor = null;
-    }
-
+    this.unequipArmor(userId);
     player.equipedArmor = {
         _id: armorId,
         plus: plus
     }
     player.armorList[armorId]["+" + plus]--;
+}
+
+PlayerManager.prototype.unequipArmor = function(userId) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (player.equipedArmor) {
+        this.addArmor(userId, player.equipedArmor._id, player.equipedArmor.plus);
+        player.equipedArmor = null;
+    }
 }
 
 PlayerManager.prototype.equipAccessory = function(userId, accId, plus) {
@@ -160,16 +170,21 @@ PlayerManager.prototype.equipAccessory = function(userId, accId, plus) {
     if (typeof player.accessoryList[accId]["+" + plus] === "undefined") return;
     if (player.accessoryList[accId]["+" + plus] <= 0) return;
     
-    if (player.equipedAccessory) {
-        this.addAccessory(userId, player.equipedAccessory._id, player.equipedAccessory.plus);
-        player.equipedAccessory = null;
-    }
-
+    this.unequipAcccessory(userId);
     player.equipedAccessory = {
         _id: accId,
         plus: plus
     }
     player.accessoryList[accId]["+" + plus]--;
+}
+
+PlayerManager.prototype.unequipAcccessory = function(userId) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (player.equipedAccessory) {
+        this.addAccessory(userId, player.equipedAccessory._id, player.equipedAccessory.plus);
+        player.equipedAccessory = null;
+    }
 }
 
 module.exports = new PlayerManager();

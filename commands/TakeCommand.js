@@ -34,10 +34,14 @@ module.exports = {
             bot.playerManager.addWeapon(userId, player.equipedWeapon._id, player.equipedWeapon.plus);
             player.equipedWeapon = null;
         }
-        // if (player.equipedArmor) {
-        //     player.armorList.push(player.equipedArmor);
-        //     player.equipedArmor = null;
-        // }
+        if (player.equipedArmor) {
+            bot.playerManager.addArmor(userId, player.equipedArmor._id, player.equipedArmor.plus);
+            player.equipedArmor = null;
+        }
+        if (player.equipedAccessory) {
+            bot.playerManager.addAccessory(userId, player.equipedAccessory._id, player.equipedAccessory.plus);
+            player.equipedAccessory = null;
+        }
         bot.savePlayer();
         var employee = new Employee(bot.employeeDatabase.getEmployeeById(bot.rollResult[userId]));
         message.reply("Congratulations! You have selected **" + employee.fullName + "** as your character.");
