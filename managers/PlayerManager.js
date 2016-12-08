@@ -15,7 +15,9 @@ PlayerManager.prototype.createNewPlayer = function(userId) {
         materialList: {},
         weaponList: {},
         armorList: {},
-        accessoryList: {}
+        accessoryList: {},
+        position: "front",
+        partnerId: null
     };
     return this.playerDict[userId];
 }
@@ -185,6 +187,27 @@ PlayerManager.prototype.unequipAcccessory = function(userId) {
         this.addAccessory(userId, player.equipedAccessory._id, player.equipedAccessory.plus);
         player.equipedAccessory = null;
     }
+}
+
+PlayerManager.prototype.setPartner = function(frontPlayerId, backPlayerId) {
+    this.unsetPartner(frontPlayerId);
+    this.unsetPartner(backPlayerId);
+    var frontPlayer = this.getPlayer(frontPlayerId);
+    var backPlayer = this.getPlayer(backPlayerId);
+    if (!frontPlayer || !backPlayer) return;
+    frontPlayer.position = "front";
+    frontPlayer.partnerId = backPlayerId;
+    backPlayer.position = "back";
+    backPlayer.partnerId = frontPlayerId;
+}
+
+PlayerManager.prototype.unsetPartner = function(playerId) {
+    var player = this.getPlayer(playerId);
+    if (!player) return;
+    if (!player.partnerId) return;
+    var partner = this.getPlayer(player.partnerId);
+    player.partnerId = null;
+    partner.partnerId = null;
 }
 
 module.exports = new PlayerManager();

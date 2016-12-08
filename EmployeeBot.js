@@ -42,6 +42,8 @@ var reportCommand = require('./commands/ReportCommand');
 var setDailyGiftCommand = require('./commands/SetDailyGiftCommand');
 var dailyGiftCommand = require('./commands/DailyGiftCommand');
 var effectCommand = require('./commands/EffectCommand');
+var toFrontCommand = require('./commands/ToFrontCommand');
+var toBackCommand = require('./commands/ToBackCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -150,6 +152,7 @@ function EmployeeBot() {
         quantity: 0,
         playerReceived: {}
     };
+    this.pendingPartnerRequest = {};
 
     this.firstTimeReady = true;
     
@@ -324,6 +327,8 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         setDailyGiftCommand.handle(message, this);
         dailyGiftCommand.handle(message, this);
         effectCommand.handle(message, this);
+        toFrontCommand.handle(message, this);
+        toBackCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -455,6 +460,12 @@ EmployeeBot.prototype.loadPlayer = function() {
             if (characterClassId != player.equipedArmor._id.substring(3,4)) {
                 that.playerManager.unequipArmor(userId);
                 that.log("Unequip Armor for " + that.userManager.getUser(userId).username);
+            }
+            if (typeof player.position === "undefined") {
+                player.position = "front";
+            }
+            if (typeof player.partnerId === "undefined") {
+                player.partnerId = null;
             }
         }
     });

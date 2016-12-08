@@ -36,6 +36,24 @@ module.exports = {
         var queue = [
             { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName}
         ];
+
+        var partnerSpriteFileName = null
+        if (player.partnerId) {
+            var partnerWeaponModel = "02";
+            var partner = bot.playerManager.getPlayer(player.partnerId);
+            if (partner.equipedWeapon) {
+                var weapon = bot.weaponDatabase.getWeaponById(partner.equipedWeapon._id);
+                partnerWeaponModel = weapon.modelId;    
+            }
+            var partnerEmployee = bot.createEmployeeFromPlayer(partner);
+            
+            var partnerSpriteUrl = partnerEmployee.getSpriteImageURL(partnerEmployee.getRarity(), true, false, partnerWeaponModel);
+            partnerSpriteFileName = "images/enemy/" + partnerEmployee.getSpriteImageName(partnerEmployee.getRarity(), false, partnerWeaponModel);
+            queue.push({
+                fileToDownload: partnerSpriteUrl,   fileToSave: partnerSpriteFileName      
+            })
+        }
+        
         var weaponFileName = null;
         if (player.equipedWeapon) {
             var weaponId = player.equipedWeapon._id;
@@ -100,6 +118,11 @@ module.exports = {
             } else {
                 fileNameQueue.push(null);
             }
+            if (player.partnerId) {
+                fileNameQueue.push(partnerSpriteFileName);
+            } else {
+                fileNameQueue.push(null);   
+            }
 
             bot.imageHelper.read(fileNameQueue, function (err, imageList) {
                 if (err) {
@@ -116,14 +139,27 @@ module.exports = {
                 var armorImage = imageList[5];
                 var accessoryImage = imageList[6];
 
+                var partnerImage = imageList[7];
+
                 backgroundImage.crop(250,100, 310,270);
                 enemySpriteImage.crop(20, 0, 310, 270);
 
                 shadowImage.scale(0.5);
 
+                if (player.partnerId && player.position === "front") {
+                    backgroundImage
+                    .composite(shadowImage, 3, 100)
+                    .composite(partnerImage, -102, -65);
+                }
                 backgroundImage
                 .composite(shadowImage, 105, 165)
-                .composite(enemySpriteImage, 0, 0)
+                .composite(enemySpriteImage, 0, 0);
+                if (player.partnerId && player.position === "back") {
+                    backgroundImage
+                    .composite(shadowImage, 207, 230)
+                    .composite(partnerImage, 102, 65);
+                }
+                backgroundImage
                 .composite(itemCellImage, 10, 10)
                 .composite(itemCellImage, 10, 60)
                 .composite(itemCellImage, 10, 110);
