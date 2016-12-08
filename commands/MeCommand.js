@@ -197,7 +197,11 @@ module.exports = {
                         
                         var text = "\n";
                         text += "Player: **" + message.author.username + "** (:moneybag:: **" + player.gold + "**)\n";
-                        text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (player.partnerId != null?"(Partner: **" + bot.userManager.getUser(player.partnerId).username + "**)":"") + "\n";
+                        var partner = null;
+                        if (partnerId != null) {
+                            partner = bot.userManager.getUser(player.partnerId);     
+                        }
+                        text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (partner?"(Partner: **" + partner.username + "**)":"") + "\n";
                         text += "Character: **" + employee.fullName + "** (" + (elementEmoji?elementEmoji+", ":"") + "Lv.**" + employee.levelCached  + "**)\n";
                         text += "Rarity: ";
                         for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";

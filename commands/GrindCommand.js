@@ -48,7 +48,9 @@ module.exports = {
             bonusFromAccessory = Math.floor(sumStat * 6 / (quest.timeCost*10));
         }
 
-        chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon + bonusFromArmor + bonusFromAccessory);
+        var bonusFromPartner = 0;
+        if (player.partnerId) bonusFromPartner = 3;
+        chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon + bonusFromArmor + bonusFromAccessory + bonusFromPartner);
 
         if (message) {
             var time = bot.functionHelper.parseTime(timeInMillis);

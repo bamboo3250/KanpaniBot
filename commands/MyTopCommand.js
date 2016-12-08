@@ -21,7 +21,8 @@ function sendMyTop(message, bot, result) {
             var player = bot.playerManager.getPlayer(result[i].userId);
             var partnerName = "";
             if (player.partnerId) {
-                partnerName = bot.userManager.getUser(player.partnerId).username;    
+                var partner = bot.userManager.getUser(player.partnerId);
+                if (partner) partnerName = partner.username;    
             }
             var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
             const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
