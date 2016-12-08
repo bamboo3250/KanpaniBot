@@ -164,7 +164,7 @@ module.exports = {
                             }
                             image.print(font, 55 + col*ITEM_CELL_WIDTH, 7 + row*ITEM_CELL_HEIGHT, equipmentName + " +" + equipmentIdList[i].plus + " " + codeName);
                             image.print(font, 55 + col*ITEM_CELL_WIDTH, 27 + row*ITEM_CELL_HEIGHT, "x" + equipmentList[equipment._id]["+" + equipmentIdList[i].plus]);
-                            // var stats = equipment.stats["+" + equipmentIdList[i].plus];
+                            var stats = equipment.stats["+" + equipmentIdList[i].plus];
                             // var statsText = "P.ATK: " + stats["patk"];
                             // statsText += " P.DEF: " + stats["pdef"];
                             // statsText += " M.ATK: " + stats["matk"];
@@ -173,7 +173,7 @@ module.exports = {
                             // statsText += " HIT: " + stats["hit"];
                             // statsText += " EVA: " + stats["eva"];
 
-                            // image.print(font, 95 + col*ITEM_CELL_WIDTH, 27 + row*ITEM_CELL_HEIGHT, statsText);
+                            image.print(font, 125 + col*ITEM_CELL_WIDTH, 27 + row*ITEM_CELL_HEIGHT, "Price: " + stats.price);
                         }
                         var imageName = "images/myweapon/" + userId + ".png";
                         image.write(imageName, function() {

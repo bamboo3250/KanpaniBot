@@ -35,6 +35,34 @@ PlayerManager.prototype.spendItem = function(userId, itemName, amount = 1) {
     player.materialList[itemName] = Math.max(0, player.materialList[itemName] - amount);
 }
 
+PlayerManager.prototype.removeWeapon = function(userId, weaponId, plus, amount = 1) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (amount <= 0) return;
+    if (typeof player.weaponList[weaponId] === "undefined") return;
+    
+    player.weaponList[weaponId]["+"+plus] = Math.max(0, player.weaponList[weaponId]["+"+plus] - amount);
+}
+
+PlayerManager.prototype.removeArmor = function(userId, armorId, plus, amount = 1) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (amount <= 0) return;
+    if (typeof player.armorList[armorId] === "undefined") return;
+    
+    player.weaponList[armorId]["+"+plus] = Math.max(0, player.weaponList[armorId]["+"+plus] - amount);
+}
+
+PlayerManager.prototype.removeAccessory = function(userId, accessoryId, plus, amount = 1) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (amount <= 0) return;
+    if (typeof player.accessoryList[accessoryId] === "undefined") return;
+    
+    player.accessoryList[accessoryId]["+"+plus] = Math.max(0, player.accessoryList[accessoryId]["+"+plus] - amount);
+}
+
+
 PlayerManager.prototype.addItem = function(userId, itemName, amount = 1) {
     var player = this.getPlayer(userId);
     if (!player) return;
