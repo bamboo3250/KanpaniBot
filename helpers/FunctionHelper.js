@@ -36,11 +36,16 @@ function KGTime(timeInMillis = 0) {
 }
 
 KGTime.prototype.toString = function() {
-    return (this.day>0? this.day + " day(s) ":"") 
-            + (this.hour>0? this.hour + " hour(s) ":"") 
-            + (this.min>0? this.min + " min(s) ":"") 
-            + this.sec + " sec(s)";
+    var day = (this.day>0? this.day + " day(s) ":"");
+    var hour = (this.hour>0? this.hour + " hour(s) ":"");
+    var min = (this.min>0? this.min + " min(s) ":"");
+    var sec = (this.sec>0? this.sec + " sec(s) ":"");
+    if (day == "" && hour == "" && min == "") {
+        sec = this.sec + " sec(s) "
+    }
+    return day + hour + min + sec;
 }
+
 
 FunctionHelper.prototype.parseTime = function(millisec) {
     return new KGTime(millisec);
