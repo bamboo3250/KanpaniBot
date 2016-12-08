@@ -483,7 +483,7 @@ module.exports = {
 
     "labyrinth": [
         {
-            _id: "330007", accessoryName: "Labyrinth Ring", commonNames: ["Labyrinth Ring"],
+            _id: "360201", accessoryName: "Labyrinth Ring", commonNames: ["Labyrinth Ring"],
             type: "story", stats: {
                 "+0": { price: 3000,
                     patk: 5, pdef: 5, matk: 5, mdef: 5, crit: 5, hit: 0, eva: 5
