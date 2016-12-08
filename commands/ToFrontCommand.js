@@ -1,15 +1,32 @@
 module.exports = {
     handle: function(message, bot) {
         var command = message.content.trim().toLowerCase();
-        if (!command.startsWith("~tofront ")) return;
+        if (!command.startsWith("~tofront")) return;
         if (bot.isPM(message)) {
             message.reply("You cannot use this command in Private Message.");
             return;
         }
-        var targetUser = message.mentions.users.first();
-        if (!targetUser) return;
-
+        
         var userId = message.author.id;
+        var player = bot.playerManager.getPlayer(userId);
+        if (!player) {
+            message.reply("You haven't selected character.");
+            return;
+        }
+
+        var targetUser = message.mentions.users.first();
+        if (!targetUser) {
+            if (player.position === "front") {
+                message.reply("You have already been in frontline.");
+                return;
+            }
+            bot.playerManager.unsetPartner(userId);
+            player.position = "front";
+            bot.savePlayer();
+            message.reply("You now are in frontline");
+            return;
+        };
+        
         if (targetUser.id === userId) {
             message.reply("You cannot move to the front of yourself.");
             return;
@@ -29,7 +46,9 @@ module.exports = {
                 bot.playerManager.setPartner(userId, targetUser.id);
                 text += "Congratulations! Now you are partner of **" + targetUser.username + "**";
                 text += " (front: " + message.author.username + ", back: " + targetUser.username + ").";
+                bot.savePlayer();
             }
         }
+        message.reply(text);
     }
 }

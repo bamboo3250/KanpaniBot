@@ -453,11 +453,11 @@ EmployeeBot.prototype.loadPlayer = function() {
             var userId = key;
             var player = that.playerManager.playerDict[userId];
             var characterClassId = player.characterId.substring(2,3);
-            if (characterClassId != player.equipedWeapon._id.substring(3,4)) {
+            if (player.equipedWeapon && characterClassId != player.equipedWeapon._id.substring(3,4)) {
                 that.playerManager.unequipWeapon(userId);
                 that.log("Unequip Weapon for " + that.userManager.getUser(userId).username);
             }
-            if (characterClassId != player.equipedArmor._id.substring(3,4)) {
+            if (player.equipedArmor && characterClassId != player.equipedArmor._id.substring(3,4)) {
                 that.playerManager.unequipArmor(userId);
                 that.log("Unequip Armor for " + that.userManager.getUser(userId).username);
             }

@@ -143,7 +143,9 @@ module.exports = {
 
                 backgroundImage.crop(250,100, 310,270);
                 enemySpriteImage.crop(20, 0, 310, 270);
-
+                if (partnerImage) {
+                    partnerImage.crop(20, 0, 310, 270);
+                }
                 shadowImage.scale(0.5);
 
                 if (player.partnerId && player.position === "front") {
@@ -195,6 +197,7 @@ module.exports = {
                         
                         var text = "\n";
                         text += "Player: **" + message.author.username + "** (:moneybag:: **" + player.gold + "**)\n";
+                        text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (player.partnerId != null?"(Partner: **" + bot.userManager.getUser(player.partnerId).username + "**)":"") + "\n";
                         text += "Character: **" + employee.fullName + "** (" + (elementEmoji?elementEmoji+", ":"") + "Lv.**" + employee.levelCached  + "**)\n";
                         text += "Rarity: ";
                         for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
@@ -209,8 +212,8 @@ module.exports = {
                         text += (mdefEmoji != null? mdefEmoji + " " : "") + "M.Def: **" + employee.getMDef() + "**\n";
                         text += "CRIT: **" + employee.getCrit() + "**\tHIT: **" + employee.getHit() + "**\tEVA: **" + employee.getEva() + "**\n";
                         text += "\n======SKILLS======\n";
-                        text += "Front Skill: " + employee.getFrontSkill() + "\n";                    
-                        text += "Back Skill: " + employee.getBackSkill() + "\n";
+                        text += (player.position=="front"?"**":"") + "Front Skill: " + employee.getFrontSkill() + (player.position=="front"?"**":"") + "\n";                    
+                        text += (player.position=="back"?"**":"") + "Back Skill: " + employee.getBackSkill() + (player.position=="back"?"**":"") + "\n";
 
                         if (bot.isPM(message)) {
                             text += "\n====BASE STATS====\n";

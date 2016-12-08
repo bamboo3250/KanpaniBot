@@ -6,11 +6,17 @@ function sendTop(message, bot, result) {
         
     for(var i=0;i<Math.min(result.length, 10);i++) {
         if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
-        var memberName = bot.memberNameDict[result[i].userId];
+        var memberName = bot.userManager.getUser(result[i].userId).username;
+        var player = bot.playerManager.getPlayer(result[i].userId);
+        var partnerName = "";
+        if (player.partnerId) {
+            partnerName = bot.userManager.getUser(player.partnerId).username;    
+        }
+        
         var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
         const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
         if (memberName) {
-            text += (count+1) + ". " + memberName + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**)\n";
+            text += (count+1) + ". " + memberName + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**" + (partnerName!=""?", Partner: **" + partnerName +"**":"") + ")\n";
         }
     }
     message.channel.sendMessage(text);
