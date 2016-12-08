@@ -3,16 +3,16 @@ module.exports = {
         {
             _id: "330001", accessoryName: "Plain Ring", commonNames: ["R1 Ring"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 450,
                     patk: 1, pdef: 1, matk: 1, mdef: 1, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 500,
                     patk: 1, pdef: 1, matk: 1, mdef: 1, crit: 5, hit: 5, eva: 5
                 },
-                "+2": {
+                "+2": { price: 550,
                     patk: 1, pdef: 1, matk: 1, mdef: 1, crit: 7, hit: 7, eva: 7
                 },
-                "+3": {
+                "+3": { price: 600,
                     patk: 1, pdef: 1, matk: 1, mdef: 1, crit: 10, hit: 10, eva: 10
                 }
             },
@@ -25,16 +25,16 @@ module.exports = {
         },{
             _id: "330101", accessoryName: "Plain Pendant", commonNames: ["R1 Necklace"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 1350,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 1400,
                     patk: 2, pdef: 2, matk: 5, mdef: 5, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 1450,
                     patk: 2, pdef: 2, matk: 10, mdef: 10, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 1500,
                     patk: 2, pdef: 2, matk: 15, mdef: 15, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -47,16 +47,16 @@ module.exports = {
         },{
             _id: "330201", accessoryName: "Bracelet", commonNames: ["R1 Bracelet"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 650,
                     patk: 3, pdef: 3, matk: 3, mdef: 3, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 700,
                     patk: 5, pdef: 5, matk: 3, mdef: 3, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 750,
                     patk: 10, pdef: 10, matk: 3, mdef: 3, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 800,
                     patk: 15, pdef: 15, matk: 3, mdef: 3, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -73,16 +73,16 @@ module.exports = {
         {
             _id: "330002", accessoryName: "Reduce Ring", commonNames: ["R2 Ring"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 630,
                     patk: 5, pdef: 5, matk: 3, mdef: 3, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 700,
                     patk: 5, pdef: 5, matk: 3, mdef: 3, crit: 7, hit: 7, eva: 7
                 },
-                "+2": {
+                "+2": { price: 800,
                     patk: 5, pdef: 5, matk: 3, mdef: 3, crit: 10, hit: 10, eva: 10
                 },
-                "+3": {
+                "+3": { price: 900,
                     patk: 5, pdef: 5, matk: 3, mdef: 3, crit: 15, hit: 15, eva: 15
                 }
             },
@@ -95,16 +95,16 @@ module.exports = {
         },{
             _id: "330102", accessoryName: "Reduce Pendant", commonNames: ["R2 Necklace"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 1530,
                     patk: 10, pdef: 10, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 1600,
                     patk: 10, pdef: 10, matk: 15, mdef: 15, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 1650,
                     patk: 10, pdef: 10, matk: 25, mdef: 25, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 1700,
                     patk: 10, pdef: 10, matk: 40, mdef: 40, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -117,16 +117,16 @@ module.exports = {
         },{
             _id: "330202", accessoryName: "Reduce Bracelet", commonNames: ["R2 Bracelet"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 900,
                     patk: 15, pdef: 15, matk: 9, mdef: 9, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 950,
                     patk: 25, pdef: 25, matk: 9, mdef: 9, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 1000,
                     patk: 35, pdef: 35, matk: 9, mdef: 9, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 1050,
                     patk: 50, pdef: 50, matk: 9, mdef: 9, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -143,16 +143,16 @@ module.exports = {
         {
             _id: "330003", accessoryName: "Flaming Tomoe Ring", commonNames: ["R3 Ring"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 900,
                     patk: 10, pdef: 2, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 950,
                     patk: 10, pdef: 2, matk: 2, mdef: 2, crit: 10, hit: 10, eva: 10
                 },
-                "+2": {
+                "+2": { price: 1000,
                     patk: 10, pdef: 2, matk: 2, mdef: 2, crit: 20, hit: 20, eva: 20
                 },
-                "+3": {
+                "+3": { price: 1100,
                     patk: 10, pdef: 2, matk: 2, mdef: 2, crit: 35, hit: 35, eva: 35
                 }
             },
@@ -168,16 +168,16 @@ module.exports = {
         },{
             _id: "330103", accessoryName: "Torrid Necklace", commonNames: ["R3 Necklace"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 2000,
                     patk: 20, pdef: 4, matk: 4, mdef: 4, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 2050,
                     patk: 20, pdef: 4, matk: 20, mdef: 20, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 2100,
                     patk: 20, pdef: 4, matk: 30, mdef: 30, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 2150,
                     patk: 20, pdef: 4, matk: 50, mdef: 50, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -193,16 +193,16 @@ module.exports = {
         },{
             _id: "330203", accessoryName: "Ignis Bracelet", commonNames: ["R3 Bracelet"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 1250,
                     patk: 30, pdef: 6, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 1300,
                     patk: 40, pdef: 40, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 1350,
                     patk: 50, pdef: 50, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 1400,
                     patk: 70, pdef: 70, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -222,16 +222,16 @@ module.exports = {
         {
             _id: "330004", accessoryName: "White Ice Ring", commonNames: ["R4 Ring"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 900,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 950,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 20, hit: 20, eva: 20
                 },
-                "+2": {
+                "+2": { price: 1000,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 40, hit: 40, eva: 40
                 },
-                "+3": {
+                "+3": { price: 1100,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 60, hit: 60, eva: 60
                 }
             },
@@ -247,16 +247,16 @@ module.exports = {
         },{
             _id: "330104", accessoryName: "Glacial Necklace", commonNames: ["R4 Necklace"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 2000,
                     patk: 4, pdef: 4, matk: 4, mdef: 4, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 2050,
                     patk: 4, pdef: 4, matk: 25, mdef: 25, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 2100,
                     patk: 4, pdef: 4, matk: 45, mdef: 45, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 2150,
                     patk: 4, pdef: 4, matk: 70, mdef: 70, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -272,16 +272,16 @@ module.exports = {
         },{
             _id: "330204", accessoryName: "Frozen Bracelet", commonNames: ["R4 Bracelet"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 1250,
                     patk: 6, pdef: 6, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 1300,
                     patk: 45, pdef: 45, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 1350,
                     patk: 55, pdef: 55, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 1400,
                     patk: 80, pdef: 80, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -301,16 +301,16 @@ module.exports = {
         {
             _id: "330005", accessoryName: "Tempest Ring", commonNames: ["R5 Ring"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 1200,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 1250,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 30, hit: 30, eva: 30
                 },
-                "+2": {
+                "+2": { price: 1300,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 60, hit: 60, eva: 60
                 },
-                "+3": {
+                "+3": { price: 1350,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 80, hit: 80, eva: 80
                 }
             },
@@ -326,16 +326,16 @@ module.exports = {
         },{
             _id: "330105", accessoryName: "Gale Necklace", commonNames: ["R5 Necklace"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 3150,
                     patk: 4, pdef: 4, matk: 4, mdef: 4, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 3200,
                     patk: 4, pdef: 4, matk: 30, mdef: 30, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 3250,
                     patk: 4, pdef: 4, matk: 55, mdef: 55, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 3300,
                     patk: 4, pdef: 4, matk: 80, mdef: 80, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -351,16 +351,16 @@ module.exports = {
         },{
             _id: "330205", accessoryName: "Cyclone Bracelet", commonNames: ["R5 Bracelet"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 1700,
                     patk: 6, pdef: 6, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+1": {
+                "+1": { price: 1750,
                     patk: 50, pdef: 50, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+2": {
+                "+2": { price: 1800,
                     patk: 60, pdef: 60, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 },
-                "+3": {
+                "+3": { price: 1850,
                     patk: 85, pdef: 85, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 }
             },
@@ -377,16 +377,16 @@ module.exports = {
         {
             _id: "330006", accessoryName: "Ring of Resounding Quake", commonNames: ["R6 Ring"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 1200,
                     patk: 2, pdef: 10, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 20
                 },
-                "+1": {
+                "+1": { price: 1250,
                     patk: 2, pdef: 10, matk: 2, mdef: 2, crit: 40, hit: 40, eva: 40
                 },
-                "+2": {
+                "+2": { price: 1300,
                     patk: 2, pdef: 10, matk: 2, mdef: 2, crit: 80, hit: 80, eva: 80
                 },
-                "+3": {
+                "+3": { price: 1350,
                     patk: 2, pdef: 10, matk: 2, mdef: 2, crit: 100, hit: 100, eva: 100
                 }
             },
@@ -402,16 +402,16 @@ module.exports = {
         },{
             _id: "330106", accessoryName: "Rumbling Necklace", commonNames: ["R6 Necklace"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 3150,
                     patk: 4, pdef: 20, matk: 4, mdef: 4, crit: 0, hit: 0, eva: 20
                 },
-                "+1": {
+                "+1": { price: 3200,
                     patk: 4, pdef: 20, matk: 35, mdef: 35, crit: 0, hit: 0, eva: 20
                 },
-                "+2": {
+                "+2": { price: 3250,
                     patk: 4, pdef: 20, matk: 65, mdef: 65, crit: 0, hit: 0, eva: 20
                 },
-                "+3": {
+                "+3": { price: 3300,
                     patk: 4, pdef: 20, matk: 90, mdef: 90, crit: 0, hit: 0, eva: 20
                 }
             },
@@ -424,16 +424,16 @@ module.exports = {
         },{
             _id: "330206", accessoryName: "Titanic Bracelet", commonNames: ["R6 Bracelet"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 1700,
                     patk: 6, pdef: 6, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 20
                 },
-                "+1": {
+                "+1": { price: 1750,
                     patk: 55, pdef: 55, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 20
                 },
-                "+2": {
+                "+2": { price: 1800,
                     patk: 75, pdef: 75, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 20
                 },
-                "+3": {
+                "+3": { price: 1850,
                     patk: 100, pdef: 100, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 20
                 }
             },
@@ -453,16 +453,16 @@ module.exports = {
         {
             _id: "330007", accessoryName: "Goddess's Ring", commonNames: ["R7 Ring"],
             type: "story", stats: {
-                "+0": {
+                "+0": { price: 1350,
                     patk: 0, pdef: 20, matk: 0, mdef: 20, crit: 5, hit: 5, eva: 10
                 },
-                "+1": {
+                "+1": { price: 1400,
                     patk: 0, pdef: 20, matk: 0, mdef: 20, crit: 20, hit: 20, eva: 70
                 },
-                "+2": {
+                "+2": { price: 1450,
                     patk: 0, pdef: 20, matk: 0, mdef: 20, crit: 40, hit: 40, eva: 90
                 },
-                "+3": {
+                "+3": { price: 1500,
                     patk: 0, pdef: 20, matk: 0, mdef: 20, crit: 80, hit: 80, eva: 140
                 }
             },
@@ -476,6 +476,32 @@ module.exports = {
                 },{
                     materialName: "Black Pearl",
                     amount: 1
+                }
+            ]
+        }
+    ],
+
+    "labyrinth": [
+        {
+            _id: "330007", accessoryName: "Labyrinth Ring", commonNames: ["Labyrinth Ring"],
+            type: "story", stats: {
+                "+0": { price: 3000,
+                    patk: 5, pdef: 5, matk: 5, mdef: 5, crit: 5, hit: 0, eva: 5
+                },
+                "+1": { price: 4000,
+                    patk: 7, pdef: 7, matk: 7, mdef: 7, crit: 7, hit: 0, eva: 7
+                },
+                "+2": { price: 5000,
+                    patk: 10, pdef: 10, matk: 10, mdef: 10, crit: 10, hit: 0, eva: 10
+                },
+                "+3": { price: 6000,
+                    patk: 30, pdef: 30, matk: 30, mdef: 30, crit: 30, hit: 0, eva: 30
+                }
+            },
+            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+                {
+                    materialName: "Labyrinth Fragment",
+                    amount: 2
                 }
             ]
         }
