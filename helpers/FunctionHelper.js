@@ -51,6 +51,18 @@ FunctionHelper.prototype.parseTime = function(millisec) {
     return new KGTime(millisec);
 }
 
+FunctionHelper.prototype.parseCommand = function(message) {
+    var commandText = this.removeExtraSpace(message.content.toLowerCase());
+    var args = commandText.split(" ");
+    var result = {
+        commandName: args[0],
+        args: [],
+        mentions: message.mentions
+    };
+    for(var i=1;i<args.length;i++) result.args.push(args[i]);
+    return result;
+}
+
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
  */

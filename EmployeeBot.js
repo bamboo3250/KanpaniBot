@@ -44,6 +44,7 @@ var dailyGiftCommand = require('./commands/DailyGiftCommand');
 var effectCommand = require('./commands/EffectCommand');
 var toFrontCommand = require('./commands/ToFrontCommand');
 var toBackCommand = require('./commands/ToBackCommand');
+var itemDropCommand = require('./commands/ItemDropCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -328,6 +329,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         effectCommand.handle(message, this);
         toFrontCommand.handle(message, this);
         toBackCommand.handle(message, this);
+        itemDropCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
