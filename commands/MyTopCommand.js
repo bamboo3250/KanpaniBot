@@ -2,6 +2,8 @@ var Employee = require('../classes/Employee');
 
 function sendMyTop(message, bot, result) {
     var count = 0;
+    var rank = 0;
+    var previousEmployee = null;
     var text = "Your Ranking:\n";
     var userId = message.author.id;
     var userOrder = 0;
@@ -16,8 +18,14 @@ function sendMyTop(message, bot, result) {
         var upper_bound = Math.max(lower_bound - 9, 0);
         lower_bound = Math.min(upper_bound + 9, result.length-1);
         for(var i=0;i<result.length;i++) {
-            if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
-            var memberName = bot.userManager.getUser(result[i].userId).username;
+            var user = bot.userManager.getUser(result[i].userId);
+            if (!user) continue;
+
+            if (!previousEmployee || previousEmployee.levelCached != result[i].employee.levelCached) rank = count;
+            count++;
+            previousEmployee = result[i].employee;
+
+            var memberName = user.username;
             var player = bot.playerManager.getPlayer(result[i].userId);
             var partnerName = "";
             if (player.partnerId) {
@@ -28,9 +36,9 @@ function sendMyTop(message, bot, result) {
             const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
             if (memberName && (upper_bound <= i) && (i<=lower_bound)) {
                 if (i === userOrder) {
-                    text += "**" + (count+1) + ". " + memberName + "** (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**" + (partnerName!=""?", Partner: **" + partnerName +"**":"") + ")\n";
+                    text += "**" + (rank+1) + ". " + memberName + "** (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**" + (partnerName!=""?", Partner: **" + partnerName +"**":"") + ")\n";
                 } else {
-                    text += (count+1) + ". " + memberName + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**" + (partnerName!=""?", Partner: **" + partnerName +"**":"") + ")\n";
+                    text += (rank+1) + ". " + memberName + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**" + (partnerName!=""?", Partner: **" + partnerName +"**":"") + ")\n";
                 }
             }
         }

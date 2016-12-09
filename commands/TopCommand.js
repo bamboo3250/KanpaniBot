@@ -2,11 +2,18 @@ var Employee = require('../classes/Employee');
 
 function sendTop(message, bot, result) {
     var count = 0;
+    var rank = 0;
+    var previousEmployee = null;
     var text = "Top 10 players:\n";
-        
     for(var i=0;i<Math.min(result.length, 10);i++) {
-        if (i==0 || result[i-1].employee.levelCached != result[i].employee.levelCached) count = i;
-        var memberName = bot.userManager.getUser(result[i].userId).username;
+        var user = bot.userManager.getUser(result[i].userId);
+        if (!user) continue;
+
+        if (!previousEmployee || previousEmployee.levelCached != result[i].employee.levelCached) rank = count;
+        count++;
+        previousEmployee = result[i].employee;
+
+        var memberName = user.username;
         var player = bot.playerManager.getPlayer(result[i].userId);
         var partnerName = "";
         if (player.partnerId) {
@@ -16,9 +23,7 @@ function sendTop(message, bot, result) {
         
         var emojiName = 'k' + result[i].employee.getClass().toLowerCase();
         const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
-        if (memberName) {
-            text += (count+1) + ". " + memberName + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**" + (partnerName!=""?", Partner: **" + partnerName +"**":"") + ")\n";
-        }
+        text += (rank+1) + ". " + memberName + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", Lv.**" + result[i].employee.levelCached + "**" + (partnerName!=""?", Partner: **" + partnerName +"**":"") + ")\n";
     }
     message.channel.sendMessage(text);
 }
