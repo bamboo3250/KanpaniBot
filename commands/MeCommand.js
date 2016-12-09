@@ -198,7 +198,7 @@ module.exports = {
                         var text = "\n";
                         text += "Player: **" + message.author.username + "** (:moneybag:: **" + player.gold + "**)\n";
                         var partner = null;
-                        if (partnerId != null) {
+                        if (player.partnerId != null) {
                             partner = bot.userManager.getUser(player.partnerId);     
                         }
                         text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (partner?"(Partner: **" + partner.username + "**)":"") + "\n";
