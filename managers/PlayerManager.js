@@ -23,6 +23,7 @@ PlayerManager.prototype.createNewPlayer = function(userId) {
 }
 
 PlayerManager.prototype.getPlayer = function(userId) {
+    if (!userId) return null;
     var player = this.playerDict[userId];
     if (typeof player === "undefined") return null;
     return player;

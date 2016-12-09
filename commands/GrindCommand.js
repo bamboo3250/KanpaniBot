@@ -3,10 +3,13 @@ var Jimp = require("jimp");
 
 module.exports = {
     runQuest: function(bot, questName, bread, user, message, timeInMillis) {
+        var quest = bot.questDatabase.getQuestByName(questName);
         var userId = user.id;
         var player = bot.playerManager.getPlayer(userId);
-        var quest = bot.questDatabase.getQuestByName(questName);
         var employee = bot.createEmployeeFromPlayer(player);
+        var partnerId = player.partnerId;
+        var partner = bot.playerManager.getPlayer(partnerId);
+        var partnerEmployee = bot.createEmployeeFromPlayer(partner);
 
         if (quest == null) {
             bot.log("No quest named " + questName);
@@ -49,7 +52,7 @@ module.exports = {
         }
 
         var bonusFromPartner = 0;
-        if (player.partnerId) bonusFromPartner = 3;
+        if (partnerId) bonusFromPartner = 3;
         chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon + bonusFromArmor + bonusFromAccessory + bonusFromPartner);
 
         if (message) {
@@ -78,7 +81,8 @@ module.exports = {
             var expGained = Math.floor((isSuccess ? quest.exp + bot.functionHelper.randomInt(extraExp + 1) : 0) * modifier);
             var goldGained = Math.floor((isSuccess ? quest.goldReward : 0) * modifier);
             var breadGained = (isSuccess ? quest.breadReward : 0);
-            text += "EXP gained: **" + expGained + "**\n";
+            var bonusExp = Math.floor(expGained * 0.3);
+            text += "EXP gained: **" + expGained + "**" + (partnerId?" (+" + bonusExp + ")":"") + "\n";
             text += "Gold: **" + goldGained + "**   Bread: **" + breadGained + "**\n";
             text += "Item Drop:\n";
 
@@ -98,6 +102,21 @@ module.exports = {
             var preLevel = employee.levelCached;
             player.exp += expGained;
             employee.addExp(expGained);
+            if (partnerId) {
+                var partnerPreLevel = partnerEmployee.levelCached;
+                var partnerIsLevelUp = (partnerPreLevel < partnerEmployee.levelCached)
+                var partnerLevelUpText = "Congratulations! Your level has increased to **" + partnerEmployee.levelCached + "**";
+            
+                partner.exp += bonusExp;
+                partnerEmployee.addExp(bonusExp);
+                var partnerUser = bot.userManager.getUser(partnerId);
+                if (partnerUser) {
+                    var partnerText = "You have received **" + bonusExp + " Exp** for being partner with **" + user.username + "** in " + questName + ".\n";
+                    if (partnerIsLevelUp) partnerText += partnerLevelUpText;
+                    partnerUser.sendMessage(partnerText);
+                }
+            }
+
             var isLevelUp = (preLevel < employee.levelCached)
             var levelUpText = "Congratulations! Your level has increased to **" + employee.levelCached + "**";
             

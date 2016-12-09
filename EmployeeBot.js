@@ -274,6 +274,7 @@ EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
 }
 
 EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
+    if (!player) return null;
     var employeeInfo = this.employeeDatabase.getEmployeeById(player.characterId)
     var employee = new Employee(employeeInfo);
     employee.setExp(player.exp);
