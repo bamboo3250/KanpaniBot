@@ -42,7 +42,7 @@ module.exports = {
     handle: function(message, bot) {
         var text = message.content.trim().toLowerCase();
         if (text != "~mytop") return;
-        if (bot.preventPM(message)) return;
+        // if (bot.preventPM(message)) return;
 
         var result = [];
         for (key in bot.playerManager.playerDict) {
@@ -62,12 +62,16 @@ module.exports = {
             }
         })
         
-        message.guild.fetchMembers().then(guild => {
-            bot.updateMemberNameDict(guild.members);
+        if (bot.isPM(message)) {
             sendMyTop(message, bot, result);
-        }).catch(err => {
-            sendMyTop(message, bot, result);
-            bot.log("[MyTop] Fetching member error!\n" + err)
-        });
+        } else {
+            message.guild.fetchMembers().then(guild => {
+                bot.updateMemberNameDict(guild.members);
+                sendMyTop(message, bot, result);
+            }).catch(err => {
+                sendMyTop(message, bot, result);
+                bot.log("[MyTop] Fetching member error!\n" + err)
+            });    
+        }
     }
 }

@@ -144,7 +144,6 @@ function EmployeeBot() {
         "You don't have enough bread."
     ];
 
-    this.memberNameDict = {};
     this.hasSoul = {};
     this.report = {};
     this.dailyGift = {
@@ -509,13 +508,6 @@ EmployeeBot.prototype.saveRunQuestStatus = function() {
             return;  
         } 
     }); 
-}
-
-EmployeeBot.prototype.updateMemberNameDict = function(memberList) {
-    var members = memberList.array();
-    for(var i=0;i<members.length;i++) {
-        this.memberNameDict[members[i].id] = members[i].user.username;
-    }
 }
 
 EmployeeBot.prototype.loadRunQuestStatus = function() {
