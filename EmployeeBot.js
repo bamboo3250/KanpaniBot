@@ -454,11 +454,13 @@ EmployeeBot.prototype.loadPlayer = function() {
             var characterClassId = player.characterId.substring(2,3);
             if (player.equipedWeapon && characterClassId != player.equipedWeapon._id.substring(3,4)) {
                 that.playerManager.unequipWeapon(userId);
-                that.log("Unequip Weapon for " + that.userManager.getUser(userId).username);
+                var user = that.userManager.getUser(userId);
+                if (user) that.log("Unequip Weapon for " + user.username);
             }
             if (player.equipedArmor && characterClassId != player.equipedArmor._id.substring(3,4)) {
                 that.playerManager.unequipArmor(userId);
-                that.log("Unequip Armor for " + that.userManager.getUser(userId).username);
+                var user = that.userManager.getUser(userId);
+                if (user) that.log("Unequip Armor for " + user.username);
             }
             if (typeof player.position === "undefined") {
                 player.position = "front";
