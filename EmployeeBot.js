@@ -472,6 +472,7 @@ EmployeeBot.prototype.loadPlayer = function() {
                 player.partnerId = null;
             }
         }
+        that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
     });
 }
 
