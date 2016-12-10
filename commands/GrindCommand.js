@@ -104,11 +104,13 @@ module.exports = {
             employee.addExp(expGained);
             if (partnerId) {
                 var partnerPreLevel = partnerEmployee.levelCached;
-                var partnerIsLevelUp = (partnerPreLevel < partnerEmployee.levelCached)
-                var partnerLevelUpText = "Congratulations! Your level has increased to **" + partnerEmployee.levelCached + "**";
-            
+                
                 partner.exp += bonusExp;
                 partnerEmployee.addExp(bonusExp);
+                
+                var partnerIsLevelUp = (partnerPreLevel < partnerEmployee.levelCached)
+                var partnerLevelUpText = "Congratulations! Your level has increased to **" + partnerEmployee.levelCached + "**";
+                
                 var partnerUser = bot.userManager.getUser(partnerId);
                 if (partnerUser) {
                     var partnerText = "You have received **" + bonusExp + " Exp** for being partner with **" + user.username + "** in " + questName + ".\n";
