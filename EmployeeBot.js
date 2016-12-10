@@ -45,6 +45,7 @@ var effectCommand = require('./commands/EffectCommand');
 var toFrontCommand = require('./commands/ToFrontCommand');
 var toBackCommand = require('./commands/ToBackCommand');
 var itemDropCommand = require('./commands/ItemDropCommand');
+var unsubscribeCommand = require('./commands/UnsubscribeCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -332,6 +333,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         toFrontCommand.handle(message, this);
         toBackCommand.handle(message, this);
         itemDropCommand.handle(message, this);
+        unsubscribeCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);

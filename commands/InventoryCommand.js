@@ -62,7 +62,7 @@ module.exports = {
                 const NUM_COL = 3;
 
                 var imageWidth = ITEM_CELL_WIDTH*NUM_COL;
-                var imageHeight = Math.ceil(imageList.length/NUM_COL) * ITEM_CELL_HEIGHT;
+                var imageHeight = Math.max(1, Math.ceil(imageList.length/NUM_COL)) * ITEM_CELL_HEIGHT;
 
                 var image = new Jimp(imageWidth, imageHeight, 0xFFFFFFFF, function (err, image) {
                     if (err) {
