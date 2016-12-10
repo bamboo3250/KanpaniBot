@@ -309,7 +309,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         specialCommand.handle(message, this);
         breadCommand.handle(message, this);
         assignRoleCommand.handle(message, this);
-        giveBreadCommand.handle(message, this);
+        // giveBreadCommand.handle(message, this);
         charaCommand.handle(message, this);
         meCommand.handle(message, this);
         topCommand.handle(message, this);

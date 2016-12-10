@@ -181,6 +181,12 @@ var itemInfos = [
         _id: "50003102_1", itemName: "Weapon Hammer", price: 0
     },{
         _id: "50003103_1", itemName: "Armor Hammer", price: 0
+    },
+
+    {
+        _id: "70030104_1", itemName: "Bread", price: 0
+    },{
+        _id: "50001101_1", itemName: "Food Pack", price: 0
     }
 
 

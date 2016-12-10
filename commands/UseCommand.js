@@ -31,8 +31,16 @@ function isForge(itemName) {
     return contains(itemListList, itemName);
 }
 
+function isBread(itemName) {
+    var itemListList = [
+        "Bread",
+        "Food Pack"
+    ];
+    return contains(itemListList, itemName);   
+}
+
 function isUsable(itemName) {
-    return isMailbox(itemName) || isHammer(itemName) || isForge(itemName);
+    return isMailbox(itemName) || isHammer(itemName) || isForge(itemName) || isBread(itemName);
 }
 
 module.exports = {
@@ -152,6 +160,15 @@ module.exports = {
             bot.playerManager.spendItem(userId, materialInfo.itemName);
             bot.savePlayer();
             message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 15 minutes.");
+        } else if (isBread(itemName)) {
+            if (itemName === "Bread") {
+                bot.remainingBread[userId] += 1;
+            } else if (itemName === "Food Pack") {
+                bot.remainingBread[userId] += 3;
+            }
+            bot.playerManager.spendItem(userId, materialInfo.itemName);
+            bot.savePlayer();
+            message.reply(bot.createRemainingBreadLine(message));
         }
     }
 }
