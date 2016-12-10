@@ -73,13 +73,9 @@ module.exports = {
         if (bot.isPM(message)) {
             sendMyTop(message, bot, result);
         } else {
-            message.guild.fetchMembers().then(guild => {
-                bot.updateMemberNameDict(guild.members);
+            bot.userManager.fetchAllMember(bot, function() {
                 sendMyTop(message, bot, result);
-            }).catch(err => {
-                sendMyTop(message, bot, result);
-                bot.log("[MyTop] Fetching member error!\n" + err)
-            });    
+            });  
         }
     }
 }

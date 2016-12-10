@@ -12,13 +12,13 @@ module.exports = {
         var text = "You can find **" + item.itemName + "** in: ";
         for(var i=0;i<questList.length;i++) {
             if (i<questList.length-2) {
-                text += questList.commandName[0] + ", ";
+                text += questList[i] + ", ";
             } else if (i<questList.length-1) {
-                text += questList.commandName[0] + " and ";
+                text += questList[i] + " and ";
             } else {
-                text += questList.commandName[0] + ".";
+                text += questList[i] + ".";
             }
         }
-        message.channel.reply(text);
+        message.channel.sendMessage(text);
     }
 }
