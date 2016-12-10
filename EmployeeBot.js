@@ -165,6 +165,7 @@ function EmployeeBot() {
     this.mailboxEffect = {};
     this.hammerEffect = {};
     this.forgeEffect = {};
+    this.unsubscribe = {};
 
     this.logChannel = null;
 
@@ -427,6 +428,35 @@ EmployeeBot.prototype.loadSoul = function() {
     });
 }
 
+var unsubscribeFileName = "unsubscribe.json";
+EmployeeBot.prototype.saveUnsubscribe = function() {
+    var textToWrite = JSON.stringify(this.unsubscribe, null, 4);
+    var that = this;
+    fs.writeFile(unsubscribeFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;
+        }
+    }); 
+}
+
+EmployeeBot.prototype.loadUnsubscribe = function() {
+    var that = this;
+    fs.readFile(unsubscribeFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log(err);
+            return;
+        }
+        try {
+            that.unsubscribe = JSON.parse(data);
+        }
+        catch (err) {
+            that.log(err);
+            that.unsubscribe = {};   
+        }
+    });
+}
+
 var playerFileName = "player.json";
 EmployeeBot.prototype.savePlayer = function() {
     var textToWrite = JSON.stringify(this.playerManager.playerDict, null, 4);
@@ -576,10 +606,10 @@ EmployeeBot.prototype.ready = function() {
             }
         }
         var text = "Bot is on. Serving on " + channels.length + " channels\n";
-        for(var i=0;i<channels.length;i++) {
-            var channelName = (channels[i].name ? channels[i].name : channels[i].recipient.username);
-            text += (i+1) + ". " + channelName + " (" + (channels[i].guild ? channels[i].guild.name : "PM") + ")\n";
-        }
+        // for(var i=0;i<channels.length;i++) {
+        //     var channelName = (channels[i].name ? channels[i].name : channels[i].recipient.username);
+        //     text += (i+1) + ". " + channelName + " (" + (channels[i].guild ? channels[i].guild.name : "PM") + ")\n";
+        // }
         text += "-----";
         this.log(text);
         
@@ -593,6 +623,7 @@ EmployeeBot.prototype.ready = function() {
         this.loadSoul();
         this.loadPlayer();
         this.loadDailyGift();
+        this.loadUnsubscribe();
         this.userManager.fetchAllMembers(this, function() {
             that.loadRunQuestStatus();
         });

@@ -45,6 +45,15 @@ module.exports = {
         bot.dailyGift.playerReceived = {};
         bot.saveDailyGift();
 
-        bot.sendMessageToMainChannel("The Daily Gift has been sent. You can receive it in Private Message by command `~dailygift`.");
+        for(key in bot.playerManager.playerDict) {
+            var userId = key;
+            var user = bot.userManager.getUser(userId);
+            var isUnsubscribe = (typeof bot.unsubscribe[userId] !== "undefined" && bot.unsubscribe[userId]);
+            if (user && !isUnsubscribe) {
+                var text = "The Daily Gift has been sent. You can receive it by using command `~dailygift`.\n";
+                text += "To unsubscribe this message, you can use `~unsubscribe`.";
+                user.sendMessage(text);
+            }
+        }
     }
 }

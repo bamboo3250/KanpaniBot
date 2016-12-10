@@ -1,0 +1,15 @@
+module.exports = {
+    handle: function(message, bot) {
+        var command = bot.functionHelper.parseCommand(message);
+        if (command.commandName != "~unsubscribe") return;
+            
+        var userId = message.author.id;
+        bot.unsubscribe[userId] = true;
+        bot.saveUnsubscribe();
+
+        var text = "You have unsubscribed daily gift\n";
+        text += "You won't receive any announcement about daily gift anymore but you still can receive it via command `~dailygift`.";
+        message.author.sendMessage(text);
+        bot.log(message.author.username + " unsubscribed.");
+    }
+}

@@ -102,7 +102,7 @@ module.exports = {
             var preLevel = employee.levelCached;
             player.exp += expGained;
             employee.addExp(expGained);
-            if (partnerId && bonusExp > 0) {
+            if (partnerId) {
                 var partnerPreLevel = partnerEmployee.levelCached;
                 
                 partner.exp += bonusExp;
