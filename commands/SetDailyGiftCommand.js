@@ -6,6 +6,30 @@ module.exports = {
         },{
             itemName: "Silver Mailbox",
             quantity: 1
+        },{
+            itemName: "Weapon Hammer",
+            quantity: 1
+        },{
+            itemName: "Armor Hammer",
+            quantity: 1
+        },{
+            itemName: "Accessory Hammer",
+            quantity: 1
+        },{
+            itemName: "Forge",
+            quantity: 1
+        },{
+            itemName: "Bread",
+            quantity: 1
+        },{
+            itemName: "Food Pack",
+            quantity: 1
+        },{
+            itemName: "Black Pearl",
+            quantity: 10
+        },{
+            itemName: "Rose Quartz",
+            quantity: 10
         }
     ],
     handle: function(message, bot) {
