@@ -58,12 +58,12 @@ module.exports = {
             var bustupUrl = employee.getIllustURL("bustup");
             var star = 6;
             if (employee.getBaseRarity() === 5) star++;
-            var enemySpriteUrl = employee.getSpriteImageURL(star, true, true);
-            var allySpriteUrl = employee.getSpriteImageURL(star, false, true);
+            var enemySpriteUrl = employee.getSpriteImageURL(star, true, "character");
+            var allySpriteUrl = employee.getSpriteImageURL(star, false, "character");
 
             var bustupFileName = "images/bustup/" + employee._id + ".png";
-            var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(star, true);
-            var allySpriteFileName = "images/ally/" + employee.getSpriteImageName(star, true);
+            var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(star, "character");
+            var allySpriteFileName = "images/ally/" + employee.getSpriteImageName(star, "character");
 
             var queue = [
                 { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName},

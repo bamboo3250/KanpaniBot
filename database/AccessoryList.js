@@ -505,6 +505,41 @@ module.exports = {
                 }
             ]
         }
+    ],
+
+    "Xmas1": [
+        {
+            _id: "329997", accessoryName: "Christmas Necklace X", commonNames: ["Xmas1 Necklace"],
+            type: "event", stats: {
+                "+0": { price: 1225,
+                    patk: 0, pdef: 30, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 15
+                },
+                "+1": { price: 1225,
+                    patk: 0, pdef: 40, matk: 0, mdef: 40, crit: 0, hit: 0, eva: 20
+                },
+                "+2": { price: 1225,
+                    patk: 0, pdef: 50, matk: 0, mdef: 50, crit: 0, hit: 0, eva: 25
+                },
+                "+3": { price: 1225,
+                    patk: 0, pdef: 60, matk: 0, mdef: 60, crit: 0, hit: 0, eva: 30
+                },
+                "+4": { price: 1225,
+                    patk: 0, pdef: 80, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 40
+                }
+            },
+            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Holy Sprig",
+                    amount: 2
+                },{
+                    materialName: "Christmas Eve Stardust",
+                    amount: 2
+                },{
+                    materialName: "Ice Crystal",
+                    amount: 2
+                }
+            ]
+        }
     ]
     
 

@@ -266,28 +266,28 @@ EmployeeInfo.prototype.getIllustURL = function(category) {
     return this.DOMAIN + "/img/character/" + this._id + "/illust/" + category + ".png";
 }
 
-EmployeeInfo.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, isCW = false, weaponId = 11) {
-    if (isCW && this.cwId != 0) {
+EmployeeInfo.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, type, weaponId = 11) {
+    if (type === "character" && this.cwId != 0) {
         weaponId = this.cwId;
     }
     if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
     weaponId = this._id.substring(2,3) + weaponId;
-    weaponId = (isCW && this.cwId != 0 ? "8" : "0") + weaponId;
-    weaponId = (this.isEx() && isCW && this.cwId != 0 ? "9" : "0") + weaponId;
+    weaponId = (type === "character" && this.cwId != 0 ? "8" : "0") + weaponId;
+    weaponId = (this.isEx() && type === "character" && this.cwId != 0 ? "9" : "0") + weaponId;
     weaponId = "3" + weaponId;
-    return this.DOMAIN + "/img/character/" + this._id + "/" + (isEnemy? "enemy" : "ally") + "/" + star + "_" + weaponId + "_idle.png";
+    return this.DOMAIN + "/img/character/" + this._id + "/" + (isEnemy? "enemy" : "ally") + "/" + (type=="event"?"":star + "_") + weaponId + "_idle.png";
 }
 
-EmployeeInfo.prototype.getSpriteImageName = function(star = 6, isCW = false, weaponId = 11) {
-    if (isCW && this.cwId != 0) {
+EmployeeInfo.prototype.getSpriteImageName = function(star = 6, type, weaponId = 11) {
+    if (type === "character" && this.cwId != 0) {
         weaponId = this.cwId;
     }
     if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
     weaponId = this._id.substring(2,3) + weaponId;
-    weaponId = (isCW && this.cwId != 0 ? "8" : "0") + weaponId;
-    weaponId = (this.isEx() && isCW && this.cwId != 0 ? "9" : "0") + weaponId;
+    weaponId = (type === "character" && this.cwId != 0 ? "8" : "0") + weaponId;
+    weaponId = (this.isEx() && type === "character" && this.cwId != 0 ? "9" : "0") + weaponId;
     weaponId = "3" + weaponId;
-    return this._id + "_" + star + "_" + weaponId + "_idle.png";
+    return this._id + "_" + (type=="event"?"":star + "_") + weaponId + "_idle.png";
 }
 
 

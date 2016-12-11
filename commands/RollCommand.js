@@ -38,8 +38,8 @@ module.exports = {
         var photoUrl = rolledEmployee.getIllustURL('photo');
         var photoFileName = "images/photo/" + rolledEmployee._id + ".png";
 
-        var spriteUrl = rolledEmployee.getSpriteImageURL(rolledEmployee.getBaseRarity(), true, false, 2);
-        var spriteFileName = "images/enemy/" + rolledEmployee.getSpriteImageName(rolledEmployee.getBaseRarity(), false, 2);
+        var spriteUrl = rolledEmployee.getSpriteImageURL(rolledEmployee.getBaseRarity(), true, "story", 2);
+        var spriteFileName = "images/enemy/" + rolledEmployee.getSpriteImageName(rolledEmployee.getBaseRarity(), "story", 2);
 
         var queue = [
             { fileToDownload: photoUrl,     fileToSave: photoFileName},

@@ -51,6 +51,7 @@ module.exports = {
                 if (equipmentList[equipmentId]["+" + i] > 0) {
                     equipmentIdList.push({
                         _id: equipmentId,
+                        type: equipment.type,
                         plus: i
                     });
                     if (category == "wp") {
@@ -74,7 +75,7 @@ module.exports = {
         var equipmentFileNameList = [];
         for(var i=0;i<equipmentIdList.length;i++) {
             var equipmentFileName = "images/equipment/small/" + equipmentIdList[i]._id + "0" + equipmentIdList[i].plus + "_1.png";
-            var equipmentUrl = bot.urlHelper.getEquipmentIconUrl(equipmentIdList[i]._id, equipmentIdList[i].plus, "small");
+            var equipmentUrl = bot.urlHelper.getEquipmentIconUrl(equipmentIdList[i]._id, equipmentIdList[i].plus, equipmentIdList[i].type, "small");
             queue.push({
                 fileToDownload: equipmentUrl, fileToSave: equipmentFileName
             })

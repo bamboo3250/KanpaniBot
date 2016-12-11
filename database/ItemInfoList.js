@@ -187,6 +187,14 @@ var itemInfos = [
         _id: "70030104_1", itemName: "Bread", price: 0
     },{
         _id: "50001101_1", itemName: "Food Pack", price: 0
+    },
+
+    {
+        _id: "40000103_1", itemName: "Christmas Eve Stardust", price: 50
+    },{
+        _id: "40000102_1", itemName: "Holy Sprig", price: 50
+    },{
+        _id: "40000104_1", itemName: "Ice Crystal", price: 50
     }
 
 

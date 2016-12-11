@@ -100,6 +100,8 @@ module.exports = {
             distribution = [55, 35, 9, 1];
         } else if (equipmentResult.tier == 3) {
             distribution = [100, 60, 39, 1];
+        } else if (equipmentResult.tier == 4) { // event
+            distribution = [20, 15, 10, 5, 1];
         } 
 
         // Hammer effect
@@ -116,7 +118,7 @@ module.exports = {
 
         var plus = bot.functionHelper.randomDist(distribution);
 
-        var equipmentUrl = bot.urlHelper.getEquipmentIconUrl(equipmentResult._id, plus);
+        var equipmentUrl = bot.urlHelper.getEquipmentIconUrl(equipmentResult._id, plus, equipmentResult.type);
         var equipmentFileName = "images/equipment/large/" + equipmentResult._id + "0" + (plus+1) + "_1.png";
 
         var queue = [

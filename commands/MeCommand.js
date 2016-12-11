@@ -25,13 +25,15 @@ module.exports = {
         }
 
         var weaponModel = "02";
+        var weaponType = "story"
         if (player.equipedWeapon) {
             var weapon = bot.weaponDatabase.getWeaponById(player.equipedWeapon._id);
-            weaponModel = weapon.modelId;    
+            weaponModel = weapon.modelId; 
+            weaponType = weapon.type;   
         }
         
-        var enemySpriteUrl = employee.getSpriteImageURL(employee.getRarity(), true, false, weaponModel);
-        var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(employee.getRarity(), false, weaponModel);
+        var enemySpriteUrl = employee.getSpriteImageURL(employee.getRarity(), true, weaponType, weaponModel);
+        var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(employee.getRarity(), weaponType, weaponModel);
 
         var queue = [
             { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName}
@@ -40,15 +42,17 @@ module.exports = {
         var partnerSpriteFileName = null
         if (player.partnerId) {
             var partnerWeaponModel = "02";
+            var partnerWeaponType = "story"
             var partner = bot.playerManager.getPlayer(player.partnerId);
             if (partner.equipedWeapon) {
                 var weapon = bot.weaponDatabase.getWeaponById(partner.equipedWeapon._id);
-                partnerWeaponModel = weapon.modelId;    
+                partnerWeaponModel = weapon.modelId; 
+                partnerWeaponType = weapon.type;   
             }
             var partnerEmployee = bot.createEmployeeFromPlayer(partner);
             
-            var partnerSpriteUrl = partnerEmployee.getSpriteImageURL(partnerEmployee.getRarity(), true, false, partnerWeaponModel);
-            partnerSpriteFileName = "images/enemy/" + partnerEmployee.getSpriteImageName(partnerEmployee.getRarity(), false, partnerWeaponModel);
+            var partnerSpriteUrl = partnerEmployee.getSpriteImageURL(partnerEmployee.getRarity(), true, partnerWeaponType, partnerWeaponModel);
+            partnerSpriteFileName = "images/enemy/" + partnerEmployee.getSpriteImageName(partnerEmployee.getRarity(), partnerWeaponType, partnerWeaponModel);
             queue.push({
                 fileToDownload: partnerSpriteUrl,   fileToSave: partnerSpriteFileName      
             })
@@ -58,7 +62,8 @@ module.exports = {
         if (player.equipedWeapon) {
             var weaponId = player.equipedWeapon._id;
             var plus = player.equipedWeapon.plus;
-            var weaponIconUrl = bot.urlHelper.getEquipmentIconUrl(weaponId, plus, "small");
+            var weapon = bot.weaponDatabase.getWeaponById(player.equipedWeapon._id);
+            var weaponIconUrl = bot.urlHelper.getEquipmentIconUrl(weaponId, plus, weapon.type, "small");
             weaponFileName = "images/equipment/small/" + weaponId + "0" + plus + "_1.png";
             queue.push({
                 fileToDownload: weaponIconUrl,   fileToSave: weaponFileName
@@ -68,7 +73,8 @@ module.exports = {
         if (player.equipedArmor) {
             var armorId = player.equipedArmor._id;
             var plus = player.equipedArmor.plus;
-            var armorIconUrl = bot.urlHelper.getEquipmentIconUrl(armorId, plus, "small");
+            var armor = bot.armorDatabase.getArmorById(player.equipedArmor._id);
+            var armorIconUrl = bot.urlHelper.getEquipmentIconUrl(armorId, plus, armor.type, "small");
             armorFileName = "images/equipment/small/" + armorId + "0" + plus + "_1.png";
             queue.push({
                 fileToDownload: armorIconUrl,   fileToSave: armorFileName
@@ -78,7 +84,8 @@ module.exports = {
         if (player.equipedAccessory) {
             var accId = player.equipedAccessory._id;
             var plus = player.equipedAccessory.plus;
-            var accessoryIconUrl = bot.urlHelper.getEquipmentIconUrl(accId, plus, "small");
+            var accessory = bot.accessoryDatabase.getAccessoryById(player.equipedAccessory._id);
+            var accessoryIconUrl = bot.urlHelper.getEquipmentIconUrl(accId, plus, accessory.type, "small");
             accessoryFileName = "images/equipment/small/" + accId + "0" + plus + "_1.png";
             queue.push({
                 fileToDownload: accessoryIconUrl,   fileToSave: accessoryFileName

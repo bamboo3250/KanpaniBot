@@ -2816,6 +2816,298 @@ module.exports = {
                 }
             ]
         }
+    ],
+
+    "Xmas1": [
+        {
+            _id: "300199", modelId: "99", weaponName: "Christmas Blade X", commonNames: ["Christmas Blade X"],
+            classId: 1, type: "event", stats: {
+                "+0": { price: 1225,
+                    patk: 56, pdef: 52, matk: 0, mdef: 63, crit: 5, hit: 5, eva: 0,
+                    frontSkill: "White Cross", backSkill: "Slash"
+                },
+                "+1": { price: 1225,
+                    patk: 71, pdef: 64, matk: 0, mdef: 78, crit: 7, hit: 7, eva: 0,
+                    frontSkill: "White Cross", backSkill: "Slash"
+                },
+                "+2": { price: 1225,
+                    patk: 93, pdef: 81, matk: 0, mdef: 99, crit: 9, hit: 9, eva: 0,
+                    frontSkill: "White Cross", backSkill: "Slash"
+                },
+                "+3": { price: 1225,
+                    patk: 105, pdef: 92, matk: 0, mdef: 107, crit: 11, hit: 11, eva: 0,
+                    frontSkill: "White Cross", backSkill: "Slash"
+                },
+                "+4": { price: 1225,
+                    patk: 168, pdef: 142, matk: 0, mdef: 171, crit: 30, hit: 30, eva: 0,
+                    frontSkill: "White Cross", backSkill: "Slash"
+                }
+            },
+            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Holy Sprig",
+                    amount: 2
+                },{
+                    materialName: "Christmas Eve Stardust",
+                    amount: 2
+                },{
+                    materialName: "Ice Crystal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300299", modelId: "99", weaponName: "Holy Night Blade X", commonNames: ["Holy Night Blade X"],
+            classId: 2, type: "event", stats: {
+                "+0": { price: 1225,
+                    patk: 91, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 15, eva: 0,
+                    frontSkill: "Snowflake Duet", backSkill: "Slash"
+                },
+                "+1": { price: 1225,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 18, eva: 0,
+                    frontSkill: "Snowflake Duet", backSkill: "Slash"
+                },
+                "+2": { price: 1225,
+                    patk: 162, pdef: 0, matk: 0, mdef: 0, crit: 21, hit: 21, eva: 0,
+                    frontSkill: "Snowflake Duet", backSkill: "Slash"
+                },
+                "+3": { price: 1225,
+                    patk: 185, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 25, eva: 0,
+                    frontSkill: "Snowflake Duet", backSkill: "Slash"
+                },
+                "+4": { price: 1225,
+                    patk: 300, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 0,
+                    frontSkill: "Snowflake Duet", backSkill: "Slash"
+                }
+            },
+            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Holy Sprig",
+                    amount: 2
+                },{
+                    materialName: "Christmas Eve Stardust",
+                    amount: 2
+                },{
+                    materialName: "Ice Crystal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300399", modelId: "99", weaponName: "Christmas Bow X", commonNames: ["Christmas Bow X"],
+            classId: 3, type: "event", stats: {
+                "+0": { price: 1225,
+                    patk: 69, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 15, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Holy Shoot"
+                },
+                "+1": { price: 1225,
+                    patk: 91, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 20, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Holy Shoot"
+                },
+                "+2": { price: 1225,
+                    patk: 120, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 25, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Holy Shoot"
+                },
+                "+3": { price: 1225,
+                    patk: 152, pdef: 0, matk: 0, mdef: 0, crit: 9, hit: 30, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Holy Shoot"
+                },
+                "+4": { price: 1225,
+                    patk: 266, pdef: 0, matk: 0, mdef: 0, crit: 12, hit: 43, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Holy Shoot"
+                }
+            },
+            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Holy Sprig",
+                    amount: 2
+                },{
+                    materialName: "Christmas Eve Stardust",
+                    amount: 2
+                },{
+                    materialName: "Ice Crystal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300499", modelId: "99", weaponName: "Christmas Lance X", commonNames: ["Christmas Lance X"],
+            classId: 4, type: "event", stats: {
+                "+0": { price: 1225,
+                    patk: 25, pdef: 49, matk: 0, mdef: 0, crit: 3, hit: 5, eva: 0,
+                    frontSkill: "Holy Style Spear", backSkill: "Spear Jab"
+                },
+                "+1": { price: 1225,
+                    patk: 30, pdef: 66, matk: 0, mdef: 0, crit: 4, hit: 7, eva: 0,
+                    frontSkill: "Holy Style Spear", backSkill: "Spear Jab"
+                },
+                "+2": { price: 1225,
+                    patk: 35, pdef: 89, matk: 0, mdef: 0, crit: 5, hit: 9, eva: 0,
+                    frontSkill: "Holy Style Spear", backSkill: "Spear Jab"
+                },
+                "+3": { price: 1225,
+                    patk: 40, pdef: 125, matk: 0, mdef: 0, crit: 6, hit: 11, eva: 0,
+                    frontSkill: "Holy Style Spear", backSkill: "Spear Jab"
+                },
+                "+4": { price: 1225,
+                    patk: 81, pdef: 230, matk: 0, mdef: 0, crit: 10, hit: 20, eva: 0,
+                    frontSkill: "Holy Style Spear", backSkill: "Spear Jab"
+                }
+            },
+            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Holy Sprig",
+                    amount: 2
+                },{
+                    materialName: "Christmas Eve Stardust",
+                    amount: 2
+                },{
+                    materialName: "Ice Crystal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300599", modelId: "99", weaponName: "Christmas Hammer X", commonNames: ["Christmas Hammer X"],
+            classId: 5, type: "event", stats: {
+                "+0": { price: 1225,
+                    patk: 110, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 3, eva: 0,
+                    frontSkill: "Snowman", backSkill: "Crash"
+                },
+                "+1": { price: 1225,
+                    patk: 150, pdef: 0, matk: 0, mdef: 0, crit: 12, hit: 6, eva: 0,
+                    frontSkill: "Snowman", backSkill: "Crash"
+                },
+                "+2": { price: 1225,
+                    patk: 190, pdef: 0, matk: 0, mdef: 0, crit: 14, hit: 9, eva: 0,
+                    frontSkill: "Snowman", backSkill: "Crash"
+                },
+                "+3": { price: 1225,
+                    patk: 250, pdef: 0, matk: 0, mdef: 0, crit: 16, hit: 12, eva: 0,
+                    frontSkill: "Snowman", backSkill: "Crash"
+                },
+                "+4": { price: 1225,
+                    patk: 420, pdef: 0, matk: 0, mdef: 0, crit: 23, hit: 18, eva: 0,
+                    frontSkill: "Snowman", backSkill: "Crash"
+                }
+            },
+            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Holy Sprig",
+                    amount: 2
+                },{
+                    materialName: "Christmas Eve Stardust",
+                    amount: 2
+                },{
+                    materialName: "Ice Crystal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300699", modelId: "99", weaponName: "Christmas Mace X", commonNames: ["Christmas Mace X"],
+            classId: 6, type: "event", stats: {
+                "+0": { price: 1225,
+                    patk: 0, pdef: 23, matk: 55, mdef: 25, crit: 9, hit: 20, eva: 0,
+                    frontSkill: "Knock", backSkill: "A Good Child's Reward"
+                },
+                "+1": { price: 1225,
+                    patk: 0, pdef: 30, matk: 73, mdef: 30, crit: 12, hit: 22, eva: 0,
+                    frontSkill: "Knock", backSkill: "A Good Child's Reward"
+                },
+                "+2": { price: 1225,
+                    patk: 0, pdef: 38, matk: 94, mdef: 40, crit: 15, hit: 24, eva: 0,
+                    frontSkill: "Knock", backSkill: "A Good Child's Reward"
+                },
+                "+3": { price: 1225,
+                    patk: 0, pdef: 49, matk: 120, mdef: 50, crit: 18, hit: 26, eva: 0,
+                    frontSkill: "Knock", backSkill: "A Good Child's Reward"
+                },
+                "+4": { price: 1225,
+                    patk: 0, pdef: 90, matk: 230, mdef: 90, crit: 20, hit: 55, eva: 0,
+                    frontSkill: "Knock", backSkill: "A Good Child's Reward"
+                }
+            },
+            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Holy Sprig",
+                    amount: 2
+                },{
+                    materialName: "Christmas Eve Stardust",
+                    amount: 2
+                },{
+                    materialName: "Ice Crystal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300799", modelId: "99", weaponName: "Christmas Dagger X", commonNames: ["Christmas Dagger X"],
+            classId: 7, type: "event", stats: {
+                "+0": { price: 1225,
+                    patk: 51, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 20, eva: 30,
+                    frontSkill: "Snowy Flash", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1225,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 12, hit: 23, eva: 35,
+                    frontSkill: "Snowy Flash", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1225,
+                    patk: 78, pdef: 0, matk: 0, mdef: 0, crit: 14, hit: 26, eva: 40,
+                    frontSkill: "Snowy Flash", backSkill: "Throwing Knife"
+                },
+                "+3": { price: 1225,
+                    patk: 120, pdef: 0, matk: 0, mdef: 0, crit: 16, hit: 29, eva: 45,
+                    frontSkill: "Snowy Flash", backSkill: "Throwing Knife"
+                },
+                "+4": { price: 1225,
+                    patk: 192, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 50, eva: 55,
+                    frontSkill: "Snowy Flash", backSkill: "Throwing Knife"
+                }
+            },
+            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Holy Sprig",
+                    amount: 2
+                },{
+                    materialName: "Christmas Eve Stardust",
+                    amount: 2
+                },{
+                    materialName: "Ice Crystal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300899", modelId: "99", weaponName: "Christmas Cane X", commonNames: ["Christmas Cane X"],
+            classId: 8, type: "event", stats: {
+                "+0": { price: 1225,
+                    patk: 0, pdef: 0, matk: 65, mdef: 0, crit: 5, hit: 15, eva: 0,
+                    frontSkill: "Twinkling Star", backSkill: "Twinkling Star"
+                },
+                "+1": { price: 1225,
+                    patk: 0, pdef: 0, matk: 90, mdef: 0, crit: 6, hit: 18, eva: 0,
+                    frontSkill: "Twinkling Star", backSkill: "Twinkling Star"
+                },
+                "+2": { price: 1225,
+                    patk: 0, pdef: 0, matk: 115, mdef: 0, crit: 7, hit: 21, eva: 0,
+                    frontSkill: "Twinkling Star", backSkill: "Twinkling Star"
+                },
+                "+3": { price: 1225,
+                    patk: 0, pdef: 0, matk: 150, mdef: 0, crit: 8, hit: 24, eva: 0,
+                    frontSkill: "Twinkling Star", backSkill: "Twinkling Star"
+                },
+                "+4": { price: 1225,
+                    patk: 0, pdef: 0, matk: 245, mdef: 0, crit: 15, hit: 40, eva: 0,
+                    frontSkill: "Twinkling Star", backSkill: "Twinkling Star"
+                }
+            },
+            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Holy Sprig",
+                    amount: 2
+                },{
+                    materialName: "Christmas Eve Stardust",
+                    amount: 2
+                },{
+                    materialName: "Ice Crystal",
+                    amount: 2
+                }
+            ]
+        }
     ]
 
 
