@@ -527,7 +527,7 @@ module.exports = {
                     patk: 0, pdef: 80, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 40
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            devCost: 12250, levelRequired: 10, tier: 5, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
