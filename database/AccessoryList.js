@@ -507,7 +507,7 @@ module.exports = {
         }
     ],
 
-    "Xmas1": [
+    "xmas1": [
         {
             _id: "329997", accessoryName: "Christmas Necklace X", commonNames: ["Xmas1 Necklace"],
             type: "event", stats: {

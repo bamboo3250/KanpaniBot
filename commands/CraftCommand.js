@@ -11,6 +11,22 @@ function hasEnoughMaterial(player, recipe, hasForgeEffect) {
     return true;
 }
 
+function contains(list, itemName) {
+    for(var i=0;i<list.length;i++) {
+        if (itemName.toLowerCase() === list[i].toLowerCase()) return true;
+    }
+    return false;
+}
+
+function isEventEquipment(codeName) {
+    var itemListList = [
+        "xmas1",
+        "xmas2",
+        "xmas3"
+    ];
+    return contains(itemListList, codeName);
+}
+
 module.exports = {
     handle: function(message, bot) {
         var command = message.content.trim().toLowerCase();
@@ -47,6 +63,9 @@ module.exports = {
 
         var employee = bot.createEmployeeFromPlayer(player);
         var classId = employee.getClassId();
+        if (isEventEquipment(equipmentCode)) {
+            classId = bot.functionHelper.randomIntRange(1, 8);
+        }
 
         var equipmentResult = null;
         if (category === "wp") {
@@ -57,9 +76,6 @@ module.exports = {
             equipmentResult = bot.accessoryDatabase.getAccessoryByName(equipmentCode);
         }
         
-        // if (!equipmentResult) {
-        //     equipmentResult = bot.weaponDatabase.getWeaponByName(equipmentCode);
-        // }
         if (!equipmentResult) {
             message.reply("No information.")
             return;
@@ -101,7 +117,7 @@ module.exports = {
         } else if (equipmentResult.tier == 3) {
             distribution = [100, 60, 39, 1];
         } else if (equipmentResult.tier == 4) { // event
-            distribution = [20, 15, 10, 5, 1];
+            distribution = [50, 30, 20, 10, 1];
         } 
 
         // Hammer effect

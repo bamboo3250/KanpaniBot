@@ -2818,7 +2818,7 @@ module.exports = {
         }
     ],
 
-    "Xmas1": [
+    "xmas1": [
         {
             _id: "300199", modelId: "99", weaponName: "Christmas Blade X", commonNames: ["Christmas Blade X"],
             classId: 1, type: "event", stats: {
