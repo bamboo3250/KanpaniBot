@@ -10,6 +10,7 @@ var Employee = require('./classes/Employee');
 
 var playerManager = require('./managers/PlayerManager');
 var userManager = require('./managers/UserManager');
+var backgroundManager = require('./managers/BackgroundManager');
 
 var imageHelper = require('./helpers/ImageHelper');
 var functionHelper = require('./helpers/FunctionHelper');
@@ -66,6 +67,7 @@ function EmployeeBot() {
     
     this.playerManager = playerManager;
     this.userManager = userManager;
+    this.backgroundManager = backgroundManager;
 
     this.dmmMaintenanceList = [
         {
@@ -172,47 +174,6 @@ function EmployeeBot() {
 
     this.logChannel = null;
 
-    this.backgroundFileNames = [
-        "arena.jpg",
-        "battlefield_01.jpg",
-        "battlefield_02.png",
-        "beach_01.jpg",
-        "beach_02.jpg",
-        "beach_03.jpg",
-        "cape.jpg",
-        "cave_01.jpg",
-        "cave_02.jpg",
-        "cave_03.jpg",
-        "classroom.jpg",
-        "desert.jpg",
-        "elf_village.jpg",
-        "farm_road.jpg",
-        "festival_01.png",
-        "forest_01.jpg",
-        "forest_02.jpg",
-        "forest_03.jpg",
-        "graveyard.jpg",
-        "hot_spring_01.jpg",
-        "hot_spring_02.jpg",
-        "hot_spring_03.jpg",
-        "hot_spring_04.jpg",
-        "kemomin_forest.jpg",
-        "labyrinth_01.jpg",
-        "labyrinth_02.jpg",
-        "labyrinth_03.jpg",
-        "labyrinth_04.jpg",
-        "open_deck.jpg",
-        "orphanage.jpg",
-        "promotion.png",
-        "ship.jpg",
-        "shrine.jpg",
-        "theater.jpg",
-        "town_road_01.jpg",
-        "town_road_02.jpg",
-        "town_road_03.jpg",
-        "training_place.jpg",
-        "volcano.jpg"
-    ];
 }
 
 EmployeeBot.prototype.isPM = function(message) {

@@ -100,7 +100,8 @@ module.exports = {
             }
 
             var itemCellFileName = "images/misc/itemCell.png";
-            var backgroundFileName = "images/misc/background/" + bot.backgroundFileNames[bot.functionHelper.randomInt(bot.backgroundFileNames.length)];
+            var backgroundFileName = bot.functionHelper.randomObject(bot.backgroundManager.getChristmasBackgrounds());
+            backgroundFileName = "images/misc/background/" + backgroundFileName;
             var shadowFileName = "images/misc/shadow.png";
 
             var fileNameQueue = [
