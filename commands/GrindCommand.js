@@ -209,7 +209,7 @@ module.exports = {
                 
             // }
             
-        }, 10000);//timeInMillis);
+        }, timeInMillis);
 
     },
 
