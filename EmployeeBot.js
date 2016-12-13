@@ -46,6 +46,7 @@ var toFrontCommand = require('./commands/ToFrontCommand');
 var toBackCommand = require('./commands/ToBackCommand');
 var itemDropCommand = require('./commands/ItemDropCommand');
 var unsubscribeCommand = require('./commands/UnsubscribeCommand');
+var retreatCommand = require('./commands/RetreatCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -167,6 +168,7 @@ function EmployeeBot() {
     this.hammerEffect = {};
     this.forgeEffect = {};
     this.unsubscribe = {};
+    this.grindId = {};
 
     this.logChannel = null;
 
@@ -334,6 +336,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         toBackCommand.handle(message, this);
         itemDropCommand.handle(message, this);
         unsubscribeCommand.handle(message, this);
+        retreatCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);

@@ -62,11 +62,12 @@ module.exports = {
             message.reply(text);
         }
 
-        setTimeout(function() {
+        bot.grindId[userId] = setTimeout(function() {
             bot.runQuestStatus[userId] = {
                 quest: "", endTime: -1, bread: 0
             };
             bot.saveRunQuestStatus();
+            bot.grindId[userId] = null;
 
             var text = "The quest has finished!\n\n";
             text += "=================MISSION REPORT=================\n\n";
