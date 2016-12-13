@@ -16,7 +16,7 @@ module.exports = {
             var now = new Date();
             var remainingTime = bot.hammerEffect[userId].endTime - now.valueOf();
             var time = bot.functionHelper.parseTime(remainingTime);
-            text += "**" + bot.hammerEffect[userId].itemName + "**: " + time + "\n";
+            text += "**" + bot.hammerEffect[userId].itemName + "**: " + bot.hammerEffect[userId].remaining + " time(s) (" + time + ")\n";
         }
         if (typeof bot.forgeEffect[userId] !== "undefined" && bot.forgeEffect[userId].itemName !== "") {
             var now = new Date();

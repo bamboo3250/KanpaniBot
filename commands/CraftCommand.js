@@ -125,12 +125,24 @@ module.exports = {
         // Hammer effect
         if (typeof bot.hammerEffect[userId] !== "undefined" && bot.hammerEffect[userId].itemName !== "") {
             var hammerName = bot.hammerEffect[userId].itemName;
-            if (category === "wp" && (hammerName === "1st Anni. W. Hammer" || hammerName === "Weapon Hammer")) {
-                distribution[0] = 0;
-            } else if (category === "ar" && (hammerName === "Armor Hammer")) {
-                distribution[0] = 0;
-            } else if (category === "acc" && (hammerName === "1st Anni. Acc. Hammer" || hammerName === "Accessory Hammer")) {
-                distribution[0] = 0;
+            if ((category === "wp" && (hammerName === "1st Anni. W. Hammer" || hammerName === "Weapon Hammer"))
+                    || (category === "ar" && (hammerName === "Armor Hammer"))
+                    || (category === "acc" && (hammerName === "1st Anni. Acc. Hammer" || hammerName === "Accessory Hammer"))) {
+                
+                if (bot.hammerEffect[userId].remaining > 0) {
+                    distribution[0] = 0;
+                    bot.hammerEffect[userId].remaining--;
+                }
+                if (bot.hammerEffect[userId].remaining == 0) {
+                    clearTimeout(bot.hammerEffect[userId].effectTimeout);
+                    bot.hammerEffect[userId] = {
+                        itemName: "",
+                        remaining: 0,
+                        endTime: 0,
+                        effectTimeout: null
+                    }
+                    message.reply("Your hammer is at its limit! This is the last craft with hammer effect.");
+                }
             }
         }
 

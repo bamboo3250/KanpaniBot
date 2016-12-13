@@ -106,7 +106,9 @@ module.exports = {
             if (typeof bot.hammerEffect[userId] === "undefined") {
                 bot.hammerEffect[userId] = {
                     itemName: "",
-                    endTime: 0
+                    remaining: 0,
+                    endTime: 0,
+                    effectTimeout: null
                 }
             }
             var now = new Date();
@@ -119,18 +121,20 @@ module.exports = {
             var effectDuration = 15*60*1000;    // 15 mins
             bot.hammerEffect[userId].itemName = materialInfo.itemName;
             bot.hammerEffect[userId].endTime = now.valueOf() + effectDuration;
-
-            setTimeout(function() {
+            bot.hammerEffect[userId].remaining = 15;
+            bot.hammerEffect[userId].effectTimeout = setTimeout(function() {
                 bot.hammerEffect[userId] = {
                     itemName: "",
-                    endTime: 0
+                    remaining: 0,
+                    endTime: 0,
+                    effectTimeout: null
                 }
                 message.author.sendMessage("The effect of **" + materialInfo.itemName + "** has faded away.");
             }, effectDuration);
 
             bot.playerManager.spendItem(userId, materialInfo.itemName);
             bot.savePlayer();
-            message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 15 minutes.");
+            message.reply("You have used **" + materialInfo.itemName + "**. The quality of your first 15 crafts will be improved and this effect will last for 15 minutes.");
         } else if (isForge(itemName)) {
             if (typeof bot.forgeEffect[userId] === "undefined") {
                 bot.forgeEffect[userId] = {
