@@ -99,7 +99,8 @@ module.exports = {
                 }    
             }
             
-
+            var player = bot.playerManager.getPlayer(userId);
+            var employee = bot.createEmployeeFromPlayer(player);
             var preLevel = employee.levelCached;
             player.exp += expGained;
             employee.addExp(expGained);
