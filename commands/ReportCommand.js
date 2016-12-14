@@ -22,11 +22,8 @@ module.exports = {
         for(key in bot.report[reportedUser.id]) {
             var reporterId = key;
             var player = bot.playerManager.getPlayer(reporterId);
-            if (player === null) {
-                text += bot.report[reportedUser.id][reporterId] + " ";
-            };
             var employee = bot.createEmployeeFromPlayer(player);
-            if (employee.levelCached >= 50) {
+            if (employee && employee.levelCached >= 50) {
                 text += "**" + bot.report[reportedUser.id][reporterId] + "** ";
             } else {
                 text += bot.report[reportedUser.id][reporterId] + " ";
@@ -39,9 +36,8 @@ module.exports = {
             for(key in bot.report[reportedUser.id]) {
                 var reporterId = key;
                 var player = bot.playerManager.getPlayer(reporterId);
-                if (player === null) continue;
                 var employee = bot.createEmployeeFromPlayer(player);
-                if (employee.levelCached >= 50) count++;
+                if (employee && employee.levelCached >= 50) count++;
             }
             if (count >= 2) {
                 message.guild.fetchMember(reportedUser).then(guildMember => {
