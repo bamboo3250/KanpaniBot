@@ -18,6 +18,7 @@ var EmployeeInfo = function(employeeInfo) {
     this.armor = null;
     this.accessory = null;
     this.element = "";
+    this.position = "front";
 }
 
 EmployeeInfo.prototype.getClassId = function() {
@@ -260,6 +261,15 @@ EmployeeInfo.prototype.getFrontSkill = function() {
 
 EmployeeInfo.prototype.getBackSkill = function() {
     return (this.weapon ? this.weapon.backSkill : "None");
+}
+
+EmployeeInfo.prototype.getCurrentSkill = function() {
+    if (!this.weapon) return null;
+    if (this.position === "front") {
+        return this.weapon.frontSkill;
+    } else {
+        return this.weapon.backSkill;
+    }
 }
 
 EmployeeInfo.prototype.getIllustURL = function(category) {

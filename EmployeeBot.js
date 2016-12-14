@@ -243,6 +243,7 @@ EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
     var employeeInfo = this.employeeDatabase.getEmployeeById(player.characterId)
     var employee = new Employee(employeeInfo);
     employee.setExp(player.exp);
+    employee.position = player.position;
 
     if (player.equipedWeapon) {
         var weapon = this.weaponDatabase.getWeaponById(player.equipedWeapon._id);
