@@ -174,6 +174,8 @@ function EmployeeBot() {
 
     this.logChannel = null;
 
+    // Event stuffs
+    this.christmasTreeContribution = {};
 }
 
 EmployeeBot.prototype.isPM = function(message) {
@@ -500,6 +502,35 @@ EmployeeBot.prototype.loadDailyGift = function() {
     });
 }
 
+var christmasTreeFileName = "christmasTree.json";
+EmployeeBot.prototype.saveChristmasTree = function() {
+    var textToWrite = JSON.stringify(this.christmasTreeContribution, null, 4);
+    var that = this;
+    fs.writeFile(christmasTreeFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadChristmasTree = function() {
+    var that = this;
+    fs.readFile(christmasTreeFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadChristmasTree] Read file error.\n" + err);
+            return;
+        }
+        try {
+            that.christmasTreeContribution = JSON.parse(data);
+        }
+        catch (err) {
+            that.log(err);
+        }
+    });
+}
+
+
 var runQuestStatusFileName = "runQuestStatus.json";
 EmployeeBot.prototype.saveRunQuestStatus = function() {
     var textToWrite = JSON.stringify(this.runQuestStatus, null, 4);
@@ -590,6 +621,7 @@ EmployeeBot.prototype.ready = function() {
         this.loadPlayer();
         this.loadDailyGift();
         this.loadUnsubscribe();
+        this.loadChristmasTree();
         this.userManager.fetchAllMembers(this, function() {
             that.loadRunQuestStatus();
         });

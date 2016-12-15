@@ -39,8 +39,15 @@ function isBread(itemName) {
     return contains(itemListList, itemName);   
 }
 
+function isEldLight(itemName) {
+    var itemListList = [
+        "Eld Light"
+    ];
+    return contains(itemListList, itemName);
+}
+
 function isUsable(itemName) {
-    return isMailbox(itemName) || isHammer(itemName) || isForge(itemName) || isBread(itemName);
+    return isMailbox(itemName) || isHammer(itemName) || isForge(itemName) || isBread(itemName) || isEldLight(itemName);
 }
 
 module.exports = {
@@ -173,6 +180,178 @@ module.exports = {
             bot.playerManager.spendItem(userId, materialInfo.itemName);
             bot.savePlayer();
             message.reply(bot.createRemainingBreadLine(message));
+        } else if (isEldLight(itemName)) {
+            var rewardList = [
+                {
+                    itemName: "Gold Ore",
+                    amount: 10
+                },{
+                    itemName: "Ominous Cloth",
+                    amount: 10
+                },{
+                    itemName: "Chimera Horn",
+                    amount: 10
+                },{
+                    itemName: "Luxurious Leather",
+                    amount: 10
+                },{
+                    itemName: "Full Moon Fragment",
+                    amount: 10
+                },{
+                    itemName: "Magical Water",
+                    amount: 10
+                },{
+                    itemName: "Ebony Branch",
+                    amount: 10
+                },{
+                    itemName: "Gold Ore",
+                    amount: 10
+                },{
+                    itemName: "Ominous Cloth",
+                    amount: 10
+                },{
+                    itemName: "Chimera Horn",
+                    amount: 10
+                },{
+                    itemName: "Luxurious Leather",
+                    amount: 10
+                },{
+                    itemName: "Full Moon Fragment",
+                    amount: 10
+                },{
+                    itemName: "Magical Water",
+                    amount: 10
+                },{
+                    itemName: "Ebony Branch",
+                    amount: 10
+                },{
+                    itemName: "Accessory Hammer",
+                    amount: 1
+                },{
+                    itemName: "Weapon Hammer",
+                    amount: 1
+                },{
+                    itemName: "Armor Hammer",
+                    amount: 1
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 10
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 10
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 10
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 10
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 10
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 20
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 20
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 50
+                },{
+                    itemName: "Gold Mailbox",
+                    amount: 1
+                },{
+                    itemName: "Silver Mailbox",
+                    amount: 1
+                },{
+                    itemName: "Eld Light",
+                    amount: 2
+                }
+            ];
+
+            var milestones = {
+                "10": {
+                    itemName: "Black Pearl",
+                    amount: 10
+                },
+                "50": {
+                    itemName: "Unmelting Ice",
+                    amount: 20
+                },
+                "100": {
+                    itemName: "Gold Mailbox",
+                    amount: 1
+                },
+                "500": {
+                    itemName: "Weapon Hammer",
+                    amount: 5
+                },
+                "1000": {
+                    itemName: "Forge",
+                    amount: 1
+                },
+                "5000": {
+                    itemName: "Forge",
+                    amount: 3
+                }
+            }
+
+            var reward = bot.functionHelper.randomObject(rewardList);
+            var rewardItem = bot.itemInfoDatabase.getItemInfoByName(reward.itemName);
+                
+            var itemtUrl = bot.urlHelper.getItemIconUrl(rewardItem._id);
+            var itemFileName = "images/item/large/" + rewardItem._id + ".png";
+
+            var queue = [
+                { fileToDownload: itemtUrl,   fileToSave: itemFileName}
+            ];
+            bot.imageHelper.download(queue, function(err) {
+                if (err) {
+                    message.reply("Error happened. Try again.");
+                    bot.log(err);
+                    return;
+                }
+
+                bot.imageHelper.read([itemFileName], function (err, imageList) {
+                    if (err) {
+                        message.reply("Error happened. Try again.");
+                        bot.log(err);
+                        return;
+                    }
+                }
+
+                if (typeof bot.christmasTreeContribution[userId] === "undefined") {
+                    bot.christmasTreeContribution[userId] = 0;
+                }
+                bot.christmasTreeContribution[userId]++;
+                bot.saveChristmasTree();
+
+                var total = 0;
+                for(key in bot.christmasTreeContribution) {
+                    total += bot.christmasTreeContribution[key];
+                }
+
+                bot.playerManager.spendItem(userId, materialInfo.itemName);
+                var text = "You used **1 " + materialInfo.itemName + "** to decorate the Sacred Tree.\n";
+                bot.playerManager.addItem(userId, reward.itemName, reward.amount);
+
+                text += "**" + reward.amount + " " + reward.itemName + " droped from the Tree.";
+                message.channel.sendFile(itemFileName, "png", text);
+
+                if (typeof milestones["" + total] != "undefined") {
+                    var rewardToGive = milestones["" + total];
+                    for(key in bot.christmasTreeContribution) {
+                        var contributorId = key;
+                        bot.playerManager.addItem(contributorId, rewardToGive.itemName, rewardToGive.amount);
+                    }
+                    setTimeout(function() {
+                        var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
+                        text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
+                        message.channel.sendMessage(text2);
+                    }, 5000);
+                }
+                bot.savePlayer();
+            }
         }
     }
 }
