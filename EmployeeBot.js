@@ -69,6 +69,8 @@ function EmployeeBot() {
     this.userManager = userManager;
     this.backgroundManager = backgroundManager;
 
+    this.battleController = null;
+
     this.dmmMaintenanceList = [
         {
             name: "DMM Maintenance",
