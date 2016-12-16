@@ -250,6 +250,11 @@ module.exports = {
             message.reply("No information.");
             return;
         }
+        if (!quest.isActive) {
+            message.reply("This quest has been closed.");
+            return;
+        }
+
         if (isFullGrind && quest.name === "Phantom Labyrinth") {
             message.reply("You cannot use Full Grind for Phantom Labyrinth.");
             return;

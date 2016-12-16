@@ -235,7 +235,13 @@ module.exports = {
                     amount: 1
                 },{
                     itemName: "Unmelting Ice",
-                    amount: 10
+                    amount: 5
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 5
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 5
                 },{
                     itemName: "Unmelting Ice",
                     amount: 10
@@ -245,12 +251,6 @@ module.exports = {
                 },{
                     itemName: "Unmelting Ice",
                     amount: 10
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 10
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 20
                 },{
                     itemName: "Unmelting Ice",
                     amount: 20
@@ -307,7 +307,7 @@ module.exports = {
                     var text = "You used **1 " + materialInfo.itemName + "** to decorate the Sacred Tree.\n";
                     bot.playerManager.addItem(userId, reward.itemName, reward.amount);
 
-                    text += "**" + reward.amount + " " + reward.itemName + " droped from the Tree.";
+                    text += "**" + reward.amount + " " + reward.itemName + "** droped from the Tree.";
                     message.channel.sendFile(itemFileName, "png", text);
 
                     if (typeof bot.christmasTreeMilestones["" + total] != "undefined") {
@@ -323,8 +323,8 @@ module.exports = {
                         }, 5000);
                     }
                     bot.savePlayer();
-                }
-            }
+                });
+            });
         }
     }
 }
