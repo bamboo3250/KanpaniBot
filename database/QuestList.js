@@ -1,7 +1,7 @@
 var quests = [
     {
         commonNames: ["labyrinth", "lab"], name: "Phantom Labyrinth", 
-        levelRequired: 25, timeCost: 60, goldCost: 20000, breadCost: 0, 
+        isActive: true, levelRequired: 25, timeCost: 60, goldCost: 20000, breadCost: 0, 
         goldReward: 0, breadReward: 1, exp: 675, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 25,
         dropList: [
             "Beautiful Cloth", 
@@ -29,262 +29,262 @@ var quests = [
         ]
     },
 
-    // {
-    //     commonNames: ["Xmas1-beginner"], name: "Christmas Dungeon: Beginner", 
-    //     levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
-    //     goldReward: 50000, breadReward: 0, exp: 1155, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 30,
-    //     dropList: [
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Silver Mailbox",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Silver Mailbox",
-    //         "Gold Mailbox"
-    //     ]
-    // },{
-    //     commonNames: ["Xmas1-inter"], name: "Christmas Dungeon: Intermediate", 
-    //     levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
-    //     goldReward: 60000, breadReward: 0, exp: 3212, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 60,
-    //     dropList: [
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Accessory Hammer"
-    //     ]
-    // },{
-    //     commonNames: ["Xmas1-hard"], name: "Christmas Dungeon: Hard", 
-    //     levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
-    //     goldReward: 70000, breadReward: 0, exp: 5270, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 90,
-    //     dropList: [
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Christmas Eve Stardust",
-    //         "Holy Sprig",
-    //         "Ice Crystal",
-    //         "Weapon Hammer"
-    //     ]
-    // },
+    {
+        commonNames: ["Xmas1-beginner"], name: "Christmas Dungeon: Beginner", 
+        isActive: false, levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
+        goldReward: 50000, breadReward: 0, exp: 1155, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 30,
+        dropList: [
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Silver Mailbox",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Silver Mailbox",
+            "Gold Mailbox"
+        ]
+    },{
+        commonNames: ["Xmas1-inter"], name: "Christmas Dungeon: Intermediate", 
+        isActive: false, levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
+        goldReward: 60000, breadReward: 0, exp: 3212, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 60,
+        dropList: [
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Accessory Hammer"
+        ]
+    },{
+        commonNames: ["Xmas1-hard"], name: "Christmas Dungeon: Hard", 
+        isActive: false, levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
+        goldReward: 70000, breadReward: 0, exp: 5270, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 90,
+        dropList: [
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Christmas Eve Stardust",
+            "Holy Sprig",
+            "Ice Crystal",
+            "Weapon Hammer"
+        ]
+    },
 
     {
         commonNames: ["Xmas2-beginner"], name: "Christmas Dungeon: Beginner", 
-        levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
         goldReward: 30000, breadReward: 0, exp: 1000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 2,
         dropList: [
             "Eld Light"
         ]
     },{
         commonNames: ["Xmas2-inter"], name: "Christmas Dungeon: Intermediate", 
-        levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 35000, breadReward: 0, exp: 3000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
         dropList: [
             "Eld Light"
         ]
     },{
         commonNames: ["Xmas2-hard"], name: "Christmas Dungeon: Hard", 
-        levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
         goldReward: 40000, breadReward: 0, exp: 5400, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Eld Light"
         ]
     },{
         commonNames: ["Xmas2-ultra"], name: "Christmas Dungeon: Ultra", 
-        levelRequired: 70, timeCost: 120, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 70, timeCost: 120, goldCost: 0, breadCost: 1, 
         goldReward: 40000, breadReward: 0, exp: 7800, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 10,
         dropList: [
             "Eld Light"
@@ -293,7 +293,7 @@ var quests = [
 
     {
         commonNames: ["1-1-1", "1-1"], name: "Starting a Mercenary Business", 
-        levelRequired: 1, timeCost: 9, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 1, timeCost: 9, goldCost: 0, breadCost: 1, 
         goldReward: 100, breadReward: 0, exp: 112, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 3,
         dropList: [
             "Copper Ore", 
@@ -301,12 +301,12 @@ var quests = [
         ]
     },{
         commonNames: ["1-1-2", "1-2"], name: "Bottle Slimers Ravage the Fields", 
-        levelRequired: 2, timeCost: 10, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 2, timeCost: 10, goldCost: 0, breadCost: 1, 
         goldReward: 100, breadReward: 0, exp: 92, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
         dropList: ["Water"]
     },{
         commonNames: ["1-1-3", "1-3"], name: "10,000G Night View For You", 
-        levelRequired: 3, timeCost: 10, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 3, timeCost: 10, goldCost: 0, breadCost: 1, 
         goldReward: 110, breadReward: 0, exp: 102, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Tree Branch", 
@@ -314,22 +314,22 @@ var quests = [
         ]
     },{
         commonNames: ["1-1-4", "1-4"], name: "Do You Like Chickbat Meat?", 
-        levelRequired: 3, timeCost: 11, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 3, timeCost: 11, goldCost: 0, breadCost: 1, 
         goldReward: 121, breadReward: 0, exp: 132, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: ["Mountain Goat Horn"]
     },{
         commonNames: ["1-1-5", "1-5"], name: "Trouble In the Sewer Cave", 
-        levelRequired: 4, timeCost: 12, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 4, timeCost: 12, goldCost: 0, breadCost: 1, 
         goldReward: 134, breadReward: 0, exp: 150, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: ["Mountain Goat Horn"]
     },{
         commonNames: ["1-1-6", "1-6"], name: "Drunkard Blacksmith's Workshop", 
-        levelRequired: 4, timeCost: 13, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 4, timeCost: 13, goldCost: 0, breadCost: 1, 
         goldReward: 148, breadReward: 0, exp: 135, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 3,
         dropList: ["Copper Ore"]
     },{
         commonNames: ["1-1-7", "1-7"], name: "Trendy Chickbat Liqour", 
-        levelRequired: 5, timeCost: 14, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 5, timeCost: 14, goldCost: 0, breadCost: 1, 
         goldReward: 163, breadReward: 0, exp: 190, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Old Silver Coin", 
@@ -337,7 +337,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-1-8", "1-8"], name: "Company Blacksmith's Workshop", 
-        levelRequired: 5, timeCost: 15, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 5, timeCost: 15, goldCost: 0, breadCost: 1, 
         goldReward: 200, breadReward: 0, exp: 254, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 9,
         dropList: [
             "Tree Branch",
@@ -347,7 +347,7 @@ var quests = [
 
     {
         commonNames: ["1-2-1", "2-1"], name: "Revenge of the Chickbat", 
-        levelRequired: 6, timeCost: 15, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 6, timeCost: 15, goldCost: 0, breadCost: 1, 
         goldReward: 210, breadReward: 0, exp: 590, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Crystal", 
@@ -355,7 +355,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-2-2", "2-2"], name: "Handle Personal Information with Care", 
-        levelRequired: 7, timeCost: 16, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 7, timeCost: 16, goldCost: 0, breadCost: 1, 
         goldReward: 221, breadReward: 0, exp: 616, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
         dropList: [
             "Soft Leather", 
@@ -363,7 +363,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-2-3", "2-3"], name: "Operation Clockback", 
-        levelRequired: 8, timeCost: 16, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 8, timeCost: 16, goldCost: 0, breadCost: 1, 
         goldReward: 233, breadReward: 0, exp: 657, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
         dropList: [
             "Silver Coin Purse", 
@@ -372,7 +372,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-2-4", "2-4"], name: "Trade Ship Construction Rush", 
-        levelRequired: 8, timeCost: 18, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 8, timeCost: 18, goldCost: 0, breadCost: 1, 
         goldReward: 245, breadReward: 0, exp: 730, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Water", 
@@ -381,7 +381,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-2-5", "2-5"], name: "Trade Ship Construction Rush - Stone", 
-        levelRequired: 9, timeCost: 19, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 9, timeCost: 19, goldCost: 0, breadCost: 1, 
         goldReward: 258, breadReward: 0, exp: 697, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Soft Leather", 
@@ -389,7 +389,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-2-6", "2-6"], name: "Drunkard on the Ship", 
-        levelRequired: 9, timeCost: 20, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 9, timeCost: 20, goldCost: 0, breadCost: 1, 
         goldReward: 271, breadReward: 0, exp: 873, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Silver Coin Purse", 
@@ -399,7 +399,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-2-7", "2-7"], name: "Assisting the Magic Researcher", 
-        levelRequired: 10, timeCost: 21, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 10, timeCost: 21, goldCost: 0, breadCost: 1, 
         goldReward: 285, breadReward: 0, exp: 840, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Ruby", 
@@ -407,7 +407,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-2-8", "2-8"], name: "Pacifist of the Magic School", 
-        levelRequired: 10, timeCost: 22, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 10, timeCost: 22, goldCost: 0, breadCost: 1, 
         goldReward: 300, breadReward: 0, exp: 786, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Pure White Cloth", 
@@ -419,7 +419,7 @@ var quests = [
 
     {
         commonNames: ["1-3-1", "3-1"], name: "The All-Natural Beauty Serum", 
-        levelRequired: 11, timeCost: 23, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 11, timeCost: 23, goldCost: 0, breadCost: 1, 
         goldReward: 315, breadReward: 0, exp: 946, advantage: [1], numItemDrop: 9,
         dropList: [
             "Iron Ore", 
@@ -430,7 +430,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-3-2", "3-2"], name: "Monster House", 
-        levelRequired: 12, timeCost: 25, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 12, timeCost: 25, goldCost: 0, breadCost: 1, 
         goldReward: 331, breadReward: 0, exp: 1088, advantage: [2], numItemDrop: 9,
         dropList: [
             "Tanned Leather", 
@@ -440,7 +440,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-3-3", "3-3"], name: "The Wolf and the Hunter Guild Chief", 
-        levelRequired: 13, timeCost: 26, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 13, timeCost: 26, goldCost: 0, breadCost: 1, 
         goldReward: 348, breadReward: 0, exp: 1137, advantage: [3], numItemDrop: 9,
         dropList: [
             "Rare Silver Coin", 
@@ -452,7 +452,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-3-4", "3-4"], name: "New Arch-Enemy", 
-        levelRequired: 13, timeCost: 26, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 13, timeCost: 26, goldCost: 0, breadCost: 1, 
         goldReward: 366, breadReward: 0, exp: 1229, advantage: [4], numItemDrop: 6,
         dropList: [
             "Crystal", 
@@ -463,7 +463,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-3-5", "3-5"], name: "That Body Has Got to Be Mithril", 
-        levelRequired: 14, timeCost: 27, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 14, timeCost: 27, goldCost: 0, breadCost: 1, 
         goldReward: 385, breadReward: 0, exp: 1376, advantage: [5], numItemDrop: 12,
         dropList: [
             "Onyx", 
@@ -475,7 +475,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-3-6", "3-6"], name: "Newbie Treasure Hunter", 
-        levelRequired: 14, timeCost: 27, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 14, timeCost: 27, goldCost: 0, breadCost: 1, 
         goldReward: 405, breadReward: 0, exp: 1296, advantage: [6], numItemDrop: 9,
         dropList: [
             "Rare Silver Coin", 
@@ -487,7 +487,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-3-7", "3-7"], name: "Slimer Steak, Rare", 
-        levelRequired: 15, timeCost: 28, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 15, timeCost: 28, goldCost: 0, breadCost: 1, 
         goldReward: 426, breadReward: 0, exp: 1352, advantage: [7], numItemDrop: 9,
         dropList: [
             "Crystal", 
@@ -499,7 +499,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-3-8", "3-8"], name: "The Smiling Knight of the Round Table", 
-        levelRequired: 15, timeCost: 29, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 15, timeCost: 29, goldCost: 0, breadCost: 1, 
         goldReward: 400, breadReward: 0, exp: 1422, advantage: [8], numItemDrop: 3,
         dropList: [
             "Rare Silver Coin", 
@@ -513,7 +513,7 @@ var quests = [
 
     {
         commonNames: ["1-4-1", "4-1"], name: "Client from the Frontier", 
-        levelRequired: 16, timeCost: 30, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 16, timeCost: 30, goldCost: 0, breadCost: 1, 
         goldReward: 420, breadReward: 0, exp: 1451, advantage: [1], numItemDrop: 8,
         dropList: [
             "Copper Ore", 
@@ -527,7 +527,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-4-2", "4-2"], name: "Havoc on the Ship", 
-        levelRequired: 17, timeCost: 31, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 17, timeCost: 31, goldCost: 0, breadCost: 1, 
         goldReward: 441, breadReward: 0, exp: 1487, advantage: [2], numItemDrop: 8,
         dropList: [
             "Pure White Cloth", 
@@ -542,7 +542,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-4-3", "4-3"], name: "Kemomin's Trial", 
-        levelRequired: 18, timeCost: 32, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 18, timeCost: 32, goldCost: 0, breadCost: 1, 
         goldReward: 464, breadReward: 0, exp: 1563, advantage: [3], numItemDrop: 8,
         dropList: [
             "Mountain Goat Horn", 
@@ -556,7 +556,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-4-4", "4-4"], name: "Kemomin's Final Trial", 
-        levelRequired: 18, timeCost: 32, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 18, timeCost: 32, goldCost: 0, breadCost: 1, 
         goldReward: 488, breadReward: 0, exp: 1504, advantage: [4], numItemDrop: 12,
         dropList: [
             "Clear Water", 
@@ -570,7 +570,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-4-5", "4-5"], name: "Transferee from a New Frontier", 
-        levelRequired: 19, timeCost: 33, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 19, timeCost: 33, goldCost: 0, breadCost: 1, 
         goldReward: 513, breadReward: 0, exp: 1634, advantage: [8], numItemDrop: 12,
         dropList: [
             "Aquamarine", 
@@ -584,7 +584,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-4-6", "4-6"], name: "Departed Soul of Mithra", 
-        levelRequired: 19, timeCost: 34, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 19, timeCost: 34, goldCost: 0, breadCost: 1, 
         goldReward: 539, breadReward: 0, exp: 1692, advantage: [7], numItemDrop: 12,
         dropList: [
             "Aquamarine", 
@@ -598,7 +598,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-4-7", "4-7"], name: "The Informant Is a Master of Disguise", 
-        levelRequired: 20, timeCost: 34, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 20, timeCost: 34, goldCost: 0, breadCost: 1, 
         goldReward: 566, breadReward: 0, exp: 1708, advantage: [6], numItemDrop: 16,
         dropList: [
             "Soft Leather", 
@@ -613,7 +613,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-4-8", "4-8"], name: "The Duchy's Thirteenth Knight of the Round Table", 
-        levelRequired: 20, timeCost: 35, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 20, timeCost: 35, goldCost: 0, breadCost: 1, 
         goldReward: 500, breadReward: 0, exp: 1768, advantage: [5], numItemDrop: 12,
         dropList: [
             "Tanned Leather", 
@@ -626,7 +626,7 @@ var quests = [
     
     {
         commonNames: ["1-5-1", "5-1"], name: "Missing Little Brother", 
-        levelRequired: 21, timeCost: 36, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 21, timeCost: 36, goldCost: 0, breadCost: 1, 
         goldReward: 525, breadReward: 0, exp: 1830, advantage: [1, 7], numItemDrop: 15,
         dropList: [
             "Star Fragment", 
@@ -640,7 +640,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-5-2", "5-2"], name: "It's All for My Older Brother", 
-        levelRequired: 21, timeCost: 36, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 21, timeCost: 36, goldCost: 0, breadCost: 1, 
         goldReward: 552, breadReward: 0, exp: 1893, advantage: [2, 6], numItemDrop: 15,
         dropList: [
             "Shimmering Water", 
@@ -655,7 +655,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-5-3", "5-3"], name: "The Legendary Fortune Teller", 
-        levelRequired: 22, timeCost: 37, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 22, timeCost: 37, goldCost: 0, breadCost: 1, 
         goldReward: 580, breadReward: 0, exp: 2036, advantage: [1, 2, 3], numItemDrop: 20,
         dropList: [
             "Aquamarine", 
@@ -671,7 +671,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-5-4", "5-4"], name: "The Beauty of the Battlefield", 
-        levelRequired: 24, timeCost: 38, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 24, timeCost: 38, goldCost: 0, breadCost: 1, 
         goldReward: 609, breadReward: 0, exp: 2030, advantage: [4], numItemDrop: 15,
         dropList: [
             "Aquamarine", 
@@ -686,7 +686,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-5-5", "5-5"], name: "The Dreaming Young Archer", 
-        levelRequired: 26, timeCost: 39, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 26, timeCost: 39, goldCost: 0, breadCost: 1, 
         goldReward: 640, breadReward: 0, exp: 2141, advantage: [5], numItemDrop: 15,
         dropList: [
             "Beautiful Cloth", 
@@ -699,7 +699,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-5-6", "5-6"], name: "Screaming Alcohol", 
-        levelRequired: 28, timeCost: 39, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 28, timeCost: 39, goldCost: 0, breadCost: 1, 
         goldReward: 672, breadReward: 0, exp: 2160, advantage: [3, 6, 7], numItemDrop: 20,
         dropList: [
             "Mountain Goat Horn", 
@@ -713,7 +713,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-5-7", "5-7"], name: "Royal Holy Knights", 
-        levelRequired: 30, timeCost: 40, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 30, timeCost: 40, goldCost: 0, breadCost: 1, 
         goldReward: 706, breadReward: 0, exp: 2264, advantage: [2, 7, 8], numItemDrop: 15,
         dropList: [
             "Water", 
@@ -731,7 +731,7 @@ var quests = [
 
     {
         commonNames: ["1-6-1", "6-1"], name: "June Bride", 
-        levelRequired: 34, timeCost: 41, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 34, timeCost: 41, goldCost: 0, breadCost: 1, 
         goldReward: 730, breadReward: 0, exp: 2099, advantage: [5], numItemDrop: 18,
         dropList: [
             "Pure White Cloth", 
@@ -741,7 +741,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-6-2", "6-2"], name: "True Nature of an Old Enemy", 
-        levelRequired: 35, timeCost: 42, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 35, timeCost: 42, goldCost: 0, breadCost: 1, 
         goldReward: 750, breadReward: 0, exp: 2230, advantage: [1], numItemDrop: 18,
         dropList: [
             "Soft Leather", 
@@ -754,7 +754,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-6-3", "6-3"], name: "Forbidden Love", 
-        levelRequired: 36, timeCost: 43, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 36, timeCost: 43, goldCost: 0, breadCost: 1, 
         goldReward: 770, breadReward: 0, exp: 2410, advantage: [2], numItemDrop: 24,
         dropList: [
             "Tree Branch", 
@@ -768,7 +768,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-6-4", "6-4"], name: "King Perogg Ravages the Fields", 
-        levelRequired: 37, timeCost: 44, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 37, timeCost: 44, goldCost: 0, breadCost: 1, 
         goldReward: 790, breadReward: 0, exp: 2478, advantage: [3], numItemDrop: 18,
         dropList: [
             "Aquamarine", 
@@ -782,7 +782,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-6-5", "6-5"], name: "The Phantom Thief of Justice Appears!", 
-        levelRequired: 38, timeCost: 45, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 38, timeCost: 45, goldCost: 0, breadCost: 1, 
         goldReward: 810, breadReward: 0, exp: 2634, advantage: [6], numItemDrop: 18,
         dropList: [
             "Silver Ore", 
@@ -795,7 +795,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-6-6", "6-6"], name: "Patrol Volunteer", 
-        levelRequired: 39, timeCost: 46, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 39, timeCost: 46, goldCost: 0, breadCost: 1, 
         goldReward: 830, breadReward: 0, exp: 2595, advantage: [4], numItemDrop: 18,
         dropList: [
             "Mountain Goat Horn", 
@@ -805,7 +805,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-6-7", "6-7"], name: "It Takes Two to Make a Quarrel", 
-        levelRequired: 40, timeCost: 48, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 40, timeCost: 48, goldCost: 0, breadCost: 1, 
         goldReward: 850, breadReward: 0, exp: 2755, advantage: [7, 8], numItemDrop: 18,
         dropList: [
             "Copper Ore", 
@@ -822,7 +822,7 @@ var quests = [
 
     {
         commonNames: ["1-7-1", "7-1"], name: "Ann's Necklace", 
-        levelRequired: 41, timeCost: 50, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 41, timeCost: 50, goldCost: 0, breadCost: 1, 
         goldReward: 870, breadReward: 0, exp: 3248, advantage: [5], numItemDrop: 21,
         dropList: [
             "Beautiful Cloth", 
@@ -837,7 +837,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-7-2", "7-2"], name: "Teacher of Lost Children", 
-        levelRequired: 41, timeCost: 50, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 41, timeCost: 50, goldCost: 0, breadCost: 1, 
         goldReward: 890, breadReward: 0, exp: 3098, advantage: [1], numItemDrop: 21,
         dropList: [
             "Aquamarine", 
@@ -851,7 +851,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-7-3", "7-3"], name: "Return of the Banshee", 
-        levelRequired: 42, timeCost: 50, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 42, timeCost: 50, goldCost: 0, breadCost: 1, 
         goldReward: 910, breadReward: 0, exp: 3264, advantage: [2], numItemDrop: 28,
         dropList: [
             "Evergreen Oak Branch", 
@@ -868,7 +868,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-7-4", "7-4"], name: "Mysterious Summoner", 
-        levelRequired: 42, timeCost: 50, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 42, timeCost: 50, goldCost: 0, breadCost: 1, 
         goldReward: 930, breadReward: 0, exp: 2991, advantage: [3], numItemDrop: 21,
         dropList: [
             "Aquamarine", 
@@ -880,7 +880,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-7-5", "7-5"], name: "Refurbishing the Trade Ship", 
-        levelRequired: 43, timeCost: 50, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 43, timeCost: 50, goldCost: 0, breadCost: 1, 
         goldReward: 950, breadReward: 0, exp: 4092, advantage: [6], numItemDrop: 21,
         dropList: [
             "Crescent Moon Fragment", 
@@ -891,7 +891,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-7-6", "7-6"], name: "Get Backers", 
-        levelRequired: 43, timeCost: 50, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 43, timeCost: 50, goldCost: 0, breadCost: 1, 
         goldReward: 970, breadReward: 0, exp: 3347, advantage: [4], numItemDrop: 21,
         dropList: [
             "Water Buffalo Horn", 
@@ -901,7 +901,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-7-7", "7-7"], name: "Dragon Slayer of the Caves", 
-        levelRequired: 44, timeCost: 50, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 44, timeCost: 50, goldCost: 0, breadCost: 1, 
         goldReward: 990, breadReward: 0, exp: 3483, advantage: [7, 8], numItemDrop: 21,
         dropList: [
             "Aquamarine", 
@@ -914,7 +914,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-7-8", "7-8"], name: "The Summoner Has a Situation", 
-        levelRequired: 45, timeCost: 50, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 45, timeCost: 50, goldCost: 0, breadCost: 1, 
         goldReward: 1010, breadReward: 0, exp: 3644, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 21,
         dropList: [
             "Aquamarine", 
@@ -929,7 +929,7 @@ var quests = [
 
     {
         commonNames: ["1-8-1", "8-1"], name: "Birthday Present", 
-        levelRequired: 46, timeCost: 55, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 46, timeCost: 55, goldCost: 0, breadCost: 1, 
         goldReward: 1010, breadReward: 0, exp: 3741, advantage: [7], numItemDrop: 24,
         dropList: [
             "Star Fragment", 
@@ -946,7 +946,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-8-2", "8-2"], name: "Knight Test Preparations - Weapons -", 
-        levelRequired: 46, timeCost: 55, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 46, timeCost: 55, goldCost: 0, breadCost: 1, 
         goldReward: 1030, breadReward: 0, exp: 3822, advantage: [1, 2, 7], numItemDrop: 24,
         dropList: [
             "Chimera Horn", 
@@ -961,7 +961,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-8-3", "8-3"], name: "Knight Test Preparations - Armor -", 
-        levelRequired: 47, timeCost: 55, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 47, timeCost: 55, goldCost: 0, breadCost: 1, 
         goldReward: 1050, breadReward: 0, exp: 3658, advantage: [5], numItemDrop: 24,
         dropList: [
             "Black Pearl", 
@@ -981,7 +981,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-8-4", "8-4"], name: "Cleanup In Front of the Lab", 
-        levelRequired: 47, timeCost: 55, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 47, timeCost: 55, goldCost: 0, breadCost: 1, 
         goldReward: 1070, breadReward: 0, exp: 4191, advantage: [4], numItemDrop: 24,
         dropList: [
             "Chimera Horn", 
@@ -999,7 +999,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-8-5", "8-5"], name: "Weapons Collector", 
-        levelRequired: 48, timeCost: 55, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 48, timeCost: 55, goldCost: 0, breadCost: 1, 
         goldReward: 1090, breadReward: 0, exp: 3613, advantage: [3], numItemDrop: 16,
         dropList: [
             "Beautiful Cloth", 
@@ -1016,7 +1016,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-8-6", "8-6"], name: "Forest of the Dead Secret Area", 
-        levelRequired: 48, timeCost: 55, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 48, timeCost: 55, goldCost: 0, breadCost: 1, 
         goldReward: 1110, breadReward: 0, exp: 3890, advantage: [1, 2], numItemDrop: 24,
         dropList: [
             "Chimera Horn", 
@@ -1031,7 +1031,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-8-7", "8-7"], name: "The Summoner's Situation", 
-        levelRequired: 49, timeCost: 55, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 49, timeCost: 55, goldCost: 0, breadCost: 1, 
         goldReward: 1130, breadReward: 0, exp: 4309, advantage: [8], numItemDrop: 24,
         dropList: [
             "Black Pearl", 
@@ -1050,7 +1050,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-8-8", "8-8"], name: "Necromancer", 
-        levelRequired: 50, timeCost: 55, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 50, timeCost: 55, goldCost: 0, breadCost: 1, 
         goldReward: 1150, breadReward: 0, exp: 4412, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 24,
         dropList: [
             "Chimera Horn", 
@@ -1069,7 +1069,7 @@ var quests = [
 
     {
         commonNames: ["1-9-1", "9-1"], name: "Monster of the Forest?", 
-        levelRequired: 51, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 51, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 1170, breadReward: 0, exp: 4070, advantage: [3], numItemDrop: 27,
         dropList: [
             "Beautiful Cloth", 
@@ -1083,7 +1083,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-9-2", "9-2"], name: "Mysterio Competition", 
-        levelRequired: 51, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 51, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 1190, breadReward: 0, exp: 4406, advantage: [1], numItemDrop: 27,
         dropList: [
             "Chimera Horn", 
@@ -1099,7 +1099,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-9-3", "9-3"], name: "Living Dead", 
-        levelRequired: 52, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 52, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 1210, breadReward: 0, exp: 4652, advantage: [4], numItemDrop: 27,
         dropList: [
             "Aquamarine", 
@@ -1118,7 +1118,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-9-4", "9-4"], name: "Ann's Ring", 
-        levelRequired: 52, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 52, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 1230, breadReward: 0, exp: 4532, advantage: [7, 8], numItemDrop: 27,
         dropList: [
             "Clear Water", 
@@ -1131,7 +1131,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-9-5", "9-5"], name: "Dubious Request", 
-        levelRequired: 53, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 53, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 1250, breadReward: 0, exp: 4696, advantage: [6, 8], numItemDrop: 27,
         dropList: [
             "Ebony Branch", 
@@ -1142,7 +1142,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-9-6", "9-6"], name: "Volcano Job", 
-        levelRequired: 54, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 54, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 1270, breadReward: 0, exp: 4209, advantage: [5], numItemDrop: 27,
         dropList: [
             "Chimera Horn", 
@@ -1158,7 +1158,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-9-7", "9-7"], name: "Ruins of the Holy Maiden", 
-        levelRequired: 55, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 55, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 1290, breadReward: 0, exp: 4823, advantage: [2], numItemDrop: 27,
         dropList: [
             "Black Pearl", 
@@ -1176,7 +1176,7 @@ var quests = [
 
     {
         commonNames: ["1-10-1", "10-1"], name: "Comrade in Arms", 
-        levelRequired: 56, timeCost: 65, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 56, timeCost: 65, goldCost: 0, breadCost: 1, 
         goldReward: 1310, breadReward: 0, exp: 4803, advantage: [1], numItemDrop: 30,
         dropList: [
             "Crescent Moon Fragment",
@@ -1189,7 +1189,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-10-2", "10-2"], name: "Ann's Bracelet", 
-        levelRequired: 56, timeCost: 65, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 56, timeCost: 65, goldCost: 0, breadCost: 1, 
         goldReward: 1330, breadReward: 0, exp: 4843, advantage: [6, 8], numItemDrop: 30,
         dropList: [
             "Evergreen Oak Branch", 
@@ -1203,7 +1203,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-10-3", "10-3"], name: "Work Abroad", 
-        levelRequired: 57, timeCost: 65, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 57, timeCost: 65, goldCost: 0, breadCost: 1, 
         goldReward: 1350, breadReward: 0, exp: 5174, advantage: [3], numItemDrop: 30,
         dropList: [
             "Clear Water", 
@@ -1214,7 +1214,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-10-4", "10-4"], name: "Employee Dispatch", 
-        levelRequired: 57, timeCost: 65, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 57, timeCost: 65, goldCost: 0, breadCost: 1, 
         goldReward: 1370, breadReward: 0, exp: 5478, advantage: [5], numItemDrop: 30,
         dropList: [
             "Aquamarine", 
@@ -1230,7 +1230,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-10-5", "10-5"], name: "Reunion", 
-        levelRequired: 58, timeCost: 65, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 58, timeCost: 65, goldCost: 0, breadCost: 1, 
         goldReward: 1390, breadReward: 0, exp: 5639, advantage: [4], numItemDrop: 30,
         dropList: [
             "Emerald", 
@@ -1244,7 +1244,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-10-6", "10-6"], name: "Magical Crystal", 
-        levelRequired: 59, timeCost: 65, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 59, timeCost: 65, goldCost: 0, breadCost: 1, 
         goldReward: 1410, breadReward: 0, exp: 5041, advantage: [2], numItemDrop: 30,
         dropList: [
             "Chimera Horn", 
@@ -1256,7 +1256,7 @@ var quests = [
         ]
     },{
         commonNames: ["1-10-7", "10-7"], name: "Transfer Portal", 
-        levelRequired: 60, timeCost: 65, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 60, timeCost: 65, goldCost: 0, breadCost: 1, 
         goldReward: 1430, breadReward: 0, exp: 5428, advantage: [7, 8], numItemDrop: 20,
         dropList: [
             "Full Moon Fragment", 
@@ -1272,7 +1272,7 @@ var quests = [
 
     {
         commonNames: ["", ""], name: "", 
-        levelRequired: 1, timeCost: 0, goldCost: 0, breadCost: 1, 
+        isActive: true, levelRequired: 1, timeCost: 0, goldCost: 0, breadCost: 1, 
         goldReward: 0, breadReward: 0, exp: 0, advantage: [], numItemDrop: 0,
         dropList: ["", ""]
     },

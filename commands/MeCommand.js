@@ -149,24 +149,24 @@ module.exports = {
 
                 var partnerImage = imageList[7];
 
-                backgroundImage.crop(250,100, 310,270);
+                backgroundImage.crop(410, 65, 310, 270);
                 enemySpriteImage.crop(20, 0, 310, 270);
                 if (partnerImage) {
                     partnerImage.crop(20, 0, 310, 270);
                 }
-                shadowImage.scale(0.5);
+                shadowImage.scale(0.6);
 
                 if (player.partnerId && player.position === "front") {
                     backgroundImage
-                    .composite(shadowImage, 3, 100)
+                    .composite(shadowImage, 3-15, 100-5)
                     .composite(partnerImage, -102, -65);
                 }
                 backgroundImage
-                .composite(shadowImage, 105, 165)
+                .composite(shadowImage, 105-15, 165-5)
                 .composite(enemySpriteImage, 0, 0);
                 if (player.partnerId && player.position === "back") {
                     backgroundImage
-                    .composite(shadowImage, 207, 230)
+                    .composite(shadowImage, 207-15, 230-5)
                     .composite(partnerImage, 102, 65);
                 }
                 backgroundImage

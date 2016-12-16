@@ -235,7 +235,13 @@ module.exports = {
                     amount: 1
                 },{
                     itemName: "Unmelting Ice",
-                    amount: 10
+                    amount: 5
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 5
+                },{
+                    itemName: "Unmelting Ice",
+                    amount: 5
                 },{
                     itemName: "Unmelting Ice",
                     amount: 10
@@ -245,12 +251,6 @@ module.exports = {
                 },{
                     itemName: "Unmelting Ice",
                     amount: 10
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 10
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 20
                 },{
                     itemName: "Unmelting Ice",
                     amount: 20
@@ -307,7 +307,7 @@ module.exports = {
                     var text = "You used **1 " + materialInfo.itemName + "** to decorate the Sacred Tree.\n";
                     bot.playerManager.addItem(userId, reward.itemName, reward.amount);
 
-                    text += "**" + reward.amount + " " + reward.itemName + " droped from the Tree.";
+                    text += "**" + reward.amount + " " + reward.itemName + "** droped from the Tree.";
                     message.channel.sendFile(itemFileName, "png", text);
 
                     if (typeof bot.christmasTreeMilestones["" + total] != "undefined") {
@@ -315,16 +315,17 @@ module.exports = {
                         for(key in bot.christmasTreeContribution) {
                             var contributorId = key;
                             bot.playerManager.addItem(contributorId, rewardToGive.itemName, rewardToGive.amount);
+                            var user = bot.userManager.getUser(contributorId);
+                            if (user) {
+                                var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
+                                text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
+                                user.sendMessage(text2);
+                            }
                         }
-                        setTimeout(function() {
-                            var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
-                            text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
-                            message.channel.sendMessage(text2);
-                        }, 5000);
                     }
                     bot.savePlayer();
-                }
-            }
+                });
+            });
         }
     }
 }
