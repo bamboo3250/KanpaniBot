@@ -3108,6 +3108,494 @@ module.exports = {
                 }
             ]
         }
+    ],
+
+    "xmas2-white": [
+        {
+            _id: "300188", modelId: "88", weaponName: "Glacier Brand", commonNames: ["Glacier Brand"],
+            classId: 1, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 10, eva: 15,
+                    frontSkill: "Merry Christmas", backSkill: "Cross Edge"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 10, eva: 18,
+                    frontSkill: "Merry Christmass", backSkill: "Cross Edge"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 10, eva: 22,
+                    frontSkill: "Merry Christmas", backSkill: "Power Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 10, eva: 28,
+                    frontSkill: "Merry Christmas", backSkill: "Power Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 10, eva: 35,
+                    frontSkill: "Merry Christmas", backSkill: "Frost Edge"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300288", modelId: "88", weaponName: "Korimonmaru", commonNames: ["Korimonmaru"],
+            classId: 2, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Heavenly Sword"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Heavenly Sword"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 55, hit: 0, eva: 40,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Ice Dancing Blade"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300388", modelId: "88", weaponName: "Glacier Neve", commonNames: ["Glacier Neve"],
+            classId: 3, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Twin Shot", backSkill: "Hole of Light"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Twin Shot", backSkill: "Hole of Light"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Charge Arrow", backSkill: "Hole of Light"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Charge Arrow", backSkill: "Hole of Light"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Ice Shot", backSkill: "Hole of Light"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300488", modelId: "88", weaponName: "Glacier Spear", commonNames: ["Glacier Spear"],
+            classId: 4, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Strike"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Strike"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Dragon Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Dragon Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Rays of the Spear", backSkill: "Ice Strike"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300588", modelId: "88", weaponName: "Glacier Mountain", commonNames: ["Glacier Mountain"],
+            classId: 5, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Illuminate Stamp", backSkill: "Force Impact"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Illuminate Stamp", backSkill: "Force Impact"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Illuminate Stamp", backSkill: "Ice Age"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300688", modelId: "88", weaponName: "Glacier Mist", commonNames: ["Glacier Mist"],
+            classId: 6, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300788", modelId: "88", weaponName: "Twin Glacier", commonNames: ["Twin Glacier"],
+            classId: 7, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Illuminate Ball", backSkill: "Shadow Run"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Illuminate Ball", backSkill: "Shadow Run"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Illuminate Ball", backSkill: "Icy Wind"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300888", modelId: "88", weaponName: "Glacier Sol", commonNames: ["Glacier Sol"],
+            classId: 8, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Cold Lance", backSkill: "Castle of Light"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Cold Lance", backSkill: "Castle of Light"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Ice Strike", backSkill: "Castle of Light"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Ice Strike", backSkill: "Castle of Light"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Frostbite", backSkill: "Castle of Light"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
+    "xmas2-red": [
+        {
+            _id: "300187", modelId: "87", weaponName: "Holly Devil's Ice Sword", commonNames: ["Holly Devil's Ice Sword"],
+            classId: 1, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 10, eva: 15,
+                    frontSkill: "Merry Christmas", backSkill: "Cross Edge"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 10, eva: 18,
+                    frontSkill: "Merry Christmass", backSkill: "Cross Edge"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 10, eva: 22,
+                    frontSkill: "Merry Christmas", backSkill: "Power Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 10, eva: 28,
+                    frontSkill: "Merry Christmas", backSkill: "Power Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 10, eva: 35,
+                    frontSkill: "Merry Christmas", backSkill: "Frost Edge"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300287", modelId: "87", weaponName: "Holly Devil's Sword", commonNames: ["Holly Devil's Sword"],
+            classId: 2, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Heavenly Sword"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Heavenly Sword"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 55, hit: 0, eva: 40,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Ice Dancing Blade"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300387", modelId: "87", weaponName: "Holly Devil's Ice Bow", commonNames: ["Holly Devil's Ice Bow"],
+            classId: 3, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Twin Shot", backSkill: "Hole of Light"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Twin Shot", backSkill: "Hole of Light"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Charge Arrow", backSkill: "Hole of Light"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Charge Arrow", backSkill: "Hole of Light"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Ice Shot", backSkill: "Hole of Light"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300487", modelId: "87", weaponName: "Holly Devil's Ice Spear", commonNames: ["Holly Devil's Ice Spear"],
+            classId: 4, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Strike"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Strike"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Dragon Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Dragon Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Rays of the Spear", backSkill: "Ice Strike"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300587", modelId: "87", weaponName: "Holly Devil's Ice Hammer", commonNames: ["Holly Devil's Ice Hammer"],
+            classId: 5, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Illuminate Stamp", backSkill: "Force Impact"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Illuminate Stamp", backSkill: "Force Impact"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Illuminate Stamp", backSkill: "Ice Age"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300687", modelId: "87", weaponName: "Holly Devil's Healing Mace", commonNames: ["Holly Devil's Healing Mace"],
+            classId: 6, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300787", modelId: "87", weaponName: "Holly Devil's Dualblades", commonNames: ["Holly Devil's Dualblades"],
+            classId: 7, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Illuminate Ball", backSkill: "Shadow Run"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Illuminate Ball", backSkill: "Shadow Run"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Illuminate Ball", backSkill: "Icy Wind"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "300887", modelId: "87", weaponName: "Holly Devil's Rod of Ice", commonNames: ["Holly Devil's Rod of Ice"],
+            classId: 8, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Cold Lance", backSkill: "Castle of Light"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Cold Lance", backSkill: "Castle of Light"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Ice Strike", backSkill: "Castle of Light"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Ice Strike", backSkill: "Castle of Light"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Frostbite", backSkill: "Castle of Light"
+                }
+            },
+            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        }
     ]
 
 
