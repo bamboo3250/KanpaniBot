@@ -50,7 +50,7 @@ module.exports = {
             } else {
                 return b.employee.getBaseRarity() - a.employee.getBaseRarity();
             }
-        })
+        });
         
         if (bot.isPM(message)) {
             sendTop(message, bot, result);

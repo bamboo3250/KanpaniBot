@@ -48,6 +48,7 @@ var toBackCommand = require('./commands/ToBackCommand');
 var itemDropCommand = require('./commands/ItemDropCommand');
 var unsubscribeCommand = require('./commands/UnsubscribeCommand');
 var retreatCommand = require('./commands/RetreatCommand');
+var xmasTreeCommand = require('./commands/XmasTreeCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -72,7 +73,7 @@ function EmployeeBot() {
     this.dmmMaintenanceList = [
         {
             name: "DMM Maintenance",
-            startTime: "Dec 16 2016 13:00:00 GMT+0900",
+            startTime: "Dec 16 2016 14:00:00 GMT+0900",
             endTime: "Dec 16 2016 17:00:00 GMT+0900"
         }
     ];
@@ -174,6 +175,34 @@ function EmployeeBot() {
 
     this.logChannel = null;
 
+    // Event stuffs
+    this.christmasTreeContribution = {};
+    this.christmasTreeMilestones = {
+        "10": {
+            itemName: "Black Pearl",
+            amount: 10
+        },
+        "50": {
+            itemName: "Unmelting Ice",
+            amount: 20
+        },
+        "100": {
+            itemName: "Gold Mailbox",
+            amount: 1
+        },
+        "500": {
+            itemName: "Weapon Hammer",
+            amount: 5
+        },
+        "1000": {
+            itemName: "Forge",
+            amount: 1
+        },
+        "5000": {
+            itemName: "Forge",
+            amount: 3
+        }
+    }
 }
 
 EmployeeBot.prototype.isPM = function(message) {
@@ -298,6 +327,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         itemDropCommand.handle(message, this);
         unsubscribeCommand.handle(message, this);
         retreatCommand.handle(message, this);
+        xmasTreeCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -500,6 +530,35 @@ EmployeeBot.prototype.loadDailyGift = function() {
     });
 }
 
+var christmasTreeFileName = "christmasTree.json";
+EmployeeBot.prototype.saveChristmasTree = function() {
+    var textToWrite = JSON.stringify(this.christmasTreeContribution, null, 4);
+    var that = this;
+    fs.writeFile(christmasTreeFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadChristmasTree = function() {
+    var that = this;
+    fs.readFile(christmasTreeFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadChristmasTree] Read file error.\n" + err);
+            return;
+        }
+        try {
+            that.christmasTreeContribution = JSON.parse(data);
+        }
+        catch (err) {
+            that.log(err);
+        }
+    });
+}
+
+
 var runQuestStatusFileName = "runQuestStatus.json";
 EmployeeBot.prototype.saveRunQuestStatus = function() {
     var textToWrite = JSON.stringify(this.runQuestStatus, null, 4);
@@ -590,6 +649,7 @@ EmployeeBot.prototype.ready = function() {
         this.loadPlayer();
         this.loadDailyGift();
         this.loadUnsubscribe();
+        this.loadChristmasTree();
         this.userManager.fetchAllMembers(this, function() {
             that.loadRunQuestStatus();
         });

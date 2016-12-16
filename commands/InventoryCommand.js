@@ -37,7 +37,7 @@ module.exports = {
         var itemFileNameList = [];
         for(var i=0;i<itemInfoList.length;i++) {
             var itemFileName = "images/item/small/" + itemInfoList[i]._id + ".png";
-            var itemUrl = "http://img4.kanpani.jp/img/icon/item/small/" + itemInfoList[i]._id + ".png";
+            var itemUrl = bot.urlHelper.getItemIconUrl(itemInfoList[i]._id, "small");
             queue.push({
                 fileToDownload: itemUrl, fileToSave: itemFileName
             })
