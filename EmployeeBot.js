@@ -48,6 +48,7 @@ var toBackCommand = require('./commands/ToBackCommand');
 var itemDropCommand = require('./commands/ItemDropCommand');
 var unsubscribeCommand = require('./commands/UnsubscribeCommand');
 var retreatCommand = require('./commands/RetreatCommand');
+var xmasTreeCommand = require('./commands/XmasTreeCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -176,6 +177,32 @@ function EmployeeBot() {
 
     // Event stuffs
     this.christmasTreeContribution = {};
+    this.christmasTreeMilestones = {
+        "10": {
+            itemName: "Black Pearl",
+            amount: 10
+        },
+        "50": {
+            itemName: "Unmelting Ice",
+            amount: 20
+        },
+        "100": {
+            itemName: "Gold Mailbox",
+            amount: 1
+        },
+        "500": {
+            itemName: "Weapon Hammer",
+            amount: 5
+        },
+        "1000": {
+            itemName: "Forge",
+            amount: 1
+        },
+        "5000": {
+            itemName: "Forge",
+            amount: 3
+        }
+    }
 }
 
 EmployeeBot.prototype.isPM = function(message) {
@@ -300,6 +327,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         itemDropCommand.handle(message, this);
         unsubscribeCommand.handle(message, this);
         retreatCommand.handle(message, this);
+        xmasTreeCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
