@@ -315,12 +315,13 @@ module.exports = {
                         for(key in bot.christmasTreeContribution) {
                             var contributorId = key;
                             bot.playerManager.addItem(contributorId, rewardToGive.itemName, rewardToGive.amount);
+                            var user = bot.userManager.getUser(contributorId);
+                            if (user) {
+                                var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
+                                text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
+                                user.sendMessage(text2);
+                            }
                         }
-                        setTimeout(function() {
-                            var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
-                            text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
-                            message.channel.sendMessage(text2);
-                        }, 5000);
                     }
                     bot.savePlayer();
                 });
