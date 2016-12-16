@@ -21,7 +21,7 @@ module.exports = {
             text += "None\n";
             xmasTreeImageFileName = "images/misc/christmas_tree_on.png";
         } else {
-            text += minMilestone + "\n";
+            text += minMilestone + " (" + bot.christmasTreeMilestones[minMilestone].itemName + " x" + bot.christmasTreeMilestones[minMilestone].amount + ")\n";
         }
         text += "Contributors:\n";
         var result = [];

@@ -264,28 +264,28 @@ var quests = [
     {
         commonNames: ["Xmas2-beginner"], name: "Christmas Dungeon: Beginner", 
         levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
-        goldReward: 10000, breadReward: 0, exp: 1000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 2,
+        goldReward: 30000, breadReward: 0, exp: 1000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 2,
         dropList: [
             "Eld Light"
         ]
     },{
         commonNames: ["Xmas2-inter"], name: "Christmas Dungeon: Intermediate", 
         levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
-        goldReward: 15000, breadReward: 0, exp: 3000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
+        goldReward: 35000, breadReward: 0, exp: 3000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
         dropList: [
             "Eld Light"
         ]
     },{
         commonNames: ["Xmas2-hard"], name: "Christmas Dungeon: Hard", 
         levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
-        goldReward: 20000, breadReward: 0, exp: 5400, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
+        goldReward: 40000, breadReward: 0, exp: 5400, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Eld Light"
         ]
     },{
         commonNames: ["Xmas2-ultra"], name: "Christmas Dungeon: Ultra", 
         levelRequired: 70, timeCost: 120, goldCost: 0, breadCost: 1, 
-        goldReward: 20000, breadReward: 0, exp: 7800, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 10,
+        goldReward: 40000, breadReward: 0, exp: 7800, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 10,
         dropList: [
             "Eld Light"
         ]
