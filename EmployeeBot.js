@@ -574,8 +574,8 @@ EmployeeBot.prototype.saveRunQuestStatus = function() {
 }
 
 EmployeeBot.prototype.loadRunQuestStatus = function() {
-    bot.log("loadRunQuestStatus");
     var that = this;
+    this.log("loadRunQuestStatus");
     fs.readFile(runQuestStatusFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadRunQuestStatus] " + err);
