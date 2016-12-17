@@ -31,10 +31,12 @@ module.exports = {
             var emojiName = 'k' + className.toLowerCase();
             const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
             text += "Class: **" + className + "** " +  (classEmoji != null? classEmoji : "") + "\n\n";
+
             text += "**Recipe**\n";
             for(var i=0;i<weaponInfo.recipe.length;i++) {
                 text += weaponInfo.recipe[i].materialName + " x" + weaponInfo.recipe[i].amount + "\n";
             }
+            if (weaponInfo.recipe.length === 0) text += "None\n";
 
             const atkEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'katk'));
             const defEmoji = (message.guild == null ? null : message.guild.emojis.find('name', 'kdef'));
@@ -61,7 +63,7 @@ module.exports = {
 
             text += "\n**Note**\n";
             text += weaponInfo.note;
-            
+
             message.channel.sendFile(equipmentFileName, "png", text);
         });
     }
