@@ -13,6 +13,7 @@ module.exports = {
             message.reply("No information.");
             return;
         }
+        var plus = 0;
         var equipmentUrl = bot.urlHelper.getEquipmentIconUrl(weaponInfo._id, plus, weaponInfo.type);
         var equipmentFileName = "images/equipment/large/" + weaponInfo._id + "0" + (plus+1) + "_1.png";
 
