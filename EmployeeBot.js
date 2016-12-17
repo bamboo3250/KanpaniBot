@@ -511,10 +511,7 @@ EmployeeBot.prototype.loadPlayer = function() {
                     || weaponId === "300699"
                     || weaponId === "300799"
                     || weaponId === "300899"
-                    ) {
-                    player.weaponList[weaponId + "0"] = player.weaponList[weaponId];
-                    countReplace++;
-                } else if (weaponId === "300188"
+                    || weaponId === "300188"
                     || weaponId === "300288"
                     || weaponId === "300388"
                     || weaponId === "300488"
@@ -531,12 +528,14 @@ EmployeeBot.prototype.loadPlayer = function() {
                     || weaponId === "300787"
                     || weaponId === "300887"
                     ) {
-                    player.weaponList[weaponId + "1"] = player.weaponList[weaponId];
-                    countReplace++;
+                    if (player.weaponList[weaponId]) {
+                        delete player.weaponList[weaponId];
+                        if (!player.weaponList[weaponId]) countReplace++;
+                    }
                 }
             }
         }
-        that.log("replaced " + countReplace);
+        that.log("deleted " + countReplace);
         that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
     });
 }
