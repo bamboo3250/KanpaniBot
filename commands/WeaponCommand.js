@@ -27,9 +27,10 @@ module.exports = {
                 return;
             }
             var text = "Weapon Name: **" + weaponInfo.weaponName + "**\n";
-            var emojiName = 'k' + bot.functionHelper.getClassName(classId);
+            var className = bot.functionHelper.getClassName(classId);
+            var emojiName = 'k' + className.toLowerCase());
             const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
-            text += "Class: **" + employee.getClass() + "** " +  (classEmoji != null? classEmoji : "") + "\n\n";
+            text += "Class: **" + className + "** " +  (classEmoji != null? classEmoji : "") + "\n\n";
             text += "**Recipe**\n";
             for(var i=0;i<weaponInfo.recipe.length;i++) {
                 text += weaponInfo.recipe[i].materialName + " x" + weaponInfo.recipe[i].amount + "\n";
