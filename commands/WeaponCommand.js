@@ -8,7 +8,7 @@ module.exports = {
             message.reply("Class name is not correct.");
             return;
         }
-        var weaponInfo = bot.weaponDatabase.getWeaponByCodeName(args[1], classId);
+        var weaponInfo = bot.weaponDatabase.getWeaponByCodeName(command.args[1], classId);
         if (!weaponInfo) {
             message.reply("No information.");
             return;
