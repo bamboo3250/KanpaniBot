@@ -53,8 +53,8 @@ module.exports = {
                     text += "CRIT: **" + stats.crit + "**\t";
                     text += "HIT: **" + stats.hit + "**\t";
                     text += "EVA: **" + stats.eva + "**\t";
-                    text += "Front: **" + stat.frontSkill + "**\t";
-                    text += "Back: **" + stat.backSkill + "**\n";
+                    text += "Front: **" + stats.frontSkill + "**\t";
+                    text += "Back: **" + stats.backSkill + "**\n";
                 }
             }
             message.channel.sendFile(equipmentFileName, "png", text);
