@@ -15,18 +15,9 @@ module.exports = {
 
         var employee = bot.employeeDatabase.getEmployeeByCommonName(name);
         if (employee == null) {
-            var classId = -1;
-            if (name == "fighter") classId = 1;
-            if (name == "ronin") classId = 2;
-            if (name == "archer") classId = 3;
-            if (name == "soldier") classId = 4;
-            if (name == "warrior") classId = 5;
-            if (name == "cleric" || name == "healer") classId = 6;
-            if (name == "rogue" || name == "assassin") classId = 7;
-            if (name == "magician" || name == "mage") classId = 8;
-
+            var classId = bot.functionHelper.getClassId(name)
             var suggestions = [];
-            if (classId > 0) {
+            if (classId) {
                 suggestions = bot.employeeDatabase.getSuggestionsByClass(classId);
             } else {
                 suggestions = bot.employeeDatabase.getSuggestionsByName(name);

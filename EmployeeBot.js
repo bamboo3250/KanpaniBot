@@ -49,6 +49,7 @@ var itemDropCommand = require('./commands/ItemDropCommand');
 var unsubscribeCommand = require('./commands/UnsubscribeCommand');
 var retreatCommand = require('./commands/RetreatCommand');
 var xmasTreeCommand = require('./commands/XmasTreeCommand');
+var weaponCommand = require('./commands/WeaponCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -328,6 +329,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         unsubscribeCommand.handle(message, this);
         retreatCommand.handle(message, this);
         xmasTreeCommand.handle(message, this);
+        weaponCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
