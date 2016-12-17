@@ -99,7 +99,7 @@ FunctionHelper.prototype.randomDist = function(distribution) {
 }
 
 FunctionHelper.prototype.getClassName = function(classId) {
-    if (classId === 1) return "Figter";
+    if (classId === 1) return "Fighter";
     if (classId === 2) return "Ronin";
     if (classId === 3) return "Archer";
     if (classId === 4) return "Soldier";

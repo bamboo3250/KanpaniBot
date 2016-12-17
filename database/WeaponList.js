@@ -2820,7 +2820,7 @@ module.exports = {
 
     "xmas1": [
         {
-            _id: "300199", modelId: "99", weaponName: "Christmas Blade X", commonNames: ["Christmas Blade X"],
+            _id: "3001990", modelId: "99", weaponName: "Christmas Blade X", commonNames: ["Christmas Blade X"],
             classId: 1, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 56, pdef: 52, matk: 0, mdef: 63, crit: 5, hit: 5, eva: 0,
@@ -2856,7 +2856,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300299", modelId: "99", weaponName: "Holy Night Blade X", commonNames: ["Holy Night Blade X"],
+            _id: "3002990", modelId: "99", weaponName: "Holy Night Blade X", commonNames: ["Holy Night Blade X"],
             classId: 2, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 91, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 15, eva: 0,
@@ -2892,7 +2892,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300399", modelId: "99", weaponName: "Christmas Bow X", commonNames: ["Christmas Bow X"],
+            _id: "3003990", modelId: "99", weaponName: "Christmas Bow X", commonNames: ["Christmas Bow X"],
             classId: 3, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 69, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 15, eva: 0,
@@ -2928,7 +2928,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300499", modelId: "99", weaponName: "Christmas Lance X", commonNames: ["Christmas Lance X"],
+            _id: "3004990", modelId: "99", weaponName: "Christmas Lance X", commonNames: ["Christmas Lance X"],
             classId: 4, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 25, pdef: 49, matk: 0, mdef: 0, crit: 3, hit: 5, eva: 0,
@@ -2964,7 +2964,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300599", modelId: "99", weaponName: "Christmas Hammer X", commonNames: ["Christmas Hammer X"],
+            _id: "3005990", modelId: "99", weaponName: "Christmas Hammer X", commonNames: ["Christmas Hammer X"],
             classId: 5, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 110, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 3, eva: 0,
@@ -3000,7 +3000,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300699", modelId: "99", weaponName: "Christmas Mace X", commonNames: ["Christmas Mace X"],
+            _id: "3006990", modelId: "99", weaponName: "Christmas Mace X", commonNames: ["Christmas Mace X"],
             classId: 6, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 23, matk: 55, mdef: 25, crit: 9, hit: 20, eva: 0,
@@ -3036,7 +3036,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300799", modelId: "99", weaponName: "Christmas Dagger X", commonNames: ["Christmas Dagger X"],
+            _id: "3007990", modelId: "99", weaponName: "Christmas Dagger X", commonNames: ["Christmas Dagger X"],
             classId: 7, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 51, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 20, eva: 30,
@@ -3072,7 +3072,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300899", modelId: "99", weaponName: "Christmas Cane X", commonNames: ["Christmas Cane X"],
+            _id: "3008990", modelId: "99", weaponName: "Christmas Cane X", commonNames: ["Christmas Cane X"],
             classId: 8, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 0, matk: 65, mdef: 0, crit: 5, hit: 15, eva: 0,
@@ -3112,7 +3112,7 @@ module.exports = {
 
     "xmas2-white": [
         {
-            _id: "300188", modelId: "88", weaponName: "Glacier Brand", commonNames: ["Glacier Brand"],
+            _id: "3001881", modelId: "88", weaponName: "Glacier Brand", commonNames: ["Glacier Brand"],
             classId: 1, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 10, eva: 15,
@@ -3142,7 +3142,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300288", modelId: "88", weaponName: "Korimonmaru", commonNames: ["Korimonmaru"],
+            _id: "3002881", modelId: "88", weaponName: "Korimonmaru", commonNames: ["Korimonmaru"],
             classId: 2, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
@@ -3172,7 +3172,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300388", modelId: "88", weaponName: "Glacier Neve", commonNames: ["Glacier Neve"],
+            _id: "3003881", modelId: "88", weaponName: "Glacier Neve", commonNames: ["Glacier Neve"],
             classId: 3, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
@@ -3202,7 +3202,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300488", modelId: "88", weaponName: "Glacier Spear", commonNames: ["Glacier Spear"],
+            _id: "3004881", modelId: "88", weaponName: "Glacier Spear", commonNames: ["Glacier Spear"],
             classId: 4, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
@@ -3232,7 +3232,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300588", modelId: "88", weaponName: "Glacier Mountain", commonNames: ["Glacier Mountain"],
+            _id: "3005881", modelId: "88", weaponName: "Glacier Mountain", commonNames: ["Glacier Mountain"],
             classId: 5, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
@@ -3262,7 +3262,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300688", modelId: "88", weaponName: "Glacier Mist", commonNames: ["Glacier Mist"],
+            _id: "3006881", modelId: "88", weaponName: "Glacier Mist", commonNames: ["Glacier Mist"],
             classId: 6, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
@@ -3292,7 +3292,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300788", modelId: "88", weaponName: "Twin Glacier", commonNames: ["Twin Glacier"],
+            _id: "3007881", modelId: "88", weaponName: "Twin Glacier", commonNames: ["Twin Glacier"],
             classId: 7, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
@@ -3322,7 +3322,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300888", modelId: "88", weaponName: "Glacier Sol", commonNames: ["Glacier Sol"],
+            _id: "3008881", modelId: "88", weaponName: "Glacier Sol", commonNames: ["Glacier Sol"],
             classId: 8, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
@@ -3356,7 +3356,7 @@ module.exports = {
 
     "xmas2-red": [
         {
-            _id: "300187", modelId: "87", weaponName: "Holly Devil's Ice Sword", commonNames: ["Holly Devil's Ice Sword"],
+            _id: "3001871", modelId: "87", weaponName: "Holly Devil's Ice Sword", commonNames: ["Holly Devil's Ice Sword"],
             classId: 1, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 10, eva: 15,
@@ -3386,7 +3386,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300287", modelId: "87", weaponName: "Holly Devil's Sword", commonNames: ["Holly Devil's Sword"],
+            _id: "3002871", modelId: "87", weaponName: "Holly Devil's Sword", commonNames: ["Holly Devil's Sword"],
             classId: 2, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
@@ -3416,7 +3416,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300387", modelId: "87", weaponName: "Holly Devil's Ice Bow", commonNames: ["Holly Devil's Ice Bow"],
+            _id: "3003871", modelId: "87", weaponName: "Holly Devil's Ice Bow", commonNames: ["Holly Devil's Ice Bow"],
             classId: 3, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
@@ -3446,7 +3446,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300487", modelId: "87", weaponName: "Holly Devil's Ice Spear", commonNames: ["Holly Devil's Ice Spear"],
+            _id: "3004871", modelId: "87", weaponName: "Holly Devil's Ice Spear", commonNames: ["Holly Devil's Ice Spear"],
             classId: 4, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
@@ -3476,7 +3476,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300587", modelId: "87", weaponName: "Holly Devil's Ice Hammer", commonNames: ["Holly Devil's Ice Hammer"],
+            _id: "3005871", modelId: "87", weaponName: "Holly Devil's Ice Hammer", commonNames: ["Holly Devil's Ice Hammer"],
             classId: 5, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
@@ -3506,7 +3506,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300687", modelId: "87", weaponName: "Holly Devil's Healing Mace", commonNames: ["Holly Devil's Healing Mace"],
+            _id: "3006871", modelId: "87", weaponName: "Holly Devil's Healing Mace", commonNames: ["Holly Devil's Healing Mace"],
             classId: 6, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
@@ -3536,7 +3536,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300787", modelId: "87", weaponName: "Holly Devil's Dualblades", commonNames: ["Holly Devil's Dualblades"],
+            _id: "3007871", modelId: "87", weaponName: "Holly Devil's Dualblades", commonNames: ["Holly Devil's Dualblades"],
             classId: 7, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
@@ -3566,7 +3566,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300887", modelId: "87", weaponName: "Holly Devil's Rod of Ice", commonNames: ["Holly Devil's Rod of Ice"],
+            _id: "3008871", modelId: "87", weaponName: "Holly Devil's Rod of Ice", commonNames: ["Holly Devil's Rod of Ice"],
             classId: 8, type: "event", stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,

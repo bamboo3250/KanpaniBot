@@ -118,7 +118,7 @@ module.exports = {
         } else if (equipmentResult.tier == 3) {
             distribution = [100, 60, 39, 1];
         } else if (equipmentResult.tier == 4) { // event weapon
-            distribution = [20, 25, 17, 7, 1];
+            distribution = [20, 22, 15, 7, 1];
         } else if (equipmentResult.tier == 5) { // event accessory
             distribution = [50, 30, 20, 10, 1];
         } 
