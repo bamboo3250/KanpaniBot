@@ -479,6 +479,7 @@ EmployeeBot.prototype.loadPlayer = function() {
             that.log(err);
         }
         // migration
+        var countReplace = 0;
         for(key in that.playerManager.playerDict) {
             var userId = key;
             var player = that.playerManager.playerDict[userId];
@@ -500,7 +501,6 @@ EmployeeBot.prototype.loadPlayer = function() {
                 player.partnerId = null;
             }
             that.playerManager.unequipWeapon(userId);
-            var countReplace = 0;
             for(weaponKey in player.weaponList) {
                 var weaponId = weaponKey;
                 if (weaponId === "300199"
