@@ -29,6 +29,17 @@ PlayerManager.prototype.getPlayer = function(userId) {
     return player;
 }
 
+PlayerManager.prototype.addItem = function(userId, itemName, amount = 1) {
+    var player = this.getPlayer(userId);
+    if (!player) return;
+    if (amount <= 0) return;
+    if (typeof player.materialList[itemName] === "undefined") {
+        player.materialList[itemName] = 0;
+    }
+    
+    player.materialList[itemName] = Math.max(0, player.materialList[itemName] + amount);
+}
+
 PlayerManager.prototype.spendItem = function(userId, itemName, amount = 1) {
     var player = this.getPlayer(userId);
     if (!player) return;
@@ -38,6 +49,13 @@ PlayerManager.prototype.spendItem = function(userId, itemName, amount = 1) {
     player.materialList[itemName] = Math.max(0, player.materialList[itemName] - amount);
 }
 
+PlayerManager.prototype.getItemAmount = function(userId, itemName) {
+    var player = this.getPlayer(userId);
+    if (!player) return 0;
+    if (typeof player.materialList[itemName] === "undefined") return 0;
+    return player.materialList[itemName];
+}
+
 PlayerManager.prototype.removeWeapon = function(userId, weaponId, plus, amount = 1) {
     var player = this.getPlayer(userId);
     if (!player) return;
@@ -45,6 +63,27 @@ PlayerManager.prototype.removeWeapon = function(userId, weaponId, plus, amount =
     if (typeof player.weaponList[weaponId] === "undefined") return;
     
     player.weaponList[weaponId]["+"+plus] = Math.max(0, player.weaponList[weaponId]["+"+plus] - amount);
+}
+
+PlayerManager.prototype.getWeaponAmount = function(userId, weaponId, plus) {
+    var player = this.getPlayer(userId);
+    if (!player) return 0;
+    if (typeof player.weaponList[weaponId] === "undefined") return 0;
+    return player.weaponList[weaponId]["+"+plus];
+}
+
+PlayerManager.prototype.getArmorAmount = function(userId, armorId, plus) {
+    var player = this.getPlayer(userId);
+    if (!player) return 0;
+    if (typeof player.armorList[armorId] === "undefined") return 0;
+    return player.armorList[armorId]["+"+plus];
+}
+
+PlayerManager.prototype.getAccessoryAmount = function(userId, accId, plus) {
+    var player = this.getPlayer(userId);
+    if (!player) return 0;
+    if (typeof player.accessoryList[accId] === "undefined") return 0;
+    return player.accessoryList[accId]["+"+plus];
 }
 
 PlayerManager.prototype.removeArmor = function(userId, armorId, plus, amount = 1) {
@@ -65,18 +104,12 @@ PlayerManager.prototype.removeAccessory = function(userId, accessoryId, plus, am
     player.accessoryList[accessoryId]["+"+plus] = Math.max(0, player.accessoryList[accessoryId]["+"+plus] - amount);
 }
 
-
-PlayerManager.prototype.addItem = function(userId, itemName, amount = 1) {
+PlayerManager.prototype.addGold = function(userId, amount = 0) {
     var player = this.getPlayer(userId);
     if (!player) return;
     if (amount <= 0) return;
-    if (typeof player.materialList[itemName] === "undefined") {
-        player.materialList[itemName] = 0;
-    }
-    
-    player.materialList[itemName] = Math.max(0, player.materialList[itemName] + amount);
+    player.gold = player.gold + amount;
 }
-
 
 PlayerManager.prototype.spendGold = function(userId, amount = 0) {
     var player = this.getPlayer(userId);

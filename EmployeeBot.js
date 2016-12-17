@@ -11,6 +11,7 @@ var Employee = require('./classes/Employee');
 var playerManager = require('./managers/PlayerManager');
 var userManager = require('./managers/UserManager');
 var backgroundManager = require('./managers/BackgroundManager');
+var auctionManager = require('./managers/AuctionManager');
 
 var imageHelper = require('./helpers/ImageHelper');
 var functionHelper = require('./helpers/FunctionHelper');
@@ -50,6 +51,7 @@ var unsubscribeCommand = require('./commands/UnsubscribeCommand');
 var retreatCommand = require('./commands/RetreatCommand');
 var xmasTreeCommand = require('./commands/XmasTreeCommand');
 var weaponCommand = require('./commands/WeaponCommand');
+var setAuctionCommand = require('./commands/SetAuctionCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -70,6 +72,7 @@ function EmployeeBot() {
     this.playerManager = playerManager;
     this.userManager = userManager;
     this.backgroundManager = backgroundManager;
+    this.auctionManager = auctionManager;
 
     this.dmmMaintenanceList = [
         {
@@ -330,6 +333,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         retreatCommand.handle(message, this);
         xmasTreeCommand.handle(message, this);
         weaponCommand.handle(message, this);
+
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -500,7 +504,7 @@ EmployeeBot.prototype.loadPlayer = function() {
             if (typeof player.partnerId === "undefined") {
                 player.partnerId = null;
             }
-            that.playerManager.unequipWeapon(userId);
+            
             for(weaponKey in player.weaponList) {
                 var weaponId = weaponKey;
                 if (weaponId === "300199"
@@ -596,7 +600,6 @@ EmployeeBot.prototype.loadChristmasTree = function() {
     });
 }
 
-
 var runQuestStatusFileName = "runQuestStatus.json";
 EmployeeBot.prototype.saveRunQuestStatus = function() {
     var textToWrite = JSON.stringify(this.runQuestStatus, null, 4);
@@ -647,6 +650,41 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
             }
         }
         // if (text != "") that.log(text);
+    });
+}
+
+var auctionFileName = "auction.json";
+EmployeeBot.prototype.saveAuction = function() {
+    var textToWrite = JSON.stringify(this.auctionManager.auctions, null, 4);
+    var that = this;
+    fs.writeFile(auctionFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadAuction = function() {
+    var that = this;
+    this.log("loadAuction");
+    fs.readFile(auctionFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadAuction] " + err);
+            return;
+        }
+        try {
+            that.auctionManager.auctions = JSON.parse(data);
+        }
+        catch (err) {
+            that.auctionManager.auctions = {};
+            that.log(err);
+        }
+        var text = "";
+        for(key in that.auctionManager.auction) {
+            var userId = key;
+            setAuctionCommand.setNotice(that, userId);
+        }
     });
 }
 
