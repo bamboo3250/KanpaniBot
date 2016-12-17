@@ -28,7 +28,7 @@ module.exports = {
             }
             var text = "Weapon Name: **" + weaponInfo.weaponName + "**\n";
             var className = bot.functionHelper.getClassName(classId);
-            var emojiName = 'k' + className.toLowerCase());
+            var emojiName = 'k' + className.toLowerCase();
             const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
             text += "Class: **" + className + "** " +  (classEmoji != null? classEmoji : "") + "\n\n";
             text += "**Recipe**\n";
