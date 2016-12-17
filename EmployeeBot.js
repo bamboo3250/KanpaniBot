@@ -199,7 +199,7 @@ function EmployeeBot() {
             itemName: "Forge",
             amount: 1
         },
-        "5000": {
+        "2500": {
             itemName: "Forge",
             amount: 3
         }

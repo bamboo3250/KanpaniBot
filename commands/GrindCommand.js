@@ -84,7 +84,7 @@ module.exports = {
                 "100": 1.3,
                 "500": 1.4,
                 "1000": 1.5,
-                "5000": 2.0,
+                "2500": 2.0,
             }
             var total = 0;
             for(key in bot.christmasTreeContribution) {
@@ -92,7 +92,7 @@ module.exports = {
             }
             var bonusFromChristmas = 1.0;
             if (quest.name.startsWith("Christmas Dungeon")) {
-                if (total >= 5000) bonusFromChristmas = 2.0;
+                if (total >= 2500) bonusFromChristmas = 2.0;
                 else if (total >= 1000) bonusFromChristmas = 1.5;
                 else if (total >= 500) bonusFromChristmas = 1.4;
                 else if (total >= 100) bonusFromChristmas = 1.3;
