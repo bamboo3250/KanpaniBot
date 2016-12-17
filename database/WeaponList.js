@@ -20,7 +20,7 @@ module.exports = {
                     frontSkill: "Power Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300201", modelId: "02", weaponName: "Uchigatana", commonNames: ["Uchigatana"],
             classId: 2, type: "story", stats: {
@@ -41,7 +41,7 @@ module.exports = {
                     frontSkill: "Helmet Splitter", backSkill: "Cleave"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300301", modelId: "02", weaponName: "Shortbow", commonNames: ["Shortbow"],
             classId: 3, type: "story", stats: {
@@ -62,7 +62,7 @@ module.exports = {
                     frontSkill: "Triple Shot", backSkill: "Triple Shot"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300401", modelId: "02", weaponName: "Spear", commonNames: ["Spear"],
             classId: 4, type: "story", stats: {
@@ -83,7 +83,7 @@ module.exports = {
                     frontSkill: "Double Dragon Strike", backSkill: "Double Strike"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300501", modelId: "02", weaponName: "Hand Axe", commonNames: ["Hand Axe"],
             classId: 5, type: "story", stats: {
@@ -104,7 +104,7 @@ module.exports = {
                     frontSkill: "Force Impact", backSkill: "Swing"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300601", modelId: "02", weaponName: "Mace", commonNames: ["Mace"],
             classId: 6, type: "story", stats: {
@@ -125,7 +125,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300701", modelId: "02", weaponName: "Twin Daggers", commonNames: ["Twin Daggers"],
             classId: 7, type: "story", stats: {
@@ -146,7 +146,7 @@ module.exports = {
                     frontSkill: "Shadow Run", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300801", modelId: "02", weaponName: "Rod of Fire", commonNames: ["Rod of Fire"],
             classId: 8, type: "story", stats: {
@@ -167,7 +167,7 @@ module.exports = {
                     frontSkill: "Flame Field", backSkill: "Flame Field"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         }
     ],
 
@@ -192,7 +192,7 @@ module.exports = {
                     frontSkill: "Power Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 1890, levelRequired: 1, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 1, tier: 1, recipe: [
                 {
                     materialName: "Copper Ore",
                     amount: 1
@@ -218,7 +218,7 @@ module.exports = {
                     frontSkill: "Helmet Splitter", backSkill: "Cleave"
                 }
             },
-            devCost: 1890, levelRequired: 2, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 2, tier: 1, recipe: [
                 {
                     materialName: "Water",
                     amount: 1
@@ -244,7 +244,7 @@ module.exports = {
                     frontSkill: "Triple Shot", backSkill: "Triple Shot"
                 }
             },
-            devCost: 1890, levelRequired: 3, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 3, tier: 1, recipe: [
                 {
                     materialName: "Tree Branch",
                     amount: 1
@@ -270,7 +270,7 @@ module.exports = {
                     frontSkill: "Double Dragon Strike", backSkill: "Double Strike"
                 }
             },
-            devCost: 1890, levelRequired: 3, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 3, tier: 1, recipe: [
                 {
                     materialName: "Mountain Goat Horn",
                     amount: 1
@@ -296,7 +296,7 @@ module.exports = {
                     frontSkill: "Force Impact", backSkill: "Swing"
                 }
             },
-            devCost: 1890, levelRequired: 4, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 4, tier: 1, recipe: [
                 {
                     materialName: "Mountain Goat Horn",
                     amount: 1
@@ -322,7 +322,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 1890, levelRequired: 4, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 4, tier: 1, recipe: [
                 {
                     materialName: "Copper Ore",
                     amount: 1
@@ -348,7 +348,7 @@ module.exports = {
                     frontSkill: "Shadow Run", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 1890, levelRequired: 5, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 5, tier: 1, recipe: [
                 {
                     materialName: "Star Fragment",
                     amount: 1
@@ -374,7 +374,7 @@ module.exports = {
                     frontSkill: "Ice Strike", backSkill: "Ice Strike"
                 }
             },
-            devCost: 1890, levelRequired: 5, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 5, tier: 1, recipe: [
                 {
                     materialName: "Tree Branch",
                     amount: 1
@@ -404,7 +404,7 @@ module.exports = {
                     frontSkill: "Double Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 2700, levelRequired: 11, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 11, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 1
@@ -430,7 +430,7 @@ module.exports = {
                     frontSkill: "Iaido Slash", backSkill: "Cleave"
                 }
             },
-            devCost: 2700, levelRequired: 12, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 12, tier: 1, recipe: [
                 {
                     materialName: "Clear Water",
                     amount: 1
@@ -456,7 +456,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Chain Shot"
                 }
             },
-            devCost: 2700, levelRequired: 13, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 13, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 1
@@ -482,7 +482,7 @@ module.exports = {
                     frontSkill: "Cyclone", backSkill: "Double Strike"
                 }
             },
-            devCost: 2700, levelRequired: 13, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 13, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 1
@@ -508,7 +508,7 @@ module.exports = {
                     frontSkill: "War Rage", backSkill: "Swing"
                 }
             },
-            devCost: 2700, levelRequired: 14, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 14, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 1
@@ -534,7 +534,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 2700, levelRequired: 14, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 14, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 1
@@ -560,7 +560,7 @@ module.exports = {
                     frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 2700, levelRequired: 15, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 15, tier: 1, recipe: [
                 {
                     materialName: "Crescent Moon Fragment",
                     amount: 1
@@ -586,7 +586,7 @@ module.exports = {
                     frontSkill: "Crystal Grave", backSkill: "Crystal Grave"
                 }
             },
-            devCost: 2700, levelRequired: 15, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 15, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 1
@@ -616,7 +616,7 @@ module.exports = {
                     frontSkill: "Double Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 5040, levelRequired: 16, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 16, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 2
@@ -645,7 +645,7 @@ module.exports = {
                     frontSkill: "Iaido Slash", backSkill: "Cleave"
                 }
             },
-            devCost: 5040, levelRequired: 17, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 17, tier: 1, recipe: [
                 {
                     materialName: "Clear Water",
                     amount: 2
@@ -674,7 +674,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Chain Shot"
                 }
             },
-            devCost: 5040, levelRequired: 18, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 18, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 2
@@ -703,7 +703,7 @@ module.exports = {
                     frontSkill: "Cyclone", backSkill: "Double Strike"
                 }
             },
-            devCost: 5040, levelRequired: 18, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 18, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 2
@@ -732,7 +732,7 @@ module.exports = {
                     frontSkill: "War Rage", backSkill: "Swing"
                 }
             },
-            devCost: 5040, levelRequired: 20, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 20, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 2
@@ -761,7 +761,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 5040, levelRequired: 20, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 20, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 2
@@ -790,7 +790,7 @@ module.exports = {
                     frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 5040, levelRequired: 19, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 19, tier: 1, recipe: [
                 {
                     materialName: "Crescent Moon Fragment",
                     amount: 2
@@ -819,7 +819,7 @@ module.exports = {
                     frontSkill: "Sonic Wind", backSkill: "Sonic Wind"
                 }
             },
-            devCost: 5040, levelRequired: 19, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 19, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 2
@@ -853,7 +853,7 @@ module.exports = {
                     frontSkill: "Double Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 6300, levelRequired: 16, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 16, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 3
@@ -882,7 +882,7 @@ module.exports = {
                     frontSkill: "Iaido Slash", backSkill: "Cleave"
                 }
             },
-            devCost: 6300, levelRequired: 17, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 17, tier: 1, recipe: [
                 {
                     materialName: "Clear Water",
                     amount: 3
@@ -911,7 +911,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Chain Shot"
                 }
             },
-            devCost: 6300, levelRequired: 18, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 18, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 3
@@ -940,7 +940,7 @@ module.exports = {
                     frontSkill: "Cyclone", backSkill: "Double Strike"
                 }
             },
-            devCost: 6300, levelRequired: 18, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 18, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 3
@@ -969,7 +969,7 @@ module.exports = {
                     frontSkill: "War Rage", backSkill: "Swing"
                 }
             },
-            devCost: 6300, levelRequired: 20, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 20, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 3
@@ -998,7 +998,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 6300, levelRequired: 20, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 20, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 3
@@ -1027,7 +1027,7 @@ module.exports = {
                     frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 6300, levelRequired: 19, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 19, tier: 1, recipe: [
                 {
                     materialName: "Crescent Moon Fragment",
                     amount: 3
@@ -1056,7 +1056,7 @@ module.exports = {
                     frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
                 }
             },
-            devCost: 6300, levelRequired: 19, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 19, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 3
@@ -1090,7 +1090,7 @@ module.exports = {
                     frontSkill: "Flame Edge", backSkill: "V Slash"
                 }
             },
-            devCost: 10800, levelRequired: 21, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 21, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 1
@@ -1122,7 +1122,7 @@ module.exports = {
                     frontSkill: "100 Demon Slayer", backSkill: "Cleave"
                 }
             },
-            devCost: 10800, levelRequired: 21, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 21, tier: 2, recipe: [
                 {
                     materialName: "Half Moon Fragment",
                     amount: 1
@@ -1154,7 +1154,7 @@ module.exports = {
                     frontSkill: "Charge Arrow", backSkill: "Charge Arrow"
                 }
             },
-            devCost: 10800, levelRequired: 22, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 22, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Cloth",
                     amount: 1
@@ -1186,7 +1186,7 @@ module.exports = {
                     frontSkill: "Guren Spear", backSkill: "Double Strike"
                 }
             },
-            devCost: 10800, levelRequired: 24, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 24, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 1
@@ -1218,7 +1218,7 @@ module.exports = {
                     frontSkill: "Grand Down", backSkill: "Swing"
                 }
             },
-            devCost: 10800, levelRequired: 26, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 26, tier: 2, recipe: [
                 {
                     materialName: "Maple Branch",
                     amount: 1
@@ -1250,7 +1250,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 10800, levelRequired: 28, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 28, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 1
@@ -1282,7 +1282,7 @@ module.exports = {
                     frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 10800, levelRequired: 28, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 28, tier: 2, recipe: [
                 {
                     materialName: "Hard Leather",
                     amount: 1
@@ -1314,7 +1314,7 @@ module.exports = {
                     frontSkill: "Flare Storm", backSkill: "Flare Storm"
                 }
             },
-            devCost: 10800, levelRequired: 30, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 30, tier: 2, recipe: [
                 {
                     materialName: "Maple Branch",
                     amount: 1
@@ -1351,7 +1351,7 @@ module.exports = {
                     frontSkill: "Flame Edge", backSkill: "V Slash"
                 }
             },
-            devCost: 15840, levelRequired: 35, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 35, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 2
@@ -1383,7 +1383,7 @@ module.exports = {
                     frontSkill: "100 Demon Slayer", backSkill: "Cleave"
                 }
             },
-            devCost: 15840, levelRequired: 36, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 36, tier: 2, recipe: [
                 {
                     materialName: "Half Moon Fragment",
                     amount: 1
@@ -1415,7 +1415,7 @@ module.exports = {
                     frontSkill: "Charge Arrow", backSkill: "Charge Arrow"
                 }
             },
-            devCost: 15840, levelRequired: 37, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 37, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Cloth",
                     amount: 1
@@ -1447,7 +1447,7 @@ module.exports = {
                     frontSkill: "Guren Spear", backSkill: "Double Strike"
                 }
             },
-            devCost: 15840, levelRequired: 39, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 39, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 2
@@ -1479,7 +1479,7 @@ module.exports = {
                     frontSkill: "Grand Down", backSkill: "Swing"
                 }
             },
-            devCost: 15840, levelRequired: 34, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 34, tier: 2, recipe: [
                 {
                     materialName: "Maple Branch",
                     amount: 1
@@ -1511,7 +1511,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 15840, levelRequired: 38, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 38, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 2
@@ -1543,7 +1543,7 @@ module.exports = {
                     frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 15840, levelRequired: 40, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 40, tier: 2, recipe: [
                 {
                     materialName: "Hard Leather",
                     amount: 1
@@ -1575,7 +1575,7 @@ module.exports = {
                     frontSkill: "Blizzard", backSkill: "Blizzard"
                 }
             },
-            devCost: 15840, levelRequired: 40, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 40, tier: 2, recipe: [
                 {
                     materialName: "Maple Branch",
                     amount: 2
@@ -1611,7 +1611,7 @@ module.exports = {
                     frontSkill: "Holy Scourge", backSkill: "V Slash"
                 }
             },
-            devCost: 24300, levelRequired: 41, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 41, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -1643,7 +1643,7 @@ module.exports = {
                     frontSkill: "Secret Blade Maiyasha", backSkill: "Cleave"
                 }
             },
-            devCost: 24300, levelRequired: 42, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 42, tier: 2, recipe: [
                 {
                     materialName: "Full Moon Fragment",
                     amount: 2
@@ -1675,7 +1675,7 @@ module.exports = {
                     frontSkill: "Spread Shot", backSkill: "Spread Shot"
                 }
             },
-            devCost: 24300, levelRequired: 42, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 42, tier: 2, recipe: [
                 {
                     materialName: "Ominous Cloth",
                     amount: 2
@@ -1707,7 +1707,7 @@ module.exports = {
                     frontSkill: "Pale Moonlight", backSkill: "Double Strike"
                 }
             },
-            devCost: 24300, levelRequired: 43, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 43, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 2
@@ -1739,7 +1739,7 @@ module.exports = {
                     frontSkill: "Dimension", backSkill: "Swing"
                 }
             },
-            devCost: 24300, levelRequired: 41, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 41, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 2
@@ -1771,7 +1771,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 24300, levelRequired: 43, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 43, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -1803,7 +1803,7 @@ module.exports = {
                     frontSkill: "Hayate", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 24300, levelRequired: 44, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 44, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Leather",
                     amount: 2
@@ -1835,7 +1835,7 @@ module.exports = {
                     frontSkill: "Cracked Earth", backSkill: "Cracked Earth"
                 }
             },
-            devCost: 24300, levelRequired: 44, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 44, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 1
@@ -1871,7 +1871,7 @@ module.exports = {
                     frontSkill: "Raging", backSkill: "V Slash"
                 }
             },
-            devCost: 32400, levelRequired: 46, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 46, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 2
@@ -1903,7 +1903,7 @@ module.exports = {
                     frontSkill: "Unsheathing Technique Destroyer", backSkill: "Cleave"
                 }
             },
-            devCost: 32400, levelRequired: 46, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 46, tier: 2, recipe: [
                 {
                     materialName: "Full Moon Fragment",
                     amount: 1
@@ -1935,7 +1935,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Vermilion Cannon"
                 }
             },
-            devCost: 32400, levelRequired: 48, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 48, tier: 2, recipe: [
                 {
                     materialName: "Ominous Cloth",
                     amount: 1
@@ -1967,7 +1967,7 @@ module.exports = {
                     frontSkill: "Raging Dominion Spear", backSkill: "Double Strike"
                 }
             },
-            devCost: 32400, levelRequired: 47, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 47, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -1999,7 +1999,7 @@ module.exports = {
                     frontSkill: "Fury's Toll", backSkill: "Swing"
                 }
             },
-            devCost: 32400, levelRequired: 47, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 47, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 1
@@ -2031,7 +2031,7 @@ module.exports = {
                     frontSkill: "Wraith of Gaia", backSkill: "Prayer"
                 }
             },
-            devCost: 32400, levelRequired: 50, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 50, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 2
@@ -2063,7 +2063,7 @@ module.exports = {
                     frontSkill: "Nightmare", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 32400, levelRequired: 46, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 46, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Leather",
                     amount: 1
@@ -2095,7 +2095,7 @@ module.exports = {
                     frontSkill: "Tornado", backSkill: "Tornado"
                 }
             },
-            devCost: 32400, levelRequired: 49, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 49, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 2
@@ -2131,7 +2131,7 @@ module.exports = {
                     frontSkill: "Holy Scourge", backSkill: "V Slash"
                 }
             },
-            devCost: 24300, levelRequired: 51, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 51, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -2163,7 +2163,7 @@ module.exports = {
                     frontSkill: "Secret Blade Maiyasha", backSkill: "Cleave"
                 }
             },
-            devCost: 24300, levelRequired: 55, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 55, tier: 2, recipe: [
                 {
                     materialName: "Full Moon Fragment",
                     amount: 2
@@ -2195,7 +2195,7 @@ module.exports = {
                     frontSkill: "Twin Shot", backSkill: "Triple Shot"
                 }
             },
-            devCost: 24300, levelRequired: 51, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 51, tier: 2, recipe: [
                 {
                     materialName: "Ominous Cloth",
                     amount: 2
@@ -2227,7 +2227,7 @@ module.exports = {
                     frontSkill: "Cyclone", backSkill: "Double Strike"
                 }
             },
-            devCost: 24300, levelRequired: 52, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 52, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 2
@@ -2259,7 +2259,7 @@ module.exports = {
                     frontSkill: "Grand Down", backSkill: "Swing"
                 }
             },
-            devCost: 24300, levelRequired: 54, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 54, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 2
@@ -2291,7 +2291,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Healing Light"
                 }
             },
-            devCost: 24300, levelRequired: 53, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 53, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -2323,7 +2323,7 @@ module.exports = {
                     frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 24300, levelRequired: 52, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 52, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Leather",
                     amount: 2
@@ -2355,7 +2355,7 @@ module.exports = {
                     frontSkill: "Seraph Ray", backSkill: "Dark Catastrophe"
                 }
             },
-            devCost: 24300, levelRequired: 53, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 53, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 1
@@ -2391,7 +2391,7 @@ module.exports = {
                     frontSkill: "Raging", backSkill: "V Slash"
                 }
             },
-            devCost: 32400, levelRequired: 56, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 56, tier: 3, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 4
@@ -2420,7 +2420,7 @@ module.exports = {
                     frontSkill: "Unsheathing Technique Destroyer", backSkill: "Cleave"
                 }
             },
-            devCost: 32400, levelRequired: 59, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 59, tier: 3, recipe: [
                 {
                     materialName: "Full Moon Fragment",
                     amount: 3
@@ -2449,7 +2449,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Purge Impact"
                 }
             },
-            devCost: 32400, levelRequired: 57, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 57, tier: 3, recipe: [
                 {
                     materialName: "Ominous Cloth",
                     amount: 3
@@ -2478,7 +2478,7 @@ module.exports = {
                     frontSkill: "Pale Moonlight", backSkill: "Double Strike"
                 }
             },
-            devCost: 32400, levelRequired: 58, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 58, tier: 3, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 3
@@ -2507,7 +2507,7 @@ module.exports = {
                     frontSkill: "Fury's Toll", backSkill: "Swing"
                 }
             },
-            devCost: 32400, levelRequired: 57, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 57, tier: 3, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 3
@@ -2536,7 +2536,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Heavenly Breath"
                 }
             },
-            devCost: 32400, levelRequired: 56, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 56, tier: 3, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 4
@@ -2565,7 +2565,7 @@ module.exports = {
                     frontSkill: "Killer Fang", backSkill: "Throwing Knife"
                 }
             },
-            devCost: 32400, levelRequired: 60, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 60, tier: 3, recipe: [
                 {
                     materialName: "Luxurious Leather",
                     amount: 3
@@ -2594,7 +2594,7 @@ module.exports = {
                     frontSkill: "Thunder Arrow", backSkill: "Thunder Arrow"
                 }
             },
-            devCost: 32400, levelRequired: 56, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 56, tier: 3, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 4
@@ -2627,7 +2627,7 @@ module.exports = {
                     frontSkill: "Holy Scourge", backSkill: "Cross Edge"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2653,7 +2653,7 @@ module.exports = {
                     frontSkill: "Secret Blade Maiyasha", backSkill: "Heavenly Sword"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2679,7 +2679,7 @@ module.exports = {
                     frontSkill: "Charge Arrow", backSkill: "Spread Shot"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2705,7 +2705,7 @@ module.exports = {
                     frontSkill: "Pale Moonlight", backSkill: "Double Strike"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2731,7 +2731,7 @@ module.exports = {
                     frontSkill: "Dimension", backSkill: "Swing"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2757,7 +2757,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Healing Light"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2783,7 +2783,7 @@ module.exports = {
                     frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2809,7 +2809,7 @@ module.exports = {
                     frontSkill: "Blizzard", backSkill: "Blizzard"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2843,7 +2843,7 @@ module.exports = {
                     frontSkill: "White Cross", backSkill: "Slash"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -2879,7 +2879,7 @@ module.exports = {
                     frontSkill: "Snowflake Duet", backSkill: "Slash"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -2915,7 +2915,7 @@ module.exports = {
                     frontSkill: "Single Shot", backSkill: "Holy Shoot"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -2951,7 +2951,7 @@ module.exports = {
                     frontSkill: "Holy Style Spear", backSkill: "Spear Jab"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -2987,7 +2987,7 @@ module.exports = {
                     frontSkill: "Snowman", backSkill: "Crash"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -3023,7 +3023,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "A Good Child's Reward"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -3059,7 +3059,7 @@ module.exports = {
                     frontSkill: "Snowy Flash", backSkill: "Throwing Knife"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -3095,7 +3095,7 @@ module.exports = {
                     frontSkill: "Twinkling Star", backSkill: "Twinkling Star"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -3135,7 +3135,7 @@ module.exports = {
                     frontSkill: "Merry Christmas", backSkill: "Frost Edge"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3165,7 +3165,7 @@ module.exports = {
                     frontSkill: "Sacred Tree Sword", backSkill: "Ice Dancing Blade"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3195,7 +3195,7 @@ module.exports = {
                     frontSkill: "Ice Shot", backSkill: "Hole of Light"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3225,7 +3225,7 @@ module.exports = {
                     frontSkill: "Rays of the Spear", backSkill: "Ice Strike"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3255,7 +3255,7 @@ module.exports = {
                     frontSkill: "Illuminate Stamp", backSkill: "Ice Age"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3285,7 +3285,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Holy Shower"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3315,7 +3315,7 @@ module.exports = {
                     frontSkill: "Illuminate Ball", backSkill: "Icy Wind"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3345,7 +3345,7 @@ module.exports = {
                     frontSkill: "Frostbite", backSkill: "Castle of Light"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3379,7 +3379,7 @@ module.exports = {
                     frontSkill: "Merry Christmas", backSkill: "Frost Edge"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3409,7 +3409,7 @@ module.exports = {
                     frontSkill: "Sacred Tree Sword", backSkill: "Ice Dancing Blade"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3439,7 +3439,7 @@ module.exports = {
                     frontSkill: "Ice Shot", backSkill: "Hole of Light"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3469,7 +3469,7 @@ module.exports = {
                     frontSkill: "Rays of the Spear", backSkill: "Ice Strike"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3499,7 +3499,7 @@ module.exports = {
                     frontSkill: "Illuminate Stamp", backSkill: "Ice Age"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3529,7 +3529,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Holy Shower"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3559,7 +3559,7 @@ module.exports = {
                     frontSkill: "Illuminate Ball", backSkill: "Icy Wind"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2
@@ -3589,7 +3589,7 @@ module.exports = {
                     frontSkill: "Frostbite", backSkill: "Castle of Light"
                 }
             },
-            devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Unmelting Ice",
                     amount: 2

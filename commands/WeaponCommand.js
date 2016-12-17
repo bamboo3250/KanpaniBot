@@ -46,6 +46,7 @@ module.exports = {
             for(var i=0;i<=4;i++) {
                 var stats = weaponInfo.stats["+"+i];
                 if (stats) {
+                    text += "+" + i + ": ";
                     text += (atkEmoji != null? atkEmoji + " " : "Atk: ") + "**" + stats.patk + "**\t";
                     text += (defEmoji != null? defEmoji + " " : "Def: ") + "**" + stats.pdef + "**\t";
                     text += (matkEmoji != null? matkEmoji + " " : "M.Atk: ") + "**" + stats.matk + "**\t";
@@ -57,6 +58,10 @@ module.exports = {
                     text += "Back: **" + stats.backSkill + "**\n";
                 }
             }
+
+            text += "\n**Note**\n";
+            text += weaponInfo.note;
+            
             message.channel.sendFile(equipmentFileName, "png", text);
         });
     }
