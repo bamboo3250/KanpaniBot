@@ -605,10 +605,12 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
                     bread = that.runQuestStatus[userId].bread;
                 }
                 grindCommand.runQuest(that, questName, bread, member.user, false, remainingTime);
-                text += "Resume quest " + questName + " for player " + member.user.username + " (Bread: " + bread + "). Remaining Time: " + time + "\n";
+
+                text = "Resume quest " + questName + " for player " + member.user.username + " (Bread: " + bread + "). Remaining Time: " + time + "\n";
+                that.log(text);
             }
         }
-        if (text != "") that.log(text);
+        // if (text != "") that.log(text);
     });
 }
 

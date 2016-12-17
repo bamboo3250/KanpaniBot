@@ -46,10 +46,10 @@ module.exports = {
             for(var i=0;i<=4;i++) {
                 var stats = weaponInfo.stats["+"+i];
                 if (stats) {
-                    text += (atkEmoji != null? atkEmoji + " " : "") + "Atk: **" + stats.patk + "**\t";
-                    text += (defEmoji != null? defEmoji + " " : "") + "Def: **" + stats.pdef + "**\t";
-                    text += (matkEmoji != null? matkEmoji + " " : "") + "M.Atk: **" + stats.matk + "**\t";
-                    text += (mdefEmoji != null? mdefEmoji + " " : "") + "M.Def: **" + stats.mdef + "**\t";
+                    text += (atkEmoji != null? atkEmoji + " " : "Atk: ") + "**" + stats.patk + "**\t";
+                    text += (defEmoji != null? defEmoji + " " : "Def: ") + "**" + stats.pdef + "**\t";
+                    text += (matkEmoji != null? matkEmoji + " " : "M.Atk: ") + "**" + stats.matk + "**\t";
+                    text += (mdefEmoji != null? mdefEmoji + " " : "M.Def: ") + "**" + stats.mdef + "**\t";
                     text += "CRIT: **" + stats.crit + "**\t";
                     text += "HIT: **" + stats.hit + "**\t";
                     text += "EVA: **" + stats.eva + "**\t";
