@@ -52,6 +52,8 @@ var retreatCommand = require('./commands/RetreatCommand');
 var xmasTreeCommand = require('./commands/XmasTreeCommand');
 var weaponCommand = require('./commands/WeaponCommand');
 var setAuctionCommand = require('./commands/SetAuctionCommand');
+var auctionCommand = require('./commands/AuctionCommand');
+var bidCommand = require('./commands/BidCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -176,6 +178,7 @@ function EmployeeBot() {
     this.forgeEffect = {};
     this.unsubscribe = {};
     this.grindId = {};
+    this.auctionId = {};
 
     this.logChannel = null;
 
@@ -202,7 +205,7 @@ function EmployeeBot() {
             itemName: "Forge",
             amount: 1
         },
-        "2500": {
+        "3000": {
             itemName: "Forge",
             amount: 3
         }
@@ -296,6 +299,42 @@ EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
     return employee;
 }
 
+EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
+    var itemName = "";
+    if (auction.itemType === "material") {
+        var currentItemInfo = this.itemInfoDatabase.getItemInfoById(auction.itemId);
+        if (currentItemInfo) {
+            itemName = currentItemInfo.itemName;
+        } else {
+            this.log("[SetAuction] Cannot find item with ID: " + auction.itemId);
+        }
+    } else if (auction.itemType === "weapon") {
+        var currentItemInfo = this.weaponDatabase.getWeaponById(auction.itemId);
+        if (currentItemInfo) {
+            itemName = currentItemInfo.weaponName + " +" + auction.plus;
+        } else {
+            this.log("[SetAuction] Cannot find weapon with ID: " + auction.itemId);
+        }
+    } else if (auction.itemType === "armor") {
+        var currentItemInfo = this.armorDatabase.getArmorById(auction.itemId);
+        if (currentItemInfo) {
+            itemName = currentItemInfo.armorName + " +" + auction.plus;
+        } else {
+            this.log("[SetAuction] Cannot find armor with ID: " + auction.itemId);
+        }
+    } else if (auction.itemType === "accessory") {
+        var currentItemInfo = bot.accessoryDatabase.getAccessoryById(auction.itemId);
+        if (currentItemInfo) {
+            itemName = currentItemInfo.accessoryName + " +" + auction.plus;
+        } else {
+            this.log("[SetAuction] Cannot find accessory with ID: " + auction.itemId);
+        }
+    } else {
+        this.log("[SetAuction] Wrong Item Type: " + auction.itemType);
+    }
+    return itemName;
+}
+
 EmployeeBot.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     
@@ -333,7 +372,9 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         retreatCommand.handle(message, this);
         xmasTreeCommand.handle(message, this);
         weaponCommand.handle(message, this);
-
+        setAuctionCommand.handle(message, this);
+        auctionCommand.handle(message, this);
+        bidCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -681,7 +722,7 @@ EmployeeBot.prototype.loadAuction = function() {
             that.log(err);
         }
         var text = "";
-        for(key in that.auctionManager.auction) {
+        for(key in that.auctionManager.auctions) {
             var userId = key;
             setAuctionCommand.setNotice(that, userId);
         }
@@ -731,6 +772,7 @@ EmployeeBot.prototype.ready = function() {
         this.loadChristmasTree();
         this.userManager.fetchAllMembers(this, function() {
             that.loadRunQuestStatus();
+            that.loadAuction();
         });
     } else {
         this.log("Bot is restarted");

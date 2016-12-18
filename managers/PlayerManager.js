@@ -118,7 +118,7 @@ PlayerManager.prototype.spendGold = function(userId, amount = 0) {
     player.gold = Math.max(0, player.gold - amount);
 }
 
-PlayerManager.prototype.addWeapon = function(userId, weaponId, plus) {
+PlayerManager.prototype.addWeapon = function(userId, weaponId, plus, amount = 1) {
     var player = this.getPlayer(userId);
     if (!player) return;
     if (typeof player.weaponList[weaponId] === "undefined") {
@@ -126,10 +126,10 @@ PlayerManager.prototype.addWeapon = function(userId, weaponId, plus) {
             "+0": 0, "+1": 0, "+2": 0, "+3": 0, "+4": 0, 
         }
     }
-    player.weaponList[weaponId]["+" + plus]++;
+    player.weaponList[weaponId]["+" + plus] += amount;
 }
 
-PlayerManager.prototype.addArmor = function(userId, armorId, plus) {
+PlayerManager.prototype.addArmor = function(userId, armorId, plus, amount = 1) {
     var player = this.getPlayer(userId);
     if (!player) return;
     if (typeof player.armorList[armorId] === "undefined") {
@@ -137,10 +137,10 @@ PlayerManager.prototype.addArmor = function(userId, armorId, plus) {
             "+0": 0, "+1": 0, "+2": 0, "+3": 0, "+4": 0, 
         }
     }
-    player.armorList[armorId]["+" + plus]++;
+    player.armorList[armorId]["+" + plus] += amount;
 }
 
-PlayerManager.prototype.addAccessory = function(userId, accId, plus) {
+PlayerManager.prototype.addAccessory = function(userId, accId, plus, amount = 1) {
     var player = this.getPlayer(userId);
     if (!player) return;
     if (typeof player.accessoryList[accId] === "undefined") {
@@ -148,7 +148,7 @@ PlayerManager.prototype.addAccessory = function(userId, accId, plus) {
             "+0": 0, "+1": 0, "+2": 0, "+3": 0, "+4": 0, 
         }
     }
-    player.accessoryList[accId]["+" + plus]++;
+    player.accessoryList[accId]["+" + plus] += amount;
 }
 
 PlayerManager.prototype.equipWeapon = function(userId, weaponId, plus) {

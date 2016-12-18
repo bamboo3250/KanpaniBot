@@ -14,21 +14,21 @@ module.exports = {
         } else if (auction.itemType === "weapon") {
             var currentItemInfo = bot.weaponDatabase.getWeaponById(auction.itemId);
             if (currentItemInfo) {
-                bot.playerManager.addWeapon(buyerId, auction.itemId, auction.amount);
+                bot.playerManager.addWeapon(buyerId, auction.itemId, auction.plus, auction.amount);
             } else {
                 bot.log("[SetAuction] Cannot find weapon with ID: " + auction.itemId);
             }
         } else if (auction.itemType === "armor") {
             var currentItemInfo = bot.armorDatabase.getArmorById(auction.itemId);
             if (currentItemInfo) {
-                bot.playerManager.addArmor(buyerId, auction.itemId, auction.amount);
+                bot.playerManager.addArmor(buyerId, auction.itemId, auction.plus, auction.amount);
             } else {
                 bot.log("[SetAuction] Cannot find armor with ID: " + auction.itemId);
             }
         } else if (auction.itemType === "accessory") {
             var currentItemInfo = bot.accessoryDatabase.getAccessoryById(auction.itemId);
             if (currentItemInfo) {
-                bot.playerManager.addAccessory(buyerId, auction.itemId, auction.amount);
+                bot.playerManager.addAccessory(buyerId, auction.itemId, auction.plus, auction.amount);
             } else {
                 bot.log("[SetAuction] Cannot find accessory with ID: " + auction.itemId);
             }
@@ -37,41 +37,6 @@ module.exports = {
             return;
         }
         bot.auctionManager.removeAuction(sellerId);
-    },
-    getItemName: function(bot, auction) {
-        var itemName = "";
-        if (auction.itemType === "material") {
-            var currentItemInfo = bot.itemInfoDatabase.getItemInfoById(auction.itemId);
-            if (currentItemInfo) {
-                itemName = currentItemInfo.itemName;
-            } else {
-                bot.log("[SetAuction] Cannot find item with ID: " + auction.itemId);
-            }
-        } else if (auction.itemType === "weapon") {
-            var currentItemInfo = bot.weaponDatabase.getWeaponById(auction.itemId);
-            if (currentItemInfo) {
-                itemName = currentItemInfo.weaponName + " +" + currentItemInfo.plus;
-            } else {
-                bot.log("[SetAuction] Cannot find weapon with ID: " + auction.itemId);
-            }
-        } else if (auction.itemType === "armor") {
-            var currentItemInfo = bot.armorDatabase.getArmorById(auction.itemId);
-            if (currentItemInfo) {
-                itemName = currentItemInfo.armorName + " +" + currentItemInfo.plus;
-            } else {
-                bot.log("[SetAuction] Cannot find armor with ID: " + auction.itemId);
-            }
-        } else if (auction.itemType === "accessory") {
-            var currentItemInfo = bot.accessoryDatabase.getAccessoryById(auction.itemId);
-            if (currentItemInfo) {
-                itemName = currentItemInfo.accessoryName + " +" + currentItemInfo.plus;
-            } else {
-                bot.log("[SetAuction] Cannot find accessory with ID: " + auction.itemId);
-            }
-        } else {
-            bot.log("[SetAuction] Wrong Item Type: " + auction.itemType);
-        }
-        return itemName;
     },
     setNotice: function(bot, userId) {
         var auction = bot.auctionManager.auctions[userId];
@@ -84,25 +49,42 @@ module.exports = {
         bot.log(sellerUser.username + " set auction for " + auction.itemType + " " + auction.itemId + " +" + auction.plus + ". Remaining Time: " + time);
 
         var that = this;
-        setTimeout(function() {
+        bot.auctionId[userId] = setTimeout(function() {
             auction = bot.auctionManager.auctions[userId];
             if (!auction) return;
 
-            var itemName = that.getItemName(bot, auction);
+            var itemName = bot.getItemNameFromAuction(auction);
             itemName = auction.amount + " " + itemName;
             
-            if (!auction.highestBidder) {
+            var highestBidder = bot.auctionManager.getHighestBidder(userId);
+            if (!highestBidder) {
                 sellerUser.sendMessage("Nobody bidded for your **" + itemName + "**. The item will be returned to your Inventory.");
+                that.moveItem(bot, userId, userId);
+                bot.savePlayer();
+                bot.saveAuction();
                 return;
             }
 
-            var winnerUser = bot.userManager.getUser(auction.highestBidder);
+            var winnerUser = bot.userManager.getUser(highestBidder);
             if (!sellerUser || !winnerUser) return;
 
-            that.moveItem(bot, userId, auction.highestBidder);
-            var gainGold = Math.floor(auction.highestPrice * 0.95);
+            var gainGold = Math.floor(auction.bidders[highestBidder] * 0.95);
             bot.playerManager.addGold(userId, gainGold);
 
+            auction.bidders[highestBidder] = 0;
+            for(key in auction.bidders) {
+                var bidderId = key;
+                if (auction.bidders[bidderId] > 0) {
+                    bot.playerManager.addGold(bidderId, auction.bidders[bidderId]);
+                    var bidderUser = bot.userManager.getUser(bidderId);
+                    if (bidderUser) {
+                        bidderUser.sendMessage("**" + auction.bidders[bidderId] + " Gold** has been returned to your account from Auction " + userId + ".");
+                    }
+                }
+            }
+
+            that.moveItem(bot, userId, highestBidder);
+            
             winnerUser.sendMessage("Congratulations! You have won **" + itemName + "** from " + sellerUser.username);
             sellerUser.sendMessage("Your item **" + itemName + "** has been sold to **" + winnerUser.username + "** for " + gainGold + " Gold (5% deducted).");
 
@@ -110,7 +92,7 @@ module.exports = {
             bot.saveAuction();
 
         }, remainingTime);
-    }
+    },
 
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
@@ -216,44 +198,13 @@ module.exports = {
             return;
         }
 
-        // Remove Item before setting a new auction.
-        var currentAuction = bot.auctionManager.auctions[userId];
-        if (currentAuction) {
-            var currentItemType = currentAuction.itemType;
-            if (itemType === "material") {
-                var currentItemInfo = bot.itemInfoDatabase.getItemInfoById(currentAuction.itemId);
-                if (currentItemInfo) {
-                    bot.playerManager.addItem(userId, currentItemInfo.itemName, currentAuction.amount);
-                    bot.auctionManager.removeAuction(userId);
-                } else {
-                    bot.log("[SetAuction] Cannot find item with ID: " + currentAuction.itemId);
-                }
-            } else if (itemType === "weapon") {
-                var currentItemInfo = bot.weaponDatabase.getWeaponById(currentAuction.itemId);
-                if (currentItemInfo) {
-                    bot.playerManager.addWeapon(userId, currentAuction.itemId, currentAuction.amount);
-                    bot.auctionManager.removeAuction(userId);
-                } else {
-                    bot.log("[SetAuction] Cannot find weapon with ID: " + currentAuction.itemId);
-                }
-            } else if (itemType === "armor") {
-                var currentItemInfo = bot.armorDatabase.getArmorById(currentAuction.itemId);
-                if (currentItemInfo) {
-                    bot.playerManager.addArmor(userId, currentAuction.itemId, currentAuction.amount);
-                    bot.auctionManager.removeAuction(userId);
-                } else {
-                    bot.log("[SetAuction] Cannot find armor with ID: " + currentAuction.itemId);
-                }
-            } else if (itemType === "accessory") {
-                var currentItemInfo = bot.accessoryDatabase.getAccessoryById(currentAuction.itemId);
-                if (currentItemInfo) {
-                    bot.playerManager.addAccessory(userId, currentAuction.itemId, currentAuction.amount);
-                    bot.auctionManager.removeAuction(userId);
-                } else {
-                    bot.log("[SetAuction] Cannot find accessory with ID: " + currentAuction.itemId);
-                }
-            }
+        if (bot.auctionId[userId]) {
+            // Remove Item before setting a new auction.
+            this.moveItem(bot, userId, userId);
+            clearTimeout(bot.auctionId[userId]);
+            bot.auctionId[userId] = null;
         }
+        
 
         if (itemType === "material") {
             var playerAmount = bot.playerManager.getItemAmount(userId, itemName);
@@ -262,34 +213,44 @@ module.exports = {
                 return;
             }
             bot.playerManager.spendItem(userId, itemName, amount);
+            itemName = amount + " " + itemName;
 
         } else if (itemType === "weapon") {
             var playerAmount = bot.playerManager.getWeaponAmount(userId, itemInfo._id, itemPlus);
             if (playerAmount < amount) {
-                message.reply("You only have **" + playerAmount + " " + itemName + " +" + itemPlus "**.");
+                message.reply("You only have **" + playerAmount + " " + itemName + " +" + itemPlus + "**.");
                 return;
             }
             bot.playerManager.removeWeapon(userId, itemInfo._id, itemPlus, amount);
+            itemName = amount + " " + itemName + " +" + itemPlus;
 
         } else if (itemType === "armor") {
             var playerAmount = bot.playerManager.getArmorAmount(userId, itemInfo._id, itemPlus);
             if (playerAmount < amount) {
-                message.reply("You only have **" + playerAmount + " " + itemName + " +" + itemPlus "**.");
+                message.reply("You only have **" + playerAmount + " " + itemName + " +" + itemPlus + "**.");
                 return;
             }
             bot.playerManager.removeArmor(userId, itemInfo._id, itemPlus, amount);
+            itemName = amount + " " + itemName + " +" + itemPlus;
 
         } else if (itemType === "accessory") {
             var playerAmount = bot.playerManager.getAccessoryAmount(userId, itemInfo._id, itemPlus);
             if (playerAmount < amount) {
-                message.reply("You only have **" + playerAmount + " " + itemName + " +" + itemPlus "**.");
+                message.reply("You only have **" + playerAmount + " " + itemName + " +" + itemPlus + "**.");
                 return;
             }
             bot.playerManager.removeAccessory(userId, itemInfo._id, itemPlus, amount);
+            itemName = amount + " " + itemName + " +" + itemPlus;
         }
         bot.auctionManager.setAuction(userId, timeInHour, startingPrice, amount, itemType, itemInfo._id, itemPlus);
 
+        if (!bot.auctionId[userId]) {
+            this.setNotice(bot, userId);
+        }
+
         bot.savePlayer();
         bot.saveAuction();
+
+        message.reply("You have set **" + itemName + "** for auction.");
     }
 }

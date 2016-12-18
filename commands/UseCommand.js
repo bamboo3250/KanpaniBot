@@ -181,6 +181,10 @@ module.exports = {
             bot.savePlayer();
             message.reply(bot.createRemainingBreadLine(message));
         } else if (isEldLight(itemName)) {
+            if (!bot.isPM(message)) {
+                message.reply("You can only use **Eld Light** in PM.");
+                return;
+            }
             var rewardList = [
                 {
                     itemName: "Gold Ore",

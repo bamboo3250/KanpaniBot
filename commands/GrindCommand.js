@@ -84,7 +84,7 @@ module.exports = {
                 "100": 1.3,
                 "500": 1.4,
                 "1000": 1.5,
-                "2500": 2.0,
+                "3000": 2.0,
             }
             var total = 0;
             for(key in bot.christmasTreeContribution) {
