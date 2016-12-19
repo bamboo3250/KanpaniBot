@@ -524,7 +524,6 @@ EmployeeBot.prototype.loadPlayer = function() {
             that.log(err);
         }
         // migration
-        var countReplace = 0;
         for(key in that.playerManager.playerDict) {
             var userId = key;
             var player = that.playerManager.playerDict[userId];
@@ -545,42 +544,7 @@ EmployeeBot.prototype.loadPlayer = function() {
             if (typeof player.partnerId === "undefined") {
                 player.partnerId = null;
             }
-            
-            for(weaponKey in player.weaponList) {
-                var weaponId = weaponKey;
-                if (weaponId === "300199"
-                    || weaponId === "300299"
-                    || weaponId === "300399"
-                    || weaponId === "300499"
-                    || weaponId === "300599"
-                    || weaponId === "300699"
-                    || weaponId === "300799"
-                    || weaponId === "300899"
-                    || weaponId === "300188"
-                    || weaponId === "300288"
-                    || weaponId === "300388"
-                    || weaponId === "300488"
-                    || weaponId === "300588"
-                    || weaponId === "300688"
-                    || weaponId === "300788"
-                    || weaponId === "300888"
-                    || weaponId === "300187"
-                    || weaponId === "300287"
-                    || weaponId === "300387"
-                    || weaponId === "300487"
-                    || weaponId === "300587"
-                    || weaponId === "300687"
-                    || weaponId === "300787"
-                    || weaponId === "300887"
-                    ) {
-                    if (player.weaponList[weaponId]) {
-                        delete player.weaponList[weaponId];
-                        if (!player.weaponList[weaponId]) countReplace++;
-                    }
-                }
-            }
         }
-        that.log("deleted " + countReplace);
         that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
     });
 }

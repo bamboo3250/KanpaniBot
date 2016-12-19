@@ -46,7 +46,7 @@ module.exports = {
         
         var sellerUser = bot.userManager.getUser(userId);
         var time = bot.functionHelper.parseTime(remainingTime);
-        bot.log(sellerUser.username + " set auction for " + auction.itemType + " " + auction.itemId + " +" + auction.plus + ". Remaining Time: " + time);
+        // bot.log(sellerUser.username + " set auction for " + auction.itemType + " " + auction.itemId + " +" + auction.plus + ". Remaining Time: " + time);
 
         var that = this;
         bot.auctionId[userId] = setTimeout(function() {

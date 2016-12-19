@@ -50,10 +50,98 @@ function isUsable(itemName) {
     return isMailbox(itemName) || isHammer(itemName) || isForge(itemName) || isBread(itemName) || isEldLight(itemName);
 }
 
+var eldLightRewardList = [
+    {
+        itemName: "Gold Ore",
+        amount: 10
+    },{
+        itemName: "Ominous Cloth",
+        amount: 10
+    },{
+        itemName: "Chimera Horn",
+        amount: 10
+    },{
+        itemName: "Luxurious Leather",
+        amount: 10
+    },{
+        itemName: "Full Moon Fragment",
+        amount: 10
+    },{
+        itemName: "Magical Water",
+        amount: 10
+    },{
+        itemName: "Ebony Branch",
+        amount: 10
+    },{
+        itemName: "Gold Ore",
+        amount: 10
+    },{
+        itemName: "Ominous Cloth",
+        amount: 10
+    },{
+        itemName: "Chimera Horn",
+        amount: 10
+    },{
+        itemName: "Luxurious Leather",
+        amount: 10
+    },{
+        itemName: "Full Moon Fragment",
+        amount: 10
+    },{
+        itemName: "Magical Water",
+        amount: 10
+    },{
+        itemName: "Ebony Branch",
+        amount: 10
+    },{
+        itemName: "Accessory Hammer",
+        amount: 1
+    },{
+        itemName: "Weapon Hammer",
+        amount: 1
+    },{
+        itemName: "Armor Hammer",
+        amount: 1
+    },{
+        itemName: "Unmelting Ice",
+        amount: 5
+    },{
+        itemName: "Unmelting Ice",
+        amount: 5
+    },{
+        itemName: "Unmelting Ice",
+        amount: 5
+    },{
+        itemName: "Unmelting Ice",
+        amount: 10
+    },{
+        itemName: "Unmelting Ice",
+        amount: 10
+    },{
+        itemName: "Unmelting Ice",
+        amount: 10
+    },{
+        itemName: "Unmelting Ice",
+        amount: 20
+    },{
+        itemName: "Unmelting Ice",
+        amount: 50
+    },{
+        itemName: "Gold Mailbox",
+        amount: 1
+    },{
+        itemName: "Silver Mailbox",
+        amount: 1
+    },{
+        itemName: "Eld Light",
+        amount: 2
+    }
+];
+
 module.exports = {
     handle: function(message, bot) {
-        var command = message.content.trim().toLowerCase();
-        if (!command.startsWith("~use ")) return;
+        var command = bot.functionHelper.parseCommand(message);
+        if (command.commandName != "~use") return;
 
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
@@ -62,7 +150,12 @@ module.exports = {
             return;
         }
 
-        var itemName = bot.functionHelper.removeExtraSpace(command.substring(5));
+        var isUsingAll = (command.args[0] === "all");
+        if (isUsingAll) {
+            command.args.splice(0, 1);
+        }
+
+        var itemName = command.args.join(" ");
         var materialInfo = bot.itemInfoDatabase.getItemInfoByName(itemName);
 
         if (materialInfo === null) {
@@ -81,6 +174,10 @@ module.exports = {
         }
 
         if (isMailbox(itemName)) {
+            if (isUsingAll) {
+                message.reply("You can only use this item one by one.");
+                return;
+            }
             if (typeof bot.mailboxEffect[userId] === "undefined") {
                 bot.mailboxEffect[userId] = {
                     itemName: "",
@@ -110,6 +207,11 @@ module.exports = {
             bot.savePlayer();
             message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 15 minutes.");
         } else if (isHammer(itemName)) {
+            if (isUsingAll) {
+                message.reply("You can only use this item one by one.");
+                return;
+            }
+
             if (typeof bot.hammerEffect[userId] === "undefined") {
                 bot.hammerEffect[userId] = {
                     itemName: "",
@@ -143,6 +245,11 @@ module.exports = {
             bot.savePlayer();
             message.reply("You have used **" + materialInfo.itemName + "**. The quality of your first 15 crafts will be improved and this effect will last for 15 minutes.");
         } else if (isForge(itemName)) {
+            if (isUsingAll) {
+                message.reply("You can only use this item one by one.");
+                return;
+            }
+
             if (typeof bot.forgeEffect[userId] === "undefined") {
                 bot.forgeEffect[userId] = {
                     itemName: "",
@@ -172,12 +279,16 @@ module.exports = {
             bot.savePlayer();
             message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 15 minutes.");
         } else if (isBread(itemName)) {
+            var extraBreadPerItem = 0;
             if (materialInfo.itemName === "Bread") {
-                bot.remainingBread[userId] += 1;
+                extraBreadPerItem = 1;
             } else if (materialInfo.itemName === "Food Pack") {
-                bot.remainingBread[userId] += 3;
+                extraBreadPerItem = 3;
             }
-            bot.playerManager.spendItem(userId, materialInfo.itemName);
+            
+            var amount = (isUsingAll ? player.materialList[materialInfo.itemName] : 1);
+            bot.remainingBread[userId] += amount * extraBreadPerItem;
+            bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
             bot.savePlayer();
             message.reply(bot.createRemainingBreadLine(message));
         } else if (isEldLight(itemName)) {
@@ -185,95 +296,57 @@ module.exports = {
                 message.reply("You can only use **Eld Light** in PM.");
                 return;
             }
-            var rewardList = [
-                {
-                    itemName: "Gold Ore",
-                    amount: 10
-                },{
-                    itemName: "Ominous Cloth",
-                    amount: 10
-                },{
-                    itemName: "Chimera Horn",
-                    amount: 10
-                },{
-                    itemName: "Luxurious Leather",
-                    amount: 10
-                },{
-                    itemName: "Full Moon Fragment",
-                    amount: 10
-                },{
-                    itemName: "Magical Water",
-                    amount: 10
-                },{
-                    itemName: "Ebony Branch",
-                    amount: 10
-                },{
-                    itemName: "Gold Ore",
-                    amount: 10
-                },{
-                    itemName: "Ominous Cloth",
-                    amount: 10
-                },{
-                    itemName: "Chimera Horn",
-                    amount: 10
-                },{
-                    itemName: "Luxurious Leather",
-                    amount: 10
-                },{
-                    itemName: "Full Moon Fragment",
-                    amount: 10
-                },{
-                    itemName: "Magical Water",
-                    amount: 10
-                },{
-                    itemName: "Ebony Branch",
-                    amount: 10
-                },{
-                    itemName: "Accessory Hammer",
-                    amount: 1
-                },{
-                    itemName: "Weapon Hammer",
-                    amount: 1
-                },{
-                    itemName: "Armor Hammer",
-                    amount: 1
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 5
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 5
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 5
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 10
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 10
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 10
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 20
-                },{
-                    itemName: "Unmelting Ice",
-                    amount: 50
-                },{
-                    itemName: "Gold Mailbox",
-                    amount: 1
-                },{
-                    itemName: "Silver Mailbox",
-                    amount: 1
-                },{
-                    itemName: "Eld Light",
-                    amount: 2
-                }
-            ];
 
-            var reward = bot.functionHelper.randomObject(rewardList);
+            if (isUsingAll) {
+                var amount = player.materialList[materialInfo.itemName];
+                var resultDict = {};
+                var rewardTotal = 0;
+                for(var i=0;i<amount;i++) {
+                    var reward = bot.functionHelper.randomObject(eldLightRewardList);
+                    if (typeof resultDict[reward.itemName] === "undefined") resultDict[reward.itemName] = 0;
+                    resultDict[reward.itemName] += reward.amount;
+                    rewardTotal += reward.amount;
+                }
+
+                bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
+                var text = "You used **" + amount + " " + materialInfo.itemName + "** to decorate the Sacred Tree.\n";
+                text += "**" + rewardTotal + " item(s)** droped from the Tree:";
+                for(key in resultDict) {
+                    var itemName = key;
+                    bot.playerManager.addItem(userId, itemName, resultDict[itemName]);
+                    text += itemName + " x" + resultDict[itemName];
+                }
+                message.reply(text);
+
+                if (typeof bot.christmasTreeContribution[userId] === "undefined") {
+                    bot.christmasTreeContribution[userId] = 0;
+                }
+                bot.christmasTreeContribution[userId] += amount;
+                bot.saveChristmasTree();
+
+                var total = 0;
+                for(key in bot.christmasTreeContribution) {
+                    total += bot.christmasTreeContribution[key];
+                }
+
+                if (typeof bot.christmasTreeMilestones["" + total] != "undefined") {
+                    var rewardToGive = bot.christmasTreeMilestones["" + total];
+                    for(key in bot.christmasTreeContribution) {
+                        var contributorId = key;
+                        bot.playerManager.addItem(contributorId, rewardToGive.itemName, rewardToGive.amount);
+                        var user = bot.userManager.getUser(contributorId);
+                        if (user) {
+                            var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
+                            text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
+                            user.sendMessage(text2);
+                        }
+                    }
+                }
+                bot.savePlayer();
+                return;
+            }
+
+            var reward = bot.functionHelper.randomObject(eldLightRewardList);
             var rewardItem = bot.itemInfoDatabase.getItemInfoByName(reward.itemName);
                 
             var itemtUrl = bot.urlHelper.getItemIconUrl(rewardItem._id);
