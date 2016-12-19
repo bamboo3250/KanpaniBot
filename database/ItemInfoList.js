@@ -201,6 +201,10 @@ var itemInfos = [
         _id: "40000204_1", itemName: "Eld Light", price: 50
     },{
         _id: "40000205_1", itemName: "Unmelting Ice", price: 50
+    },
+
+    {
+        _id: "40074501_1", itemName: "Aroma Oil", price: 50
     }
 
 ];

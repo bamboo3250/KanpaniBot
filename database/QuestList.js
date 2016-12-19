@@ -263,31 +263,61 @@ var quests = [
 
     {
         commonNames: ["Xmas2-beginner"], name: "Christmas Dungeon: Beginner", 
-        isActive: true, levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
+        isActive: false, levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
         goldReward: 30000, breadReward: 0, exp: 1000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 2,
         dropList: [
             "Eld Light"
         ]
     },{
         commonNames: ["Xmas2-inter"], name: "Christmas Dungeon: Intermediate", 
-        isActive: true, levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: false, levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 35000, breadReward: 0, exp: 3000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 4,
         dropList: [
             "Eld Light"
         ]
     },{
         commonNames: ["Xmas2-hard"], name: "Christmas Dungeon: Hard", 
-        isActive: true, levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
+        isActive: false, levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
         goldReward: 40000, breadReward: 0, exp: 5400, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 6,
         dropList: [
             "Eld Light"
         ]
     },{
         commonNames: ["Xmas2-ultra"], name: "Christmas Dungeon: Ultra", 
-        isActive: true, levelRequired: 70, timeCost: 120, goldCost: 0, breadCost: 1, 
+        isActive: false, levelRequired: 70, timeCost: 120, goldCost: 0, breadCost: 1, 
         goldReward: 40000, breadReward: 0, exp: 7800, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 10,
         dropList: [
             "Eld Light"
+        ]
+    },
+
+    {
+        commonNames: ["Xmas3-beginner"], name: "Christmas Dungeon: Beginner", 
+        isActive: true, levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
+        goldReward: 42000, breadReward: 0, exp: 3252, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 10,
+        dropList: [
+            "Aroma Oil"
+        ]
+    },{
+        commonNames: ["Xmas3-inter"], name: "Christmas Dungeon: Intermediate", 
+        isActive: true, levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
+        goldReward: 68000, breadReward: 0, exp: 6930, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 20,
+        dropList: [
+            "Aroma Oil"
+        ]
+    },{
+        commonNames: ["Xmas3-hard"], name: "Christmas Dungeon: Hard", 
+        isActive: true, levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
+        goldReward: 106000, breadReward: 0, exp: 12322, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 30,
+        dropList: [
+            "Aroma Oil"
+        ]
+    },{
+        commonNames: ["Xmas3-ultra"], name: "Christmas Dungeon: Ultra", 
+        isActive: true, levelRequired: 70, timeCost: 120, goldCost: 0, breadCost: 1, 
+        goldReward: 132000, breadReward: 0, exp: 17264, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 50,
+        dropList: [
+            "Aroma Oil"
         ]
     },
 
