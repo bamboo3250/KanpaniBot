@@ -210,6 +210,9 @@ function EmployeeBot() {
             amount: 3
         }
     }
+    this.aromaEffect = null;
+    this.aromaTimeout = null;
+
 }
 
 EmployeeBot.prototype.isPM = function(message) {
@@ -598,6 +601,35 @@ EmployeeBot.prototype.loadChristmasTree = function() {
         }
         try {
             that.christmasTreeContribution = JSON.parse(data);
+        }
+        catch (err) {
+            that.log(err);
+        }
+    });
+}
+
+var aromaFileName = "aroma.json";
+EmployeeBot.prototype.saveAroma = function() {
+    var textToWrite = JSON.stringify(this.aromaEffect, null, 4);
+    var that = this;
+    fs.writeFile(aromaFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadAroma = function() {
+    var that = this;
+    fs.readFile(aromaFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadAroma] Read file error.\n" + err);
+            return;
+        }
+        try {
+            that.aromaEffect = JSON.parse(data);
+            useCommand.setAromaTimeout(that);
         }
         catch (err) {
             that.log(err);

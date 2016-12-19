@@ -46,8 +46,20 @@ function isEldLight(itemName) {
     return contains(itemListList, itemName);
 }
 
+function isAromaOil(itemName) {
+    var itemListList = [
+        "Aroma Oil"
+    ];
+    return contains(itemListList, itemName);
+}
+
 function isUsable(itemName) {
-    return isMailbox(itemName) || isHammer(itemName) || isForge(itemName) || isBread(itemName) || isEldLight(itemName);
+    return isMailbox(itemName) 
+        || isHammer(itemName) 
+        || isForge(itemName) 
+        || isBread(itemName) 
+        || isEldLight(itemName) 
+        || isAromaOil(itemName);
 }
 
 var eldLightRewardList = [
@@ -138,7 +150,122 @@ var eldLightRewardList = [
     }
 ];
 
+var aromaRewardList = [
+    "Silver Ore",
+    "Gold Ore",
+    "Luxurious Cloth",
+    "Ominous Cloth",
+    "Unicorn Horn",
+    "Chimera Horn",
+    "Crystal",
+    "Diamond",
+    "Ruby",
+    "Rose Quartz",
+    "Onyx",
+    "Black Pearl",
+    "Aquamarine",
+    "Lapis Lazuli",
+    "Topaz",
+    "Garnet",
+    "Turquoise",
+    "Emerald",
+    "Hard Leather",
+    "Luxurious Leather",
+    "Half Moon Fragment",
+    "Full Moon Fragment",
+    "Shimmering Water",
+    "Magical Water",
+    "Maple Branch",
+    "Ebony Branch",
+    "Magnificent Silver Coin",
+    "Silver Ore",
+    "Gold Ore",
+    "Luxurious Cloth",
+    "Ominous Cloth",
+    "Unicorn Horn",
+    "Chimera Horn",
+    "Crystal",
+    "Diamond",
+    "Ruby",
+    "Rose Quartz",
+    "Onyx",
+    "Black Pearl",
+    "Aquamarine",
+    "Lapis Lazuli",
+    "Topaz",
+    "Garnet",
+    "Turquoise",
+    "Emerald",
+    "Hard Leather",
+    "Luxurious Leather",
+    "Half Moon Fragment",
+    "Full Moon Fragment",
+    "Shimmering Water",
+    "Magical Water",
+    "Maple Branch",
+    "Ebony Branch",
+    "Magnificent Silver Coin",
+    "Gold Mailbox",
+    "Silver Mailbox",
+    "Weapon Hammer",
+    "Armor Hammer",
+    "Accessory Hammer"
+];
+
+var aromaLimitReward = {
+    "Gold Mailbox": 5,
+    "Silver Mailbox": 5,
+    "Weapon Hammer": 5,
+    "Armor Hammer": 5,
+    "Accessory Hammer": 5
+}
+
 module.exports = {
+    setAromaTimeout: function(bot) {
+        if (bot.aromaTimeout) clearTimeout(bot.aromaTimeout);
+        
+        if (bot.aromaEffect) {
+            var now = new Date();
+            bot.aromaTimeout = setTimeout(function() {
+                for(key in bot.aromaEffect.contributors) {
+                    var contributorId = key;
+                    var elapsedTime = bot.aromaEffect.endTime - bot.aromaEffect.contributors[contributorId].startTime;
+                    var numItemsWillGet = Math.floor(elapsedTime/(60*1000));
+                    numItemsWillGet = Math.min(numItemsWillGet, bot.aromaEffect.contributors[contributorId].amount * 20);
+                    var contributorUser = bot.userManager.getUser(contributorId);
+
+                    var numReceivedItem = 0;
+                    var receivedItems = {};
+                    while(numReceivedItem < numItemsWillGet) {
+                        var itemNameWillGet = bot.functionHelper.randomObject(aromaRewardList);
+                        if (typeof receivedItems[itemNameWillGet] === "undefined") receivedItems[itemNameWillGet] = 0;
+                        if (!aromaLimitReward[itemNameWillGet] || receivedItems[itemNameWillGet] < aromaLimitReward[itemNameWillGet]) {
+                            receivedItems[itemNameWillGet]++;
+                            numReceivedItem++;    
+                        }
+                    }
+                    var text = "The effect of Aroma Oil has faded away. You received **" + numItemsWillGet + " item(s)**.\n";
+                    for(itemKey in receivedItems) {
+                        var itemName = itemKey;
+                        text += itemName + " x" + receivedItems[itemName] + "\n";
+                        bot.playerManager.addItem(userId, itemName, receivedItems[itemName]);
+                    }
+                    contributorUser.sendMessage(text);
+                    var member = bot.userManager.getMember(contributorId);
+                    var aromaRole = member.guild.roles.find('name', 'Aroma Room');
+                    member.removeRole(aromaRole).then(output => {
+                        bot.log("Aroma Role is removed for " + member.user.username);
+                    }).catch(err => {
+                        bot.log("[removeAromaRole]" + err);
+                    });
+                }
+                bot.aromaEffect = null;
+                bot.savePlayer();
+                bot.saveAroma();
+            }, bot.aromaEffect.endTime - now.valueOf());
+        }
+    },
+
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
         if (command.commandName != "~use") return;
@@ -402,6 +529,57 @@ module.exports = {
                     }
                     bot.savePlayer();
                 });
+            });
+        } else if (isAromaOil(itemName)) {
+            if (!bot.isPM(message)) {
+                message.reply("You can only use **Aroma Oil** in PM.");
+                return;
+            }
+
+            var amount = (isUsingAll ? player.materialList[materialInfo.itemName] : 1);
+            var now = new Date();
+
+            bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
+
+            var text = "You have used **" + amount + " Aroma Oil**.";
+            var extraTime = bot.functionHelper.parseTime(amount * 60 * 1000);
+
+            if (!bot.aromaEffect) {
+                bot.aromaEffect = {
+                    startTime: now.valueOf(),
+                    endTime: now.valueOf(),
+                    totalAroma: 0,
+                    contributors: {}
+                }
+                text += "The effect of Aroma Oil will end in **" + extraTime + "**.\n";
+            } else {
+                text += "The effect of Aroma Oil is prolonged by **" + extraTime + " **.\n";
+            }
+
+            if (typeof bot.aromaEffect.contributors[userId] === "undefined") {
+                bot.aromaEffect.contributors[userId] = {
+                    startTime: now.valueOf(),
+                    amount: 0
+                }
+            }
+            bot.aromaEffect.contributors[userId].amount += amount;
+            bot.aromaEffect.totalAroma += amount;
+            
+            bot.aromaEffect.endTime = bot.aromaEffect.startTime + bot.aromaEffect.totalAroma * 60 * 1000;
+            if (bot.aromaTimeout) {
+                clearTimeout(bot.aromaTimeout);
+            }
+
+            this.setAromaTimeout(bot);
+            bot.savePlayer();
+            bot.saveAroma();
+            message.channel.sendFile("images/misc/aroma.png", "png", text);
+            var member = bot.userManager.getMember(userId);
+            var aromaRole = member.guild.roles.find('name', 'Aroma Room');
+            member.addRole(aromaRole).then(output => {
+                bot.log("Aroma Role is added for " + member.user.username);
+            }).catch(err => {
+                bot.log("[addAromaRole]" + err);
             });
         }
     }
