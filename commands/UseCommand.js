@@ -310,11 +310,11 @@ module.exports = {
 
                 bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
                 var text = "You used **" + amount + " " + materialInfo.itemName + "** to decorate the Sacred Tree.\n";
-                text += "**" + rewardTotal + " item(s)** droped from the Tree:";
+                text += "**" + rewardTotal + " item(s)** droped from the Tree:\n";
                 for(key in resultDict) {
                     var itemName = key;
                     bot.playerManager.addItem(userId, itemName, resultDict[itemName]);
-                    text += itemName + " x" + resultDict[itemName];
+                    text += itemName + " x" + resultDict[itemName] + "\n";
                 }
                 message.reply(text);
 
