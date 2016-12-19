@@ -54,6 +54,8 @@ var weaponCommand = require('./commands/WeaponCommand');
 var setAuctionCommand = require('./commands/SetAuctionCommand');
 var auctionCommand = require('./commands/AuctionCommand');
 var bidCommand = require('./commands/BidCommand');
+var wakeUpCommand = require('./commands/WakeUpCommand');
+var aromaCommand = require('./commands/AromaCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -213,6 +215,33 @@ function EmployeeBot() {
     this.aromaEffect = null;
     this.aromaTimeout = null;
 
+    this.aromaRewardList = [
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Weapon Hammer",
+        "Armor Hammer",
+        "Accessory Hammer"
+    ];
+
+    this.aromaLimitReward = {
+        "Weapon Hammer": 5,
+        "Armor Hammer": 5,
+        "Accessory Hammer": 5
+    }
 }
 
 EmployeeBot.prototype.isPM = function(message) {
@@ -378,6 +407,8 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         setAuctionCommand.handle(message, this);
         auctionCommand.handle(message, this);
         bidCommand.handle(message, this);
+        wakeUpCommand.handle(message, this);
+        aromaCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -622,6 +653,7 @@ EmployeeBot.prototype.saveAroma = function() {
 
 EmployeeBot.prototype.loadAroma = function() {
     var that = this;
+    this.log("loadAroma");
     fs.readFile(aromaFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadAroma] Read file error.\n" + err);
@@ -769,6 +801,7 @@ EmployeeBot.prototype.ready = function() {
         this.userManager.fetchAllMembers(this, function() {
             that.loadRunQuestStatus();
             that.loadAuction();
+            that.loadAroma();
         });
     } else {
         this.log("Bot is restarted");

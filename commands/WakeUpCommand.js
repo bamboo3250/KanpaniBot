@@ -12,7 +12,8 @@ module.exports = {
             return;   
         }
 
-        var elapsedTime = bot.aromaEffect.endTime - bot.aromaEffect.contributors[userId].startTime;
+        var now = new Date();
+        var elapsedTime = now.valueOf() - bot.aromaEffect.contributors[userId].startTime;
         var numItemsWillGet = Math.floor(elapsedTime/(60*1000));
         numItemsWillGet = Math.min(numItemsWillGet, bot.aromaEffect.contributors[userId].amount * 20);
         var contributorUser = bot.userManager.getUser(userId);
@@ -20,14 +21,14 @@ module.exports = {
         var numReceivedItem = 0;
         var receivedItems = {};
         while(numReceivedItem < numItemsWillGet) {
-            var itemNameWillGet = bot.functionHelper.randomObject(aromaRewardList);
+            var itemNameWillGet = bot.functionHelper.randomObject(bot.aromaRewardList);
             if (typeof receivedItems[itemNameWillGet] === "undefined") receivedItems[itemNameWillGet] = 0;
-            if (!aromaLimitReward[itemNameWillGet] || receivedItems[itemNameWillGet] < aromaLimitReward[itemNameWillGet]) {
+            if (!bot.aromaLimitReward[itemNameWillGet] || receivedItems[itemNameWillGet] < bot.aromaLimitReward[itemNameWillGet]) {
                 receivedItems[itemNameWillGet]++;
                 numReceivedItem++;    
             }
         }
-        var text = "Oh! You woke up? You just received some presents while sleeping.\n";
+        var text = "Oh! You just woke up? You received **" + numItemsWillGet + " items** when you were sleeping.\n";
         for(key in receivedItems) {
             var itemName = key;
             text += itemName + " x" + receivedItems[itemName] + "\n";
@@ -38,7 +39,7 @@ module.exports = {
         bot.savePlayer();
         bot.saveAroma();
         var member = bot.userManager.getMember(userId);
-        var aromaRole = member.guild.roles.find('name', 'Aroma Room');
+        var aromaRole = member.guild.roles.find('name', 'Aroma Dreamer');
         member.removeRole(aromaRole).then(output => {
             bot.log("Aroma Role is removed for " + member.user.username);
         }).catch(err => {

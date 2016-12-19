@@ -150,76 +150,6 @@ var eldLightRewardList = [
     }
 ];
 
-var aromaRewardList = [
-    "Silver Ore",
-    "Gold Ore",
-    "Luxurious Cloth",
-    "Ominous Cloth",
-    "Unicorn Horn",
-    "Chimera Horn",
-    "Crystal",
-    "Diamond",
-    "Ruby",
-    "Rose Quartz",
-    "Onyx",
-    "Black Pearl",
-    "Aquamarine",
-    "Lapis Lazuli",
-    "Topaz",
-    "Garnet",
-    "Turquoise",
-    "Emerald",
-    "Hard Leather",
-    "Luxurious Leather",
-    "Half Moon Fragment",
-    "Full Moon Fragment",
-    "Shimmering Water",
-    "Magical Water",
-    "Maple Branch",
-    "Ebony Branch",
-    "Magnificent Silver Coin",
-    "Silver Ore",
-    "Gold Ore",
-    "Luxurious Cloth",
-    "Ominous Cloth",
-    "Unicorn Horn",
-    "Chimera Horn",
-    "Crystal",
-    "Diamond",
-    "Ruby",
-    "Rose Quartz",
-    "Onyx",
-    "Black Pearl",
-    "Aquamarine",
-    "Lapis Lazuli",
-    "Topaz",
-    "Garnet",
-    "Turquoise",
-    "Emerald",
-    "Hard Leather",
-    "Luxurious Leather",
-    "Half Moon Fragment",
-    "Full Moon Fragment",
-    "Shimmering Water",
-    "Magical Water",
-    "Maple Branch",
-    "Ebony Branch",
-    "Magnificent Silver Coin",
-    "Gold Mailbox",
-    "Silver Mailbox",
-    "Weapon Hammer",
-    "Armor Hammer",
-    "Accessory Hammer"
-];
-
-var aromaLimitReward = {
-    "Gold Mailbox": 5,
-    "Silver Mailbox": 5,
-    "Weapon Hammer": 5,
-    "Armor Hammer": 5,
-    "Accessory Hammer": 5
-}
-
 module.exports = {
     setAromaTimeout: function(bot) {
         if (bot.aromaTimeout) clearTimeout(bot.aromaTimeout);
@@ -229,7 +159,7 @@ module.exports = {
             bot.aromaTimeout = setTimeout(function() {
                 for(key in bot.aromaEffect.contributors) {
                     var contributorId = key;
-                    var elapsedTime = bot.aromaEffect.endTime - bot.aromaEffect.contributors[contributorId].startTime;
+                    var elapsedTime = now.valueOf() - bot.aromaEffect.contributors[contributorId].startTime;
                     var numItemsWillGet = Math.floor(elapsedTime/(60*1000));
                     numItemsWillGet = Math.min(numItemsWillGet, bot.aromaEffect.contributors[contributorId].amount * 20);
                     var contributorUser = bot.userManager.getUser(contributorId);
@@ -237,9 +167,9 @@ module.exports = {
                     var numReceivedItem = 0;
                     var receivedItems = {};
                     while(numReceivedItem < numItemsWillGet) {
-                        var itemNameWillGet = bot.functionHelper.randomObject(aromaRewardList);
+                        var itemNameWillGet = bot.functionHelper.randomObject(bot.aromaRewardList);
                         if (typeof receivedItems[itemNameWillGet] === "undefined") receivedItems[itemNameWillGet] = 0;
-                        if (!aromaLimitReward[itemNameWillGet] || receivedItems[itemNameWillGet] < aromaLimitReward[itemNameWillGet]) {
+                        if (!bot.aromaLimitReward[itemNameWillGet] || receivedItems[itemNameWillGet] < bot.aromaLimitReward[itemNameWillGet]) {
                             receivedItems[itemNameWillGet]++;
                             numReceivedItem++;    
                         }
@@ -248,11 +178,11 @@ module.exports = {
                     for(itemKey in receivedItems) {
                         var itemName = itemKey;
                         text += itemName + " x" + receivedItems[itemName] + "\n";
-                        bot.playerManager.addItem(userId, itemName, receivedItems[itemName]);
+                        bot.playerManager.addItem(contributorId, itemName, receivedItems[itemName]);
                     }
                     contributorUser.sendMessage(text);
                     var member = bot.userManager.getMember(contributorId);
-                    var aromaRole = member.guild.roles.find('name', 'Aroma Room');
+                    var aromaRole = member.guild.roles.find('name', 'Aroma Dreamer');
                     member.removeRole(aromaRole).then(output => {
                         bot.log("Aroma Role is removed for " + member.user.username);
                     }).catch(err => {
@@ -561,6 +491,13 @@ module.exports = {
                     startTime: now.valueOf(),
                     amount: 0
                 }
+                var member = bot.userManager.getMember(userId);
+                var aromaRole = member.guild.roles.find('name', 'Aroma Dreamer');
+                member.addRole(aromaRole).then(output => {
+                    bot.log("Aroma Role is added for " + member.user.username);
+                }).catch(err => {
+                    bot.log("[addAromaRole]" + err);
+                });
             }
             bot.aromaEffect.contributors[userId].amount += amount;
             bot.aromaEffect.totalAroma += amount;
@@ -574,13 +511,7 @@ module.exports = {
             bot.savePlayer();
             bot.saveAroma();
             message.channel.sendFile("images/misc/aroma.png", "png", text);
-            var member = bot.userManager.getMember(userId);
-            var aromaRole = member.guild.roles.find('name', 'Aroma Room');
-            member.addRole(aromaRole).then(output => {
-                bot.log("Aroma Role is added for " + member.user.username);
-            }).catch(err => {
-                bot.log("[addAromaRole]" + err);
-            });
+            
         }
     }
 }
