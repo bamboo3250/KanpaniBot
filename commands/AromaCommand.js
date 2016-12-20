@@ -22,7 +22,8 @@ module.exports = {
         
         elapsedTime = bot.functionHelper.parseTime(elapsedTime);
         var text = "Your Dreaming Time: " + elapsedTime + "\n";
-        text += "Your Stacked Items: " + numItemsWillGet + "\n\n";
+        text += "Your Aroma Oil: " + contributedAmount + "\n";
+        text += "Your Reward: " + numItemsWillGet + "\n\n";
 
         text += "**Aroma Dream**\n";
         text += "Total Aroma Oil: " + bot.aromaEffect.totalAroma + "\n";

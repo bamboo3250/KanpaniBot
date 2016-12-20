@@ -234,13 +234,15 @@ function EmployeeBot() {
         "Magnificent Silver Coin",
         "Weapon Hammer",
         "Armor Hammer",
-        "Accessory Hammer"
+        "Accessory Hammer",
+        "Forge"
     ];
 
     this.aromaLimitReward = {
         "Weapon Hammer": 5,
         "Armor Hammer": 5,
-        "Accessory Hammer": 5
+        "Accessory Hammer": 5,
+        "Forge": 1
     }
 }
 

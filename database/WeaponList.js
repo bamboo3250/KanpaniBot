@@ -3596,7 +3596,413 @@ module.exports = {
                 }
             ]
         }
+    ],
+
+    "xmas3-white": [
+        {
+            _id: "3001791", modelId: "79", weaponName: "Frozen Sword", commonNames: ["Frozen Sword"],
+            classId: 1, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
+                    frontSkill: "Slash Snow", backSkill: "Cross Edge"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 16, eva: 18,
+                    frontSkill: "Slash Snow", backSkill: "Cross Edge"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 16, eva: 22,
+                    frontSkill: "Slash Snow", backSkill: "Power Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 16, eva: 28,
+                    frontSkill: "Slash Snow", backSkill: "Power Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 16, eva: 35,
+                    frontSkill: "Slash Snow", backSkill: "Frost Edge"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3002791", modelId: "79", weaponName: "\"Zansetsu\" Nishiki", commonNames: ["\"Zansetsu\" Nishiki"],
+            classId: 2, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Heavenly Sword"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Heavenly Sword"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 0, eva: 40,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Ice Dancing Blade"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3003791", modelId: "79", weaponName: "Heavy Snowfall \"Neige\"", commonNames: ["Heavy Snowfall \"Neige\""],
+            classId: 3, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Twin Shot", backSkill: "Hailstorm"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Twin Shot", backSkill: "Hailstorm"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Charge Arrow", backSkill: "Hailstorm"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Charge Arrow", backSkill: "Hailstorm"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Ice Shot", backSkill: "Hailstorm"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3004791", modelId: "79", weaponName: "Frozen Spear", commonNames: ["Frozen Spear"],
+            classId: 4, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Dragon Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Dragon Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Ice Dust Digger", backSkill: "Ice Strike"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3005791", modelId: "79", weaponName: "Frozen Hammer", commonNames: ["Frozen Hammer"],
+            classId: 5, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Aurora Impact", backSkill: "Hammerfall"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Aurora Impact", backSkill: "Hammerfall"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Aurora Impact", backSkill: "Force Impact"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Aurora Impact", backSkill: "Force Impact"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Aurora Impact", backSkill: "Ice Age"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3006791", modelId: "79", weaponName: "Frozen Mace", commonNames: ["Frozen Mace"],
+            classId: 6, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3007791", modelId: "79", weaponName: "Frozen Knife", commonNames: ["Frozen Knife"],
+            classId: 7, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Shadow Run"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Shadow Run"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Icy Wind"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3008791", modelId: "79", weaponName: "Frozen Staff", commonNames: ["Frozen Staff"],
+            classId: 8, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Cold Lance", backSkill: "Snow Blast"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Cold Lance", backSkill: "Snow Blast"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Ice Strike", backSkill: "Snow Blast"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Ice Strike", backSkill: "Snow Blast"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Frostbite", backSkill: "Snow Blast"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        }
+    ],
+
+    "xmas3-black": [
+        {
+            _id: "3001781", modelId: "78", weaponName: "Ice Age Sword", commonNames: ["Ice Age Sword"],
+            classId: 1, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
+                    frontSkill: "Slash Snow", backSkill: "Cross Edge"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 16, eva: 18,
+                    frontSkill: "Slash Snow", backSkill: "Cross Edge"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 16, eva: 22,
+                    frontSkill: "Slash Snow", backSkill: "Power Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 16, eva: 28,
+                    frontSkill: "Slash Snow", backSkill: "Power Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 16, eva: 35,
+                    frontSkill: "Slash Snow", backSkill: "Frost Edge"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3002781", modelId: "78", weaponName: "\"Yukishimo\" Nishiki", commonNames: ["\"Yukishimo\" Nishiki"],
+            classId: 2, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Heavenly Sword"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Heavenly Sword"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 0, eva: 40,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Ice Dancing Blade"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3003781", modelId: "78", weaponName: "Hailstorm \"Hagel\"", commonNames: ["Hailstorm \"Hagel\""],
+            classId: 3, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Twin Shot", backSkill: "Hailstorm"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Twin Shot", backSkill: "Hailstorm"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Charge Arrow", backSkill: "Hailstorm"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Charge Arrow", backSkill: "Hailstorm"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Ice Shot", backSkill: "Hailstorm"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3004781", modelId: "78", weaponName: "Ice Age Spear", commonNames: ["Ice Age Spear"],
+            classId: 4, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Dragon Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Dragon Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Ice Dust Digger", backSkill: "Ice Strike"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3005781", modelId: "78", weaponName: "Ice Age Hammer", commonNames: ["Ice Age Hammer"],
+            classId: 5, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Aurora Impact", backSkill: "Hammerfall"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Aurora Impact", backSkill: "Hammerfall"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Aurora Impact", backSkill: "Force Impact"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Aurora Impact", backSkill: "Force Impact"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Aurora Impact", backSkill: "Ice Age"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3006781", modelId: "78", weaponName: "Ice Age Mace", commonNames: ["Ice Age Mace"],
+            classId: 6, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3007781", modelId: "78", weaponName: "Ice Age Knife", commonNames: ["Ice Age Knife"],
+            classId: 7, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Shadow Run"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Shadow Run"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Icy Wind"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3008781", modelId: "78", weaponName: "Ice Age Staff", commonNames: ["Ice Age Staff"],
+            classId: 8, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Cold Lance", backSkill: "Snow Blast"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Cold Lance", backSkill: "Snow Blast"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Ice Strike", backSkill: "Snow Blast"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Ice Strike", backSkill: "Snow Blast"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Frostbite", backSkill: "Snow Blast"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        }
     ]
-
-
 };

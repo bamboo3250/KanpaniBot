@@ -2,6 +2,7 @@ module.exports = {
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
         if (command.commandName != "~wakeup") return;
+
         var userId = message.author.id;
         if (!bot.aromaEffect) {
             message.reply("You aren't under the effect of Aroma Oil.");
@@ -28,13 +29,13 @@ module.exports = {
                 numReceivedItem++;    
             }
         }
-        var text = "Oh! You just woke up? You received **" + numItemsWillGet + " items** when you were sleeping.\n";
+        var text = "Oh! You woke up?! You received **" + numItemsWillGet + " items** when you were sleeping.\n";
         for(key in receivedItems) {
             var itemName = key;
             text += itemName + " x" + receivedItems[itemName] + "\n";
             bot.playerManager.addItem(userId, itemName, receivedItems[itemName]);
         }
-        contributorUser.sendMessage(text);
+        message.reply(text);
         delete bot.aromaEffect.contributors[userId];
         bot.savePlayer();
         bot.saveAroma();
