@@ -56,6 +56,7 @@ var auctionCommand = require('./commands/AuctionCommand');
 var bidCommand = require('./commands/BidCommand');
 var wakeUpCommand = require('./commands/WakeUpCommand');
 var aromaCommand = require('./commands/AromaCommand');
+var sellPageCommand = require('./commands/SellPageCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -411,6 +412,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         bidCommand.handle(message, this);
         wakeUpCommand.handle(message, this);
         aromaCommand.handle(message, this);
+        sellPageCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
