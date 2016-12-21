@@ -37,7 +37,7 @@ function BackgroundManager() {
         "office.jpg",
         "open_deck.jpg",
         "orphanage.jpg",
-        "rogue_base.jpg"
+        "rogue_base.jpg",
         "ruins.jpg",
         "ship.jpg",
         "shrine.jpg",

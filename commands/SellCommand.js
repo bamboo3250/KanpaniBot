@@ -134,7 +134,8 @@ module.exports = {
         }
         
         var goldGained = itemPrice * amount;
-        player.gold += goldGained;
+        bot.playerManager.addGold(userId, goldGained);
+        
         if (itemType === "material") {
             bot.playerManager.spendItem(userId, itemName, amount);
         } else if (itemType === "weapon") {

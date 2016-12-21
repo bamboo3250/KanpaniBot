@@ -54,7 +54,7 @@ var employees = [
         baseStats: { _str: 20, _vit: 47, _agi: 11, _dex: 12, _int: 8, _pie: 7, _luk: 7},
         maxStats: { _str: 271, _vit: 527, _agi: 191, _dex: 263, _int: 178, _pie: 275, _luk: 177}
     },{
-        _no: 142, _id: "10450002_bbda369b", fullName: "Elmina Romberg", japaneseName: "エルミナ・ロムベルク", commonNames: ["Elmina"], cwId: 0,
+        _no: 142, _id: "10450002_bbda369b", fullName: "Elmina Romberg", japaneseName: "エルミナ・ロムベルク", commonNames: ["Elmina"], cwId: 19,
         baseStats: { _str: 21, _vit: 47, _agi: 10, _dex: 12, _int: 8, _pie: 8, _luk: 6},
         maxStats: { _str: 272, _vit: 527, _agi: 180, _dex: 263, _int: 178, _pie: 299, _luk: 176}
     },{
@@ -190,7 +190,7 @@ var employees = [
         baseStats: { _str: 23, _vit: 9, _agi: 19, _dex: 15, _int: 3, _pie: 2, _luk: 6},
         maxStats: { _str: 368, _vit: 241, _agi: 330, _dex: 261, _int: 152, _pie: 159, _luk: 219}
     },{
-        _no: 160, _id: "10240005_4868fd7c", fullName: "Yami Kamuro", japaneseName: "ヤミ・カムロ", commonNames: ["Yami"], cwId: 0,
+        _no: 160, _id: "10240005_4868fd7c", fullName: "Yami Kamuro", japaneseName: "ヤミ・カムロ", commonNames: ["Yami"], cwId: 23,
         baseStats: { _str: 23, _vit: 10, _agi: 18, _dex: 14, _int: 3, _pie: 2, _luk: 6},
         maxStats: { _str: 368, _vit: 241, _agi: 330, _dex: 261, _int: 152, _pie: 159, _luk: 219}
     },{
@@ -242,7 +242,7 @@ var employees = [
         baseStats: { _str: 11, _vit: 39, _agi: 12, _dex: 10, _int: 7, _pie: 1, _luk: 2},
         maxStats: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161}
     },{
-        _no: 164, _id: "10440005_77b620cd", fullName: "Gina Gesualdo", japaneseName: "ジーナ・ジェズアルド", commonNames: ["Gina"], cwId: 0,
+        _no: 164, _id: "10440005_77b620cd", fullName: "Gina Gesualdo", japaneseName: "ジーナ・ジェズアルド", commonNames: ["Gina"], cwId: 20,
         baseStats: { _str: 15, _vit: 34, _agi: 7, _dex: 10, _int: 4, _pie: 6, _luk: 4},
         maxStats: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161}
     },{

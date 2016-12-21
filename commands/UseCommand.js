@@ -39,14 +39,166 @@ function isBread(itemName) {
     return contains(itemListList, itemName);   
 }
 
-function isUsable(itemName) {
-    return isMailbox(itemName) || isHammer(itemName) || isForge(itemName) || isBread(itemName);
+function isEldLight(itemName) {
+    var itemListList = [
+        "Eld Light"
+    ];
+    return contains(itemListList, itemName);
 }
 
+function isAromaOil(itemName) {
+    var itemListList = [
+        "Aroma Oil"
+    ];
+    return contains(itemListList, itemName);
+}
+
+function isUsable(itemName) {
+    return isMailbox(itemName) 
+        || isHammer(itemName) 
+        || isForge(itemName) 
+        || isBread(itemName) 
+        || isEldLight(itemName) 
+        || isAromaOil(itemName);
+}
+
+var eldLightRewardList = [
+    {
+        itemName: "Gold Ore",
+        amount: 10
+    },{
+        itemName: "Ominous Cloth",
+        amount: 10
+    },{
+        itemName: "Chimera Horn",
+        amount: 10
+    },{
+        itemName: "Luxurious Leather",
+        amount: 10
+    },{
+        itemName: "Full Moon Fragment",
+        amount: 10
+    },{
+        itemName: "Magical Water",
+        amount: 10
+    },{
+        itemName: "Ebony Branch",
+        amount: 10
+    },{
+        itemName: "Gold Ore",
+        amount: 10
+    },{
+        itemName: "Ominous Cloth",
+        amount: 10
+    },{
+        itemName: "Chimera Horn",
+        amount: 10
+    },{
+        itemName: "Luxurious Leather",
+        amount: 10
+    },{
+        itemName: "Full Moon Fragment",
+        amount: 10
+    },{
+        itemName: "Magical Water",
+        amount: 10
+    },{
+        itemName: "Ebony Branch",
+        amount: 10
+    },{
+        itemName: "Accessory Hammer",
+        amount: 1
+    },{
+        itemName: "Weapon Hammer",
+        amount: 1
+    },{
+        itemName: "Armor Hammer",
+        amount: 1
+    },{
+        itemName: "Unmelting Ice",
+        amount: 5
+    },{
+        itemName: "Unmelting Ice",
+        amount: 5
+    },{
+        itemName: "Unmelting Ice",
+        amount: 5
+    },{
+        itemName: "Unmelting Ice",
+        amount: 10
+    },{
+        itemName: "Unmelting Ice",
+        amount: 10
+    },{
+        itemName: "Unmelting Ice",
+        amount: 10
+    },{
+        itemName: "Unmelting Ice",
+        amount: 20
+    },{
+        itemName: "Unmelting Ice",
+        amount: 50
+    },{
+        itemName: "Gold Mailbox",
+        amount: 1
+    },{
+        itemName: "Silver Mailbox",
+        amount: 1
+    },{
+        itemName: "Eld Light",
+        amount: 2
+    }
+];
+
 module.exports = {
+    setAromaTimeout: function(bot) {
+        if (bot.aromaTimeout) clearTimeout(bot.aromaTimeout);
+        
+        if (bot.aromaEffect) {
+            var now = new Date();
+            bot.aromaTimeout = setTimeout(function() {
+                for(key in bot.aromaEffect.contributors) {
+                    var contributorId = key;
+                    var elapsedTime = now.valueOf() - bot.aromaEffect.contributors[contributorId].startTime;
+                    var numItemsWillGet = Math.floor(elapsedTime/(60*1000));
+                    numItemsWillGet = Math.min(numItemsWillGet, bot.aromaEffect.contributors[contributorId].amount * 20);
+                    var contributorUser = bot.userManager.getUser(contributorId);
+
+                    var numReceivedItem = 0;
+                    var receivedItems = {};
+                    while(numReceivedItem < numItemsWillGet) {
+                        var itemNameWillGet = bot.functionHelper.randomObject(bot.aromaRewardList);
+                        if (typeof receivedItems[itemNameWillGet] === "undefined") receivedItems[itemNameWillGet] = 0;
+                        if (!bot.aromaLimitReward[itemNameWillGet] || receivedItems[itemNameWillGet] < bot.aromaLimitReward[itemNameWillGet]) {
+                            receivedItems[itemNameWillGet]++;
+                            numReceivedItem++;    
+                        }
+                    }
+                    var text = "The effect of Aroma Oil has faded away. You received **" + numItemsWillGet + " item(s)**.\n";
+                    for(itemKey in receivedItems) {
+                        var itemName = itemKey;
+                        text += itemName + " x" + receivedItems[itemName] + "\n";
+                        bot.playerManager.addItem(contributorId, itemName, receivedItems[itemName]);
+                    }
+                    contributorUser.sendMessage(text);
+                    var member = bot.userManager.getMember(contributorId);
+                    var aromaRole = member.guild.roles.find('name', 'Aroma Dreamer');
+                    member.removeRole(aromaRole).then(output => {
+                        bot.log("Aroma Role is removed for " + output.user.username);
+                    }).catch(err => {
+                        bot.log("[removeAromaRole]" + err);
+                    });
+                }
+                bot.aromaEffect = null;
+                bot.savePlayer();
+                bot.saveAroma();
+            }, bot.aromaEffect.endTime - now.valueOf());
+        }
+    },
+
     handle: function(message, bot) {
-        var command = message.content.trim().toLowerCase();
-        if (!command.startsWith("~use ")) return;
+        var command = bot.functionHelper.parseCommand(message);
+        if (command.commandName != "~use") return;
 
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
@@ -55,7 +207,12 @@ module.exports = {
             return;
         }
 
-        var itemName = bot.functionHelper.removeExtraSpace(command.substring(5));
+        var isUsingAll = (command.args[0] === "all");
+        if (isUsingAll) {
+            command.args.splice(0, 1);
+        }
+
+        var itemName = command.args.join(" ");
         var materialInfo = bot.itemInfoDatabase.getItemInfoByName(itemName);
 
         if (materialInfo === null) {
@@ -74,6 +231,10 @@ module.exports = {
         }
 
         if (isMailbox(itemName)) {
+            if (isUsingAll) {
+                message.reply("You can only use this item one by one.");
+                return;
+            }
             if (typeof bot.mailboxEffect[userId] === "undefined") {
                 bot.mailboxEffect[userId] = {
                     itemName: "",
@@ -103,6 +264,11 @@ module.exports = {
             bot.savePlayer();
             message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 15 minutes.");
         } else if (isHammer(itemName)) {
+            if (isUsingAll) {
+                message.reply("You can only use this item one by one.");
+                return;
+            }
+
             if (typeof bot.hammerEffect[userId] === "undefined") {
                 bot.hammerEffect[userId] = {
                     itemName: "",
@@ -136,6 +302,11 @@ module.exports = {
             bot.savePlayer();
             message.reply("You have used **" + materialInfo.itemName + "**. The quality of your first 15 crafts will be improved and this effect will last for 15 minutes.");
         } else if (isForge(itemName)) {
+            if (isUsingAll) {
+                message.reply("You can only use this item one by one.");
+                return;
+            }
+
             if (typeof bot.forgeEffect[userId] === "undefined") {
                 bot.forgeEffect[userId] = {
                     itemName: "",
@@ -165,14 +336,182 @@ module.exports = {
             bot.savePlayer();
             message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 15 minutes.");
         } else if (isBread(itemName)) {
+            var extraBreadPerItem = 0;
             if (materialInfo.itemName === "Bread") {
-                bot.remainingBread[userId] += 1;
+                extraBreadPerItem = 1;
             } else if (materialInfo.itemName === "Food Pack") {
-                bot.remainingBread[userId] += 3;
+                extraBreadPerItem = 3;
             }
-            bot.playerManager.spendItem(userId, materialInfo.itemName);
+            
+            var amount = (isUsingAll ? player.materialList[materialInfo.itemName] : 1);
+            bot.remainingBread[userId] += amount * extraBreadPerItem;
+            bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
             bot.savePlayer();
             message.reply(bot.createRemainingBreadLine(message));
+        } else if (isEldLight(itemName)) {
+            if (!bot.isPM(message)) {
+                message.reply("You can only use **Eld Light** in PM.");
+                return;
+            }
+
+            if (isUsingAll) {
+                var amount = player.materialList[materialInfo.itemName];
+                var resultDict = {};
+                var rewardTotal = 0;
+                for(var i=0;i<amount;i++) {
+                    var reward = bot.functionHelper.randomObject(eldLightRewardList);
+                    if (typeof resultDict[reward.itemName] === "undefined") resultDict[reward.itemName] = 0;
+                    resultDict[reward.itemName] += reward.amount;
+                    rewardTotal += reward.amount;
+                }
+
+                bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
+                var text = "You used **" + amount + " " + materialInfo.itemName + "** to decorate the Sacred Tree.\n";
+                text += "**" + rewardTotal + " item(s)** droped from the Tree:\n";
+                for(key in resultDict) {
+                    var itemName = key;
+                    bot.playerManager.addItem(userId, itemName, resultDict[itemName]);
+                    text += itemName + " x" + resultDict[itemName] + "\n";
+                }
+                message.reply(text);
+
+                if (typeof bot.christmasTreeContribution[userId] === "undefined") {
+                    bot.christmasTreeContribution[userId] = 0;
+                }
+                bot.christmasTreeContribution[userId] += amount;
+                bot.saveChristmasTree();
+
+                var total = 0;
+                for(key in bot.christmasTreeContribution) {
+                    total += bot.christmasTreeContribution[key];
+                }
+
+                if (typeof bot.christmasTreeMilestones["" + total] != "undefined") {
+                    var rewardToGive = bot.christmasTreeMilestones["" + total];
+                    for(key in bot.christmasTreeContribution) {
+                        var contributorId = key;
+                        bot.playerManager.addItem(contributorId, rewardToGive.itemName, rewardToGive.amount);
+                        var user = bot.userManager.getUser(contributorId);
+                        if (user) {
+                            var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
+                            text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
+                            user.sendMessage(text2);
+                        }
+                    }
+                }
+                bot.savePlayer();
+                return;
+            }
+
+            var reward = bot.functionHelper.randomObject(eldLightRewardList);
+            var rewardItem = bot.itemInfoDatabase.getItemInfoByName(reward.itemName);
+                
+            var itemtUrl = bot.urlHelper.getItemIconUrl(rewardItem._id);
+            var itemFileName = "images/item/large/" + rewardItem._id + ".png";
+
+            var queue = [
+                { fileToDownload: itemtUrl,   fileToSave: itemFileName}
+            ];
+            bot.imageHelper.download(queue, function(err) {
+                if (err) {
+                    message.reply("Error happened. Try again.");
+                    bot.log(err);
+                    return;
+                }
+
+                bot.imageHelper.read([itemFileName], function (err, imageList) {
+                    if (err) {
+                        message.reply("Error happened. Try again.");
+                        bot.log(err);
+                        return;
+                    }
+
+                    if (typeof bot.christmasTreeContribution[userId] === "undefined") {
+                        bot.christmasTreeContribution[userId] = 0;
+                    }
+                    bot.christmasTreeContribution[userId]++;
+                    bot.saveChristmasTree();
+
+                    var total = 0;
+                    for(key in bot.christmasTreeContribution) {
+                        total += bot.christmasTreeContribution[key];
+                    }
+
+                    bot.playerManager.spendItem(userId, materialInfo.itemName);
+                    var text = "You used **1 " + materialInfo.itemName + "** to decorate the Sacred Tree.\n";
+                    bot.playerManager.addItem(userId, reward.itemName, reward.amount);
+
+                    text += "**" + reward.amount + " " + reward.itemName + "** droped from the Tree.";
+                    message.channel.sendFile(itemFileName, "png", text);
+
+                    if (typeof bot.christmasTreeMilestones["" + total] != "undefined") {
+                        var rewardToGive = bot.christmasTreeMilestones["" + total];
+                        for(key in bot.christmasTreeContribution) {
+                            var contributorId = key;
+                            bot.playerManager.addItem(contributorId, rewardToGive.itemName, rewardToGive.amount);
+                            var user = bot.userManager.getUser(contributorId);
+                            if (user) {
+                                var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
+                                text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
+                                user.sendMessage(text2);
+                            }
+                        }
+                    }
+                    bot.savePlayer();
+                });
+            });
+        } else if (isAromaOil(itemName)) {
+            if (!bot.isPM(message)) {
+                message.reply("You can only use **Aroma Oil** in PM.");
+                return;
+            }
+
+            var amount = (isUsingAll ? player.materialList[materialInfo.itemName] : 1);
+            var now = new Date();
+
+            bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
+
+            var text = "You have used **" + amount + " Aroma Oil**.";
+            var extraTime = bot.functionHelper.parseTime(amount * 60 * 1000);
+
+            if (!bot.aromaEffect) {
+                bot.aromaEffect = {
+                    startTime: now.valueOf(),
+                    endTime: now.valueOf(),
+                    totalAroma: 0,
+                    contributors: {}
+                }
+                text += "The effect of Aroma Oil will end in **" + extraTime + "**.\n";
+            } else {
+                text += "The effect of Aroma Oil is prolonged by **" + extraTime + " **.\n";
+            }
+
+            if (typeof bot.aromaEffect.contributors[userId] === "undefined") {
+                bot.aromaEffect.contributors[userId] = {
+                    startTime: now.valueOf(),
+                    amount: 0
+                }
+                var member = bot.userManager.getMember(userId);
+                var aromaRole = member.guild.roles.find('name', 'Aroma Dreamer');
+                member.addRole(aromaRole).then(output => {
+                    bot.log("Aroma Role is added for " + output.user.username);
+                }).catch(err => {
+                    bot.log("[addAromaRole]" + err);
+                });
+            }
+            bot.aromaEffect.contributors[userId].amount += amount;
+            bot.aromaEffect.totalAroma += amount;
+            
+            bot.aromaEffect.endTime = bot.aromaEffect.startTime + bot.aromaEffect.totalAroma * 60 * 1000;
+            if (bot.aromaTimeout) {
+                clearTimeout(bot.aromaTimeout);
+            }
+
+            this.setAromaTimeout(bot);
+            bot.savePlayer();
+            bot.saveAroma();
+            message.channel.sendFile("images/misc/aroma.png", "png", text);
+            
         }
     }
 }

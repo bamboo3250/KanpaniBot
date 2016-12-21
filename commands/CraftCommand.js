@@ -21,8 +21,10 @@ function contains(list, itemName) {
 function isEventEquipment(codeName) {
     var itemListList = [
         "xmas1",
-        "xmas2",
-        "xmas3"
+        "xmas2-white",
+        "xmas2-red",
+        "xmas3-white",
+        "xmas3-black"
     ];
     return contains(itemListList, codeName);
 }
@@ -117,7 +119,7 @@ module.exports = {
         } else if (equipmentResult.tier == 3) {
             distribution = [100, 60, 39, 1];
         } else if (equipmentResult.tier == 4) { // event weapon
-            distribution = [20, 15, 10, 5, 1];
+            distribution = [40, 27, 15, 7, 1];
         } else if (equipmentResult.tier == 5) { // event accessory
             distribution = [50, 30, 20, 10, 1];
         } 

@@ -12,6 +12,13 @@ ItemDatabase.prototype.getItemInfoByName = function(name) {
     return null;
 }
 
+ItemDatabase.prototype.getItemInfoById = function(itemId) {
+    for(var i=0;i<this.itemList.length;i++) {
+        if (this.itemList[i]._id === itemId) return this.itemList[i];
+    }
+    return null;
+}
+
 ItemDatabase.prototype.getItemInfosByNames = function(nameList) {
     var result = [];
     for(var i=0;i<nameList.length;i++) {

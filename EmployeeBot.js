@@ -11,6 +11,7 @@ var Employee = require('./classes/Employee');
 var playerManager = require('./managers/PlayerManager');
 var userManager = require('./managers/UserManager');
 var backgroundManager = require('./managers/BackgroundManager');
+var auctionManager = require('./managers/AuctionManager');
 
 var imageHelper = require('./helpers/ImageHelper');
 var functionHelper = require('./helpers/FunctionHelper');
@@ -48,6 +49,14 @@ var toBackCommand = require('./commands/ToBackCommand');
 var itemDropCommand = require('./commands/ItemDropCommand');
 var unsubscribeCommand = require('./commands/UnsubscribeCommand');
 var retreatCommand = require('./commands/RetreatCommand');
+var xmasTreeCommand = require('./commands/XmasTreeCommand');
+var weaponCommand = require('./commands/WeaponCommand');
+var setAuctionCommand = require('./commands/SetAuctionCommand');
+var auctionCommand = require('./commands/AuctionCommand');
+var bidCommand = require('./commands/BidCommand');
+var wakeUpCommand = require('./commands/WakeUpCommand');
+var aromaCommand = require('./commands/AromaCommand');
+var sellPageCommand = require('./commands/SellPageCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -68,14 +77,15 @@ function EmployeeBot() {
     this.playerManager = playerManager;
     this.userManager = userManager;
     this.backgroundManager = backgroundManager;
+    this.auctionManager = auctionManager;
 
     this.battleController = null;
 
     this.dmmMaintenanceList = [
         {
             name: "DMM Maintenance",
-            startTime: "Dec 9 2016 13:00:00 GMT+0900",
-            endTime: "Dec 9 2016 17:00:00 GMT+0900"
+            startTime: "Dec 16 2016 14:00:00 GMT+0900",
+            endTime: "Dec 16 2016 17:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
@@ -173,9 +183,86 @@ function EmployeeBot() {
     this.forgeEffect = {};
     this.unsubscribe = {};
     this.grindId = {};
+    this.auctionId = {};
 
     this.logChannel = null;
 
+    // Event stuffs
+    this.christmasTreeContribution = {};
+    this.christmasTreeMilestones = {
+        "10": {
+            itemName: "Black Pearl",
+            amount: 10
+        },
+        "50": {
+            itemName: "Unmelting Ice",
+            amount: 20
+        },
+        "100": {
+            itemName: "Gold Mailbox",
+            amount: 1
+        },
+        "500": {
+            itemName: "Weapon Hammer",
+            amount: 5
+        },
+        "1000": {
+            itemName: "Forge",
+            amount: 1
+        },
+        "3000": {
+            itemName: "Forge",
+            amount: 3
+        }
+    }
+    this.aromaEffect = null;
+    this.aromaTimeout = null;
+
+    this.aromaRewardList = [
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+        "Magnificent Silver Coin",
+        "Weapon Hammer",
+        "Armor Hammer",
+        "Accessory Hammer",
+        "Forge"
+    ];
+
+    this.aromaLimitReward = {
+        "Weapon Hammer": 5,
+        "Armor Hammer": 5,
+        "Accessory Hammer": 5,
+        "Forge": 1
+    }
 }
 
 EmployeeBot.prototype.isPM = function(message) {
@@ -266,6 +353,42 @@ EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
     return employee;
 }
 
+EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
+    var itemName = "";
+    if (auction.itemType === "material") {
+        var currentItemInfo = this.itemInfoDatabase.getItemInfoById(auction.itemId);
+        if (currentItemInfo) {
+            itemName = currentItemInfo.itemName;
+        } else {
+            this.log("[SetAuction] Cannot find item with ID: " + auction.itemId);
+        }
+    } else if (auction.itemType === "weapon") {
+        var currentItemInfo = this.weaponDatabase.getWeaponById(auction.itemId);
+        if (currentItemInfo) {
+            itemName = currentItemInfo.weaponName + " +" + auction.plus;
+        } else {
+            this.log("[SetAuction] Cannot find weapon with ID: " + auction.itemId);
+        }
+    } else if (auction.itemType === "armor") {
+        var currentItemInfo = this.armorDatabase.getArmorById(auction.itemId);
+        if (currentItemInfo) {
+            itemName = currentItemInfo.armorName + " +" + auction.plus;
+        } else {
+            this.log("[SetAuction] Cannot find armor with ID: " + auction.itemId);
+        }
+    } else if (auction.itemType === "accessory") {
+        var currentItemInfo = bot.accessoryDatabase.getAccessoryById(auction.itemId);
+        if (currentItemInfo) {
+            itemName = currentItemInfo.accessoryName + " +" + auction.plus;
+        } else {
+            this.log("[SetAuction] Cannot find accessory with ID: " + auction.itemId);
+        }
+    } else {
+        this.log("[SetAuction] Wrong Item Type: " + auction.itemType);
+    }
+    return itemName;
+}
+
 EmployeeBot.prototype.handleCommonCommand = function(message) {
     if (message.author.bot === true) return;
     
@@ -301,6 +424,14 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         itemDropCommand.handle(message, this);
         unsubscribeCommand.handle(message, this);
         retreatCommand.handle(message, this);
+        xmasTreeCommand.handle(message, this);
+        weaponCommand.handle(message, this);
+        setAuctionCommand.handle(message, this);
+        auctionCommand.handle(message, this);
+        bidCommand.handle(message, this);
+        wakeUpCommand.handle(message, this);
+        aromaCommand.handle(message, this);
+        sellPageCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -503,6 +634,65 @@ EmployeeBot.prototype.loadDailyGift = function() {
     });
 }
 
+var christmasTreeFileName = "christmasTree.json";
+EmployeeBot.prototype.saveChristmasTree = function() {
+    var textToWrite = JSON.stringify(this.christmasTreeContribution, null, 4);
+    var that = this;
+    fs.writeFile(christmasTreeFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadChristmasTree = function() {
+    var that = this;
+    fs.readFile(christmasTreeFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadChristmasTree] Read file error.\n" + err);
+            return;
+        }
+        try {
+            that.christmasTreeContribution = JSON.parse(data);
+        }
+        catch (err) {
+            that.log(err);
+        }
+    });
+}
+
+var aromaFileName = "aroma.json";
+EmployeeBot.prototype.saveAroma = function() {
+    var textToWrite = JSON.stringify(this.aromaEffect, null, 4);
+    var that = this;
+    fs.writeFile(aromaFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadAroma = function() {
+    var that = this;
+    this.log("loadAroma");
+    console.log("loadAroma");
+    fs.readFile(aromaFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadAroma] Read file error.\n" + err);
+            return;
+        }
+        try {
+            that.aromaEffect = JSON.parse(data);
+            useCommand.setAromaTimeout(that);
+        }
+        catch (err) {
+            that.log(err);
+        }
+    });
+}
+
 var runQuestStatusFileName = "runQuestStatus.json";
 EmployeeBot.prototype.saveRunQuestStatus = function() {
     var textToWrite = JSON.stringify(this.runQuestStatus, null, 4);
@@ -517,6 +707,8 @@ EmployeeBot.prototype.saveRunQuestStatus = function() {
 
 EmployeeBot.prototype.loadRunQuestStatus = function() {
     var that = this;
+    this.log("loadRunQuestStatus");
+    console.log("loadRunQuestStatus");
     fs.readFile(runQuestStatusFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadRunQuestStatus] " + err);
@@ -546,10 +738,48 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
                     bread = that.runQuestStatus[userId].bread;
                 }
                 grindCommand.runQuest(that, questName, bread, member.user, false, remainingTime);
-                text += "Resume quest " + questName + " for player " + member.user.username + " (Bread: " + bread + "). Remaining Time: " + time + "\n";
+
+                text = "Resume quest " + questName + " for player " + member.user.username + " (Bread: " + bread + "). Remaining Time: " + time + "\n";
+                that.log(text);
             }
         }
-        if (text != "") that.log(text);
+        // if (text != "") that.log(text);
+    });
+}
+
+var auctionFileName = "auction.json";
+EmployeeBot.prototype.saveAuction = function() {
+    var textToWrite = JSON.stringify(this.auctionManager.auctions, null, 4);
+    var that = this;
+    fs.writeFile(auctionFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadAuction = function() {
+    var that = this;
+    this.log("loadAuction");
+    console.log("loadAuction");
+    fs.readFile(auctionFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadAuction] " + err);
+            return;
+        }
+        try {
+            that.auctionManager.auctions = JSON.parse(data);
+        }
+        catch (err) {
+            that.auctionManager.auctions = {};
+            that.log(err);
+        }
+        var text = "";
+        for(key in that.auctionManager.auctions) {
+            var userId = key;
+            setAuctionCommand.setNotice(that, userId);
+        }
     });
 }
 
@@ -574,6 +804,7 @@ EmployeeBot.prototype.ready = function() {
                 this.logChannel = channels[i];
             }
         }
+        console.log(this.logChannel);
         var text = "Bot is on. Serving on " + channels.length + " channels\n";
         // for(var i=0;i<channels.length;i++) {
         //     var channelName = (channels[i].name ? channels[i].name : channels[i].recipient.username);
@@ -581,7 +812,8 @@ EmployeeBot.prototype.ready = function() {
         // }
         text += "-----";
         this.log(text);
-        
+        console.log(text);
+
         var that = this;
 
         //this.setIdleTalk();
@@ -593,8 +825,11 @@ EmployeeBot.prototype.ready = function() {
         this.loadPlayer();
         this.loadDailyGift();
         this.loadUnsubscribe();
+        this.loadChristmasTree();
         this.userManager.fetchAllMembers(this, function() {
             that.loadRunQuestStatus();
+            that.loadAuction();
+            that.loadAroma();
         });
     } else {
         this.log("Bot is restarted");
@@ -630,11 +865,13 @@ employee.bot.on('guildMemberRemove', (member) => {
 });
 
 process.on('uncaughtException', function (err) {
-    employee.log('Uncaught Exception: ' + err.stack);
+    employee.log('Uncaught Exception: \n' + err.stack);
+    console.log('Uncaught Exception: \n' + err.stack)
 });
 
 process.on("unhandledRejection", err => {
     employee.log("Uncaught Promise Error: \n" + err.stack);
+    console.log("Uncaught Promise Error: \n" + err.stack)
 });
 
 module.exports = employee;

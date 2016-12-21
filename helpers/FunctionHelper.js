@@ -98,4 +98,29 @@ FunctionHelper.prototype.randomDist = function(distribution) {
     return distribution.length - 1;
 }
 
+FunctionHelper.prototype.getClassName = function(classId) {
+    if (classId === 1) return "Fighter";
+    if (classId === 2) return "Ronin";
+    if (classId === 3) return "Archer";
+    if (classId === 4) return "Soldier";
+    if (classId === 5) return "Warrior";
+    if (classId === 6) return "Cleric";
+    if (classId === 7) return "Rogue";
+    if (classId === 8) return "Magician";
+    return null;
+}
+
+FunctionHelper.prototype.getClassId = function(className) {
+    if (className.toLowerCase() === "fighter") return 1;
+    if (className.toLowerCase() === "ronin") return 2;
+    if (className.toLowerCase() === "archer") return 3;
+    if (className.toLowerCase() === "soldier") return 4;
+    if (className.toLowerCase() === "warrior") return 5;
+    if (className.toLowerCase() === "cleric") return 6;
+    if (className.toLowerCase() === "rogue") return 7;
+    if (className.toLowerCase() === "magician") return 8;
+    if (className.toLowerCase() === "mage") return 8;
+    return null;
+}
+
 module.exports = new FunctionHelper();

@@ -195,8 +195,17 @@ var itemInfos = [
         _id: "40000102_1", itemName: "Holy Sprig", price: 50
     },{
         _id: "40000104_1", itemName: "Ice Crystal", price: 50
-    }
+    },
 
+    {
+        _id: "40000204_1", itemName: "Eld Light", price: 50
+    },{
+        _id: "40000205_1", itemName: "Unmelting Ice", price: 50
+    },
+
+    {
+        _id: "40074501_1", itemName: "Aroma Oil", price: 50
+    }
 
 ];
 

@@ -8,9 +8,7 @@ module.exports = {
         var player = bot.playerManager.getPlayer(userId);
         var employee = bot.createEmployeeFromPlayer(player);
         var partnerId = player.partnerId;
-        var partner = bot.playerManager.getPlayer(partnerId);
-        var partnerEmployee = bot.createEmployeeFromPlayer(partner);
-
+        
         if (quest == null) {
             bot.log("No quest named " + questName);
             return;
@@ -78,8 +76,32 @@ module.exports = {
             text += "Status: **" + (isSuccess?"SUCCESS :white_check_mark: ":"FAIL :x:") + "**\n";
             text += "Modifier: **x" + modifier + "**\n";
 
+            var blessing = {
+                "10": 1.1,
+                "50": 1.2,
+                "100": 1.3,
+                "500": 1.4,
+                "1000": 1.5,
+                "3000": 2.0,
+            }
+            var total = 0;
+            for(key in bot.christmasTreeContribution) {
+                total += bot.christmasTreeContribution[key];
+            }
+            var bonusFromChristmas = 1.0;
+            if (quest.name.startsWith("Christmas Dungeon")) {
+                if (total >= 2500) bonusFromChristmas = 2.0;
+                else if (total >= 1000) bonusFromChristmas = 1.5;
+                else if (total >= 500) bonusFromChristmas = 1.4;
+                else if (total >= 100) bonusFromChristmas = 1.3;
+                else if (total >= 50) bonusFromChristmas = 1.2;
+                else if (total >= 10) bonusFromChristmas = 1.1;
+            }
+            text += "Sacred Tree's Blessing: **x" + bonusFromChristmas + "**\n";
+
             var extraExp = Math.floor(quest.exp*0.1);
-            var expGained = Math.floor((isSuccess ? quest.exp + bot.functionHelper.randomInt(extraExp + 1) : 0) * modifier);
+            // var randomExp = bot.functionHelper.randomInt(extraExp + 1);
+            var expGained = Math.floor((isSuccess ? quest.exp : 0) * modifier * bonusFromChristmas);
             var goldGained = Math.floor((isSuccess ? quest.goldReward : 0) * modifier);
             var breadGained = (isSuccess ? quest.breadReward : 0);
             var bonusExp = Math.floor(expGained * 0.3);
@@ -104,6 +126,10 @@ module.exports = {
             var preLevel = employee.levelCached;
             player.exp += expGained;
             employee.addExp(expGained);
+    
+            var partner = bot.playerManager.getPlayer(partnerId);
+            var partnerEmployee = bot.createEmployeeFromPlayer(partner);
+
             if (partnerId) {
                 var partnerPreLevel = partnerEmployee.levelCached;
                 
@@ -226,6 +252,11 @@ module.exports = {
             message.reply("No information.");
             return;
         }
+        if (!quest.isActive) {
+            message.reply("This quest has been closed.");
+            return;
+        }
+
         if (isFullGrind && quest.name === "Phantom Labyrinth") {
             message.reply("You cannot use Full Grind for Phantom Labyrinth.");
             return;

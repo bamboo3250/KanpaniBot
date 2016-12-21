@@ -20,7 +20,7 @@ module.exports = {
                     frontSkill: "Power Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300201", modelId: "02", weaponName: "Uchigatana", commonNames: ["Uchigatana"],
             classId: 2, type: "story", stats: {
@@ -41,7 +41,7 @@ module.exports = {
                     frontSkill: "Helmet Splitter", backSkill: "Cleave"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300301", modelId: "02", weaponName: "Shortbow", commonNames: ["Shortbow"],
             classId: 3, type: "story", stats: {
@@ -62,7 +62,7 @@ module.exports = {
                     frontSkill: "Triple Shot", backSkill: "Triple Shot"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300401", modelId: "02", weaponName: "Spear", commonNames: ["Spear"],
             classId: 4, type: "story", stats: {
@@ -83,7 +83,7 @@ module.exports = {
                     frontSkill: "Double Dragon Strike", backSkill: "Double Strike"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300501", modelId: "02", weaponName: "Hand Axe", commonNames: ["Hand Axe"],
             classId: 5, type: "story", stats: {
@@ -104,7 +104,7 @@ module.exports = {
                     frontSkill: "Force Impact", backSkill: "Swing"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300601", modelId: "02", weaponName: "Mace", commonNames: ["Mace"],
             classId: 6, type: "story", stats: {
@@ -125,7 +125,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300701", modelId: "02", weaponName: "Twin Daggers", commonNames: ["Twin Daggers"],
             classId: 7, type: "story", stats: {
@@ -146,7 +146,7 @@ module.exports = {
                     frontSkill: "Shadow Run", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300801", modelId: "02", weaponName: "Rod of Fire", commonNames: ["Rod of Fire"],
             classId: 8, type: "story", stats: {
@@ -167,7 +167,7 @@ module.exports = {
                     frontSkill: "Flame Field", backSkill: "Flame Field"
                 }
             },
-            devCost: 900, levelRequired: 1, tier: 1, recipe: []
+            note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         }
     ],
 
@@ -192,7 +192,7 @@ module.exports = {
                     frontSkill: "Power Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 1890, levelRequired: 1, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 1, tier: 1, recipe: [
                 {
                     materialName: "Copper Ore",
                     amount: 1
@@ -218,7 +218,7 @@ module.exports = {
                     frontSkill: "Helmet Splitter", backSkill: "Cleave"
                 }
             },
-            devCost: 1890, levelRequired: 2, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 2, tier: 1, recipe: [
                 {
                     materialName: "Water",
                     amount: 1
@@ -244,7 +244,7 @@ module.exports = {
                     frontSkill: "Triple Shot", backSkill: "Triple Shot"
                 }
             },
-            devCost: 1890, levelRequired: 3, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 3, tier: 1, recipe: [
                 {
                     materialName: "Tree Branch",
                     amount: 1
@@ -270,7 +270,7 @@ module.exports = {
                     frontSkill: "Double Dragon Strike", backSkill: "Double Strike"
                 }
             },
-            devCost: 1890, levelRequired: 3, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 3, tier: 1, recipe: [
                 {
                     materialName: "Mountain Goat Horn",
                     amount: 1
@@ -296,7 +296,7 @@ module.exports = {
                     frontSkill: "Force Impact", backSkill: "Swing"
                 }
             },
-            devCost: 1890, levelRequired: 4, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 4, tier: 1, recipe: [
                 {
                     materialName: "Mountain Goat Horn",
                     amount: 1
@@ -322,7 +322,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 1890, levelRequired: 4, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 4, tier: 1, recipe: [
                 {
                     materialName: "Copper Ore",
                     amount: 1
@@ -348,7 +348,7 @@ module.exports = {
                     frontSkill: "Shadow Run", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 1890, levelRequired: 5, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 5, tier: 1, recipe: [
                 {
                     materialName: "Star Fragment",
                     amount: 1
@@ -374,7 +374,7 @@ module.exports = {
                     frontSkill: "Ice Strike", backSkill: "Ice Strike"
                 }
             },
-            devCost: 1890, levelRequired: 5, tier: 1, recipe: [
+            note: "", devCost: 1890, levelRequired: 5, tier: 1, recipe: [
                 {
                     materialName: "Tree Branch",
                     amount: 1
@@ -404,7 +404,7 @@ module.exports = {
                     frontSkill: "Double Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 2700, levelRequired: 11, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 11, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 1
@@ -430,7 +430,7 @@ module.exports = {
                     frontSkill: "Iaido Slash", backSkill: "Cleave"
                 }
             },
-            devCost: 2700, levelRequired: 12, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 12, tier: 1, recipe: [
                 {
                     materialName: "Clear Water",
                     amount: 1
@@ -456,7 +456,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Chain Shot"
                 }
             },
-            devCost: 2700, levelRequired: 13, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 13, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 1
@@ -482,7 +482,7 @@ module.exports = {
                     frontSkill: "Cyclone", backSkill: "Double Strike"
                 }
             },
-            devCost: 2700, levelRequired: 13, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 13, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 1
@@ -508,7 +508,7 @@ module.exports = {
                     frontSkill: "War Rage", backSkill: "Swing"
                 }
             },
-            devCost: 2700, levelRequired: 14, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 14, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 1
@@ -534,7 +534,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 2700, levelRequired: 14, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 14, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 1
@@ -560,7 +560,7 @@ module.exports = {
                     frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 2700, levelRequired: 15, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 15, tier: 1, recipe: [
                 {
                     materialName: "Crescent Moon Fragment",
                     amount: 1
@@ -586,7 +586,7 @@ module.exports = {
                     frontSkill: "Crystal Grave", backSkill: "Crystal Grave"
                 }
             },
-            devCost: 2700, levelRequired: 15, tier: 1, recipe: [
+            note: "", devCost: 2700, levelRequired: 15, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 1
@@ -616,7 +616,7 @@ module.exports = {
                     frontSkill: "Double Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 5040, levelRequired: 16, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 16, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 2
@@ -645,7 +645,7 @@ module.exports = {
                     frontSkill: "Iaido Slash", backSkill: "Cleave"
                 }
             },
-            devCost: 5040, levelRequired: 17, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 17, tier: 1, recipe: [
                 {
                     materialName: "Clear Water",
                     amount: 2
@@ -674,7 +674,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Chain Shot"
                 }
             },
-            devCost: 5040, levelRequired: 18, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 18, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 2
@@ -703,7 +703,7 @@ module.exports = {
                     frontSkill: "Cyclone", backSkill: "Double Strike"
                 }
             },
-            devCost: 5040, levelRequired: 18, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 18, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 2
@@ -732,7 +732,7 @@ module.exports = {
                     frontSkill: "War Rage", backSkill: "Swing"
                 }
             },
-            devCost: 5040, levelRequired: 20, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 20, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 2
@@ -761,7 +761,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 5040, levelRequired: 20, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 20, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 2
@@ -790,7 +790,7 @@ module.exports = {
                     frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 5040, levelRequired: 19, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 19, tier: 1, recipe: [
                 {
                     materialName: "Crescent Moon Fragment",
                     amount: 2
@@ -819,7 +819,7 @@ module.exports = {
                     frontSkill: "Sonic Wind", backSkill: "Sonic Wind"
                 }
             },
-            devCost: 5040, levelRequired: 19, tier: 1, recipe: [
+            note: "", devCost: 5040, levelRequired: 19, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 2
@@ -853,7 +853,7 @@ module.exports = {
                     frontSkill: "Double Slash", backSkill: "V Slash"
                 }
             },
-            devCost: 6300, levelRequired: 16, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 16, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 3
@@ -882,7 +882,7 @@ module.exports = {
                     frontSkill: "Iaido Slash", backSkill: "Cleave"
                 }
             },
-            devCost: 6300, levelRequired: 17, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 17, tier: 1, recipe: [
                 {
                     materialName: "Clear Water",
                     amount: 3
@@ -911,7 +911,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Chain Shot"
                 }
             },
-            devCost: 6300, levelRequired: 18, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 18, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 3
@@ -940,7 +940,7 @@ module.exports = {
                     frontSkill: "Cyclone", backSkill: "Double Strike"
                 }
             },
-            devCost: 6300, levelRequired: 18, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 18, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 3
@@ -969,7 +969,7 @@ module.exports = {
                     frontSkill: "War Rage", backSkill: "Swing"
                 }
             },
-            devCost: 6300, levelRequired: 20, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 20, tier: 1, recipe: [
                 {
                     materialName: "Water Buffalo Horn",
                     amount: 3
@@ -998,7 +998,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 6300, levelRequired: 20, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 20, tier: 1, recipe: [
                 {
                     materialName: "Iron Ore",
                     amount: 3
@@ -1027,7 +1027,7 @@ module.exports = {
                     frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 6300, levelRequired: 19, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 19, tier: 1, recipe: [
                 {
                     materialName: "Crescent Moon Fragment",
                     amount: 3
@@ -1056,7 +1056,7 @@ module.exports = {
                     frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
                 }
             },
-            devCost: 6300, levelRequired: 19, tier: 1, recipe: [
+            note: "", devCost: 6300, levelRequired: 19, tier: 1, recipe: [
                 {
                     materialName: "Evergreen Oak Branch",
                     amount: 3
@@ -1090,7 +1090,7 @@ module.exports = {
                     frontSkill: "Flame Edge", backSkill: "V Slash"
                 }
             },
-            devCost: 10800, levelRequired: 21, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 21, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 1
@@ -1122,7 +1122,7 @@ module.exports = {
                     frontSkill: "100 Demon Slayer", backSkill: "Cleave"
                 }
             },
-            devCost: 10800, levelRequired: 21, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 21, tier: 2, recipe: [
                 {
                     materialName: "Half Moon Fragment",
                     amount: 1
@@ -1154,7 +1154,7 @@ module.exports = {
                     frontSkill: "Charge Arrow", backSkill: "Charge Arrow"
                 }
             },
-            devCost: 10800, levelRequired: 22, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 22, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Cloth",
                     amount: 1
@@ -1186,7 +1186,7 @@ module.exports = {
                     frontSkill: "Guren Spear", backSkill: "Double Strike"
                 }
             },
-            devCost: 10800, levelRequired: 24, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 24, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 1
@@ -1218,7 +1218,7 @@ module.exports = {
                     frontSkill: "Grand Down", backSkill: "Swing"
                 }
             },
-            devCost: 10800, levelRequired: 26, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 26, tier: 2, recipe: [
                 {
                     materialName: "Maple Branch",
                     amount: 1
@@ -1250,7 +1250,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 10800, levelRequired: 28, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 28, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 1
@@ -1282,7 +1282,7 @@ module.exports = {
                     frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 10800, levelRequired: 28, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 28, tier: 2, recipe: [
                 {
                     materialName: "Hard Leather",
                     amount: 1
@@ -1314,7 +1314,7 @@ module.exports = {
                     frontSkill: "Flare Storm", backSkill: "Flare Storm"
                 }
             },
-            devCost: 10800, levelRequired: 30, tier: 2, recipe: [
+            note: "", devCost: 10800, levelRequired: 30, tier: 2, recipe: [
                 {
                     materialName: "Maple Branch",
                     amount: 1
@@ -1351,7 +1351,7 @@ module.exports = {
                     frontSkill: "Flame Edge", backSkill: "V Slash"
                 }
             },
-            devCost: 15840, levelRequired: 35, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 35, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 2
@@ -1383,7 +1383,7 @@ module.exports = {
                     frontSkill: "100 Demon Slayer", backSkill: "Cleave"
                 }
             },
-            devCost: 15840, levelRequired: 36, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 36, tier: 2, recipe: [
                 {
                     materialName: "Half Moon Fragment",
                     amount: 1
@@ -1415,7 +1415,7 @@ module.exports = {
                     frontSkill: "Charge Arrow", backSkill: "Charge Arrow"
                 }
             },
-            devCost: 15840, levelRequired: 37, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 37, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Cloth",
                     amount: 1
@@ -1447,7 +1447,7 @@ module.exports = {
                     frontSkill: "Guren Spear", backSkill: "Double Strike"
                 }
             },
-            devCost: 15840, levelRequired: 39, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 39, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 2
@@ -1479,7 +1479,7 @@ module.exports = {
                     frontSkill: "Grand Down", backSkill: "Swing"
                 }
             },
-            devCost: 15840, levelRequired: 34, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 34, tier: 2, recipe: [
                 {
                     materialName: "Maple Branch",
                     amount: 1
@@ -1511,7 +1511,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 15840, levelRequired: 38, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 38, tier: 2, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 2
@@ -1543,7 +1543,7 @@ module.exports = {
                     frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 15840, levelRequired: 40, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 40, tier: 2, recipe: [
                 {
                     materialName: "Hard Leather",
                     amount: 1
@@ -1575,7 +1575,7 @@ module.exports = {
                     frontSkill: "Blizzard", backSkill: "Blizzard"
                 }
             },
-            devCost: 15840, levelRequired: 40, tier: 2, recipe: [
+            note: "", devCost: 15840, levelRequired: 40, tier: 2, recipe: [
                 {
                     materialName: "Maple Branch",
                     amount: 2
@@ -1611,7 +1611,7 @@ module.exports = {
                     frontSkill: "Holy Scourge", backSkill: "V Slash"
                 }
             },
-            devCost: 24300, levelRequired: 41, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 41, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -1643,7 +1643,7 @@ module.exports = {
                     frontSkill: "Secret Blade Maiyasha", backSkill: "Cleave"
                 }
             },
-            devCost: 24300, levelRequired: 42, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 42, tier: 2, recipe: [
                 {
                     materialName: "Full Moon Fragment",
                     amount: 2
@@ -1675,7 +1675,7 @@ module.exports = {
                     frontSkill: "Spread Shot", backSkill: "Spread Shot"
                 }
             },
-            devCost: 24300, levelRequired: 42, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 42, tier: 2, recipe: [
                 {
                     materialName: "Ominous Cloth",
                     amount: 2
@@ -1707,7 +1707,7 @@ module.exports = {
                     frontSkill: "Pale Moonlight", backSkill: "Double Strike"
                 }
             },
-            devCost: 24300, levelRequired: 43, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 43, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 2
@@ -1739,7 +1739,7 @@ module.exports = {
                     frontSkill: "Dimension", backSkill: "Swing"
                 }
             },
-            devCost: 24300, levelRequired: 41, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 41, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 2
@@ -1771,7 +1771,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Prayer"
                 }
             },
-            devCost: 24300, levelRequired: 43, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 43, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -1803,7 +1803,7 @@ module.exports = {
                     frontSkill: "Hayate", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 24300, levelRequired: 44, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 44, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Leather",
                     amount: 2
@@ -1835,7 +1835,7 @@ module.exports = {
                     frontSkill: "Cracked Earth", backSkill: "Cracked Earth"
                 }
             },
-            devCost: 24300, levelRequired: 44, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 44, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 1
@@ -1871,7 +1871,7 @@ module.exports = {
                     frontSkill: "Raging", backSkill: "V Slash"
                 }
             },
-            devCost: 32400, levelRequired: 46, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 46, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 2
@@ -1903,7 +1903,7 @@ module.exports = {
                     frontSkill: "Unsheathing Technique Destroyer", backSkill: "Cleave"
                 }
             },
-            devCost: 32400, levelRequired: 46, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 46, tier: 2, recipe: [
                 {
                     materialName: "Full Moon Fragment",
                     amount: 1
@@ -1935,7 +1935,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Vermilion Cannon"
                 }
             },
-            devCost: 32400, levelRequired: 48, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 48, tier: 2, recipe: [
                 {
                     materialName: "Ominous Cloth",
                     amount: 1
@@ -1967,7 +1967,7 @@ module.exports = {
                     frontSkill: "Raging Dominion Spear", backSkill: "Double Strike"
                 }
             },
-            devCost: 32400, levelRequired: 47, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 47, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -1999,7 +1999,7 @@ module.exports = {
                     frontSkill: "Fury's Toll", backSkill: "Swing"
                 }
             },
-            devCost: 32400, levelRequired: 47, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 47, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 1
@@ -2031,7 +2031,7 @@ module.exports = {
                     frontSkill: "Wraith of Gaia", backSkill: "Prayer"
                 }
             },
-            devCost: 32400, levelRequired: 50, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 50, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 2
@@ -2063,7 +2063,7 @@ module.exports = {
                     frontSkill: "Nightmare", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 32400, levelRequired: 46, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 46, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Leather",
                     amount: 1
@@ -2095,7 +2095,7 @@ module.exports = {
                     frontSkill: "Tornado", backSkill: "Tornado"
                 }
             },
-            devCost: 32400, levelRequired: 49, tier: 2, recipe: [
+            note: "", devCost: 32400, levelRequired: 49, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 2
@@ -2131,7 +2131,7 @@ module.exports = {
                     frontSkill: "Holy Scourge", backSkill: "V Slash"
                 }
             },
-            devCost: 24300, levelRequired: 51, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 51, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -2163,7 +2163,7 @@ module.exports = {
                     frontSkill: "Secret Blade Maiyasha", backSkill: "Cleave"
                 }
             },
-            devCost: 24300, levelRequired: 55, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 55, tier: 2, recipe: [
                 {
                     materialName: "Full Moon Fragment",
                     amount: 2
@@ -2195,7 +2195,7 @@ module.exports = {
                     frontSkill: "Twin Shot", backSkill: "Triple Shot"
                 }
             },
-            devCost: 24300, levelRequired: 51, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 51, tier: 2, recipe: [
                 {
                     materialName: "Ominous Cloth",
                     amount: 2
@@ -2227,7 +2227,7 @@ module.exports = {
                     frontSkill: "Cyclone", backSkill: "Double Strike"
                 }
             },
-            devCost: 24300, levelRequired: 52, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 52, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 2
@@ -2259,7 +2259,7 @@ module.exports = {
                     frontSkill: "Grand Down", backSkill: "Swing"
                 }
             },
-            devCost: 24300, levelRequired: 54, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 54, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 2
@@ -2291,7 +2291,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Healing Light"
                 }
             },
-            devCost: 24300, levelRequired: 53, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 53, tier: 2, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 1
@@ -2323,7 +2323,7 @@ module.exports = {
                     frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 24300, levelRequired: 52, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 52, tier: 2, recipe: [
                 {
                     materialName: "Luxurious Leather",
                     amount: 2
@@ -2355,7 +2355,7 @@ module.exports = {
                     frontSkill: "Seraph Ray", backSkill: "Dark Catastrophe"
                 }
             },
-            devCost: 24300, levelRequired: 53, tier: 2, recipe: [
+            note: "", devCost: 24300, levelRequired: 53, tier: 2, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 1
@@ -2391,7 +2391,7 @@ module.exports = {
                     frontSkill: "Raging", backSkill: "V Slash"
                 }
             },
-            devCost: 32400, levelRequired: 56, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 56, tier: 3, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 4
@@ -2420,7 +2420,7 @@ module.exports = {
                     frontSkill: "Unsheathing Technique Destroyer", backSkill: "Cleave"
                 }
             },
-            devCost: 32400, levelRequired: 59, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 59, tier: 3, recipe: [
                 {
                     materialName: "Full Moon Fragment",
                     amount: 3
@@ -2449,7 +2449,7 @@ module.exports = {
                     frontSkill: "Chain Shot", backSkill: "Purge Impact"
                 }
             },
-            devCost: 32400, levelRequired: 57, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 57, tier: 3, recipe: [
                 {
                     materialName: "Ominous Cloth",
                     amount: 3
@@ -2478,7 +2478,7 @@ module.exports = {
                     frontSkill: "Pale Moonlight", backSkill: "Double Strike"
                 }
             },
-            devCost: 32400, levelRequired: 58, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 58, tier: 3, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 3
@@ -2507,7 +2507,7 @@ module.exports = {
                     frontSkill: "Fury's Toll", backSkill: "Swing"
                 }
             },
-            devCost: 32400, levelRequired: 57, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 57, tier: 3, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 3
@@ -2536,7 +2536,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Heavenly Breath"
                 }
             },
-            devCost: 32400, levelRequired: 56, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 56, tier: 3, recipe: [
                 {
                     materialName: "Gold Ore",
                     amount: 4
@@ -2565,7 +2565,7 @@ module.exports = {
                     frontSkill: "Killer Fang", backSkill: "Throwing Knife"
                 }
             },
-            devCost: 32400, levelRequired: 60, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 60, tier: 3, recipe: [
                 {
                     materialName: "Luxurious Leather",
                     amount: 3
@@ -2594,7 +2594,7 @@ module.exports = {
                     frontSkill: "Thunder Arrow", backSkill: "Thunder Arrow"
                 }
             },
-            devCost: 32400, levelRequired: 56, tier: 3, recipe: [
+            note: "", devCost: 32400, levelRequired: 56, tier: 3, recipe: [
                 {
                     materialName: "Ebony Branch",
                     amount: 4
@@ -2627,7 +2627,7 @@ module.exports = {
                     frontSkill: "Holy Scourge", backSkill: "Cross Edge"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2653,7 +2653,7 @@ module.exports = {
                     frontSkill: "Secret Blade Maiyasha", backSkill: "Heavenly Sword"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2679,7 +2679,7 @@ module.exports = {
                     frontSkill: "Charge Arrow", backSkill: "Spread Shot"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2705,7 +2705,7 @@ module.exports = {
                     frontSkill: "Pale Moonlight", backSkill: "Double Strike"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2731,7 +2731,7 @@ module.exports = {
                     frontSkill: "Dimension", backSkill: "Swing"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2757,7 +2757,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "Healing Light"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2783,7 +2783,7 @@ module.exports = {
                     frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2809,7 +2809,7 @@ module.exports = {
                     frontSkill: "Blizzard", backSkill: "Blizzard"
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            note: "", devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -2820,7 +2820,7 @@ module.exports = {
 
     "xmas1": [
         {
-            _id: "300199", modelId: "99", weaponName: "Christmas Blade X", commonNames: ["Christmas Blade X"],
+            _id: "3001990", modelId: "99", weaponName: "Christmas Blade X", commonNames: ["Christmas Blade X"],
             classId: 1, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 56, pdef: 52, matk: 0, mdef: 63, crit: 5, hit: 5, eva: 0,
@@ -2843,7 +2843,7 @@ module.exports = {
                     frontSkill: "White Cross", backSkill: "Slash"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -2856,7 +2856,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300299", modelId: "99", weaponName: "Holy Night Blade X", commonNames: ["Holy Night Blade X"],
+            _id: "3002990", modelId: "99", weaponName: "Holy Night Blade X", commonNames: ["Holy Night Blade X"],
             classId: 2, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 91, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 15, eva: 0,
@@ -2879,7 +2879,7 @@ module.exports = {
                     frontSkill: "Snowflake Duet", backSkill: "Slash"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -2892,7 +2892,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300399", modelId: "99", weaponName: "Christmas Bow X", commonNames: ["Christmas Bow X"],
+            _id: "3003990", modelId: "99", weaponName: "Christmas Bow X", commonNames: ["Christmas Bow X"],
             classId: 3, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 69, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 15, eva: 0,
@@ -2915,7 +2915,7 @@ module.exports = {
                     frontSkill: "Single Shot", backSkill: "Holy Shoot"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -2928,7 +2928,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300499", modelId: "99", weaponName: "Christmas Lance X", commonNames: ["Christmas Lance X"],
+            _id: "3004990", modelId: "99", weaponName: "Christmas Lance X", commonNames: ["Christmas Lance X"],
             classId: 4, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 25, pdef: 49, matk: 0, mdef: 0, crit: 3, hit: 5, eva: 0,
@@ -2951,7 +2951,7 @@ module.exports = {
                     frontSkill: "Holy Style Spear", backSkill: "Spear Jab"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -2964,7 +2964,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300599", modelId: "99", weaponName: "Christmas Hammer X", commonNames: ["Christmas Hammer X"],
+            _id: "3005990", modelId: "99", weaponName: "Christmas Hammer X", commonNames: ["Christmas Hammer X"],
             classId: 5, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 110, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 3, eva: 0,
@@ -2987,7 +2987,7 @@ module.exports = {
                     frontSkill: "Snowman", backSkill: "Crash"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -3000,7 +3000,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300699", modelId: "99", weaponName: "Christmas Mace X", commonNames: ["Christmas Mace X"],
+            _id: "3006990", modelId: "99", weaponName: "Christmas Mace X", commonNames: ["Christmas Mace X"],
             classId: 6, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 23, matk: 55, mdef: 25, crit: 9, hit: 20, eva: 0,
@@ -3023,7 +3023,7 @@ module.exports = {
                     frontSkill: "Knock", backSkill: "A Good Child's Reward"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -3036,7 +3036,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300799", modelId: "99", weaponName: "Christmas Dagger X", commonNames: ["Christmas Dagger X"],
+            _id: "3007990", modelId: "99", weaponName: "Christmas Dagger X", commonNames: ["Christmas Dagger X"],
             classId: 7, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 51, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 20, eva: 30,
@@ -3059,7 +3059,7 @@ module.exports = {
                     frontSkill: "Snowy Flash", backSkill: "Throwing Knife"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -3072,7 +3072,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "300899", modelId: "99", weaponName: "Christmas Cane X", commonNames: ["Christmas Cane X"],
+            _id: "3008990", modelId: "99", weaponName: "Christmas Cane X", commonNames: ["Christmas Cane X"],
             classId: 8, type: "event", stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 0, matk: 65, mdef: 0, crit: 5, hit: 15, eva: 0,
@@ -3095,7 +3095,7 @@ module.exports = {
                     frontSkill: "Twinkling Star", backSkill: "Twinkling Star"
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 4, recipe: [
+            note: "", devCost: 12250, levelRequired: 10, tier: 4, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -3108,7 +3108,901 @@ module.exports = {
                 }
             ]
         }
+    ],
+
+    "xmas2-white": [
+        {
+            _id: "3001881", modelId: "88", weaponName: "Glacier Brand", commonNames: ["Glacier Brand"],
+            classId: 1, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 10, eva: 15,
+                    frontSkill: "Merry Christmas", backSkill: "Cross Edge"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 10, eva: 18,
+                    frontSkill: "Merry Christmass", backSkill: "Cross Edge"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 10, eva: 22,
+                    frontSkill: "Merry Christmas", backSkill: "Power Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 10, eva: 28,
+                    frontSkill: "Merry Christmas", backSkill: "Power Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 10, eva: 35,
+                    frontSkill: "Merry Christmas", backSkill: "Frost Edge"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3002881", modelId: "88", weaponName: "Korimonmaru", commonNames: ["Korimonmaru"],
+            classId: 2, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Heavenly Sword"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Heavenly Sword"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 55, hit: 0, eva: 40,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Ice Dancing Blade"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3003881", modelId: "88", weaponName: "Glacier Neve", commonNames: ["Glacier Neve"],
+            classId: 3, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Twin Shot", backSkill: "Hole of Light"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Twin Shot", backSkill: "Hole of Light"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Charge Arrow", backSkill: "Hole of Light"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Charge Arrow", backSkill: "Hole of Light"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Ice Shot", backSkill: "Hole of Light"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3004881", modelId: "88", weaponName: "Glacier Spear", commonNames: ["Glacier Spear"],
+            classId: 4, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Strike"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Strike"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Dragon Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Dragon Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Rays of the Spear", backSkill: "Ice Strike"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3005881", modelId: "88", weaponName: "Glacier Mountain", commonNames: ["Glacier Mountain"],
+            classId: 5, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Illuminate Stamp", backSkill: "Force Impact"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Illuminate Stamp", backSkill: "Force Impact"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Illuminate Stamp", backSkill: "Ice Age"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3006881", modelId: "88", weaponName: "Glacier Mist", commonNames: ["Glacier Mist"],
+            classId: 6, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3007881", modelId: "88", weaponName: "Twin Glacier", commonNames: ["Twin Glacier"],
+            classId: 7, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Illuminate Ball", backSkill: "Shadow Run"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Illuminate Ball", backSkill: "Shadow Run"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Illuminate Ball", backSkill: "Icy Wind"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3008881", modelId: "88", weaponName: "Glacier Sol", commonNames: ["Glacier Sol"],
+            classId: 8, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Cold Lance", backSkill: "Castle of Light"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Cold Lance", backSkill: "Castle of Light"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Ice Strike", backSkill: "Castle of Light"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Ice Strike", backSkill: "Castle of Light"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Frostbite", backSkill: "Castle of Light"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
+    "xmas2-red": [
+        {
+            _id: "3001871", modelId: "87", weaponName: "Holly Devil's Ice Sword", commonNames: ["Holly Devil's Ice Sword"],
+            classId: 1, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 10, eva: 15,
+                    frontSkill: "Merry Christmas", backSkill: "Cross Edge"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 10, eva: 18,
+                    frontSkill: "Merry Christmass", backSkill: "Cross Edge"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 10, eva: 22,
+                    frontSkill: "Merry Christmas", backSkill: "Power Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 10, eva: 28,
+                    frontSkill: "Merry Christmas", backSkill: "Power Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 10, eva: 35,
+                    frontSkill: "Merry Christmas", backSkill: "Frost Edge"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3002871", modelId: "87", weaponName: "Holly Devil's Sword", commonNames: ["Holly Devil's Sword"],
+            classId: 2, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Heavenly Sword"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Heavenly Sword"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 55, hit: 0, eva: 40,
+                    frontSkill: "Sacred Tree Sword", backSkill: "Ice Dancing Blade"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3003871", modelId: "87", weaponName: "Holly Devil's Ice Bow", commonNames: ["Holly Devil's Ice Bow"],
+            classId: 3, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Twin Shot", backSkill: "Hole of Light"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Twin Shot", backSkill: "Hole of Light"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Charge Arrow", backSkill: "Hole of Light"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Charge Arrow", backSkill: "Hole of Light"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Ice Shot", backSkill: "Hole of Light"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3004871", modelId: "87", weaponName: "Holly Devil's Ice Spear", commonNames: ["Holly Devil's Ice Spear"],
+            classId: 4, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Strike"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Strike"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Dragon Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Rays of the Spear", backSkill: "Double Dragon Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Rays of the Spear", backSkill: "Ice Strike"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3005871", modelId: "87", weaponName: "Holly Devil's Ice Hammer", commonNames: ["Holly Devil's Ice Hammer"],
+            classId: 5, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Illuminate Stamp", backSkill: "Force Impact"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Illuminate Stamp", backSkill: "Force Impact"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Illuminate Stamp", backSkill: "Ice Age"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3006871", modelId: "87", weaponName: "Holly Devil's Healing Mace", commonNames: ["Holly Devil's Healing Mace"],
+            classId: 6, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Holy Shower"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3007871", modelId: "87", weaponName: "Holly Devil's Dualblades", commonNames: ["Holly Devil's Dualblades"],
+            classId: 7, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Illuminate Ball", backSkill: "Shadow Run"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Illuminate Ball", backSkill: "Shadow Run"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Illuminate Ball", backSkill: "Icy Wind"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3008871", modelId: "87", weaponName: "Holly Devil's Rod of Ice", commonNames: ["Holly Devil's Rod of Ice"],
+            classId: 8, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Cold Lance", backSkill: "Castle of Light"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Cold Lance", backSkill: "Castle of Light"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Ice Strike", backSkill: "Castle of Light"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Ice Strike", backSkill: "Castle of Light"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Frostbite", backSkill: "Castle of Light"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Unmelting Ice",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
+    "xmas3-white": [
+        {
+            _id: "3001791", modelId: "79", weaponName: "Frozen Sword", commonNames: ["Frozen Sword"],
+            classId: 1, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
+                    frontSkill: "Slash Snow", backSkill: "Cross Edge"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 16, eva: 18,
+                    frontSkill: "Slash Snow", backSkill: "Cross Edge"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 16, eva: 22,
+                    frontSkill: "Slash Snow", backSkill: "Power Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 16, eva: 28,
+                    frontSkill: "Slash Snow", backSkill: "Power Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 16, eva: 35,
+                    frontSkill: "Slash Snow", backSkill: "Frost Edge"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3002791", modelId: "79", weaponName: "\"Zansetsu\" Nishiki", commonNames: ["\"Zansetsu\" Nishiki"],
+            classId: 2, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Heavenly Sword"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Heavenly Sword"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 0, eva: 40,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Ice Dancing Blade"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3003791", modelId: "79", weaponName: "Heavy Snowfall \"Neige\"", commonNames: ["Heavy Snowfall \"Neige\""],
+            classId: 3, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Twin Shot", backSkill: "Hailstorm"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Twin Shot", backSkill: "Hailstorm"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Charge Arrow", backSkill: "Hailstorm"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Charge Arrow", backSkill: "Hailstorm"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Ice Shot", backSkill: "Hailstorm"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3004791", modelId: "79", weaponName: "Frozen Spear", commonNames: ["Frozen Spear"],
+            classId: 4, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Dragon Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Dragon Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Ice Dust Digger", backSkill: "Ice Strike"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3005791", modelId: "79", weaponName: "Frozen Hammer", commonNames: ["Frozen Hammer"],
+            classId: 5, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Aurora Impact", backSkill: "Hammerfall"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Aurora Impact", backSkill: "Hammerfall"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Aurora Impact", backSkill: "Force Impact"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Aurora Impact", backSkill: "Force Impact"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Aurora Impact", backSkill: "Ice Age"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3006791", modelId: "79", weaponName: "Frozen Mace", commonNames: ["Frozen Mace"],
+            classId: 6, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3007791", modelId: "79", weaponName: "Frozen Knife", commonNames: ["Frozen Knife"],
+            classId: 7, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Shadow Run"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Shadow Run"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Icy Wind"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3008791", modelId: "79", weaponName: "Frozen Staff", commonNames: ["Frozen Staff"],
+            classId: 8, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Cold Lance", backSkill: "Snow Blast"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Cold Lance", backSkill: "Snow Blast"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Ice Strike", backSkill: "Snow Blast"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Ice Strike", backSkill: "Snow Blast"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Frostbite", backSkill: "Snow Blast"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        }
+    ],
+
+    "xmas3-black": [
+        {
+            _id: "3001781", modelId: "78", weaponName: "Ice Age Sword", commonNames: ["Ice Age Sword"],
+            classId: 1, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
+                    frontSkill: "Slash Snow", backSkill: "Cross Edge"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 16, eva: 18,
+                    frontSkill: "Slash Snow", backSkill: "Cross Edge"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 16, eva: 22,
+                    frontSkill: "Slash Snow", backSkill: "Power Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 16, eva: 28,
+                    frontSkill: "Slash Snow", backSkill: "Power Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 16, eva: 35,
+                    frontSkill: "Slash Snow", backSkill: "Frost Edge"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3002781", modelId: "78", weaponName: "\"Yukishimo\" Nishiki", commonNames: ["\"Yukishimo\" Nishiki"],
+            classId: 2, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Heavenly Sword"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Heavenly Sword"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 0, eva: 40,
+                    frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Ice Dancing Blade"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3003781", modelId: "78", weaponName: "Hailstorm \"Hagel\"", commonNames: ["Hailstorm \"Hagel\""],
+            classId: 3, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Twin Shot", backSkill: "Hailstorm"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Twin Shot", backSkill: "Hailstorm"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Charge Arrow", backSkill: "Hailstorm"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Charge Arrow", backSkill: "Hailstorm"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Ice Shot", backSkill: "Hailstorm"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3004781", modelId: "78", weaponName: "Ice Age Spear", commonNames: ["Ice Age Spear"],
+            classId: 4, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Dragon Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Ice Dust Digger", backSkill: "Double Dragon Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Ice Dust Digger", backSkill: "Ice Strike"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3005781", modelId: "78", weaponName: "Ice Age Hammer", commonNames: ["Ice Age Hammer"],
+            classId: 5, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Aurora Impact", backSkill: "Hammerfall"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Aurora Impact", backSkill: "Hammerfall"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Aurora Impact", backSkill: "Force Impact"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Aurora Impact", backSkill: "Force Impact"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Aurora Impact", backSkill: "Ice Age"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3006781", modelId: "78", weaponName: "Ice Age Mace", commonNames: ["Ice Age Mace"],
+            classId: 6, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3007781", modelId: "78", weaponName: "Ice Age Knife", commonNames: ["Ice Age Knife"],
+            classId: 7, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Shadow Run"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Shadow Run"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Cross Ice Assassin", backSkill: "Icy Wind"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        },{
+            _id: "3008781", modelId: "78", weaponName: "Ice Age Staff", commonNames: ["Ice Age Staff"],
+            classId: 8, type: "event", stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Cold Lance", backSkill: "Snow Blast"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Cold Lance", backSkill: "Snow Blast"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Ice Strike", backSkill: "Snow Blast"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Ice Strike", backSkill: "Snow Blast"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Frostbite", backSkill: "Snow Blast"
+                }
+            },
+            note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
+        }
     ]
-
-
 };

@@ -11,10 +11,13 @@ images/equipment/
 images/myweapon/
 images/me/
 config.js
+aroma.json
 affection.js
 affection.json
+auction.json
 dailygift.json
 soul.json
 player.json
 runQuestStatus.json
 unsubscribe.json
+christmasTree.json

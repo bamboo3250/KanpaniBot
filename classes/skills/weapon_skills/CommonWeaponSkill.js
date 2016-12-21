@@ -31,6 +31,7 @@ function CommonWeaponSkill() {
             pattern: this.SKILL_PATTERN_SINGLE,
             type: this.TYPE_SHORT_NORMAL_ATTACK,
             modifier: 1.0,
+            attackTimes: 1,
             element: this.ELEMENT_NONE,
             target: this.TARGET_ANY
         }
