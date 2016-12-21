@@ -17,7 +17,8 @@ PlayerManager.prototype.createNewPlayer = function(userId) {
         armorList: {},
         accessoryList: {},
         position: "front",
-        partnerId: null
+        partnerId: null,
+        ceoPower: false
     };
     return this.playerDict[userId];
 }

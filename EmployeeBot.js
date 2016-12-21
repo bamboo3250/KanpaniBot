@@ -57,6 +57,7 @@ var bidCommand = require('./commands/BidCommand');
 var wakeUpCommand = require('./commands/WakeUpCommand');
 var aromaCommand = require('./commands/AromaCommand');
 var sellPageCommand = require('./commands/SellPageCommand');
+var ceoPowerCommand = require('./commands/CEOPowerCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -429,6 +430,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         wakeUpCommand.handle(message, this);
         aromaCommand.handle(message, this);
         sellPageCommand.handle(message, this);
+        ceoPowerCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -592,11 +594,8 @@ EmployeeBot.prototype.loadPlayer = function() {
                 var user = that.userManager.getUser(userId);
                 if (user) that.log("Unequip Armor for " + user.username);
             }
-            if (typeof player.position === "undefined") {
-                player.position = "front";
-            }
-            if (typeof player.partnerId === "undefined") {
-                player.partnerId = null;
+            if (typeof player.ceoPower === "undefined") {
+                player.ceoPower = false;
             }
         }
         that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);

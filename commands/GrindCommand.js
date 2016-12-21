@@ -52,6 +52,9 @@ module.exports = {
         var bonusFromPartner = 0;
         if (partnerId) bonusFromPartner = 3;
         chanceToSuccess = Math.min(100, chanceToSuccess + bonusFromLevel + bonusFromWeapon + bonusFromArmor + bonusFromAccessory + bonusFromPartner);
+        if (player.ceoPower) {
+            chanceToSuccess = 100;
+        }
 
         if (message) {
             var time = bot.functionHelper.parseTime(timeInMillis);
@@ -71,10 +74,15 @@ module.exports = {
             text += "=================MISSION REPORT=================\n\n";
             text += "Mission: **" + quest.name + "** (**" + quest.commonNames[0] + "**)\n";
 
-            
+            var player = bot.playerManager.getPlayer(userId);
+            if (player.ceoPower) {
+                chanceToSuccess = 100;
+            }
             var isSuccess = bot.functionHelper.randomInt(100) < chanceToSuccess;
             text += "Status: **" + (isSuccess?"SUCCESS :white_check_mark: ":"FAIL :x:") + "**\n";
             text += "Modifier: **x" + modifier + "**\n";
+            text += "CEO Power: **" + (player.ceoPower?"ON":"OFF") + "**\n";
+            player.ceoPower = false;
 
             var blessing = {
                 "10": 1.1,
