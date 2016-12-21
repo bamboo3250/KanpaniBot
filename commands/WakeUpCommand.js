@@ -42,7 +42,7 @@ module.exports = {
         var member = bot.userManager.getMember(userId);
         var aromaRole = member.guild.roles.find('name', 'Aroma Dreamer');
         member.removeRole(aromaRole).then(output => {
-            bot.log("Aroma Role is removed for " + member.user.username);
+            bot.log("Aroma Role is removed for " + output.user.username);
         }).catch(err => {
             bot.log("[removeAromaRole]" + err);
         });

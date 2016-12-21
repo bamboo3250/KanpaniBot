@@ -8,9 +8,7 @@ module.exports = {
         var player = bot.playerManager.getPlayer(userId);
         var employee = bot.createEmployeeFromPlayer(player);
         var partnerId = player.partnerId;
-        var partner = bot.playerManager.getPlayer(partnerId);
-        var partnerEmployee = bot.createEmployeeFromPlayer(partner);
-
+        
         if (quest == null) {
             bot.log("No quest named " + questName);
             return;
@@ -128,6 +126,10 @@ module.exports = {
             var preLevel = employee.levelCached;
             player.exp += expGained;
             employee.addExp(expGained);
+    
+            var partner = bot.playerManager.getPlayer(partnerId);
+            var partnerEmployee = bot.createEmployeeFromPlayer(partner);
+
             if (partnerId) {
                 var partnerPreLevel = partnerEmployee.levelCached;
                 

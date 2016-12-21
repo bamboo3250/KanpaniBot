@@ -22,6 +22,13 @@ module.exports = {
             return;
         }
 
+        var userId = message.author.id;
+        var player = bot.playerManager.getPlayer(userId);
+        if (!player) {
+            message.reply("You need to select character first.");
+            return;
+        }
+
         var equipmentDict = {};
         if (category == "wp") {
             equipmentDict = player.weaponList;
@@ -48,10 +55,9 @@ module.exports = {
         });
         var NUM_EQUIPMENT_PER_PAGE = 10;
         var soldCount = 0;
-        var userId = message.author.id;
         var text = "";
         var totalGoldGained = 0;
-        for(var i=(page-1)*NUM_EQUIPMENT_PER_PAGE; i<Math.min((page-1)*NUM_EQUIPMENT_PER_PAGE, equipmentList.length); i++) {
+        for(var i=(page-1)*NUM_EQUIPMENT_PER_PAGE; i<Math.min(page*NUM_EQUIPMENT_PER_PAGE, equipmentList.length); i++) {
             var itemInfo = null;
             var itemName = "";
             if (category === "wp") {
@@ -78,8 +84,7 @@ module.exports = {
             }
             bot.savePlayer();
 
-            text = amount + " " + itemName + " +" + equipmentList[i].plus + " for **" + goldGained + " Gold**.\n";
-            message.reply(text);
+            text += amount + " " + itemName + " +" + equipmentList[i].plus + " for **" + goldGained + " Gold**.\n";
             soldCount += amount;
             totalGoldGained += goldGained;
         }
