@@ -658,6 +658,7 @@ EmployeeBot.prototype.saveAroma = function() {
 EmployeeBot.prototype.loadAroma = function() {
     var that = this;
     this.log("loadAroma");
+    console.log("loadAroma");
     fs.readFile(aromaFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadAroma] Read file error.\n" + err);
@@ -688,6 +689,7 @@ EmployeeBot.prototype.saveRunQuestStatus = function() {
 EmployeeBot.prototype.loadRunQuestStatus = function() {
     var that = this;
     this.log("loadRunQuestStatus");
+    console.log("loadRunQuestStatus");
     fs.readFile(runQuestStatusFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadRunQuestStatus] " + err);
@@ -741,6 +743,7 @@ EmployeeBot.prototype.saveAuction = function() {
 EmployeeBot.prototype.loadAuction = function() {
     var that = this;
     this.log("loadAuction");
+    console.log("loadAuction");
     fs.readFile(auctionFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadAuction] " + err);
