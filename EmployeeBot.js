@@ -782,6 +782,7 @@ EmployeeBot.prototype.ready = function() {
                 this.logChannel = channels[i];
             }
         }
+        console.log(this.logChannel);
         var text = "Bot is on. Serving on " + channels.length + " channels\n";
         // for(var i=0;i<channels.length;i++) {
         //     var channelName = (channels[i].name ? channels[i].name : channels[i].recipient.username);
@@ -789,7 +790,8 @@ EmployeeBot.prototype.ready = function() {
         // }
         text += "-----";
         this.log(text);
-        
+        console.log(text);
+
         var that = this;
 
         //this.setIdleTalk();
@@ -841,11 +843,13 @@ employee.bot.on('guildMemberRemove', (member) => {
 });
 
 process.on('uncaughtException', function (err) {
-    employee.log('Uncaught Exception: ' + err.stack);
+    employee.log('Uncaught Exception: \n' + err.stack);
+    console.log('Uncaught Exception: \n' + err.stack)
 });
 
 process.on("unhandledRejection", err => {
     employee.log("Uncaught Promise Error: \n" + err.stack);
+    console.log("Uncaught Promise Error: \n" + err.stack)
 });
 
 module.exports = employee;
