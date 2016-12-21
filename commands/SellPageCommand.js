@@ -64,10 +64,10 @@ module.exports = {
                 itemInfo = bot.weaponDatabase.getWeaponById(equipmentList[i]._id);  
                 itemName = itemInfo.weaponName;
             } else if (category === "ar") {
-                itemInfo = bot.armorDatabase.getArmorByName(equipmentList[i]._id);
+                itemInfo = bot.armorDatabase.getArmorById(equipmentList[i]._id);
                 itemName = itemInfo.armorName;
             } else if (category === "acc") {
-                itemInfo = bot.accessoryDatabase.getAccessoryByName(equipmentList[i]._id);
+                itemInfo = bot.accessoryDatabase.getAccessoryById(equipmentList[i]._id);
                 itemName = itemInfo.accessoryName;
             }
             if (!itemInfo) continue;
@@ -82,12 +82,13 @@ module.exports = {
             } else if (category === "acc") {
                 bot.playerManager.removeAccessory(userId, itemInfo._id, equipmentList[i].plus, amount);
             }
-            bot.savePlayer();
-
+            
             text += amount + " " + itemName + " +" + equipmentList[i].plus + " for **" + goldGained + " Gold**.\n";
             soldCount += amount;
             totalGoldGained += goldGained;
         }
+        bot.savePlayer();
+
         text = "You have sold **" + soldCount + " item(s)**:\n" + text;
         text += "Total: **" + totalGoldGained + " Gold**";
         message.reply(text);
