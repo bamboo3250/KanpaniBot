@@ -18,7 +18,7 @@ module.exports = {
         }
         var page = parseInt(pageInText);
         if (page < 1) {
-            message.reply("The page number is invalide.");
+            message.reply("The page number is invalid.");
             return;
         }
 
