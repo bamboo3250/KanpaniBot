@@ -176,21 +176,21 @@ module.exports = {
             itemInfo = bot.weaponDatabase.getWeaponByName(itemName);    
             if (itemInfo != null) {
                 itemType = "weapon";
-                itemName = itemInfo.weaponName;
+                itemName = itemInfo.name;
             }
         }
         if (itemInfo === null) {
             itemInfo = bot.armorDatabase.getArmorByName(itemName);    
             if (itemInfo != null) {
                 itemType = "armor";
-                itemName = itemInfo.armorName;
+                itemName = itemInfo.name;
             }
         }
         if (itemInfo === null) {
             itemInfo = bot.accessoryDatabase.getAccessoryByName(itemName);    
             if (itemInfo != null) {
                 itemType = "accessory";
-                itemName = itemInfo.accessoryName;
+                itemName = itemInfo.name;
             }
         }
         if (itemInfo === null) {

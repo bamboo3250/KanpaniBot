@@ -46,7 +46,7 @@ module.exports = {
 
             employee = new Employee(employee);
 
-            var bustupUrl = employee.getIllustURL("bustup");
+            var bustupUrl = bot.urlHelper.getIllustURL(employee, "bustup");
             var star = 6;
             if (employee.getBaseRarity() === 5) star++;
             var enemySpriteUrl = employee.getSpriteImageURL(star, true, "character");

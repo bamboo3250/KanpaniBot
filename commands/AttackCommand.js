@@ -4,9 +4,9 @@ module.exports = {
         if (command.commandName != "~attack") return;
         
         var userId = message.author.id;
-        var player = bot.playerManager.getPlayer(userId);
-        var employee = bot.createEmployeeFromPlayer(player);
-        if (!employee) {
+        var playerUnit = bot.unitManager.getPlayerUnit(userId);
+        
+        if (!playerUnit) {
             message.reply("You need to select character first.");
             return;
         }
@@ -16,9 +16,8 @@ module.exports = {
             message.reply("You need to specify your target.");
             return;
         }
-        var enemyPlayer = bot.playerManager.getPlayer(target.id);
-        var enemyEmployee = bot.createEmployeeFromPlayer(enemyPlayer);
-        if (!enemyEmployee) {
+        var targetUnit = bot.unitManager.getPlayerUnit(target.id);
+        if (!targetUnit) {
             message.reply("Your target does not have character.");
             return;
         }
@@ -28,7 +27,7 @@ module.exports = {
             return;
         }
 
-        bot.battleController.attack(skill, employee, enemyEmployee, function(err, text, imageFileName) {
+        bot.battleController.attack(playerUnit, targetUnit, function(err, text, imageFileName) {
             if (err) {
                 bot.log("[attack] " + err);
                 return;

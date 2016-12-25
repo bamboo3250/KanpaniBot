@@ -1,8 +1,7 @@
 function TrainingController(bot) {
     this.type = "training";
     this.bot = bot;
-    this.sideA = [[null,null,null],[null,null,null]];
-    this.sideB = [[null,null,null],[null,null,null]];
+    this.trainerField = [[null,null,null],[null,null,null]];
 
 }
 

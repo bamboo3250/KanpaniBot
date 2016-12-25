@@ -6,7 +6,7 @@ function WeaponDatabase() {
 
 function hasName(weapon, name) {
     var lowerCaseName = name.toLowerCase();
-    if (weapon.weaponName.toLowerCase() == lowerCaseName) return true;
+    if (weapon.name.toLowerCase() == lowerCaseName) return true;
     for(var i=0;i<weapon.commonNames.length;i++) {
         if (weapon.commonNames[i].toLowerCase() == lowerCaseName) return true;
     }

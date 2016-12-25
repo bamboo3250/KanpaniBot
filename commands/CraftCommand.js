@@ -179,13 +179,7 @@ module.exports = {
                 if (equipmentResult.recipe.length > 0) text += " and ";
                 text += "**" + goldNeeded + " Gold**.\n";
                 var equipmentName = "";
-                if (category == "wp") {
-                    equipmentName = equipmentResult.weaponName;
-                } else if (category == "ar") {
-                    equipmentName = equipmentResult.armorName;
-                } else if (category == "acc") {
-                    equipmentName = equipmentResult.accessoryName;
-                }
+                equipmentName = equipmentResult.name;
                 text += "Crafting **" + equipmentName + "**...";
                 message.channel.sendMessage(text);
                 setTimeout(function() {
