@@ -358,6 +358,7 @@ elsa.bot.on("ready", function() {
     if (elsa.ready()) {
         loadAffection();
         elsa.unitManager.createUnitForPlayer(elsa.playerData);
+        trainingController.bot = elsa;
         trainingController.trainerField = [
             [null, "241511566036434945", null],
             [null, null, null]

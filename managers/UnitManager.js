@@ -13,7 +13,7 @@ UnitManager.prototype.createUnitForPlayer = function(player) {
     if (!player) return null;
     if (!this.playerUnits[player._id]) {
         var employeeInfo = this.bot.employeeDatabase.getEmployeeById(player.characterId)
-        this.playerUnits[player._id] = new Employee(employeeInfo);
+        this.playerUnits[player._id] = new Employee(employeeInfo, player._id);
         this.refreshUnitForPlayer(player);
         this.playerUnits[player._id].fullHeal();
     }

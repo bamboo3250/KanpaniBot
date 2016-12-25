@@ -1,8 +1,9 @@
-var Employee = function(employeeInfo) {
+var Employee = function(employeeInfo, playerId = null) {
     this.DOMAIN = "http://img4.kanpani.jp";
 
+    this.playerId = playerId;
     this._no = employeeInfo._no;
-    this._id = employeeInfo._id;
+    this.characterId = employeeInfo._id;
     this.fullName = employeeInfo.fullName;
     this.shortName = employeeInfo.commonNames[0];
     this.japaneseName = employeeInfo.japaneseName;

@@ -27,7 +27,7 @@ module.exports = {
             return;
         }
 
-        bot.battleController.attack(playerUnit, targetUnit, function(err, text, imageFileName) {
+        bot.battleController.attack(playerUnit, targetUnit, function(err, text, imageFileName, shouldMention = false) {
             if (err) {
                 bot.log("[attack] " + err);
                 return;
@@ -35,7 +35,11 @@ module.exports = {
             if (imageFileName) {
                 message.channel.sendFile(imageFileName, "png", text);
             } else {
-                message.channel.sendMessage(text);
+                if (shouldMention) {
+                    message.reply(text);
+                } else {
+                    message.channel.sendMessage(text);
+                }
             }
         });
     }
