@@ -156,6 +156,9 @@ module.exports = {
         
         if (bot.aromaEffect) {
             var now = new Date();
+            var duration = bot.aromaEffect.endTime - now.valueOf();
+            var time = bot.functionHelper.parseTime(duration);
+            bot.log("Set AromaTimeout: " + duration + " (" + time + ").");
             bot.aromaTimeout = setTimeout(function() {
                 for(key in bot.aromaEffect.contributors) {
                     var contributorId = key;
@@ -192,7 +195,7 @@ module.exports = {
                 bot.aromaEffect = null;
                 bot.savePlayer();
                 bot.saveAroma();
-            }, bot.aromaEffect.endTime - now.valueOf());
+            }, duration);
         }
     },
 
