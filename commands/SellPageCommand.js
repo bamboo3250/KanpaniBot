@@ -59,18 +59,15 @@ module.exports = {
         var totalGoldGained = 0;
         for(var i=(page-1)*NUM_EQUIPMENT_PER_PAGE; i<Math.min(page*NUM_EQUIPMENT_PER_PAGE, equipmentList.length); i++) {
             var itemInfo = null;
-            var itemName = "";
             if (category === "wp") {
-                itemInfo = bot.weaponDatabase.getWeaponById(equipmentList[i]._id);  
-                itemName = itemInfo.weaponName;
+                itemInfo = bot.weaponDatabase.getWeaponById(equipmentList[i]._id);                  
             } else if (category === "ar") {
-                itemInfo = bot.armorDatabase.getArmorById(equipmentList[i]._id);
-                itemName = itemInfo.armorName;
+                itemInfo = bot.armorDatabase.getArmorByName(equipmentList[i]._id);
             } else if (category === "acc") {
-                itemInfo = bot.accessoryDatabase.getAccessoryById(equipmentList[i]._id);
-                itemName = itemInfo.accessoryName;
+                itemInfo = bot.accessoryDatabase.getAccessoryByName(equipmentList[i]._id);
             }
             if (!itemInfo) continue;
+            var itemName = itemInfo.name;
             var itemPrice = itemInfo.stats["+"+equipmentList[i].plus].price;    
             var amount = equipmentDict[equipmentList[i]._id]['+'+equipmentList[i].plus];
             var goldGained = itemPrice * amount;

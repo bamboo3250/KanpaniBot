@@ -31,7 +31,7 @@ module.exports = {
                 bot.log(err);
                 return;
             }
-            var text = "Weapon Name: **" + weaponInfo.weaponName + "**\n";
+            var text = "Weapon Name: **" + weaponInfo.name + "**\n";
             var className = bot.functionHelper.getClassName(classId);
             var emojiName = 'k' + className.toLowerCase();
             const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));

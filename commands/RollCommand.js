@@ -35,7 +35,7 @@ module.exports = {
         var employeeList = bot.employeeDatabase.getEmployeesByRarirty(rarity);
         var rolledEmployee = new Employee(employeeList[bot.functionHelper.randomInt(employeeList.length)]);
 
-        var photoUrl = rolledEmployee.getIllustURL('photo');
+        var photoUrl = bot.urlHelper.getIllustURL(rolledEmployee, 'photo');
         var photoFileName = "images/photo/" + rolledEmployee._id + ".png";
 
         var spriteUrl = rolledEmployee.getSpriteImageURL(rolledEmployee.getBaseRarity(), true, "story", 2);
@@ -98,7 +98,7 @@ module.exports = {
 
                     resume.print(font, 272, 140, rolledEmployee.getClass());
 
-                    resume.print(font, 285, 185, "" + rolledEmployee.getHP());
+                    resume.print(font, 285, 185, "" + rolledEmployee.getMaxHP());
                     resume.print(font, 285, 208, "" + rolledEmployee.getAtk());
                     resume.print(font, 285, 231, "" + rolledEmployee.getMAtk());
 

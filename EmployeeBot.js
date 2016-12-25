@@ -12,6 +12,7 @@ var playerManager = require('./managers/PlayerManager');
 var userManager = require('./managers/UserManager');
 var backgroundManager = require('./managers/BackgroundManager');
 var auctionManager = require('./managers/AuctionManager');
+var unitManager = require('./managers/UnitManager');
 
 var imageHelper = require('./helpers/ImageHelper');
 var functionHelper = require('./helpers/FunctionHelper');
@@ -79,6 +80,9 @@ function EmployeeBot() {
     this.userManager = userManager;
     this.backgroundManager = backgroundManager;
     this.auctionManager = auctionManager;
+    this.unitManager = unitManager;
+
+    this.battleController = null;
 
     this.dmmMaintenanceList = [
         {
@@ -331,6 +335,7 @@ EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
     var employeeInfo = this.employeeDatabase.getEmployeeById(player.characterId)
     var employee = new Employee(employeeInfo);
     employee.setExp(player.exp);
+    employee.position = player.position;
 
     if (player.equipedWeapon) {
         var weapon = this.weaponDatabase.getWeaponById(player.equipedWeapon._id);
@@ -363,21 +368,21 @@ EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
     } else if (auction.itemType === "weapon") {
         var currentItemInfo = this.weaponDatabase.getWeaponById(auction.itemId);
         if (currentItemInfo) {
-            itemName = currentItemInfo.weaponName + " +" + auction.plus;
+            itemName = currentItemInfo.name + " +" + auction.plus;
         } else {
             this.log("[SetAuction] Cannot find weapon with ID: " + auction.itemId);
         }
     } else if (auction.itemType === "armor") {
         var currentItemInfo = this.armorDatabase.getArmorById(auction.itemId);
         if (currentItemInfo) {
-            itemName = currentItemInfo.armorName + " +" + auction.plus;
+            itemName = currentItemInfo.name + " +" + auction.plus;
         } else {
             this.log("[SetAuction] Cannot find armor with ID: " + auction.itemId);
         }
     } else if (auction.itemType === "accessory") {
         var currentItemInfo = bot.accessoryDatabase.getAccessoryById(auction.itemId);
         if (currentItemInfo) {
-            itemName = currentItemInfo.accessoryName + " +" + auction.plus;
+            itemName = currentItemInfo.name + " +" + auction.plus;
         } else {
             this.log("[SetAuction] Cannot find accessory with ID: " + auction.itemId);
         }
@@ -599,6 +604,10 @@ EmployeeBot.prototype.loadPlayer = function() {
             }
         }
         that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
+        for(key in that.playerManager.playerDict) {
+            var player = that.playerManager.getPlayer(key);
+            that.unitManager.createUnitForPlayer(player);
+        }
     });
 }
 
@@ -827,8 +836,11 @@ EmployeeBot.prototype.ready = function() {
             that.loadAuction();
             that.loadAroma();
         });
+
+        return true;
     } else {
         this.log("Bot is restarted");
+        return false;
     }
 }
 

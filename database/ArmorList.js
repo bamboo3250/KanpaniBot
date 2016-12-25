@@ -1,7 +1,7 @@
 module.exports = {
     "r1": [
         {
-            _id: "310101", armorName: "Old Mail", commonNames: ["Old Mail"],
+            _id: "310101", name: "Old Mail", commonNames: ["Old Mail"],
             classId: 1, type: "story", element: "", stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 10, matk: 0, mdef: 10, crit: 0, hit: 0, eva: 5
@@ -18,7 +18,7 @@ module.exports = {
             },
             devCost: 900, levelRequired: 1, tier: 3, recipe: []
         },{
-            _id: "310201", armorName: "Copper Armor", commonNames: ["Copper Armor"],
+            _id: "310201", name: "Copper Armor", commonNames: ["Copper Armor"],
             classId: 2, type: "story", element: "", stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 8, matk: 0, mdef: 6, crit: 0, hit: 0, eva: 2
@@ -35,7 +35,7 @@ module.exports = {
             },
             devCost: 900, levelRequired: 1, tier: 3, recipe: []
         },{
-            _id: "310301", armorName: "Old Plate", commonNames: ["Old Plate"],
+            _id: "310301", name: "Old Plate", commonNames: ["Old Plate"],
             classId: 3, type: "story", element: "", stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 6, matk: 0, mdef: 6, crit: 0, hit: 0, eva: 1
@@ -52,7 +52,7 @@ module.exports = {
             },
             devCost: 900, levelRequired: 1, tier: 3, recipe: []
         },{
-            _id: "310401", armorName: "Old Helm", commonNames: ["Old Helm"],
+            _id: "310401", name: "Old Helm", commonNames: ["Old Helm"],
             classId: 4, type: "story", element: "", stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 16, matk: 0, mdef: 10, crit: 0, hit: 0, eva: 5
@@ -69,7 +69,7 @@ module.exports = {
             },
             devCost: 900, levelRequired: 1, tier: 3, recipe: []
         },{
-            _id: "310501", armorName: "Old Belt", commonNames: ["Old Belt"],
+            _id: "310501", name: "Old Belt", commonNames: ["Old Belt"],
             classId: 5, type: "story", element: "", stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 10, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 3
@@ -86,7 +86,7 @@ module.exports = {
             },
             devCost: 900, levelRequired: 1, tier: 3, recipe: []
         },{
-            _id: "310601", armorName: "Old Veil", commonNames: ["Old Veil"],
+            _id: "310601", name: "Old Veil", commonNames: ["Old Veil"],
             classId: 6, type: "story", element: "", stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 6, matk: 0, mdef: 14, crit: 0, hit: 0, eva: 4
@@ -103,7 +103,7 @@ module.exports = {
             },
             devCost: 900, levelRequired: 1, tier: 3, recipe: []
         },{
-            _id: "310701", armorName: "Old Gauntlets", commonNames: ["Old Gauntlets"],
+            _id: "310701", name: "Old Gauntlets", commonNames: ["Old Gauntlets"],
             classId: 7, type: "story", element: "", stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 6, matk: 0, mdef: 6, crit: 0, hit: 0, eva: 4
@@ -120,7 +120,7 @@ module.exports = {
             },
             devCost: 900, levelRequired: 1, tier: 3, recipe: []
         },{
-            _id: "310801", armorName: "Witch Hat", commonNames: ["Witch Hat"],
+            _id: "310801", name: "Witch Hat", commonNames: ["Witch Hat"],
             classId: 8, type: "story", element: "", stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 4, matk: 0, mdef: 12, crit: 0, hit: 0, eva: 3
@@ -141,7 +141,7 @@ module.exports = {
 
     "r2": [
         {
-            _id: "310102", armorName: "Bronze Mail", commonNames: ["Bronze Mail"],
+            _id: "310102", name: "Bronze Mail", commonNames: ["Bronze Mail"],
             classId: 1, type: "story", element: "", stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 20, matk: 0, mdef: 20, crit: 0, hit: 0, eva: 10
@@ -163,7 +163,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310202", armorName: "Bronze Armor", commonNames: ["Bronze Armor"],
+            _id: "310202", name: "Bronze Armor", commonNames: ["Bronze Armor"],
             classId: 2, type: "story", element: "", stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 16, matk: 0, mdef: 12, crit: 0, hit: 0, eva: 3
@@ -185,7 +185,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310302", armorName: "Bronze Plate", commonNames: ["Bronze Plate"],
+            _id: "310302", name: "Bronze Plate", commonNames: ["Bronze Plate"],
             classId: 3, type: "story", element: "", stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 12, matk: 0, mdef: 12, crit: 0, hit: 0, eva: 4
@@ -207,7 +207,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310402", armorName: "Bronze Helm", commonNames: ["Bronze Helm"],
+            _id: "310402", name: "Bronze Helm", commonNames: ["Bronze Helm"],
             classId: 4, type: "story", element: "", stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 32, matk: 0, mdef: 20, crit: 0, hit: 0, eva: 10
@@ -229,7 +229,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310502", armorName: "Bronze Belt", commonNames: ["Bronze Belt"],
+            _id: "310502", name: "Bronze Belt", commonNames: ["Bronze Belt"],
             classId: 5, type: "story", element: "", stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 20, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 8
@@ -251,7 +251,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310602", armorName: "Bronze Veil", commonNames: ["Bronze Veil"],
+            _id: "310602", name: "Bronze Veil", commonNames: ["Bronze Veil"],
             classId: 6, type: "story", element: "", stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 12, matk: 0, mdef: 28, crit: 0, hit: 0, eva: 8
@@ -273,7 +273,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310702", armorName: "Bronze Gauntlets", commonNames: ["Bronze Gauntlets"],
+            _id: "310702", name: "Bronze Gauntlets", commonNames: ["Bronze Gauntlets"],
             classId: 7, type: "story", element: "", stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 12, matk: 0, mdef: 12, crit: 0, hit: 0, eva: 8
@@ -295,7 +295,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310802", armorName: "Magician Hat", commonNames: ["Magician Hat"],
+            _id: "310802", name: "Magician Hat", commonNames: ["Magician Hat"],
             classId: 8, type: "story", element: "", stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 8, matk: 0, mdef: 24, crit: 0, hit: 0, eva: 6
@@ -321,7 +321,7 @@ module.exports = {
 
     "r3": [
         {
-            _id: "310103", armorName: "Iron Mail", commonNames: ["Iron Mail"],
+            _id: "310103", name: "Iron Mail", commonNames: ["Iron Mail"],
             classId: 1, type: "story", element: "", stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 30, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 11
@@ -343,7 +343,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310203", armorName: "Iron Armor", commonNames: ["Iron Armor"],
+            _id: "310203", name: "Iron Armor", commonNames: ["Iron Armor"],
             classId: 2, type: "story", element: "", stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 24, matk: 0, mdef: 18, crit: 0, hit: 0, eva: 7
@@ -365,7 +365,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310303", armorName: "Iron Plate", commonNames: ["Iron Plate"],
+            _id: "310303", name: "Iron Plate", commonNames: ["Iron Plate"],
             classId: 3, type: "story", element: "", stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 18, matk: 0, mdef: 18, crit: 0, hit: 0, eva: 7
@@ -387,7 +387,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310403", armorName: "Iron Helm", commonNames: ["Iron Helm"],
+            _id: "310403", name: "Iron Helm", commonNames: ["Iron Helm"],
             classId: 4, type: "story", element: "", stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 48, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 11
@@ -409,7 +409,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310503", armorName: "Iron Belt", commonNames: ["Iron Belt"],
+            _id: "310503", name: "Iron Belt", commonNames: ["Iron Belt"],
             classId: 5, type: "story", element: "", stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 30, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 13
@@ -431,7 +431,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310603", armorName: "Iron Veil", commonNames: ["Iron Veil"],
+            _id: "310603", name: "Iron Veil", commonNames: ["Iron Veil"],
             classId: 6, type: "story", element: "", stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 18, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 9
@@ -453,7 +453,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310703", armorName: "Iron Gauntlets", commonNames: ["Iron Gauntlets"],
+            _id: "310703", name: "Iron Gauntlets", commonNames: ["Iron Gauntlets"],
             classId: 7, type: "story", element: "", stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 18, matk: 0, mdef: 18, crit: 0, hit: 0, eva: 9
@@ -475,7 +475,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310803", armorName: "Sorcerer Hat", commonNames: ["Sorcerer Hat"],
+            _id: "310803", name: "Sorcerer Hat", commonNames: ["Sorcerer Hat"],
             classId: 8, type: "story", element: "", stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 12, matk: 0, mdef: 36, crit: 0, hit: 0, eva: 7
@@ -501,7 +501,7 @@ module.exports = {
 
     "r4": [
         {
-            _id: "310104", armorName: "Heavy Mail", commonNames: ["Heavy Mail"],
+            _id: "310104", name: "Heavy Mail", commonNames: ["Heavy Mail"],
             classId: 1, type: "story", element: "", stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 40, matk: 0, mdef: 40, crit: 0, hit: 0, eva: 14
@@ -526,7 +526,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310204", armorName: "Steel Armor", commonNames: ["Steel Armor"],
+            _id: "310204", name: "Steel Armor", commonNames: ["Steel Armor"],
             classId: 2, type: "story", element: "", stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 32, matk: 0, mdef: 24, crit: 0, hit: 0, eva: 7
@@ -551,7 +551,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310304", armorName: "Heavy Plate", commonNames: ["Heavy Plate"],
+            _id: "310304", name: "Heavy Plate", commonNames: ["Heavy Plate"],
             classId: 3, type: "story", element: "", stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 24, matk: 0, mdef: 24, crit: 0, hit: 0, eva: 10
@@ -576,7 +576,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310404", armorName: "Heavy Helm", commonNames: ["Heavy Helm"],
+            _id: "310404", name: "Heavy Helm", commonNames: ["Heavy Helm"],
             classId: 4, type: "story", element: "", stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 64, matk: 0, mdef: 40, crit: 0, hit: 0, eva: 12
@@ -601,7 +601,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310504", armorName: "Heavy Belt", commonNames: ["Heavy Belt"],
+            _id: "310504", name: "Heavy Belt", commonNames: ["Heavy Belt"],
             classId: 5, type: "story", element: "", stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 40, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 17
@@ -626,7 +626,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310604", armorName: "Heavy Veil", commonNames: ["Heavy Veil"],
+            _id: "310604", name: "Heavy Veil", commonNames: ["Heavy Veil"],
             classId: 6, type: "story", element: "", stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 24, matk: 0, mdef: 56, crit: 0, hit: 0, eva: 12
@@ -651,7 +651,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310704", armorName: "Heavy Gauntlets", commonNames: ["Heavy Gauntlets"],
+            _id: "310704", name: "Heavy Gauntlets", commonNames: ["Heavy Gauntlets"],
             classId: 7, type: "story", element: "", stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 24, matk: 0, mdef: 24, crit: 0, hit: 0, eva: 12
@@ -676,7 +676,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310804", armorName: "Mage Hat", commonNames: ["Mage Hat"],
+            _id: "310804", name: "Mage Hat", commonNames: ["Mage Hat"],
             classId: 8, type: "story", element: "", stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 16, matk: 0, mdef: 48, crit: 0, hit: 0, eva: 10
@@ -705,7 +705,7 @@ module.exports = {
 
     "r5": [
         {
-            _id: "310105", armorName: "Silver Mail", commonNames: ["Silver Mail"],
+            _id: "310105", name: "Silver Mail", commonNames: ["Silver Mail"],
             classId: 1, type: "story", element: "", stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 50, matk: 0, mdef: 50, crit: 0, hit: 0, eva: 16
@@ -730,7 +730,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310205", armorName: "Silver Armor", commonNames: ["Silver Armor"],
+            _id: "310205", name: "Silver Armor", commonNames: ["Silver Armor"],
             classId: 2, type: "story", element: "", stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 40, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 13
@@ -755,7 +755,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310305", armorName: "Silver Plate", commonNames: ["Silver Plate"],
+            _id: "310305", name: "Silver Plate", commonNames: ["Silver Plate"],
             classId: 3, type: "story", element: "", stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 30, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 13
@@ -780,7 +780,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310405", armorName: "Silver Helm", commonNames: ["Silver Helm"],
+            _id: "310405", name: "Silver Helm", commonNames: ["Silver Helm"],
             classId: 4, type: "story", element: "", stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 80, matk: 0, mdef: 50, crit: 0, hit: 0, eva: 13
@@ -805,7 +805,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310505", armorName: "Silver Belt", commonNames: ["Silver Belt"],
+            _id: "310505", name: "Silver Belt", commonNames: ["Silver Belt"],
             classId: 5, type: "story", element: "", stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 50, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 21
@@ -830,7 +830,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310605", armorName: "Silver Veil", commonNames: ["Silver Veil"],
+            _id: "310605", name: "Silver Veil", commonNames: ["Silver Veil"],
             classId: 6, type: "story", element: "", stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 30, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 13
@@ -855,7 +855,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310705", armorName: "Silver Gauntlets", commonNames: ["Silver Gauntlets"],
+            _id: "310705", name: "Silver Gauntlets", commonNames: ["Silver Gauntlets"],
             classId: 7, type: "story", element: "", stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 30, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 13
@@ -880,7 +880,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310805", armorName: "Wizard Hat", commonNames: ["Wizard Hat"],
+            _id: "310805", name: "Wizard Hat", commonNames: ["Wizard Hat"],
             classId: 8, type: "story", element: "", stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 20, matk: 0, mdef: 60, crit: 0, hit: 0, eva: 10
@@ -909,7 +909,7 @@ module.exports = {
 
     "r6": [
         {
-            _id: "310106", armorName: "Platinum Mail", commonNames: ["Platinum Mail"],
+            _id: "310106", name: "Platinum Mail", commonNames: ["Platinum Mail"],
             classId: 1, type: "story", element: "", stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 60, matk: 0, mdef: 60, crit: 0, hit: 0, eva: 20
@@ -937,7 +937,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310206", armorName: "Ghostly Armor", commonNames: ["Ghostly Armor"],
+            _id: "310206", name: "Ghostly Armor", commonNames: ["Ghostly Armor"],
             classId: 2, type: "story", element: "", stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 48, matk: 0, mdef: 36, crit: 0, hit: 0, eva: 20
@@ -965,7 +965,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310306", armorName: "Platinum Plate", commonNames: ["Platinum Plate"],
+            _id: "310306", name: "Platinum Plate", commonNames: ["Platinum Plate"],
             classId: 3, type: "story", element: "", stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 36, matk: 0, mdef: 36, crit: 0, hit: 0, eva: 17
@@ -993,7 +993,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310406", armorName: "Duel Helm", commonNames: ["Duel Helm"],
+            _id: "310406", name: "Duel Helm", commonNames: ["Duel Helm"],
             classId: 4, type: "story", element: "", stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 96, matk: 0, mdef: 60, crit: 0, hit: 0, eva: 17
@@ -1021,7 +1021,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310506", armorName: "Berserker Belt", commonNames: ["Berserker Belt"],
+            _id: "310506", name: "Berserker Belt", commonNames: ["Berserker Belt"],
             classId: 5, type: "story", element: "", stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 60, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 25
@@ -1049,7 +1049,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310606", armorName: "Mysterious Veil", commonNames: ["Mysterious Veil"],
+            _id: "310606", name: "Mysterious Veil", commonNames: ["Mysterious Veil"],
             classId: 6, type: "story", element: "", stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 36, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 17
@@ -1077,7 +1077,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310706", armorName: "Kaiser Gauntlets", commonNames: ["Kaiser Gauntlets"],
+            _id: "310706", name: "Kaiser Gauntlets", commonNames: ["Kaiser Gauntlets"],
             classId: 7, type: "story", element: "", stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 36, matk: 0, mdef: 36, crit: 0, hit: 0, eva: 17
@@ -1105,7 +1105,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310806", armorName: "Philosopher's Hat", commonNames: ["Philosopher's Hat"],
+            _id: "310806", name: "Philosopher's Hat", commonNames: ["Philosopher's Hat"],
             classId: 8, type: "story", element: "", stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 24, matk: 0, mdef: 72, crit: 0, hit: 0, eva: 14
@@ -1137,7 +1137,7 @@ module.exports = {
 
     "r7": [
         {
-            _id: "310107", armorName: "Phantom Mail", commonNames: ["Phantom Mail"],
+            _id: "310107", name: "Phantom Mail", commonNames: ["Phantom Mail"],
             classId: 1, type: "story", element: "", stats: {
                 "+0": { price: 2880,
                     patk: 0, pdef: 80, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 27
@@ -1165,7 +1165,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310207", armorName: "Legendary Armor \"Hotaru-shiki\"", commonNames: ["Legendary Armor \"Hotaru-shiki\""],
+            _id: "310207", name: "Legendary Armor \"Hotaru-shiki\"", commonNames: ["Legendary Armor \"Hotaru-shiki\""],
             classId: 2, type: "story", element: "", stats: {
                 "+0": { price: 2880,
                     patk: 0, pdef: 64, matk: 0, mdef: 48, crit: 0, hit: 0, eva: 27
@@ -1193,7 +1193,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310307", armorName: "Soul Breastplate", commonNames: ["Soul Breastplate"],
+            _id: "310307", name: "Soul Breastplate", commonNames: ["Soul Breastplate"],
             classId: 3, type: "story", element: "", stats: {
                 "+0": { price: 2880,
                     patk: 0, pdef: 48, matk: 0, mdef: 48, crit: 0, hit: 0, eva: 21
@@ -1221,7 +1221,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310407", armorName: "Crystal Helm", commonNames: ["Crystal Helm"],
+            _id: "310407", name: "Crystal Helm", commonNames: ["Crystal Helm"],
             classId: 4, type: "story", element: "", stats: {
                 "+0": { price: 2880,
                     patk: 0, pdef: 128, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 24
@@ -1249,7 +1249,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310507", armorName: "Platinum Belt", commonNames: ["Platinum Belt"],
+            _id: "310507", name: "Platinum Belt", commonNames: ["Platinum Belt"],
             classId: 5, type: "story", element: "", stats: {
                 "+0": { price: 2880,
                     patk: 0, pdef: 80, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 30
@@ -1277,7 +1277,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310607", armorName: "Magical Veil", commonNames: ["Magical Veil"],
+            _id: "310607", name: "Magical Veil", commonNames: ["Magical Veil"],
             classId: 6, type: "story", element: "", stats: {
                 "+0": { price: 2880,
                     patk: 0, pdef: 48, matk: 0, mdef: 112, crit: 0, hit: 0, eva: 21
@@ -1305,7 +1305,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310707", armorName: "Assassin Gauntlets", commonNames: ["Assassin Gauntlets"],
+            _id: "310707", name: "Assassin Gauntlets", commonNames: ["Assassin Gauntlets"],
             classId: 7, type: "story", element: "", stats: {
                 "+0": { price: 2880,
                     patk: 0, pdef: 48, matk: 0, mdef: 48, crit: 0, hit: 0, eva: 21
@@ -1333,7 +1333,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310807", armorName: "Silver Powder Hat", commonNames: ["Silver Powder Hat"],
+            _id: "310807", name: "Silver Powder Hat", commonNames: ["Silver Powder Hat"],
             classId: 8, type: "story", element: "", stats: {
                 "+0": { price: 2880,
                     patk: 0, pdef: 32, matk: 0, mdef: 96, crit: 0, hit: 0, eva: 18
@@ -1365,7 +1365,7 @@ module.exports = {
 
     "r8": [
         {
-            _id: "310108", armorName: "Ignition Mail", commonNames: ["Ignition Mail"],
+            _id: "310108", name: "Ignition Mail", commonNames: ["Ignition Mail"],
             classId: 1, type: "story", element: "fire", stats: {
                 "+0": { price: 4050,
                     patk: 0, pdef: 70, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 35
@@ -1393,7 +1393,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310208", armorName: "Crimson Armor \"Homura-mai\"", commonNames: ["Crimson Armor \"Homura-mai\""],
+            _id: "310208", name: "Crimson Armor \"Homura-mai\"", commonNames: ["Crimson Armor \"Homura-mai\""],
             classId: 2, type: "story", element: "fire", stats: {
                 "+0": { price: 4050,
                     patk: 0, pdef: 56, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 35
@@ -1421,7 +1421,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310308", armorName: "Flame Plate", commonNames: ["Flame Plate"],
+            _id: "310308", name: "Flame Plate", commonNames: ["Flame Plate"],
             classId: 3, type: "story", element: "fire", stats: {
                 "+0": { price: 4050,
                     patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 29
@@ -1449,7 +1449,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310408", armorName: "Purgatory Helmet", commonNames: ["Purgatory Helmet"],
+            _id: "310408", name: "Purgatory Helmet", commonNames: ["Purgatory Helmet"],
             classId: 4, type: "story", element: "fire", stats: {
                 "+0": { price: 4050,
                     patk: 0, pdef: 112, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 32
@@ -1477,7 +1477,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310508", armorName: "Belt of Crimson Claws", commonNames: ["Belt of Crimson Claws"],
+            _id: "310508", name: "Belt of Crimson Claws", commonNames: ["Belt of Crimson Claws"],
             classId: 5, type: "story", element: "fire", stats: {
                 "+0": { price: 4050,
                     patk: 0, pdef: 70, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 42
@@ -1505,7 +1505,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310608", armorName: "Crimson Veil", commonNames: ["Crimson Veil"],
+            _id: "310608", name: "Crimson Veil", commonNames: ["Crimson Veil"],
             classId: 6, type: "story", element: "fire", stats: {
                 "+0": { price: 4050,
                     patk: 0, pdef: 42, matk: 0, mdef: 98, crit: 0, hit: 0, eva: 29
@@ -1533,7 +1533,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310708", armorName: "Volcano Gauntlets", commonNames: ["Volcano Gauntlets"],
+            _id: "310708", name: "Volcano Gauntlets", commonNames: ["Volcano Gauntlets"],
             classId: 7, type: "story", element: "fire", stats: {
                 "+0": { price: 4050,
                     patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 29
@@ -1561,7 +1561,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310808", armorName: "Hat of the Crimson Lotus", commonNames: ["Hat of the Crimson Lotus"],
+            _id: "310808", name: "Hat of the Crimson Lotus", commonNames: ["Hat of the Crimson Lotus"],
             classId: 8, type: "story", element: "fire", stats: {
                 "+0": { price: 4050,
                     patk: 0, pdef: 28, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 26
@@ -1593,7 +1593,7 @@ module.exports = {
 
     "r9": [
         {
-            _id: "310109", armorName: "Sapphire Mail", commonNames: ["Sapphire Mail"],
+            _id: "310109", name: "Sapphire Mail", commonNames: ["Sapphire Mail"],
             classId: 1, type: "story", element: "ice", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 70, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 44
@@ -1621,7 +1621,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310209", armorName: "Azure Armor \"Seisui\"", commonNames: ["Azure Armor \"Seisui\""],
+            _id: "310209", name: "Azure Armor \"Seisui\"", commonNames: ["Azure Armor \"Seisui\""],
             classId: 2, type: "story", element: "ice", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 56, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 35
@@ -1649,7 +1649,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310309", armorName: "Breastplate of Fire and Ice", commonNames: ["Breastplate of Fire and Ice"],
+            _id: "310309", name: "Breastplate of Fire and Ice", commonNames: ["Breastplate of Fire and Ice"],
             classId: 3, type: "story", element: "ice", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 37
@@ -1677,7 +1677,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310409", armorName: "Hoarfrost Helmet", commonNames: ["Hoarfrost Helmet"],
+            _id: "310409", name: "Hoarfrost Helmet", commonNames: ["Hoarfrost Helmet"],
             classId: 4, type: "story", element: "ice", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 112, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 41
@@ -1705,7 +1705,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310509", armorName: "Belt of Crystal Ice", commonNames: ["Belt of Crystal Ice"],
+            _id: "310509", name: "Belt of Crystal Ice", commonNames: ["Belt of Crystal Ice"],
             classId: 5, type: "story", element: "ice", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 70, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 51
@@ -1733,7 +1733,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310609", armorName: "Frost Veil", commonNames: ["Frost Veil"],
+            _id: "310609", name: "Frost Veil", commonNames: ["Frost Veil"],
             classId: 6, type: "story", element: "ice", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 42, matk: 0, mdef: 98, crit: 0, hit: 0, eva: 37
@@ -1761,7 +1761,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310709", armorName: "Sapphire Gauntlets", commonNames: ["Sapphire Gauntlets"],
+            _id: "310709", name: "Sapphire Gauntlets", commonNames: ["Sapphire Gauntlets"],
             classId: 7, type: "story", element: "ice", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 37
@@ -1789,7 +1789,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310809", armorName: "Hat of the Great Ocean", commonNames: ["Hat of the Great Ocean"],
+            _id: "310809", name: "Hat of the Great Ocean", commonNames: ["Hat of the Great Ocean"],
             classId: 8, type: "story", element: "ice", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 28, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 34
@@ -1821,7 +1821,7 @@ module.exports = {
 
     "r10": [
         {
-            _id: "310110", armorName: "Storm Mail", commonNames: ["Storm Mail"],
+            _id: "310110", name: "Storm Mail", commonNames: ["Storm Mail"],
             classId: 1, type: "story", element: "wind", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 70, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 44
@@ -1849,7 +1849,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310210", armorName: "Jade Armor \"Fujin\"", commonNames: ["Jade Armor \"Fujin\""],
+            _id: "310210", name: "Jade Armor \"Fujin\"", commonNames: ["Jade Armor \"Fujin\""],
             classId: 2, type: "story", element: "wind", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 56, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 35
@@ -1877,7 +1877,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310310", armorName: "Storm Plate", commonNames: ["Storm Plate"],
+            _id: "310310", name: "Storm Plate", commonNames: ["Storm Plate"],
             classId: 3, type: "story", element: "wind", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 37
@@ -1905,7 +1905,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310410", armorName: "Storm Helmet", commonNames: ["Storm Helmet"],
+            _id: "310410", name: "Storm Helmet", commonNames: ["Storm Helmet"],
             classId: 4, type: "story", element: "wind", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 112, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 41
@@ -1933,7 +1933,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310510", armorName: "Belt of Biting Wind", commonNames: ["Belt of Biting Wind"],
+            _id: "310510", name: "Belt of Biting Wind", commonNames: ["Belt of Biting Wind"],
             classId: 5, type: "story", element: "wind", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 70, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 51
@@ -1961,7 +1961,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310610", armorName: "Wyndham Veil", commonNames: ["Wyndham Veil"],
+            _id: "310610", name: "Wyndham Veil", commonNames: ["Wyndham Veil"],
             classId: 6, type: "story", element: "wind", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 42, matk: 0, mdef: 98, crit: 0, hit: 0, eva: 37
@@ -1989,7 +1989,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310710", armorName: "Wyndham Gauntlets", commonNames: ["Wyndham Gauntlets"],
+            _id: "310710", name: "Wyndham Gauntlets", commonNames: ["Wyndham Gauntlets"],
             classId: 7, type: "story", element: "wind", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 37
@@ -2017,7 +2017,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "310810", armorName: "Hat of the Tornado", commonNames: ["Hat of the Tornado"],
+            _id: "310810", name: "Hat of the Tornado", commonNames: ["Hat of the Tornado"],
             classId: 8, type: "story", element: "wind", stats: {
                 "+0": { price: 5220,
                     patk: 0, pdef: 28, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 34
@@ -2049,7 +2049,7 @@ module.exports = {
 
     "labyrinth": [
         {
-            _id: "3101140", armorName: "Labyrinth Mail", commonNames: ["Labyrinth Mail"],
+            _id: "3101140", name: "Labyrinth Mail", commonNames: ["Labyrinth Mail"],
             classId: 1, type: "story", element: "", stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 55, matk: 0, mdef: 55, crit: 0, hit: 8, eva: 8
@@ -2071,7 +2071,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3102140", armorName: "Labyrinth Armor", commonNames: ["Labyrinth Armor"],
+            _id: "3102140", name: "Labyrinth Armor", commonNames: ["Labyrinth Armor"],
             classId: 2, type: "story", element: "", stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 43, matk: 0, mdef: 32, crit: 10, hit: 0, eva: 15
@@ -2093,7 +2093,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3103140", armorName: "Labyrinth Plate", commonNames: ["Labyrinth Plate"],
+            _id: "3103140", name: "Labyrinth Plate", commonNames: ["Labyrinth Plate"],
             classId: 3, type: "story", element: "", stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 34, matk: 0, mdef: 34, crit: 0, hit: 10, eva: 16
@@ -2115,7 +2115,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3104140", armorName: "Labyrinth Helm", commonNames: ["Labyrinth Helm"],
+            _id: "3104140", name: "Labyrinth Helm", commonNames: ["Labyrinth Helm"],
             classId: 4, type: "story", element: "", stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 85, matk: 0, mdef: 56, crit: 0, hit: 0, eva: 11
@@ -2137,7 +2137,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3105140", armorName: "Labyrinth Belt", commonNames: ["Labyrinth Belt"],
+            _id: "3105140", name: "Labyrinth Belt", commonNames: ["Labyrinth Belt"],
             classId: 5, type: "story", element: "", stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 55, matk: 0, mdef: 0, crit: 5, hit: 0, eva: 20
@@ -2159,7 +2159,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3106140", armorName: "Labyrinth Veil", commonNames: ["Labyrinth Veil"],
+            _id: "3106140", name: "Labyrinth Veil", commonNames: ["Labyrinth Veil"],
             classId: 6, type: "story", element: "", stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 32, matk: 0, mdef: 73, crit: 0, hit: 0, eva: 10
@@ -2181,7 +2181,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3107140", armorName: "Labyrinth Gauntlets", commonNames: ["Labyrinth Gauntlets"],
+            _id: "3107140", name: "Labyrinth Gauntlets", commonNames: ["Labyrinth Gauntlets"],
             classId: 7, type: "story", element: "", stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 32, matk: 0, mdef: 32, crit: 0, hit: 0, eva: 12
@@ -2203,7 +2203,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3108140", armorName: "Labyrinth Hat", commonNames: ["Labyrinth Hat"],
+            _id: "3108140", name: "Labyrinth Hat", commonNames: ["Labyrinth Hat"],
             classId: 8, type: "story", element: "", stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 22, matk: 0, mdef: 62, crit: 0, hit: 0, eva: 8

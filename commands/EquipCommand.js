@@ -62,16 +62,13 @@ module.exports = {
             return;
         }
 
-        var equipmentName = "";
+        var equipmentName = equipmentResult.name;
         var equipmentList = {};
         if (category == "wp") {
-            equipmentName = equipmentResult.weaponName;
             equipmentList = player.weaponList;
         } else if (category == "ar") {
-            equipmentName = equipmentResult.armorName;
             equipmentList = player.armorList;
         } else if (category == "acc") {
-            equipmentName = equipmentResult.accessoryName;
             equipmentList = player.accessoryList;
         }
 

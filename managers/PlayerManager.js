@@ -1,11 +1,10 @@
-//var questList = require('./QuestList');
-
 function PlayerManager() {
     this.playerDict = {};
 }
 
 PlayerManager.prototype.createNewPlayer = function(userId) {
     this.playerDict[userId] = {
+        _id: userId,
         characterId: "",
         exp: 0,
         gold: 0,
