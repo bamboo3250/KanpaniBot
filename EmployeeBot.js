@@ -375,7 +375,7 @@ EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
             this.log("[SetAuction] Cannot find armor with ID: " + auction.itemId);
         }
     } else if (auction.itemType === "accessory") {
-        var currentItemInfo = bot.accessoryDatabase.getAccessoryById(auction.itemId);
+        var currentItemInfo = this.accessoryDatabase.getAccessoryById(auction.itemId);
         if (currentItemInfo) {
             itemName = currentItemInfo.accessoryName + " +" + auction.plus;
         } else {
