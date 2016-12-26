@@ -96,43 +96,27 @@ module.exports = {
                 shadowFileName
             ];
 
-            if (weaponFileName) {
-                fileNameQueue.push(weaponFileName);
-            } else {
-                fileNameQueue.push(null);
-            }
-            if (armorFileName) {
-                fileNameQueue.push(armorFileName);
-            } else {
-                fileNameQueue.push(null);
-            }
-            if (accessoryFileName) {
-                fileNameQueue.push(accessoryFileName);
-            } else {
-                fileNameQueue.push(null);
-            }
-            if (player.partnerId) {
-                fileNameQueue.push(partnerSpriteFileName);
-            } else {
-                fileNameQueue.push(null);   
-            }
-
+            if (weaponFileName) fileNameQueue.push(weaponFileName);
+            if (armorFileName) fileNameQueue.push(armorFileName);
+            if (accessoryFileName) fileNameQueue.push(accessoryFileName);
+            if (player.partnerId) fileNameQueue.push(partnerSpriteFileName);
+            
             bot.imageHelper.read(fileNameQueue, function (err, imageList) {
                 if (err) {
                     message.reply("Error happened. Try again.");
                     bot.log(err); 
                     return;
                 }
-                enemySpriteImage = imageList[0];
-                itemCellImage = imageList[1];
-                backgroundImage = imageList[2];
-                shadowImage = imageList[3];
+                enemySpriteImage = imageList[enemySpriteFileName];
+                itemCellImage = imageList[itemCellFileName];
+                backgroundImage = imageList[backgroundFileName];
+                shadowImage = imageList[shadowFileName];
 
-                var weaponImage = imageList[4];
-                var armorImage = imageList[5];
-                var accessoryImage = imageList[6];
+                var weaponImage = imageList[weaponFileName];
+                var armorImage = imageList[armorFileName];
+                var accessoryImage = imageList[accessoryFileName];
 
-                var partnerImage = imageList[7];
+                var partnerImage = imageList[partnerSpriteFileName];
 
                 backgroundImage.crop(410, 65, 310, 270);
                 enemySpriteImage.crop(20, 0, 310, 270);
