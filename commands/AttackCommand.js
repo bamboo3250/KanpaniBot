@@ -11,7 +11,7 @@ module.exports = {
             return;
         }
 
-        var target = command.mentions.first();
+        var target = command.mentions.users.first();
         if (!target) {
             message.reply("You need to specify your target.");
             return;

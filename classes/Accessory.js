@@ -13,4 +13,4 @@ function Accessory(accessoryInfo, plus = 0) {
     this.eva        = accessoryInfo.stats["+"+plus].eva;
 }
 
-module.exports = Armor;
+module.exports = Accessory;

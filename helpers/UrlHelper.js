@@ -16,7 +16,7 @@ UrlHelper.prototype.getIllustURL = function(employee, category) {
     return this.DOMAIN + "/img/character/" + employee._id + "/illust/" + category + ".png";
 }
 
-Employee.prototype.getCharaSpriteImageURL = function(employeeInfo) {
+UrlHelper.prototype.getCharaSpriteImageURL = function(employeeInfo) {
     var baseRarity = parseInt(employeeInfo._id.substring(3, 4));
     var star = (baseRarity === 5? 7: 6);
     var isEx = (this._id.substring(4, 5) === "9");
@@ -29,7 +29,7 @@ Employee.prototype.getCharaSpriteImageURL = function(employeeInfo) {
     return this.DOMAIN + "/img/character/" + employeeInfo._id + "/enemy/" + star + "_" + weaponId + "_idle.png";
 }
 
-Employee.prototype.getCharaSpriteImageName = function(employeeInfo) {
+UrlHelper.prototype.getCharaSpriteImageName = function(employeeInfo) {
     var baseRarity = parseInt(employeeInfo._id.substring(3, 4));
     var star = (baseRarity === 5? 7: 6);
     var isEx = (this._id.substring(4, 5) === "9");
@@ -43,10 +43,10 @@ Employee.prototype.getCharaSpriteImageName = function(employeeInfo) {
 }
 
 
-Employee.prototype.getSpriteImageURL = function(employee, isEnemy = true, action = "idle") {
+UrlHelper.prototype.getSpriteImageURL = function(employee, isEnemy = true, action = "idle") {
     var star = employee.getRarity();
     var weaponId = "02";
-    var classCode = employeeInfo._id.substring(2,3);
+    var classCode = employee.characterId.substring(2,3);
     var isCW = false;
     var isEvent = false;
 
@@ -59,13 +59,13 @@ Employee.prototype.getSpriteImageURL = function(employee, isEnemy = true, action
     var exCode = (employee.isEx() && isCW != 0 ? "9" : "0");
     var cwCode = (isCW != 0 ? "8" : "0");
     weaponId = "3" + exCode + cwCode + classCode + weaponId;
-    return this.DOMAIN + "/img/character/" + employee._id + "/" + (isEnemy? "enemy" : "ally") + "/" + (isEvent?"":star + "_") + weaponId + "_" + action + ".png";
+    return this.DOMAIN + "/img/character/" + employee.characterId + "/" + (isEnemy? "enemy" : "ally") + "/" + (isEvent?"":star + "_") + weaponId + "_" + action + ".png";
 }
 
-Employee.prototype.getSpriteImageName = function(employee, action = "idle") {
+UrlHelper.prototype.getSpriteImageName = function(employee, action = "idle") {
     var star = employee.getRarity();
     var weaponId = "02";
-    var classCode = employeeInfo._id.substring(2,3);
+    var classCode = employee.characterId.substring(2,3);
     var isCW = false;
     var isEvent = false;
 
@@ -78,7 +78,7 @@ Employee.prototype.getSpriteImageName = function(employee, action = "idle") {
     var exCode = (employee.isEx() && isCW != 0 ? "9" : "0");
     var cwCode = (isCW != 0 ? "8" : "0");
     weaponId = "3" + exCode + cwCode + classCode + weaponId;
-    return this._id + "_" + (isEvent? "": star + "_") + weaponId + "_" + action + ".png";
+    return this.characterId + "_" + (isEvent? "": star + "_") + weaponId + "_" + action + ".png";
 }
 
 module.exports = new UrlHelper();

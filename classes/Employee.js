@@ -42,7 +42,7 @@ var Employee = function(employeeInfo, playerId = null) {
 }
 
 Employee.prototype.getClassId = function() {
-    return parseInt(this._id.substring(2,3));
+    return parseInt(this.characterId.substring(2,3));
 }
 
 Employee.prototype.getClass = function() {
@@ -58,7 +58,7 @@ Employee.prototype.getClass = function() {
 }
 
 Employee.prototype.getBaseRarity = function() {
-    return parseInt(this._id.substring(3,4));
+    return parseInt(this.characterId.substring(3,4));
 }
 
 Employee.prototype.getRarity = function() {
@@ -86,7 +86,7 @@ Employee.prototype.getRarity = function() {
 }
 
 Employee.prototype.isEx = function() {
-    return parseInt(this._id.substring(4,5)) == 9;
+    return parseInt(this.characterId.substring(4,5)) == 9;
 }
 
 var expForLevel = [

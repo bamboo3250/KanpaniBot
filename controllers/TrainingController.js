@@ -13,11 +13,11 @@ function FieldPosition(row, column) {
     this.column = column;
 }
 
-FieldPosition.prototype.isBackline() {
+FieldPosition.prototype.isBackline = function() {
     return this.row === 1;
 }
 
-FieldPosition.prototype.isFrontline() {
+FieldPosition.prototype.isFrontline = function() {
     return this.row === 0;
 }
 
@@ -86,14 +86,15 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, mainT
     var targets = resolveTargets(skillPhase, attacker, mainTarget, field);
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
-        var targetUnit = this.bot.unitManager.getUnit(field[targetFieldPos.row][targetFieldPos.column]);
+        var targetUnit = this.bot.unitManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
 
         var targetName = targetUnit.shortName;
         var targetUser = this.bot.userManager.getUser(targetUnit.playerId);
         if (targetUser) targetName += " (" + targetUser.username + ")";
 
+        text += attackerName + " used **" + skill.name + "**, ";
         if (skillPhase.canAttack()) {        
-            text += attackerName + " dealt **";
+            text += "dealing **";
             for(var j=0;j<skillPhase.attackTimes;j++) {
 
                 // damage = atk * modier * random * crit * buff * element - def
@@ -110,7 +111,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, mainT
             text += " damage** to " + targetName + ".\n";
 
         } else {
-            text += attackerName + " healed **";
+            text += "healing **";
             for(var j=0;j<skillPhase.attackTimes;j++) {
                 var healHp = 123;
                 if (j === skillPhase.attackTimes - 1) {
@@ -138,9 +139,9 @@ TrainingController.prototype.randomField = function(middlePlayerId) {
     for(key in this.bot.playerManager.playerDict) {
         var userId = key;
         var player = this.bot.playerManager.getPlayer(userId);
-        var groupId = (player.partner? player.partner: userId);
+        var groupId = (player.partnerId? player.partnerId: userId);
         
-        if (userId === middlePlayerId || player.partner === middlePlayerId) {
+        if (userId === middlePlayerId || player.partnerId === middlePlayerId) {
             if (player.position === "front") {
                 field[0][1] = userId;
             } else {
@@ -187,7 +188,7 @@ TrainingController.prototype.attack = function(attacker, target, callback) {
         callback(null, "You need to equip weapon first.", null, true);
         return;
     }
-    var skill = this.bot.skillDatabase.getSkill(skillName);  // TODO
+    var skill = this.bot.skillDatabase.getSkill(attacker.getClassId(), skillName);
     if (!skill.canAttack) {
         callback(null, "You cannot use **" + skillName + "** to attack.", null, true);
         return;
@@ -205,7 +206,7 @@ TrainingController.prototype.attack = function(attacker, target, callback) {
     this.attackRecursively(skill, attacker, target, this.trainerField, 0, result1, function() {
 
         var trainerSkillName = target.getCurrentSkill();
-        var trainerSkill = this.bot.skillDatabase.getSkill(trainerSkillName);
+        var trainerSkill = that.bot.skillDatabase.getSkill(target.getClassId(), trainerSkillName);
         var field = that.randomField(attacker.playerId);
         that.attackRecursively(trainerSkill, target, attacker, field, 0, result2, function() {
 

@@ -6,7 +6,7 @@ var itemInfoDatabase = require('./database/ItemInfoDatabase');
 var weaponDatabase = require('./database/WeaponDatabase');
 var armorDatabase = require('./database/ArmorDatabase');
 var accessoryDatabase = require('./database/AccessoryDatabase');
-var Employee = require('./classes/Employee');
+var skillDatabase = require('./database/SkillDatabase');
 
 var playerManager = require('./managers/PlayerManager');
 var userManager = require('./managers/UserManager');
@@ -60,6 +60,8 @@ var aromaCommand = require('./commands/AromaCommand');
 var sellPageCommand = require('./commands/SellPageCommand');
 var ceoPowerCommand = require('./commands/CEOPowerCommand');
 
+var attackCommand = require('./commands/AttackCommand');
+
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
     this.nutakuChannelName = "kanpani_girls";
@@ -71,6 +73,7 @@ function EmployeeBot() {
     this.weaponDatabase = weaponDatabase;
     this.armorDatabase = armorDatabase;
     this.accessoryDatabase = accessoryDatabase;
+    this.skillDatabase = skillDatabase;
 
     this.imageHelper = imageHelper;
     this.functionHelper = functionHelper;
@@ -81,6 +84,7 @@ function EmployeeBot() {
     this.backgroundManager = backgroundManager;
     this.auctionManager = auctionManager;
     this.unitManager = unitManager;
+    unitManager.bot = this;
 
     this.battleController = null;
 
@@ -330,31 +334,31 @@ EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
     }
 }
 
-EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
-    if (!player) return null;
-    var employeeInfo = this.employeeDatabase.getEmployeeById(player.characterId)
-    var employee = new Employee(employeeInfo);
-    employee.setExp(player.exp);
-    employee.position = player.position;
+// EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
+//     if (!player) return null;
+//     var employeeInfo = this.employeeDatabase.getEmployeeById(player.characterId)
+//     var employee = new Employee(employeeInfo);
+//     employee.setExp(player.exp);
+//     employee.position = player.position;
 
-    if (player.equipedWeapon) {
-        var weapon = this.weaponDatabase.getWeaponById(player.equipedWeapon._id);
-        employee.weapon = weapon.stats["+" + player.equipedWeapon.plus];
-    }
+//     if (player.equipedWeapon) {
+//         var weapon = this.weaponDatabase.getWeaponById(player.equipedWeapon._id);
+//         employee.weapon = weapon.stats["+" + player.equipedWeapon.plus];
+//     }
 
-    if (player.equipedArmor) {
-        var armor = this.armorDatabase.getArmorById(player.equipedArmor._id);
-        employee.armor = armor.stats["+" + player.equipedArmor.plus];
-        employee.element = armor.element;
-    }
+//     if (player.equipedArmor) {
+//         var armor = this.armorDatabase.getArmorById(player.equipedArmor._id);
+//         employee.armor = armor.stats["+" + player.equipedArmor.plus];
+//         employee.element = armor.element;
+//     }
 
-    if (player.equipedAccessory) {
-        var accessory = this.accessoryDatabase.getAccessoryById(player.equipedAccessory._id);
-        employee.accessory = accessory.stats["+" + player.equipedAccessory.plus];
-    }
+//     if (player.equipedAccessory) {
+//         var accessory = this.accessoryDatabase.getAccessoryById(player.equipedAccessory._id);
+//         employee.accessory = accessory.stats["+" + player.equipedAccessory.plus];
+//     }
 
-    return employee;
-}
+//     return employee;
+// }
 
 EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
     var itemName = "";
@@ -436,6 +440,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         aromaCommand.handle(message, this);
         sellPageCommand.handle(message, this);
         ceoPowerCommand.handle(message, this);
+        attackCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -602,11 +607,18 @@ EmployeeBot.prototype.loadPlayer = function() {
             if (typeof player.ceoPower === "undefined") {
                 player.ceoPower = false;
             }
+            if (typeof player._id === "undefined") {
+                player._id = userId;
+            }
         }
         that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
         for(key in that.playerManager.playerDict) {
-            var player = that.playerManager.getPlayer(key);
+            var userId = key;
+            var player = that.playerManager.getPlayer(userId);
             that.unitManager.createUnitForPlayer(player);
+            var unit = that.unitManager.getPlayerUnit(userId);
+            that.log("Created unit for " + userId + " " + (unit?"successfully.":"unsuccessfully."));
+
         }
     });
 }

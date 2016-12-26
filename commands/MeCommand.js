@@ -12,7 +12,7 @@ module.exports = {
 
         if (typeof bot.freeMe[userId] === "undefined") bot.freeMe[userId] = 2;
 
-        var employee = bot.createEmployeeFromPlayer(player);
+        var employee = bot.unitManager.getPlayerUnit(userId);
         var goldToDeduct = employee.levelCached * 1000;
         if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) {
             goldToDeduct *= 2;
@@ -24,16 +24,8 @@ module.exports = {
             return;
         }
 
-        var weaponModel = "02";
-        var weaponType = "story"
-        if (player.equipedWeapon) {
-            var weapon = bot.weaponDatabase.getWeaponById(player.equipedWeapon._id);
-            weaponModel = weapon.modelId; 
-            weaponType = weapon.type;   
-        }
-        
-        var enemySpriteUrl = employee.getSpriteImageURL(employee.getRarity(), true, weaponType, weaponModel);
-        var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(employee.getRarity(), weaponType, weaponModel);
+        var enemySpriteUrl = bot.urlHelper.getSpriteImageURL(employee);
+        var enemySpriteFileName = "images/enemy/" + bot.urlHelper.getSpriteImageName(employee);
 
         var queue = [
             { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName}
@@ -41,18 +33,11 @@ module.exports = {
 
         var partnerSpriteFileName = null
         if (player.partnerId) {
-            var partnerWeaponModel = "02";
-            var partnerWeaponType = "story"
             var partner = bot.playerManager.getPlayer(player.partnerId);
-            if (partner.equipedWeapon) {
-                var weapon = bot.weaponDatabase.getWeaponById(partner.equipedWeapon._id);
-                partnerWeaponModel = weapon.modelId; 
-                partnerWeaponType = weapon.type;   
-            }
-            var partnerEmployee = bot.createEmployeeFromPlayer(partner);
+            var partnerEmployee = bot.unitManager.getPlayerUnit(player.partnerId);
             
-            var partnerSpriteUrl = partnerEmployee.getSpriteImageURL(partnerEmployee.getRarity(), true, partnerWeaponType, partnerWeaponModel);
-            partnerSpriteFileName = "images/enemy/" + partnerEmployee.getSpriteImageName(partnerEmployee.getRarity(), partnerWeaponType, partnerWeaponModel);
+            var partnerSpriteUrl = bot.urlHelper.getSpriteImageURL(partnerEmployee);
+            partnerSpriteFileName = "images/enemy/" + bot.urlHelper.getSpriteImageName(partnerEmployee);
             queue.push({
                 fileToDownload: partnerSpriteUrl,   fileToSave: partnerSpriteFileName      
             })

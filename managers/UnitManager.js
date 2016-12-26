@@ -3,10 +3,10 @@ var Weapon = require('../classes/Weapon');
 var Armor = require('../classes/Armor');
 var Accessory = require('../classes/Accessory');
 
-function UnitManager(bot) {
+function UnitManager() {
     this.playerUnits = {};
     this.mobUnits = {};
-    this.bot = bot;
+    this.bot = null;
 }
 
 UnitManager.prototype.createUnitForPlayer = function(player) {
