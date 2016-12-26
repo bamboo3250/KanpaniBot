@@ -83,6 +83,11 @@ module.exports = {
             return;
         }
 
+        if (!equipmentResult.isActive) {
+            message.reply("This recipe is not available at the moment.")
+            return;
+        }
+
         if (employee.levelCached < equipmentResult.levelRequired) {
             message.reply("Your level (**Lv." + employee.levelCached + "**) is too low for this recipe. The minimum is **Lv." + equipmentResult.levelRequired + "**.");
             return;

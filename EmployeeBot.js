@@ -187,33 +187,33 @@ function EmployeeBot() {
     this.logChannel = null;
 
     // Event stuffs
-    this.christmasTreeContribution = {};
-    this.christmasTreeMilestones = {
-        "10": {
-            itemName: "Black Pearl",
-            amount: 10
-        },
-        "50": {
-            itemName: "Unmelting Ice",
-            amount: 20
-        },
-        "100": {
-            itemName: "Gold Mailbox",
-            amount: 1
-        },
-        "500": {
-            itemName: "Weapon Hammer",
-            amount: 5
-        },
-        "1000": {
-            itemName: "Forge",
-            amount: 1
-        },
-        "3000": {
-            itemName: "Forge",
-            amount: 3
-        }
-    }
+    // this.christmasTreeContribution = {};
+    // this.christmasTreeMilestones = {
+    //     "10": {
+    //         itemName: "Black Pearl",
+    //         amount: 10
+    //     },
+    //     "50": {
+    //         itemName: "Unmelting Ice",
+    //         amount: 20
+    //     },
+    //     "100": {
+    //         itemName: "Gold Mailbox",
+    //         amount: 1
+    //     },
+    //     "500": {
+    //         itemName: "Weapon Hammer",
+    //         amount: 5
+    //     },
+    //     "1000": {
+    //         itemName: "Forge",
+    //         amount: 1
+    //     },
+    //     "3000": {
+    //         itemName: "Forge",
+    //         amount: 3
+    //     }
+    // }
     this.aromaEffect = null;
     this.aromaTimeout = null;
 
@@ -422,7 +422,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         itemDropCommand.handle(message, this);
         unsubscribeCommand.handle(message, this);
         retreatCommand.handle(message, this);
-        xmasTreeCommand.handle(message, this);
+        // xmasTreeCommand.handle(message, this);
         weaponCommand.handle(message, this);
         setAuctionCommand.handle(message, this);
         auctionCommand.handle(message, this);
@@ -630,33 +630,33 @@ EmployeeBot.prototype.loadDailyGift = function() {
     });
 }
 
-var christmasTreeFileName = "christmasTree.json";
-EmployeeBot.prototype.saveChristmasTree = function() {
-    var textToWrite = JSON.stringify(this.christmasTreeContribution, null, 4);
-    var that = this;
-    fs.writeFile(christmasTreeFileName, textToWrite, function(err) {
-        if(err) {
-            that.log(err);
-            return;  
-        } 
-    }); 
-}
+// var christmasTreeFileName = "christmasTree.json";
+// EmployeeBot.prototype.saveChristmasTree = function() {
+//     var textToWrite = JSON.stringify(this.christmasTreeContribution, null, 4);
+//     var that = this;
+//     fs.writeFile(christmasTreeFileName, textToWrite, function(err) {
+//         if(err) {
+//             that.log(err);
+//             return;  
+//         } 
+//     }); 
+// }
 
-EmployeeBot.prototype.loadChristmasTree = function() {
-    var that = this;
-    fs.readFile(christmasTreeFileName, 'utf8', function (err, data) {
-        if (err) {
-            that.log("[loadChristmasTree] Read file error.\n" + err);
-            return;
-        }
-        try {
-            that.christmasTreeContribution = JSON.parse(data);
-        }
-        catch (err) {
-            that.log(err);
-        }
-    });
-}
+// EmployeeBot.prototype.loadChristmasTree = function() {
+//     var that = this;
+//     fs.readFile(christmasTreeFileName, 'utf8', function (err, data) {
+//         if (err) {
+//             that.log("[loadChristmasTree] Read file error.\n" + err);
+//             return;
+//         }
+//         try {
+//             that.christmasTreeContribution = JSON.parse(data);
+//         }
+//         catch (err) {
+//             that.log(err);
+//         }
+//     });
+// }
 
 var aromaFileName = "aroma.json";
 EmployeeBot.prototype.saveAroma = function() {
@@ -821,7 +821,7 @@ EmployeeBot.prototype.ready = function() {
         this.loadPlayer();
         this.loadDailyGift();
         this.loadUnsubscribe();
-        this.loadChristmasTree();
+        // this.loadChristmasTree();
         this.userManager.fetchAllMembers(this, function() {
             that.loadRunQuestStatus();
             that.loadAuction();

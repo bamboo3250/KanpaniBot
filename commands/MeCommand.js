@@ -149,7 +149,7 @@ module.exports = {
 
                 var partnerImage = imageList[7];
 
-                backgroundImage.crop(410, 65, 310, 270);
+                backgroundImage.crop(250, 100, 310, 270);
                 enemySpriteImage.crop(20, 0, 310, 270);
                 if (partnerImage) {
                     partnerImage.crop(20, 0, 310, 270);
