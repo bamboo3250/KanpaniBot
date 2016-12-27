@@ -333,7 +333,7 @@ elsa.playerData = {
     //_id: "241511566036434945",
     _id: "240097185436270593",  // test-bot
     characterId: "10150002_765306d2",
-    exp: 2646190,
+    exp: 19739650,//2646190,
     gold: 0,
     equipedWeapon: {
         _id: "3001091",
@@ -363,6 +363,8 @@ elsa.bot.on("ready", function() {
         trainingController.trainerField = [
             [null, "240097185436270593", null],
             [null, null, null]
+            // ["240097185436270593", "240097185436270593", "240097185436270593"],
+            // ["240097185436270593", "240097185436270593", "240097185436270593"]
         ];
         elsa.battleController = trainingController;
     }

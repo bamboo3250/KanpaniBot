@@ -70,12 +70,12 @@ module.exports = {
                     bot.log(err); 
                     return 
                 }
-                var photoImage = imageList[0];
-                var spriteImage = imageList[1];
-                var classImage = imageList[2];
-                var normalStarImage = imageList[3];
-                var highlightStarImage = imageList[4];
-                var resume = imageList[5];
+                var photoImage = imageList[photoFileName];
+                var spriteImage = imageList[spriteFileName];
+                var classImage = imageList[classFileName];
+                var normalStarImage = imageList[normalStarFileName];
+                var highlightStarImage = imageList[highlightStarFileName];
+                var resume = imageList[resumeFileName];
 
                 var resumeFileName = "images/resume/" + rolledEmployee._id + ".png";
 

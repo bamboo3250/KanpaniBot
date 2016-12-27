@@ -74,9 +74,9 @@ module.exports = {
                         bot.log(err);
                         return;
                     }
-                    enemySpriteImage = imageList[0];
-                    allySpriteImage = imageList[1];
-                    bustupImage = imageList[2];
+                    enemySpriteImage = imageList[enemySpriteFileName];
+                    allySpriteImage = imageList[allySpriteFileName];
+                    bustupImage = imageList[bustupFileName];
 
                     allySpriteImage.crop(0, 0, 360, 270);
                     enemySpriteImage.crop(0, 0, 360, 270);

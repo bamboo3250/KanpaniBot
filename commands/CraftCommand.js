@@ -163,57 +163,50 @@ module.exports = {
                 return;
             }
 
-            bot.imageHelper.read([equipmentFileName], function (err, imageList) {
-                if (err) {
-                    message.reply("Error happened. Try again.");
-                    bot.log(err);
-                    return;
-                }
-                var text = "You have used ";
-                for(var i=0;i<equipmentResult.recipe.length;i++) {
-                    var materialName = equipmentResult.recipe[i].materialName;
-                    var amountNeed = Math.ceil(equipmentResult.recipe[i].amount * modifier);
-                    text += "**" + amountNeed + " " + materialName + "**";
-                    if (i < equipmentResult.recipe.length-1) text += ", "
-                }
-                if (equipmentResult.recipe.length > 0) text += " and ";
-                text += "**" + goldNeeded + " Gold**.\n";
-                var equipmentName = "";
-                equipmentName = equipmentResult.name;
-                text += "Crafting **" + equipmentName + "**...";
-                message.channel.sendMessage(text);
+            var text = "You have used ";
+            for(var i=0;i<equipmentResult.recipe.length;i++) {
+                var materialName = equipmentResult.recipe[i].materialName;
+                var amountNeed = Math.ceil(equipmentResult.recipe[i].amount * modifier);
+                text += "**" + amountNeed + " " + materialName + "**";
+                if (i < equipmentResult.recipe.length-1) text += ", "
+            }
+            if (equipmentResult.recipe.length > 0) text += " and ";
+            text += "**" + goldNeeded + " Gold**.\n";
+            var equipmentName = "";
+            equipmentName = equipmentResult.name;
+            text += "Crafting **" + equipmentName + "**...";
+            message.channel.sendMessage(text);
+            setTimeout(function() {
+                message.channel.sendMessage("Kan...");
                 setTimeout(function() {
                     message.channel.sendMessage("Kan...");
                     setTimeout(function() {
                         message.channel.sendMessage("Kan...");
                         setTimeout(function() {
-                            message.channel.sendMessage("Kan...");
-                            setTimeout(function() {
-                                if (hasEnoughMaterial(player, equipmentResult.recipe, hasForgeEffect)) {
-                                    for(var i=0;i<equipmentResult.recipe.length;i++) {
-                                        var materialName = equipmentResult.recipe[i].materialName;
-                                        var amountNeed = Math.ceil(equipmentResult.recipe[i].amount * modifier);
-                                        bot.playerManager.spendItem(userId, materialName, amountNeed);
-                                    }
-                                    bot.playerManager.spendGold(userId, goldNeeded);
-                                    if (category === "wp") {
-                                        bot.playerManager.addWeapon(userId, equipmentResult._id, plus);    
-                                    } else if (category === "ar") {
-                                        bot.playerManager.addArmor(userId, equipmentResult._id, plus);    
-                                    } else if (category === "acc") {
-                                        bot.playerManager.addAccessory(userId, equipmentResult._id, plus);    
-                                    }
-                                    
-                                    bot.savePlayer();
-                                    message.channel.sendFile(equipmentFileName, "png", "");
-                                } else {
-                                    message.reply("You don't have enough material!");
+                            if (hasEnoughMaterial(player, equipmentResult.recipe, hasForgeEffect)) {
+                                for(var i=0;i<equipmentResult.recipe.length;i++) {
+                                    var materialName = equipmentResult.recipe[i].materialName;
+                                    var amountNeed = Math.ceil(equipmentResult.recipe[i].amount * modifier);
+                                    bot.playerManager.spendItem(userId, materialName, amountNeed);
                                 }
-                            }, 500);
-                        }, 1000);   
-                    }, 1000);        
-                }, 1000);
-            });
+                                bot.playerManager.spendGold(userId, goldNeeded);
+                                if (category === "wp") {
+                                    bot.playerManager.addWeapon(userId, equipmentResult._id, plus);    
+                                } else if (category === "ar") {
+                                    bot.playerManager.addArmor(userId, equipmentResult._id, plus);    
+                                } else if (category === "acc") {
+                                    bot.playerManager.addAccessory(userId, equipmentResult._id, plus);    
+                                }
+                                
+                                bot.savePlayer();
+                                message.channel.sendFile(equipmentFileName, "png", "");
+                            } else {
+                                message.reply("You don't have enough material!");
+                            }
+                        }, 500);
+                    }, 1000);   
+                }, 1000);        
+            }, 1000);
         });
     }
 }

@@ -194,7 +194,10 @@ module.exports = {
                     }
                     return;
                 }
-                bot.imageHelper.read(itemFileNameList, function (err, imageList) {
+                bot.imageHelper.read(itemFileNameList, function (err, imageDict) {
+                    var imageList = [];
+                    for(key in imageDict) imageList.push(imageDict[key]);
+
                     if (err || imageList.length == 0) {
                         user.sendMessage(text + backupItemDropText);
                         if (isLevelUp) {

@@ -78,7 +78,7 @@ UrlHelper.prototype.getSpriteImageName = function(employee, action = "idle") {
     var exCode = (employee.isEx() && isCW != 0 ? "9" : "0");
     var cwCode = (isCW != 0 ? "8" : "0");
     weaponId = "3" + exCode + cwCode + classCode + weaponId;
-    return this.characterId + "_" + (isEvent? "": star + "_") + weaponId + "_" + action + ".png";
+    return employee.characterId + "_" + (isEvent? "": star + "_") + weaponId + "_" + action + ".png";
 }
 
 module.exports = new UrlHelper();

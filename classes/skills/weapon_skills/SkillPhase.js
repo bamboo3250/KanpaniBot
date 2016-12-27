@@ -57,4 +57,8 @@ SkillPhase.prototype.getPatternMask = function() {
     return SKILL_PATTERN_MASKS[this.pattern];
 }
 
+SkillPhase.prototype.isSelfTarget = function() {
+    return this.targetType === SkillPhaseConst.TARGET_SELF;
+}
+
 module.exports = SkillPhase;

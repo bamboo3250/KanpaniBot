@@ -54,10 +54,15 @@ FunctionHelper.prototype.parseTime = function(millisec) {
 FunctionHelper.prototype.parseCommand = function(message) {
     var commandText = this.removeExtraSpace(message.content.toLowerCase());
     var args = commandText.split(" ");
+    var mentionIds = [];
+    for (var i = 0; i < args.length; i++) {
+        if (this.isMention(args[i])) mentionIds.push(this.getIdFromMention(args[i]));
+    };
     var result = {
         commandName: args[0],
         args: [],
-        mentions: message.mentions
+        mentions: message.mentions,
+        mentionIds: mentionIds
     };
     for(var i=1;i<args.length;i++) result.args.push(args[i]);
     return result;

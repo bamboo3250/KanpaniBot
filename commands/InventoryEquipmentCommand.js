@@ -106,7 +106,7 @@ module.exports = {
                 message.author.sendMessage(text + backupText);
                 return;
             }
-            bot.imageHelper.read(equipmentFileNameList, function (err, imageList) {
+            bot.imageHelper.read(equipmentFileNameList, function (err, imageDict) {
                 if (err) {
                     message.author.sendMessage(text + backupText);
                     return;
@@ -115,6 +115,9 @@ module.exports = {
                 const ITEM_CELL_WIDTH = 480;
                 const ITEM_CELL_HEIGHT = 50;
                 const NUM_COL = 1;
+
+                var imageList = [];
+                for(key in imageDict) imageList.push(imageDict[key]);
 
                 var imageWidth = ITEM_CELL_WIDTH*NUM_COL;
                 var imageHeight = NUM_EQUIPMENT_PER_PAGE * ITEM_CELL_HEIGHT;
