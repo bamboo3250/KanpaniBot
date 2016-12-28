@@ -13,6 +13,7 @@ var userManager = require('./managers/UserManager');
 var backgroundManager = require('./managers/BackgroundManager');
 var auctionManager = require('./managers/AuctionManager');
 var unitManager = require('./managers/UnitManager');
+var imageManager = require('./managers/ImageManager');
 
 var imageHelper = require('./helpers/ImageHelper');
 var functionHelper = require('./helpers/FunctionHelper');
@@ -85,6 +86,9 @@ function EmployeeBot() {
     this.auctionManager = auctionManager;
     this.unitManager = unitManager;
     unitManager.bot = this;
+    this.imageManager = imageManager;
+    imageManager.bot = this;
+    imageManager.init();
 
     this.battleController = null;
 

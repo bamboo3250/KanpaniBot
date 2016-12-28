@@ -197,11 +197,9 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         }
 
         var backgroundFileName = "images/misc/background/battlefield_01.jpg";
-        var shadowFileName = "images/misc/shadow.png";
-
+        
         var fileNameQueue = [
             backgroundFileName,
-            shadowFileName
         ];
         for(var i=0;i<spriteFileNameList.length;i++) fileNameQueue.push(spriteFileNameList[i]);
 
@@ -213,8 +211,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             }
 
             var background = imageList[backgroundFileName];
-            var shadow = imageList[shadowFileName];
-            shadow.scale(0.6);
+            var shadow = that.bot.imageManager.getShadow();
 
             var OFFSET_X = 175;
             var OFFSET_Y = -40;
