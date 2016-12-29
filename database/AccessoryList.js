@@ -478,6 +478,31 @@ module.exports = {
                     amount: 1
                 }
             ]
+        },{
+            _id: "330107", accessoryName: "Holy Pendant", commonNames: ["R7 Necklace"],
+            type: "story", isActive: true, stats: {
+                "+0": { price: 3200,
+                    patk: 0, pdef: 30, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 10
+                },
+                "+1": { price: 3300,
+                    patk: 0, pdef: 32, matk: 40, mdef: 40, crit: 0, hit: 0, eva: 10
+                },
+                "+2": { price: 3400,
+                    patk: 0, pdef: 34, matk: 70, mdef: 70, crit: 0, hit: 0, eva: 10
+                },
+                "+3": { price: 3500,
+                    patk: 0, pdef: 36, matk: 100, mdef: 100, crit: 0, hit: 0, eva: 10
+                }
+            },
+            devCost: 40000, levelRequired: 61, tier: 3, recipe: [
+                {
+                    materialName: "Crystal",
+                    amount: 2
+                },{
+                    materialName: "Emerald",
+                    amount: 2
+                }
+            ]
         }
     ],
 

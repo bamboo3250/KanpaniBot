@@ -1301,6 +1301,104 @@ var quests = [
     },
 
     {
+        commonNames: ["2-1-1"], name: "Spice Run", 
+        isActive: true, levelRequired: 61, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 4360, advantage: [3], numItemDrop: 33,
+        dropList: [
+            "Crystal", 
+            "Emerald", 
+            "Garnet", 
+            "Gold Ore", 
+            "Luxurious Cloth", 
+            "Ominous Cloth", 
+            "Silver Ore"
+        ]
+    },{
+        commonNames: ["2-1-2"], name: "Unexplored Ruins", 
+        isActive: true, levelRequired: 62, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 4400, advantage: [4], numItemDrop: 44,
+        dropList: [
+            "Crystal", 
+            "Diamond", 
+            "Garnet", 
+            "Gold Ore", 
+            "Silver Ore", 
+            "Topaz", 
+            "Unicorn Horn"
+        ]
+    },{
+        commonNames: ["2-1-3"], name: "Protect the Magic Items", 
+        isActive: true, levelRequired: 62, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 4400, advantage: [5], numItemDrop: 44,
+        dropList: [
+            "Chimera Horn", 
+            "Diamond", 
+            "Emerald", 
+            "Hard Leather", 
+            "Luxurious Leather", 
+            "Topaz", 
+            "Turquoise", 
+            "Unicorn Horn"
+        ]
+    },{
+        commonNames: ["2-1-4"], name: "The Bloody Kings Thieves Guild", 
+        isActive: true, levelRequired: 63, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 4425, advantage: [7], numItemDrop: 55,
+        dropList: [
+            "Black Pearl", 
+            "Diamond", 
+            "Ebony Branch", 
+            "Emerald", 
+            "Hard Leather", 
+            "Luxurious Leather", 
+            "Maple Branch", 
+            "Onyx", 
+            "Turquoise"
+        ]
+    },{
+        commonNames: ["2-1-5"], name: "Statue Escort", 
+        isActive: true, levelRequired: 63, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 4400, advantage: [8], numItemDrop: 44,
+        dropList: [
+            "Black Pearl", 
+            "Chimera Horn", 
+            "Emerald", 
+            "Maple Branch", 
+            "Onyx", 
+            "Ruby", 
+            "Unicorn Horn"
+        ]
+    },{
+        commonNames: ["2-1-6"], name: "Hunting Remmants of the Thieves Guild", 
+        isActive: true, levelRequired: 64, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 4385, advantage: [6], numItemDrop: 44,
+        dropList: [
+            "Aquamarine", 
+            "Chimera Horn", 
+            "Gold Ore", 
+            "Lapis Lazuli", 
+            "Magical Water", 
+            "Ruby", 
+            "Shimmering Water", 
+            "Unicorn Horn"
+        ]
+    },{
+        commonNames: ["2-1-7"], name: "Strong Sword Style Soft Sword Style", 
+        isActive: true, levelRequired: 65, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 4362, advantage: [1, 2], numItemDrop: 33,
+        dropList: [
+            "Aquamarine", 
+            "Emerald", 
+            "Gold Ore", 
+            "Lapis Lazuli", 
+            "Magical Water", 
+            "Rose Quartz", 
+            "Shimmering Water", 
+            "Silver Ore"
+        ]
+    },
+
+    {
         commonNames: ["", ""], name: "", 
         isActive: true, levelRequired: 1, timeCost: 0, goldCost: 0, breadCost: 1, 
         goldReward: 0, breadReward: 0, exp: 0, advantage: [], numItemDrop: 0,

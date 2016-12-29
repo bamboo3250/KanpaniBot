@@ -2225,6 +2225,210 @@ module.exports = {
                 }
             ]
         }
-    ]
+    ],
+
+    "r11": [
+        {
+            _id: "3101071", armorName: "Royal Mail", commonNames: ["Royal Mail"],
+            classId: 1, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 70, matk: 0, mdef: 90, crit: 0, hit: 0, eva: 27
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 85, matk: 0, mdef: 100, crit: 0, hit: 30, eva: 27
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 120, crit: 0, hit: 30, eva: 27
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 120, matk: 0, mdef: 160, crit: 0, hit: 45, eva: 27
+                }
+            },
+            devCost: 40000, levelRequired: 65, tier: 3, recipe: [
+                {
+                    materialName: "Silver Ore",
+                    amount: 3
+                },{
+                    materialName: "Rose Quartz",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3102071", armorName: "Golden Armor", commonNames: ["Golden Armor"],
+            classId: 2, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 60, matk: 0, mdef: 50, crit: 40, hit: 0, eva: 40
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 90, matk: 0, mdef: 75, crit: 50, hit: 0, eva: 70
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 120, matk: 0, mdef: 90, crit: 60, hit: 0, eva: 90
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 145, matk: 0, mdef: 120, crit: 85, hit: 0, eva: 100
+                }
+            },
+            devCost: 40000, levelRequired: 65, tier: 3, recipe: [
+                {
+                    materialName: "Lapis Lazuli",
+                    amount: 1
+                },{
+                    materialName: "Shimmering Water",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3103071", armorName: "Royal Plate", commonNames: ["Royal Plate"],
+            classId: 3, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 40, matk: 0, mdef: 60, crit: 0, hit: 10, eva: 25
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 65, matk: 0, mdef: 65, crit: 0, hit: 29, eva: 25
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 80, matk: 0, mdef: 70, crit: 0, hit: 33, eva: 25
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 98, matk: 0, mdef: 80, crit: 0, hit: 37, eva: 25
+                }
+            },
+            devCost: 40000, levelRequired: 61, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Cloth",
+                    amount: 3
+                },{
+                    materialName: "Emerald",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3104071", armorName: "Royal Helm", commonNames: ["Royal Helm"],
+            classId: 4, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 100, crit: 0, hit: 20, eva: 30
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 108, matk: 0, mdef: 100, crit: 0, hit: 40, eva: 30
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 115, matk: 0, mdef: 100, crit: 0, hit: 65, eva: 30
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 122, matk: 0, mdef: 100, crit: 0, hit: 85, eva: 30
+                }
+            },
+            devCost: 40000, levelRequired: 62, tier: 3, recipe: [
+                {
+                    materialName: "Garnet",
+                    amount: 1
+                },{
+                    materialName: "Silver Ore",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3105071", armorName: "Royal Belt", commonNames: ["Royal Belt"],
+            classId: 5, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 70, matk: 0, mdef: 30, crit: 30, hit: 0, eva: 35
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 85, matk: 0, mdef: 40, crit: 40, hit: 0, eva: 35
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 50, crit: 50, hit: 0, eva: 35
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 130, matk: 0, mdef: 60, crit: 65, hit: 0, eva: 35
+                }
+            },
+            devCost: 40000, levelRequired: 62, tier: 3, recipe: [
+                {
+                    materialName: "Unicorn Horn",
+                    amount: 3
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3106071", armorName: "Royal Veil", commonNames: ["Royal Veil"],
+            classId: 6, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 42, matk: 0, mdef: 120, crit: 0, hit: 0, eva: 30
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 46, matk: 0, mdef: 135, crit: 0, hit: 0, eva: 40
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 52, matk: 0, mdef: 155, crit: 0, hit: 0, eva: 55
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 60, matk: 0, mdef: 170, crit: 0, hit: 0, eva: 70
+                }
+            },
+            devCost: 40000, levelRequired: 64, tier: 3, recipe: [
+                {
+                    materialName: "Emerald",
+                    amount: 1
+                },{
+                    materialName: "Unicorn Horn",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3107071", armorName: "Royal Gauntlets", commonNames: ["Royal Gauntlets"],
+            classId: 7, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 43, matk: 0, mdef: 60, crit: 0, hit: 0, eva: 22
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 52, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 33
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 64, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 44
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 80, matk: 0, mdef: 90, crit: 0, hit: 0, eva: 55
+                }
+            },
+            devCost: 40000, levelRequired: 63, tier: 3, recipe: [
+                {
+                    materialName: "Hard Leather",
+                    amount: 3
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3108071", armorName: "Royal Hat", commonNames: ["Royal Hat"],
+            classId: 8, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 28, matk: 0, mdef: 110, crit: 0, hit: 0, eva: 30
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 32, matk: 0, mdef: 130, crit: 0, hit: 0, eva: 40
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 35, matk: 0, mdef: 150, crit: 0, hit: 0, eva: 50
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 40, matk: 0, mdef: 180, crit: 0, hit: 0, eva: 60
+                }
+            },
+            devCost: 40000, levelRequired: 63, tier: 3, recipe: [
+                {
+                    materialName: "Maple Branch",
+                    amount: 3
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                }
+            ]
+        }
+    ],
 
 };
