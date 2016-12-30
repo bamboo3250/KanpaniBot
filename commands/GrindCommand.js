@@ -130,13 +130,13 @@ module.exports = {
             }
             
             var player = bot.playerManager.getPlayer(userId);
-            var employee = bot.createEmployeeFromPlayer(player);
+            var employee = bot.unitManager.getPlayerUnit(userId);
             var preLevel = employee.levelCached;
             player.exp += expGained;
             employee.addExp(expGained);
     
             var partner = bot.playerManager.getPlayer(partnerId);
-            var partnerEmployee = bot.createEmployeeFromPlayer(partner);
+            var partnerEmployee = bot.unitManager.getPlayerUnit(partnerId);
 
             if (partnerId) {
                 var partnerPreLevel = partnerEmployee.levelCached;
@@ -283,7 +283,7 @@ module.exports = {
             message.reply("You haven't selected your character.");
             return;
         }
-        var employee = bot.createEmployeeFromPlayer(player);
+        var employee = bot.unitManager.getPlayerUnit(userId);
         if (employee.levelCached < quest.levelRequired) {
             message.reply("Your level (**Lv." + employee.levelCached + "**) is too low for this quest. The minimum is **Lv." + quest.levelRequired + "**.");
             return;

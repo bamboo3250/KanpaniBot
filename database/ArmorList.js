@@ -1105,10 +1105,6 @@ module.exports = {
                 }
             ]
         },{
-<<<<<<< HEAD
-            _id: "310806", name: "Philosopher's Hat", commonNames: ["Philosopher's Hat"],
-            classId: 8, type: "story", element: "", stats: {
-=======
             _id: "310806", name: "Philosopher's Hat", commonNames: ["Philosopher's Hat"],
             classId: 8, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 1980,
@@ -1169,10 +1165,6 @@ module.exports = {
                 }
             ]
         },{
-<<<<<<< HEAD
-            _id: "310207", name: "Legendary Armor \"Hotaru-shiki\"", commonNames: ["Legendary Armor \"Hotaru-shiki\""],
-            classId: 2, type: "story", element: "", stats: {
-=======
             _id: "310207", name: "Legendary Armor \"Hotaru-shiki\"", commonNames: ["Legendary Armor \"Hotaru-shiki\""],
             classId: 2, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 2880,
@@ -1401,10 +1393,6 @@ module.exports = {
                 }
             ]
         },{
-<<<<<<< HEAD
-            _id: "310208", name: "Crimson Armor \"Homura-mai\"", commonNames: ["Crimson Armor \"Homura-mai\""],
-            classId: 2, type: "story", element: "fire", stats: {
-=======
             _id: "310208", name: "Crimson Armor \"Homura-mai\"", commonNames: ["Crimson Armor \"Homura-mai\""],
             classId: 2, type: "story", element: "fire", isActive: true, stats: {
                 "+0": { price: 4050,
@@ -1633,10 +1621,6 @@ module.exports = {
                 }
             ]
         },{
-<<<<<<< HEAD
-            _id: "310209", name: "Azure Armor \"Seisui\"", commonNames: ["Azure Armor \"Seisui\""],
-            classId: 2, type: "story", element: "ice", stats: {
-=======
             _id: "310209", name: "Azure Armor \"Seisui\"", commonNames: ["Azure Armor \"Seisui\""],
             classId: 2, type: "story", element: "ice", isActive: true, stats: {
                 "+0": { price: 5220,
@@ -1865,10 +1849,6 @@ module.exports = {
                 }
             ]
         },{
-<<<<<<< HEAD
-            _id: "310210", name: "Jade Armor \"Fujin\"", commonNames: ["Jade Armor \"Fujin\""],
-            classId: 2, type: "story", element: "wind", stats: {
-=======
             _id: "310210", name: "Jade Armor \"Fujin\"", commonNames: ["Jade Armor \"Fujin\""],
             classId: 2, type: "story", element: "wind", isActive: true, stats: {
                 "+0": { price: 5220,

@@ -451,10 +451,6 @@ module.exports = {
 
     "r7": [
         {
-<<<<<<< HEAD
-            _id: "330007", name: "Goddess's Ring", commonNames: ["R7 Ring"],
-            type: "story", stats: {
-=======
             _id: "330007", name: "Goddess's Ring", commonNames: ["R7 Ring"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
