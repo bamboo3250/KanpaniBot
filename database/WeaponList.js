@@ -2,7 +2,7 @@ module.exports = {
     "r1": [
         {
             _id: "300101", modelId: "02", name: "Gladius", commonNames: ["Gladius"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 180,
                     patk: 6, pdef: 6, matk: 0, mdef: 7, crit: 2, hit: 2, eva: 0,
                     frontSkill: "V Slash", backSkill: "Slash"
@@ -23,7 +23,7 @@ module.exports = {
             note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300201", modelId: "02", name: "Uchigatana", commonNames: ["Uchigatana"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 180,
                     patk: 20, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 3, eva: 0,
                     frontSkill: "Cleave", backSkill: "Slash"
@@ -44,7 +44,7 @@ module.exports = {
             note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300301", modelId: "02", name: "Shortbow", commonNames: ["Shortbow"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 180,
                     patk: 10, pdef: 0, matk: 0, mdef: 0, crit: 2, hit: 3, eva: 0,
                     frontSkill: "Single Shot", backSkill: "Single Shot"
@@ -65,7 +65,7 @@ module.exports = {
             note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300401", modelId: "02", name: "Spear", commonNames: ["Spear"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 180,
                     patk: 3, pdef: 4, matk: 0, mdef: 0, crit: 2, hit: 3, eva: 0,
                     frontSkill: "Double Strike", backSkill: "Spear Jab"
@@ -86,7 +86,7 @@ module.exports = {
             note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300501", modelId: "02", name: "Hand Axe", commonNames: ["Hand Axe"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 180,
                     patk: 16, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 1, eva: 0,
                     frontSkill: "Swing", backSkill: "Crash"
@@ -107,7 +107,7 @@ module.exports = {
             note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300601", modelId: "02", name: "Mace", commonNames: ["Mace"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 3, matk: 8, mdef: 3, crit: 5, hit: 7, eva: 0,
                     frontSkill: "Knock", backSkill: "Prayer"
@@ -128,7 +128,7 @@ module.exports = {
             note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300701", modelId: "02", name: "Twin Daggers", commonNames: ["Twin Daggers"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 180,
                     patk: 6, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 5, eva: 10,
                     frontSkill: "Twin Attack", backSkill: "Throwing Knife"
@@ -149,7 +149,7 @@ module.exports = {
             note: "", devCost: 900, levelRequired: 1, tier: 1, recipe: []
         },{
             _id: "300801", modelId: "02", name: "Rod of Fire", commonNames: ["Rod of Fire"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 180,
                     patk: 0, pdef: 0, matk: 9, mdef: 0, crit: 2, hit: 5, eva: 0,
                     frontSkill: "Fire Ball", backSkill: "Fire Ball"
@@ -174,7 +174,7 @@ module.exports = {
     "r2": [
         {
             _id: "300102", modelId: "02", name: "Blue Gladius", commonNames: ["Blue Gladius"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 315,
                     patk: 14, pdef: 14, matk: 0, mdef: 17, crit: 2, hit: 4, eva: 0,
                     frontSkill: "V Slash", backSkill: "Slash"
@@ -200,7 +200,7 @@ module.exports = {
             ]
         },{
             _id: "300202", modelId: "02", name: "Aogatana", commonNames: ["Aogatana"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 315,
                     patk: 38, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 7, eva: 0,
                     frontSkill: "Cleave", backSkill: "Slash"
@@ -226,7 +226,7 @@ module.exports = {
             ]
         },{
             _id: "300302", modelId: "02", name: "Crossbow", commonNames: ["Crossbow"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 315,
                     patk: 22, pdef: 0, matk: 0, mdef: 0, crit: 2, hit: 8, eva: 0,
                     frontSkill: "Single Shot", backSkill: "Single Shot"
@@ -252,7 +252,7 @@ module.exports = {
             ]
         },{
             _id: "300402", modelId: "02", name: "Blue Pike", commonNames: ["Blue Pike"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 315,
                     patk: 6, pdef: 11, matk: 0, mdef: 0, crit: 2, hit: 6, eva: 0,
                     frontSkill: "Double Strike", backSkill: "Spear Jab"
@@ -278,7 +278,7 @@ module.exports = {
             ]
         },{
             _id: "300502", modelId: "02", name: "Blue Axe", commonNames: ["Blue Axe"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 315,
                     patk: 37, pdef: 0, matk: 0, mdef: 0, crit: 6, hit: 2, eva: 0,
                     frontSkill: "Swing", backSkill: "Crash"
@@ -304,7 +304,7 @@ module.exports = {
             ]
         },{
             _id: "300602", modelId: "02", name: "Holy Blue Mace", commonNames: ["Holy Blue Mace"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 6, matk: 18, mdef: 6, crit: 5, hit: 14, eva: 0,
                     frontSkill: "Knock", backSkill: "Prayer"
@@ -330,7 +330,7 @@ module.exports = {
             ]
         },{
             _id: "300702", modelId: "02", name: "Blue Dagger", commonNames: ["Blue Dagger"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 315,
                     patk: 15, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 7, eva: 20,
                     frontSkill: "Twin Attack", backSkill: "Throwing Knife"
@@ -356,7 +356,7 @@ module.exports = {
             ]
         },{
             _id: "300802", modelId: "02", name: "Rod of Water", commonNames: ["Rod of Water"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 315,
                     patk: 0, pdef: 0, matk: 20, mdef: 0, crit: 3, hit: 10, eva: 0,
                     frontSkill: "Cold Lance", backSkill: "Cold Lance"
@@ -386,7 +386,7 @@ module.exports = {
     "r3": [
         {
             _id: "300103", modelId: "02", name: "Power Gladius", commonNames: ["Power Gladius"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 450,
                     patk: 22, pdef: 23, matk: 0, mdef: 28, crit: 2, hit: 7, eva: 0,
                     frontSkill: "Cross Edge", backSkill: "Slash"
@@ -412,7 +412,7 @@ module.exports = {
             ]
         },{
             _id: "300203", modelId: "02", name: "Daikatana", commonNames: ["Daikatana"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 450,
                     patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 12, hit: 12, eva: 0,
                     frontSkill: "Heavenly Sword", backSkill: "Slash"
@@ -438,7 +438,7 @@ module.exports = {
             ]
         },{
             _id: "300303", modelId: "02", name: "Crossbow", commonNames: ["Crossbow"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 450,
                     patk: 36, pdef: 0, matk: 0, mdef: 0, crit: 2, hit: 11, eva: 0,
                     frontSkill: "Twin Shot", backSkill: "Twin Shot"
@@ -464,7 +464,7 @@ module.exports = {
             ]
         },{
             _id: "300403", modelId: "02", name: "Brave Spear", commonNames: ["Brave Spear"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 450,
                     patk: 11, pdef: 22, matk: 0, mdef: 0, crit: 2, hit: 9, eva: 0,
                     frontSkill: "Full-On Collision", backSkill: "Spear Jab"
@@ -490,7 +490,7 @@ module.exports = {
             ]
         },{
             _id: "300503", modelId: "02", name: "Light Axe", commonNames: ["Light Axe"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 450,
                     patk: 59, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 2, eva: 0,
                     frontSkill: "Hammerfall", backSkill: "Crash"
@@ -516,7 +516,7 @@ module.exports = {
             ]
         },{
             _id: "300603", modelId: "02", name: "Black Butterfly Mace", commonNames: ["Black Butterfly Mace"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 11, matk: 29, mdef: 11, crit: 7, hit: 15, eva: 0,
                     frontSkill: "Knock", backSkill: "Prayer"
@@ -542,7 +542,7 @@ module.exports = {
             ]
         },{
             _id: "300703", modelId: "02", name: "Duel Dagger", commonNames: ["Duel Dagger"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 450,
                     patk: 25, pdef: 0, matk: 0, mdef: 0, crit: 6, hit: 10, eva: 22,
                     frontSkill: "Dance Formation", backSkill: "Throwing Knife"
@@ -568,7 +568,7 @@ module.exports = {
             ]
         },{
             _id: "300803", modelId: "02", name: "Rod of Earth", commonNames: ["Rod of Earth"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 450,
                     patk: 0, pdef: 0, matk: 33, mdef: 0, crit: 4, hit: 11, eva: 0,
                     frontSkill: "Stone Claw", backSkill: "Stone Claw"
@@ -598,7 +598,7 @@ module.exports = {
     "r4": [
         {
             _id: "300104", modelId: "02", name: "Heavy Gladius", commonNames: ["Heavy Gladius"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 720,
                     patk: 31, pdef: 30, matk: 0, mdef: 37, crit: 3, hit: 7, eva: 0,
                     frontSkill: "Cross Edge", backSkill: "Slash"
@@ -627,7 +627,7 @@ module.exports = {
             ]
         },{
             _id: "300204", modelId: "02", name: "Juto", commonNames: ["Juto"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 720,
                     patk: 72, pdef: 0, matk: 0, mdef: 0, crit: 14, hit: 14, eva: 0,
                     frontSkill: "Heavenly Sword", backSkill: "Slash"
@@ -656,7 +656,7 @@ module.exports = {
             ]
         },{
             _id: "300304", modelId: "02", name: "Rabbit Arrow", commonNames: ["Rabbit Arrow"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 720,
                     patk: 50, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 14, eva: 0,
                     frontSkill: "Twin Shot", backSkill: "Twin Shot"
@@ -685,7 +685,7 @@ module.exports = {
             ]
         },{
             _id: "300404", modelId: "02", name: "Brave Pike", commonNames: ["Brave Pike"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 720,
                     patk: 15, pdef: 33, matk: 0, mdef: 0, crit: 3, hit: 10, eva: 0,
                     frontSkill: "Full-On Collision", backSkill: "Spear Jab"
@@ -714,7 +714,7 @@ module.exports = {
             ]
         },{
             _id: "300504", modelId: "02", name: "Heavy Axe", commonNames: ["Heavy Axe"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 720,
                     patk: 83, pdef: 0, matk: 0, mdef: 0, crit: 11, hit: 5, eva: 0,
                     frontSkill: "Hammerfall", backSkill: "Crash"
@@ -743,7 +743,7 @@ module.exports = {
             ]
         },{
             _id: "300604", modelId: "02", name: "Heavy Mace", commonNames: ["Heavy Mace"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 15, matk: 40, mdef: 15, crit: 7, hit: 22, eva: 0,
                     frontSkill: "Knock", backSkill: "Prayer"
@@ -772,7 +772,7 @@ module.exports = {
             ]
         },{
             _id: "300704", modelId: "02", name: "Pain Dagger", commonNames: ["Pain Dagger"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 720,
                     patk: 35, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 14, eva: 29,
                     frontSkill: "Dance Formation", backSkill: "Throwing Knife"
@@ -801,7 +801,7 @@ module.exports = {
             ]
         },{
             _id: "300804", modelId: "02", name: "Rod of Wind", commonNames: ["Rod of Wind"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 720,
                     patk: 0, pdef: 0, matk: 46, mdef: 0, crit: 5, hit: 17, eva: 0,
                     frontSkill: "Thunder Arrow", backSkill: "Thunder Arrow"
@@ -835,7 +835,7 @@ module.exports = {
     "r5": [
         {
             _id: "300105", modelId: "02", name: "EX Gladius", commonNames: ["EX Gladius"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 41, pdef: 38, matk: 0, mdef: 46, crit: 5, hit: 10, eva: 0,
                     frontSkill: "Cross Edge", backSkill: "Slash"
@@ -864,7 +864,7 @@ module.exports = {
             ]
         },{
             _id: "300205", modelId: "02", name: "Shinto", commonNames: ["Shinto"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 89, pdef: 0, matk: 0, mdef: 0, crit: 14, hit: 14, eva: 0,
                     frontSkill: "Heavenly Sword", backSkill: "Slash"
@@ -893,7 +893,7 @@ module.exports = {
             ]
         },{
             _id: "300305", modelId: "02", name: "Crescent Arrow", commonNames: ["Crescent Arrow"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 65, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 18, eva: 0,
                     frontSkill: "Twin Shot", backSkill: "Twin Shot"
@@ -922,7 +922,7 @@ module.exports = {
             ]
         },{
             _id: "300405", modelId: "02", name: "Spinning Spear", commonNames: ["Spinning Spear"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 20, pdef: 46, matk: 0, mdef: 0, crit: 3, hit: 10, eva: 0,
                     frontSkill: "Full-On Collision", backSkill: "Spear Jab"
@@ -951,7 +951,7 @@ module.exports = {
             ]
         },{
             _id: "300505", modelId: "02", name: "Butterfly Axe", commonNames: ["Butterfly Axe"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 108, pdef: 0, matk: 0, mdef: 0, crit: 11, hit: 5, eva: 0,
                     frontSkill: "Hammerfall", backSkill: "Crash"
@@ -980,7 +980,7 @@ module.exports = {
             ]
         },{
             _id: "300605", modelId: "02", name: "Magical Mace", commonNames: ["Magical Mace"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 20, matk: 52, mdef: 20, crit: 9, hit: 26, eva: 0,
                     frontSkill: "Knock", backSkill: "Prayer"
@@ -1009,7 +1009,7 @@ module.exports = {
             ]
         },{
             _id: "300705", modelId: "02", name: "Magic Dagger", commonNames: ["Magic Dagger"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 46, pdef: 0, matk: 0, mdef: 0, crit: 8, hit: 19, eva: 31,
                     frontSkill: "Dance Formation", backSkill: "Throwing Knife"
@@ -1038,7 +1038,7 @@ module.exports = {
             ]
         },{
             _id: "300805", modelId: "02", name: "Rod of Light", commonNames: ["Rod of Light"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 0, pdef: 0, matk: 60, mdef: 0, crit: 6, hit: 18, eva: 0,
                     frontSkill: "Holy Cross", backSkill: "Holy Cross"
@@ -1072,7 +1072,7 @@ module.exports = {
     "r6": [
         {
             _id: "300106", modelId: "06", name: "Glorious Blade", commonNames: ["Glorious Blade"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 51, pdef: 48, matk: 0, mdef: 58, crit: 7, hit: 14, eva: 0,
                     frontSkill: "Power Slash", backSkill: "Slash"
@@ -1104,7 +1104,7 @@ module.exports = {
             ]
         },{
             _id: "300206", modelId: "06", name: "Zanbato", commonNames: ["Zanbato"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 106, pdef: 0, matk: 0, mdef: 0, crit: 21, hit: 21, eva: 0,
                     frontSkill: "Helmet Splitter", backSkill: "Slash"
@@ -1136,7 +1136,7 @@ module.exports = {
             ]
         },{
             _id: "300306", modelId: "06", name: "Irvine's Bow", commonNames: ["Irvine's Bow", "Irvine"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 80, pdef: 0, matk: 0, mdef: 0, crit: 4, hit: 28, eva: 0,
                     frontSkill: "Triple Shot", backSkill: "Triple Shot"
@@ -1168,7 +1168,7 @@ module.exports = {
             ]
         },{
             _id: "300406", modelId: "06", name: "Duel Javelin", commonNames: ["Duel Javelin"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 24, pdef: 57, matk: 0, mdef: 0, crit: 4, hit: 14, eva: 0,
                     frontSkill: "Double Dragon Strike", backSkill: "Spear Jab"
@@ -1200,7 +1200,7 @@ module.exports = {
             ]
         },{
             _id: "300506", modelId: "06", name: "Warhammer", commonNames: ["Warhammer"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 133, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 14, eva: 0,
                     frontSkill: "Force Impact", backSkill: "Crash"
@@ -1232,7 +1232,7 @@ module.exports = {
             ]
         },{
             _id: "300606", modelId: "06", name: "Polaris", commonNames: ["Polaris"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 0, pdef: 25, matk: 65, mdef: 25, crit: 10, hit: 34, eva: 0,
                     frontSkill: "Knock", backSkill: "Prayer"
@@ -1264,7 +1264,7 @@ module.exports = {
             ]
         },{
             _id: "300706", modelId: "06", name: "Assassin Edge", commonNames: ["Assassin Edge"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 57, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 19, eva: 36,
                     frontSkill: "Shadow Run", backSkill: "Throwing Knife"
@@ -1296,7 +1296,7 @@ module.exports = {
             ]
         },{
             _id: "300806", modelId: "06", name: "Rod of Flame \"Celsius\"", commonNames: ["Rod of Flame \"Celsius\"", "Celsius"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 0, pdef: 0, matk: 74, mdef: 0, crit: 9, hit: 25, eva: 0,
                     frontSkill: "Flame Field", backSkill: "Flame Field"
@@ -1333,7 +1333,7 @@ module.exports = {
     "r7": [
         {
             _id: "300107", modelId: "07", name: "Legendary Blade \"Force\"", commonNames: ["Legendary Blade \"Force\""],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 1980,
                     patk: 61, pdef: 56, matk: 0, mdef: 68, crit: 9, hit: 18, eva: 0,
                     frontSkill: "Power Slash", backSkill: "Slash"
@@ -1365,7 +1365,7 @@ module.exports = {
             ]
         },{
             _id: "300207", modelId: "07", name: "Bizen Osafune Nagamitsu", commonNames: ["Bizen Osafune Nagamitsu"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 1980,
                     patk: 123, pdef: 0, matk: 0, mdef: 0, crit: 23, hit: 23, eva: 0,
                     frontSkill: "Helmet Splitter", backSkill: "Slash"
@@ -1397,7 +1397,7 @@ module.exports = {
             ]
         },{
             _id: "300307", modelId: "07", name: "Tempest Bow", commonNames: ["Tempest Bow"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 1980,
                     patk: 96, pdef: 0, matk: 0, mdef: 0, crit: 4, hit: 33, eva: 0,
                     frontSkill: "Triple Shot", backSkill: "Triple Shot"
@@ -1429,7 +1429,7 @@ module.exports = {
             ]
         },{
             _id: "300407", modelId: "07", name: "Halberd of the Round Table", commonNames: ["Halberd of the Round Table"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 1980,
                     patk: 29, pdef: 71, matk: 0, mdef: 0, crit: 4, hit: 15, eva: 0,
                     frontSkill: "Double Dragon Strike", backSkill: "Spear Jab"
@@ -1461,7 +1461,7 @@ module.exports = {
             ]
         },{
             _id: "300507", modelId: "07", name: "Ultimate Axe", commonNames: ["Ultimate Axe"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 1980,
                     patk: 159, pdef: 0, matk: 0, mdef: 0, crit: 19, hit: 15, eva: 0,
                     frontSkill: "Force Impact", backSkill: "Crash"
@@ -1493,7 +1493,7 @@ module.exports = {
             ]
         },{
             _id: "300607", modelId: "07", name: "Southern Cross", commonNames: ["Southern Cross"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 30, matk: 78, mdef: 30, crit: 12, hit: 39, eva: 0,
                     frontSkill: "Knock", backSkill: "Prayer"
@@ -1525,7 +1525,7 @@ module.exports = {
             ]
         },{
             _id: "300707", modelId: "07", name: "Kukri", commonNames: ["Kukri"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 1980,
                     patk: 69, pdef: 0, matk: 0, mdef: 0, crit: 11, hit: 23, eva: 42,
                     frontSkill: "Shadow Run", backSkill: "Throwing Knife"
@@ -1557,7 +1557,7 @@ module.exports = {
             ]
         },{
             _id: "300807", modelId: "07", name: "Rod of Ice \"Fahrenheit\"", commonNames: ["Rod of Ice \"Fahrenheit\"", "Fahrenheit"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 1980,
                     patk: 0, pdef: 0, matk: 89, mdef: 0, crit: 10, hit: 27, eva: 0,
                     frontSkill: "Ice Strike", backSkill: "Ice Strike"
@@ -1593,7 +1593,7 @@ module.exports = {
     "r8": [
         {
             _id: "300108", modelId: "08", name: "Flamberge", commonNames: ["Flamberge"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 71, pdef: 64, matk: 0, mdef: 78, crit: 10, hit: 22, eva: 0,
                     frontSkill: "Double Slash", backSkill: "Slash"
@@ -1625,7 +1625,7 @@ module.exports = {
             ]
         },{
             _id: "300208", modelId: "08", name: "Onigirimaru", commonNames: ["Onigirimaru"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 140, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 29, eva: 0,
                     frontSkill: "Iaido Slash", backSkill: "Slash"
@@ -1657,7 +1657,7 @@ module.exports = {
             ]
         },{
             _id: "300308", modelId: "08", name: "Yamato Bow \"Eagle\"", commonNames: ["Yamato Bow \"Eagle\""],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 112, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 38, eva: 0,
                     frontSkill: "Chain Shot", backSkill: "Chain Shot"
@@ -1689,7 +1689,7 @@ module.exports = {
             ]
         },{
             _id: "300408", modelId: "08", name: "Spear of the Holy Knights", commonNames: ["Spear of the Holy Knights"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 34, pdef: 86, matk: 0, mdef: 0, crit: 5, hit: 19, eva: 0,
                     frontSkill: "Cyclone", backSkill: "Spear Jab"
@@ -1721,7 +1721,7 @@ module.exports = {
             ]
         },{
             _id: "300508", modelId: "08", name: "Bardiche", commonNames: ["Bardiche"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 24, hit: 19, eva: 0,
                     frontSkill: "War Rage", backSkill: "Crash"
@@ -1753,7 +1753,7 @@ module.exports = {
             ]
         },{
             _id: "300608", modelId: "08", name: "Grand Cross", commonNames: ["Grand Cross"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 0, pdef: 35, matk: 91, mdef: 35, crit: 14, hit: 45, eva: 0,
                     frontSkill: "Knock", backSkill: "Prayer"
@@ -1785,7 +1785,7 @@ module.exports = {
             ]
         },{
             _id: "300708", modelId: "08", name: "Kris", commonNames: ["Kris"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 80, pdef: 0, matk: 0, mdef: 0, crit: 12, hit: 28, eva: 48,
                     frontSkill: "Crouching Tiger Formation", backSkill: "Throwing Knife"
@@ -1817,7 +1817,7 @@ module.exports = {
             ]
         },{
             _id: "300808", modelId: "08", name: "Rod of Earth \"Terrus\"", commonNames: ["Rod of Earth \"Terrus\"", "Terrus"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 0, pdef: 0, matk: 104, mdef: 0, crit: 11, hit: 35, eva: 0,
                     frontSkill: "Crystal Grave", backSkill: "Crystal Grave"
@@ -1853,7 +1853,7 @@ module.exports = {
     "r9": [
         {
             _id: "300109", modelId: "09", name: "Greatsword Pelgrande", commonNames: ["Greatsword Pelgrande"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 82, pdef: 73, matk: 0, mdef: 98, crit: 11, hit: 27, eva: 0,
                     frontSkill: "Double Slash", backSkill: "Slash"
@@ -1885,7 +1885,7 @@ module.exports = {
             ]
         },{
             _id: "300209", modelId: "09", name: "Hacho Nenbutsu", commonNames: ["Hacho Nenbutsu"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 157, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 0,
                     frontSkill: "Iaido Slash", backSkill: "Slash"
@@ -1917,7 +1917,7 @@ module.exports = {
             ]
         },{
             _id: "300309", modelId: "09", name: "Legendary Bow \"Gandiva\"", commonNames: ["Legendary Bow \"Gandiva\""],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 128, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 44, eva: 0,
                     frontSkill: "Chain Shot", backSkill: "Chain Shot"
@@ -1949,7 +1949,7 @@ module.exports = {
             ]
         },{
             _id: "300409", modelId: "09", name: "Magic Spear Gae Bolg", commonNames: ["Magic Spear Gae Bolg"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 39, pdef: 101, matk: 0, mdef: 0, crit: 5, hit: 24, eva: 0,
                     frontSkill: "Cyclone", backSkill: "Spear Jab"
@@ -1981,7 +1981,7 @@ module.exports = {
             ]
         },{
             _id: "300509", modelId: "09", name: "Giant Hammer Nehushtan", commonNames: ["Giant Hammer Nehushtan"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 213, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 24, eva: 0,
                     frontSkill: "Hammerfall", backSkill: "Crash"
@@ -2013,7 +2013,7 @@ module.exports = {
             ]
         },{
             _id: "300609", modelId: "09", name: "Morgenstern", commonNames: ["Morgenstern", "Morg"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 0, pdef: 41, matk: 104, mdef: 41, crit: 16, hit: 51, eva: 0,
                     frontSkill: "Wraith of Gaia", backSkill: "Prayer"
@@ -2045,7 +2045,7 @@ module.exports = {
             ]
         },{
             _id: "300709", modelId: "09", name: "Punishment", commonNames: ["Punishment"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 92, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 33, eva: 54,
                     frontSkill: "Crouching Tiger Formation", backSkill: "Throwing Knife"
@@ -2077,7 +2077,7 @@ module.exports = {
             ]
         },{
             _id: "300809", modelId: "09", name: "Rod of Wind \"Gridarvol\"", commonNames: ["Rod of Wind \"Gridarvol\"", "Gridarvol"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 0, pdef: 0, matk: 119, mdef: 0, crit: 12, hit: 44, eva: 0,
                     frontSkill: "Sonic Wind", backSkill: "Sonic Wind"
@@ -2113,7 +2113,7 @@ module.exports = {
     "r10": [
         {
             _id: "3001081", modelId: "08", name: "Naught Blade", commonNames: ["Naught Blade"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 64, pdef: 71, matk: 0, mdef: 86, crit: 10, hit: 22, eva: 0,
                     frontSkill: "V Slash", backSkill: "Slash"
@@ -2145,7 +2145,7 @@ module.exports = {
             ]
         },{
             _id: "3002081", modelId: "08", name: "Bloodied Onigirimaru", commonNames: ["Bloodied Onigirimaru"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 126, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 30, eva: 0,
                     frontSkill: "Iaido Slash", backSkill: "Slash"
@@ -2177,7 +2177,7 @@ module.exports = {
             ]
         },{
             _id: "3003081", modelId: "08", name: "Moment Arrow", commonNames: ["Moment Arrow"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 135, pdef: 0, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 0,
                     frontSkill: "Single Shot", backSkill: "Single Shot"
@@ -2209,7 +2209,7 @@ module.exports = {
             ]
         },{
             _id: "3004081", modelId: "08", name: "Dagda's Grand Spear", commonNames: ["Dagda's Grand Spear"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 46, pdef: 13, matk: 0, mdef: 0, crit: 30, hit: 20, eva: 0,
                     frontSkill: "Cyclone", backSkill: "Spear Jab"
@@ -2241,7 +2241,7 @@ module.exports = {
             ]
         },{
             _id: "3005081", modelId: "08", name: "Single-bladed Axe", commonNames: ["Single-bladed Axe"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 78, pdef: 0, matk: 0, mdef: 0, crit: 0, hit: 80, eva: 0,
                     frontSkill: "Grand Down", backSkill: "Crash"
@@ -2273,7 +2273,7 @@ module.exports = {
             ]
         },{
             _id: "3006081", modelId: "08", name: "Sanc Hadal", commonNames: ["Sanc Hadal"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 0, pdef: 22, matk: 128, mdef: 22, crit: 0, hit: 0, eva: 0,
                     frontSkill: "Knock", backSkill: "Healing Light"
@@ -2305,7 +2305,7 @@ module.exports = {
             ]
         },{
             _id: "3007081", modelId: "08", name: "Fernat Dagger", commonNames: ["Fernat Dagger", "Fernat"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 80, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 68, eva: 68,
                     frontSkill: "Crouching Tiger Formation", backSkill: "Shadow Snake Punch"
@@ -2337,7 +2337,7 @@ module.exports = {
             ]
         },{
             _id: "3008081", modelId: "08", name: "Rod of Dualities \"Darklight\"", commonNames: ["Rod of Dualities \"Darklight\"", "Darklight"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 2700,
                     patk: 0, pdef: 0, matk: 83, mdef: 0, crit: 11, hit: 35, eva: 0,
                     frontSkill: "Dark Catastrophe", backSkill: "Seraph Ray"
@@ -2373,7 +2373,7 @@ module.exports = {
     "r11": [
         {
             _id: "3001091", modelId: "09", name: "Painbringer", commonNames: ["Painbringer"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 106, pdef: 58, matk: 0, mdef: 70, crit: 11, hit: 27, eva: 0,
                     frontSkill: "Double Slash", backSkill: "Slash"
@@ -2402,7 +2402,7 @@ module.exports = {
             ]
         },{
             _id: "3002091", modelId: "09", name: "Mamorigatana \"Bloodless\"", commonNames: ["Mamorigatana \"Bloodless\""],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 141, pdef: 20, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 10,
                     frontSkill: "Iaido Slash", backSkill: "Slash"
@@ -2431,7 +2431,7 @@ module.exports = {
             ]
         },{
             _id: "3003091", modelId: "09", name: "Bow of Futility", commonNames: ["Bow of Futility"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 115, pdef: 0, matk: 0, mdef: 0, crit: 5, hit: 44, eva: 0,
                     frontSkill: "Chain Shot", backSkill: "Spread Shot"
@@ -2460,7 +2460,7 @@ module.exports = {
             ]
         },{
             _id: "3004091", modelId: "09", name: "Piercing Spear \"Stinger\"", commonNames: ["Piercing Spear \"Stinger\""],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 116, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 24, eva: 0,
                     frontSkill: "Full-On Collision", backSkill: "Spear Jab"
@@ -2489,7 +2489,7 @@ module.exports = {
             ]
         },{
             _id: "3005091", modelId: "09", name: "Demon Hammer Ukon", commonNames: ["Demon Hammer Ukon"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 170, pdef: 0, matk: 0, mdef: 0, crit: 50, hit: 24, eva: 0,
                     frontSkill: "Hammerfall", backSkill: "Crash"
@@ -2518,7 +2518,7 @@ module.exports = {
             ]
         },{
             _id: "3006091", modelId: "09", name: "Necrolidac", commonNames: ["Necrolidac"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 0, pdef: 41, matk: 135, mdef: 41, crit: 16, hit: 51, eva: 0,
                     frontSkill: "Knock", backSkill: "Heavenly Breath"
@@ -2547,7 +2547,7 @@ module.exports = {
             ]
         },{
             _id: "3007091", modelId: "09", name: "Timonia", commonNames: ["Timonia"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 101, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 33, eva: 54,
                     frontSkill: "Hayate", backSkill: "Throwing Knife"
@@ -2576,7 +2576,7 @@ module.exports = {
             ]
         },{
             _id: "3008091", modelId: "09", name: "Rod of Bounty \"Elemental\"", commonNames: ["Rod of Bounty \"Elemental\"", "Elemental"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 0, pdef: 0, matk: 142, mdef: 0, crit: 12, hit: 44, eva: 0,
                     frontSkill: "Fire Ball", backSkill: "Fire Ball"
@@ -2609,7 +2609,7 @@ module.exports = {
     "labyrinth": [
         {
             _id: "340100", modelId: "07", name: "Labyrinth Blade", commonNames: ["Labyrinth Blade"],
-            classId: 1, type: "story", stats: {
+            classId: 1, type: "story", isActive: true, stats: {
                 "+0": { price: 3000,
                     patk: 59, pdef: 49, matk: 0, mdef: 62, crit: 8, hit: 16, eva: 0,
                     frontSkill: "Power Slash", backSkill: "V Slash"
@@ -2635,7 +2635,7 @@ module.exports = {
             ]
         },{
             _id: "340200", modelId: "07", name: "Meikyuyoha", commonNames: ["Meikyuyoha"],
-            classId: 2, type: "story", stats: {
+            classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 3000,
                     patk: 112, pdef: 0, matk: 0, mdef: 0, crit: 21, hit: 21, eva: 0,
                     frontSkill: "Helmet Splitter", backSkill: "Cleave"
@@ -2661,7 +2661,7 @@ module.exports = {
             ]
         },{
             _id: "340300", modelId: "07", name: "Labyrinth Arrow", commonNames: ["Labyrinth Arrow"],
-            classId: 3, type: "story", stats: {
+            classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 3000,
                     patk: 80, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 30, eva: 0,
                     frontSkill: "Twin Shot", backSkill: "Chain Shot"
@@ -2687,7 +2687,7 @@ module.exports = {
             ]
         },{
             _id: "340400", modelId: "07", name: "Labyrinth Halberd", commonNames: ["Labyrinth Halberd"],
-            classId: 4, type: "story", stats: {
+            classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 3000,
                     patk: 27, pdef: 68, matk: 0, mdef: 0, crit: 3, hit: 13, eva: 0,
                     frontSkill: "Double Dragon Strike", backSkill: "Spear Jab"
@@ -2713,7 +2713,7 @@ module.exports = {
             ]
         },{
             _id: "340500", modelId: "07", name: "Labyrinth Axe", commonNames: ["Labyrinth Axe"],
-            classId: 5, type: "story", stats: {
+            classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 3000,
                     patk: 149, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 12, eva: 0,
                     frontSkill: "Force Impact", backSkill: "Swing"
@@ -2739,7 +2739,7 @@ module.exports = {
             ]
         },{
             _id: "340600", modelId: "07", name: "Labyrinth Mace", commonNames: ["Labyrinth Mace"],
-            classId: 6, type: "story", stats: {
+            classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 28, matk: 72, mdef: 28, crit: 10, hit: 37, eva: 0,
                     frontSkill: "Knock", backSkill: "Prayer"
@@ -2765,7 +2765,7 @@ module.exports = {
             ]
         },{
             _id: "340700", modelId: "07", name: "Labyrinth Dualblades", commonNames: ["Labyrinth Dualblades"],
-            classId: 7, type: "story", stats: {
+            classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 3000,
                     patk: 66, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 21, eva: 39,
                     frontSkill: "Shadow Run", backSkill: "Throwing Knife"
@@ -2791,7 +2791,7 @@ module.exports = {
             ]
         },{
             _id: "340800", modelId: "07", name: "Labyrinth Wand", commonNames: ["Labyrinth Wand"],
-            classId: 8, type: "story", stats: {
+            classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 3000,
                     patk: 0, pdef: 0, matk: 83, mdef: 0, crit: 9, hit: 24, eva: 0,
                     frontSkill: "Flame Field", backSkill: "Flame Field"
@@ -2821,7 +2821,7 @@ module.exports = {
     "xmas1": [
         {
             _id: "3001990", modelId: "99", name: "Christmas Blade X", commonNames: ["Christmas Blade X"],
-            classId: 1, type: "event", stats: {
+            classId: 1, type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 56, pdef: 52, matk: 0, mdef: 63, crit: 5, hit: 5, eva: 0,
                     frontSkill: "White Cross", backSkill: "Slash"
@@ -2857,7 +2857,7 @@ module.exports = {
             ]
         },{
             _id: "3002990", modelId: "99", name: "Holy Night Blade X", commonNames: ["Holy Night Blade X"],
-            classId: 2, type: "event", stats: {
+            classId: 2, type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 91, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 15, eva: 0,
                     frontSkill: "Snowflake Duet", backSkill: "Slash"
@@ -2893,7 +2893,7 @@ module.exports = {
             ]
         },{
             _id: "3003990", modelId: "99", name: "Christmas Bow X", commonNames: ["Christmas Bow X"],
-            classId: 3, type: "event", stats: {
+            classId: 3, type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 69, pdef: 0, matk: 0, mdef: 0, crit: 3, hit: 15, eva: 0,
                     frontSkill: "Single Shot", backSkill: "Holy Shoot"
@@ -2929,7 +2929,7 @@ module.exports = {
             ]
         },{
             _id: "3004990", modelId: "99", name: "Christmas Lance X", commonNames: ["Christmas Lance X"],
-            classId: 4, type: "event", stats: {
+            classId: 4, type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 25, pdef: 49, matk: 0, mdef: 0, crit: 3, hit: 5, eva: 0,
                     frontSkill: "Holy Style Spear", backSkill: "Spear Jab"
@@ -2965,7 +2965,7 @@ module.exports = {
             ]
         },{
             _id: "3005990", modelId: "99", name: "Christmas Hammer X", commonNames: ["Christmas Hammer X"],
-            classId: 5, type: "event", stats: {
+            classId: 5, type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 110, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 3, eva: 0,
                     frontSkill: "Snowman", backSkill: "Crash"
@@ -3001,7 +3001,7 @@ module.exports = {
             ]
         },{
             _id: "3006990", modelId: "99", name: "Christmas Mace X", commonNames: ["Christmas Mace X"],
-            classId: 6, type: "event", stats: {
+            classId: 6, type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 23, matk: 55, mdef: 25, crit: 9, hit: 20, eva: 0,
                     frontSkill: "Knock", backSkill: "A Good Child's Reward"
@@ -3037,7 +3037,7 @@ module.exports = {
             ]
         },{
             _id: "3007990", modelId: "99", name: "Christmas Dagger X", commonNames: ["Christmas Dagger X"],
-            classId: 7, type: "event", stats: {
+            classId: 7, type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 51, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 20, eva: 30,
                     frontSkill: "Snowy Flash", backSkill: "Throwing Knife"
@@ -3073,7 +3073,7 @@ module.exports = {
             ]
         },{
             _id: "3008990", modelId: "99", name: "Christmas Cane X", commonNames: ["Christmas Cane X"],
-            classId: 8, type: "event", stats: {
+            classId: 8, type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 0, matk: 65, mdef: 0, crit: 5, hit: 15, eva: 0,
                     frontSkill: "Twinkling Star", backSkill: "Twinkling Star"
@@ -3113,7 +3113,7 @@ module.exports = {
     "xmas2-white": [
         {
             _id: "3001881", modelId: "88", name: "Glacier Brand", commonNames: ["Glacier Brand"],
-            classId: 1, type: "event", stats: {
+            classId: 1, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 10, eva: 15,
                     frontSkill: "Merry Christmas", backSkill: "Cross Edge"
@@ -3143,7 +3143,7 @@ module.exports = {
             ]
         },{
             _id: "3002881", modelId: "88", name: "Korimonmaru", commonNames: ["Korimonmaru"],
-            classId: 2, type: "event", stats: {
+            classId: 2, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
                     frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
@@ -3173,7 +3173,7 @@ module.exports = {
             ]
         },{
             _id: "3003881", modelId: "88", name: "Glacier Neve", commonNames: ["Glacier Neve"],
-            classId: 3, type: "event", stats: {
+            classId: 3, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
                     frontSkill: "Twin Shot", backSkill: "Hole of Light"
@@ -3203,7 +3203,7 @@ module.exports = {
             ]
         },{
             _id: "3004881", modelId: "88", name: "Glacier Spear", commonNames: ["Glacier Spear"],
-            classId: 4, type: "event", stats: {
+            classId: 4, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
                     frontSkill: "Rays of the Spear", backSkill: "Double Strike"
@@ -3233,7 +3233,7 @@ module.exports = {
             ]
         },{
             _id: "3005881", modelId: "88", name: "Glacier Mountain", commonNames: ["Glacier Mountain"],
-            classId: 5, type: "event", stats: {
+            classId: 5, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
@@ -3263,7 +3263,7 @@ module.exports = {
             ]
         },{
             _id: "3006881", modelId: "88", name: "Glacier Mist", commonNames: ["Glacier Mist"],
-            classId: 6, type: "event", stats: {
+            classId: 6, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
                     frontSkill: "Knock", backSkill: "Holy Shower"
@@ -3293,7 +3293,7 @@ module.exports = {
             ]
         },{
             _id: "3007881", modelId: "88", name: "Twin Glacier", commonNames: ["Twin Glacier"],
-            classId: 7, type: "event", stats: {
+            classId: 7, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
                     frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
@@ -3323,7 +3323,7 @@ module.exports = {
             ]
         },{
             _id: "3008881", modelId: "88", name: "Glacier Sol", commonNames: ["Glacier Sol"],
-            classId: 8, type: "event", stats: {
+            classId: 8, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Cold Lance", backSkill: "Castle of Light"
@@ -3357,7 +3357,7 @@ module.exports = {
     "xmas2-red": [
         {
             _id: "3001871", modelId: "87", name: "Holly Devil's Ice Sword", commonNames: ["Holly Devil's Ice Sword"],
-            classId: 1, type: "event", stats: {
+            classId: 1, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 10, eva: 15,
                     frontSkill: "Merry Christmas", backSkill: "Cross Edge"
@@ -3387,7 +3387,7 @@ module.exports = {
             ]
         },{
             _id: "3002871", modelId: "87", name: "Holly Devil's Sword", commonNames: ["Holly Devil's Sword"],
-            classId: 2, type: "event", stats: {
+            classId: 2, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
                     frontSkill: "Sacred Tree Sword", backSkill: "Cleave"
@@ -3417,7 +3417,7 @@ module.exports = {
             ]
         },{
             _id: "3003871", modelId: "87", name: "Holly Devil's Ice Bow", commonNames: ["Holly Devil's Ice Bow"],
-            classId: 3, type: "event", stats: {
+            classId: 3, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
                     frontSkill: "Twin Shot", backSkill: "Hole of Light"
@@ -3447,7 +3447,7 @@ module.exports = {
             ]
         },{
             _id: "3004871", modelId: "87", name: "Holly Devil's Ice Spear", commonNames: ["Holly Devil's Ice Spear"],
-            classId: 4, type: "event", stats: {
+            classId: 4, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
                     frontSkill: "Rays of the Spear", backSkill: "Double Strike"
@@ -3477,7 +3477,7 @@ module.exports = {
             ]
         },{
             _id: "3005871", modelId: "87", name: "Holly Devil's Ice Hammer", commonNames: ["Holly Devil's Ice Hammer"],
-            classId: 5, type: "event", stats: {
+            classId: 5, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Illuminate Stamp", backSkill: "Hammerfall"
@@ -3507,7 +3507,7 @@ module.exports = {
             ]
         },{
             _id: "3006871", modelId: "87", name: "Holly Devil's Healing Mace", commonNames: ["Holly Devil's Healing Mace"],
-            classId: 6, type: "event", stats: {
+            classId: 6, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
                     frontSkill: "Knock", backSkill: "Holy Shower"
@@ -3537,7 +3537,7 @@ module.exports = {
             ]
         },{
             _id: "3007871", modelId: "87", name: "Holly Devil's Dualblades", commonNames: ["Holly Devil's Dualblades"],
-            classId: 7, type: "event", stats: {
+            classId: 7, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
                     frontSkill: "Illuminate Ball", backSkill: "Throwing Knife"
@@ -3567,7 +3567,7 @@ module.exports = {
             ]
         },{
             _id: "3008871", modelId: "87", name: "Holly Devil's Rod of Ice", commonNames: ["Holly Devil's Rod of Ice"],
-            classId: 8, type: "event", stats: {
+            classId: 8, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Cold Lance", backSkill: "Castle of Light"
@@ -3601,7 +3601,7 @@ module.exports = {
     "xmas3-white": [
         {
             _id: "3001791", modelId: "79", name: "Frozen Sword", commonNames: ["Frozen Sword"],
-            classId: 1, type: "event", stats: {
+            classId: 1, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
                     frontSkill: "Slash Snow", backSkill: "Cross Edge"
@@ -3626,7 +3626,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3002791", modelId: "79", name: "\"Zansetsu\" Nishiki", commonNames: ["\"Zansetsu\" Nishiki"],
-            classId: 2, type: "event", stats: {
+            classId: 2, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
                     frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
@@ -3651,7 +3651,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3003791", modelId: "79", name: "Heavy Snowfall \"Neige\"", commonNames: ["Heavy Snowfall \"Neige\""],
-            classId: 3, type: "event", stats: {
+            classId: 3, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
                     frontSkill: "Twin Shot", backSkill: "Hailstorm"
@@ -3676,7 +3676,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3004791", modelId: "79", name: "Frozen Spear", commonNames: ["Frozen Spear"],
-            classId: 4, type: "event", stats: {
+            classId: 4, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
                     frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
@@ -3701,7 +3701,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3005791", modelId: "79", name: "Frozen Hammer", commonNames: ["Frozen Hammer"],
-            classId: 5, type: "event", stats: {
+            classId: 5, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Aurora Impact", backSkill: "Hammerfall"
@@ -3726,7 +3726,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3006791", modelId: "79", name: "Frozen Mace", commonNames: ["Frozen Mace"],
-            classId: 6, type: "event", stats: {
+            classId: 6, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
                     frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
@@ -3751,7 +3751,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3007791", modelId: "79", name: "Frozen Knife", commonNames: ["Frozen Knife"],
-            classId: 7, type: "event", stats: {
+            classId: 7, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
                     frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
@@ -3776,7 +3776,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3008791", modelId: "79", name: "Frozen Staff", commonNames: ["Frozen Staff"],
-            classId: 8, type: "event", stats: {
+            classId: 8, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Cold Lance", backSkill: "Snow Blast"
@@ -3805,7 +3805,7 @@ module.exports = {
     "xmas3-black": [
         {
             _id: "3001781", modelId: "78", name: "Ice Age Sword", commonNames: ["Ice Age Sword"],
-            classId: 1, type: "event", stats: {
+            classId: 1, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
                     frontSkill: "Slash Snow", backSkill: "Cross Edge"
@@ -3830,7 +3830,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3002781", modelId: "78", name: "\"Yukishimo\" Nishiki", commonNames: ["\"Yukishimo\" Nishiki"],
-            classId: 2, type: "event", stats: {
+            classId: 2, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
                     frontSkill: "Secret Sword \"Yukikaze\"", backSkill: "Cleave"
@@ -3855,7 +3855,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3003781", modelId: "78", name: "Hailstorm \"Hagel\"", commonNames: ["Hailstorm \"Hagel\""],
-            classId: 3, type: "event", stats: {
+            classId: 3, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
                     frontSkill: "Twin Shot", backSkill: "Hailstorm"
@@ -3880,7 +3880,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3004781", modelId: "78", name: "Ice Age Spear", commonNames: ["Ice Age Spear"],
-            classId: 4, type: "event", stats: {
+            classId: 4, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
                     frontSkill: "Ice Dust Digger", backSkill: "Double Strike"
@@ -3905,7 +3905,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3005781", modelId: "78", name: "Ice Age Hammer", commonNames: ["Ice Age Hammer"],
-            classId: 5, type: "event", stats: {
+            classId: 5, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Aurora Impact", backSkill: "Hammerfall"
@@ -3930,7 +3930,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3006781", modelId: "78", name: "Ice Age Mace", commonNames: ["Ice Age Mace"],
-            classId: 6, type: "event", stats: {
+            classId: 6, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
                     frontSkill: "Knock", backSkill: "Holy Ice's Blessing"
@@ -3955,7 +3955,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3007781", modelId: "78", name: "Ice Age Knife", commonNames: ["Ice Age Knife"],
-            classId: 7, type: "event", stats: {
+            classId: 7, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
                     frontSkill: "Cross Ice Assassin", backSkill: "Throwing Knife"
@@ -3980,7 +3980,7 @@ module.exports = {
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         },{
             _id: "3008781", modelId: "78", name: "Ice Age Staff", commonNames: ["Ice Age Staff"],
-            classId: 8, type: "event", stats: {
+            classId: 8, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Cold Lance", backSkill: "Snow Blast"
@@ -4004,5 +4004,241 @@ module.exports = {
             },
             note: "", devCost: 30000, levelRequired: 10, tier: 4, recipe: []
         }
-    ]
+    ],
+
+    "r12": [
+        {
+            _id: "3001082", modelId: "12", name: "Royal Blade", commonNames: ["Royal Blade"],
+            classId: 1, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 90, pdef: 70, matk: 0, mdef: 100, crit: 11, hit: 27, eva: 0,
+                    frontSkill: "Cross Edge", backSkill: "Slash"
+                },
+                "+1": { price: 6000,
+                    patk: 120, pdef: 90, matk: 0, mdef: 140, crit: 11, hit: 27, eva: 0,
+                    frontSkill: "Cross Edge", backSkill: "Slash"
+                },
+                "+2": { price: 7000,
+                    patk: 180, pdef: 105, matk: 0, mdef: 180, crit: 11, hit: 27, eva: 0,
+                    frontSkill: "Power Cross", backSkill: "V Slash"
+                },
+                "+3": { price: 8000,
+                    patk: 210, pdef: 135, matk: 0, mdef: 200, crit: 11, hit: 27, eva: 0,
+                    frontSkill: "Power Cross", backSkill: "V Slash"
+                }
+            },
+            note: "", devCost: 40000, levelRequired: 65, tier: 2, recipe: [
+                {
+                    materialName: "Gold Ore",
+                    amount: 3
+                },{
+                    materialName: "Aquamarine",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3002082", modelId: "12", name: "Royal Sword", commonNames: ["Royal Sword"],
+            classId: 2, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 150, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 3,
+                    frontSkill: "Iaido Slash", backSkill: "Slash"
+                },
+                "+1": { price: 6000,
+                    patk: 190, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 6,
+                    frontSkill: "Iaido Slash", backSkill: "Slash"
+                },
+                "+2": { price: 7000,
+                    patk: 230, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 9,
+                    frontSkill: "Slash II", backSkill: "Cleave"
+                },
+                "+3": { price: 8000,
+                    patk: 300, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 12,
+                    frontSkill: "Slash II", backSkill: "Cleave"
+                }
+            },
+            note: "", devCost: 40000, levelRequired: 65, tier: 2, recipe: [
+                {
+                    materialName: "Aquamarine",
+                    amount: 2
+                },{
+                    materialName: "Magical Water",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3003082", modelId: "12", name: "Royal Arrow", commonNames: ["Royal Arrow"],
+            classId: 3, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 120, pdef: 0, matk: 0, mdef: 30, crit: 5, hit: 45, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Chain Shot"
+                },
+                "+1": { price: 6000,
+                    patk: 160, pdef: 0, matk: 0, mdef: 45, crit: 5, hit: 45, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Chain Shot"
+                },
+                "+2": { price: 7000,
+                    patk: 205, pdef: 0, matk: 0, mdef: 50, crit: 5, hit: 45, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Delta Shot"
+                },
+                "+3": { price: 8000,
+                    patk: 275, pdef: 0, matk: 0, mdef: 70, crit: 5, hit: 45, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Delta Shot"
+                }
+            },
+            note: "", devCost: 40000, levelRequired: 61, tier: 2, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 3
+                },{
+                    materialName: "Crystal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3004082", modelId: "12", name: "Royal Pike", commonNames: ["Royal Pike"],
+            classId: 4, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 40, pdef: 91, matk: 0, mdef: 25, crit: 5, hit: 24, eva: 0,
+                    frontSkill: "Double Strike", backSkill: "Spear Jab"
+                },
+                "+1": { price: 6000,
+                    patk: 55, pdef: 130, matk: 0, mdef:30, crit: 10, hit: 24, eva: 0,
+                    frontSkill: "Double Strike", backSkill: "Spear Jab"
+                },
+                "+2": { price: 7000,
+                    patk: 70, pdef: 180, matk: 0, mdef: 40, crit: 20, hit: 24, eva: 0,
+                    frontSkill: "Revised Double Strike", backSkill: "Double Strike"
+                },
+                "+3": { price: 8000,
+                    patk: 95, pdef: 230, matk: 0, mdef: 50, crit: 30, hit: 24, eva: 0,
+                    frontSkill: "Revised Double Strike", backSkill: "Double Strike"
+                }
+            },
+            note: "", devCost: 40000, levelRequired: 62, tier: 2, recipe: [
+                {
+                    materialName: "Gold Ore",
+                    amount: 3
+                },{
+                    materialName: "Crystal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3005082", modelId: "12", name: "Royal Pounder", commonNames: ["Royal Pounder"],
+            classId: 5, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 200, pdef: 0, matk: 0, mdef: 60, crit: 40, hit: 24, eva: 0,
+                    frontSkill: "Swing", backSkill: "Crash"
+                },
+                "+1": { price: 6000,
+                    patk: 250, pdef: 0, matk: 0, mdef: 75, crit: 40, hit: 24, eva: 0,
+                    frontSkill: "Swing", backSkill: "Crash"
+                },
+                "+2": { price: 7000,
+                    patk: 350, pdef: 0, matk: 0, mdef: 90, crit: 40, hit: 24, eva: 0,
+                    frontSkill: "Power Swing", backSkill: "Swing"
+                },
+                "+3": { price: 8000,
+                    patk: 420, pdef: 0, matk: 0, mdef: 100, crit: 40, hit: 24, eva: 0,
+                    frontSkill: "Power Swing", backSkill: "Swing"
+                }
+            },
+            note: "", devCost: 40000, levelRequired: 62, tier: 2, recipe: [
+                {
+                    materialName: "Topaz",
+                    amount: 2
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3006082", modelId: "12", name: "Royal Mace", commonNames: ["Royal Mace"],
+            classId: 6, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 30, matk: 120, mdef: 50, crit: 16, hit: 51, eva: 0,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 45, matk: 160, mdef: 65, crit: 16, hit: 51, eva: 0,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 50, matk: 200, mdef: 80, crit: 16, hit: 51, eva: 0,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 60, matk: 280, mdef: 108, crit: 16, hit: 51, eva: 0,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                }
+            },
+            note: "", devCost: 40000, levelRequired: 64, tier: 2, recipe: [
+                {
+                    materialName: "Ruby",
+                    amount: 2
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3007082", modelId: "12", name: "Royal Dagger", commonNames: ["Royal Dagger"],
+            classId: 7, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 110, pdef: 0, matk: 0, mdef: 30, crit: 15, hit: 35, eva: 55,
+                    frontSkill: "Twin Attack", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 6000,
+                    patk: 160, pdef: 0, matk: 0, mdef: 45, crit: 15, hit: 40, eva: 55,
+                    frontSkill: "Twin Attack", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 7000,
+                    patk: 180, pdef: 0, matk: 0, mdef: 50, crit: 15, hit: 45, eva: 55,
+                    frontSkill: "Hardened Twin Attack", backSkill: "Shadow Snake Punch"
+                },
+                "+3": { price: 8000,
+                    patk: 210, pdef: 0, matk: 0, mdef: 60, crit: 15, hit: 55, eva: 55,
+                    frontSkill: "Hardened Twin Attack", backSkill: "Shadow Snake Punch"
+                }
+            },
+            note: "", devCost: 40000, levelRequired: 63, tier: 2, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 3
+                },{
+                    materialName: "Turquoise",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3008082", modelId: "12", name: "Royal Cane", commonNames: ["Royal Cane"],
+            classId: 8, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 0, matk: 130, mdef: 30, crit: 12, hit: 44, eva: 0,
+                    frontSkill: "Thunder Arrow", backSkill: "Thunder Arrow"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 0, matk: 180, mdef: 45, crit: 12, hit: 44, eva: 0,
+                    frontSkill: "Thunder Arrow", backSkill: "Thunder Arrow"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 0, matk: 220, mdef: 50, crit: 12, hit: 44, eva: 0,
+                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 0, matk: 300, mdef: 70, crit: 12, hit: 44, eva: 0,
+                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
+                }
+            },
+            note: "", devCost: 40000, levelRequired: 63, tier: 2, recipe: [
+                {
+                    materialName: "Ebony Branch",
+                    amount: 3
+                },{
+                    materialName: "Onyx",
+                    amount: 2
+                }
+            ]
+        }
+    ],
 };

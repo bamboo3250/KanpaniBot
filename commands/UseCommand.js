@@ -57,9 +57,9 @@ function isUsable(itemName) {
     return isMailbox(itemName) 
         || isHammer(itemName) 
         || isForge(itemName) 
-        || isBread(itemName) 
-        || isEldLight(itemName) 
-        || isAromaOil(itemName);
+        || isBread(itemName);
+        // || isEldLight(itemName) 
+        // || isAromaOil(itemName);
 }
 
 var eldLightRewardList = [

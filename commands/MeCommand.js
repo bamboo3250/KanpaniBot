@@ -85,7 +85,7 @@ module.exports = {
             }
 
             var itemCellFileName = "images/misc/itemCell.png";
-            var backgroundFileName = bot.functionHelper.randomObject(bot.backgroundManager.getChristmasBackgrounds());
+            var backgroundFileName = bot.functionHelper.randomObject(bot.backgroundManager.backgroundFileNames);
             backgroundFileName = "images/misc/background/" + backgroundFileName;
             var shadowFileName = "images/misc/shadow.png";
 
@@ -118,7 +118,7 @@ module.exports = {
 
                 var partnerImage = imageList[partnerSpriteFileName];
 
-                backgroundImage.crop(410, 65, 310, 270);
+                backgroundImage.crop(250, 100, 310, 270);
                 enemySpriteImage.crop(20, 0, 310, 270);
                 if (partnerImage) {
                     partnerImage.crop(20, 0, 310, 270);

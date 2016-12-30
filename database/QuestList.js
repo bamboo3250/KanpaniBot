@@ -293,28 +293,28 @@ var quests = [
 
     {
         commonNames: ["Xmas3-beginner"], name: "Christmas Dungeon: Beginner", 
-        isActive: true, levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
+        isActive: false, levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
         goldReward: 42000, breadReward: 0, exp: 3252, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 10,
         dropList: [
             "Aroma Oil"
         ]
     },{
         commonNames: ["Xmas3-inter"], name: "Christmas Dungeon: Intermediate", 
-        isActive: true, levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
+        isActive: false, levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
         goldReward: 68000, breadReward: 0, exp: 6930, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 20,
         dropList: [
             "Aroma Oil"
         ]
     },{
         commonNames: ["Xmas3-hard"], name: "Christmas Dungeon: Hard", 
-        isActive: true, levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
+        isActive: false, levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
         goldReward: 106000, breadReward: 0, exp: 12322, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 30,
         dropList: [
             "Aroma Oil"
         ]
     },{
         commonNames: ["Xmas3-ultra"], name: "Christmas Dungeon: Ultra", 
-        isActive: true, levelRequired: 70, timeCost: 120, goldCost: 0, breadCost: 1, 
+        isActive: false, levelRequired: 70, timeCost: 120, goldCost: 0, breadCost: 1, 
         goldReward: 132000, breadReward: 0, exp: 17264, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 50,
         dropList: [
             "Aroma Oil"
@@ -1297,6 +1297,104 @@ var quests = [
             "Luxurious Cloth", 
             "Ominous Cloth", 
             "Rose Quartz"
+        ]
+    },
+
+    {
+        commonNames: ["2-1-1"], name: "Spice Run", 
+        isActive: true, levelRequired: 61, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 7700, advantage: [3], numItemDrop: 45,
+        dropList: [
+            "Crystal", 
+            "Emerald", 
+            "Garnet", 
+            "Gold Ore", 
+            "Luxurious Cloth", 
+            "Ominous Cloth", 
+            "Silver Ore"
+        ]
+    },{
+        commonNames: ["2-1-2"], name: "Unexplored Ruins", 
+        isActive: true, levelRequired: 62, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 7720, advantage: [4], numItemDrop: 60,
+        dropList: [
+            "Crystal", 
+            "Diamond", 
+            "Garnet", 
+            "Gold Ore", 
+            "Silver Ore", 
+            "Topaz", 
+            "Unicorn Horn"
+        ]
+    },{
+        commonNames: ["2-1-3"], name: "Protect the Magic Items", 
+        isActive: true, levelRequired: 62, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 7720, advantage: [5], numItemDrop: 60,
+        dropList: [
+            "Chimera Horn", 
+            "Diamond", 
+            "Emerald", 
+            "Hard Leather", 
+            "Luxurious Leather", 
+            "Topaz", 
+            "Turquoise", 
+            "Unicorn Horn"
+        ]
+    },{
+        commonNames: ["2-1-4"], name: "The Bloody Kings Thieves Guild", 
+        isActive: true, levelRequired: 63, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 7735, advantage: [7], numItemDrop: 75,
+        dropList: [
+            "Black Pearl", 
+            "Diamond", 
+            "Ebony Branch", 
+            "Emerald", 
+            "Hard Leather", 
+            "Luxurious Leather", 
+            "Maple Branch", 
+            "Onyx", 
+            "Turquoise"
+        ]
+    },{
+        commonNames: ["2-1-5"], name: "Statue Escort", 
+        isActive: true, levelRequired: 63, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 7720, advantage: [8], numItemDrop: 60,
+        dropList: [
+            "Black Pearl", 
+            "Chimera Horn", 
+            "Emerald", 
+            "Maple Branch", 
+            "Onyx", 
+            "Ruby", 
+            "Unicorn Horn"
+        ]
+    },{
+        commonNames: ["2-1-6"], name: "Hunting Remmants of the Thieves Guild", 
+        isActive: true, levelRequired: 64, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 7711, advantage: [6], numItemDrop: 60,
+        dropList: [
+            "Aquamarine", 
+            "Chimera Horn", 
+            "Gold Ore", 
+            "Lapis Lazuli", 
+            "Magical Water", 
+            "Ruby", 
+            "Shimmering Water", 
+            "Unicorn Horn"
+        ]
+    },{
+        commonNames: ["2-1-7"], name: "Strong Sword Style Soft Sword Style", 
+        isActive: true, levelRequired: 65, timeCost: 60, goldCost: 0, breadCost: 2, 
+        goldReward: 1250, breadReward: 0, exp: 7692, advantage: [1, 2], numItemDrop: 45,
+        dropList: [
+            "Aquamarine", 
+            "Emerald", 
+            "Gold Ore", 
+            "Lapis Lazuli", 
+            "Magical Water", 
+            "Rose Quartz", 
+            "Shimmering Water", 
+            "Silver Ore"
         ]
     },
 
