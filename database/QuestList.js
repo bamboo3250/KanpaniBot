@@ -1303,7 +1303,7 @@ var quests = [
     {
         commonNames: ["2-1-1"], name: "Spice Run", 
         isActive: true, levelRequired: 61, timeCost: 60, goldCost: 0, breadCost: 2, 
-        goldReward: 1250, breadReward: 0, exp: 4360, advantage: [3], numItemDrop: 33,
+        goldReward: 1250, breadReward: 0, exp: 7700, advantage: [3], numItemDrop: 45,
         dropList: [
             "Crystal", 
             "Emerald", 
@@ -1316,7 +1316,7 @@ var quests = [
     },{
         commonNames: ["2-1-2"], name: "Unexplored Ruins", 
         isActive: true, levelRequired: 62, timeCost: 60, goldCost: 0, breadCost: 2, 
-        goldReward: 1250, breadReward: 0, exp: 4400, advantage: [4], numItemDrop: 44,
+        goldReward: 1250, breadReward: 0, exp: 7720, advantage: [4], numItemDrop: 60,
         dropList: [
             "Crystal", 
             "Diamond", 
@@ -1329,7 +1329,7 @@ var quests = [
     },{
         commonNames: ["2-1-3"], name: "Protect the Magic Items", 
         isActive: true, levelRequired: 62, timeCost: 60, goldCost: 0, breadCost: 2, 
-        goldReward: 1250, breadReward: 0, exp: 4400, advantage: [5], numItemDrop: 44,
+        goldReward: 1250, breadReward: 0, exp: 7720, advantage: [5], numItemDrop: 60,
         dropList: [
             "Chimera Horn", 
             "Diamond", 
@@ -1343,7 +1343,7 @@ var quests = [
     },{
         commonNames: ["2-1-4"], name: "The Bloody Kings Thieves Guild", 
         isActive: true, levelRequired: 63, timeCost: 60, goldCost: 0, breadCost: 2, 
-        goldReward: 1250, breadReward: 0, exp: 4425, advantage: [7], numItemDrop: 55,
+        goldReward: 1250, breadReward: 0, exp: 7735, advantage: [7], numItemDrop: 75,
         dropList: [
             "Black Pearl", 
             "Diamond", 
@@ -1358,7 +1358,7 @@ var quests = [
     },{
         commonNames: ["2-1-5"], name: "Statue Escort", 
         isActive: true, levelRequired: 63, timeCost: 60, goldCost: 0, breadCost: 2, 
-        goldReward: 1250, breadReward: 0, exp: 4400, advantage: [8], numItemDrop: 44,
+        goldReward: 1250, breadReward: 0, exp: 7720, advantage: [8], numItemDrop: 60,
         dropList: [
             "Black Pearl", 
             "Chimera Horn", 
@@ -1371,7 +1371,7 @@ var quests = [
     },{
         commonNames: ["2-1-6"], name: "Hunting Remmants of the Thieves Guild", 
         isActive: true, levelRequired: 64, timeCost: 60, goldCost: 0, breadCost: 2, 
-        goldReward: 1250, breadReward: 0, exp: 4385, advantage: [6], numItemDrop: 44,
+        goldReward: 1250, breadReward: 0, exp: 7711, advantage: [6], numItemDrop: 60,
         dropList: [
             "Aquamarine", 
             "Chimera Horn", 
@@ -1385,7 +1385,7 @@ var quests = [
     },{
         commonNames: ["2-1-7"], name: "Strong Sword Style Soft Sword Style", 
         isActive: true, levelRequired: 65, timeCost: 60, goldCost: 0, breadCost: 2, 
-        goldReward: 1250, breadReward: 0, exp: 4362, advantage: [1, 2], numItemDrop: 33,
+        goldReward: 1250, breadReward: 0, exp: 7692, advantage: [1, 2], numItemDrop: 45,
         dropList: [
             "Aquamarine", 
             "Emerald", 
