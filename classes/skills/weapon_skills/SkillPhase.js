@@ -1,12 +1,14 @@
 var SkillPhaseConst = require('./SkillPhaseConst');
 
-function SkillPhase(pattern, skillType, modifier, attackTimes, element, targetType) {
+function SkillPhase(pattern, skillType, modifier, attackTimes, element, targetType, state = "attack01", frame = 0) {
     this.pattern = pattern;
     this.skillType = skillType;
     this.modifier = modifier;
     this.attackTimes = attackTimes;
     this.element = element;
     this.targetType = targetType;
+    this.state = state;
+    this.frame = frame;
 }
 
 const SKILL_PATTERN_MASKS = [

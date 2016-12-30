@@ -133,6 +133,9 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         text += attackerName + " used **" + skill.name + "**, ";
         if (skillPhase.canAttack()) {        
             text += "dealing **";
+
+            var onEnemySide = (field === battleField.enemySide);
+
             for(var j=0;j<skillPhase.attackTimes;j++) {
 
                 // damage = atk * modier * random * crit * buff * element - def
@@ -145,16 +148,23 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 } else {
                     text += damage + " and ";    
                 }
+                if (onEnemySide) {
+                    painter.addEnemyDamage(targetFieldPos.row, targetFieldPos.column, damage, "normal");
+                } else {
+                    painter.addAllyDamage(targetFieldPos.row, targetFieldPos.column, damage, "crit");
+                }
             }
             text += " damage** to " + targetName + ".\n";
 
-            if (field === battleField.enemySide) {
+            if (onEnemySide) {
                 painter.setEnemyState(targetFieldPos.row, targetFieldPos.column, targetUnit, "damage");
             } else {
                 painter.setAllyState(targetFieldPos.row, targetFieldPos.column, targetUnit, "damage");
             }
 
         } else {
+            var onEnemySide = (field === battleField.enemySide);
+
             text += "healing **";
             for(var j=0;j<skillPhase.attackTimes;j++) {
                 var healHp = 123;
@@ -164,6 +174,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     text += healHp + ", ";    
                 } else {
                     text += healHp + " and ";    
+                }
+                if (onEnemySide) {
+                    painter.addEnemyDamage(targetFieldPos.row, targetFieldPos.column, damage, "heal");
+                } else {
+                    painter.addAllyDamage(targetFieldPos.row, targetFieldPos.column, damage, "heal");
                 }
             }
             text += " HP** for " + targetName + ".\n";

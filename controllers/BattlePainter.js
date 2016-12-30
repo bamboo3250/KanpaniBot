@@ -77,7 +77,6 @@ BattlePainter.prototype.draw = function(callback) {
     for(var i=0;i<2;i++) {
         for(var j=0;j<3;j++) {
             if (this.states["enemy"][i][j]) {
-                console.log(this.states["enemy"][i][j]);
                 var unit = this.states["enemy"][i][j].unit;
                 var state = this.states["enemy"][i][j].state;
                 var spriteUrl = this.bot.urlHelper.getSpriteImageURL(unit, true, state);
@@ -157,6 +156,59 @@ BattlePainter.prototype.draw = function(callback) {
                         background
                             .composite(shadow, posX + 110, posY + 160)
                             .composite(imageList[spriteFileName], posX, posY);
+                    }
+                }
+            }            
+
+            // draw damage
+            // enemy
+            for(var i=1;i>=0;i--) {
+                for(var j=0;j<3;j++) {
+                    for(var k=0;k<that.damages["enemy"][i][j].length;k++) {
+                        var damage = that.damages["enemy"][i][j][k].damage;
+                        var type = that.damages["enemy"][i][j][k].type;
+
+                        var posX = OFFSET_X + 102*(that.states["enemy"][i][j].row) - 137*(that.states["enemy"][i][j].column);
+                        var posY = OFFSET_Y + 65*(that.states["enemy"][i][j].row) + 37*(that.states["enemy"][i][j].column);
+                        
+                        if (type != "miss") {
+                            while (damage > 0) {
+                                var digit = damage % 10;
+                                var digitImage = that.bot.imageManager.getDamage(type, digit);
+                                background.composite(digitImage, posX + 190, posY + k+20);
+                                damage = Math.floor(damage/10);
+                                posX -= 20;
+                            }    
+                        } else {
+                            var digitImage = that.bot.imageManager.getDamage(type, digit);
+                            background.composite(digitImage, posX + 190, posY + k+20);
+                        }
+                    }
+                }
+            }
+
+            // ally
+            for(var i=0;i<2;i++) {
+                for(var j=2;j>=0;j--) {
+                    for(var k=0;k<that.damages["ally"][i][j].length;k++) {
+                        var damage = that.damages["ally"][i][j][k].damage;
+                        var type = that.damages["ally"][i][j][k].type;
+
+                        var posX = OFFSET_X + 102*(that.states["ally"][i][j].row) - 137*(that.states["ally"][i][j].column);
+                        var posY = OFFSET_Y + 65*(that.states["ally"][i][j].row) + 37*(that.states["ally"][i][j].column);
+                        
+                        if (type != "miss") {
+                            while (damage > 0) {
+                                var digit = damage % 10;
+                                var digitImage = that.bot.imageManager.getDamage(type, digit);
+                                background.composite(digitImage, posX + 190, posY + k+20);
+                                damage = Math.floor(damage/10);
+                                posX -= 20;
+                            }    
+                        } else {
+                            var digitImage = that.bot.imageManager.getDamage(type, digit);
+                            background.composite(digitImage, posX + 190, posY + k+20);
+                        }
                     }
                 }
             }            

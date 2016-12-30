@@ -12,10 +12,10 @@ raging.phases = [
     new SkillPhase(
         SkillPhaseConst.SKILL_PATTERN_SINGLE,
         SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-        1.7,
-        1,
+        1.7, 1,
         SkillPhaseConst.ELEMENT_NONE,
-        SkillPhaseConst.TARGET_ANY
+        SkillPhaseConst.TARGET_ANY,
+        "attack01", 3
     )
 ];
 
