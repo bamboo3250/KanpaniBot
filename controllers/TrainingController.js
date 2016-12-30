@@ -1,4 +1,5 @@
 var BattleField = require('../classes/BattleField');
+var BattlePainter = require('./BattlePainter');
 var Jimp = require("jimp");
 
 function TrainingController() {
@@ -39,8 +40,6 @@ function hasFrontlineUnit(field) {
 }
 
 function resolveTargets(skillPhase, attacker, mainTarget, field) {
-    console.log(mainTarget);
-    console.log(field);
     var mainTargetPos = getPosOnField(mainTarget, field);
     
     if (skillPhase.isShortAttack()) {   // short attack
@@ -91,6 +90,37 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var mainTargetUnit = targetUnitList[iter];
     var field = (battleField.isEnemy(mainTargetUnit.playerId)? battleField.enemySide: battleField.allySide);
     var targets = resolveTargets(skillPhase, attacker, mainTargetUnit, field);
+    var average_column = 0;
+    for(var i=0;i<targets.length;i++) average_column += targets[i].column;
+    average_column = average_column / targets.length;
+
+    var painter = new BattlePainter(this.bot);
+    for(var i=0;i<2;i++) {
+        for(var j=0;j<3;j++) {
+            var enemyUnit = this.bot.unitManager.getPlayerUnit(battleField.enemySide[i][j]);
+            if (enemyUnit) {
+                if (enemyUnit === attacker) {
+                    painter.setEnemyState(i, j, enemyUnit, "attack01", 3);
+                    if (skillPhase.isShortAttack()) {
+                        painter.moveToFrontOfAllyField(i, j, average_column);
+                    }
+                } else {
+                    painter.setEnemyState(i, j, enemyUnit);
+                }
+            }
+            var allyUnit = this.bot.unitManager.getPlayerUnit(battleField.allySide[i][j]);
+            if (allyUnit) {
+                if (allyUnit === attacker) {
+                    painter.setAllyState(i, j, allyUnit, "attack01", 3);
+                    if (skillPhase.isShortAttack()) {
+                        painter.moveToFrontOfEnemyField(i, j, average_column);
+                    }
+                } else {
+                    painter.setAllyState(i, j, allyUnit);
+                }
+            }
+        }
+    }
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -118,6 +148,12 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             }
             text += " damage** to " + targetName + ".\n";
 
+            if (field === battleField.enemySide) {
+                painter.setEnemyState(targetFieldPos.row, targetFieldPos.column, targetUnit, "damage");
+            } else {
+                painter.setAllyState(targetFieldPos.row, targetFieldPos.column, targetUnit, "damage");
+            }
+
         } else {
             text += "healing **";
             for(var j=0;j<skillPhase.attackTimes;j++) {
@@ -134,182 +170,13 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         }
     }
     
-    var enemyList = battleField.getEnemyList();
-    var allyList = battleField.getAllyList();
-
-    var queue = [];
-    var spriteFileNameList = [];
-
-    for(var i=0;i<enemyList.length;i++) {
-        var enemyUnit = this.bot.unitManager.getPlayerUnit(enemyList[i]);
-        var spriteUrl = this.bot.urlHelper.getSpriteImageURL(enemyUnit, true, "damage");
-        var spriteFileName = "images/enemy/" + this.bot.urlHelper.getSpriteImageName(enemyUnit, "damage");
-        spriteFileNameList.push(spriteFileName);
-        queue.push({
-            fileToDownload: spriteUrl,   fileToSave: spriteFileName
-        });
-        spriteUrl = this.bot.urlHelper.getSpriteImageURL(enemyUnit);
-        spriteFileName = "images/enemy/" + this.bot.urlHelper.getSpriteImageName(enemyUnit);
-        spriteFileNameList.push(spriteFileName);
-        queue.push({
-            fileToDownload: spriteUrl,   fileToSave: spriteFileName
-        });
-        if (enemyList[i] === attacker.playerId) {
-            spriteUrl = this.bot.urlHelper.getSpriteImageURL(enemyUnit, true, "attack01");
-            spriteFileName = "images/enemy/" + this.bot.urlHelper.getSpriteImageName(enemyUnit, "attack01");
-            spriteFileNameList.push(spriteFileName);
-            queue.push({
-                fileToDownload: spriteUrl,   fileToSave: spriteFileName
-            }); 
-        }
-    }
-    
-    for(var i=0;i<allyList.length;i++) {
-        var allyUnit = this.bot.unitManager.getPlayerUnit(allyList[i]);
-        var spriteUrl = this.bot.urlHelper.getSpriteImageURL(allyUnit, false, "damage");
-        var spriteFileName = "images/ally/" + this.bot.urlHelper.getSpriteImageName(allyUnit, "damage");
-        spriteFileNameList.push(spriteFileName);
-        queue.push({
-            fileToDownload: spriteUrl,   fileToSave: spriteFileName
-        });
-        spriteUrl = this.bot.urlHelper.getSpriteImageURL(allyUnit, false);
-        spriteFileName = "images/ally/" + this.bot.urlHelper.getSpriteImageName(allyUnit);
-        spriteFileNameList.push(spriteFileName);
-        queue.push({
-            fileToDownload: spriteUrl,   fileToSave: spriteFileName
-        });
-        if (allyList[i] === attacker.playerId) {
-            spriteUrl = this.bot.urlHelper.getSpriteImageURL(allyUnit, false, "attack01");
-            spriteFileName = "images/ally/" + this.bot.urlHelper.getSpriteImageName(allyUnit, "attack01");
-            spriteFileNameList.push(spriteFileName);
-            queue.push({
-                fileToDownload: spriteUrl,   fileToSave: spriteFileName
-            }); 
-        }
-    }
-
     var that = this;
-    this.bot.imageHelper.download(queue, function(err) {
-        if (err) {
-            message.reply("Error happened. Try again.");
-            bot.log(err);
-            return;
-        }
-
-        var backgroundFileName = "images/misc/background/battlefield_01.jpg";
-        
-        var fileNameQueue = [
-            backgroundFileName,
-        ];
-        for(var i=0;i<spriteFileNameList.length;i++) fileNameQueue.push(spriteFileNameList[i]);
-
-        that.bot.imageHelper.read(fileNameQueue, function (err, imageList) {
-            if (err) {
-                message.reply("Error happened. Try again.");
-                that.bot.log(err); 
-                return;
-            }
-
-            var background = imageList[backgroundFileName];
-            var shadow = that.bot.imageManager.getShadow();
-
-            var OFFSET_X = 175;
-            var OFFSET_Y = -40;
-            // enemy
-
-            var targetMask = [[false,false,false],[false,false,false]];
-            for(var i=0;i<targets.length;i++) {
-                targetMask[targets[i].row][targets[i].column] = true;
-            }
-            for(var i=1;i>=0;i--) {
-                for(var j=0;j<3;j++) {
-                    var enemyUnit = that.bot.unitManager.getPlayerUnit(battleField.enemySide[i][j]);
-                    if (enemyUnit) {
-                        var spriteFileName, posX, posY;
-                        var frameNo = 0;
-                        if (enemyUnit.playerId === attacker.playerId) {
-                            frameNo = 3;
-                            spriteFileName = "images/enemy/" + that.bot.urlHelper.getSpriteImageName(enemyUnit, "attack01");
-                            var average_column = 0;
-                            var average_row = 3;
-                            for(var k=0;k<targets.length;k++) {
-                                average_column += targets[k].column;
-                            }
-                            average_column = average_column / targets.length;
-
-
-                            posX = OFFSET_X + 102*(average_row) - 137*(average_column);
-                            posY = OFFSET_Y + 65*(average_row) + 37*(average_column);
-                        } else {
-                            if (battleField.isEnemy(mainTargetUnit.playerId)) {
-                                if (targetMask[i][j]) {
-                                    spriteFileName = "images/enemy/" + that.bot.urlHelper.getSpriteImageName(enemyUnit, "damage");
-                                } else {
-                                    spriteFileName = "images/enemy/" + that.bot.urlHelper.getSpriteImageName(enemyUnit);
-                                }
-                            } else {
-                                spriteFileName = "images/enemy/" + that.bot.urlHelper.getSpriteImageName(enemyUnit);
-                            }
-                            posX = OFFSET_X + 102*(1-i) - 137*j;
-                            posY = OFFSET_Y + 65*(1-i) + 37*j;
-                        }
-
-                        imageList[spriteFileName].crop((frameNo%5) * 360, Math.floor(frameNo/5) * 270, 360, 270);
-                        background
-                            .composite(shadow, posX + 110, posY + 160)
-                            .composite(imageList[spriteFileName], posX, posY);
-                    }
-                }
-            }
-
-            // ally
-            for(var i=0;i<2;i++) {
-                for(var j=2;j>=0;j--) {
-                    var allyUnit = that.bot.unitManager.getPlayerUnit(battleField.allySide[i][j]);
-                    if (allyUnit) {
-                        var spriteFileName, posX, posY;
-                        var frameNo = 0;
-                        if (allyUnit.playerId === attacker.playerId) {
-                            frameNo = 3;
-                            spriteFileName = "images/ally/" + that.bot.urlHelper.getSpriteImageName(allyUnit, "attack01");
-                            var average_column = 0;
-                            var average_row = 2;
-                            for(var k=0;k<targets.length;k++) {
-                                average_column += targets[k].column;
-                            }
-                            average_column = average_column / targets.length;
-
-
-                            posX = OFFSET_X + 102*(average_row) - 137*(average_column);
-                            posY = OFFSET_Y + 65*(average_row) + 37*(average_column);
-                        } else {
-                            if (battleField.isAlly(mainTargetUnit.playerId)) {
-                                if (targetMask[i][j]) {
-                                    spriteFileName = "images/ally/" + that.bot.urlHelper.getSpriteImageName(allyUnit, "damage");
-                                } else {
-                                    spriteFileName = "images/ally/" + that.bot.urlHelper.getSpriteImageName(allyUnit);
-                                }
-                            } else {
-                                spriteFileName = "images/ally/" + that.bot.urlHelper.getSpriteImageName(allyUnit);
-                            }
-                            posX = OFFSET_X + 102*(4+i) - 137*j;
-                            posY = OFFSET_Y + 65*(4+i) + 37*j;
-                        }
-
-                        imageList[spriteFileName].crop((frameNo%5) * 360, Math.floor(frameNo/5) * 270, 360, 270);
-                        background
-                            .composite(shadow, posX + 110, posY + 160)
-                            .composite(imageList[spriteFileName], posX, posY);
-                    }
-                }
-            }
-
-            result.push({
-                text: text,
-                image: background
-            })
-            that.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, callback);
-        });
+    painter.draw(function(image) {
+        result.push({
+            text: text,
+            image: image
+        })
+        that.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, callback);
     });
 }
 

@@ -6,7 +6,7 @@ module.exports = {
         var quest = bot.questDatabase.getQuestByName(questName);
         var userId = user.id;
         var player = bot.playerManager.getPlayer(userId);
-        var employee = bot.createEmployeeFromPlayer(player);
+        var employee = bot.unitManager.getPlayerUnit(userId);
         var partnerId = player.partnerId;
         
         if (quest == null) {
