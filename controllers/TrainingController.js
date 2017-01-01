@@ -139,7 +139,14 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             for(var j=0;j<skillPhase.attackTimes;j++) {
 
                 // damage = atk * modier * random * crit * buff * element - def
-                var damage = 123;   // TODO
+                var atk = attacker.getAtk();
+                var skillModifier = skillPhase.modier;
+                var randomFactor = this.bot.functionHelper.randomArbitrary(1/1.1, 1.1);
+                var isCrit = (this.bot.functionHelper.randomInt(attacker.getCrit() + targetUnit.getLuk() + 2) < attacker.getCrit() + 1);
+                var elementAdvantage = skillPhase.getElementFactor(targets[i].element);
+                var def = targets[i].getDef();
+
+                var damage = (atk * skillModifier * randomFactor * (isCrit?2.0:1.0) - def) * elementAdvantage;
 
                 if (j === skillPhase.attackTimes - 1) {
                     text += damage + "";    
@@ -167,7 +174,10 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
             text += "healing **";
             for(var j=0;j<skillPhase.attackTimes;j++) {
-                var healHp = 123;
+                var matk = attacker.getMAtk();
+                var skillModifier = skillPhase.modier;
+                var healHp = matk * skillModifier;
+                
                 if (j === skillPhase.attackTimes - 1) {
                     text += healHp + "";    
                 } else if (j < skillPhase.attackTimes - 2) {

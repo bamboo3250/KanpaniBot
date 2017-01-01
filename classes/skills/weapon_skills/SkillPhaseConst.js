@@ -8,8 +8,11 @@ function SkillPhaseConst() {
 
     this.TYPE_SHORT_NORMAL_ATTACK = 0;
     this.TYPE_LONG_NORMAL_ATTACK = 1;
-    this.TYPE_MAGICAL_ATTACK = 2;
+    this.TYPE_SPELL_ATTACK = 2;
     this.TYPE_HEALING = 3;
+
+    this.DAMAGE_PHYSICAL = 0;
+    this.DAMAGE_MAGICAL = 1;
 
     this.ELEMENT_NONE = 0;
     this.ELEMENT_FIRE = 1;
