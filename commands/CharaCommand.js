@@ -3,10 +3,11 @@ var Jimp = require("jimp");
 
 module.exports = {
     handle: function(message, bot) {
-        var text = message.content.trim().toLowerCase();
-        if (!text.startsWith("~chara ")) return;
-        
-        var name = bot.functionHelper.removeExtraSpace(text.substring(6));
+        var command = bot.functionHelper.parseCommand(message);
+        if (command.commandName !== "~chara" && command.commandName !== "~chara2") return;
+        var isChara2 = (command.commandName === "~chara2");
+
+        var name = command.args.join(" ");
         if (name === "") return;
         if (name.length > 100) {
             message.reply("The name is too long!");
@@ -80,7 +81,7 @@ module.exports = {
 
                     allySpriteImage.crop(0, 0, 360, 270);
                     enemySpriteImage.crop(0, 0, 360, 270);
-                    bustupImage.resize(Jimp.AUTO, 600).opacity(0.3);
+                    bustupImage.resize(Jimp.AUTO, 600).opacity((isChara2?1.0:0.3));
 
                     var imageName = "images/chara/" + employee._id + ".png";
                     var image = new Jimp(480, 290, function (err, image) {
@@ -88,10 +89,12 @@ module.exports = {
                         image.composite(bustupImage, 
                             -Math.floor((bustupImage.bitmap.width - image.bitmap.width)/2), 
                             -Math.floor((bustupImage.bitmap.height - image.bitmap.height)/2) - 20
-                        )
-                        .composite(enemySpriteImage, 160, 0)
-                        .composite(allySpriteImage, -60, 40)
-                        .crop(1, 0, 478, 290)
+                        );
+                        if (!isChara2) {
+                            image.composite(enemySpriteImage, 160, 0)
+                            .composite(allySpriteImage, -60, 40);
+                        }
+                        image.crop(1, 0, 478, 290)
                         .write(imageName, function() {
                             var channel = message.channel;
                             if (channel.type === "text" || channel.type === "dm") {
