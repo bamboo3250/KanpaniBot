@@ -2,16 +2,14 @@ module.exports = {
     handle: function(message, bot) {
         var text = message.content.trim().toLowerCase();
         if (text !== "~maint" && text !== "~maintenance") return;
-        if (bot.preventPM(message)) return;
-
+        
         var now = new Date();
         var maintenanceList = [];
-        if (message.channel.name === bot.dmmChannelName) {
-            maintenanceList = bot.dmmMaintenanceList;
-        } else if (message.channel.name === bot.nutakuChannelName) {
-            maintenanceList = bot.nutakuMaintenanceList;
-        } else {
-            return;
+        for(var i=0;i<bot.dmmMaintenanceList.length;i++) {
+            maintenanceList.push(bot.dmmMaintenanceList[i]);
+        }
+        for(var i=0;i<bot.nutakuMaintenanceList.length;i++) {
+            maintenanceList.push(bot.nutakuMaintenanceList[i]);
         }
 
         text = "\n";

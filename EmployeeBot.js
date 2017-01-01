@@ -82,17 +82,17 @@ function EmployeeBot() {
 
     this.dmmMaintenanceList = [
         {
-            name: "DMM Maintenance",
+            name: "DMM KG Maintenance",
             startTime: "Dec 28 2016 13:00:00 GMT+0900",
             endTime: "Dec 28 2016 17:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
-        name: "Nutaku Daily Draw Reset",
+        name: "Nutaku KG Daily Draw Reset",
         time: "Oct 20 2016 4:00:00 GMT+0000",
     };
     this.dmmDaily = {
-        name: "DMM Daily Draw Reset",
+        name: "DMM KG Daily Draw Reset",
         time: "Oct 20 2016 4:00:00 GMT+0900", 
     };
     this.nutakuDailyRemind = "Oct 20 2016 3:45:00 GMT+0000";
