@@ -1,13 +1,25 @@
+var Jimp = require("jimp");
+
 module.exports = {
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
         if (command.commandName != "~attack") return;
         
+        if (message.channel.name != "battlefield") {
+            message.reply("You can only use this command in Battlefield.");
+            return;
+        }
+
         var userId = message.author.id;
         var playerUnit = bot.unitManager.getPlayerUnit(userId);
         
         if (!playerUnit) {
             message.reply("You need to select character first.");
+            return;
+        }
+
+        if (playerUnit.currentHP === 0) {
+            message.reply("You are fainted. You cannot attack now.");
             return;
         }
 
@@ -24,6 +36,10 @@ module.exports = {
                 message.reply("One of your targets does not have character.");
                 return;
             }
+            if (targetUnit.getCurrentHP() === 0) {
+                message.reply("You cannot target a fainted player.");
+                return;
+            }
             targetUnitList.push(targetUnit);
         };
         
@@ -33,13 +49,56 @@ module.exports = {
             return;
         }
 
-        bot.battleController.attack(playerUnit, targetUnitList, function(err, text, imageFileName, shouldMention = false) {
+        bot.battleController.attack(playerUnit, targetUnitList, function(err, text, imageFileName, koList, shouldMention = false) {
             if (err) {
                 bot.log("[attack] " + err);
                 return;
             }
             if (imageFileName) {
-                message.channel.sendFile(imageFileName, "png", text);
+                message.channel.sendFile(imageFileName, "png", text)
+                .then(msg => {
+                    if (koList) {
+
+                        var queue = [];
+                        var queueToRead = [];
+                        for(var i=0;i<koList.length;i++) {
+                            var koUserId = koList[i];
+                            var koUnit = bot.unitManager.getPlayerUnit(koUserId);
+                            var imgUrl = bot.urlHelper.getIllustURL(koUnit, "chara_ko");
+                            var fileName = "images/chara_ko/" + koUnit.characterId + ".png";
+                            queue.push({ fileToDownload: imgUrl,   fileToSave: fileName});
+                            queueToRead.push(fileName);
+                        }
+
+                        bot.imageHelper.download(queue, function(err) {
+                            if (err) {
+                                message.reply("Error happened. Try again.");
+                                bot.log(err);
+                                return;
+                            }
+
+                            bot.imageHelper.read(queueToRead, function (err, imageList) {
+                                if (err) {
+                                    message.reply("Error happened. Try again.");
+                                    bot.log(err);
+                                    return;
+                                }
+                                image = new Jimp(1001 * koList.length, 1162, 0xFFFFFF00, function (err, image) {
+                                    for(var i=0;i<koList.length;i++) {
+                                        var koUserId = koList[i];
+                                        var koUnit = bot.unitManager.getPlayerUnit(koUserId);
+                                        var fileName = "images/chara_ko/" + koUnit.characterId + ".png";
+                                        image.composite(imageList[fileName], 1001 * i, 0);
+                                    }
+                                    var imageName = "images/battle_ko/" + userId + ".png";
+                                    image.write(imageName, function() {
+                                        message.channel.sendFile(imageName, "png", "");
+                                    });
+                                });
+                            });
+                        });
+                    }
+                }).catch(err => bot.log(err));
             } else {
                 if (shouldMention) {
                     message.reply(text);

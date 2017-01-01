@@ -9,14 +9,31 @@ module.exports = {
             message.reply("You haven't selected your character.");
             return;
         }
-
-        if (typeof bot.freeMe[userId] === "undefined") bot.freeMe[userId] = 2;
-
+        
         var employee = bot.unitManager.getPlayerUnit(userId);
+        if (message.channel.name === "battlefield") {
+            const elementEmoji = (message.guild == null ? employee.element : message.guild.emojis.find('name', 'k' + employee.element));
+
+            var text = "\n";
+            var partner = null;
+            if (player.partnerId != null) {
+                partner = bot.userManager.getUser(player.partnerId);     
+            }
+            text += "Character: **" + employee.fullName + "** (" + (elementEmoji?elementEmoji+", ":"") + "Lv.**" + employee.levelCached  + "**)\n";
+            text += "HP: **" + employee.getCurrentHP() + "/" + employee.getMaxHP() + "**\n";
+            text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (partner?"(Partner: **" + partner.username + "**)":"") + "\n";
+            text += "Skill: **" + employee.getCurrentSkill() + "**";
+            
+            message.reply(text);
+            return;
+        }
+
+
         var goldToDeduct = employee.levelCached * 1000;
         if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) {
             goldToDeduct *= 2;
         }
+        if (typeof bot.freeMe[userId] === "undefined") bot.freeMe[userId] = 2;
         if (bot.isPM(message) || bot.freeMe[userId] > 0) goldToDeduct = 0;
 
         if (player.gold < goldToDeduct) {
@@ -186,7 +203,7 @@ module.exports = {
 
                         text += "Class: **" + employee.getClass() + "** " + (classEmoji != null? classEmoji : "")  + "\n";
                         text += "Exp: **" + employee.exp + "** (Remain: **" + employee.getExpToNextLevel() + "pts**)\n";
-                        text += (hpEmoji != null? hpEmoji + " " : "") + "HP: **" + employee.getMaxHP() + "**\n";
+                        text += (hpEmoji != null? hpEmoji + " " : "") + "HP: **" + employee.getCurrentHP() + "/" + employee.getMaxHP() + "**\n";
                         text += (atkEmoji != null? atkEmoji + " " : "") + "Atk: **" + employee.getAtk() + "**\t";
                         text += (matkEmoji != null? matkEmoji + " " : "") + "M.Atk: **" + employee.getMAtk() + "**\n";
                         text += (defEmoji != null? defEmoji + " " : "") + "Def: **" + employee.getDef() + "**\t";

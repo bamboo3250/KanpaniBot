@@ -74,7 +74,7 @@ function resolveTargets(skillPhase, attacker, mainTarget, field) {
 
 }
 
-TrainingController.prototype.attackRecursively = function(skill, attacker, targetUnitList, battleField, iter, result, callback) {
+TrainingController.prototype.attackRecursively = function(skill, attacker, targetUnitList, battleField, iter, result, koResult, callback) {
     if (iter == skill.phases.length) {
         callback();
         return;
@@ -100,7 +100,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             var enemyUnit = this.bot.unitManager.getPlayerUnit(battleField.enemySide[i][j]);
             if (enemyUnit) {
                 if (enemyUnit === attacker) {
-                    painter.setEnemyState(i, j, enemyUnit, "attack01", 3);
+                    painter.setEnemyState(i, j, enemyUnit, skillPhase.state, skillPhase.frame);
                     if (skillPhase.isShortAttack()) {
                         painter.moveToFrontOfAllyField(i, j, average_column);
                     }
@@ -111,7 +111,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             var allyUnit = this.bot.unitManager.getPlayerUnit(battleField.allySide[i][j]);
             if (allyUnit) {
                 if (allyUnit === attacker) {
-                    painter.setAllyState(i, j, allyUnit, "attack01", 3);
+                    painter.setAllyState(i, j, allyUnit, skillPhase.state, skillPhase.frame);
                     if (skillPhase.isShortAttack()) {
                         painter.moveToFrontOfEnemyField(i, j, average_column);
                     }
@@ -121,6 +121,8 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             }
         }
     }
+
+    var isKOed = {};
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -138,15 +140,14 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
             for(var j=0;j<skillPhase.attackTimes;j++) {
 
-                // damage = atk * modier * random * crit * buff * element - def
                 var atk = attacker.getAtk();
-                var skillModifier = skillPhase.modier;
+                var skillModifier = skillPhase.modifier;
                 var randomFactor = this.bot.functionHelper.randomArbitrary(1/1.1, 1.1);
-                var isCrit = (this.bot.functionHelper.randomInt(attacker.getCrit() + targetUnit.getLuk() + 2) < attacker.getCrit() + 1);
-                var elementAdvantage = skillPhase.getElementFactor(targets[i].element);
-                var def = targets[i].getDef();
+                var isCrit = (this.bot.functionHelper.randomInt(attacker.getCrit() + targetUnit.getLUK() + 2) < attacker.getCrit() + 1);
+                var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
+                var def = targetUnit.getDef();
 
-                var damage = (atk * skillModifier * randomFactor * (isCrit?2.0:1.0) - def) * elementAdvantage;
+                var damage = Math.max(1, Math.floor((1 - 0.00115 * def) * atk * skillModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0) - def / 4));
 
                 if (j === skillPhase.attackTimes - 1) {
                     text += damage + "";    
@@ -156,9 +157,13 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     text += damage + " and ";    
                 }
                 if (onEnemySide) {
-                    painter.addEnemyDamage(targetFieldPos.row, targetFieldPos.column, damage, "normal");
+                    painter.addEnemyDamage(targetFieldPos.row, targetFieldPos.column, damage, (isCrit?"crit":"normal"));
                 } else {
-                    painter.addAllyDamage(targetFieldPos.row, targetFieldPos.column, damage, "crit");
+                    painter.addAllyDamage(targetFieldPos.row, targetFieldPos.column, damage, (isCrit?"crit":"normal"));
+                }
+                var isFainted = this.bot.unitManager.takeDamagePlayerUnit(targetUnit.playerId, damage);
+                if (isFainted) {
+                    isKOed[targetUnit.playerId] = true;
                 }
             }
             text += " damage** to " + targetName + ".\n";
@@ -190,6 +195,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 } else {
                     painter.addAllyDamage(targetFieldPos.row, targetFieldPos.column, damage, "heal");
                 }
+                this.bot.unitManager.healPlayerUnit(targetUnit.playerId, healHp);
             }
             text += " HP** for " + targetName + ".\n";
         }
@@ -200,8 +206,9 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         result.push({
             text: text,
             image: image
-        })
-        that.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, callback);
+        });
+        for(key in isKOed) koResult.push(key);
+        that.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
     });
 }
 
@@ -211,29 +218,32 @@ TrainingController.prototype.randomField = function(middlePlayerId) {
     for(key in this.bot.playerManager.playerDict) {
         var userId = key;
         var player = this.bot.playerManager.getPlayer(userId);
-        var groupId = (player.partnerId? player.partnerId: userId);
+        var playerUnit = this.bot.unitManager.getPlayerUnit(userId);
+        if (playerUnit.getCurrentHP() > 0) {
+            var groupId = (groups[player.partnerId]? player.partnerId: userId);
         
-        if (userId === middlePlayerId || player.partnerId === middlePlayerId) {
+            if (userId === middlePlayerId || player.partnerId === middlePlayerId) {
+                if (player.position === "front") {
+                    field[0][1] = userId;
+                } else {
+                    field[1][1] = userId;
+                }
+                continue;
+            }
+
+            if (typeof groups[groupId] === "undefined") {
+                groups[groupId] = {
+                    frontline: null,
+                    backline: null
+                }
+            }
+
             if (player.position === "front") {
-                field[0][1] = userId;
+                groups[groupId].frontline = userId;
             } else {
-                field[1][1] = userId;
-            }
-            continue;
-        }
-
-        if (typeof groups[groupId] === "undefined") {
-            groups[groupId] = {
-                frontline: null,
-                backline: null
-            }
-        }
-
-        if (player.position === "front") {
-            groups[groupId].frontline = userId;
-        } else {
-            groups[groupId].backline = userId;
-        }
+                groups[groupId].backline = userId;
+            }    
+        } 
     }
     var groupList = [];
     for(key in groups) groupList.push(groups[key]);
@@ -269,12 +279,12 @@ TrainingController.prototype.randomTrainer = function() {
 TrainingController.prototype.attack = function(attacker, targetUnitList, callback) {
     var skillName = attacker.getCurrentSkill();
     if (!skillName) {
-        callback(null, "You need to equip weapon first.", null, true);
+        callback(null, "You need to equip weapon first.", null, null, true);
         return;
     }
     var skill = this.bot.skillDatabase.getSkill(attacker.getClassId(), skillName);
     if (!skill.canAttack) {
-        callback(null, "You cannot use **" + skillName + "** to attack.", null, true);
+        callback(null, "You cannot use **" + skillName + "** to attack.", null, null, true);
         return;
     }
 
@@ -286,7 +296,7 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         if (skillPhase.canAttack()) {
             var targetPos = getPosOnField(targetUnitList[i], this.trainerField);
             if (!targetPos) {
-                callback(null, "You can only attack the trainer.", null, true);
+                callback(null, "You can only attack the trainer.", null, null, true);
                 return;
             }
         } else {
@@ -305,13 +315,14 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
 
     var result1 = [];
     var result2 = [];
+    var koResult = [];
     var that = this;
 
     var battleField = new BattleField();
     battleField.enemySide = this.trainerField;
     battleField.allySide = this.randomField(attacker.playerId);
 
-    this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, function() {
+    this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, koResult, function() {
 
         var trainerToAttack = that.randomTrainer();
         var trainerSkillName = trainerToAttack.getCurrentSkill();
@@ -322,39 +333,48 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
             trainerTarget = trainerToAttack;
         }
 
-        that.attackRecursively(trainerSkill, trainerToAttack, [trainerTarget], battleField, 0, result2, function() {
+        var text = "";
+        for(var i=0;i<result1.length;i++) {
+            text += "=======PLAYER'S PHASE " + (i+1) + "=======\n";
+            text += result1[i].text + "\n";
+        }
+        var imageList = [];
+        for(var i=0;i<result1.length;i++) {
+            if (result1[i].image) imageList.push(result1[i].image);
+        }
+        
+        if (trainerToAttack.getCurrentHP() > 0) {
+            that.attackRecursively(trainerSkill, trainerToAttack, [trainerTarget], battleField, 0, result2, koResult, function() {
+                for(var i=0;i<result2.length;i++) {
+                    text += "=======TRAINER'S PHASE " + (i+1) + "=======\n";
+                    text += result2[i].text + "\n";
+                }
+                for(var i=0;i<result2.length;i++) {
+                    if (result2[i].image) imageList.push(result2[i].image);
+                }
 
-            var text = "";
-            for(var i=0;i<result1.length;i++) {
-                text += "=======PLAYER'S PHASE " + (i+1) + "=======\n";
-                text += result1[i].text + "\n";
-            }
-            for(var i=0;i<result2.length;i++) {
-                text += "=======TRAINER'S PHASE " + (i+1) + "=======\n";
-                text += result2[i].text + "\n";
-            }
-
-            var imageList = [];
-            for(var i=0;i<result1.length;i++) {
-                if (result1[i].image) imageList.push(result1[i].image);
-            }
-            for(var i=0;i<result2.length;i++) {
-                if (result2[i].image) imageList.push(result2[i].image);
-            }
-
+                image = new Jimp(950, 590 * imageList.length, 0xFFFFFF00, function (err, image) {
+                    for(var i=0;i<imageList.length;i++) {
+                        image.composite(imageList[i], 0, 590 * i);
+                    }
+                    var imageName = "images/battle/" + attacker.playerId + ".png";
+                    image.write(imageName, function() {
+                        callback(null, text, imageName, koResult);
+                    });
+                });
+            });    
+        } else {
             image = new Jimp(950, 590 * imageList.length, 0xFFFFFF00, function (err, image) {
                 for(var i=0;i<imageList.length;i++) {
                     image.composite(imageList[i], 0, 590 * i);
                 }
                 var imageName = "images/battle/" + attacker.playerId + ".png";
                 image.write(imageName, function() {
-                    callback(null, text, imageName);
+                    callback(null, text, imageName, koResult);
                 });
             });
-        });    
+        }
     });
-
-    
 }
 
 module.exports = new TrainingController();

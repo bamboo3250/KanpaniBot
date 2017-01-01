@@ -52,7 +52,7 @@ module.exports = {
             var enemySpriteUrl = employee.getSpriteImageURL(star, true, "character");
             var allySpriteUrl = employee.getSpriteImageURL(star, false, "character");
 
-            var bustupFileName = "images/bustup/" + employee._id + ".png";
+            var bustupFileName = "images/bustup/" + employee.characterId + ".png";
             var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(star, "character");
             var allySpriteFileName = "images/ally/" + employee.getSpriteImageName(star, "character");
 
@@ -82,7 +82,7 @@ module.exports = {
                     enemySpriteImage.crop(0, 0, 360, 270);
                     bustupImage.resize(Jimp.AUTO, 600).opacity(0.3);
 
-                    var imageName = "images/chara/" + employee._id + ".png";
+                    var imageName = "images/chara/" + employee.characterId + ".png";
                     var image = new Jimp(480, 290, function (err, image) {
 
                         image.composite(bustupImage, 

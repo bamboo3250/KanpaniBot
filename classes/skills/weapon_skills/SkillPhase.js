@@ -41,7 +41,7 @@ const SKILL_PATTERN_MASKS = [
 SkillPhase.prototype.canAttack = function() {
     return this.skillType === SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK
         || this.skillType === SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK
-        || this.skillType === SkillPhaseConst.TYPE_MAGICAL_ATTACK;
+        || this.skillType === SkillPhaseConst.TYPE_SPELL_ATTACK;
 }
 
 SkillPhase.prototype.canHeal = function() {
@@ -53,7 +53,7 @@ SkillPhase.prototype.isShortAttack = function() {
 }
 
 SkillPhase.prototype.isSpellAttack = function() {
-    return this.skillType === SkillPhaseConst.TYPE_MAGICAL_ATTACK;
+    return this.skillType === SkillPhaseConst.TYPE_SPELL_ATTACK;
 }
 
 SkillPhase.prototype.usePhysicalDamage = function() {

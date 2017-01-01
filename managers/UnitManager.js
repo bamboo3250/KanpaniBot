@@ -63,4 +63,20 @@ UnitManager.prototype.setAccessory = function(userId, accessoryId, plus) {
     }
 }
 
+UnitManager.prototype.takeDamagePlayerUnit = function(userId, damage) {
+    var unit = this.playerUnits[userId];
+    if (unit && damage > 0) {
+        unit.currentHP = Math.max(0, unit.currentHP - damage);
+        return (unit.currentHP === 0);
+    }
+    return false;
+}
+
+UnitManager.prototype.healPlayerUnit = function(userId, healHP) {
+    var unit = this.playerUnits[userId];
+    if (unit && healHP > 0) {
+        unit.currentHP = Math.min(unit.getMaxHP(), unit.currentHP + healHP);
+    }
+}
+
 module.exports = new UnitManager();

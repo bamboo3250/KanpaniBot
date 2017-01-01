@@ -28,7 +28,7 @@ BattlePainter.prototype.setEnemyState = function(row, column, unit, state = "idl
         state: state,
         frame: frame,
         row: 1-row,
-        column: 2-column
+        column: column
     };
 }
 
@@ -38,7 +38,7 @@ BattlePainter.prototype.setAllyState = function(row, column, unit, state = "idle
         state: state,
         frame: frame,
         row: 4+row,
-        column: column
+        column: 2-column
     };
 }
 
@@ -66,7 +66,7 @@ BattlePainter.prototype.moveToFrontOfEnemyField = function(row, column, newColum
 BattlePainter.prototype.moveToFrontOfAllyField = function(row, column, newColumn) {
     if (this.states["enemy"][row][column]) {
         this.states["enemy"][row][column].row = 3;
-        this.states["enemy"][row][column].column = newColumn;
+        this.states["enemy"][row][column].column = 2-newColumn;
     }
 }
 
@@ -109,7 +109,6 @@ BattlePainter.prototype.draw = function(callback) {
 
         var backgroundFileName = "images/misc/background/battlefield_01.jpg";
         readQueue.push(backgroundFileName)
-        for(var i=0;i<readQueue.length;i++) console.log(readQueue[i]);
         that.bot.imageHelper.read(readQueue, function (err, imageList) {
             if (err) {
                 message.reply("Error happened. Try again.");
@@ -122,6 +121,8 @@ BattlePainter.prototype.draw = function(callback) {
 
             var OFFSET_X = 175;
             var OFFSET_Y = -40;
+
+            console.log(that.states);
             // enemy
             for(var i=1;i>=0;i--) {
                 for(var j=0;j<3;j++) {
@@ -175,13 +176,13 @@ BattlePainter.prototype.draw = function(callback) {
                             while (damage > 0) {
                                 var digit = damage % 10;
                                 var digitImage = that.bot.imageManager.getDamage(type, digit);
-                                background.composite(digitImage, posX + 190, posY + k+20);
+                                background.composite(digitImage, posX + 190, posY + k*20);
                                 damage = Math.floor(damage/10);
                                 posX -= 20;
                             }    
                         } else {
                             var digitImage = that.bot.imageManager.getDamage(type, digit);
-                            background.composite(digitImage, posX + 190, posY + k+20);
+                            background.composite(digitImage, posX + 190, posY + k*20);
                         }
                     }
                 }
@@ -201,13 +202,13 @@ BattlePainter.prototype.draw = function(callback) {
                             while (damage > 0) {
                                 var digit = damage % 10;
                                 var digitImage = that.bot.imageManager.getDamage(type, digit);
-                                background.composite(digitImage, posX + 190, posY + k+20);
+                                background.composite(digitImage, posX + 190, posY + k*20);
                                 damage = Math.floor(damage/10);
                                 posX -= 20;
                             }    
                         } else {
                             var digitImage = that.bot.imageManager.getDamage(type, digit);
-                            background.composite(digitImage, posX + 190, posY + k+20);
+                            background.composite(digitImage, posX + 190, posY + k*20);
                         }
                     }
                 }

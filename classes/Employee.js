@@ -169,6 +169,10 @@ Employee.prototype.getLUK = function() {
     return Math.floor(this.baseStats._luk + (this.levelCached - 1)*slope + 0.5);
 }
 
+Employee.prototype.getCurrentHP = function() {
+    return this.currentHP;
+}
+
 Employee.prototype.getMaxHP = function() {
     var classId = this.getClassId();
     var bonusHp = (this.getBaseRarity() == 5?1:0);
@@ -285,6 +289,7 @@ Employee.prototype.getBackSkill = function() {
 
 Employee.prototype.getCurrentSkill = function() {
     if (!this.weapon) return null;
+    console.log(this.position);
     if (this.position === "front") {
         return this.weapon.frontSkill;
     } else {
