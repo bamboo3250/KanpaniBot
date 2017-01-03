@@ -3,6 +3,11 @@ module.exports = {
         var command = bot.functionHelper.parseCommand(message);
         if (command.commandName != "~weapon") return;
 
+        if (command.args.length < 2) {
+            message.reply("The arguments are not correct.");
+            return;
+        }        
+
         var classId = bot.functionHelper.getClassId(command.args[0]);
         if (!classId) {
             message.reply("Class name is not correct.");
