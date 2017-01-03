@@ -74,8 +74,28 @@ UnitManager.prototype.takeDamagePlayerUnit = function(userId, damage) {
 
 UnitManager.prototype.healPlayerUnit = function(userId, healHP) {
     var unit = this.playerUnits[userId];
+    var prevHP = unit.currentHP;
     if (unit && healHP > 0) {
         unit.currentHP = Math.min(unit.getMaxHP(), unit.currentHP + healHP);
+    }
+    return unit.currentHP - prevHP;
+}
+
+UnitManager.prototype.setRespawn = function(userId) {
+    var unit = this.playerUnits[userId];
+    var user = this.bot.userManager.getUser(userId);
+    if (unit && unit.currentHP === 0) {
+        var now = new Date();
+        var respawnDuration = (60 + unit.levelCached*20) * 1000;
+        unit.respawnTime = now.valueOf() + respawnDuration;
+        
+        setTimeout(function(){
+            unit.fullHeal();
+            unit.respawnTime = null;
+            if (user) {
+                user.sendMessage("Your character has respawned.");
+            }
+        }, respawnDuration);
     }
 }
 

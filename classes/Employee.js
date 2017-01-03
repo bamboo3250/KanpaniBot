@@ -22,6 +22,7 @@ var Employee = function(employeeInfo, playerId = null) {
     this.position = "front";
 
     this.currentHP = 0;
+    this.respawnTime = null;
     // this.status = {
     //     "stun": null,
     //     "paralyze": null,

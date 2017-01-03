@@ -109,6 +109,7 @@ BattlePainter.prototype.draw = function(callback) {
 
         var backgroundFileName = "images/misc/background/battlefield_01.jpg";
         readQueue.push(backgroundFileName)
+        console.log(readQueue);
         that.bot.imageHelper.read(readQueue, function (err, imageList) {
             if (err) {
                 message.reply("Error happened. Try again.");
@@ -173,13 +174,18 @@ BattlePainter.prototype.draw = function(callback) {
                         var posY = OFFSET_Y + 65*(that.states["enemy"][i][j].row) + 37*(that.states["enemy"][i][j].column);
                         
                         if (type != "miss") {
-                            while (damage > 0) {
-                                var digit = damage % 10;
-                                var digitImage = that.bot.imageManager.getDamage(type, digit);
+                            if (damage > 0) {
+                                while (damage > 0) {
+                                    var digit = damage % 10;
+                                    var digitImage = that.bot.imageManager.getDamage(type, digit);
+                                    background.composite(digitImage, posX + 190, posY + k*20);
+                                    damage = Math.floor(damage/10);
+                                    posX -= 20;
+                                }    
+                            } else {
+                                var digitImage = that.bot.imageManager.getDamage(type, 0);
                                 background.composite(digitImage, posX + 190, posY + k*20);
-                                damage = Math.floor(damage/10);
-                                posX -= 20;
-                            }    
+                            }
                         } else {
                             var digitImage = that.bot.imageManager.getDamage(type, digit);
                             background.composite(digitImage, posX + 190, posY + k*20);
@@ -199,13 +205,18 @@ BattlePainter.prototype.draw = function(callback) {
                         var posY = OFFSET_Y + 65*(that.states["ally"][i][j].row) + 37*(that.states["ally"][i][j].column);
                         
                         if (type != "miss") {
-                            while (damage > 0) {
-                                var digit = damage % 10;
-                                var digitImage = that.bot.imageManager.getDamage(type, digit);
+                            if (damage > 0) {
+                                while (damage > 0) {
+                                    var digit = damage % 10;
+                                    var digitImage = that.bot.imageManager.getDamage(type, digit);
+                                    background.composite(digitImage, posX + 190, posY + k*20);
+                                    damage = Math.floor(damage/10);
+                                    posX -= 20;
+                                }    
+                            } else {
+                                var digitImage = that.bot.imageManager.getDamage(type, 0);
                                 background.composite(digitImage, posX + 190, posY + k*20);
-                                damage = Math.floor(damage/10);
-                                posX -= 20;
-                            }    
+                            } 
                         } else {
                             var digitImage = that.bot.imageManager.getDamage(type, digit);
                             background.composite(digitImage, posX + 190, posY + k*20);

@@ -19,7 +19,10 @@ module.exports = {
         }
 
         if (playerUnit.currentHP === 0) {
-            message.reply("You are fainted. You cannot attack now.");
+            var now = new Date();
+            var remainingTime = playerUnit.respawnTime - now.valueOf();
+            var time = bot.functionHelper.parseTime(remainingTime);
+            message.reply("You have fainted. You can attack again after " + time + ".");
             return;
         }
 
@@ -53,6 +56,17 @@ module.exports = {
             if (err) {
                 bot.log("[attack] " + err);
                 return;
+            }
+            if (koList) {
+                for(var i=0;i<koList.length;i++) {
+                    var koUserId = koList[i];
+                    var koUnit = bot.unitManager.getPlayerUnit(koUserId);
+                    var koUser = bot.userManager.getUser(koUserId);
+                    if (koUser) {
+                        text += koUnit.shortName + " (" + koUser.username + ") is KO-ed!\n";
+                    }
+                    bot.unitManager.setRespawn(koUserId);
+                }
             }
             if (imageFileName) {
                 message.channel.sendFile(imageFileName, "png", text)

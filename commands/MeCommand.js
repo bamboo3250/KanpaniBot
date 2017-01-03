@@ -20,7 +20,8 @@ module.exports = {
                 partner = bot.userManager.getUser(player.partnerId);     
             }
             text += "Character: **" + employee.fullName + "** (" + (elementEmoji?elementEmoji+", ":"") + "Lv.**" + employee.levelCached  + "**)\n";
-            text += "HP: **" + employee.getCurrentHP() + "/" + employee.getMaxHP() + "**\n";
+            var now = new Date();
+            text += "HP: **" + employee.getCurrentHP() + "/" + employee.getMaxHP() + "**" + (employee.respawnTime?" (Respawn in " + bot.functionHelper.parseTime(employee.respawnTime - now.valueOf()) + ")":"") + "\n";
             text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (partner?"(Partner: **" + partner.username + "**)":"") + "\n";
             text += "Skill: **" + employee.getCurrentSkill() + "**";
             
