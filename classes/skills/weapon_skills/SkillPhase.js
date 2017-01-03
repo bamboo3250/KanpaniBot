@@ -1,6 +1,6 @@
 var SkillPhaseConst = require('./SkillPhaseConst');
 
-function SkillPhase(pattern, skillType, modifier, attackTimes, damageType, element, targetType, state = "attack01", frame = 0) {
+function SkillPhase(pattern, skillType, modifier, attackTimes, damageType, element, targetType, state = "attack01", frame = 0, hasAnimation = false, allyOffsetX = 0, allyOffsetY = 0, enemyOffsetX = 0, enemyOffsetY = 0) {
     this.pattern = pattern;
     this.skillType = skillType;
     this.modifier = modifier;
@@ -10,6 +10,12 @@ function SkillPhase(pattern, skillType, modifier, attackTimes, damageType, eleme
     this.targetType = targetType;
     this.state = state;
     this.frame = frame;
+    this.hasAnimation = hasAnimation;
+    this.allyOffsetX = allyOffsetX;
+    this.allyOffsetY = allyOffsetY;
+    this.enemyOffsetX = enemyOffsetX;
+    this.enemyOffsetY = enemyOffsetY;
+    
 }
 
 const SKILL_PATTERN_MASKS = [

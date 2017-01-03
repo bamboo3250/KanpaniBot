@@ -272,6 +272,24 @@ module.exports = {
                     "attack01", 3
                 )
             ]
+        },
+        "Einzelkampf": {
+            canAttack: true,
+            canHeal: false,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    1.68, 2,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_DARK,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 3,
+                    true,
+                    0, 0,
+                    0, 0
+                )
+            ]
         }
     },
 

@@ -336,7 +336,7 @@ elsa.playerData = {
     exp: 19739650,//2646190,
     gold: 0,
     equipedWeapon: {
-        _id: "3001091",
+        _id: "308119",
         plus: 3
     },
     equipedArmor: {

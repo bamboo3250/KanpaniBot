@@ -4241,4 +4241,40 @@ module.exports = {
             ]
         }
     ],
+
+    "cw": [
+        {
+            _id: "308119", modelId: "19", name: "Fenris Novem", commonNames: ["Fenris Novem"],
+            characterId: "10150002_765306d2", type: "character", isActive: false, stats: {
+                "+0": { price: 5000,
+                    patk: 104, pdef: 85, matk: 0, mdef: 85, crit: 30, hit: 30, eva: 5,
+                    frontSkill: "V Slash", backSkill: "Cross Edge"
+                },
+                "+1": { price: 6000,
+                    patk: 119, pdef: 90, matk: 0, mdef: 100, crit: 35, hit: 35, eva: 10,
+                    frontSkill: "Power Cross", backSkill: "Cross Edge"
+                },
+                "+2": { price: 7000,
+                    patk: 165, pdef: 118, matk: 0, mdef: 125, crit: 40, hit: 40, eva: 15,
+                    frontSkill: "Dragon Fang", backSkill: "Power Cross"
+                },
+                "+3": { price: 8000,
+                    patk: 220, pdef: 155, matk: 0, mdef: 165, crit: 45, hit: 45, eva: 20,
+                    frontSkill: "Einzelkampf", backSkill: "Dragon Fang"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Mithril Ore",
+                    amount: 2
+                },{
+                    materialName: "Rose Quartz",
+                    amount: 1
+                },{
+                    materialName: "Holy Water",
+                    amount: 2
+                }
+            ]
+        }
+    ]
 };

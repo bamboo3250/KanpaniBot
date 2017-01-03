@@ -30,9 +30,16 @@ WeaponDatabase.prototype.getWeaponByCodeName = function(codeName, classId) {
     if (typeof weaponList === "undefined") return null;
 
     for(var i=0;i<weaponList.length;i++) {
-        if (weaponList[i].classId == classId) {
-            return weaponList[i];
+        if (codeName != "cw") {
+            if (weaponList[i].classId == classId) {
+                return weaponList[i];
+            }    
+        } else {
+            if (weaponList[i].characterId == classId) {
+                return weaponList[i];
+            }
         }
+        
     }
     return null;
 }
