@@ -14,8 +14,12 @@ UnitManager.prototype.createUnitForPlayer = function(player) {
     if (!this.playerUnits[player._id]) {
         var employeeInfo = this.bot.employeeDatabase.getEmployeeById(player.characterId)
         this.playerUnits[player._id] = new Employee(employeeInfo, player._id);
+        if (player.isTrainer) {
+            this.playerUnits[player._id].isTrainer = true;
+        }
         this.refreshUnitForPlayer(player);
         this.playerUnits[player._id].fullHeal();
+
     }
     return this.playerUnits[player._id];
 }
@@ -86,7 +90,7 @@ UnitManager.prototype.setRespawn = function(userId) {
     var user = this.bot.userManager.getUser(userId);
     if (unit && unit.currentHP === 0) {
         var now = new Date();
-        var respawnDuration = (60 + unit.levelCached*20) * 1000;
+        var respawnDuration = (unit.isTrainer ? 6*60*60*1000 : (60 + unit.levelCached*20) * 1000);
         unit.respawnTime = now.valueOf() + respawnDuration;
         
         setTimeout(function(){

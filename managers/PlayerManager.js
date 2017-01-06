@@ -244,4 +244,16 @@ PlayerManager.prototype.unsetPartner = function(playerId) {
     partner.partnerId = null;
 }
 
+PlayerManager.prototype.setExp = function(playerId, setExp) {
+    var player = this.getPlayer(playerId);
+    if (!player) return;
+    player.exp = setExp;
+}
+
+PlayerManager.prototype.addExp = function(playerId, gainedExp) {
+    var player = this.getPlayer(playerId);
+    if (!player) return;
+    player.exp += gainedExp;
+}
+
 module.exports = new PlayerManager();

@@ -286,8 +286,9 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true,
-                    0, 0,
-                    0, 0
+                    -200, -310,
+                    -380, -300,
+                    0.65
                 )
             ]
         }

@@ -23,6 +23,8 @@ var Employee = function(employeeInfo, playerId = null) {
 
     this.currentHP = 0;
     this.respawnTime = null;
+
+    this.isTrainer = false;
     // this.status = {
     //     "stun": null,
     //     "paralyze": null,
@@ -175,6 +177,8 @@ Employee.prototype.getCurrentHP = function() {
 }
 
 Employee.prototype.getMaxHP = function() {
+    if (this.isTrainer) return 50000;
+    
     var classId = this.getClassId();
     var bonusHp = (this.getBaseRarity() == 5?1:0);
     if (classId === 1) return this.getVIT() * (4 + bonusHp);
@@ -290,12 +294,15 @@ Employee.prototype.getBackSkill = function() {
 
 Employee.prototype.getCurrentSkill = function() {
     if (!this.weapon) return null;
-    console.log(this.position);
     if (this.position === "front") {
         return this.weapon.frontSkill;
     } else {
         return this.weapon.backSkill;
     }
+}
+
+Employee.prototype.isFainted = function() {
+    return this.currentHP <= 0;
 }
 
 Employee.prototype.fullHeal = function() {

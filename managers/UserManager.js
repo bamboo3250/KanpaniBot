@@ -47,4 +47,11 @@ UserManager.prototype.getUser = function(id) {
     return member.user;
 }
 
+UserManager.prototype.announceLevel = function(id, newLevel) {
+    var user = this.getUser(id);
+    if (user) {
+        user.sendMessage("Congratulations! Your level has increased to **" + newLevel + "**");
+    }
+}
+
 module.exports = new UserManager();

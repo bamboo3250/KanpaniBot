@@ -150,13 +150,16 @@ module.exports = {
                 var partnerUser = bot.userManager.getUser(partnerId);
                 if (partnerUser) {
                     var partnerText = "You have received **" + bonusExp + " Exp** for being partner with **" + user.username + "** in " + questName + ".\n";
-                    if (partnerIsLevelUp) partnerText += partnerLevelUpText;
+                    if (partnerIsLevelUp) {
+                        setTimeout(function() {
+                            bot.userManager.announceLevel(partnerId, partnerEmployee.levelCached);
+                        }, 5000);
+                    }
                     partnerUser.sendMessage(partnerText);
                 }
             }
 
             var isLevelUp = (preLevel < employee.levelCached)
-            var levelUpText = "Congratulations! Your level has increased to **" + employee.levelCached + "**";
             
             player.gold += goldGained;
             bot.initBreadIfNeed(userId);
@@ -233,7 +236,7 @@ module.exports = {
                                 user.sendFile(imageName, "png", text);
                                 if (isLevelUp) {
                                     setTimeout(function() {
-                                        user.sendMessage(levelUpText);
+                                        bot.userManager.announceLevel(userId, employee.levelCached);
                                     }, 5*1000);
                                 }   
                             });

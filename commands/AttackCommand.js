@@ -40,7 +40,7 @@ module.exports = {
                 return;
             }
             if (targetUnit.getCurrentHP() === 0) {
-                message.reply("You cannot target a fainted player.");
+                message.reply("You cannot target a fainted unit.");
                 return;
             }
             targetUnitList.push(targetUnit);

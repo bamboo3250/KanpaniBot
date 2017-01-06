@@ -63,6 +63,7 @@ var ceoPowerCommand = require('./commands/CEOPowerCommand');
 
 var attackCommand = require('./commands/AttackCommand');
 var healCommand = require('./commands/HealCommand');
+var trainerCommand = require('./commands/TrainerCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -447,6 +448,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         ceoPowerCommand.handle(message, this);
         attackCommand.handle(message, this);
         healCommand.handle(message, this);
+        trainerCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
