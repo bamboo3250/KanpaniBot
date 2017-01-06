@@ -1,3 +1,5 @@
+var Jimp = require("jimp");
+
 function BattlePainter(bot) {
     this.states = {
         "enemy": [
@@ -99,6 +101,12 @@ BattlePainter.prototype.draw = function(callback) {
                 readQueue.push(spriteFileName);
                 queue.push({
                     fileToDownload: spriteUrl,   fileToSave: spriteFileName
+                });
+                var thumbnailUrl = this.bot.urlHelper.getIllustURL(unit, "thumbnail");
+                var thumbnailFileName = "images/thumbnail/" + unit.characterId + ".png";
+                readQueue.push(thumbnailFileName);
+                queue.push({
+                    fileToDownload: thumbnailUrl,   fileToSave: thumbnailFileName
                 });    
             }
 
@@ -110,6 +118,12 @@ BattlePainter.prototype.draw = function(callback) {
                 readQueue.push(spriteFileName);
                 queue.push({
                     fileToDownload: spriteUrl,   fileToSave: spriteFileName
+                });
+                var thumbnailUrl = this.bot.urlHelper.getIllustURL(unit, "thumbnail");
+                var thumbnailFileName = "images/thumbnail/" + unit.characterId + ".png";
+                readQueue.push(thumbnailFileName);
+                queue.push({
+                    fileToDownload: thumbnailUrl,   fileToSave: thumbnailFileName
                 });    
             }
         }
@@ -124,11 +138,27 @@ BattlePainter.prototype.draw = function(callback) {
 
         var backgroundFileName = "images/misc/background/battlefield_01.jpg";
         readQueue.push(backgroundFileName);
+
         var effectFileName = null;
         if (that.skillNameToAnimate) {
             effectFileName = "images/misc/skill_animation/" + that.skillNameToAnimate + ".png";
             readQueue.push(effectFileName);
         }
+
+        var enemyPanelFileName = "images/misc/battle_status_enemy_base.png";
+        readQueue.push(enemyPanelFileName);
+        var allyPanelFileName = "images/misc/battle_status_ally_base.png";
+        readQueue.push(allyPanelFileName);
+        var enemyUnitPanelFileName = "images/misc/battle_status_enemy_chara_base.png";
+        readQueue.push(enemyUnitPanelFileName);
+        var allyUnitPanelFileName = "images/misc/battle_status_ally_chara_base.png";
+        readQueue.push(allyUnitPanelFileName);
+
+        var hpBarFileName = "images/misc/hp_bar.png";
+        readQueue.push(hpBarFileName);
+        var koFileName = "images/misc/ko.png";
+        readQueue.push(koFileName);
+
 
         that.bot.imageHelper.read(readQueue, function (err, imageList) {
             if (err) {
@@ -224,7 +254,73 @@ BattlePainter.prototype.draw = function(callback) {
                 }
             });
 
-            callback(background);
+            const PANEL_PADDING = 10;
+            const enemyPanelCoordX = PANEL_PADDING;
+            const enemyPanelCoordY = 462 - PANEL_PADDING;
+            const allyPanelCoordX = 632 - PANEL_PADDING;
+            const allyPanelCoordY = PANEL_PADDING;
+
+            background
+                .composite(imageList[enemyPanelFileName], enemyPanelCoordX, enemyPanelCoordY)
+                .composite(imageList[allyPanelFileName], allyPanelCoordX, allyPanelCoordY);
+            
+            const UNIT_PANEL_WIDTH = 104;
+            const UNIT_PANEL_HEIGHT = 50;                
+            const PANEL_INNER_TOP = 29;
+            const PANEL_INNER_LEFT = 5;
+
+            Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
+
+                background.print(font, enemyPanelCoordX + 5, enemyPanelCoordY + 5, "TRAINER");
+                background.print(font, allyPanelCoordX + 5, allyPanelCoordY + 5, "PLAYER");
+                
+                for(var i=0;i<2;i++) {
+                    for(var j=0;j<3;j++) {
+                        var allyUnitPanelCoordX = allyPanelCoordX + PANEL_INNER_LEFT + j*UNIT_PANEL_WIDTH;
+                        var allyUnitPanelCoordY = allyPanelCoordY + PANEL_INNER_TOP + i*UNIT_PANEL_HEIGHT;
+                        background.composite(imageList[allyUnitPanelFileName], allyUnitPanelCoordX, allyUnitPanelCoordY);
+                        if (that.states["ally"][i][j]) {
+                            var unit = that.states["ally"][i][j].unit;
+                            var user = that.bot.userManager.getUser(unit.playerId);
+                            var thumbnailFileName = "images/thumbnail/" + unit.characterId + ".png";
+                            background.composite(imageList[thumbnailFileName], allyUnitPanelCoordX + 2, allyUnitPanelCoordY)
+                            background.print(font, allyUnitPanelCoordX + 44, allyUnitPanelCoordY + 2, that.bot.functionHelper.trimIfLong(user.username, 4));
+                            var cloneHpBar = imageList[hpBarFileName].clone();
+                            var percentHP = unit.getCurrentHP() / unit.getMaxHP();
+                            cloneHpBar.crop(0,0,percentHP*cloneHpBar.bitmap.width,cloneHpBar.bitmap.height);
+                            background.composite(cloneHpBar, allyUnitPanelCoordX + 44, allyUnitPanelCoordY + 39);
+
+                            if (unit.isFainted()) {
+                                background.composite(imageList[koFileName], allyUnitPanelCoordX + 35, allyUnitPanelCoordY + 20);
+                            }
+                        }
+                    }
+                }
+                for(var i=0;i<2;i++) {
+                    for(var j=0;j<3;j++) {
+                        var enemyUnitPanelCoordX = enemyPanelCoordX + PANEL_INNER_LEFT + j*UNIT_PANEL_WIDTH;
+                        var enemyUnitPanelCoordY = enemyPanelCoordY + PANEL_INNER_TOP + i*UNIT_PANEL_HEIGHT;
+                        background.composite(imageList[enemyUnitPanelFileName], enemyUnitPanelCoordX, enemyUnitPanelCoordY)
+                        
+                        if (that.states["enemy"][1-i][2-j]) {
+                            var unit = that.states["enemy"][1-i][2-j].unit;
+                            var user = that.bot.userManager.getUser(unit.playerId);
+                            var thumbnailFileName = "images/thumbnail/" + unit.characterId + ".png";
+                            background.composite(imageList[thumbnailFileName], enemyUnitPanelCoordX + 2, enemyUnitPanelCoordY)
+                            background.print(font, enemyUnitPanelCoordX + 44, enemyUnitPanelCoordY + 2, that.bot.functionHelper.trimIfLong(user.username, 4));
+                            var cloneHpBar = imageList[hpBarFileName].clone();
+                            var percentHP = unit.getCurrentHP() / unit.getMaxHP();
+                            cloneHpBar.crop(0,0,percentHP*cloneHpBar.bitmap.width,cloneHpBar.bitmap.height);
+                            background.composite(cloneHpBar, enemyUnitPanelCoordX + 44, enemyUnitPanelCoordY + 39);
+                            if (unit.isFainted()) {
+                                background.composite(imageList[koFileName], enemyUnitPanelCoordX + 35, enemyUnitPanelCoordY + 20);
+                            }
+                        }
+                    }
+                }
+
+                callback(background);
+            });
         });
     });
 }

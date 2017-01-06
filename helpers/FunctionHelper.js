@@ -128,4 +128,11 @@ FunctionHelper.prototype.getClassId = function(className) {
     return null;
 }
 
+FunctionHelper.prototype.trimIfLong = function(text, maxlength) {
+    if (text.length > maxlength) {
+        text = text.substring(0, maxlength) + "...";
+    }
+    return text;
+}
+
 module.exports = new FunctionHelper();
