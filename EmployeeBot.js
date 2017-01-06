@@ -83,8 +83,8 @@ function EmployeeBot() {
     this.dmmMaintenanceList = [
         {
             name: "DMM KG Maintenance",
-            startTime: "Dec 28 2016 13:00:00 GMT+0900",
-            endTime: "Dec 28 2016 17:00:00 GMT+0900"
+            startTime: "Jan 6 2016 14:00:00 GMT+0900",
+            endTime: "Jan 6 2016 17:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
@@ -480,7 +480,7 @@ EmployeeBot.prototype.setDailyDrawReminderForDmm = function() {
     setTimeout(function() {
         var channels = that.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
-            if (channels[i].type === "text" && channels[i].name === that.dmmChannelName) {
+            if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
                 var dmmRole = channels[i].guild.roles.find('name', 'DMM');
                 channels[i].sendMessage(dmmRole + "\n**Reminder: 15 minutes until Daily Draw Reset**")
             }
