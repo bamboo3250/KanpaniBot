@@ -23,6 +23,8 @@ var Employee = function(employeeInfo, playerId = null) {
 
     this.currentHP = 0;
     this.respawnTime = null;
+    this.cooldownEndTime = 0;
+    this.didQuit = false;
 
     this.isTrainer = false;
     // this.status = {

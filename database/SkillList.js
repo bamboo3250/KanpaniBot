@@ -6,6 +6,7 @@ module.exports = {
         "Slash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -21,6 +22,7 @@ module.exports = {
         "V Slash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -36,6 +38,7 @@ module.exports = {
         "Cross Edge": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -51,6 +54,7 @@ module.exports = {
         "Power Slash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -66,6 +70,7 @@ module.exports = {
         "Double Slash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -81,6 +86,7 @@ module.exports = {
         "Power Cross": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -96,6 +102,7 @@ module.exports = {
         "Raging": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -111,6 +118,7 @@ module.exports = {
         "Flame Edge": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -126,6 +134,7 @@ module.exports = {
         "Dragon Fang": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -141,6 +150,7 @@ module.exports = {
         "Sacred Caliber": {
             canAttack: true,
             canHeal: false,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -156,6 +166,7 @@ module.exports = {
         "Sacred Caliber (Monique Style)": {
             canAttack: true,
             canHeal: false,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -171,11 +182,12 @@ module.exports = {
         "Seraph Caliber": {
             canAttack: true,
             canHeal: false,
+            cooldown: 30,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.5, 1,
+                    3.25, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
@@ -186,6 +198,7 @@ module.exports = {
         "Holy Scourge": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -201,6 +214,7 @@ module.exports = {
         "Calamity Edge": {
             canAttack: true,
             canHeal: false,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -216,6 +230,7 @@ module.exports = {
         "White Cross": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -231,6 +246,7 @@ module.exports = {
         "Heart Slash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -246,6 +262,7 @@ module.exports = {
         "Slicer": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ROW,
@@ -261,6 +278,7 @@ module.exports = {
         "Fluffy Slash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -276,6 +294,7 @@ module.exports = {
         "Einzelkampf": {
             canAttack: true,
             canHeal: false,
+            cooldown: 30,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -298,6 +317,7 @@ module.exports = {
         "Slash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -313,6 +333,7 @@ module.exports = {
         "Cleave": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -328,6 +349,7 @@ module.exports = {
         "Heavenly Sword": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -343,6 +365,7 @@ module.exports = {
         "Helmet Splitter": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -358,6 +381,7 @@ module.exports = {
         "Iaido Slash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -373,6 +397,7 @@ module.exports = {
         "100 Demon Slayer": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -385,9 +410,10 @@ module.exports = {
                 )
             ]
         },
-        "Slash ll": {
+        "Slash II": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -403,6 +429,7 @@ module.exports = {
         "Secret Blade Camellia": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -418,6 +445,7 @@ module.exports = {
         "Secret Blade Maiyasha": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -433,6 +461,7 @@ module.exports = {
         "Unsheathing Technique Destroyer": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -448,6 +477,7 @@ module.exports = {
         "Soul Slicer": {
             canAttack: true,
             canHeal: false,
+            cooldown: 20,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -463,6 +493,7 @@ module.exports = {
         "Snowflake Duet": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -478,6 +509,7 @@ module.exports = {
         "Illicit Love": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -493,6 +525,7 @@ module.exports = {
         "First Stance": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -508,6 +541,7 @@ module.exports = {
         "Tri-Beast Attack": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -526,6 +560,7 @@ module.exports = {
         "Single Shot": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -541,6 +576,7 @@ module.exports = {
         "Twin Shot": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -556,6 +592,7 @@ module.exports = {
         "Triple Shot": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -571,6 +608,7 @@ module.exports = {
         "Chain Shot": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -586,6 +624,7 @@ module.exports = {
         "Spread Shot": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ROW,
@@ -601,6 +640,7 @@ module.exports = {
         "Charge Arrow": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -616,6 +656,7 @@ module.exports = {
         "Vermilion Cannon": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -631,6 +672,7 @@ module.exports = {
         "Delta Shot": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -646,6 +688,7 @@ module.exports = {
         "Purge Impact": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -661,6 +704,7 @@ module.exports = {
         "Cupid's Arrow": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -676,6 +720,7 @@ module.exports = {
         "Spinning Strike": {
             canAttack: true,
             canHeal: false,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -691,6 +736,7 @@ module.exports = {
         "Heavy Shot": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -706,6 +752,7 @@ module.exports = {
         "Minstrel's Song": {
             canAttack: true,
             canHeal: false,
+            cooldown: 20,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -721,6 +768,7 @@ module.exports = {
         "Spirit Rain": {
             canAttack: true,
             canHeal: false,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -736,11 +784,12 @@ module.exports = {
         "Destiny": {
             canAttack: true,
             canHeal: false,
+            cooldown: 30,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ROW,
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.5, 1,
+                    2.16, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -751,6 +800,7 @@ module.exports = {
         "Holy Shoot": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -766,6 +816,7 @@ module.exports = {
         "Squall Arrow": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -781,6 +832,7 @@ module.exports = {
         "Feather Shot": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -799,6 +851,7 @@ module.exports = {
         "Spear Jab": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -814,6 +867,7 @@ module.exports = {
         "Double Strike": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -829,6 +883,7 @@ module.exports = {
         "Full-On Collision": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -844,6 +899,7 @@ module.exports = {
         "Double Dragon Strike": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -859,6 +915,7 @@ module.exports = {
         "Cyclone": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ROW,
@@ -874,6 +931,7 @@ module.exports = {
         "Guren Spear": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -889,6 +947,7 @@ module.exports = {
         "Pale Moonlight": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -904,6 +963,7 @@ module.exports = {
         "Revised Double Strike": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -919,6 +979,7 @@ module.exports = {
         "Raging Dominion Spear": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -934,6 +995,7 @@ module.exports = {
         "Holy Style Spear": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -949,6 +1011,7 @@ module.exports = {
         "Lovely Spear": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -964,6 +1027,7 @@ module.exports = {
         "Penetrate": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -979,6 +1043,7 @@ module.exports = {
         "Beast Sweeper": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ROW,
@@ -997,6 +1062,7 @@ module.exports = {
         "Crash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1012,6 +1078,7 @@ module.exports = {
         "Swing": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1027,6 +1094,7 @@ module.exports = {
         "Hammerfall": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1042,6 +1110,7 @@ module.exports = {
         "Force Impact": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1057,6 +1126,7 @@ module.exports = {
         "War Rage": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1072,6 +1142,7 @@ module.exports = {
         "Fury's Toll": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1087,6 +1158,7 @@ module.exports = {
         "Power Swing": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1102,6 +1174,7 @@ module.exports = {
         "Grand Down": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1117,6 +1190,7 @@ module.exports = {
         "Dimension": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1132,6 +1206,7 @@ module.exports = {
         "Dark Inferno": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1147,6 +1222,7 @@ module.exports = {
         "Vanishing Dyne": {
             canAttack: true,
             canHeal: false,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1162,6 +1238,7 @@ module.exports = {
         "Earth Impact": {
             canAttack: true,
             canHeal: false,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1177,6 +1254,7 @@ module.exports = {
         "Snowman": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1192,6 +1270,7 @@ module.exports = {
         "Love Impact": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1207,6 +1286,7 @@ module.exports = {
         "Charge Stomp": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1222,6 +1302,7 @@ module.exports = {
         "Pad Stamp": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1240,6 +1321,7 @@ module.exports = {
         "Knock": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1255,6 +1337,7 @@ module.exports = {
         "Wraith of Gaia": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1270,6 +1353,7 @@ module.exports = {
         "Prayer": {
             canAttack: false,
             canHeal: true,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1285,6 +1369,7 @@ module.exports = {
         "Deep Fold": {
             canAttack: false,
             canHeal: true,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1300,6 +1385,7 @@ module.exports = {
         "Healing Light": {
             canAttack: false,
             canHeal: true,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1315,6 +1401,7 @@ module.exports = {
         "Heavenly Breath": {
             canAttack: false,
             canHeal: true,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1330,6 +1417,7 @@ module.exports = {
         "Fairy Mist": {
             canAttack: false,
             canHeal: true,
+            cooldown: 30,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1345,6 +1433,7 @@ module.exports = {
         "Noah": {
             canAttack: false,
             canHeal: true,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1360,6 +1449,7 @@ module.exports = {
         "Current Heal": {
             canAttack: false,
             canHeal: true,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1375,6 +1465,7 @@ module.exports = {
         "A Good Child's Reward": {
             canAttack: false,
             canHeal: true,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1390,6 +1481,7 @@ module.exports = {
         "Refreshing Love": {
             canAttack: false,
             canHeal: true,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1405,6 +1497,7 @@ module.exports = {
         "Fairy Tale": {
             canAttack: false,
             canHeal: true,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1420,6 +1513,7 @@ module.exports = {
         "Refreshing Moment": {
             canAttack: false,
             canHeal: true,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1438,6 +1532,7 @@ module.exports = {
         "Throwing Knife": {
             canAttack: true,
             canHeal: false,
+            cooldown: 2.5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1453,6 +1548,7 @@ module.exports = {
         "Shadow Snake Punch": {
             canAttack: true,
             canHeal: false,
+            cooldown: 2.5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1468,6 +1564,7 @@ module.exports = {
         "Twin Attack": {
             canAttack: true,
             canHeal: false,
+            cooldown: 2.5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1483,6 +1580,7 @@ module.exports = {
         "Dance Formation": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1498,6 +1596,7 @@ module.exports = {
         "Shadow Run": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1513,6 +1612,7 @@ module.exports = {
         "Crouching Tiger Formation": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1528,6 +1628,7 @@ module.exports = {
         "Dark Assault": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1543,6 +1644,7 @@ module.exports = {
         "Hardened Twin Attack": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1558,6 +1660,7 @@ module.exports = {
         "Hayate": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ROW,
@@ -1573,6 +1676,7 @@ module.exports = {
         "Divine Punishment": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1588,6 +1692,7 @@ module.exports = {
         "Killer Fang": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -1603,6 +1708,7 @@ module.exports = {
         "Arcade": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ROW,
@@ -1618,6 +1724,7 @@ module.exports = {
         "Nightmare": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1633,6 +1740,7 @@ module.exports = {
         "Desperado": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1648,6 +1756,7 @@ module.exports = {
         "Snowy Flash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1663,6 +1772,7 @@ module.exports = {
         "Triple Sugar": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ROW,
@@ -1678,6 +1788,7 @@ module.exports = {
         "Lightning": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -1693,6 +1804,7 @@ module.exports = {
         "Beast Flash": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1711,6 +1823,7 @@ module.exports = {
         "Fire Ball": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1726,6 +1839,7 @@ module.exports = {
         "Cold Lance": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_COLUMN,
@@ -1741,6 +1855,7 @@ module.exports = {
         "Stone Claw": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1756,6 +1871,7 @@ module.exports = {
         "Thunder Arrow": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1771,6 +1887,7 @@ module.exports = {
         "Voltic Arrow": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1786,6 +1903,7 @@ module.exports = {
         "Flame Field": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1801,6 +1919,7 @@ module.exports = {
         "Ice Strike": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1816,6 +1935,7 @@ module.exports = {
         "Crystal Grave": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1831,6 +1951,7 @@ module.exports = {
         "Sonic Wind": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ROW,
@@ -1846,6 +1967,7 @@ module.exports = {
         "Holy Cross": {
             canAttack: true,
             canHeal: false,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1861,6 +1983,7 @@ module.exports = {
         "Flare Storm": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1876,6 +1999,7 @@ module.exports = {
         "Blizzard": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1891,6 +2015,7 @@ module.exports = {
         "Cracked Earth": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1906,6 +2031,7 @@ module.exports = {
         "Tornado": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1921,6 +2047,7 @@ module.exports = {
         "Seraph Ray": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1936,6 +2063,7 @@ module.exports = {
         "Dark Catastrophe": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1951,6 +2079,7 @@ module.exports = {
         "Darkness Blade": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1966,11 +2095,12 @@ module.exports = {
         "Eternal Light": {
             canAttack: true,
             canHeal: false,
+            cooldown: 20,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
                     SkillPhaseConst.TYPE_SPELL_ATTACK,
-                    0.75, 1,
+                    1.6, 1,
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
@@ -1981,6 +2111,7 @@ module.exports = {
         "Twinkling Star": {
             canAttack: true,
             canHeal: false,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,

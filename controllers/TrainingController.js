@@ -201,7 +201,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         expGained[field[0][targetFieldPos.column]] += damageToFrontSoldier;
                     }                    
                 }
-                var damage = Math.max(1, Math.floor(rawDamage));
+                var damage = (doesHit? Math.max(1, Math.floor(rawDamage)): 0);
                 if (typeof damageList[targetUnit.playerId] === "undefined") damageList[targetUnit.playerId] = [];
                 damageList[targetUnit.playerId].push({
                     damage: damage,
@@ -334,7 +334,8 @@ TrainingController.prototype.randomField = function(middlePlayerId) {
         var userId = key;
         var player = this.bot.playerManager.getPlayer(userId);
         var playerUnit = this.bot.unitManager.getPlayerUnit(userId);
-        if (!playerUnit.isFainted()) {
+        var hasJoinedTraining = this.bot.userManager.doesMemberHaveRole(userId, "Trainee");
+        if (!playerUnit.isFainted() && hasJoinedTraining) {
             var groupId = (groups[player.partnerId]? player.partnerId: userId);
         
             if (userId === middlePlayerId || player.partnerId === middlePlayerId) {
@@ -405,9 +406,16 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         return;
     }
     var skill = this.bot.skillDatabase.getSkill(attacker.getClassId(), skillName);
-    if (!skill.canAttack) {
+    if (!skill || !skill.canAttack) {
         callback(null, "You cannot use **" + skillName + "** to attack.", null, null, true);
         return;
+    }
+
+    var now = new Date();
+    if (now.valueOf() < attacker.cooldownEndTime) {
+        var time = this.bot.functionHelper.parseTime(attacker.cooldownEndTime - now.valueOf());
+        callback(null, "You have to wait for **" + time + "** before executing the next action.", null, null, true);
+        return;   
     }
 
     while(targetUnitList.length < skill.phases.length) {
@@ -435,6 +443,8 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         }
     };
 
+    attacker.cooldownEndTime = now.valueOf() + Math.floor(skill.cooldown * 60 * 1000);
+    
     var result1 = [];
     var result2 = [];
     var koResult = [];
@@ -505,9 +515,16 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
         return;
     }
     var skill = this.bot.skillDatabase.getSkill(attacker.getClassId(), skillName);
-    if (!skill.canHeal) {
+    if (!skill || !skill.canHeal) {
         callback(null, "You cannot use **" + skillName + "** to heal.", null, null, true);
         return;
+    }
+
+    var now = new Date();
+    if (now.valueOf() < attacker.cooldownEndTime) {
+        var time = this.bot.functionHelper.parseTime(attacker.cooldownEndTime - now.valueOf());
+        callback(null, "You have to wait for **" + time + "** before executing the next action.", null, null, true);
+        return;   
     }
 
     while(targetUnitList.length < skill.phases.length) {
@@ -529,6 +546,8 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
             }
         }
     };
+
+    attacker.cooldownEndTime = now.valueOf() + Math.floor(skill.cooldown * 60 * 1000);
 
     var result1 = [];
     var result2 = [];

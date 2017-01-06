@@ -272,7 +272,7 @@ BattlePainter.prototype.draw = function(callback) {
             Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function (font) {
 
                 background.print(font, enemyPanelCoordX + 5, enemyPanelCoordY + 5, "TRAINER");
-                background.print(font, allyPanelCoordX + 5, allyPanelCoordY + 5, "PLAYER");
+                background.print(font, allyPanelCoordX + 250, allyPanelCoordY + 5, "PLAYER");
                 
                 for(var i=0;i<2;i++) {
                     for(var j=0;j<3;j++) {
@@ -291,7 +291,7 @@ BattlePainter.prototype.draw = function(callback) {
                             background.composite(cloneHpBar, allyUnitPanelCoordX + 44, allyUnitPanelCoordY + 39);
 
                             if (unit.isFainted()) {
-                                background.composite(imageList[koFileName], allyUnitPanelCoordX + 35, allyUnitPanelCoordY + 20);
+                                background.composite(imageList[koFileName], allyUnitPanelCoordX + 5, allyUnitPanelCoordY + 5);
                             }
                         }
                     }
@@ -313,7 +313,7 @@ BattlePainter.prototype.draw = function(callback) {
                             cloneHpBar.crop(0,0,percentHP*cloneHpBar.bitmap.width,cloneHpBar.bitmap.height);
                             background.composite(cloneHpBar, enemyUnitPanelCoordX + 44, enemyUnitPanelCoordY + 39);
                             if (unit.isFainted()) {
-                                background.composite(imageList[koFileName], enemyUnitPanelCoordX + 35, enemyUnitPanelCoordY + 20);
+                                background.composite(imageList[koFileName], enemyUnitPanelCoordX + 5, enemyUnitPanelCoordY + 5);
                             }
                         }
                     }

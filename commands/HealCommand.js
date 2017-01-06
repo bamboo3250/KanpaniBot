@@ -43,10 +43,14 @@ module.exports = {
             }
             targetUnitList.push(targetUnit);
         };
-        
 
         if (!bot.battleController) {
             message.reply("You cannot do battle now.");
+            return;
+        }
+
+        if (!bot.userManager.doesMemberHaveRole(userId, "Trainee")) {
+            message.reply("You need to join Training first. Use `~jointraining`.");
             return;
         }
 

@@ -331,7 +331,7 @@ elsa.commonThanks = elsa.commonThanks.concat(dialog.elsa.commonThanks);
 
 elsa.playerData = [
     {
-        //_id: "241511566036434945",
+        // _id: "241511566036434945",
         _id: "240097185436270593",  // test-bot
         characterId: "10150002_765306d2",
         exp: 2646190,//2646190,
@@ -355,121 +355,21 @@ elsa.playerData = [
         position: "front",
         partnerId: null,
         isTrainer: true
-    },{
-        //_id: "241511566036434945",
-        _id: "265889287281573918",  // test-bot2
-        characterId: "10150002_765306d2",
-        exp: 2646190,//2646190,
-        gold: 0,
-        equipedWeapon: {
-            _id: "308119",
-            plus: 3
-        },
-        equipedArmor: {
-            _id: "3101140",
-            plus: 3
-        },
-        equipedAccessory: {
-            _id: "330206",
-            plus: 3
-        },
-        materialList: {},
-        weaponList: {},
-        armorList: {},
-        accessoryList: {},
-        position: "front",
-        partnerId: null,
-        isTrainer: true
-    },{
-        //_id: "241511566036434945",
-        _id: "265889477149458432",  // test-bot3
-        characterId: "10450003_2400b505",
-        exp: 2646190,//2646190,
-        gold: 0,
-        equipedWeapon: {
-            _id: "300409",
-            plus: 3
-        },
-        equipedArmor: {
-            _id: "3104140",
-            plus: 3
-        },
-        equipedAccessory: {
-            _id: "330206",
-            plus: 3
-        },
-        materialList: {},
-        weaponList: {},
-        armorList: {},
-        accessoryList: {},
-        position: "front",
-        partnerId: null,
-        isTrainer: true
-    },{
-        //_id: "241511566036434945",
-        _id: "265889563669561345",  // test-bot4
-        characterId: "10850005_ad800ba1",
-        exp: 2646190,//2646190,
-        gold: 0,
-        equipedWeapon: {
-            _id: "3008081",
-            plus: 3
-        },
-        equipedArmor: {
-            _id: "310810",
-            plus: 3
-        },
-        equipedAccessory: {
-            _id: "330206",
-            plus: 3
-        },
-        materialList: {},
-        weaponList: {},
-        armorList: {},
-        accessoryList: {},
-        position: "front",
-        partnerId: null,
-        isTrainer: true
-    },{
-        //_id: "241511566036434945",
-        _id: "265889658901233666",  // test-bot5
-        characterId: "10850005_ad800ba1",
-        exp: 2646190,//2646190,
-        gold: 0,
-        equipedWeapon: {
-            _id: "3008081",
-            plus: 3
-        },
-        equipedArmor: {
-            _id: "310810",
-            plus: 3
-        },
-        equipedAccessory: {
-            _id: "330206",
-            plus: 3
-        },
-        materialList: {},
-        weaponList: {},
-        armorList: {},
-        accessoryList: {},
-        position: "front",
-        partnerId: null,
-        isTrainer: true
-    },
+    }
 ];
 
 elsa.bot.on("ready", function() {
     if (elsa.ready()) {
         loadAffection();
         elsa.unitManager.createUnitForPlayer(elsa.playerData[0]);
-        elsa.unitManager.createUnitForPlayer(elsa.playerData[1]);
-        elsa.unitManager.createUnitForPlayer(elsa.playerData[2]);
-        elsa.unitManager.createUnitForPlayer(elsa.playerData[3]);
-        elsa.unitManager.createUnitForPlayer(elsa.playerData[4]);
+        // elsa.unitManager.createUnitForPlayer(elsa.playerData[1]);
+        // elsa.unitManager.createUnitForPlayer(elsa.playerData[2]);
+        // elsa.unitManager.createUnitForPlayer(elsa.playerData[3]);
+        // elsa.unitManager.createUnitForPlayer(elsa.playerData[4]);
         trainingController.bot = elsa;
         trainingController.trainerField = [
-            ["265889287281573918", "240097185436270593", "265889477149458432"],
-            [null, "265889563669561345", "265889658901233666"]
+            [null, "240097185436270593", null],
+            [null, null, null]
             // ["240097185436270593", "240097185436270593", "240097185436270593"],
             // ["240097185436270593", "240097185436270593", "240097185436270593"]
         ];

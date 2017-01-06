@@ -46,9 +46,13 @@ module.exports = {
             targetUnitList.push(targetUnit);
         };
         
-
         if (!bot.battleController) {
             message.reply("You cannot do battle now.");
+            return;
+        }
+
+        if (!bot.userManager.doesMemberHaveRole(userId, "Trainee")) {
+            message.reply("You need to join Training first. Use `~jointraining`.");
             return;
         }
 
@@ -62,6 +66,7 @@ module.exports = {
                     var koUserId = koList[i];
                     var koUnit = bot.unitManager.getPlayerUnit(koUserId);
                     var koUser = bot.userManager.getUser(koUserId);
+                    bot.userManager.addRole(koUserId, "Fainted");
                     if (koUser) {
                         text += koUnit.shortName + " (" + koUser.username + ") is KO-ed!\n";
                     }

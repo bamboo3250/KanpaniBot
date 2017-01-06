@@ -93,10 +93,12 @@ UnitManager.prototype.setRespawn = function(userId) {
         var respawnDuration = (unit.isTrainer ? 6*60*60*1000 : (60 + unit.levelCached*20) * 1000);
         unit.respawnTime = now.valueOf() + respawnDuration;
         
+        var that = this;
         setTimeout(function(){
             unit.fullHeal();
             unit.respawnTime = null;
             if (user) {
+                that.bot.userManager.removeRole(userId, "Fainted");
                 user.sendMessage("Your character has respawned.");
             }
         }, respawnDuration);

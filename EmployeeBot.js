@@ -64,6 +64,8 @@ var ceoPowerCommand = require('./commands/CEOPowerCommand');
 var attackCommand = require('./commands/AttackCommand');
 var healCommand = require('./commands/HealCommand');
 var trainerCommand = require('./commands/TrainerCommand');
+var joinTrainingCommand = require('./commands/JoinTrainingCommand');
+var quitTrainingCommand = require('./commands/QuitTrainingCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -84,6 +86,7 @@ function EmployeeBot() {
     
     this.playerManager = playerManager;
     this.userManager = userManager;
+    userManager.bot = this;
     this.backgroundManager = backgroundManager;
     this.auctionManager = auctionManager;
     this.unitManager = unitManager;
@@ -449,6 +452,8 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         attackCommand.handle(message, this);
         healCommand.handle(message, this);
         trainerCommand.handle(message, this);
+        joinTrainingCommand.handle(message, this);
+        quitTrainingCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -851,7 +856,7 @@ EmployeeBot.prototype.ready = function() {
         this.loadDailyGift();
         this.loadUnsubscribe();
         // this.loadChristmasTree();
-        this.userManager.fetchAllMembers(this, function() {
+        this.userManager.fetchAllMembers(function() {
             that.loadRunQuestStatus();
             that.loadAuction();
             that.loadAroma();

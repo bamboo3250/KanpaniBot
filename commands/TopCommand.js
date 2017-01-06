@@ -55,7 +55,7 @@ module.exports = {
         if (bot.isPM(message)) {
             sendTop(message, bot, result);
         } else {
-            bot.userManager.fetchAllMembers(bot, function() {
+            bot.userManager.fetchAllMembers(function() {
                 sendTop(message, bot, result);
             });
         }
