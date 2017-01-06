@@ -138,7 +138,7 @@ var employees = [
         baseStats: { _str: 5, _vit: 5, _agi: 23, _dex: 22, _int: 42, _pie: 12, _luk: 6},
         maxStats: { _str: 156, _vit: 154, _agi: 291, _dex: 281, _int: 523, _pie: 263, _luk: 228}
     },{
-        _no: 212, _id: "10850005_ad800ba1", fullName: "Luciel Fuel", japaneseName: "ルツィエル・フュエル", commonNames: ["Luciel"], cwId: 0,
+        _no: 212, _id: "10850005_ad800ba1", fullName: "Luciel Fuel", japaneseName: "ルツィエル・フュエル", commonNames: ["Luciel"], cwId: 21,
         baseStats: { _str: 8, _vit: 5, _agi: 22, _dex: 20, _int: 44, _pie: 12, _luk: 7},
         maxStats: { _str: 177, _vit: 176, _agi: 268, _dex: 271, _int: 525, _pie: 263, _luk: 237}
     },
@@ -306,7 +306,7 @@ var employees = [
         baseStats: { _str: 9, _vit: 14, _agi: 9, _dex: 6, _int: 9, _pie: 26, _luk: 7},
         maxStats: { _str: 166, _vit: 246, _agi: 213, _dex: 210, _int: 290, _pie: 395, _luk: 219}
     },{
-        _no: 157, _id: "10640004_fd26e83c", fullName: "Charis May", japaneseName: "カリス・メイ", commonNames: ["Charis"], cwId: 0,
+        _no: 157, _id: "10640004_fd26e83c", fullName: "Charis May", japaneseName: "カリス・メイ", commonNames: ["Charis"], cwId: 20,
         baseStats: { _str: 8, _vit: 13, _agi: 9, _dex: 7, _int: 10, _pie: 25, _luk: 8},
         maxStats: { _str: 166, _vit: 246, _agi: 213, _dex: 210, _int: 290, _pie: 395, _luk: 219}
     },{
@@ -568,7 +568,7 @@ var employees = [
         baseStats: { _str: 23, _vit: 9, _agi: 9, _dex: 3, _int: 1, _pie: 2, _luk: 7},
         maxStats: { _str: 458, _vit: 269, _agi: 222, _dex: 158, _int: 147, _pie: 168, _luk: 267}
     },{
-        _no: 129, _id: "10530007_ba3f7b8f", fullName: "Irene Whistler", japaneseName: "イレーネ・ウィスラー", commonNames: ["Irene Whistler"], cwId: 0,
+        _no: 129, _id: "10530007_ba3f7b8f", fullName: "Irene Whistler", japaneseName: "イレーネ・ウィスラー", commonNames: ["Irene Whistler"], cwId: 21,
         baseStats: { _str: 23, _vit: 9, _agi: 8, _dex: 4, _int: 1, _pie: 1, _luk: 5},
         maxStats: { _str: 458, _vit: 269, _agi: 207, _dex: 159, _int: 147, _pie: 167, _luk: 265}
     },{
