@@ -3,7 +3,7 @@ var Jimp = require("jimp");
 module.exports = {
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~attack") return;
+        if (command.commandName != "~attack" && command.commandName != "~atk") return;
         
         if (message.channel.name != "battlefield") {
             message.reply("You can only use this command in Battlefield.");
