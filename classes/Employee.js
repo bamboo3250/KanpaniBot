@@ -1,8 +1,9 @@
-var EmployeeInfo = function(employeeInfo) {
+var Employee = function(employeeInfo, playerId = null) {
     this.DOMAIN = "http://img4.kanpani.jp";
 
+    this.playerId = playerId;
     this._no = employeeInfo._no;
-    this._id = employeeInfo._id;
+    this.characterId = employeeInfo._id;
     this.fullName = employeeInfo.fullName;
     this.shortName = employeeInfo.commonNames[0];
     this.japaneseName = employeeInfo.japaneseName;
@@ -18,13 +19,38 @@ var EmployeeInfo = function(employeeInfo) {
     this.armor = null;
     this.accessory = null;
     this.element = "";
+    this.position = "front";
+
+    this.currentHP = 0;
+    this.respawnTime = null;
+    this.cooldownEndTime = 0;
+    this.didQuit = false;
+
+    this.isTrainer = false;
+    // this.status = {
+    //     "stun": null,
+    //     "paralyze": null,
+    //     "poison": null,
+    //     "curse": null,
+    //     "charm": null,
+    //     "darkness": null,
+    //     "patkdown": null,
+    //     "patkup": null,
+    //     "matkdown": null,
+    //     "matkup": null,
+    //     "pdefdown": null,
+    //     "pdefup": null,
+    //     "mdefdown": null,
+    //     "mdefup": null,
+    //     "frozen": null,
+    // };
 }
 
-EmployeeInfo.prototype.getClassId = function() {
-    return parseInt(this._id.substring(2,3));
+Employee.prototype.getClassId = function() {
+    return parseInt(this.characterId.substring(2,3));
 }
 
-EmployeeInfo.prototype.getClass = function() {
+Employee.prototype.getClass = function() {
     var classValue = this.getClassId();
     if (classValue === 1) return "Fighter";
     if (classValue === 2) return "Ronin";
@@ -36,11 +62,11 @@ EmployeeInfo.prototype.getClass = function() {
     return "Magician";
 }
 
-EmployeeInfo.prototype.getBaseRarity = function() {
-    return parseInt(this._id.substring(3,4));
+Employee.prototype.getBaseRarity = function() {
+    return parseInt(this.characterId.substring(3,4));
 }
 
-EmployeeInfo.prototype.getRarity = function() {
+Employee.prototype.getRarity = function() {
     var rarity = 1;
     if (this.levelCached < 10) {
         rarity = 1;
@@ -64,8 +90,8 @@ EmployeeInfo.prototype.getRarity = function() {
     return Math.max(this.getBaseRarity(), rarity);
 }
 
-EmployeeInfo.prototype.isEx = function() {
-    return parseInt(this._id.substring(4,5)) == 9;
+Employee.prototype.isEx = function() {
+    return parseInt(this.characterId.substring(4,5)) == 9;
 }
 
 var expForLevel = [
@@ -80,7 +106,7 @@ var expForLevel = [
     5760000, 6200000, 6620000, 7090000, 7600000, 8140000, 8720000, 9340000, 10000000, 10707880, 
     11460000, 12270000, 13140000, 14060000, 15050000, 16110000, 17240000, 18450000, 19739650];
 
-EmployeeInfo.prototype.setExp = function(expToSet) {
+Employee.prototype.setExp = function(expToSet) {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     this.exp = Math.min(expToSet, expForLevel[maxLevel-1]);
     this.levelCached = maxLevel;
@@ -92,11 +118,11 @@ EmployeeInfo.prototype.setExp = function(expToSet) {
     }
 }
 
-EmployeeInfo.prototype.addExp = function(expToAdd) {
+Employee.prototype.addExp = function(expToAdd) {
     this.setExp(this.exp + expToAdd);
 }
 
-EmployeeInfo.prototype.getExpToNextLevel = function() {
+Employee.prototype.getExpToNextLevel = function() {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     for(var i=0;i<maxLevel;i++) {
         if (this.exp <expForLevel[i]) {
@@ -106,49 +132,55 @@ EmployeeInfo.prototype.getExpToNextLevel = function() {
     return 0;
 }
 
-EmployeeInfo.prototype.getVIT = function() {
+Employee.prototype.getVIT = function() {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     var slope = (this.maxStats._vit - this.baseStats._vit) / (maxLevel - 1);
     return Math.floor(this.baseStats._vit + (this.levelCached - 1)*slope + 0.5);
 }
 
-EmployeeInfo.prototype.getSTR = function() {
+Employee.prototype.getSTR = function() {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     var slope = (this.maxStats._str - this.baseStats._str) / (maxLevel - 1);
     return Math.floor(this.baseStats._str + (this.levelCached - 1)*slope + 0.5);
 }
 
-EmployeeInfo.prototype.getINT = function() {
+Employee.prototype.getINT = function() {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     var slope = (this.maxStats._int - this.baseStats._int) / (maxLevel - 1);
     return Math.floor(this.baseStats._int + (this.levelCached - 1)*slope + 0.5);
 }
 
-EmployeeInfo.prototype.getPIE = function() {
+Employee.prototype.getPIE = function() {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     var slope = (this.maxStats._pie - this.baseStats._pie) / (maxLevel - 1);
     return Math.floor(this.baseStats._pie + (this.levelCached - 1)*slope + 0.5);
 }
 
-EmployeeInfo.prototype.getDEX = function() {
+Employee.prototype.getDEX = function() {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     var slope = (this.maxStats._dex - this.baseStats._dex) / (maxLevel - 1);
     return Math.floor(this.baseStats._dex + (this.levelCached - 1)*slope + 0.5);
 }
 
-EmployeeInfo.prototype.getAGI = function() {
+Employee.prototype.getAGI = function() {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     var slope = (this.maxStats._agi - this.baseStats._agi) / (maxLevel - 1);
     return Math.floor(this.baseStats._agi + (this.levelCached - 1)*slope + 0.5);
 }
 
-EmployeeInfo.prototype.getLUK = function() {
+Employee.prototype.getLUK = function() {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     var slope = (this.maxStats._luk - this.baseStats._luk) / (maxLevel - 1);
     return Math.floor(this.baseStats._luk + (this.levelCached - 1)*slope + 0.5);
 }
 
-EmployeeInfo.prototype.getHP = function() {
+Employee.prototype.getCurrentHP = function() {
+    return this.currentHP;
+}
+
+Employee.prototype.getMaxHP = function() {
+    if (this.isTrainer) return 50000;
+    
     var classId = this.getClassId();
     var bonusHp = (this.getBaseRarity() == 5?1:0);
     if (classId === 1) return this.getVIT() * (4 + bonusHp);
@@ -162,7 +194,7 @@ EmployeeInfo.prototype.getHP = function() {
     return 9999;
 }
 
-EmployeeInfo.prototype.getAtk = function() {
+Employee.prototype.getAtk = function() {
     var classId = this.getClassId();
     var weaponStats = (this.weapon ? this.weapon.patk : 0);
     var armorStats = (this.armor ? this.armor.patk : 0);
@@ -179,7 +211,7 @@ EmployeeInfo.prototype.getAtk = function() {
     return 9999;
 }
 
-EmployeeInfo.prototype.getDef = function() {
+Employee.prototype.getDef = function() {
     var classId = this.getClassId();
     var weaponStats = (this.weapon ? this.weapon.pdef : 0);
     var armorStats = (this.armor ? this.armor.pdef : 0);
@@ -196,7 +228,7 @@ EmployeeInfo.prototype.getDef = function() {
     return 9999;
 }
 
-EmployeeInfo.prototype.getMAtk = function() {
+Employee.prototype.getMAtk = function() {
     var classId = this.getClassId();
     var weaponStats = (this.weapon ? this.weapon.matk : 0);
     var armorStats = (this.armor ? this.armor.matk : 0);
@@ -213,7 +245,7 @@ EmployeeInfo.prototype.getMAtk = function() {
     return 9999;
 }
 
-EmployeeInfo.prototype.getMDef = function() {
+Employee.prototype.getMDef = function() {
     var classId = this.getClassId();
     var weaponStats = (this.weapon ? this.weapon.mdef : 0);
     var armorStats = (this.armor ? this.armor.mdef : 0);
@@ -230,7 +262,7 @@ EmployeeInfo.prototype.getMDef = function() {
     return 9999;
 }
 
-EmployeeInfo.prototype.getCrit = function() {
+Employee.prototype.getCrit = function() {
     var weaponStats = (this.weapon ? this.weapon.crit : 0);
     var armorStats = (this.armor ? this.armor.crit : 0);
     var accessoryStats = (this.accessory ? this.accessory.crit : 0);
@@ -238,7 +270,7 @@ EmployeeInfo.prototype.getCrit = function() {
     return weaponStats + armorStats + accessoryStats;
 }
 
-EmployeeInfo.prototype.getHit = function() {
+Employee.prototype.getHit = function() {
     var weaponStats = (this.weapon ? this.weapon.hit : 0);
     var armorStats = (this.armor ? this.armor.hit : 0);
     var accessoryStats = (this.accessory ? this.accessory.hit : 0);
@@ -246,7 +278,7 @@ EmployeeInfo.prototype.getHit = function() {
     return weaponStats + armorStats + accessoryStats;
 }
 
-EmployeeInfo.prototype.getEva = function() {
+Employee.prototype.getEva = function() {
     var weaponStats = (this.weapon ? this.weapon.eva : 0);
     var armorStats = (this.armor ? this.armor.eva : 0);
     var accessoryStats = (this.accessory ? this.accessory.eva : 0);
@@ -254,41 +286,54 @@ EmployeeInfo.prototype.getEva = function() {
     return weaponStats + armorStats + accessoryStats;
 }
 
-EmployeeInfo.prototype.getFrontSkill = function() {
+Employee.prototype.getFrontSkill = function() {
     return (this.weapon ? this.weapon.frontSkill : "None");
 }
 
-EmployeeInfo.prototype.getBackSkill = function() {
+Employee.prototype.getBackSkill = function() {
     return (this.weapon ? this.weapon.backSkill : "None");
 }
 
-EmployeeInfo.prototype.getIllustURL = function(category) {
-    return this.DOMAIN + "/img/character/" + this._id + "/illust/" + category + ".png";
-}
-
-EmployeeInfo.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, type, weaponId = 11) {
-    if (type === "character" && this.cwId != 0) {
-        weaponId = this.cwId;
+Employee.prototype.getCurrentSkill = function() {
+    if (!this.weapon) return null;
+    if (this.position === "front") {
+        return this.weapon.frontSkill;
+    } else {
+        return this.weapon.backSkill;
     }
-    if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
-    weaponId = this._id.substring(2,3) + weaponId;
-    weaponId = (type === "character" && this.cwId != 0 ? "8" : "0") + weaponId;
-    weaponId = (this.isEx() && type === "character" && this.cwId != 0 ? "9" : "0") + weaponId;
-    weaponId = "3" + weaponId;
-    return this.DOMAIN + "/img/character/" + this._id + "/" + (isEnemy? "enemy" : "ally") + "/" + (type=="event"?"":star + "_") + weaponId + "_idle.png";
 }
 
-EmployeeInfo.prototype.getSpriteImageName = function(star = 6, type, weaponId = 11) {
-    if (type === "character" && this.cwId != 0) {
-        weaponId = this.cwId;
-    }
-    if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
-    weaponId = this._id.substring(2,3) + weaponId;
-    weaponId = (type === "character" && this.cwId != 0 ? "8" : "0") + weaponId;
-    weaponId = (this.isEx() && type === "character" && this.cwId != 0 ? "9" : "0") + weaponId;
-    weaponId = "3" + weaponId;
-    return this._id + "_" + (type=="event"?"":star + "_") + weaponId + "_idle.png";
+Employee.prototype.isFainted = function() {
+    return this.currentHP <= 0;
 }
 
+Employee.prototype.fullHeal = function() {
+    this.currentHP = this.getMaxHP();
+}
 
-module.exports = EmployeeInfo;
+// Employee.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, type, weaponId = 11) {
+//     if (type === "character" && this.cwId != 0) {
+//         weaponId = this.cwId;
+//     }
+//     if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
+//     weaponId = this._id.substring(2,3) + weaponId;
+//     weaponId = (type === "character" && this.cwId != 0 ? "8" : "0") + weaponId;
+//     weaponId = (this.isEx() && type === "character" && this.cwId != 0 ? "9" : "0") + weaponId;
+//     weaponId = "3" + weaponId;
+//     return this.DOMAIN + "/img/character/" + this._id + "/" + (isEnemy? "enemy" : "ally") + "/" + (type=="event"?"":star + "_") + weaponId + "_idle.png";
+// }
+
+// Employee.prototype.getSpriteImageName = function(star = 6, type, weaponId = 11) {
+//     if (type === "character" && this.cwId != 0) {
+//         weaponId = this.cwId;
+//     }
+//     if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
+//     weaponId = this._id.substring(2,3) + weaponId;
+//     weaponId = (type === "character" && this.cwId != 0 ? "8" : "0") + weaponId;
+//     weaponId = (this.isEx() && type === "character" && this.cwId != 0 ? "9" : "0") + weaponId;
+//     weaponId = "3" + weaponId;
+//     return this._id + "_" + (type=="event"?"":star + "_") + weaponId + "_idle.png";
+// }
+
+
+module.exports = Employee;

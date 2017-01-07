@@ -46,7 +46,7 @@ module.exports = {
             return;
         }
 
-        var employee = bot.createEmployeeFromPlayer(player);
+        var employee = bot.unitManager.getPlayerUnit(userId);
         var classId = employee.getClassId();
 
         var equipmentResult = null;
@@ -62,16 +62,13 @@ module.exports = {
             return;
         }
 
-        var equipmentName = "";
+        var equipmentName = equipmentResult.name;
         var equipmentList = {};
         if (category == "wp") {
-            equipmentName = equipmentResult.weaponName;
             equipmentList = player.weaponList;
         } else if (category == "ar") {
-            equipmentName = equipmentResult.armorName;
             equipmentList = player.armorList;
         } else if (category == "acc") {
-            equipmentName = equipmentResult.accessoryName;
             equipmentList = player.accessoryList;
         }
 
@@ -92,6 +89,8 @@ module.exports = {
             bot.playerManager.equipAccessory(userId, equipmentResult._id, plus);
         }
         bot.savePlayer();
+        player = bot.playerManager.getPlayer(userId);
+        bot.unitManager.refreshUnitForPlayer(player);
         message.reply("You have equipped **" + equipmentName + " +" + plus + "**");
     }
 }

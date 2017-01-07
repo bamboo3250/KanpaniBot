@@ -54,10 +54,15 @@ FunctionHelper.prototype.parseTime = function(millisec) {
 FunctionHelper.prototype.parseCommand = function(message) {
     var commandText = this.removeExtraSpace(message.content.toLowerCase());
     var args = commandText.split(" ");
+    var mentionIds = [];
+    for (var i = 0; i < args.length; i++) {
+        if (this.isMention(args[i])) mentionIds.push(this.getIdFromMention(args[i]));
+    };
     var result = {
         commandName: args[0],
         args: [],
-        mentions: message.mentions
+        mentions: message.mentions,
+        mentionIds: mentionIds
     };
     for(var i=1;i<args.length;i++) result.args.push(args[i]);
     return result;
@@ -121,6 +126,13 @@ FunctionHelper.prototype.getClassId = function(className) {
     if (className.toLowerCase() === "magician") return 8;
     if (className.toLowerCase() === "mage") return 8;
     return null;
+}
+
+FunctionHelper.prototype.trimIfLong = function(text, maxlength) {
+    if (text.length > maxlength) {
+        text = text.substring(0, maxlength) + "...";
+    }
+    return text;
 }
 
 module.exports = new FunctionHelper();

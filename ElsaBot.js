@@ -3,6 +3,8 @@ var config = require('./config');
 var dialog = require('./Dialog');
 var fs = require('fs');
 
+var trainingController = require('./controllers/TrainingController');
+
 var lastTimePat = {};
 var affection = {};
 var touches = [
@@ -327,8 +329,52 @@ elsa.commonGoodMorning = elsa.commonGoodMorning.concat(dialog.elsa.commonGoodMor
 elsa.commonGoodNight = elsa.commonGoodNight.concat(dialog.elsa.commonGoodNight);
 elsa.commonThanks = elsa.commonThanks.concat(dialog.elsa.commonThanks);
 
+elsa.playerData = [
+    {
+        _id: "241511566036434945",
+        // _id: "240097185436270593",  // test-bot
+        characterId: "10150002_765306d2",
+        exp: 2646190,//2646190,
+        gold: 0,
+        equipedWeapon: {
+            _id: "308119",
+            plus: 3
+        },
+        equipedArmor: {
+            _id: "3101140",
+            plus: 3
+        },
+        equipedAccessory: {
+            _id: "330206",
+            plus: 3
+        },
+        materialList: {},
+        weaponList: {},
+        armorList: {},
+        accessoryList: {},
+        position: "front",
+        partnerId: null,
+        isTrainer: true
+    }
+];
+
 elsa.bot.on("ready", function() {
-    elsa.ready();
-    loadAffection();
+    if (elsa.ready()) {
+        loadAffection();
+        elsa.unitManager.createUnitForPlayer(elsa.playerData[0]);
+        // elsa.unitManager.createUnitForPlayer(elsa.playerData[1]);
+        // elsa.unitManager.createUnitForPlayer(elsa.playerData[2]);
+        // elsa.unitManager.createUnitForPlayer(elsa.playerData[3]);
+        // elsa.unitManager.createUnitForPlayer(elsa.playerData[4]);
+        trainingController.bot = elsa;
+        trainingController.trainerField = [
+            [null, "241511566036434945", null],
+            [null, null, null]
+            // ["240097185436270593", "240097185436270593", "240097185436270593"],
+            // ["240097185436270593", "240097185436270593", "240097185436270593"]
+        ];
+        elsa.battleController = trainingController;
+    }
+    
 });
 elsa.bot.login(config.elsa);

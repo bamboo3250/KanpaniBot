@@ -47,13 +47,13 @@ module.exports = {
 
             employee = new Employee(employee);
 
-            var bustupUrl = employee.getIllustURL("bustup");
+            var bustupUrl = bot.urlHelper.getIllustURL(employee, "bustup");
             var star = 6;
             if (employee.getBaseRarity() === 5) star++;
             var enemySpriteUrl = employee.getSpriteImageURL(star, true, "character");
             var allySpriteUrl = employee.getSpriteImageURL(star, false, "character");
 
-            var bustupFileName = "images/bustup/" + employee._id + ".png";
+            var bustupFileName = "images/bustup/" + employee.characterId + ".png";
             var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(star, "character");
             var allySpriteFileName = "images/ally/" + employee.getSpriteImageName(star, "character");
 
@@ -75,15 +75,15 @@ module.exports = {
                         bot.log(err);
                         return;
                     }
-                    enemySpriteImage = imageList[0];
-                    allySpriteImage = imageList[1];
-                    bustupImage = imageList[2];
+                    enemySpriteImage = imageList[enemySpriteFileName];
+                    allySpriteImage = imageList[allySpriteFileName];
+                    bustupImage = imageList[bustupFileName];
 
                     allySpriteImage.crop(0, 0, 360, 270);
                     enemySpriteImage.crop(0, 0, 360, 270);
                     bustupImage.resize(Jimp.AUTO, 600).opacity((isChara2?1.0:0.3));
 
-                    var imageName = "images/chara/" + employee._id + ".png";
+                    var imageName = "images/chara/" + employee.characterId + ".png";
                     var image = new Jimp(480, 290, function (err, image) {
 
                         image.composite(bustupImage, 

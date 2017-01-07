@@ -6,12 +6,14 @@ var itemInfoDatabase = require('./database/ItemInfoDatabase');
 var weaponDatabase = require('./database/WeaponDatabase');
 var armorDatabase = require('./database/ArmorDatabase');
 var accessoryDatabase = require('./database/AccessoryDatabase');
-var Employee = require('./classes/Employee');
+var skillDatabase = require('./database/SkillDatabase');
 
 var playerManager = require('./managers/PlayerManager');
 var userManager = require('./managers/UserManager');
 var backgroundManager = require('./managers/BackgroundManager');
 var auctionManager = require('./managers/AuctionManager');
+var unitManager = require('./managers/UnitManager');
+var imageManager = require('./managers/ImageManager');
 
 var imageHelper = require('./helpers/ImageHelper');
 var functionHelper = require('./helpers/FunctionHelper');
@@ -59,6 +61,12 @@ var aromaCommand = require('./commands/AromaCommand');
 var sellPageCommand = require('./commands/SellPageCommand');
 var ceoPowerCommand = require('./commands/CEOPowerCommand');
 
+var attackCommand = require('./commands/AttackCommand');
+var healCommand = require('./commands/HealCommand');
+var trainerCommand = require('./commands/TrainerCommand');
+var joinTrainingCommand = require('./commands/JoinTrainingCommand');
+var quitTrainingCommand = require('./commands/QuitTrainingCommand');
+
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
     this.nutakuChannelName = "kanpani_girls";
@@ -70,6 +78,7 @@ function EmployeeBot() {
     this.weaponDatabase = weaponDatabase;
     this.armorDatabase = armorDatabase;
     this.accessoryDatabase = accessoryDatabase;
+    this.skillDatabase = skillDatabase;
 
     this.imageHelper = imageHelper;
     this.functionHelper = functionHelper;
@@ -77,8 +86,16 @@ function EmployeeBot() {
     
     this.playerManager = playerManager;
     this.userManager = userManager;
+    userManager.bot = this;
     this.backgroundManager = backgroundManager;
     this.auctionManager = auctionManager;
+    this.unitManager = unitManager;
+    unitManager.bot = this;
+    this.imageManager = imageManager;
+    imageManager.bot = this;
+    imageManager.init();
+
+    this.battleController = null;
 
     this.dmmMaintenanceList = [
         {
@@ -326,30 +343,31 @@ EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
     }
 }
 
-EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
-    if (!player) return null;
-    var employeeInfo = this.employeeDatabase.getEmployeeById(player.characterId)
-    var employee = new Employee(employeeInfo);
-    employee.setExp(player.exp);
+// EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
+//     if (!player) return null;
+//     var employeeInfo = this.employeeDatabase.getEmployeeById(player.characterId)
+//     var employee = new Employee(employeeInfo);
+//     employee.setExp(player.exp);
+//     employee.position = player.position;
 
-    if (player.equipedWeapon) {
-        var weapon = this.weaponDatabase.getWeaponById(player.equipedWeapon._id);
-        employee.weapon = weapon.stats["+" + player.equipedWeapon.plus];
-    }
+//     if (player.equipedWeapon) {
+//         var weapon = this.weaponDatabase.getWeaponById(player.equipedWeapon._id);
+//         employee.weapon = weapon.stats["+" + player.equipedWeapon.plus];
+//     }
 
-    if (player.equipedArmor) {
-        var armor = this.armorDatabase.getArmorById(player.equipedArmor._id);
-        employee.armor = armor.stats["+" + player.equipedArmor.plus];
-        employee.element = armor.element;
-    }
+//     if (player.equipedArmor) {
+//         var armor = this.armorDatabase.getArmorById(player.equipedArmor._id);
+//         employee.armor = armor.stats["+" + player.equipedArmor.plus];
+//         employee.element = armor.element;
+//     }
 
-    if (player.equipedAccessory) {
-        var accessory = this.accessoryDatabase.getAccessoryById(player.equipedAccessory._id);
-        employee.accessory = accessory.stats["+" + player.equipedAccessory.plus];
-    }
+//     if (player.equipedAccessory) {
+//         var accessory = this.accessoryDatabase.getAccessoryById(player.equipedAccessory._id);
+//         employee.accessory = accessory.stats["+" + player.equipedAccessory.plus];
+//     }
 
-    return employee;
-}
+//     return employee;
+// }
 
 EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
     var itemName = "";
@@ -363,21 +381,21 @@ EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
     } else if (auction.itemType === "weapon") {
         var currentItemInfo = this.weaponDatabase.getWeaponById(auction.itemId);
         if (currentItemInfo) {
-            itemName = currentItemInfo.weaponName + " +" + auction.plus;
+            itemName = currentItemInfo.name + " +" + auction.plus;
         } else {
             this.log("[SetAuction] Cannot find weapon with ID: " + auction.itemId);
         }
     } else if (auction.itemType === "armor") {
         var currentItemInfo = this.armorDatabase.getArmorById(auction.itemId);
         if (currentItemInfo) {
-            itemName = currentItemInfo.armorName + " +" + auction.plus;
+            itemName = currentItemInfo.name + " +" + auction.plus;
         } else {
             this.log("[SetAuction] Cannot find armor with ID: " + auction.itemId);
         }
     } else if (auction.itemType === "accessory") {
         var currentItemInfo = this.accessoryDatabase.getAccessoryById(auction.itemId);
         if (currentItemInfo) {
-            itemName = currentItemInfo.accessoryName + " +" + auction.plus;
+            itemName = currentItemInfo.name + " +" + auction.plus;
         } else {
             this.log("[SetAuction] Cannot find accessory with ID: " + auction.itemId);
         }
@@ -431,6 +449,11 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         aromaCommand.handle(message, this);
         sellPageCommand.handle(message, this);
         ceoPowerCommand.handle(message, this);
+        attackCommand.handle(message, this);
+        healCommand.handle(message, this);
+        trainerCommand.handle(message, this);
+        joinTrainingCommand.handle(message, this);
+        quitTrainingCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -597,8 +620,19 @@ EmployeeBot.prototype.loadPlayer = function() {
             if (typeof player.ceoPower === "undefined") {
                 player.ceoPower = false;
             }
+            if (typeof player._id === "undefined") {
+                player._id = userId;
+            }
         }
         that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
+        for(key in that.playerManager.playerDict) {
+            var userId = key;
+            var player = that.playerManager.getPlayer(userId);
+            that.unitManager.createUnitForPlayer(player);
+            var unit = that.unitManager.getPlayerUnit(userId);
+            that.log("Created unit for " + userId + " " + (unit?"successfully.":"unsuccessfully."));
+
+        }
     });
 }
 
@@ -822,13 +856,16 @@ EmployeeBot.prototype.ready = function() {
         this.loadDailyGift();
         this.loadUnsubscribe();
         // this.loadChristmasTree();
-        this.userManager.fetchAllMembers(this, function() {
+        this.userManager.fetchAllMembers(function() {
             that.loadRunQuestStatus();
             that.loadAuction();
             that.loadAroma();
         });
+
+        return true;
     } else {
         this.log("Bot is restarted");
+        return false;
     }
 }
 

@@ -422,46 +422,38 @@ module.exports = {
                     return;
                 }
 
-                bot.imageHelper.read([itemFileName], function (err, imageList) {
-                    if (err) {
-                        message.reply("Error happened. Try again.");
-                        bot.log(err);
-                        return;
-                    }
+                if (typeof bot.christmasTreeContribution[userId] === "undefined") {
+                    bot.christmasTreeContribution[userId] = 0;
+                }
+                bot.christmasTreeContribution[userId]++;
+                bot.saveChristmasTree();
 
-                    if (typeof bot.christmasTreeContribution[userId] === "undefined") {
-                        bot.christmasTreeContribution[userId] = 0;
-                    }
-                    bot.christmasTreeContribution[userId]++;
-                    bot.saveChristmasTree();
+                var total = 0;
+                for(key in bot.christmasTreeContribution) {
+                    total += bot.christmasTreeContribution[key];
+                }
 
-                    var total = 0;
+                bot.playerManager.spendItem(userId, materialInfo.itemName);
+                var text = "You used **1 " + materialInfo.itemName + "** to decorate the Sacred Tree.\n";
+                bot.playerManager.addItem(userId, reward.itemName, reward.amount);
+
+                text += "**" + reward.amount + " " + reward.itemName + "** droped from the Tree.";
+                message.channel.sendFile(itemFileName, "png", text);
+
+                if (typeof bot.christmasTreeMilestones["" + total] != "undefined") {
+                    var rewardToGive = bot.christmasTreeMilestones["" + total];
                     for(key in bot.christmasTreeContribution) {
-                        total += bot.christmasTreeContribution[key];
-                    }
-
-                    bot.playerManager.spendItem(userId, materialInfo.itemName);
-                    var text = "You used **1 " + materialInfo.itemName + "** to decorate the Sacred Tree.\n";
-                    bot.playerManager.addItem(userId, reward.itemName, reward.amount);
-
-                    text += "**" + reward.amount + " " + reward.itemName + "** droped from the Tree.";
-                    message.channel.sendFile(itemFileName, "png", text);
-
-                    if (typeof bot.christmasTreeMilestones["" + total] != "undefined") {
-                        var rewardToGive = bot.christmasTreeMilestones["" + total];
-                        for(key in bot.christmasTreeContribution) {
-                            var contributorId = key;
-                            bot.playerManager.addItem(contributorId, rewardToGive.itemName, rewardToGive.amount);
-                            var user = bot.userManager.getUser(contributorId);
-                            if (user) {
-                                var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
-                                text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
-                                user.sendMessage(text2);
-                            }
+                        var contributorId = key;
+                        bot.playerManager.addItem(contributorId, rewardToGive.itemName, rewardToGive.amount);
+                        var user = bot.userManager.getUser(contributorId);
+                        if (user) {
+                            var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
+                            text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
+                            user.sendMessage(text2);
                         }
                     }
-                    bot.savePlayer();
-                });
+                }
+                bot.savePlayer();
             });
         } else if (isAromaOil(itemName)) {
             if (!bot.isPM(message)) {

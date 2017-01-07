@@ -73,7 +73,7 @@ module.exports = {
         if (bot.isPM(message)) {
             sendMyTop(message, bot, result);
         } else {
-            bot.userManager.fetchAllMembers(bot, function() {
+            bot.userManager.fetchAllMembers(function() {
                 sendMyTop(message, bot, result);
             });  
         }

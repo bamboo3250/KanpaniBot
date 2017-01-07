@@ -1,7 +1,7 @@
 module.exports = {
     "r1": [
         {
-            _id: "330001", accessoryName: "Plain Ring", commonNames: ["R1 Ring"],
+            _id: "330001", name: "Plain Ring", commonNames: ["R1 Ring"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 450,
                     patk: 1, pdef: 1, matk: 1, mdef: 1, crit: 0, hit: 0, eva: 0
@@ -23,7 +23,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330101", accessoryName: "Plain Pendant", commonNames: ["R1 Necklace"],
+            _id: "330101", name: "Plain Pendant", commonNames: ["R1 Necklace"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 0
@@ -45,7 +45,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330201", accessoryName: "Bracelet", commonNames: ["R1 Bracelet"],
+            _id: "330201", name: "Bracelet", commonNames: ["R1 Bracelet"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 650,
                     patk: 3, pdef: 3, matk: 3, mdef: 3, crit: 0, hit: 0, eva: 0
@@ -71,7 +71,7 @@ module.exports = {
 
     "r2": [
         {
-            _id: "330002", accessoryName: "Reduce Ring", commonNames: ["R2 Ring"],
+            _id: "330002", name: "Reduce Ring", commonNames: ["R2 Ring"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 630,
                     patk: 5, pdef: 5, matk: 3, mdef: 3, crit: 0, hit: 0, eva: 0
@@ -93,7 +93,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330102", accessoryName: "Reduce Pendant", commonNames: ["R2 Necklace"],
+            _id: "330102", name: "Reduce Pendant", commonNames: ["R2 Necklace"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1530,
                     patk: 10, pdef: 10, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
@@ -115,7 +115,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330202", accessoryName: "Reduce Bracelet", commonNames: ["R2 Bracelet"],
+            _id: "330202", name: "Reduce Bracelet", commonNames: ["R2 Bracelet"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 15, pdef: 15, matk: 9, mdef: 9, crit: 0, hit: 0, eva: 0
@@ -141,7 +141,7 @@ module.exports = {
 
     "r3": [
         {
-            _id: "330003", accessoryName: "Flaming Tomoe Ring", commonNames: ["R3 Ring"],
+            _id: "330003", name: "Flaming Tomoe Ring", commonNames: ["R3 Ring"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 10, pdef: 2, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 0
@@ -166,7 +166,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330103", accessoryName: "Torrid Necklace", commonNames: ["R3 Necklace"],
+            _id: "330103", name: "Torrid Necklace", commonNames: ["R3 Necklace"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 2000,
                     patk: 20, pdef: 4, matk: 4, mdef: 4, crit: 0, hit: 0, eva: 0
@@ -191,7 +191,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330203", accessoryName: "Ignis Bracelet", commonNames: ["R3 Bracelet"],
+            _id: "330203", name: "Ignis Bracelet", commonNames: ["R3 Bracelet"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1250,
                     patk: 30, pdef: 6, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
@@ -220,7 +220,7 @@ module.exports = {
 
     "r4": [
         {
-            _id: "330004", accessoryName: "White Ice Ring", commonNames: ["R4 Ring"],
+            _id: "330004", name: "White Ice Ring", commonNames: ["R4 Ring"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 900,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 0
@@ -245,7 +245,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330104", accessoryName: "Glacial Necklace", commonNames: ["R4 Necklace"],
+            _id: "330104", name: "Glacial Necklace", commonNames: ["R4 Necklace"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 2000,
                     patk: 4, pdef: 4, matk: 4, mdef: 4, crit: 0, hit: 0, eva: 0
@@ -270,7 +270,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330204", accessoryName: "Frozen Bracelet", commonNames: ["R4 Bracelet"],
+            _id: "330204", name: "Frozen Bracelet", commonNames: ["R4 Bracelet"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1250,
                     patk: 6, pdef: 6, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
@@ -299,7 +299,7 @@ module.exports = {
 
     "r5": [
         {
-            _id: "330005", accessoryName: "Tempest Ring", commonNames: ["R5 Ring"],
+            _id: "330005", name: "Tempest Ring", commonNames: ["R5 Ring"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1200,
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 0
@@ -324,7 +324,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330105", accessoryName: "Gale Necklace", commonNames: ["R5 Necklace"],
+            _id: "330105", name: "Gale Necklace", commonNames: ["R5 Necklace"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 3150,
                     patk: 4, pdef: 4, matk: 4, mdef: 4, crit: 0, hit: 0, eva: 0
@@ -349,7 +349,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330205", accessoryName: "Cyclone Bracelet", commonNames: ["R5 Bracelet"],
+            _id: "330205", name: "Cyclone Bracelet", commonNames: ["R5 Bracelet"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1700,
                     patk: 6, pdef: 6, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
@@ -375,7 +375,7 @@ module.exports = {
 
     "r6": [
         {
-            _id: "330006", accessoryName: "Ring of Resounding Quake", commonNames: ["R6 Ring"],
+            _id: "330006", name: "Ring of Resounding Quake", commonNames: ["R6 Ring"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1200,
                     patk: 2, pdef: 10, matk: 2, mdef: 2, crit: 0, hit: 0, eva: 20
@@ -400,7 +400,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330106", accessoryName: "Rumbling Necklace", commonNames: ["R6 Necklace"],
+            _id: "330106", name: "Rumbling Necklace", commonNames: ["R6 Necklace"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 3150,
                     patk: 4, pdef: 20, matk: 4, mdef: 4, crit: 0, hit: 0, eva: 20
@@ -422,7 +422,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330206", accessoryName: "Titanic Bracelet", commonNames: ["R6 Bracelet"],
+            _id: "330206", name: "Titanic Bracelet", commonNames: ["R6 Bracelet"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1700,
                     patk: 6, pdef: 6, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 20
@@ -451,7 +451,7 @@ module.exports = {
 
     "r7": [
         {
-            _id: "330007", accessoryName: "Goddess's Ring", commonNames: ["R7 Ring"],
+            _id: "330007", name: "Goddess's Ring", commonNames: ["R7 Ring"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 1350,
                     patk: 0, pdef: 20, matk: 0, mdef: 20, crit: 5, hit: 5, eva: 10
@@ -479,7 +479,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "330107", accessoryName: "Holy Pendant", commonNames: ["R7 Necklace"],
+            _id: "330107", name: "Holy Pendant", commonNames: ["R7 Necklace"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 3200,
                     patk: 0, pdef: 30, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 10
@@ -508,7 +508,7 @@ module.exports = {
 
     "labyrinth": [
         {
-            _id: "360201", accessoryName: "Labyrinth Ring", commonNames: ["Labyrinth Ring"],
+            _id: "360201", name: "Labyrinth Ring", commonNames: ["Labyrinth Ring"],
             type: "story", isActive: true, stats: {
                 "+0": { price: 3000,
                     patk: 5, pdef: 5, matk: 5, mdef: 5, crit: 5, hit: 0, eva: 5
@@ -534,7 +534,7 @@ module.exports = {
 
     "xmas1": [
         {
-            _id: "329997", accessoryName: "Christmas Necklace X", commonNames: ["Xmas1 Necklace"],
+            _id: "329997", name: "Christmas Necklace X", commonNames: ["Xmas1 Necklace"],
             type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 30, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 15

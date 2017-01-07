@@ -1,11 +1,10 @@
-//var questList = require('./QuestList');
-
 function PlayerManager() {
     this.playerDict = {};
 }
 
 PlayerManager.prototype.createNewPlayer = function(userId) {
     this.playerDict[userId] = {
+        _id: userId,
         characterId: "",
         exp: 0,
         gold: 0,
@@ -243,6 +242,18 @@ PlayerManager.prototype.unsetPartner = function(playerId) {
     var partner = this.getPlayer(player.partnerId);
     player.partnerId = null;
     partner.partnerId = null;
+}
+
+PlayerManager.prototype.setExp = function(playerId, setExp) {
+    var player = this.getPlayer(playerId);
+    if (!player) return;
+    player.exp = setExp;
+}
+
+PlayerManager.prototype.addExp = function(playerId, gainedExp) {
+    var player = this.getPlayer(playerId);
+    if (!player) return;
+    player.exp += gainedExp;
 }
 
 module.exports = new PlayerManager();

@@ -9,14 +9,32 @@ module.exports = {
             message.reply("You haven't selected your character.");
             return;
         }
+        
+        var employee = bot.unitManager.getPlayerUnit(userId);
+        if (message.channel.name === "battlefield") {
+            const elementEmoji = (message.guild == null ? employee.element : message.guild.emojis.find('name', 'k' + employee.element));
 
-        if (typeof bot.freeMe[userId] === "undefined") bot.freeMe[userId] = 2;
+            var text = "\n";
+            var partner = null;
+            if (player.partnerId != null) {
+                partner = bot.userManager.getUser(player.partnerId);     
+            }
+            text += "Character: **" + employee.fullName + "** (" + (elementEmoji?elementEmoji+", ":"") + "Lv.**" + employee.levelCached  + "**)\n";
+            var now = new Date();
+            text += "HP: **" + employee.getCurrentHP() + "/" + employee.getMaxHP() + "**" + (employee.respawnTime?" (Respawn in " + bot.functionHelper.parseTime(employee.respawnTime - now.valueOf()) + ")":"") + "\n";
+            text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (partner?"(Partner: **" + partner.username + "**)":"") + "\n";
+            text += "Skill: **" + employee.getCurrentSkill() + "**";
+            
+            message.reply(text);
+            return;
+        }
 
-        var employee = bot.createEmployeeFromPlayer(player);
+
         var goldToDeduct = employee.levelCached * 1000;
         if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) {
             goldToDeduct *= 2;
         }
+        if (typeof bot.freeMe[userId] === "undefined") bot.freeMe[userId] = 2;
         if (bot.isPM(message) || bot.freeMe[userId] > 0) goldToDeduct = 0;
 
         if (player.gold < goldToDeduct) {
@@ -24,16 +42,8 @@ module.exports = {
             return;
         }
 
-        var weaponModel = "02";
-        var weaponType = "story"
-        if (player.equipedWeapon) {
-            var weapon = bot.weaponDatabase.getWeaponById(player.equipedWeapon._id);
-            weaponModel = weapon.modelId; 
-            weaponType = weapon.type;   
-        }
-        
-        var enemySpriteUrl = employee.getSpriteImageURL(employee.getRarity(), true, weaponType, weaponModel);
-        var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(employee.getRarity(), weaponType, weaponModel);
+        var enemySpriteUrl = bot.urlHelper.getSpriteImageURL(employee);
+        var enemySpriteFileName = "images/enemy/" + bot.urlHelper.getSpriteImageName(employee);
 
         var queue = [
             { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName}
@@ -41,18 +51,11 @@ module.exports = {
 
         var partnerSpriteFileName = null
         if (player.partnerId) {
-            var partnerWeaponModel = "02";
-            var partnerWeaponType = "story"
             var partner = bot.playerManager.getPlayer(player.partnerId);
-            if (partner.equipedWeapon) {
-                var weapon = bot.weaponDatabase.getWeaponById(partner.equipedWeapon._id);
-                partnerWeaponModel = weapon.modelId; 
-                partnerWeaponType = weapon.type;   
-            }
-            var partnerEmployee = bot.createEmployeeFromPlayer(partner);
+            var partnerEmployee = bot.unitManager.getPlayerUnit(player.partnerId);
             
-            var partnerSpriteUrl = partnerEmployee.getSpriteImageURL(partnerEmployee.getRarity(), true, partnerWeaponType, partnerWeaponModel);
-            partnerSpriteFileName = "images/enemy/" + partnerEmployee.getSpriteImageName(partnerEmployee.getRarity(), partnerWeaponType, partnerWeaponModel);
+            var partnerSpriteUrl = bot.urlHelper.getSpriteImageURL(partnerEmployee);
+            partnerSpriteFileName = "images/enemy/" + bot.urlHelper.getSpriteImageName(partnerEmployee);
             queue.push({
                 fileToDownload: partnerSpriteUrl,   fileToSave: partnerSpriteFileName      
             })
@@ -111,43 +114,27 @@ module.exports = {
                 shadowFileName
             ];
 
-            if (weaponFileName) {
-                fileNameQueue.push(weaponFileName);
-            } else {
-                fileNameQueue.push(null);
-            }
-            if (armorFileName) {
-                fileNameQueue.push(armorFileName);
-            } else {
-                fileNameQueue.push(null);
-            }
-            if (accessoryFileName) {
-                fileNameQueue.push(accessoryFileName);
-            } else {
-                fileNameQueue.push(null);
-            }
-            if (player.partnerId) {
-                fileNameQueue.push(partnerSpriteFileName);
-            } else {
-                fileNameQueue.push(null);   
-            }
-
+            if (weaponFileName) fileNameQueue.push(weaponFileName);
+            if (armorFileName) fileNameQueue.push(armorFileName);
+            if (accessoryFileName) fileNameQueue.push(accessoryFileName);
+            if (player.partnerId) fileNameQueue.push(partnerSpriteFileName);
+            
             bot.imageHelper.read(fileNameQueue, function (err, imageList) {
                 if (err) {
                     message.reply("Error happened. Try again.");
                     bot.log(err); 
                     return;
                 }
-                enemySpriteImage = imageList[0];
-                itemCellImage = imageList[1];
-                backgroundImage = imageList[2];
-                shadowImage = imageList[3];
+                enemySpriteImage = imageList[enemySpriteFileName];
+                itemCellImage = imageList[itemCellFileName];
+                backgroundImage = imageList[backgroundFileName];
+                shadowImage = imageList[shadowFileName];
 
-                var weaponImage = imageList[4];
-                var armorImage = imageList[5];
-                var accessoryImage = imageList[6];
+                var weaponImage = imageList[weaponFileName];
+                var armorImage = imageList[armorFileName];
+                var accessoryImage = imageList[accessoryFileName];
 
-                var partnerImage = imageList[7];
+                var partnerImage = imageList[partnerSpriteFileName];
 
                 backgroundImage.crop(250, 100, 310, 270);
                 enemySpriteImage.crop(20, 0, 310, 270);
@@ -217,7 +204,7 @@ module.exports = {
 
                         text += "Class: **" + employee.getClass() + "** " + (classEmoji != null? classEmoji : "")  + "\n";
                         text += "Exp: **" + employee.exp + "** (Remain: **" + employee.getExpToNextLevel() + "pts**)\n";
-                        text += (hpEmoji != null? hpEmoji + " " : "") + "HP: **" + employee.getHP() + "**\n";
+                        text += (hpEmoji != null? hpEmoji + " " : "") + "HP: **" + employee.getCurrentHP() + "/" + employee.getMaxHP() + "**\n";
                         text += (atkEmoji != null? atkEmoji + " " : "") + "Atk: **" + employee.getAtk() + "**\t";
                         text += (matkEmoji != null? matkEmoji + " " : "") + "M.Atk: **" + employee.getMAtk() + "**\n";
                         text += (defEmoji != null? defEmoji + " " : "") + "Def: **" + employee.getDef() + "**\t";

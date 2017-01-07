@@ -39,14 +39,14 @@ ImageHelper.prototype.download = function(queue, callback) {
     });
 }
 
-ImageHelper.prototype.read = function(queue, callback, curResult = []) {
+ImageHelper.prototype.read = function(queue, callback, curResult = {}) {
     if (queue.length <= 0) {
         callback(null, curResult);
         return;
     }
     var that = this;
     if (!queue[0]) {
-        curResult.push(null);
+        //curResult.push(null);
         queue.shift();
         that.read(queue, callback, curResult);
         return;
@@ -64,13 +64,13 @@ ImageHelper.prototype.read = function(queue, callback, curResult = []) {
             });
             image = new Jimp(1024, 1024, 0xFFFFFF00, function (err, image) {
                 queue.shift();
-                curResult.push(image);
+                curResult[falseImage] = image;
                 that.read(queue, callback, curResult);
             });
             return;
         }
+        curResult[queue[0]] = image;
         queue.shift();
-        curResult.push(image);
         that.read(queue, callback, curResult);
     });
 }

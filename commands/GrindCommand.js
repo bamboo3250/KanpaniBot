@@ -6,7 +6,7 @@ module.exports = {
         var quest = bot.questDatabase.getQuestByName(questName);
         var userId = user.id;
         var player = bot.playerManager.getPlayer(userId);
-        var employee = bot.createEmployeeFromPlayer(player);
+        var employee = bot.unitManager.getPlayerUnit(userId);
         var partnerId = player.partnerId;
         
         if (quest == null) {
@@ -130,13 +130,13 @@ module.exports = {
             }
             
             var player = bot.playerManager.getPlayer(userId);
-            var employee = bot.createEmployeeFromPlayer(player);
+            var employee = bot.unitManager.getPlayerUnit(userId);
             var preLevel = employee.levelCached;
             player.exp += expGained;
             employee.addExp(expGained);
     
             var partner = bot.playerManager.getPlayer(partnerId);
-            var partnerEmployee = bot.createEmployeeFromPlayer(partner);
+            var partnerEmployee = bot.unitManager.getPlayerUnit(partnerId);
 
             if (partnerId) {
                 var partnerPreLevel = partnerEmployee.levelCached;
@@ -150,13 +150,16 @@ module.exports = {
                 var partnerUser = bot.userManager.getUser(partnerId);
                 if (partnerUser) {
                     var partnerText = "You have received **" + bonusExp + " Exp** for being partner with **" + user.username + "** in " + questName + ".\n";
-                    if (partnerIsLevelUp) partnerText += partnerLevelUpText;
+                    if (partnerIsLevelUp) {
+                        setTimeout(function() {
+                            bot.userManager.announceLevel(partnerId, partnerEmployee.levelCached);
+                        }, 5000);
+                    }
                     partnerUser.sendMessage(partnerText);
                 }
             }
 
             var isLevelUp = (preLevel < employee.levelCached)
-            var levelUpText = "Congratulations! Your level has increased to **" + employee.levelCached + "**";
             
             player.gold += goldGained;
             bot.initBreadIfNeed(userId);
@@ -198,7 +201,10 @@ module.exports = {
                     }
                     return;
                 }
-                bot.imageHelper.read(itemFileNameList, function (err, imageList) {
+                bot.imageHelper.read(itemFileNameList, function (err, imageDict) {
+                    var imageList = [];
+                    for(key in imageDict) imageList.push(imageDict[key]);
+
                     if (err || imageList.length == 0) {
                         user.sendMessage(text + backupItemDropText);
                         if (isLevelUp) {
@@ -230,7 +236,7 @@ module.exports = {
                                 user.sendFile(imageName, "png", text);
                                 if (isLevelUp) {
                                     setTimeout(function() {
-                                        user.sendMessage(levelUpText);
+                                        bot.userManager.announceLevel(userId, employee.levelCached);
                                     }, 5*1000);
                                 }   
                             });
@@ -280,7 +286,7 @@ module.exports = {
             message.reply("You haven't selected your character.");
             return;
         }
-        var employee = bot.createEmployeeFromPlayer(player);
+        var employee = bot.unitManager.getPlayerUnit(userId);
         if (employee.levelCached < quest.levelRequired) {
             message.reply("Your level (**Lv." + employee.levelCached + "**) is too low for this quest. The minimum is **Lv." + quest.levelRequired + "**.");
             return;

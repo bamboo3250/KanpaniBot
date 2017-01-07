@@ -6,7 +6,7 @@ function WeaponDatabase() {
 
 function hasName(weapon, name) {
     var lowerCaseName = name.toLowerCase();
-    if (weapon.weaponName.toLowerCase() == lowerCaseName) return true;
+    if (weapon.name.toLowerCase() == lowerCaseName) return true;
     for(var i=0;i<weapon.commonNames.length;i++) {
         if (weapon.commonNames[i].toLowerCase() == lowerCaseName) return true;
     }
@@ -30,9 +30,16 @@ WeaponDatabase.prototype.getWeaponByCodeName = function(codeName, classId) {
     if (typeof weaponList === "undefined") return null;
 
     for(var i=0;i<weaponList.length;i++) {
-        if (weaponList[i].classId == classId) {
-            return weaponList[i];
+        if (codeName != "cw") {
+            if (weaponList[i].classId == classId) {
+                return weaponList[i];
+            }    
+        } else {
+            if (weaponList[i].characterId == classId) {
+                return weaponList[i];
+            }
         }
+        
     }
     return null;
 }

@@ -55,11 +55,11 @@ module.exports = {
                         plus: i
                     });
                     if (category == "wp") {
-                        backupText += equipment.weaponName + " +" + i + "(Amount: " + player.weaponList[equipmentId]["+" + i] +")\n";        
+                        backupText += equipment.name + " +" + i + "(Amount: " + player.weaponList[equipmentId]["+" + i] +")\n";        
                     } else if (category == "ar") {
-                        backupText += equipment.armorName + " +" + i + "(Amount: " + player.armorList[equipmentId]["+" + i] +")\n";    
+                        backupText += equipment.name + " +" + i + "(Amount: " + player.armorList[equipmentId]["+" + i] +")\n";    
                     } else if (category == "acc") {
-                        backupText += equipment.accessoryName + " +" + i + "(Amount: " + player.accessoryList[equipmentId]["+" + i] +")\n";    
+                        backupText += equipment.name + " +" + i + "(Amount: " + player.accessoryList[equipmentId]["+" + i] +")\n";    
                     }
                     
                 }
@@ -106,7 +106,7 @@ module.exports = {
                 message.author.sendMessage(text + backupText);
                 return;
             }
-            bot.imageHelper.read(equipmentFileNameList, function (err, imageList) {
+            bot.imageHelper.read(equipmentFileNameList, function (err, imageDict) {
                 if (err) {
                     message.author.sendMessage(text + backupText);
                     return;
@@ -115,6 +115,9 @@ module.exports = {
                 const ITEM_CELL_WIDTH = 480;
                 const ITEM_CELL_HEIGHT = 50;
                 const NUM_COL = 1;
+
+                var imageList = [];
+                for(key in imageDict) imageList.push(imageDict[key]);
 
                 var imageWidth = ITEM_CELL_WIDTH*NUM_COL;
                 var imageHeight = NUM_EQUIPMENT_PER_PAGE * ITEM_CELL_HEIGHT;
@@ -155,14 +158,8 @@ module.exports = {
                                 codeName = "(" + codeName.toUpperCase() + ")";
                             }
                             image.composite(imageList[i], 7 + col*ITEM_CELL_WIDTH, 7 + row*ITEM_CELL_HEIGHT);
-                            var equipmentName = "";
-                            if (category == "wp") {
-                                equipmentName = equipment.weaponName;
-                            } else if (category == "ar") {
-                                equipmentName = equipment.armorName;
-                            } else if (category == "acc") {
-                                equipmentName = equipment.accessoryName;
-                            }
+                            var equipmentName = equipment.name;
+                            
                             image.print(font, 55 + col*ITEM_CELL_WIDTH, 7 + row*ITEM_CELL_HEIGHT, equipmentName + " +" + equipmentIdList[i].plus + " " + codeName);
                             image.print(font, 55 + col*ITEM_CELL_WIDTH, 27 + row*ITEM_CELL_HEIGHT, "x" + equipmentList[equipment._id]["+" + equipmentIdList[i].plus]);
                             var stats = equipment.stats["+" + equipmentIdList[i].plus];

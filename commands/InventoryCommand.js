@@ -51,7 +51,7 @@ module.exports = {
                 message.author.sendMessage(text + backupItemDropText);
                 return;
             }
-            bot.imageHelper.read(itemFileNameList, function (err, imageList) {
+            bot.imageHelper.read(itemFileNameList, function (err, imageDict) {
                 if (err) {
                     message.author.sendMessage(text + backupItemDropText);
                     return;
@@ -60,6 +60,9 @@ module.exports = {
                 const ITEM_CELL_WIDTH = 240;
                 const ITEM_CELL_HEIGHT = 50;
                 const NUM_COL = 3;
+
+                var imageList = [];
+                for(key in imageDict) imageList.push(imageDict[key]);
 
                 var imageWidth = ITEM_CELL_WIDTH*NUM_COL;
                 var imageHeight = Math.max(1, Math.ceil(imageList.length/NUM_COL)) * ITEM_CELL_HEIGHT;
