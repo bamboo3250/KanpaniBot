@@ -796,6 +796,13 @@ EmployeeBot.prototype.sendMessageToMainChannel = function(text) {
     }
 }
 
+EmployeeBot.prototype.removeFaintedRole = function() {
+    for(key in this.userManager.members) {
+        var userId = key;
+        this.userManager.removeRole(userId, "Fainted");
+    }
+}
+
 EmployeeBot.prototype.ready = function() {
     if (this.firstTimeReady) {
         var channels = this.bot.channels.array();
@@ -833,6 +840,7 @@ EmployeeBot.prototype.ready = function() {
             that.loadRunQuestStatus();
             that.loadAuction();
             that.loadAroma();
+            that.removeFaintedRole();
         });
 
         return true;

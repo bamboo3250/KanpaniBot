@@ -10,10 +10,6 @@ UserManager.prototype.fetchAllMembersInGuildRecursively = function(callback, ite
         return;
     }
     if (iter == this.guilds.length) {
-        for(key in this.members) {
-            var userId = key;
-            this.removeRole(userId, "Fainted");
-        }
         callback();
         return;
     }
