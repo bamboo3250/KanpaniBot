@@ -6,7 +6,7 @@ function ArmorDatabase() {
 
 function hasName(armor, name) {
     var lowerCaseName = name.toLowerCase();
-    if (armor.armorName.toLowerCase() == lowerCaseName) return true;
+    if (armor.name.toLowerCase() == lowerCaseName) return true;
     for(var i=0;i<armor.commonNames.length;i++) {
         if (armor.commonNames[i].toLowerCase() == lowerCaseName) return true;
     }
