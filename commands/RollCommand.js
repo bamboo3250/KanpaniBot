@@ -36,10 +36,10 @@ module.exports = {
         var rolledEmployee = new Employee(employeeList[bot.functionHelper.randomInt(employeeList.length)]);
 
         var photoUrl = bot.urlHelper.getIllustURL(rolledEmployee, 'photo');
-        var photoFileName = "images/photo/" + rolledEmployee._id + ".png";
+        var photoFileName = "images/photo/" + rolledEmployee.characterId + ".png";
 
-        var spriteUrl = rolledEmployee.getSpriteImageURL(rolledEmployee.getBaseRarity(), true, "story", 2);
-        var spriteFileName = "images/enemy/" + rolledEmployee.getSpriteImageName(rolledEmployee.getBaseRarity(), "story", 2);
+        var spriteUrl = bot.urlHelper.getSpriteImageURL(rolledEmployee, true);
+        var spriteFileName = "images/enemy/" + bot.urlHelper.getSpriteImageName(rolledEmployee);
 
         var queue = [
             { fileToDownload: photoUrl,     fileToSave: photoFileName},
@@ -50,6 +50,7 @@ module.exports = {
         var normalStarFileName = "images/misc/normalStar.png";
         var highlightStarFileName = "images/misc/highlightStar.png";
         var resumeFileName = "images/misc/resumeForm.png";
+        
         bot.imageHelper.download(queue, function(err) {
             if (err) {
                 message.reply("Envelope got lost. Try again.");
@@ -64,6 +65,7 @@ module.exports = {
                 highlightStarFileName, 
                 resumeFileName
             ];
+            
             bot.imageHelper.read(imageFileNameQueue, function (err, imageList) {
                 if (err) { 
                     message.reply("Envelope got lost. Try again.");
@@ -77,8 +79,7 @@ module.exports = {
                 var highlightStarImage = imageList[highlightStarFileName];
                 var resume = imageList[resumeFileName];
 
-                var resumeFileName = "images/resume/" + rolledEmployee._id + ".png";
-
+                var resultResumeFileName = "images/resume/" + rolledEmployee.characterId + ".png";
                 spriteImage.crop(0, 0, 360, 270);
 
                 Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function (font) {
@@ -107,7 +108,7 @@ module.exports = {
 
                     resume.print(font, 20, 273, "Use \"~take\" to select this employee.");
 
-                    resume.write(resumeFileName, function() {
+                    resume.write(resultResumeFileName, function() {
                         var channel = message.channel;
                         if (channel.type === "text" || channel.type === "dm") {
                             if (message.author.id != "146556639342755840") {
@@ -117,8 +118,8 @@ module.exports = {
                                     if (!bot.consumeBread(message)) return;
                                 }    
                             }
-                            bot.rollResult[userId] = rolledEmployee._id;
-                            channel.sendFile(resumeFileName, "png", "The resume is in! " + message.author);    
+                            bot.rollResult[userId] = rolledEmployee.characterId;
+                            channel.sendFile(resultResumeFileName, "png", "The resume is in! " + message.author);    
                         }    
                     });
                 });

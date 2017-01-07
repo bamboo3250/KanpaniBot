@@ -630,8 +630,7 @@ EmployeeBot.prototype.loadPlayer = function() {
             var player = that.playerManager.getPlayer(userId);
             that.unitManager.createUnitForPlayer(player);
             var unit = that.unitManager.getPlayerUnit(userId);
-            that.log("Created unit for " + userId + " " + (unit?"successfully.":"unsuccessfully."));
-
+            // that.log("Created unit for " + userId + " " + (unit?"successfully.":"unsuccessfully."));
         }
     });
 }
