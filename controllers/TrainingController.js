@@ -342,7 +342,7 @@ TrainingController.prototype.randomField = function(middlePlayerId) {
         var player = this.bot.playerManager.getPlayer(userId);
         var playerUnit = this.bot.unitManager.getPlayerUnit(userId);
         var hasJoinedTraining = this.bot.userManager.doesMemberHaveRole(userId, "Trainee");
-        if (!playerUnit.isFainted() && hasJoinedTraining) {
+        if (playerUnit && !playerUnit.isFainted() && hasJoinedTraining) {
             var groupId = (groups[player.partnerId]? player.partnerId: userId);
         
             if (userId === middlePlayerId || player.partnerId === middlePlayerId) {
