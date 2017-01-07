@@ -172,7 +172,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var atk = attacker.getAtk();
                 var skillModifier = skillPhase.modifier;
                 var randomFactor = this.bot.functionHelper.randomArbitrary(1/1.1, 1.1);
-                var isCrit = (this.bot.functionHelper.randomInt(attacker.getCrit() + targetUnit.getLUK() + 2) < attacker.getCrit() + 1);
+                var isCrit = (this.bot.functionHelper.randomInt(attacker.getCrit() + targetUnit.getLUK() + 20) < attacker.getCrit() + 10);
                 var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
                 var def = targetUnit.getDef();
 
@@ -181,7 +181,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 rawDamage *= (hasSomeoneInFront ? 0.7 : 1.0);
 
 
-                var doesHit = (this.bot.functionHelper.randomInt(attacker.getHit() + targetUnit.getEva() + 2) < attacker.getHit() + 1);
+                var doesHit = (this.bot.functionHelper.randomInt(attacker.getHit() + targetUnit.getEva() + 20) < attacker.getHit() + 10);
                 if (skillPhase.isSpellAttack()) doesHit = true;
                 if (!doesHit) rawDamage = 0;
 
