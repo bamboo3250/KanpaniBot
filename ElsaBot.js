@@ -342,11 +342,11 @@ elsa.playerData = [
         },
         equipedArmor: {
             _id: "3101140",
-            plus: 3
+            plus: 2
         },
         equipedAccessory: {
             _id: "330206",
-            plus: 3
+            plus: 2
         },
         materialList: {},
         weaponList: {},

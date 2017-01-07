@@ -574,7 +574,7 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
             var targetPosOnAllySide = getPosOnField(targetUnitList[i], battleField.allySide);
             if (!targetPosOnEnemySide && !targetPosOnAllySide) {
                 var playerId = targetUnitList[i].playerId;
-                var player = this.bot.playerManager.getPlayer(player);
+                var player = this.bot.playerManager.getPlayer(playerId);
                 if (player.position === "front") {
                     battleField.allySide[0][0] = playerId;
                     battleField.allySide[1][0] = player.partnerId;

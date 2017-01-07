@@ -50,12 +50,12 @@ module.exports = {
             var bustupUrl = bot.urlHelper.getIllustURL(employee, "bustup");
             var star = 6;
             if (employee.getBaseRarity() === 5) star++;
-            var enemySpriteUrl = employee.getSpriteImageURL(star, true, "character");
-            var allySpriteUrl = employee.getSpriteImageURL(star, false, "character");
+            var enemySpriteUrl = bot.urlHelper.getSpriteImageURL(employee, true);
+            var allySpriteUrl = bot.urlHelper.getSpriteImageURL(employee, false);
 
             var bustupFileName = "images/bustup/" + employee.characterId + ".png";
-            var enemySpriteFileName = "images/enemy/" + employee.getSpriteImageName(star, "character");
-            var allySpriteFileName = "images/ally/" + employee.getSpriteImageName(star, "character");
+            var enemySpriteFileName = "images/enemy/" + bot.urlHelper.getSpriteImageName(employee);
+            var allySpriteFileName = "images/ally/" + bot.urlHelper.getSpriteImageName(employee);
 
             var queue = [
                 { fileToDownload: enemySpriteUrl,   fileToSave: enemySpriteFileName},
