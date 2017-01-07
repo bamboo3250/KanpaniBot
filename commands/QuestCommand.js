@@ -5,12 +5,11 @@ module.exports = {
         if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) return;
         
         var userId = message.author.id;
-        var player = bot.playerManager.getPlayer(userId);
-        if (player === null) {
+        var employee = bot.unitManager.getPlayerUnit(userId);
+        if (employee === null) {
             message.reply("You haven't selected your character.");
             return;
         }
-        var employee = bot.createEmployeeFromPlayer(player);
 
         var questList = bot.questDatabase.questList;
         var result = [];

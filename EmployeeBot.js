@@ -343,32 +343,6 @@ EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
     }
 }
 
-// EmployeeBot.prototype.createEmployeeFromPlayer = function(player) {
-//     if (!player) return null;
-//     var employeeInfo = this.employeeDatabase.getEmployeeById(player.characterId)
-//     var employee = new Employee(employeeInfo);
-//     employee.setExp(player.exp);
-//     employee.position = player.position;
-
-//     if (player.equipedWeapon) {
-//         var weapon = this.weaponDatabase.getWeaponById(player.equipedWeapon._id);
-//         employee.weapon = weapon.stats["+" + player.equipedWeapon.plus];
-//     }
-
-//     if (player.equipedArmor) {
-//         var armor = this.armorDatabase.getArmorById(player.equipedArmor._id);
-//         employee.armor = armor.stats["+" + player.equipedArmor.plus];
-//         employee.element = armor.element;
-//     }
-
-//     if (player.equipedAccessory) {
-//         var accessory = this.accessoryDatabase.getAccessoryById(player.equipedAccessory._id);
-//         employee.accessory = accessory.stats["+" + player.equipedAccessory.plus];
-//     }
-
-//     return employee;
-// }
-
 EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
     var itemName = "";
     if (auction.itemType === "material") {

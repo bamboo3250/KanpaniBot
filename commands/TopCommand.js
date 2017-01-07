@@ -37,8 +37,7 @@ module.exports = {
         var result = [];
         for (key in bot.playerManager.playerDict) {
             var userId = key;
-            var player = bot.playerManager.getPlayer(userId);
-            var employee = bot.createEmployeeFromPlayer(player);
+            var employee = bot.unitManager.getPlayerUnit(userId);
             result.push({
                 userId: userId,
                 employee: employee
