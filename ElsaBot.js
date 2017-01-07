@@ -331,8 +331,8 @@ elsa.commonThanks = elsa.commonThanks.concat(dialog.elsa.commonThanks);
 
 elsa.playerData = [
     {
-        // _id: "241511566036434945",
-        _id: "240097185436270593",  // test-bot
+        _id: "241511566036434945",
+        // _id: "240097185436270593",  // test-bot
         characterId: "10150002_765306d2",
         exp: 2646190,//2646190,
         gold: 0,
@@ -368,7 +368,7 @@ elsa.bot.on("ready", function() {
         // elsa.unitManager.createUnitForPlayer(elsa.playerData[4]);
         trainingController.bot = elsa;
         trainingController.trainerField = [
-            [null, "240097185436270593", null],
+            [null, "241511566036434945", null],
             [null, null, null]
             // ["240097185436270593", "240097185436270593", "240097185436270593"],
             // ["240097185436270593", "240097185436270593", "240097185436270593"]

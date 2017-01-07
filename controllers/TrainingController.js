@@ -406,7 +406,12 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         return;
     }
     var skill = this.bot.skillDatabase.getSkill(attacker.getClassId(), skillName);
-    if (!skill || !skill.canAttack) {
+    if (!skill) {
+        callback(null, "The skill **" + skillName + "** is not available yet. Please change to different weapon.", null, null, true);
+        return;
+    }
+
+    if (!skill.canAttack) {
         callback(null, "You cannot use **" + skillName + "** to attack.", null, null, true);
         return;
     }
@@ -515,7 +520,11 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
         return;
     }
     var skill = this.bot.skillDatabase.getSkill(attacker.getClassId(), skillName);
-    if (!skill || !skill.canHeal) {
+    if (!skill) {
+        callback(null, "The skill **" + skillName + "** is not available yet. Please change to different weapon.", null, null, true);
+        return;
+    }
+    if (!skill.canHeal) {
         callback(null, "You cannot use **" + skillName + "** to heal.", null, null, true);
         return;
     }
