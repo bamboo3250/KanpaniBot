@@ -182,7 +182,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
                 var hitValue = attacker.getHit() + attacker.getDEX();
                 var evadeValue = targetUnit.getEva() + targetUnit.getAGI();
-                var doesHit = (this.bot.functionHelper.randomInt(hitValue + evadeValue + 20) < hitValue + 10);
+                var hitRate = Math.floor(70 + 30 * (hitValue - evadeValue) / 500);
+                hitRate = Math.max(30, hitRate);
+                hitRate = Math.min(100, hitRate);
+
+                var doesHit = (this.bot.functionHelper.randomInt(100) < hitRate);
                 if (skillPhase.isSpellAttack()) doesHit = true;
                 if (!doesHit) rawDamage = 0;
 
