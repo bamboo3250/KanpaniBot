@@ -10,17 +10,14 @@ function UnitManager() {
 }
 
 UnitManager.prototype.createUnitForPlayer = function(player) {
-    if (!player) return null;
-    if (!this.playerUnits[player._id]) {
-        var employeeInfo = this.bot.employeeDatabase.getEmployeeById(player.characterId)
-        this.playerUnits[player._id] = new Employee(employeeInfo, player._id);
-        if (player.isTrainer) {
-            this.playerUnits[player._id].isTrainer = true;
-        }
-        this.refreshUnitForPlayer(player);
-        this.playerUnits[player._id].fullHeal();
-
+    if (!player) return null;    
+    var employeeInfo = this.bot.employeeDatabase.getEmployeeById(player.characterId)
+    this.playerUnits[player._id] = new Employee(employeeInfo, player._id);
+    if (player.isTrainer) {
+        this.playerUnits[player._id].isTrainer = true;
     }
+    this.refreshUnitForPlayer(player);
+    this.playerUnits[player._id].fullHeal();
     return this.playerUnits[player._id];
 }
 
