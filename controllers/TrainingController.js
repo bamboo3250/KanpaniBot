@@ -179,6 +179,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
                 var def = targetUnit.getDef();
 
+                if (skillPhase.useMagicalDamage()) {
+                    atk = attacker.getMAtk();
+                    def = targetUnit.getMDef();
+                }
+
                 var rawDamage = (1 - 0.00115 * def) * atk * skillModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0) - def / 4;
                 var hasSomeoneInFront = (targetFieldPos.row === 1 && field[0][targetFieldPos.column]);
                 rawDamage *= (hasSomeoneInFront ? 0.7 : 1.0);
