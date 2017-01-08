@@ -173,8 +173,8 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
             var atk = attacker.getAtk();
             var skillModifier = skillPhase.modifier;
-            var critRate = Math.floor(60 + 40 * (attacker.getCrit() - targetUnit.getLUK()) / 200);
-            critRate = Math.max(10, critRate);
+            var critRate = Math.floor(attacker.getCrit()*(1 - (500 - targetUnit.getLUK()) / 500));
+            critRate = Math.max(5, critRate);
             critRate = Math.min(100, critRate);
             critRateOnTargets[targetUnit.playerId] = critRate;
             var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
