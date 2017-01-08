@@ -159,6 +159,8 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     if (typeof expGained[attacker.playerId] === "undefined") expGained[attacker.playerId] = 0;
 
     var damageList = {};
+    var hitRateOnTargets = {};
+    var critRateOnTargets = {};
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -167,34 +169,40 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         var targetName = targetUnit.shortName;
         var targetUser = this.bot.userManager.getUser(targetUnit.playerId);
     
-        if (skillPhase.canAttack()) {        
+        if (skillPhase.canAttack()) {
+
+            var atk = attacker.getAtk();
+            var skillModifier = skillPhase.modifier;
+            var critRate = Math.floor(60 + 40 * (attacker.getCrit() - targetUnit.getLUK()) / 300);
+            critRate = Math.max(30, critRate);
+            critRate = Math.min(100, critRate);
+            critRateOnTargets[targetUnit.playerId] = critRate;
+            var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
+            var def = targetUnit.getDef();
+
+            if (skillPhase.useMagicalDamage()) {
+                atk = attacker.getMAtk();
+                def = targetUnit.getMDef();
+            }
+            var hitValue = attacker.getHit() + attacker.getDEX();
+            var evadeValue = targetUnit.getEva() + targetUnit.getAGI();
+            var hitRate = Math.floor(70 + 30 * (hitValue - evadeValue) / 500);
+            hitRate = Math.max(30, hitRate);
+            hitRate = Math.min(100, hitRate);
+            if (skillPhase.isSpellAttack()) {
+                hitRate = 100;
+            }
+            hitRateOnTargets[targetUnit.playerId] = hitRate;
+
             for(var j=0;j<skillPhase.attackTimes;j++) {
-                var atk = attacker.getAtk();
-                var skillModifier = skillPhase.modifier;
                 var randomFactor = this.bot.functionHelper.randomArbitrary(1/1.1, 1.1);
-                var critRate = Math.floor(60 + 40 * (attacker.getCrit() - targetUnit.getLUK()) / 300);
-                critRate = Math.max(30, critRate);
-                critRate = Math.min(100, critRate);
                 var isCrit = (this.bot.functionHelper.randomInt(100) < critRate);
-                var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
-                var def = targetUnit.getDef();
-
-                if (skillPhase.useMagicalDamage()) {
-                    atk = attacker.getMAtk();
-                    def = targetUnit.getMDef();
-                }
-
+                
                 var rawDamage = (1 - 0.00115 * def) * atk * skillModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0) - def / 4;
                 var hasSomeoneInFront = (targetFieldPos.row === 1 && field[0][targetFieldPos.column]);
                 rawDamage *= (hasSomeoneInFront ? 0.7 : 1.0);
 
-                var hitValue = attacker.getHit() + attacker.getDEX();
-                var evadeValue = targetUnit.getEva() + targetUnit.getAGI();
-                var hitRate = Math.floor(70 + 30 * (hitValue - evadeValue) / 500);
-                hitRate = Math.max(30, hitRate);
-                hitRate = Math.min(100, hitRate);
                 var doesHit = (this.bot.functionHelper.randomInt(100) < hitRate);
-                if (skillPhase.isSpellAttack()) doesHit = true;
                 if (!doesHit) rawDamage = 0;
 
                 if (rawDamage > 0 && hasSomeoneInFront) {
@@ -221,6 +229,9 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 });
             }
         } else {
+
+            hitRateOnTargets[targetUnit.playerId] = 100;
+
             for(var j=0;j<skillPhase.attackTimes;j++) {
                 var matk = attacker.getMAtk();
                 var skillModifier = skillPhase.modifier;
@@ -276,7 +287,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
                 if (isFainted) isKOed[targetUnit.playerId] = true;
             }
-            text += " damage** to " + targetName + "\n";
+            text += " damage** to " + targetName + " (Hit: " + hitRateOnTargets[targetId] + "%, Crit: " + critRateOnTargets[targetId] + "%)\n";
 
             if (onEnemySide) {
                 painter.setEnemyState(targetFieldPos.row, targetFieldPos.column, targetUnit, (totalDamage>0?"damage":"idle"));
