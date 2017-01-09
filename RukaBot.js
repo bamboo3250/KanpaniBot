@@ -138,8 +138,7 @@ ruka.bot.on("ready", function() {
         trainingController.bot = ruka;
         if (isLocal) {
             trainingController.trainerField = [
-                // [null, "240097185436270593", null],
-                [null, null, null],
+                [null, "240097185436270593", null],
                 [null, "265889287281573918", null]
             ];
         } else {
