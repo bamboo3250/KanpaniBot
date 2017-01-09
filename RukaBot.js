@@ -2,6 +2,8 @@ var ruka = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
 
+var trainingController = require('./controllers/TrainingController');
+
 ruka.declineNotEnoughBread = ruka.declineNotEnoughBread.concat(dialog.ruka.decline);
 
 ruka.canUseBreadToRoll = true;
@@ -136,7 +138,8 @@ ruka.bot.on("ready", function() {
         trainingController.bot = ruka;
         if (isLocal) {
             trainingController.trainerField = [
-                [null, "240097185436270593", null],
+                // [null, "240097185436270593", null],
+                [null, null, null],
                 [null, "265889287281573918", null]
             ];
         } else {
