@@ -4275,6 +4275,38 @@ module.exports = {
                     amount: 2
                 }
             ]
+        },{
+            _id: "308806", modelId: "06", name: "Holy Rod \"Storia\"", commonNames: ["Holy Rod \"Storia\""],
+            characterId: "10840001_1af29f14", type: "character", isActive: false, stats: {
+                "+0": { price: 3600,
+                    patk: 0, pdef: 0, matk: 152, mdef: 0, crit: 35, hit: 0, eva: 15,
+                    frontSkill: "Holy Cross", backSkill: "Holy Cross"
+                },
+                "+1": { price: 6000,
+                    patk: 0, 3960: 0, matk: 195, mdef: 0, crit: 45, hit: 0, eva: 25,
+                    frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
+                },
+                "+2": { price: 4500,
+                    patk: 0, pdef: 0, matk: 250, mdef: 0, crit: 50, hit: 0, eva: 25,
+                    frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
+                },
+                "+3": { price: 6120,
+                    patk: 0, pdef: 0, matk: 340, mdef: 0, crit: 55, hit: 0, eva: 30,
+                    frontSkill: "Eternal Light", backSkill: "Eternal Light"
+                }
+            },
+            note: "", devCost: 32400, levelRequired: 60, tier: 3, recipe: [
+                {
+                    materialName: "Ebony Branch",
+                    amount: 2
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Full Moon Fragment",
+                    amount: 2
+                }
+            ]
         }
     ]
 };

@@ -20,12 +20,6 @@ module.exports = {
         }
 
         bot.userManager.addRole(userId, "Trainee");
-        var player = bot.playerManager.getPlayer(userId);
-        if (player.partnerId) {
-            bot.userManager.addRole(player.partnerId, "Trainee");
-            message.reply("Now you and your partner can participate in the Training.");
-        } else {
-            message.reply("Now you can participate in the Training.");
-        }
+        message.reply("Now you can participate in the Training.");
     }
 }

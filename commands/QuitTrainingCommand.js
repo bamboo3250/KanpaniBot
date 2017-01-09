@@ -18,12 +18,6 @@ module.exports = {
         unit.didQuit = true;
 
         bot.userManager.removeRole(userId, "Trainee");
-        var player = bot.playerManager.getPlayer(userId);
-        if (player.partnerId) {
-            bot.userManager.removeRole(player.partnerId, "Trainee");
-            message.reply("Now you and your partner are not in the Training anymore.");
-        } else {
-            message.reply("Now you are not in the Training anymore.");
-        }
+        message.reply("Now you are not in the Training anymore.");
     }
 }
