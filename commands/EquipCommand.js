@@ -15,7 +15,7 @@ module.exports = {
         
         var ARGUMENT_NOT_CORRECT_ERROR = "Arguments are not correct.";
         var commandArgs = command.split(" ");
-        if (commandArgs.length < 3) {
+        if (commandArgs.length < 2) {
             message.reply(ARGUMENT_NOT_CORRECT_ERROR);
             return;
         }
@@ -27,7 +27,7 @@ module.exports = {
         equipmentCode = bot.functionHelper.removeExtraSpace(equipmentCode);
 
         var plus = 0;
-        if (commandArgs.length > 3) {
+        if (commandArgs.length > 2) {
             plus = commandArgs[commandArgs.length-1];
             if (!plus.startsWith("+")) {
                 plus = 0;
@@ -41,8 +41,8 @@ module.exports = {
             }
         }
 
-        if ((category != "ar") && (category != "wp") && (category != "acc")) {
-            message.reply("The equipment category is not correct. It should be `wp` for weapon, `ar` for armor or `acc` for accessory.")
+        if ((category != "ar") && (category != "wp") && (category != "cw") && (category != "acc")) {
+            message.reply("The equipment category is not correct. It should be `wp` for weapon, `cw` for character weapon, `ar` for armor or `acc` for accessory.")
             return;
         }
 
@@ -56,6 +56,8 @@ module.exports = {
             equipmentResult = bot.armorDatabase.getArmorByCodeName(equipmentCode, classId);
         } else if (category == "acc") {
             equipmentResult = bot.accessoryDatabase.getAccessoryByName(equipmentCode);
+        } else if (category == "cw") {
+            equipmentResult = bot.weaponDatabase.getWeaponByCodeName("cw", employee.characterId);
         }
         if (!equipmentResult) {
             message.reply("No information.")
@@ -64,7 +66,7 @@ module.exports = {
 
         var equipmentName = equipmentResult.name;
         var equipmentList = {};
-        if (category == "wp") {
+        if (category == "wp" || category == "cw") {
             equipmentList = player.weaponList;
         } else if (category == "ar") {
             equipmentList = player.armorList;
@@ -81,7 +83,7 @@ module.exports = {
             message.reply("You don't have any **" + equipmentName + " +" + plus + "**.");
             return;
         }
-        if (category == "wp") {
+        if (category == "wp" || category == "cw") {
             bot.playerManager.equipWeapon(userId, equipmentResult._id, plus);
         } else if (category == "ar") {
             bot.playerManager.equipArmor(userId, equipmentResult._id, plus);

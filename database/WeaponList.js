@@ -4245,7 +4245,7 @@ module.exports = {
     "cw": [
         {
             _id: "308119", modelId: "19", name: "Fenris Novem", commonNames: ["Fenris Novem"],
-            characterId: "10150002_765306d2", type: "character", isActive: false, stats: {
+            characterId: "10150002_765306d2", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 104, pdef: 85, matk: 0, mdef: 85, crit: 30, hit: 30, eva: 5,
                     frontSkill: "V Slash", backSkill: "Cross Edge"
@@ -4277,7 +4277,7 @@ module.exports = {
             ]
         },{
             _id: "308806", modelId: "06", name: "Holy Rod \"Storia\"", commonNames: ["Holy Rod \"Storia\""],
-            characterId: "10840001_1af29f14", type: "character", isActive: false, stats: {
+            characterId: "10840001_1af29f14", type: "character", isActive: true, stats: {
                 "+0": { price: 3600,
                     patk: 0, pdef: 0, matk: 152, mdef: 0, crit: 35, hit: 0, eva: 15,
                     frontSkill: "Holy Cross", backSkill: "Holy Cross"
@@ -4309,7 +4309,7 @@ module.exports = {
             ]
         },{
             _id: "308706", modelId: "06", name: "Duon Helios", commonNames: ["Duon Helios"],
-            characterId: "10750001_32935980", type: "character", isActive: false, stats: {
+            characterId: "10750001_32935980", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 108, pdef: 10, matk: 0, mdef: 10, crit: 30, hit: 30, eva: 30,
                     frontSkill: "Shadow Run", backSkill: "Throwing Knife"

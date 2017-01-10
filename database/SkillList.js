@@ -1911,8 +1911,8 @@ module.exports = {
                     "attack05", 10,
                     true,
                     true,
-                    -200, -310,
-                    -380, -300,
+                    -360, -300,
+                    -360, -300,
                     1.0
                 )
             ]
@@ -1932,7 +1932,7 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
+                    "attack01", 13
                 )
             ]
         },

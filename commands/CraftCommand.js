@@ -47,7 +47,7 @@ module.exports = {
         }
         
         var commandArgs = command.split(" ");
-        if (commandArgs.length < 3) {
+        if (commandArgs.length < 2) {
             message.reply("Arguments are not correct.")
             return;
         }
@@ -58,7 +58,7 @@ module.exports = {
         }
         equipmentCode = bot.functionHelper.removeExtraSpace(equipmentCode);
 
-        if ((category != "wp") && (category != "ar") && (category != "acc")) {
+        if ((category != "wp") && (category != "cw") && (category != "ar") && (category != "acc")) {
             message.reply("The equipment category is not correct.")
             return;
         }
@@ -76,6 +76,8 @@ module.exports = {
             equipmentResult = bot.armorDatabase.getArmorByCodeName(equipmentCode, classId);    
         } else if (category === "acc") {
             equipmentResult = bot.accessoryDatabase.getAccessoryByName(equipmentCode);
+        } else if (category === "cw") {
+            equipmentResult = bot.weaponDatabase.getWeaponByCodeName("cw", employee.characterId);
         }
         
         if (!equipmentResult) {
@@ -132,7 +134,7 @@ module.exports = {
         // Hammer effect
         if (typeof bot.hammerEffect[userId] !== "undefined" && bot.hammerEffect[userId].itemName !== "") {
             var hammerName = bot.hammerEffect[userId].itemName;
-            if ((category === "wp" && (hammerName === "1st Anni. W. Hammer" || hammerName === "Weapon Hammer"))
+            if (((category === "wp" || category === "cw") && (hammerName === "1st Anni. W. Hammer" || hammerName === "Weapon Hammer"))
                     || (category === "ar" && (hammerName === "Armor Hammer"))
                     || (category === "acc" && (hammerName === "1st Anni. Acc. Hammer" || hammerName === "Accessory Hammer"))) {
                 
@@ -195,7 +197,7 @@ module.exports = {
                                     bot.playerManager.spendItem(userId, materialName, amountNeed);
                                 }
                                 bot.playerManager.spendGold(userId, goldNeeded);
-                                if (category === "wp") {
+                                if (category === "wp" || category === "cw") {
                                     bot.playerManager.addWeapon(userId, equipmentResult._id, plus);    
                                 } else if (category === "ar") {
                                     bot.playerManager.addArmor(userId, equipmentResult._id, plus);    

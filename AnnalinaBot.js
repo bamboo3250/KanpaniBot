@@ -44,21 +44,21 @@ annalina.commonGoodNight = annalina.commonGoodNight.concat(dialog.annalina.commo
 annalina.commonThanks = annalina.commonThanks.concat(dialog.annalina.commonThanks);
 
 var isLocal = true;
-isLocal = false;
+// isLocal = false;
 
 if (isLocal) {
     annalina.playerData = [
         {
             _id: "240097185436270593",  // test-bot
-            characterId: "10840001_1af29f14",
+            characterId: "10750001_32935980",
             exp: 551340,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308806",
+                _id: "308706",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3108071",
+                _id: "3107071",
                 plus: 3
             },
             equipedAccessory: {
