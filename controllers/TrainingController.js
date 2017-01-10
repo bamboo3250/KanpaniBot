@@ -214,7 +214,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             if (enemyUnit && enemyUnit.getCurrentHP() > 0) {
                 if (enemyUnit === attacker) {
                     painter.setEnemyState(i, j, enemyUnit, skillPhase.state, skillPhase.frame);
-                    if (skillPhase.isShortAttack()) {
+                    if (skillPhase.doesApproach) {
                         painter.moveToFrontOfAllyField(i, j, average_column);
                     }
                 } else {
@@ -225,7 +225,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             if (allyUnit && !allyUnit.isFainted()) {
                 if (allyUnit === attacker) {
                     painter.setAllyState(i, j, allyUnit, skillPhase.state, skillPhase.frame);
-                    if (skillPhase.isShortAttack()) {
+                    if (skillPhase.doesApproach) {
                         painter.moveToFrontOfEnemyField(i, j, average_column);
                     }
                 } else {

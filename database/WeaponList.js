@@ -4307,6 +4307,38 @@ module.exports = {
                     amount: 2
                 }
             ]
+        },{
+            _id: "308706", modelId: "06", name: "Duon Helios", commonNames: ["Duon Helios"],
+            characterId: "10750001_32935980", type: "character", isActive: false, stats: {
+                "+0": { price: 5000,
+                    patk: 108, pdef: 10, matk: 0, mdef: 10, crit: 30, hit: 30, eva: 30,
+                    frontSkill: "Shadow Run", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 6000,
+                    patk: 144, pdef: 15, matk: 0, mdef: 15, crit: 33, hit: 33, eva: 33,
+                    frontSkill: "Divine Punishment", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 7000,
+                    patk: 166, pdef: 20, matk: 0, mdef: 20, crit: 36, hit: 36, eva: 36,
+                    frontSkill: "Divine Punishment", backSkill: "Dark Assault"
+                },
+                "+3": { price: 8000,
+                    patk: 283, pdef: 25, matk: 0, mdef: 25, crit: 40, hit: 40, eva: 40,
+                    frontSkill: "Aion's Single Strike", backSkill: "Dark Assault"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Rare Species Leather",
+                    amount: 2
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                },{
+                    materialName: "Sun Fragment",
+                    amount: 2
+                }
+            ]
         }
     ]
 };

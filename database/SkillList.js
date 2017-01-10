@@ -15,7 +15,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -31,7 +32,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -47,7 +49,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -63,7 +66,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -79,7 +83,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -95,7 +100,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -111,7 +117,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -127,7 +134,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -143,7 +151,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -159,7 +168,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -175,7 +185,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -191,7 +202,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -207,7 +219,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -223,7 +236,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -239,7 +253,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -255,7 +270,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -271,7 +287,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -287,7 +304,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -304,6 +322,7 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
+                    true,
                     true,
                     -200, -310,
                     -380, -300,
@@ -326,7 +345,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -342,7 +362,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -358,7 +379,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -374,7 +396,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -390,7 +413,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -406,7 +430,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -422,7 +447,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -438,7 +464,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -454,7 +481,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -470,7 +498,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -486,7 +515,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -502,7 +532,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -518,7 +549,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -534,7 +566,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -550,7 +583,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         }
@@ -860,7 +894,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -876,7 +911,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -892,7 +928,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -908,7 +945,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -924,7 +962,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -940,7 +979,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -956,7 +996,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -972,7 +1013,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -988,7 +1030,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -1004,7 +1047,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -1020,7 +1064,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -1036,7 +1081,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -1052,7 +1098,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         }
@@ -1071,7 +1118,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1087,7 +1135,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1103,7 +1152,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1119,7 +1169,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1135,7 +1186,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1151,7 +1203,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1167,7 +1220,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1183,7 +1237,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_EARTH,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1199,7 +1254,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1215,7 +1271,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1231,7 +1288,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1247,7 +1305,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1263,7 +1322,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1279,7 +1339,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1295,7 +1356,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         },
@@ -1311,7 +1373,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0
+                    "attack05", 0,
+                    true
                 )
             ]
         }
@@ -1330,7 +1393,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 4
+                    "attack01", 4,
+                    true
                 )
             ]
         },
@@ -1346,7 +1410,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_EARTH,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3
+                    "attack03", 3,
+                    true
                 )
             ]
         },
@@ -1573,7 +1638,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1589,7 +1655,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1621,7 +1688,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1637,7 +1705,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1653,7 +1722,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1685,7 +1755,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1701,7 +1772,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1717,7 +1789,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1733,7 +1806,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1749,7 +1823,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1765,7 +1840,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1781,7 +1857,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1797,7 +1874,8 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
                 )
             ]
         },
@@ -1813,7 +1891,29 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3
+                    "attack01", 3,
+                    true
+                )
+            ]
+        },
+        "Aion's Single Strike": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 15,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
+                    3.12, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_DARK,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack05", 10,
+                    true,
+                    true,
+                    -200, -310,
+                    -380, -300,
+                    1.0
                 )
             ]
         }
@@ -1832,7 +1932,7 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13
+                    "attack01", 13,
                 )
             ]
         },
