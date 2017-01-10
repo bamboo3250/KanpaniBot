@@ -90,7 +90,7 @@ UnitManager.prototype.setRespawn = function(userId) {
     var user = this.bot.userManager.getUser(userId);
     if (unit && unit.currentHP === 0) {
         var now = new Date();
-        var respawnDuration = (unit.isTrainer ? 6*60*60*1000 : (60 + unit.levelCached*20) * 1000);
+        var respawnDuration = (unit.isTrainer ? 4*60*60*1000 : (60 + unit.levelCached*20) * 1000);
         unit.respawnTime = now.valueOf() + respawnDuration;
         
         var that = this;

@@ -571,7 +571,10 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         }
         
         var trainerToAttack = that.randomTrainer();
-        if (trainerToAttack && !trainerToAttack.isFainted()) {
+        var now = new Date();
+        var isSkillReady = (trainerToAttack.cooldownEndTime <= now.valueOf());
+
+        if (trainerToAttack && !trainerToAttack.isFainted() && isSkillReady) {
             var trainerSkillName = trainerToAttack.getCurrentSkill();
             var trainerSkill = that.bot.skillDatabase.getSkill(trainerToAttack.getClassId(), trainerSkillName);
             
@@ -579,6 +582,8 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
             if (trainerSkill.canHeal) {
                 trainerTarget = trainerToAttack;
             }
+            trainerToAttack.cooldownEndTime = now.valueOf() + Math.floor(trainerSkill.cooldown * 60 * 1000);
+            
             that.attackRecursively(trainerSkill, trainerToAttack, [trainerTarget], battleField, 0, result2, koResult, function() {
                 for(var i=0;i<result2.length;i++) {
                     text += "=======TRAINER'S PHASE " + (i+1) + "=======\n";
