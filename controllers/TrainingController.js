@@ -382,7 +382,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
             text += "\thealing **";
             for(var i=0;i<damageList[targetId].length;i++) {
-                // var healHp = damageList[targetId][i].damage;
+                var healHp = damageList[targetId][i].damage;
                 // expGained[attacker.playerId] += healHp * 4;
 
                 if (i === damageList[targetId].length - 1) {
