@@ -12,6 +12,17 @@ function TrainingController() {
     this.contribution = {};
 }
 
+TrainingController.prototype.didAllTrainersDie = function() {
+    for(var i=0;i<2;i++) {
+        for(var j=0;j<3;j++) {
+            var trainerId = this.trainerField[i][j];
+            var unit = this.bot.unitManager.getPlayerUnit(trainerId);
+            if (unit && unit.getCurrentHP() > 0) return false;
+        }
+    }
+    return true;
+}
+
 var rewardList = [
     "Gold Ore",
     "Mithril Ore",
@@ -39,28 +50,30 @@ var EXP_REWARD = 48216;
 
 TrainingController.prototype.didPlayerDie = function(playerId) {
     var unit = this.bot.unitManager.getPlayerUnit(playerId);
-    if (unit && unit.isTrainer && unit.getCurrentHP() <= 0) {
+    if (unit && unit.isTrainer && this.didAllTrainersDie()) {
+        var expReward = EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1));
         for(key in this.contribution) {
             var userId = key;
             var itemAmount = this.contribution[userId] * 5;
+            this.contribution[userId] = 0;
             var itemReceived = {};
             for(var i=0;i<itemAmount;i++) {
                 var itemName = this.bot.functionHelper.randomObject(rewardList);
                 if (typeof itemReceived[itemName] === "undefined") itemReceived[itemName] = 0;
                 itemReceived[itemName]++;
             }
-            var text = "You have received **" + itemAmount + " items** and **" + EXP_REWARD + " EXP** for participating in Training:\n";
+            var text = "You have received **" + itemAmount + " items** and **" + expReward + " EXP** for defeating all Trainers:\n";
             for(itemKey in itemReceived) {
                 var itemName = itemKey;
                 text += itemName + " x" + itemReceived[itemName] + "\n";
-                this.bot.playerManager.addItem(playerId, itemName, itemReceived[itemName]);
+                this.bot.playerManager.addItem(userId, itemName, itemReceived[itemName]);
             }
-            this.bot.playerManager.addExp(playerId, EXP_REWARD);
-            var user = this.bot.userManager.getUser(playerId);
+            this.bot.playerManager.addExp(userId, expReward);
+            var user = this.bot.userManager.getUser(userId);
             if (user) {
                 user.sendMessage(text);
             }
-            var player = this.bot.playerManager.getPlayer(playerId);
+            var player = this.bot.playerManager.getPlayer(userId);
             this.bot.unitManager.refreshUnitForPlayer(player);
         }
         this.bot.savePlayer();
@@ -89,16 +102,19 @@ function getPosOnField(unit, field) {
     return null;
 }
 
-function hasFrontlineUnit(field) {
-    for(var i=0;i<3;i++) if (field[0][i]) return true;
+TrainingController.prototype.hasFrontlineUnit = function(field) {
+    for(var i=0;i<3;i++) {
+        var unit = this.bot.unitManager.getPlayerUnit(field[0][i]);
+        if (unit && !unit.isFainted()) return true;
+    }
     return false;
 }
 
-function resolveArea(skillPhase, attacker, mainTarget, field) {
+TrainingController.prototype.resolveArea = function(skillPhase, attacker, mainTarget, field) {
     var mainTargetPos = getPosOnField(mainTarget, field);
     
     if (skillPhase.isShortAttack()) {   // short attack
-        if (mainTargetPos.isBackline() && hasFrontlineUnit(field)) {
+        if (mainTargetPos.isBackline() && this.hasFrontlineUnit(field)) {
             mainTargetPos.row = 0;
         }
         if (!field[mainTargetPos.row][mainTargetPos.column]) {
@@ -129,7 +145,7 @@ function resolveArea(skillPhase, attacker, mainTarget, field) {
 }
 
 TrainingController.prototype.resolveTargets = function(skillPhase, attacker, mainTarget, field) {
-    var resolvedArea = resolveArea(skillPhase, attacker, mainTarget, field);
+    var resolvedArea = this.resolveArea(skillPhase, attacker, mainTarget, field);
     var result = [];
     for(var i=0;i<resolvedArea.length;i++) {
         var userId = field[resolvedArea[i].row][resolvedArea[i].column];
@@ -160,7 +176,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var actionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
     var field = (actionOnEnemySide? battleField.enemySide: battleField.allySide);
     var targets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, field);
-    var area = resolveArea(skillPhase, attacker, mainTargetUnit, field);
+    var area = this.resolveArea(skillPhase, attacker, mainTargetUnit, field);
     var average_column = 0;
     for(var i=0;i<area.length;i++) average_column += area[i].column;
     average_column = average_column / area.length;
@@ -537,12 +553,12 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
     battleField.enemySide = this.trainerField;
     battleField.allySide = this.randomField(attacker.playerId);
 
-    this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, koResult, function() {
+    if (typeof that.contribution[attacker.playerId] === "undefined") {
+        that.contribution[attacker.playerId] = 0;
+    }
+    that.contribution[attacker.playerId]++;
 
-        if (typeof that.contribution[attacker.playerId] === "undefined") {
-            that.contribution[attacker.playerId] = 0;
-        }
-        that.contribution[attacker.playerId]++;
+    this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, koResult, function() {
 
         var text = "";
         for(var i=0;i<result1.length;i++) {
@@ -668,13 +684,14 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
             }
         }
     };
+    
+    if (typeof that.contribution[attacker.playerId] === "undefined") {
+        that.contribution[attacker.playerId] = 0;
+    }
+    that.contribution[attacker.playerId]++;
 
     this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, koResult, function() {
-        if (typeof that.contribution[attacker.playerId] === "undefined") {
-            that.contribution[attacker.playerId] = 0;
-        }
-        that.contribution[attacker.playerId]++;
-
+      
         var text = "";
         for(var i=0;i<result1.length;i++) {
             text += "=======PLAYER'S PHASE " + (i+1) + "=======\n";
