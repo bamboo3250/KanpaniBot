@@ -51,6 +51,17 @@ var EXP_REWARD = 48216;
 TrainingController.prototype.didPlayerDie = function(playerId) {
     var unit = this.bot.unitManager.getPlayerUnit(playerId);
     if (unit && unit.isTrainer && this.didAllTrainersDie()) {
+        for(key in this.bot.unitManager.playerUnits) {
+            var userId = key;
+            var userUnit = this.bot.unitManager.playerUnits[userId];
+            if (userUnit && !userUnit.isTrainer) {
+                userUnit.fullHeal();
+                if (this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
+                    this.bot.userManager.removeRole(userId, "Fainted")
+                }
+            }
+        }
+
         var expReward = EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1));
         for(key in this.contribution) {
             var userId = key;
@@ -572,17 +583,17 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         
         var trainerToAttack = that.randomTrainer();
         var now = new Date();
-        var isSkillReady = (trainerToAttack.cooldownEndTime <= now.valueOf());
+        var isSkillReady = (trainerToAttack && trainerToAttack.cooldownEndTime <= now.valueOf());
 
         if (trainerToAttack && !trainerToAttack.isFainted() && isSkillReady) {
             var trainerSkillName = trainerToAttack.getCurrentSkill();
             var trainerSkill = that.bot.skillDatabase.getSkill(trainerToAttack.getClassId(), trainerSkillName);
-            
+
             var trainerTarget = attacker;
             if (trainerSkill.canHeal) {
                 trainerTarget = trainerToAttack;
             }
-            trainerToAttack.cooldownEndTime = now.valueOf() + Math.floor(trainerSkill.cooldown * 60 * 1000);
+            trainerToAttack.cooldownEndTime = now.valueOf() + Math.floor(trainerSkill.cooldown * 60 * 1000 / 2);
             
             that.attackRecursively(trainerSkill, trainerToAttack, [trainerTarget], battleField, 0, result2, koResult, function() {
                 for(var i=0;i<result2.length;i++) {

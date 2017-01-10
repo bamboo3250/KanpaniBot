@@ -89,7 +89,10 @@ if (isLocal) {
                 _id: "308806",
                 plus: 3
             },
-            equipedArmor: null,
+            equipedArmor: {
+                _id: "3108071",
+                plus: 0
+            },
             equipedAccessory: {
                 _id: "330107",
                 plus: 3
