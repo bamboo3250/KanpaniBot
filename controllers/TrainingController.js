@@ -9,7 +9,62 @@ function TrainingController() {
         [null,null,null],
         [null,null,null]
     ];
+    this.contribution = {};
+}
 
+var rewardList = [
+    "Gold Ore",
+    "Mithril Ore",
+    "Ominous Cloth",
+    "Holy Cloth",
+    "Chimera Horn",
+    "Dragon Horn",
+    "Diamond",
+    "Rose Quartz",
+    "Black Pearl",
+    "Lapis Lazuli",
+    "Garnet",
+    "Emerald",
+    "Luxurious Leather",
+    "Rare Species Leather",
+    "Full Moon Fragment",
+    "Sun Fragment",
+    "Magical Water",
+    "Holy Water",
+    "Ebony Branch",
+    "Yggdrasil Branch"
+];
+
+var EXP_REWARD = 48216;
+
+TrainingController.prototype.didPlayerDie = function(playerId) {
+    var unit = this.bot.unitManager.getPlayerUnit(playerId);
+    if (unit && unit.isTrainer && unit.getCurrentHP() <= 0) {
+        for(key in this.contribution) {
+            var userId = key;
+            var itemAmount = this.contribution[userId] * 5;
+            var itemReceived = {};
+            for(var i=0;i<itemAmount;i++) {
+                var itemName = this.bot.functionHelper.randomObject(rewardList);
+                if (typeof itemReceived[itemName] === "undefined") itemReceived[itemName] = 0;
+                itemReceived[itemName]++;
+            }
+            var text = "You have received **" + itemAmount + " items** and **" + EXP_REWARD + " EXP** for participating in Training:\n";
+            for(itemKey in itemReceived) {
+                var itemName = itemKey;
+                text += itemName + " x" + itemReceived[itemName] + "\n";
+                this.bot.playerManager.addItem(playerId, itemName, itemReceived[itemName]);
+            }
+            this.bot.playerManager.addExp(playerId, EXP_REWARD);
+            var user = this.bot.userManager.getUser(playerId);
+            if (user) {
+                user.sendMessage(text);
+            }
+            var player = this.bot.playerManager.getPlayer(playerId);
+            this.bot.unitManager.refreshUnitForPlayer(player);
+        }
+        this.bot.savePlayer();
+    }
 }
 
 function FieldPosition(row, column) {
@@ -484,6 +539,11 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
 
     this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, koResult, function() {
 
+        if (typeof that.contribution[attacker.playerId] === "undefined") {
+            that.contribution[attacker.playerId] = 0;
+        }
+        that.contribution[attacker.playerId]++;
+
         var text = "";
         for(var i=0;i<result1.length;i++) {
             text += "=======PLAYER'S PHASE " + (i+1) + "=======\n";
@@ -610,6 +670,10 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
     };
 
     this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, koResult, function() {
+        if (typeof that.contribution[attacker.playerId] === "undefined") {
+            that.contribution[attacker.playerId] = 0;
+        }
+        that.contribution[attacker.playerId]++;
 
         var text = "";
         for(var i=0;i<result1.length;i++) {

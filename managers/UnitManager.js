@@ -68,7 +68,10 @@ UnitManager.prototype.takeDamagePlayerUnit = function(userId, damage) {
     var unit = this.playerUnits[userId];
     if (unit && damage > 0) {
         unit.currentHP = Math.max(0, unit.currentHP - damage);
-        return (unit.currentHP === 0);
+        if (unit.getCurrentHP() === 0) {
+            this.bot.battleController.didPlayerDie(userId);
+        }
+        return (unit.getCurrentHP() === 0);
     }
     return false;
 }
