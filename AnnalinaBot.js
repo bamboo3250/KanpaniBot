@@ -79,7 +79,7 @@ if (isLocal) {
         {
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",
-            exp: 2646190,//2646190,
+            exp: 5370000,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308806",
