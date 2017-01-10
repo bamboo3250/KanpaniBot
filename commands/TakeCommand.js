@@ -29,8 +29,9 @@ module.exports = {
         }
 
         player.characterId = bot.rollResult[userId];
+        var expToPay = Math.min(100000, Math.floor(player.exp/2));
+        player.exp = expToPay;
         
-        player.exp = Math.floor(player.exp/2);
         if (player.equipedWeapon) {
             bot.playerManager.addWeapon(userId, player.equipedWeapon._id, player.equipedWeapon.plus);
             player.equipedWeapon = null;

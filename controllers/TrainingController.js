@@ -238,7 +238,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var isKOed = {};
 
     text += attackerName + " used **" + skill.name + "**\n";
-    // if (typeof expGained[attacker.playerId] === "undefined") expGained[attacker.playerId] = 0;
+    if (typeof expGained[attacker.playerId] === "undefined") expGained[attacker.playerId] = 0;
 
     var damageList = {};
     var hitRateOnTargets = {};
@@ -364,8 +364,8 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var prevHP = targetUnit.getCurrentHP();
                 var isFainted = this.bot.unitManager.takeDamagePlayerUnit(targetUnit.playerId, damage);
                 
-                // var exp = (prevHP - targetUnit.getCurrentHP()) * 5;
-                // expGained[attacker.playerId] += exp;
+                var exp = (prevHP - targetUnit.getCurrentHP()) * 3;
+                expGained[attacker.playerId] += exp;
 
                 if (isFainted) isKOed[targetUnit.playerId] = true;
             }
@@ -383,7 +383,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             text += "\thealing **";
             for(var i=0;i<damageList[targetId].length;i++) {
                 var healHp = damageList[targetId][i].damage;
-                // expGained[attacker.playerId] += healHp * 4;
+                expGained[attacker.playerId] += healHp * 2;
 
                 if (i === damageList[targetId].length - 1) {
                     text += healHp + "";    
