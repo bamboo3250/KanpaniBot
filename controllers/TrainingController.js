@@ -704,8 +704,10 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
     if (typeof that.contribution[attacker.playerId] === "undefined") {
         that.contribution[attacker.playerId] = 0;
     }
-    that.contribution[attacker.playerId]++;
-
+    if (!this.didAllTrainersDie()) {
+        that.contribution[attacker.playerId]++;
+    }
+    
     this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, koResult, function() {
       
         var text = "";

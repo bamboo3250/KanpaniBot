@@ -9,11 +9,7 @@ annalina.declineNotEnoughBread = annalina.declineNotEnoughBread.concat(dialog.an
 
 function handleQuestion(message) {
     var authorId = message.author.id;
-    // if (!annalina.consumeBread(message)) return;
-    
-    // annalina.total_bread++;
-    var text = answerTexts[annalina.functionHelper.randomInt(answerTexts.length)] + "\n\n";
-    text += annalina.createRemainingBreadLine(message);
+    var text = answerTexts[annalina.functionHelper.randomInt(answerTexts.length)];
     message.reply(text);
 }
 
