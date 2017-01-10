@@ -1353,7 +1353,7 @@ module.exports = {
         "Prayer": {
             canAttack: false,
             canHeal: true,
-            cooldown: 10,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1369,7 +1369,7 @@ module.exports = {
         "Deep Fold": {
             canAttack: false,
             canHeal: true,
-            cooldown: 10,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1385,7 +1385,7 @@ module.exports = {
         "Healing Light": {
             canAttack: false,
             canHeal: true,
-            cooldown: 10,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1417,7 +1417,7 @@ module.exports = {
         "Fairy Mist": {
             canAttack: false,
             canHeal: true,
-            cooldown: 30,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -1433,7 +1433,7 @@ module.exports = {
         "Noah": {
             canAttack: false,
             canHeal: true,
-            cooldown: 15,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1449,7 +1449,7 @@ module.exports = {
         "Current Heal": {
             canAttack: false,
             canHeal: true,
-            cooldown: 15,
+            cooldown: 10,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1465,7 +1465,7 @@ module.exports = {
         "A Good Child's Reward": {
             canAttack: false,
             canHeal: true,
-            cooldown: 10,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1481,7 +1481,7 @@ module.exports = {
         "Refreshing Love": {
             canAttack: false,
             canHeal: true,
-            cooldown: 10,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1497,7 +1497,7 @@ module.exports = {
         "Fairy Tale": {
             canAttack: false,
             canHeal: true,
-            cooldown: 10,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -1513,7 +1513,7 @@ module.exports = {
         "Refreshing Moment": {
             canAttack: false,
             canHeal: true,
-            cooldown: 10,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,

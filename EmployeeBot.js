@@ -66,6 +66,8 @@ var healCommand = require('./commands/HealCommand');
 var trainerCommand = require('./commands/TrainerCommand');
 var joinTrainingCommand = require('./commands/JoinTrainingCommand');
 var quitTrainingCommand = require('./commands/QuitTrainingCommand');
+var ceoReviveCommand = require('./commands/CeoReviveCommand');
+var swapCommand = require('./commands/SwapCommand');
 
 function EmployeeBot() {
     this.dmmChannelName = "dmm_games";
@@ -428,6 +430,8 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         trainerCommand.handle(message, this);
         joinTrainingCommand.handle(message, this);
         quitTrainingCommand.handle(message, this);
+        ceoReviveCommand.handle(message, this);
+        swapCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
