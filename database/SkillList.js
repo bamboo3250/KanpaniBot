@@ -312,7 +312,7 @@ module.exports = {
         "Einzelkampf": {
             canAttack: true,
             canHeal: false,
-            cooldown: 30,
+            cooldown: 18,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SQUARE,
@@ -1899,7 +1899,7 @@ module.exports = {
         "Aion's Single Strike": {
             canAttack: true,
             canHeal: false,
-            cooldown: 15,
+            cooldown: 9,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
@@ -2195,7 +2195,7 @@ module.exports = {
         "Eternal Light": {
             canAttack: true,
             canHeal: false,
-            cooldown: 20,
+            cooldown: 15,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
