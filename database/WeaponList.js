@@ -4320,11 +4320,11 @@ module.exports = {
                 },
                 "+2": { price: 7000,
                     patk: 166, pdef: 20, matk: 0, mdef: 20, crit: 36, hit: 36, eva: 36,
-                    frontSkill: "Divine Punishment", backSkill: "Dark Assault"
+                    frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
                 },
                 "+3": { price: 8000,
                     patk: 283, pdef: 25, matk: 0, mdef: 25, crit: 40, hit: 40, eva: 40,
-                    frontSkill: "Aion's Single Strike", backSkill: "Dark Assault"
+                    frontSkill: "Aion's Single Strike", backSkill: "Shadow Snake Punch"
                 }
             },
             note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [

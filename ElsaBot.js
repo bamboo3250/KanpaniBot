@@ -358,6 +358,30 @@ if (isLocal) {
             position: "front",
             partnerId: null,
             isTrainer: true
+        },{
+            _id: "265889287281573918",  // test-bot2
+            characterId: "10750001_32935980",
+            exp: 551340,//2646190,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308706",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "3107071",
+                plus: 1
+            },
+            equipedAccessory: {
+                _id: "330006",
+                plus: 1
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "front",
+            partnerId: null,
+            isTrainer: true
         }
     ];
 } else {
@@ -386,6 +410,30 @@ if (isLocal) {
             position: "front",
             partnerId: null,
             isTrainer: true
+        },{
+            _id: "268576286060838914",
+            characterId: "10750001_32935980",
+            exp: 551340,//2646190,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308706",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "3107071",
+                plus: 1
+            },
+            equipedAccessory: {
+                _id: "330006",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "front",
+            partnerId: null,
+            isTrainer: true
         }
     ];
 }
@@ -399,12 +447,12 @@ elsa.bot.on("ready", function() {
         trainingController.bot = elsa;
         if (isLocal) {
             trainingController.trainerField = [
-                [null, "240097185436270593", null],
+                ["265889287281573918", "240097185436270593", null],
                 [null, null, null]
             ];
         } else {
             trainingController.trainerField = [
-                [null, "241511566036434945", null],
+                ["268576286060838914", "241511566036434945", null],
                 [null, null, null]
             ];    
         }

@@ -19,10 +19,16 @@ module.exports = {
         }
 
         if (playerUnit.currentHP === 0) {
-            var now = new Date();
-            var remainingTime = playerUnit.respawnTime - now.valueOf();
-            var time = bot.functionHelper.parseTime(remainingTime);
-            message.reply("You have fainted. You can attack again after " + time + ".");
+            var text = "You have fainted.";
+            if (playerUnit.respawnTime) {
+                    var now = new Date();
+                var remainingTime = playerUnit.respawnTime - now.valueOf();
+                var time = bot.functionHelper.parseTime(remainingTime);
+                text += " You can attack again after " + time + "."
+            } else {
+                text += " You cannot attack now."
+            }
+            message.reply(text); 
             return;
         }
 

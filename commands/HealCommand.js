@@ -17,10 +17,16 @@ module.exports = {
         }
 
         if (playerUnit.currentHP === 0) {
-            var now = new Date();
-            var remainingTime = playerUnit.respawnTime - now.valueOf();
-            var time = bot.functionHelper.parseTime(remainingTime);
-            message.reply("You have fainted. You can heal after " + time + ".");
+            var text = "You have fainted.";
+            if (playerUnit.respawnTime) {
+                    var now = new Date();
+                var remainingTime = playerUnit.respawnTime - now.valueOf();
+                var time = bot.functionHelper.parseTime(remainingTime);
+                text += " You can heal again after " + time + "."
+            } else {
+                text += " You cannot heal now."
+            }
+            message.reply(text); 
             return;
         }
 
