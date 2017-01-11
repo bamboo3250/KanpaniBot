@@ -369,7 +369,12 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
                 if (isFainted) isKOed[targetUnit.playerId] = true;
             }
-            text += " damage** to " + targetName + " (Hit: " + hitRateOnTargets[targetId] + "%, Crit: " + critRateOnTargets[targetId] + "%)\n";
+            text += " damage** to " + targetName;
+            if (hitRateOnTargets[targetId]) {
+                text += " (Hit: " + hitRateOnTargets[targetId] + "%, Crit: " + critRateOnTargets[targetId] + "%)\n";
+            } else {
+                text += "\n";
+            }
 
             if (onEnemySide) {
                 painter.setEnemyState(targetFieldPos.row, targetFieldPos.column, targetUnit, (totalDamage>0?"damage":"idle"));

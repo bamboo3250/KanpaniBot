@@ -67,8 +67,9 @@ UnitManager.prototype.setAccessory = function(userId, accessoryId, plus) {
 UnitManager.prototype.takeDamagePlayerUnit = function(userId, damage) {
     var unit = this.playerUnits[userId];
     if (unit && damage > 0) {
+        var prevHP = unit.currentHP;
         unit.currentHP = Math.max(0, unit.currentHP - damage);
-        if (unit.getCurrentHP() === 0) {
+        if (prevHP > 0 && unit.getCurrentHP() === 0) {
             this.bot.battleController.didPlayerDie(userId);
         }
         return (unit.getCurrentHP() === 0);
