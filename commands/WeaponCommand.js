@@ -8,17 +8,30 @@ module.exports = {
             return;
         }        
 
-        var classId = bot.functionHelper.getClassId(command.args[0]);
-        if (!classId) {
-            message.reply("Class name is not correct.");
-            return;
+        var weaponInfo = null;
+        var className = command.args[0];
+        if (className != "cw") {
+            var classId = bot.functionHelper.getClassId(className);
+            if (!classId) {
+                message.reply("Class name is not correct.");
+                return;
+            }
+            var codeName = command.args[1];
+            if (!codeName) {
+                message.reply("You need to specify weapon code name.");
+                return;
+            }
+            weaponInfo = bot.weaponDatabase.getWeaponByCodeName(codeName, classId);    
+        } else {
+            var characterName = command.args[1];
+            var characterInfo = bot.employeeDatabase.getEmployeeByCommonName(characterName);
+            if (!characterInfo) {
+                message.reply("This character doesn't exist.");
+                return;
+            }
+            weaponInfo = bot.weaponDatabase.getWeaponByCodeName("cw", characterInfo.characterId);
         }
-        var codeName = command.args[1];
-        if (!codeName) {
-            message.reply("You need to specify weapon code name.");
-            return;
-        }
-        var weaponInfo = bot.weaponDatabase.getWeaponByCodeName(codeName, classId);
+        
         if (!weaponInfo) {
             message.reply("No information.");
             return;
