@@ -39,7 +39,7 @@ UrlHelper.prototype.getCharaSpriteImageName = function(employeeInfo) {
 
     if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
     weaponId = "3" + (isEx? "9" : "0") + (hasCW? "8" : "0") + classIdText + weaponId;
-    return this.characterId + "_" + star + "_" + weaponId + "_idle.png";
+    return employeeInfo.characterId + "_" + star + "_" + weaponId + "_idle.png";
 }
 
 
