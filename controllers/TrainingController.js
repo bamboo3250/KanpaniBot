@@ -295,7 +295,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var randomFactor = this.bot.functionHelper.randomArbitrary(1/1.1, 1.1);
                 var isCrit = (this.bot.functionHelper.randomInt(100) < critRate);
                 
-                var rawDamage = (1 - 0.00115 * def) * atk * skillModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0) - def / 4;
+                var rawDamage = Math.max(1, (1 - 0.00115 * def) * atk * skillModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0) - def / 4);
                 var hasSomeoneInFront = (targetFieldPos.row === 1 && field[0][targetFieldPos.column]);
                 rawDamage *= (hasSomeoneInFront ? 0.7 : 1.0);
 
