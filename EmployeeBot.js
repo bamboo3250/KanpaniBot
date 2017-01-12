@@ -204,7 +204,7 @@ function EmployeeBot() {
     this.auctionId = {};
 
     this.logChannel = null;
-
+    this.battleChannel = null;
     // Event stuffs
     // this.christmasTreeContribution = {};
     // this.christmasTreeMilestones = {
@@ -817,8 +817,13 @@ EmployeeBot.prototype.ready = function() {
             if (channels[i].type === "text" && channels[i].name === "log") {
                 this.logChannel = channels[i];
             }
+            if (channels[i].type === "text" && channels[i].name === "battlefield") {
+                this.battleChannel = channels[i];
+            }
         }
-        console.log(this.logChannel);
+        console.log("logChannel is " + (logChannel?:"on":"off"));    
+        console.log("battleChannel is " + (battleChannel?:"on":"off"));    
+        
         var text = "Bot is on. Serving on " + channels.length + " channels\n";
         // for(var i=0;i<channels.length;i++) {
         //     var channelName = (channels[i].name ? channels[i].name : channels[i].recipient.username);

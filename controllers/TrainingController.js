@@ -54,13 +54,22 @@ TrainingController.prototype.didPlayerDie = function(playerId) {
         for(key in this.bot.unitManager.playerUnits) {
             var userId = key;
             var userUnit = this.bot.unitManager.playerUnits[userId];
-            if (userUnit && !userUnit.isTrainer) {
-                userUnit.fullHeal();
-                if (this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
-                    this.bot.userManager.removeRole(userId, "Fainted")
+            if (userUnit) {
+                if (!userUnit.isTrainer) {
+                    userUnit.fullHeal();
+                    if (this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
+                        this.bot.userManager.removeRole(userId, "Fainted")
+                    }
+                } else {
+                    bot.unitManager.setRespawn(userId);
                 }
             }
         }
+        var that = this;
+        setTimeout(function() {
+            var traineeRole = that.bot.battleChannel.guild.roles.find('name', 'Trainee');
+            battleChannel.sendMessage(traineeRole + " All Trainers are ready for new battle.");
+        }, 4*60*60*1000);
 
         var expReward = EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1));
         for(key in this.contribution) {
@@ -87,6 +96,7 @@ TrainingController.prototype.didPlayerDie = function(playerId) {
             var player = this.bot.playerManager.getPlayer(userId);
             this.bot.unitManager.refreshUnitForPlayer(player);
         }
+        this.contribution = {};
         this.bot.savePlayer();
     }
 }

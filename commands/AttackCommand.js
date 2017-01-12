@@ -76,9 +76,6 @@ module.exports = {
                     if (koUser) {
                         text += koUnit.shortName + " (" + koUser.username + ") is KO-ed!\n";
                     }
-                    if (koUnit.isTrainer) {
-                        bot.unitManager.setRespawn(koUserId);    
-                    }
                 }
             }
             if (imageFileName) {
