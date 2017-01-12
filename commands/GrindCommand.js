@@ -307,6 +307,11 @@ module.exports = {
             return;
         }
 
+        if (bot.remainingBread[userId] < quest.breadCost) {
+            message.reply("You don't have enough bread to run this quest.");
+            return;
+        }
+
         var modifier = 1;
         if (isFullGrind && quest.breadCost != 0) {
             modifier = bot.remainingBread[userId] / quest.breadCost;
