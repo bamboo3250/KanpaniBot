@@ -282,7 +282,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 def = targetUnit.getMDef();
             }
             var hitValue = attacker.getHit() + attacker.getDEX()/2;
-            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()/3;
+            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()/4;
             var hitRate = Math.floor(70 + (hitValue - evadeValue)*0.3);
             hitRate = Math.max(10, hitRate);
             hitRate = Math.min(95, hitRate);
