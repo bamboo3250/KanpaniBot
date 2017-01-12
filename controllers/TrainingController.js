@@ -585,63 +585,75 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
     }
     that.contribution[attacker.playerId]++;
 
-    this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, koResult, function() {
+    var playerTurn = {
+        side: "PLAYER",
+        skill: skill,
+        attacker: attacker,
+        targetUnitList: targetUnitList,
+        result: result1
+    };
+    var trainerTurn = null;
+    var turnQueue = [playerTurn];
 
-        var text = "";
-        for(var i=0;i<result1.length;i++) {
-            text += "=======PLAYER'S PHASE " + (i+1) + "=======\n";
-            text += result1[i].text + "\n";
+    var trainerToAttack = that.randomTrainer();
+    var isTrainerSkillReady = (trainerToAttack && trainerToAttack.cooldownEndTime <= now.valueOf());
+    if (trainerToAttack && !trainerToAttack.isFainted() && isTrainerSkillReady) {
+        var trainerSkillName = trainerToAttack.getCurrentSkill();
+        var trainerSkill = that.bot.skillDatabase.getSkill(trainerToAttack.getClassId(), trainerSkillName);
+
+        var trainerTarget = attacker;
+        if (trainerSkill.canHeal) {
+            trainerTarget = trainerToAttack;
         }
-        var imageList = [];
-        for(var i=0;i<result1.length;i++) {
-            if (result1[i].image) imageList.push(result1[i].image);
-        }
-        
-        var trainerToAttack = that.randomTrainer();
-        var now = new Date();
-        var isSkillReady = (trainerToAttack && trainerToAttack.cooldownEndTime <= now.valueOf());
+        trainerToAttack.cooldownEndTime = now.valueOf() + Math.floor(trainerSkill.cooldown * 60 * 1000 / 2);
+        trainerTurn = {
+            side: "TRAINER",
+            skill: trainerSkill,
+            attacker: trainerToAttack,
+            targetUnitList: [trainerTarget],
+            result: result2
+        };
+        turnQueue.push(trainerTurn);
+    }
 
-        if (trainerToAttack && !trainerToAttack.isFainted() && isSkillReady) {
-            var trainerSkillName = trainerToAttack.getCurrentSkill();
-            var trainerSkill = that.bot.skillDatabase.getSkill(trainerToAttack.getClassId(), trainerSkillName);
+    if (attacker.getClassId() === 7 && attacker.position === "front") {
+        turnQueue.push(playerTurn);
+    }
+    if (trainerToAttack && trainerToAttack.getClassId() === 7 && trainerToAttack.position === "front") {
+        turnQueue.push(trainerTurn);
+    }
 
-            var trainerTarget = attacker;
-            if (trainerSkill.canHeal) {
-                trainerTarget = trainerToAttack;
-            }
-            trainerToAttack.cooldownEndTime = now.valueOf() + Math.floor(trainerSkill.cooldown * 60 * 1000 / 2);
-            
-            that.attackRecursively(trainerSkill, trainerToAttack, [trainerTarget], battleField, 0, result2, koResult, function() {
-                for(var i=0;i<result2.length;i++) {
-                    text += "=======TRAINER'S PHASE " + (i+1) + "=======\n";
-                    text += result2[i].text + "\n";
-                }
-                for(var i=0;i<result2.length;i++) {
-                    if (result2[i].image) imageList.push(result2[i].image);
-                }
-
-                image = new Jimp(950, 590 * imageList.length, 0xFFFFFF00, function (err, image) {
-                    for(var i=0;i<imageList.length;i++) {
-                        image.composite(imageList[i], 0, 590 * i);
-                    }
-                    var imageName = "images/battle/" + attacker.playerId + ".png";
-                    image.write(imageName, function() {
-                        callback(null, text, imageName, koResult);
-                    });
-                });
-            });    
-        } else {
-            image = new Jimp(950, 590 * imageList.length, 0xFFFFFF00, function (err, image) {
-                for(var i=0;i<imageList.length;i++) {
-                    image.composite(imageList[i], 0, 590 * i);
-                }
-                var imageName = "images/battle/" + attacker.playerId + ".png";
-                image.write(imageName, function() {
-                    callback(null, text, imageName, koResult);
-                });
-            });
-        }
+    this.executeBattle(turnQueue, 0, battleField, koResult, "", [], function(text, imageName) {
+        callback(null, text, imageName, koResult);
     });
+}
+
+TrainingController.prototype.executeBattle = function(turnQueue, iter, battleField, koResult, resultText, imageList, callback) {
+    if (iter >= turnQueue.length) {
+        var userId = turnQueue[0].attacker.playerId;
+        image = new Jimp(950, 590 * imageList.length, 0xFFFFFF00, function (err, image) {
+            for(var i=0;i<imageList.length;i++) {
+                image.composite(imageList[i], 0, 590 * i);
+            }
+            var imageName = "images/battle/" + userId + ".png";
+            image.write(imageName, function() {
+                callback(resultText, imageName);
+            });
+        });
+        return;
+    }
+    var turn = turnQueue[iter];
+    var that = this;
+    this.attackRecursively(turn.skill, turn.attacker, turn.targetUnitList, battleField, 0, turn.result, koResult, function() {
+        for(var i=0;i<turn.result.length;i++) {
+            resultText += "=======PLAYER'S PHASE " + (i+1) + "=======\n";
+            resultText += turn.result[i].text + "\n";
+        }
+        for(var i=0;i<turn.result.length;i++) {
+            if (turn.result[i].image) imageList.push(turn.result[i].image);
+        }
+        that.executeBattle(turnQueue, iter+1, battleField, koResult, resultText, imageList, callback);
+    }
 }
 
 TrainingController.prototype.heal = function(attacker, targetUnitList, callback) {
@@ -724,59 +736,46 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
         that.contribution[attacker.playerId]++;
     }
     
-    this.attackRecursively(skill, attacker, targetUnitList, battleField, 0, result1, koResult, function() {
-      
-        var text = "";
-        for(var i=0;i<result1.length;i++) {
-            text += "=======PLAYER'S PHASE " + (i+1) + "=======\n";
-            text += result1[i].text + "\n";
-        }
-        var imageList = [];
-        for(var i=0;i<result1.length;i++) {
-            if (result1[i].image) imageList.push(result1[i].image);
-        }
-        
-        var trainerToAttack = that.randomTrainer();
-        
-        if (trainerToAttack && !trainerToAttack.isFainted() && skill.canAttack) {
-            var trainerSkillName = trainerToAttack.getCurrentSkill();
-            var trainerSkill = that.bot.skillDatabase.getSkill(trainerToAttack.getClassId(), trainerSkillName);
-            
-            var trainerTarget = attacker;
-            if (trainerSkill.canHeal) {
-                trainerTarget = trainerToAttack;
-            }
+    var playerTurn = {
+        side: "PLAYER",
+        skill: skill,
+        attacker: attacker,
+        targetUnitList: targetUnitList,
+        result: result1
+    };
+    var trainerTurn = null;
+    var turnQueue = [playerTurn];
 
-            that.attackRecursively(trainerSkill, trainerToAttack, [trainerTarget], battleField, 0, result2, koResult, function() {
-                for(var i=0;i<result2.length;i++) {
-                    text += "=======TRAINER'S PHASE " + (i+1) + "=======\n";
-                    text += result2[i].text + "\n";
-                }
-                for(var i=0;i<result2.length;i++) {
-                    if (result2[i].image) imageList.push(result2[i].image);
-                }
+    var trainerToAttack = that.randomTrainer();
+    var isTrainerSkillReady = (trainerToAttack && trainerToAttack.cooldownEndTime <= now.valueOf());
+    if (trainerToAttack && !trainerToAttack.isFainted() && isTrainerSkillReady && skill.canAttack) {
+        var trainerSkillName = trainerToAttack.getCurrentSkill();
+        var trainerSkill = that.bot.skillDatabase.getSkill(trainerToAttack.getClassId(), trainerSkillName);
 
-                image = new Jimp(950, 590 * imageList.length, 0xFFFFFF00, function (err, image) {
-                    for(var i=0;i<imageList.length;i++) {
-                        image.composite(imageList[i], 0, 590 * i);
-                    }
-                    var imageName = "images/battle/" + attacker.playerId + ".png";
-                    image.write(imageName, function() {
-                        callback(null, text, imageName, koResult);
-                    });
-                });
-            });    
-        } else {
-            image = new Jimp(950, 590 * imageList.length, 0xFFFFFF00, function (err, image) {
-                for(var i=0;i<imageList.length;i++) {
-                    image.composite(imageList[i], 0, 590 * i);
-                }
-                var imageName = "images/battle/" + attacker.playerId + ".png";
-                image.write(imageName, function() {
-                    callback(null, text, imageName, koResult);
-                });
-            });
+        var trainerTarget = attacker;
+        if (trainerSkill.canHeal) {
+            trainerTarget = trainerToAttack;
         }
+        trainerToAttack.cooldownEndTime = now.valueOf() + Math.floor(trainerSkill.cooldown * 60 * 1000 / 2);
+        trainerTurn = {
+            side: "TRAINER",
+            skill: trainerSkill,
+            attacker: trainerToAttack,
+            targetUnitList: [trainerTarget],
+            result: result2
+        };
+        turnQueue.push(trainerTurn);
+    }
+
+    if (attacker.getClassId() === 7 && attacker.position === "front") {
+        turnQueue.push(playerTurn);
+    }
+    if (trainerToAttack && trainerToAttack.getClassId() === 7 && trainerToAttack.position === "front" && skill.canAttack) {
+        turnQueue.push(trainerTurn);
+    }
+
+    this.executeBattle(turnQueue, 0, battleField, koResult, "", [], function(text, imageName) {
+        callback(null, text, imageName, koResult);
     });
 }
 
