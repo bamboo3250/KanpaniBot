@@ -265,9 +265,9 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
             var atk = attacker.getAtk();
             var skillModifier = skillPhase.modifier;
-            var critRate = Math.floor(35*attacker.getCrit()/100 - 10*(targetUnit.getLUK()/100));
+            var critRate = Math.floor(attacker.getCrit()*0.35 - (targetUnit.getLUK()*0.1));
             critRate = Math.max(5, critRate);
-            critRate = Math.min(100, critRate);
+            critRate = Math.min(95, critRate);
             critRateOnTargets[targetUnit.playerId] = critRate;
             var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
             var def = targetUnit.getDef();
@@ -276,11 +276,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 atk = attacker.getMAtk();
                 def = targetUnit.getMDef();
             }
-            var hitValue = attacker.getHit() + attacker.getDEX();
-            var evadeValue = targetUnit.getEva() + targetUnit.getAGI();
-            var hitRate = Math.floor(70 + 30 * (hitValue - evadeValue) / 100);
+            var hitValue = attacker.getHit() + attacker.getDEX()/2;
+            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()/2;
+            var hitRate = Math.floor(70 + (hitValue - evadeValue)*0.3);
             hitRate = Math.max(10, hitRate);
-            hitRate = Math.min(100, hitRate);
+            hitRate = Math.min(95, hitRate);
             if (skillPhase.isSpellAttack()) {
                 hitRate = 100;
             }
