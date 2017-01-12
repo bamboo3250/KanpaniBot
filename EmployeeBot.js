@@ -603,8 +603,6 @@ EmployeeBot.prototype.loadPlayer = function() {
             }
         }
         that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
-        
-        that.playerManager.addExp("257195656874164225", 619046);
 
         for(key in that.playerManager.playerDict) {
             var userId = key;
@@ -612,7 +610,6 @@ EmployeeBot.prototype.loadPlayer = function() {
             that.unitManager.createUnitForPlayer(player);
             var unit = that.unitManager.getPlayerUnit(userId);
         }
-        that.savePlayer();
 
     });
 }
