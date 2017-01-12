@@ -4,6 +4,8 @@ var Armor = require('../classes/Armor');
 var Accessory = require('../classes/Accessory');
 
 function UnitManager() {
+    this.TRAINER_RESPAWN_TIME = 6*60*60*1000;
+
     this.playerUnits = {};
     this.mobUnits = {};
     this.bot = null;
@@ -91,7 +93,7 @@ UnitManager.prototype.setRespawn = function(userId) {
     var user = this.bot.userManager.getUser(userId);
     if (unit && unit.currentHP === 0) {
         var now = new Date();
-        var respawnDuration = (unit.isTrainer ? 4*60*60*1000 : (60 + unit.levelCached*20) * 1000);
+        var respawnDuration = (unit.isTrainer ? this.TRAINER_RESPAWN_TIME : (60 + unit.levelCached*20) * 1000);
         unit.respawnTime = now.valueOf() + respawnDuration;
         
         var that = this;

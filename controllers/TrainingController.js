@@ -69,7 +69,7 @@ TrainingController.prototype.didPlayerDie = function(playerId) {
         setTimeout(function() {
             var traineeRole = that.bot.battleChannel.guild.roles.find('name', 'Trainee');
             battleChannel.sendMessage(traineeRole + " All Trainers are ready for new battle.");
-        }, 4*60*60*1000);
+        }, that.bot.unitManager.TRAINER_RESPAWN_TIME);
 
         var expReward = EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1));
         for(key in this.contribution) {
