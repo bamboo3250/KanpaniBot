@@ -167,7 +167,7 @@ ruka.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "241511566036434945", null],
+                ["268576286060838914", "241511566036434945", null],
                 [null, "239141420194070530", null]
             ];    
         }
