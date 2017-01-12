@@ -281,8 +281,8 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 atk = attacker.getMAtk();
                 def = targetUnit.getMDef();
             }
-            var hitValue = attacker.getHit() + attacker.getDEX()/2;
-            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()/4;
+            var hitValue = attacker.getHit() + attacker.getDEX()*0.6;
+            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()*0.25;
             var hitRate = Math.floor(60 + (hitValue - evadeValue)*0.2);
             hitRate = Math.max(10, hitRate);
             hitRate = Math.min(95, hitRate);
@@ -649,7 +649,7 @@ TrainingController.prototype.executeBattle = function(turnQueue, iter, battleFie
     }
     var turn = turnQueue[iter];
     var that = this;
-    if (turn.attacker && !turn.attacker.isFainted()) {
+    if (turn && turn.attacker && !turn.attacker.isFainted()) {
         this.attackRecursively(turn.skill, turn.attacker, turn.targetUnitList, battleField, 0, turn.result, koResult, function() {
             for(var i=0;i<turn.result.length;i++) {
                 resultText += "=======" + turn.side + "'S PHASE " + (i+1) + "=======\n";
