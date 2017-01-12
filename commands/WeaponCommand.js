@@ -10,8 +10,9 @@ module.exports = {
 
         var weaponInfo = null;
         var className = command.args[0];
+        var classId = null;
         if (className != "cw") {
-            var classId = bot.functionHelper.getClassId(className);
+            classId = bot.functionHelper.getClassId(className);
             if (!classId) {
                 message.reply("Class name is not correct.");
                 return;
@@ -29,7 +30,8 @@ module.exports = {
                 message.reply("This character doesn't exist.");
                 return;
             }
-            weaponInfo = bot.weaponDatabase.getWeaponByCodeName("cw", characterInfo.characterId);
+            weaponInfo = bot.weaponDatabase.getWeaponByCodeName("cw", characterInfo._id);
+            classId = parseInt(characterInfo._id.substring(2,3));
         }
         
         if (!weaponInfo) {

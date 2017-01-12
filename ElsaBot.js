@@ -330,14 +330,14 @@ elsa.commonGoodNight = elsa.commonGoodNight.concat(dialog.elsa.commonGoodNight);
 elsa.commonThanks = elsa.commonThanks.concat(dialog.elsa.commonThanks);
 
 var isLocal = true;
-isLocal = false;
+// isLocal = false;
 
 if (isLocal) {
     elsa.playerData = [
         {
             _id: "240097185436270593",  // test-bot
             characterId: "10150002_765306d2",
-            exp: 551340,//2646190,
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308119",
@@ -361,7 +361,7 @@ if (isLocal) {
         },{
             _id: "265889287281573918",  // test-bot2
             characterId: "10750001_32935980",
-            exp: 551340,//2646190,
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308706",
@@ -411,7 +411,7 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "268576286060838914",
+            _id: "268576286060838914",  // Saimi Guest
             characterId: "10750001_32935980",
             exp: 551340,//2646190,
             gold: 0,

@@ -603,13 +603,17 @@ EmployeeBot.prototype.loadPlayer = function() {
             }
         }
         that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
+        
+        that.playerManager.addExp("257195656874164225", 619046);
+
         for(key in that.playerManager.playerDict) {
             var userId = key;
             var player = that.playerManager.getPlayer(userId);
             that.unitManager.createUnitForPlayer(player);
             var unit = that.unitManager.getPlayerUnit(userId);
-            // that.log("Created unit for " + userId + " " + (unit?"successfully.":"unsuccessfully."));
         }
+        that.savePlayer();
+
     });
 }
 
@@ -821,8 +825,8 @@ EmployeeBot.prototype.ready = function() {
                 this.battleChannel = channels[i];
             }
         }
-        console.log("logChannel is " + (logChannel?:"on":"off"));    
-        console.log("battleChannel is " + (battleChannel?:"on":"off"));    
+        console.log("logChannel is " + (this.logChannel?"on":"off"));    
+        console.log("battleChannel is " + (this.battleChannel?"on":"off"));    
         
         var text = "Bot is on. Serving on " + channels.length + " channels\n";
         // for(var i=0;i<channels.length;i++) {

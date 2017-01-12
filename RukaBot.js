@@ -80,7 +80,7 @@ if (isLocal) {
         {
             _id: "241511566036434945",
             characterId: "10150002_765306d2",
-            exp: 551340,//2646190,
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308119",
@@ -91,7 +91,7 @@ if (isLocal) {
                 plus: 1
             },
             equipedAccessory: {
-                _id: "330206",
+                _id: "330006",
                 plus: 1
             },
             materialList: {},
@@ -104,7 +104,7 @@ if (isLocal) {
         },{
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",
-            exp: 551340,//2646190,
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308806",
@@ -123,6 +123,30 @@ if (isLocal) {
             armorList: {},
             accessoryList: {},
             position: "back",
+            partnerId: null,
+            isTrainer: true
+        },{
+            _id: "268576286060838914",  // Saimi Guest
+            characterId: "10750001_32935980",
+            exp: 2646190,//2646190,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308706",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "3107071",
+                plus: 1
+            },
+            equipedAccessory: {
+                _id: "330206",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "front",
             partnerId: null,
             isTrainer: true
         }

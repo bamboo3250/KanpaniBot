@@ -61,7 +61,7 @@ TrainingController.prototype.didPlayerDie = function(playerId) {
                         this.bot.userManager.removeRole(userId, "Fainted")
                     }
                 } else {
-                    bot.unitManager.setRespawn(userId);
+                    this.bot.unitManager.setRespawn(userId);
                 }
             }
         }
@@ -172,7 +172,7 @@ TrainingController.prototype.resolveTargets = function(skillPhase, attacker, mai
         var userId = field[resolvedArea[i].row][resolvedArea[i].column];
         if (userId) {
             var unit = this.bot.unitManager.getPlayerUnit(userId);
-            if (unit.getCurrentHP() > 0) {
+            if (!unit.isFainted()) {
                 result.push(resolvedArea[i]);    
             }
         }
@@ -194,6 +194,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var skillPhase = skill.phases[iter];
 
     var mainTargetUnit = targetUnitList[iter];
+    if (mainTargetUnit.isFainted()) {
+        this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
+        return;
+    }
+
     var actionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
     var field = (actionOnEnemySide? battleField.enemySide: battleField.allySide);
     var targets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, field);
@@ -277,7 +282,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 def = targetUnit.getMDef();
             }
             var hitValue = attacker.getHit() + attacker.getDEX()/2;
-            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()/2;
+            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()/3;
             var hitRate = Math.floor(70 + (hitValue - evadeValue)*0.3);
             hitRate = Math.max(10, hitRate);
             hitRate = Math.min(95, hitRate);
@@ -644,16 +649,22 @@ TrainingController.prototype.executeBattle = function(turnQueue, iter, battleFie
     }
     var turn = turnQueue[iter];
     var that = this;
-    this.attackRecursively(turn.skill, turn.attacker, turn.targetUnitList, battleField, 0, turn.result, koResult, function() {
-        for(var i=0;i<turn.result.length;i++) {
-            resultText += "=======PLAYER'S PHASE " + (i+1) + "=======\n";
-            resultText += turn.result[i].text + "\n";
-        }
-        for(var i=0;i<turn.result.length;i++) {
-            if (turn.result[i].image) imageList.push(turn.result[i].image);
-        }
+    if (!turn.attacker.isFainted()) {
+        this.attackRecursively(turn.skill, turn.attacker, turn.targetUnitList, battleField, 0, turn.result, koResult, function() {
+            for(var i=0;i<turn.result.length;i++) {
+                resultText += "=======" + turn.side + "'S PHASE " + (i+1) + "=======\n";
+                resultText += turn.result[i].text + "\n";
+            }
+            for(var i=0;i<turn.result.length;i++) {
+                if (turn.result[i].image) imageList.push(turn.result[i].image);
+            }
+            turn.result = [];
+            that.executeBattle(turnQueue, iter+1, battleField, koResult, resultText, imageList, callback);
+        });    
+    } else {
         that.executeBattle(turnQueue, iter+1, battleField, koResult, resultText, imageList, callback);
     }
+    
 }
 
 TrainingController.prototype.heal = function(attacker, targetUnitList, callback) {
