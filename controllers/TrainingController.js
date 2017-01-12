@@ -305,7 +305,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 if (rawDamage > 0 && hasSomeoneInFront) {
                     var frontUnit = this.bot.unitManager.getPlayerUnit(field[0][targetFieldPos.column]);
                     if (frontUnit.getClassId() === 4) {
-                        var damageToFrontSoldier = Math.floor(rawDamage * 0.58);
+                        var damageToFrontSoldier = Math.max(1, Math.floor(rawDamage * 0.58));
                         rawDamage *= 0.42;
                         if (typeof damageList[field[0][targetFieldPos.column]] === "undefined") damageList[field[0][targetFieldPos.column]] = [];
                         damageList[field[0][targetFieldPos.column]].push({
