@@ -44,7 +44,7 @@ annalina.commonGoodNight = annalina.commonGoodNight.concat(dialog.annalina.commo
 annalina.commonThanks = annalina.commonThanks.concat(dialog.annalina.commonThanks);
 
 var isLocal = true;
-// isLocal = false;
+isLocal = false;
 
 if (isLocal) {
     annalina.playerData = [
