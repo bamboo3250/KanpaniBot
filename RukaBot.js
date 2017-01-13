@@ -175,4 +175,6 @@ ruka.bot.on("ready", function() {
         ruka.battleController = trainingController;
     }
 });
-ruka.bot.login(config.ruka);
+
+ruka.token = config.ruka;
+ruka.login();

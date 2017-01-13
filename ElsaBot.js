@@ -461,4 +461,6 @@ elsa.bot.on("ready", function() {
     }
     
 });
-elsa.bot.login(config.elsa);
+
+elsa.token = config.elsa;
+elsa.login();

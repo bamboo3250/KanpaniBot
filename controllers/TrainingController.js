@@ -281,11 +281,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 atk = attacker.getMAtk();
                 def = targetUnit.getMDef();
             }
-            var hitValue = attacker.getHit() + attacker.getDEX()*0.6;
-            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()*0.25;
+            var hitValue = attacker.getHit() + attacker.getDEX()*0.65;
+            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()*0.20;
             var hitRate = Math.floor(60 + (hitValue - evadeValue)*0.2);
             hitRate = Math.max(10, hitRate);
-            hitRate = Math.min(95, hitRate);
+            hitRate = Math.min(99, hitRate);
             if (skillPhase.isSpellAttack()) {
                 hitRate = 100;
             }

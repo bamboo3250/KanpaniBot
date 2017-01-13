@@ -126,4 +126,6 @@ annalina.bot.on("ready", function() {
         annalina.battleController = trainingController;
     }
 });
-annalina.bot.login(config.annalina);
+
+annalina.token = config.annalina;
+annalina.login();

@@ -70,6 +70,8 @@ var ceoReviveCommand = require('./commands/CeoReviveCommand');
 var swapCommand = require('./commands/SwapCommand');
 
 function EmployeeBot() {
+    this.token = null;
+
     this.dmmChannelName = "dmm_games";
     this.nutakuChannelName = "kanpani_girls";
     this.bot = new Discord.Client();
@@ -864,6 +866,10 @@ EmployeeBot.prototype.log = function(text) {
     if (this.logChannel) this.logChannel.sendMessage(text);
 }
 
+EmployeeBot.prototype.login = function() {
+    if (this.token) this.bot.login(this.token);
+}
+
 var employee = new EmployeeBot();
 
 employee.bot.on('guildMemberAdd', (member) => {
@@ -886,6 +892,11 @@ employee.bot.on('guildMemberRemove', (member) => {
             channels[i].sendMessage(text);
         } 
     }
+});
+
+employee.bot.on('disconnect', (event) => {
+    console.log("disconnected. Re-login...");
+    employee.login();
 });
 
 process.on('uncaughtException', function (err) {
