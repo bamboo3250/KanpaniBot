@@ -895,8 +895,12 @@ employee.bot.on('guildMemberRemove', (member) => {
 });
 
 employee.bot.on('disconnect', (event) => {
-    console.log("disconnected. Re-login...");
-    employee.login();
+    console.log("disconnected");
+    // employee.login();
+});
+
+employee.bot.on('reconnecting', (event) => {
+    console.log("reconnecting");
 });
 
 process.on('uncaughtException', function (err) {
