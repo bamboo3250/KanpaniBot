@@ -87,7 +87,31 @@ if (isLocal) {
             },
             equipedArmor: {
                 _id: "3108071",
-                plus: 0
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330107",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "back",
+            partnerId: null,
+            isTrainer: true
+        },{
+            _id: "268576286060838914",  // Saimi Guest
+            characterId: "10750001_32935980",
+            exp: 5370000,//2646190,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308706",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "3107071",
+                plus: 1
             },
             equipedAccessory: {
                 _id: "330206",
@@ -97,7 +121,7 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "back",
+            position: "front",
             partnerId: null,
             isTrainer: true
         }
@@ -118,7 +142,7 @@ annalina.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, null, null],
+                [null, "268576286060838914", null],
                 [null, "239141420194070530", null]
             ];    
         }
