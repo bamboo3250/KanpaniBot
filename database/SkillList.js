@@ -953,6 +953,28 @@ module.exports = {
                 )
             ]
         },
+        "Nasu-style Secret Move - Hinano": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 18,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
+                    1.77, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_LIGHT,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 13,
+                    false, {
+                        "Stun": true
+                    },
+                    true,
+                    -498, -370,
+                    -498, -370
+                )
+            ]
+        }
     },
 
     "4": {

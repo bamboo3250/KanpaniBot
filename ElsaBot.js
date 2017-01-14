@@ -360,15 +360,15 @@ if (isLocal) {
             isTrainer: true
         },{
             _id: "265889287281573918",  // test-bot2
-            characterId: "10750001_32935980",
+            characterId: "10350003_fcc3ce23",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308320",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3107071",
+                _id: "3103071",
                 plus: 1
             },
             equipedAccessory: {
