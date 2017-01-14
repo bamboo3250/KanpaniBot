@@ -340,7 +340,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
                 if (doesHit) {
                     var STUN_CHANCE = 20;
-                    var POISON_CHANCE = 20;
+                    var POISON_CHANCE = 40;
 
                     if (attacker.getClassId() === 1 && !targetUnit.status["Stun"]) {
                         // fighter
