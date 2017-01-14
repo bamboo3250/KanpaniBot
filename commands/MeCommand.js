@@ -23,7 +23,7 @@ module.exports = {
             var now = new Date();
             text += "HP: **" + employee.getCurrentHP() + "/" + employee.getMaxHP() + "**" + (employee.respawnTime?" (Respawn in " + bot.functionHelper.parseTime(employee.respawnTime - now.valueOf()) + ")":"") + "\n";
             text += "Status: ";
-            if (employee.status["Stun"]) text += "[Stun] ";
+            if (employee.status["Stun"]) text += "**[Stun]** ";
             text += "\n";
             text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (partner?"(Partner: **" + partner.username + "**)":"") + "\n";
             text += "Skill: **" + employee.getCurrentSkill() + "**";

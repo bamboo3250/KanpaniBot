@@ -199,7 +199,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         return;
     }
 
-    if (attacker.isStunned())) {
+    if (attacker.isStunned()) {
         attacker.status["Stun"].destroy();
         text = attackerName + " is stunned.\n";
         result.push({
@@ -338,16 +338,18 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 });
 
                 if (doesHit) {
+                    var STUN_CHANCE = 20;
+
                     if (attacker.getClassId() === 1 && !targetUnit.status["Stun"]) {
                         // fighter
-                        var doesStun = (this.bot.functionHelper.randomInt(100) < 15);
+                        var doesStun = (this.bot.functionHelper.randomInt(100) < STUN_CHANCE);
                         if (doesStun) {
                             this.bot.unitManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
                         }    
                     }
                     if (skillPhase.status["Stun"] && !targetUnit.status["Stun"]) {
-                        var doesStun = (this.bot.functionHelper.randomInt(100) < 15);
+                        var doesStun = (this.bot.functionHelper.randomInt(100) < STUN_CHANCE);
                         if (doesStun) {
                             this.bot.unitManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
