@@ -965,13 +965,13 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
+                    "attack07", 9,
                     false, {
                         "Stun": true
                     },
                     true,
-                    -498, -370,
-                    -498, -370
+                    -200, -170,
+                    -200, -170
                 )
             ]
         }

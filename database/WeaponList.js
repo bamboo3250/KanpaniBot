@@ -4283,7 +4283,7 @@ module.exports = {
                     frontSkill: "Holy Cross", backSkill: "Holy Cross"
                 },
                 "+1": { price: 3960,
-                    patk: 0, 3960: 0, matk: 195, mdef: 0, crit: 45, hit: 0, eva: 25,
+                    patk: 0, pdef: 0, matk: 195, mdef: 0, crit: 45, hit: 0, eva: 25,
                     frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
                 },
                 "+2": { price: 4500,
