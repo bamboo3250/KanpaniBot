@@ -4282,7 +4282,7 @@ module.exports = {
                     patk: 0, pdef: 0, matk: 152, mdef: 0, crit: 35, hit: 0, eva: 15,
                     frontSkill: "Holy Cross", backSkill: "Holy Cross"
                 },
-                "+1": { price: 6000,
+                "+1": { price: 3960,
                     patk: 0, 3960: 0, matk: 195, mdef: 0, crit: 45, hit: 0, eva: 25,
                     frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
                 },
@@ -4336,6 +4336,38 @@ module.exports = {
                     amount: 1
                 },{
                     materialName: "Sun Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "308320", modelId: "20", name: "Nasu Sunshine Bow", commonNames: ["Nasu Sunshine Bow"],
+            characterId: "10350003_fcc3ce23", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 141, pdef: 0, matk: 0, mdef: 0, crit: 24, hit: 26, eva: 15,
+                    frontSkill: "Twin Shot", backSkill: "Triple Shot"
+                },
+                "+1": { price: 6000,
+                    patk: 178, 3960: 0, matk: 0, mdef: 0, crit: 30, hit: 34, eva: 21,
+                    frontSkill: "Twin Shot", backSkill: "Spread Shot"
+                },
+                "+2": { price: 7000,
+                    patk: 195, pdef: 0, matk: 0, mdef: 0, crit: 36, hit: 45, eva: 28,
+                    frontSkill: "Chain Shot", backSkill: "Spirit Rain"
+                },
+                "+3": { price: 8000,
+                    patk: 322, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 56, eva: 36,
+                    frontSkill: "Chain Shot", backSkill: "Nasu-style Secret Move - Hinano"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Holy Cloth",
+                    amount: 2
+                },{
+                    materialName: "Emerald",
+                    amount: 1
+                },{
+                    materialName: "Yggdrasil Branch",
                     amount: 2
                 }
             ]
