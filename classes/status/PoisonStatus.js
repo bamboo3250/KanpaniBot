@@ -13,7 +13,7 @@ function PoisonStatus(bot, ownerId, targetId) {
         var attackerUser = that.bot.userManager.getUser(that.ownerId);
         
         if (!targetUnit.isFainted()) {
-            var damage = Math.min(250, Math.ceil(targetUnit.getMaxHP() * 0.03));
+            var damage = Math.min(200, Math.ceil(targetUnit.getMaxHP() * 0.03));
             
             var prevHP = targetUnit.getCurrentHP();
             var isKoed = that.bot.unitManager.takeDamagePlayerUnit(targetId, damage);
@@ -32,6 +32,7 @@ function PoisonStatus(bot, ownerId, targetId) {
             if (isKoed) that.bot.postKoImage(that.ownerId, [that.targetId]);
             if (that.counter === 0 || isKoed) {
                 clearInterval(that.timer);
+                that.destroy();
             }
         }
         
