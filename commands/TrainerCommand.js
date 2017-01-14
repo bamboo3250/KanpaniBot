@@ -27,6 +27,10 @@ module.exports = {
                     var now = new Date();
                     var percentHP = Math.floor(trainerUnit.getCurrentHP()/trainerUnit.getMaxHP()*100);
                     text += "HP: **" + trainerUnit.getCurrentHP() + "/" + trainerUnit.getMaxHP() + " (" + percentHP +"%)**" + (trainerUnit.respawnTime?" (Respawn in " + bot.functionHelper.parseTime(trainerUnit.respawnTime - now.valueOf()) + ")":"") + "\n";
+                    text += "Status: ";
+                    if (trainerUnit.status["Stun"]) text += "[Stun] ";
+                    text += "\n";
+                    
                     text += "Position: **" + (i == 0?"Frontline":"Backline") + "** " + "\n";
                     text += "Skill: **" + trainerUnit.getCurrentSkill() + "**\n";
                     text += "\n";   

@@ -1,3 +1,5 @@
+var StunStatus = require('./status/StunStatus');
+
 var Employee = function(employeeInfo, playerId = null) {
     this.DOMAIN = "http://img4.kanpani.jp";
 
@@ -27,8 +29,8 @@ var Employee = function(employeeInfo, playerId = null) {
     this.didQuit = false;
 
     this.isTrainer = false;
-    // this.status = {
-    //     "stun": null,
+    this.status = {
+        "Stun": null
     //     "paralyze": null,
     //     "poison": null,
     //     "curse": null,
@@ -43,7 +45,7 @@ var Employee = function(employeeInfo, playerId = null) {
     //     "mdefdown": null,
     //     "mdefup": null,
     //     "frozen": null,
-    // };
+    };
 }
 
 Employee.prototype.getClassId = function() {
@@ -311,29 +313,8 @@ Employee.prototype.fullHeal = function() {
     this.currentHP = this.getMaxHP();
 }
 
-// Employee.prototype.getSpriteImageURL = function(star = 6, isEnemy = true, type, weaponId = 11) {
-//     if (type === "character" && this.cwId != 0) {
-//         weaponId = this.cwId;
-//     }
-//     if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
-//     weaponId = this._id.substring(2,3) + weaponId;
-//     weaponId = (type === "character" && this.cwId != 0 ? "8" : "0") + weaponId;
-//     weaponId = (this.isEx() && type === "character" && this.cwId != 0 ? "9" : "0") + weaponId;
-//     weaponId = "3" + weaponId;
-//     return this.DOMAIN + "/img/character/" + this._id + "/" + (isEnemy? "enemy" : "ally") + "/" + (type=="event"?"":star + "_") + weaponId + "_idle.png";
-// }
-
-// Employee.prototype.getSpriteImageName = function(star = 6, type, weaponId = 11) {
-//     if (type === "character" && this.cwId != 0) {
-//         weaponId = this.cwId;
-//     }
-//     if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
-//     weaponId = this._id.substring(2,3) + weaponId;
-//     weaponId = (type === "character" && this.cwId != 0 ? "8" : "0") + weaponId;
-//     weaponId = (this.isEx() && type === "character" && this.cwId != 0 ? "9" : "0") + weaponId;
-//     weaponId = "3" + weaponId;
-//     return this._id + "_" + (type=="event"?"":star + "_") + weaponId + "_idle.png";
-// }
-
+Employee.prototype.isStunned = function() {
+    return (this.status["Stun"] !== null);
+}
 
 module.exports = Employee;

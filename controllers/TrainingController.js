@@ -199,6 +199,17 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         return;
     }
 
+    if (attacker.isStunned())) {
+        attacker.status["Stun"].destroy();
+        text = attackerName + " is stunned.\n";
+        result.push({
+            text: text,
+            image: null
+        });
+        this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
+        return;
+    }
+
     var actionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
     var field = (actionOnEnemySide? battleField.enemySide: battleField.allySide);
     var targets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, field);
@@ -258,6 +269,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var damageList = {};
     var hitRateOnTargets = {};
     var critRateOnTargets = {};
+    var stunResult = {};
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -324,6 +336,24 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     damage: damage,
                     type: (doesHit?(isCrit?"crit":"normal"):"miss")
                 });
+
+                if (doesHit) {
+                    if (attacker.getClassId() === 1 && !targetUnit.status["Stun"]) {
+                        // fighter
+                        var doesStun = (this.bot.functionHelper.randomInt(100) < 15);
+                        if (doesStun) {
+                            this.bot.unitManager.applyStun(attacker.playerId, targetUnit.playerId);
+                            stunResult[targetUnit.playerId] = true;
+                        }    
+                    }
+                    if (skillPhase.status["Stun"] && !targetUnit.status["Stun"]) {
+                        var doesStun = (this.bot.functionHelper.randomInt(100) < 15);
+                        if (doesStun) {
+                            this.bot.unitManager.applyStun(attacker.playerId, targetUnit.playerId);
+                            stunResult[targetUnit.playerId] = true;
+                        }    
+                    }
+                }
             }
         } else {
 
@@ -420,6 +450,10 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 }
             }
             text += " HP** for " + targetName + "\n";
+        }
+
+        if (stunResult[targetId]) {
+            text += "\t\t" + targetName + " is stunned.\n";
         }
     }
     

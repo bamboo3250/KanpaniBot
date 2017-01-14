@@ -3,6 +3,8 @@ var Weapon = require('../classes/Weapon');
 var Armor = require('../classes/Armor');
 var Accessory = require('../classes/Accessory');
 
+var StunStatus = require('../classes/status/StunStatus');
+
 function UnitManager() {
     this.TRAINER_RESPAWN_TIME = 6*60*60*1000;
 
@@ -105,6 +107,13 @@ UnitManager.prototype.setRespawn = function(userId) {
                 user.sendMessage("Your character has respawned.");
             }
         }, respawnDuration);
+    }
+}
+
+UnitManager.prototype.applyStun = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Stun"]) {
+        targetUnit.status["Stun"] = new StunStatus(this.bot, fromUserId, toUserId);
     }
 }
 
