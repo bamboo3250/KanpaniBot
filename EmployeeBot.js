@@ -19,6 +19,7 @@ var imageHelper = require('./helpers/ImageHelper');
 var functionHelper = require('./helpers/FunctionHelper');
 var urlHelper = require('./helpers/UrlHelper');
 var fs = require('fs');
+var Jimp = require("jimp");
 
 var dailyCommand = require('./commands/DailyCommand');
 var maintenanceCommand = require('./commands/MaintenanceCommand');
@@ -807,6 +808,48 @@ EmployeeBot.prototype.removeFaintedRole = function() {
     for(key in this.userManager.members) {
         var userId = key;
         this.userManager.removeRole(userId, "Fainted");
+    }
+}
+
+EmployeeBot.prototype.postKoImage = function(userId, koList) {
+    if (koList && koList.length > 0) {
+        var queue = [];
+        var queueToRead = [];
+        for(var i=0;i<koList.length;i++) {
+            var koUserId = koList[i];
+            var koUnit = this.unitManager.getPlayerUnit(koUserId);
+            var imgUrl = this.urlHelper.getIllustURL(koUnit, "chara_ko");
+            var fileName = "images/chara_ko/" + koUnit.characterId + ".png";
+            queue.push({ fileToDownload: imgUrl,   fileToSave: fileName});
+            queueToRead.push(fileName);
+        }
+
+        var that = this;
+        this.imageHelper.download(queue, function(err) {
+            if (err) {
+                that.log(err);
+                return;
+            }
+
+            that.imageHelper.read(queueToRead, function (err, imageList) {
+                if (err) {
+                    that.log(err);
+                    return;
+                }
+                image = new Jimp(1001 * koList.length, 1162, 0xFFFFFF00, function (err, image) {
+                    for(var i=0;i<koList.length;i++) {
+                        var koUserId = koList[i];
+                        var koUnit = that.unitManager.getPlayerUnit(koUserId);
+                        var fileName = "images/chara_ko/" + koUnit.characterId + ".png";
+                        image.composite(imageList[fileName], 1001 * i, 0);
+                    }
+                    var imageName = "images/battle_ko/" + userId + ".png";
+                    image.write(imageName, function() {
+                        that.battleChannel.sendFile(imageName, "png", "");
+                    });
+                });
+            });
+        });
     }
 }
 

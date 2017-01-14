@@ -4,6 +4,7 @@ var Armor = require('../classes/Armor');
 var Accessory = require('../classes/Accessory');
 
 var StunStatus = require('../classes/status/StunStatus');
+var PoisonStatus = require('../classes/status/PoisonStatus');
 
 function UnitManager() {
     this.TRAINER_RESPAWN_TIME = 6*60*60*1000;
@@ -76,7 +77,7 @@ UnitManager.prototype.takeDamagePlayerUnit = function(userId, damage) {
         if (prevHP > 0 && unit.getCurrentHP() === 0) {
             this.bot.battleController.didPlayerDie(userId);
         }
-        return (unit.getCurrentHP() === 0);
+        return (unit.getCurrentHP() <= 0);
     }
     return false;
 }
@@ -114,6 +115,13 @@ UnitManager.prototype.applyStun = function(fromUserId, toUserId) {
     var targetUnit = this.getPlayerUnit(toUserId);
     if (!targetUnit.status["Stun"]) {
         targetUnit.status["Stun"] = new StunStatus(this.bot, fromUserId, toUserId);
+    }
+}
+
+UnitManager.prototype.applyPoison = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Poison"]) {
+        targetUnit.status["Poison"] = new PoisonStatus(this.bot, fromUserId, toUserId);
     }
 }
 

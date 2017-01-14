@@ -30,9 +30,9 @@ var Employee = function(employeeInfo, playerId = null) {
 
     this.isTrainer = false;
     this.status = {
-        "Stun": null
+        "Stun": null,
     //     "paralyze": null,
-    //     "poison": null,
+        "Poison": null
     //     "curse": null,
     //     "charm": null,
     //     "darkness": null,
@@ -181,7 +181,7 @@ Employee.prototype.getCurrentHP = function() {
 }
 
 Employee.prototype.getMaxHP = function() {
-    if (this.isTrainer) return 45000;
+    if (this.isTrainer) return 25000;
     
     var classId = this.getClassId();
     var bonusHp = (this.getBaseRarity() == 5?1:0);

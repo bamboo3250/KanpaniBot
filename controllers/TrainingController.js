@@ -269,7 +269,9 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var damageList = {};
     var hitRateOnTargets = {};
     var critRateOnTargets = {};
+    
     var stunResult = {};
+    var poisonResult = {};
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -339,6 +341,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
                 if (doesHit) {
                     var STUN_CHANCE = 20;
+                    var POISON_CHANCE = 20;
 
                     if (attacker.getClassId() === 1 && !targetUnit.status["Stun"]) {
                         // fighter
@@ -353,6 +356,13 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesStun) {
                             this.bot.unitManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
+                        }    
+                    }
+                    if (skillPhase.status["Poison"] && !targetUnit.status["Poison"]) {
+                        var doesPoison = (this.bot.functionHelper.randomInt(100) < POISON_CHANCE);
+                        if (doesPoison) {
+                            this.bot.unitManager.applyPoison(attacker.playerId, targetUnit.playerId);
+                            poisonResult[targetUnit.playerId] = true;
                         }    
                     }
                 }
@@ -454,9 +464,8 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             text += " HP** for " + targetName + "\n";
         }
 
-        if (stunResult[targetId]) {
-            text += "\t\t" + targetName + " is stunned.\n";
-        }
+        if (stunResult[targetId]) text += "\t\t" + targetName + " is stunned.\n";
+        if (poisonResult[targetId]) text += "\t\t" + targetName + " is poisoned.\n";
     }
     
     if (Object.keys(expGained).length > 0) text += "\n";
