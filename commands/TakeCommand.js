@@ -45,8 +45,7 @@ module.exports = {
             player.equipedAccessory = null;
         }
         bot.savePlayer();
-        player = bot.playerManager.getPlayer(userId);
-        var employee = bot.playerManager.createUnitForPlayer(player);
+        var employee = bot.playerManager.createUnitForPlayer(userId);
         message.reply("Congratulations! You have selected **" + employee.fullName + "** as your character.");
         bot.rollResult[userId] = null;
     }

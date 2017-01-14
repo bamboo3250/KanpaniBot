@@ -91,8 +91,7 @@ module.exports = {
             bot.playerManager.equipAccessory(userId, equipmentResult._id, plus);
         }
         bot.savePlayer();
-        player = bot.playerManager.getPlayer(userId);
-        bot.playerManager.refreshUnitForPlayer(player);
+        bot.playerManager.refreshUnitForPlayerId(userId);
         message.reply("You have equipped **" + equipmentName + " +" + plus + "**");
     }
 }

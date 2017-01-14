@@ -93,8 +93,7 @@ TrainingController.prototype.didPlayerDie = function(playerId) {
             if (user) {
                 user.sendMessage(text);
             }
-            var player = this.bot.playerManager.getPlayer(userId);
-            this.bot.playerManager.refreshUnitForPlayer(player);
+            this.bot.playerManager.refreshUnitForPlayerId(userId);
         }
         this.contribution = {};
         this.bot.savePlayer();
@@ -477,7 +476,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         if (player) {
             var preLevel = unit.levelCached;
             this.bot.playerManager.addExp(userId, expGained[userId]);
-            this.bot.playerManager.refreshUnitForPlayer(player);
+            this.bot.playerManager.refreshUnitForPlayerId(userId);
             unit = this.bot.playerManager.getPlayerUnit(userId);
             if (preLevel < unit.levelCached) {
                 this.bot.userManager.announceLevel(userId, unit.levelCached);
@@ -553,11 +552,13 @@ TrainingController.prototype.randomField = function(middlePlayerId) {
 
 TrainingController.prototype.randomTrainer = function() {
     var trainerIdList = [];
+    var now = new Date();
+
     for(var i=0;i<2;i++) {
         for(var j=0;j<3;j++) {
             if (this.trainerField[i][j]) {
                 var trainerUnit = this.bot.playerManager.getPlayerUnit(this.trainerField[i][j]);
-                if (!trainerUnit.isFainted()) {
+                if (!trainerUnit.isFainted() && trainerUnit.cooldownEndTime <= now.valueOf()) {
                     trainerIdList.push(this.trainerField[i][j]);    
                 }
             }

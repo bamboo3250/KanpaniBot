@@ -18,15 +18,14 @@ module.exports = {
         }        
 
         var partner = bot.playerManager.getPlayer(player.partnerId);
-        var partnerUnit = bot.playerManager.getPlayerUnit(player.partnerId);
 
         var tmp = partner.position;
         partner.position = player.position;
         player.position = tmp;
         bot.savePlayer();
 
-        bot.playerManager.refreshUnitForPlayer(player);
-        bot.playerManager.refreshUnitForPlayer(partner);
+        bot.playerManager.refreshUnitForPlayerId(userId);
+        bot.playerManager.refreshUnitForPlayerId(player.partnerId);
         var text = "Now you are in " + player.position + "line and your partner is in " + partner.position + "line.";
         message.reply(text);
     }

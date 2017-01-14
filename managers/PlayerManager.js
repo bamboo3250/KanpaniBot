@@ -266,9 +266,12 @@ PlayerManager.prototype.setExp = function(playerId, setExp) {
 
 PlayerManager.prototype.addExp = function(playerId, gainedExp) {
     var player = this.getPlayer(playerId);
-    if (!player) return;
-    player.exp += gainedExp;
+    var unit = this.getPlayerUnit(playerId);
+    if (!player || !unit) return;
+    player.exp = Math.min(unit.getMaxExp(), player.exp + gainedExp);
 }
+
+// UNIT MANAGER
 
 PlayerManager.prototype.createUnitForPlayer = function(player) {
     if (!player) return null;    
@@ -282,8 +285,12 @@ PlayerManager.prototype.createUnitForPlayer = function(player) {
     return this.playerUnits[player._id];
 }
 
+PlayerManager.prototype.refreshUnitForPlayerId = function(playerId) {
+    var player = this.getPlayer(playerId);
+    return this.refreshUnitForPlayer(player);
+}
+
 PlayerManager.prototype.refreshUnitForPlayer = function(player) {
-    if (!player) return null;
     if (this.playerUnits[player._id]) {
         var employee = this.playerUnits[player._id];
         employee.setExp(player.exp);
@@ -295,6 +302,7 @@ PlayerManager.prototype.refreshUnitForPlayer = function(player) {
     }
     return this.playerUnits[player._id];
 }
+
 
 PlayerManager.prototype.getPlayerUnit = function(userId) {
     if (this.playerUnits[userId]) {

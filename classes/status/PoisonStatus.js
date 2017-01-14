@@ -29,8 +29,7 @@ function PoisonStatus(bot, ownerId, targetId) {
             text += attackerName + " gained " + exp + " exp.";
             that.bot.battleChannel.sendMessage(text);
             that.bot.playerManager.addExp(that.ownerId, exp);
-            var player = that.bot.playerManager.getPlayer(that.ownerId);
-            that.bot.playerManager.refreshUnitForPlayer(player);
+            that.bot.playerManager.refreshUnitForPlayerId(that.ownerId);
 
             if (isKoed) that.bot.postKoImage(that.ownerId, [that.targetId]);
             if (that.counter === 0 || isKoed) {
