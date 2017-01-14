@@ -681,15 +681,19 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
 TrainingController.prototype.executeBattle = function(turnQueue, iter, battleField, koResult, resultText, imageList, callback) {
     if (iter >= turnQueue.length) {
         var userId = turnQueue[0].attacker.playerId;
-        image = new Jimp(950, 590 * imageList.length, 0xFFFFFF00, function (err, image) {
-            for(var i=0;i<imageList.length;i++) {
-                image.composite(imageList[i], 0, 590 * i);
-            }
-            var imageName = "images/battle/" + userId + ".png";
-            image.write(imageName, function() {
-                callback(resultText, imageName);
-            });
-        });
+        if (imageList && imageList.length > 0) {
+            image = new Jimp(950, 590 * imageList.length, 0xFFFFFF00, function (err, image) {
+                for(var i=0;i<imageList.length;i++) {
+                    image.composite(imageList[i], 0, 590 * i);
+                }
+                var imageName = "images/battle/" + userId + ".png";
+                image.write(imageName, function() {
+                    callback(resultText, imageName);
+                });
+            });    
+        } else {
+            callback(resultText, null);
+        }
         return;
     }
     var turn = turnQueue[iter];
