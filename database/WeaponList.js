@@ -4347,7 +4347,7 @@ module.exports = {
                     frontSkill: "Twin Shot", backSkill: "Triple Shot"
                 },
                 "+1": { price: 6000,
-                    patk: 178, 3960: 0, matk: 0, mdef: 0, crit: 30, hit: 34, eva: 21,
+                    patk: 178, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 34, eva: 21,
                     frontSkill: "Twin Shot", backSkill: "Spread Shot"
                 },
                 "+2": { price: 7000,
