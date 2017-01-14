@@ -35,6 +35,8 @@ function PoisonStatus(bot, ownerId, targetId) {
             if (that.counter === 0 || isKoed) {
                 that.destroy();
             }
+        } else {
+            that.destroy();
         }
         
     }, INTERVAL);
