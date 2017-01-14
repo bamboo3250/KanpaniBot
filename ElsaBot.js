@@ -412,11 +412,11 @@ if (isLocal) {
             isTrainer: true
         },{
             _id: "269733140635975680",  // Hinano Guest
-            characterId: "10750001_32935980",
+            characterId: "10350003_fcc3ce23",
             exp: 5370000,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308320",
                 plus: 3
             },
             equipedArmor: {
