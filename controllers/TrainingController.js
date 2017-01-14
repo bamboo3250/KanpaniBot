@@ -16,7 +16,7 @@ TrainingController.prototype.didAllTrainersDie = function() {
     for(var i=0;i<2;i++) {
         for(var j=0;j<3;j++) {
             var trainerId = this.trainerField[i][j];
-            var unit = this.bot.unitManager.getPlayerUnit(trainerId);
+            var unit = this.bot.playerManager.getPlayerUnit(trainerId);
             if (unit && unit.getCurrentHP() > 0) return false;
         }
     }
@@ -49,11 +49,11 @@ var rewardList = [
 var EXP_REWARD = 48216;
 
 TrainingController.prototype.didPlayerDie = function(playerId) {
-    var unit = this.bot.unitManager.getPlayerUnit(playerId);
+    var unit = this.bot.playerManager.getPlayerUnit(playerId);
     if (unit && unit.isTrainer && this.didAllTrainersDie()) {
-        for(key in this.bot.unitManager.playerUnits) {
+        for(key in this.bot.playerManager.playerUnits) {
             var userId = key;
-            var userUnit = this.bot.unitManager.playerUnits[userId];
+            var userUnit = this.bot.playerManager.playerUnits[userId];
             if (userUnit) {
                 if (!userUnit.isTrainer) {
                     userUnit.fullHeal();
@@ -61,7 +61,7 @@ TrainingController.prototype.didPlayerDie = function(playerId) {
                         this.bot.userManager.removeRole(userId, "Fainted")
                     }
                 } else {
-                    this.bot.unitManager.setRespawn(userId);
+                    this.bot.playerManager.setRespawn(userId);
                 }
             }
         }
@@ -69,7 +69,7 @@ TrainingController.prototype.didPlayerDie = function(playerId) {
         setTimeout(function() {
             var traineeRole = that.bot.battleChannel.guild.roles.find('name', 'Trainee');
             that.bot.battleChannel.sendMessage(traineeRole + " All Trainers are ready for new battle.");
-        }, that.bot.unitManager.TRAINER_RESPAWN_TIME);
+        }, that.bot.playerManager.TRAINER_RESPAWN_TIME);
 
         var expReward = EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1));
         for(key in this.contribution) {
@@ -94,7 +94,7 @@ TrainingController.prototype.didPlayerDie = function(playerId) {
                 user.sendMessage(text);
             }
             var player = this.bot.playerManager.getPlayer(userId);
-            this.bot.unitManager.refreshUnitForPlayer(player);
+            this.bot.playerManager.refreshUnitForPlayer(player);
         }
         this.contribution = {};
         this.bot.savePlayer();
@@ -125,7 +125,7 @@ function getPosOnField(unit, field) {
 
 TrainingController.prototype.hasFrontlineUnit = function(field) {
     for(var i=0;i<3;i++) {
-        var unit = this.bot.unitManager.getPlayerUnit(field[0][i]);
+        var unit = this.bot.playerManager.getPlayerUnit(field[0][i]);
         if (unit && !unit.isFainted()) return true;
     }
     return false;
@@ -171,7 +171,7 @@ TrainingController.prototype.resolveTargets = function(skillPhase, attacker, mai
     for(var i=0;i<resolvedArea.length;i++) {
         var userId = field[resolvedArea[i].row][resolvedArea[i].column];
         if (userId) {
-            var unit = this.bot.unitManager.getPlayerUnit(userId);
+            var unit = this.bot.playerManager.getPlayerUnit(userId);
             if (!unit.isFainted()) {
                 result.push(resolvedArea[i]);    
             }
@@ -236,7 +236,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     }
     for(var i=0;i<2;i++) {
         for(var j=0;j<3;j++) {
-            var enemyUnit = this.bot.unitManager.getPlayerUnit(battleField.enemySide[i][j]);
+            var enemyUnit = this.bot.playerManager.getPlayerUnit(battleField.enemySide[i][j]);
             if (enemyUnit && enemyUnit.getCurrentHP() > 0) {
                 if (enemyUnit === attacker) {
                     painter.setEnemyState(i, j, enemyUnit, skillPhase.state, skillPhase.frame);
@@ -247,7 +247,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     painter.setEnemyState(i, j, enemyUnit);
                 }
             }
-            var allyUnit = this.bot.unitManager.getPlayerUnit(battleField.allySide[i][j]);
+            var allyUnit = this.bot.playerManager.getPlayerUnit(battleField.allySide[i][j]);
             if (allyUnit && !allyUnit.isFainted()) {
                 if (allyUnit === attacker) {
                     painter.setAllyState(i, j, allyUnit, skillPhase.state, skillPhase.frame);
@@ -275,7 +275,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
-        var targetUnit = this.bot.unitManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
+        var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
 
         var targetName = targetUnit.shortName;
         var targetUser = this.bot.userManager.getUser(targetUnit.playerId);
@@ -317,7 +317,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 if (!doesHit) rawDamage = 0;
 
                 if (rawDamage > 0 && hasSomeoneInFront) {
-                    var frontUnit = this.bot.unitManager.getPlayerUnit(field[0][targetFieldPos.column]);
+                    var frontUnit = this.bot.playerManager.getPlayerUnit(field[0][targetFieldPos.column]);
                     if (frontUnit.getClassId() === 4) {
                         var damageToFrontSoldier = Math.max(1, Math.floor(rawDamage * 0.58));
                         rawDamage *= 0.42;
@@ -347,21 +347,21 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         // fighter
                         var doesStun = (this.bot.functionHelper.randomInt(100) < STUN_CHANCE);
                         if (doesStun) {
-                            this.bot.unitManager.applyStun(attacker.playerId, targetUnit.playerId);
+                            this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
                         }    
                     }
                     if (skillPhase.status["Stun"] && !targetUnit.status["Stun"]) {
                         var doesStun = (this.bot.functionHelper.randomInt(100) < STUN_CHANCE);
                         if (doesStun) {
-                            this.bot.unitManager.applyStun(attacker.playerId, targetUnit.playerId);
+                            this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
                         }    
                     }
                     if (skillPhase.status["Poison"] && !targetUnit.status["Poison"]) {
                         var doesPoison = (this.bot.functionHelper.randomInt(100) < POISON_CHANCE);
                         if (doesPoison) {
-                            this.bot.unitManager.applyPoison(attacker.playerId, targetUnit.playerId);
+                            this.bot.playerManager.applyPoison(attacker.playerId, targetUnit.playerId);
                             poisonResult[targetUnit.playerId] = true;
                         }    
                     }
@@ -376,7 +376,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var skillModifier = skillPhase.modifier;
                 var healHp = Math.floor(matk * skillModifier);
                 
-                healHp = this.bot.unitManager.healPlayerUnit(targetUnit.playerId, healHp);
+                healHp = this.bot.playerManager.healPlayerUnit(targetUnit.playerId, healHp);
                 if (typeof damageList[targetUnit.playerId] === "undefined") damageList[targetUnit.playerId] = [];
                 damageList[targetUnit.playerId].push({
                     damage: healHp,
@@ -388,7 +388,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
     for(key in damageList) {
         var targetId = key;
-        var targetUnit = this.bot.unitManager.getPlayerUnit(targetId);
+        var targetUnit = this.bot.playerManager.getPlayerUnit(targetId);
 
         var targetFieldPos = getPosOnField(targetUnit, field);
         
@@ -419,7 +419,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     painter.addAllyDamage(targetFieldPos.row, targetFieldPos.column, damage, type);
                 }
                 var prevHP = targetUnit.getCurrentHP();
-                var isFainted = this.bot.unitManager.takeDamagePlayerUnit(targetUnit.playerId, damage);
+                var isFainted = this.bot.playerManager.takeDamagePlayerUnit(targetUnit.playerId, damage);
                 
                 var exp = (prevHP - targetUnit.getCurrentHP()) * 3;
                 expGained[attacker.playerId] += exp;
@@ -472,13 +472,13 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     for(key in expGained) {
         var userId = key;
         var user = this.bot.userManager.getUser(userId);
-        var unit = this.bot.unitManager.getPlayerUnit(userId);
+        var unit = this.bot.playerManager.getPlayerUnit(userId);
         var player = this.bot.playerManager.getPlayer(userId);
         if (player) {
             var preLevel = unit.levelCached;
             this.bot.playerManager.addExp(userId, expGained[userId]);
-            this.bot.unitManager.refreshUnitForPlayer(player);
-            unit = this.bot.unitManager.getPlayerUnit(userId);
+            this.bot.playerManager.refreshUnitForPlayer(player);
+            unit = this.bot.playerManager.getPlayerUnit(userId);
             if (preLevel < unit.levelCached) {
                 this.bot.userManager.announceLevel(userId, unit.levelCached);
             }
@@ -504,7 +504,7 @@ TrainingController.prototype.randomField = function(middlePlayerId) {
     for(key in this.bot.playerManager.playerDict) {
         var userId = key;
         var player = this.bot.playerManager.getPlayer(userId);
-        var playerUnit = this.bot.unitManager.getPlayerUnit(userId);
+        var playerUnit = this.bot.playerManager.getPlayerUnit(userId);
         var hasJoinedTraining = this.bot.userManager.doesMemberHaveRole(userId, "Trainee");
         if (playerUnit && !playerUnit.isFainted() && hasJoinedTraining) {
             var groupId = (groups[player.partnerId]? player.partnerId: userId);
@@ -556,7 +556,7 @@ TrainingController.prototype.randomTrainer = function() {
     for(var i=0;i<2;i++) {
         for(var j=0;j<3;j++) {
             if (this.trainerField[i][j]) {
-                var trainerUnit = this.bot.unitManager.getPlayerUnit(this.trainerField[i][j]);
+                var trainerUnit = this.bot.playerManager.getPlayerUnit(this.trainerField[i][j]);
                 if (!trainerUnit.isFainted()) {
                     trainerIdList.push(this.trainerField[i][j]);    
                 }
@@ -565,7 +565,7 @@ TrainingController.prototype.randomTrainer = function() {
     }
     if (trainerIdList.length > 0) {
         var trainerId = this.bot.functionHelper.randomObject(trainerIdList);
-        return this.bot.unitManager.getPlayerUnit(trainerId);
+        return this.bot.playerManager.getPlayerUnit(trainerId);
     }
     return null;
 }

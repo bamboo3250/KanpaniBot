@@ -63,7 +63,7 @@ module.exports = {
             return;
         }
 
-        var employee = bot.unitManager.getPlayerUnit(userId);
+        var employee = bot.playerManager.getPlayerUnit(userId);
         var classId = employee.getClassId();
         if (isEventEquipment(equipmentCode)) {
             classId = bot.functionHelper.randomIntRange(1, 8);

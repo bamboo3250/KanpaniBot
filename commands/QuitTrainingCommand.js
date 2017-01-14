@@ -9,7 +9,7 @@ module.exports = {
             return;
         }
 
-        var unit = bot.unitManager.getPlayerUnit(userId);
+        var unit = bot.playerManager.getPlayerUnit(userId);
         if (!unit) {
             message.reply("You have to select character first.");
             return;

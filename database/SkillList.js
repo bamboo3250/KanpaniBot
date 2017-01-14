@@ -1764,7 +1764,7 @@ module.exports = {
         "Shadow Snake Punch": {
             canAttack: true,
             canHeal: false,
-            cooldown: 2.5,
+            cooldown: 5,
             phases: [
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,

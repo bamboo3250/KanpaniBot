@@ -5,7 +5,7 @@ module.exports = {
 
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
-        var unit = bot.unitManager.getPlayerUnit(userId);
+        var unit = bot.playerManager.getPlayerUnit(userId);
         
         if (!player) {
             message.reply("You have to select character first.");
@@ -18,15 +18,15 @@ module.exports = {
         }        
 
         var partner = bot.playerManager.getPlayer(player.partnerId);
-        var partnerUnit = bot.unitManager.getPlayerUnit(player.partnerId);
+        var partnerUnit = bot.playerManager.getPlayerUnit(player.partnerId);
 
         var tmp = partner.position;
         partner.position = player.position;
         player.position = tmp;
         bot.savePlayer();
 
-        bot.unitManager.refreshUnitForPlayer(player);
-        bot.unitManager.refreshUnitForPlayer(partner);
+        bot.playerManager.refreshUnitForPlayer(player);
+        bot.playerManager.refreshUnitForPlayer(partner);
         var text = "Now you are in " + player.position + "line and your partner is in " + partner.position + "line.";
         message.reply(text);
     }

@@ -46,7 +46,7 @@ module.exports = {
             return;
         }
 
-        var employee = bot.unitManager.getPlayerUnit(userId);
+        var employee = bot.playerManager.getPlayerUnit(userId);
         var classId = employee.getClassId();
 
         var equipmentResult = null;
@@ -92,7 +92,7 @@ module.exports = {
         }
         bot.savePlayer();
         player = bot.playerManager.getPlayer(userId);
-        bot.unitManager.refreshUnitForPlayer(player);
+        bot.playerManager.refreshUnitForPlayer(player);
         message.reply("You have equipped **" + equipmentName + " +" + plus + "**");
     }
 }

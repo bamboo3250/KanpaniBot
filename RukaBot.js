@@ -157,7 +157,7 @@ if (isLocal) {
 ruka.bot.on("ready", function() {
     if (ruka.ready()) {
         for(var i=0;i<ruka.playerData.length;i++) {
-            ruka.unitManager.createUnitForPlayer(ruka.playerData[i]);    
+            ruka.playerManager.createUnitForPlayer(ruka.playerData[i]);    
         }
         trainingController.bot = ruka;
         if (isLocal) {

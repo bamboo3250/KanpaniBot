@@ -23,7 +23,7 @@ module.exports = {
             bot.playerManager.unsetPartner(userId);
             player.position = "front";
             bot.savePlayer();
-            bot.unitManager.refreshUnitForPlayer(player);
+            bot.playerManager.refreshUnitForPlayer(player);
             message.reply("You now are in frontline");
             return;
         };
@@ -48,7 +48,7 @@ module.exports = {
                 text += "Congratulations! Now you are partner of **" + targetUser.username + "**";
                 text += " (front: " + message.author.username + ", back: " + targetUser.username + ").";
                 bot.savePlayer();
-                bot.unitManager.refreshUnitForPlayer(player);
+                bot.playerManager.refreshUnitForPlayer(player);
             }
         }
         message.reply(text);

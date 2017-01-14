@@ -17,7 +17,7 @@ module.exports = {
         for(var i=0;i<2;i++) {
             for(var j=0;j<3;j++) {
                 var trainerId = bot.battleController.trainerField[i][j];
-                var trainerUnit = bot.unitManager.getPlayerUnit(trainerId);
+                var trainerUnit = bot.playerManager.getPlayerUnit(trainerId);
                 var trainerUser = bot.userManager.getUser(trainerId);
 
                 if (trainerId && trainerUnit && trainerUser) {

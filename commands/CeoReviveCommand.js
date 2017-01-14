@@ -5,7 +5,7 @@ module.exports = {
 
         if (!bot.consumeBread(message, 2)) return;
         var userId = message.author.id;
-        var unit = bot.unitManager.getPlayerUnit(userId);
+        var unit = bot.playerManager.getPlayerUnit(userId);
         if (unit) {
             unit.fullHeal();
             if (bot.userManager.doesMemberHaveRole(userId, "Fainted")) {

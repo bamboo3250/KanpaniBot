@@ -9,7 +9,7 @@ module.exports = {
         }
 
         var userId = message.author.id;
-        var playerUnit = bot.unitManager.getPlayerUnit(userId);
+        var playerUnit = bot.playerManager.getPlayerUnit(userId);
         
         if (!playerUnit) {
             message.reply("You need to select character first.");
@@ -38,7 +38,7 @@ module.exports = {
 
         var targetUnitList = [];
         for (var i = 0; i < targetList.length; i++) {
-            var targetUnit = bot.unitManager.getPlayerUnit(targetList[i]);
+            var targetUnit = bot.playerManager.getPlayerUnit(targetList[i]);
             if (!targetUnit) {
                 message.reply("One of your targets does not have character.");
                 return;

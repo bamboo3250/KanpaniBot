@@ -12,7 +12,6 @@ var playerManager = require('./managers/PlayerManager');
 var userManager = require('./managers/UserManager');
 var backgroundManager = require('./managers/BackgroundManager');
 var auctionManager = require('./managers/AuctionManager');
-var unitManager = require('./managers/UnitManager');
 var imageManager = require('./managers/ImageManager');
 
 var imageHelper = require('./helpers/ImageHelper');
@@ -90,12 +89,11 @@ function EmployeeBot() {
     this.urlHelper = urlHelper;
     
     this.playerManager = playerManager;
+    playerManager.bot = this;
     this.userManager = userManager;
     userManager.bot = this;
     this.backgroundManager = backgroundManager;
     this.auctionManager = auctionManager;
-    this.unitManager = unitManager;
-    unitManager.bot = this;
     this.imageManager = imageManager;
     imageManager.bot = this;
     imageManager.init();
@@ -610,8 +608,8 @@ EmployeeBot.prototype.loadPlayer = function() {
         for(key in that.playerManager.playerDict) {
             var userId = key;
             var player = that.playerManager.getPlayer(userId);
-            that.unitManager.createUnitForPlayer(player);
-            var unit = that.unitManager.getPlayerUnit(userId);
+            that.playerManager.createUnitForPlayer(player);
+            var unit = that.playerManager.getPlayerUnit(userId);
         }
 
     });
@@ -817,7 +815,7 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
         var queueToRead = [];
         for(var i=0;i<koList.length;i++) {
             var koUserId = koList[i];
-            var koUnit = this.unitManager.getPlayerUnit(koUserId);
+            var koUnit = this.playerManager.getPlayerUnit(koUserId);
             var imgUrl = this.urlHelper.getIllustURL(koUnit, "chara_ko");
             var fileName = "images/chara_ko/" + koUnit.characterId + ".png";
             queue.push({ fileToDownload: imgUrl,   fileToSave: fileName});
@@ -839,7 +837,7 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
                 image = new Jimp(1001 * koList.length, 1162, 0xFFFFFF00, function (err, image) {
                     for(var i=0;i<koList.length;i++) {
                         var koUserId = koList[i];
-                        var koUnit = that.unitManager.getPlayerUnit(koUserId);
+                        var koUnit = that.playerManager.getPlayerUnit(koUserId);
                         var fileName = "images/chara_ko/" + koUnit.characterId + ".png";
                         image.composite(imageList[fileName], 1001 * i, 0);
                     }

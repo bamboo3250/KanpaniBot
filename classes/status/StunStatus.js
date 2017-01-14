@@ -5,7 +5,7 @@ function StunStatus(bot, ownerId, targetId) {
 }
 
 StunStatus.prototype.destroy = function() {
-    var unit = this.bot.unitManager.getPlayerUnit(this.targetId);
+    var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Stun"] === this) {
         unit.status["Stun"] = null;    
     }

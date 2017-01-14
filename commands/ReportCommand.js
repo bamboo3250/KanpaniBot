@@ -21,7 +21,7 @@ module.exports = {
         text += "Reporter: ";
         for(key in bot.report[reportedUser.id]) {
             var reporterId = key;
-            var employee = bot.unitManager.getPlayerUnit(reporterId);
+            var employee = bot.playerManager.getPlayerUnit(reporterId);
             if (employee && employee.levelCached >= 50) {
                 text += "**" + bot.report[reportedUser.id][reporterId] + "** ";
             } else {
@@ -34,7 +34,7 @@ module.exports = {
             var count = 0;
             for(key in bot.report[reportedUser.id]) {
                 var reporterId = key;
-                var employee = bot.unitManager.getPlayerUnit(reporterId);
+                var employee = bot.playerManager.getPlayerUnit(reporterId);
                 if (employee && employee.levelCached >= 50) count++;
             }
             if (count >= 2) {

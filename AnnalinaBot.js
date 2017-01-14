@@ -132,7 +132,7 @@ if (isLocal) {
 annalina.bot.on("ready", function() {
     if (annalina.ready()) {
         for(var i=0;i<annalina.playerData.length;i++) {
-            annalina.unitManager.createUnitForPlayer(annalina.playerData[i]);    
+            annalina.playerManager.createUnitForPlayer(annalina.playerData[i]);    
         }
         trainingController.bot = annalina;
         if (isLocal) {

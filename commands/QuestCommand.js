@@ -5,7 +5,7 @@ module.exports = {
         if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) return;
         
         var userId = message.author.id;
-        var employee = bot.unitManager.getPlayerUnit(userId);
+        var employee = bot.playerManager.getPlayerUnit(userId);
         if (employee === null) {
             message.reply("You haven't selected your character.");
             return;

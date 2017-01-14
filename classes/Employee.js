@@ -108,6 +108,11 @@ var expForLevel = [
     5760000, 6200000, 6620000, 7090000, 7600000, 8140000, 8720000, 9340000, 10000000, 10707880, 
     11460000, 12270000, 13140000, 14060000, 15050000, 16110000, 17240000, 18450000, 19739650];
 
+Employee.prototype.getMaxExp = function() {
+    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
+    return expForLevel[maxLevel-1];
+}
+
 Employee.prototype.setExp = function(expToSet) {
     var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
     this.exp = Math.min(expToSet, expForLevel[maxLevel-1]);
@@ -311,6 +316,10 @@ Employee.prototype.isFainted = function() {
 
 Employee.prototype.fullHeal = function() {
     this.currentHP = this.getMaxHP();
+    for(key in this.status) {
+        var statusName = key;
+        if (this.status[statusName]) this.status[statusName].destroy();    
+    }
 }
 
 Employee.prototype.isStunned = function() {

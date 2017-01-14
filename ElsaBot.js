@@ -424,7 +424,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -442,7 +442,7 @@ elsa.bot.on("ready", function() {
     if (elsa.ready()) {
         loadAffection();
         for(var i=0;i<elsa.playerData.length;i++) {
-            elsa.unitManager.createUnitForPlayer(elsa.playerData[i]);    
+            elsa.playerManager.createUnitForPlayer(elsa.playerData[i]);    
         }
         trainingController.bot = elsa;
         if (isLocal) {

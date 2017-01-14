@@ -11,7 +11,7 @@ module.exports = {
         }
 
         var userId = message.author.id;
-        var playerUnit = bot.unitManager.getPlayerUnit(userId);
+        var playerUnit = bot.playerManager.getPlayerUnit(userId);
         
         if (!playerUnit) {
             message.reply("You need to select character first.");
@@ -40,7 +40,7 @@ module.exports = {
 
         var targetUnitList = [];
         for (var i = 0; i < targetList.length; i++) {
-            var targetUnit = bot.unitManager.getPlayerUnit(targetList[i]);
+            var targetUnit = bot.playerManager.getPlayerUnit(targetList[i]);
             if (!targetUnit) {
                 message.reply("One of your targets does not have character.");
                 return;
@@ -70,7 +70,7 @@ module.exports = {
             if (koList) {
                 for(var i=0;i<koList.length;i++) {
                     var koUserId = koList[i];
-                    var koUnit = bot.unitManager.getPlayerUnit(koUserId);
+                    var koUnit = bot.playerManager.getPlayerUnit(koUserId);
                     var koUser = bot.userManager.getUser(koUserId);
                     bot.userManager.addRole(koUserId, "Fainted");
                     if (koUser) {

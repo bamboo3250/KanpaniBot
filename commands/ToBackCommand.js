@@ -23,7 +23,7 @@ module.exports = {
             bot.playerManager.unsetPartner(userId);
             player.position = "back";
             bot.savePlayer();
-            bot.unitManager.refreshUnitForPlayer(player);
+            bot.playerManager.refreshUnitForPlayer(player);
             message.reply("You now are in backline");
             return;
         };
@@ -48,7 +48,7 @@ module.exports = {
                 text += "Congratulations! Now you are partner of **" + targetUser.username + "**";
                 text += " (front: " + targetUser.username + ", back: " + message.author.username + ").";
                 bot.savePlayer();
-                bot.unitManager.refreshUnitForPlayer(player);
+                bot.playerManager.refreshUnitForPlayer(player);
             }
         }
         message.reply(text);

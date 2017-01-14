@@ -10,7 +10,7 @@ module.exports = {
             return;
         }
         
-        var employee = bot.unitManager.getPlayerUnit(userId);
+        var employee = bot.playerManager.getPlayerUnit(userId);
         if (message.channel.name === "battlefield") {
             const elementEmoji = (message.guild == null ? employee.element : message.guild.emojis.find('name', 'k' + employee.element));
 
@@ -56,7 +56,7 @@ module.exports = {
         var partnerSpriteFileName = null
         if (player.partnerId) {
             var partner = bot.playerManager.getPlayer(player.partnerId);
-            var partnerEmployee = bot.unitManager.getPlayerUnit(player.partnerId);
+            var partnerEmployee = bot.playerManager.getPlayerUnit(player.partnerId);
             
             var partnerSpriteUrl = bot.urlHelper.getSpriteImageURL(partnerEmployee);
             partnerSpriteFileName = "images/enemy/" + bot.urlHelper.getSpriteImageName(partnerEmployee);
