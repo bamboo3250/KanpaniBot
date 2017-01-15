@@ -1555,8 +1555,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
-                    false,
-                    {}
+                    false, {
+                        "Cleanse": true
+                    }
                 )
             ]
         },
@@ -1591,8 +1592,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
-                    false,
-                    {}
+                    false, {
+                        "Cleanse": true
+                    }
                 )
             ]
         },
@@ -1609,8 +1611,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
-                    false,
-                    {}
+                    false, {
+                        "Cleanse": true
+                    }
                 )
             ]
         },
@@ -1627,8 +1630,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
-                    false,
-                    {}
+                    false, {
+                        "Cleanse": true
+                    }
                 )
             ]
         },
@@ -1645,8 +1649,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
-                    false,
-                    {}
+                    false, {
+                        "Cleanse": true
+                    }
                 )
             ]
         },
@@ -1663,8 +1668,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
-                    false,
-                    {}
+                    false, {
+                        "Cleanse": true
+                    }
                 )
             ]
         },
@@ -1699,8 +1705,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
-                    false,
-                    {}
+                    false, {
+                        "Cleanse": true
+                    }
                 )
             ]
         },
@@ -1717,8 +1724,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
-                    false,
-                    {}
+                    false, {
+                        "Cleanse": true
+                    }
                 )
             ]
         },
@@ -1735,8 +1743,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
-                    false,
-                    {}
+                    false, {
+                        "Cleanse": true
+                    }
                 )
             ]
         }

@@ -70,7 +70,7 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         }
@@ -80,7 +80,7 @@ if (isLocal) {
         {
             _id: "241511566036434945",
             characterId: "10150002_765306d2",
-            exp: 2646190,//2646190,
+            exp: 1256200,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308119",
@@ -92,7 +92,7 @@ if (isLocal) {
             },
             equipedAccessory: {
                 _id: "330006",
-                plus: 1
+                plus: 3
             },
             materialList: {},
             weaponList: {},
@@ -104,7 +104,7 @@ if (isLocal) {
         },{
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",
-            exp: 2646190,//2646190,
+            exp: 1256200,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308806",
@@ -115,7 +115,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330206",
                 plus: 3
             },
             materialList: {},
@@ -128,7 +128,7 @@ if (isLocal) {
         },{
             _id: "268576286060838914",  // Saimi Guest
             characterId: "10750001_32935980",
-            exp: 2646190,//2646190,
+            exp: 1256200,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308706",
@@ -140,7 +140,7 @@ if (isLocal) {
             },
             equipedAccessory: {
                 _id: "330206",
-                plus: 3
+                plus: 2
             },
             materialList: {},
             weaponList: {},
@@ -152,7 +152,7 @@ if (isLocal) {
         },{
             _id: "269733140635975680",  // Hinano Guest
             characterId: "10350003_fcc3ce23",
-            exp: 2646190,//2646190,
+            exp: 1256200,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308320",
@@ -163,8 +163,8 @@ if (isLocal) {
                 plus: 1
             },
             equipedAccessory: {
-                _id: "330006",
-                plus: 3
+                _id: "330206",
+                plus: 2
             },
             materialList: {},
             weaponList: {},
@@ -186,8 +186,8 @@ ruka.bot.on("ready", function() {
         trainingController.bot = ruka;
         if (isLocal) {
             trainingController.trainerField = [
-                [null, "240097185436270593", null],
-                [null, "265889287281573918", null]
+                ["240097185436270593", null, null],
+                [null, null, "265889287281573918"]
             ];
         } else {
             trainingController.trainerField = [

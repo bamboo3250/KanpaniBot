@@ -3,7 +3,7 @@ module.exports = {
         var command = bot.functionHelper.parseCommand(message);
         if (command.commandName != "~ceorevive") return;
 
-        if (!bot.consumeBread(message, 2)) return;
+        if (!bot.consumeBread(message, 1)) return;
         var userId = message.author.id;
         var unit = bot.playerManager.getPlayerUnit(userId);
         if (unit) {

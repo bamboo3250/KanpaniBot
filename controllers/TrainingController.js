@@ -130,33 +130,56 @@ TrainingController.prototype.hasFrontlineUnit = function(field) {
     return false;
 }
 
-TrainingController.prototype.resolveArea = function(skillPhase, attacker, mainTarget, field) {
-    var mainTargetPos = getPosOnField(mainTarget, field);
-    
-    if (skillPhase.isShortAttack()) {   // short attack
-        if (mainTargetPos.isBackline() && this.hasFrontlineUnit(field)) {
-            mainTargetPos.row = 0;
+TrainingController.prototype.checkMask = function(skillPhase, mask, mainTargetPos, field) {
+    if (mask[mainTargetPos.row][mainTargetPos.column]) {
+        if (!skillPhase.isShortAttack()) return true;
+
+        if (this.hasFrontlineUnit(field)) {
+            for(var i=0;i<3;i++) {
+                if (mask[0][i] && field[0][i]) return true;
+            }
+            return false;
+        } else {
+            return true;
         }
-        if (!field[mainTargetPos.row][mainTargetPos.column]) {
-            for(var i=0;i<3;i++) if (field[mainTargetPos.row][i]) {
-                mainTargetPos.column = i;
-                break;
+    }
+    return false;
+}
+
+TrainingController.prototype.selectMask = function(skillPhase, mainTargetPos, field) {
+    var masks = skillPhase.getPatternMask();
+    for(var i=0;i<masks.length;i++) {
+        if (this.checkMask(skillPhase, masks[i], mainTargetPos, field)) {
+            return masks[i];
+        }
+    }
+
+    for(var i=0;i<2;i++) {
+        for(var j=0;j<3;j++) {
+            if (field[i][j]) {
+                for(var k=0;k<masks.length;k++) {
+                    var pos = {
+                        row: i,
+                        column: j
+                    }
+                    if (this.checkMask(skillPhase, masks[k], pos, field)) {
+                        return masks[k];
+                    }
+                }                
             }
         }
     }
-    var masks = skillPhase.getPatternMask();
-    var chosenMaskIndex = -1;
-    for(var i=0;i<masks.length;i++) {
-        if (masks[i][mainTargetPos.row][mainTargetPos.column]) {
-            chosenMaskIndex = i;
-            break;
-        }
-    }
+    return null;
+}
+
+TrainingController.prototype.resolveArea = function(skillPhase, attacker, mainTarget, field) {
+    var mainTargetPos = getPosOnField(mainTarget, field);
+    var mask = this.selectMask(skillPhase, mainTargetPos, field);
 
     var result = [];
     for(var i=0;i<2;i++) {
         for(var j=0;j<3;j++) {
-            if (masks[chosenMaskIndex][i][j]) {
+            if (mask && mask[i][j]) {
                 result.push(new FieldPosition(i, j));
             }
         }
@@ -376,6 +399,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var healHp = Math.floor(matk * skillModifier);
                 
                 healHp = this.bot.playerManager.healPlayerUnit(targetUnit.playerId, healHp);
+
+                if (skillPhase.status["Cleanse"]) {
+                    targetUnit.cleanse();
+                }
+
                 if (typeof damageList[targetUnit.playerId] === "undefined") damageList[targetUnit.playerId] = [];
                 damageList[targetUnit.playerId].push({
                     damage: healHp,

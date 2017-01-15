@@ -186,7 +186,7 @@ Employee.prototype.getCurrentHP = function() {
 }
 
 Employee.prototype.getMaxHP = function() {
-    if (this.isTrainer) return 30000;
+    if (this.isTrainer) return 20000;
     
     var classId = this.getClassId();
     var bonusHp = (this.getBaseRarity() == 5?1:0);
@@ -316,6 +316,10 @@ Employee.prototype.isFainted = function() {
 
 Employee.prototype.fullHeal = function() {
     this.currentHP = this.getMaxHP();
+    this.cleanse();
+}
+
+Employee.prototype.cleanse = function() {
     for(key in this.status) {
         var statusName = key;
         if (this.status[statusName]) this.status[statusName].destroy();    
