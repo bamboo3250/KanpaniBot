@@ -644,7 +644,7 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         result: result1
     };
     var trainerTurn = null;
-    var turnQueue = [playerTurn];
+    var turnQueue = [];
 
     var trainerToAttack = that.randomTrainer();
     var isTrainerSkillReady = (trainerToAttack && trainerToAttack.cooldownEndTime <= now.valueOf());
@@ -664,15 +664,28 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
             targetUnitList: [trainerTarget],
             result: result2
         };
-        turnQueue.push(trainerTurn);
-    }
+        
+    }   
 
-    if (attacker.getClassId() === 7 && attacker.position === "front") {
+    if (attacker.getAGI() >= trainerToAttack.getAGI()) {
         turnQueue.push(playerTurn);
-    }
-    if (trainerToAttack && trainerToAttack.getClassId() === 7 && trainerToAttack.position === "front") {
-        turnQueue.push(trainerTurn);
-    }
+        if (trainerToAttack && trainerTurn) turnQueue.push(trainerTurn);
+        if (attacker.getClassId() === 7 && attacker.position === "front") {
+            turnQueue.push(playerTurn);
+        }
+        if (trainerToAttack && trainerToAttack.getClassId() === 7 && trainerToAttack.position === "front") {
+            turnQueue.push(trainerTurn);
+        }
+    } else {
+        if (trainerToAttack && trainerTurn) turnQueue.push(trainerTurn);
+        turnQueue.push(playerTurn);
+        if (trainerToAttack && trainerToAttack.getClassId() === 7 && trainerToAttack.position === "front") {
+            turnQueue.push(trainerTurn);
+        }
+        if (attacker.getClassId() === 7 && attacker.position === "front") {
+            turnQueue.push(playerTurn);
+        }
+    }  
 
     this.executeBattle(turnQueue, 0, battleField, koResult, "", [], function(text, imageName) {
         callback(null, text, imageName, koResult);

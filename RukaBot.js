@@ -149,6 +149,30 @@ if (isLocal) {
             position: "front",
             partnerId: null,
             isTrainer: true
+        },{
+            _id: "269733140635975680",  // Hinano Guest
+            characterId: "10350003_fcc3ce23",
+            exp: 2646190,//2646190,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308320",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "3107071",
+                plus: 1
+            },
+            equipedAccessory: {
+                _id: "330006",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "back",
+            partnerId: null,
+            isTrainer: true
         }
     ];
 }
@@ -168,7 +192,7 @@ ruka.bot.on("ready", function() {
         } else {
             trainingController.trainerField = [
                 ["268576286060838914", "241511566036434945", null],
-                [null, "239141420194070530", null]
+                [null, "239141420194070530", "269733140635975680"]
             ];    
         }
         

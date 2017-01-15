@@ -38,10 +38,12 @@ module.exports = {
         for (key in bot.playerManager.playerDict) {
             var userId = key;
             var employee = bot.playerManager.getPlayerUnit(userId);
-            result.push({
-                userId: userId,
-                employee: employee
-            });
+            if (employee) {
+                result.push({
+                    userId: userId,
+                    employee: employee
+                });    
+            }
         }
         result.sort(function(a, b) {
             if (a.employee.levelCached != b.employee.levelCached) {

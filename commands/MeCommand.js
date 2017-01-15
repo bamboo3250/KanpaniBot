@@ -5,12 +5,12 @@ module.exports = {
 
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
-        if (player === null) {
+        var employee = bot.playerManager.getPlayerUnit(userId);
+        if (!player || !employee) {
             message.reply("You haven't selected your character.");
             return;
         }
         
-        var employee = bot.playerManager.getPlayerUnit(userId);
         if (message.channel.name === "battlefield") {
             const elementEmoji = (message.guild == null ? employee.element : message.guild.emojis.find('name', 'k' + employee.element));
 
