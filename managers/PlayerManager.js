@@ -287,10 +287,13 @@ PlayerManager.prototype.createUnitForPlayer = function(player) {
 
 PlayerManager.prototype.refreshUnitForPlayerId = function(playerId) {
     var player = this.getPlayer(playerId);
-    return this.refreshUnitForPlayer(player);
+    if (player) {
+        return this.refreshUnitForPlayer(player);    
+    } else return null;
 }
 
 PlayerManager.prototype.refreshUnitForPlayer = function(player) {
+    if (!player) return null;
     if (this.playerUnits[player._id]) {
         var employee = this.playerUnits[player._id];
         employee.setExp(player.exp);
