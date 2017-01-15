@@ -667,7 +667,7 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         
     }   
 
-    if (attacker.getAGI() >= trainerToAttack.getAGI()) {
+    if (!trainerToAttack || attacker.getAGI() >= trainerToAttack.getAGI()) {
         turnQueue.push(playerTurn);
         if (trainerToAttack && trainerTurn) turnQueue.push(trainerTurn);
         if (attacker.getClassId() === 7 && attacker.position === "front") {
