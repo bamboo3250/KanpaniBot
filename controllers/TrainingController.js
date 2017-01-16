@@ -136,7 +136,8 @@ TrainingController.prototype.checkMask = function(skillPhase, mask, mainTargetPo
 
         if (this.hasFrontlineUnit(field)) {
             for(var i=0;i<3;i++) {
-                if (mask[0][i] && field[0][i]) return true;
+                var unit = this.bot.playerManager.getPlayerUnit(field[0][i]);
+                if (mask[0][i] && unit && !unit.isFainted()) return true;
             }
             return false;
         } else {
@@ -156,7 +157,8 @@ TrainingController.prototype.selectMask = function(skillPhase, mainTargetPos, fi
 
     for(var i=0;i<2;i++) {
         for(var j=0;j<3;j++) {
-            if (field[i][j]) {
+            var unit = this.bot.playerManager.getPlayerUnit(field[i][j]);
+            if (unit && !unit.isFainted()) {
                 for(var k=0;k<masks.length;k++) {
                     var pos = {
                         row: i,
