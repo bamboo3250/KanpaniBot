@@ -79,7 +79,7 @@ if (isLocal) {
         {
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",
-            exp: 5370000,//2646190,
+            exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308806",
@@ -90,8 +90,8 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
-                plus: 3
+                _id: "329997",
+                plus: 4
             },
             materialList: {},
             weaponList: {},
@@ -101,27 +101,27 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "268576286060838914",  // Saimi Guest
-            characterId: "10750001_32935980",
-            exp: 5370000,//2646190,
+            _id: "269733140635975680",  // Hinano Guest
+            characterId: "10350003_fcc3ce23",
+            exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308320",
                 plus: 3
             },
             equipedArmor: {
                 _id: "3107071",
-                plus: 1
+                plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
-                plus: 3
+                _id: "329997",
+                plus: 4
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         }
@@ -142,8 +142,8 @@ annalina.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "268576286060838914", null],
-                [null, "239141420194070530", null]
+                [null, null, null],
+                ["239141420194070530", null, "269733140635975680"]
             ];    
         }
         
