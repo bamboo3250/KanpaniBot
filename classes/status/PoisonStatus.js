@@ -27,11 +27,11 @@ function PoisonStatus(bot, ownerId, targetId) {
 
             that.counter--;
             if (!attackerUnit.isTrainer) {
-                var text = targetName + " took " + damage + " damage from Poison. (" + that.counter + ")\n";
-                text += attackerName + " gained " + exp + " exp.\n";    
+                // var text = targetName + " took " + damage + " damage from Poison. (" + that.counter + ")\n";
+                // text += attackerName + " gained " + exp + " exp.\n";    
                 that.bot.playerManager.addExp(that.ownerId, exp);
                 that.bot.playerManager.refreshUnitForPlayerId(that.ownerId);
-                attackerUser.sendMessage(text);
+                // attackerUser.sendMessage(text);
             }
 
             if (isKoed) {

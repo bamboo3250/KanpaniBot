@@ -587,6 +587,7 @@ EmployeeBot.prototype.loadPlayer = function() {
         for(key in that.playerManager.playerDict) {
             var userId = key;
             var player = that.playerManager.playerDict[userId];
+            player.exp = Math.floor(player.exp);
             var characterClassId = player.characterId.substring(2,3);
             if (player.equipedWeapon && characterClassId != player.equipedWeapon._id.substring(3,4)) {
                 that.playerManager.unequipWeapon(userId);
