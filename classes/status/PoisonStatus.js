@@ -3,7 +3,8 @@ function PoisonStatus(bot, ownerId, targetId) {
     this.ownerId = ownerId;
     this.targetId = targetId;
     this.counter = 10;
-
+    this.canBeCleansed = true;
+    
     var that = this;
     var INTERVAL = 60*1000;
     that.timer = setInterval(function(){

@@ -2,6 +2,7 @@ function StunStatus(bot, ownerId, targetId) {
     this.bot = bot;
     this.ownerId = ownerId;
     this.targetId = targetId;
+    this.canBeCleansed = true;
 }
 
 StunStatus.prototype.destroy = function() {

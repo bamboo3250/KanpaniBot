@@ -26,6 +26,7 @@ var Employee = function(employeeInfo, playerId = null) {
     this.currentHP = 0;
     this.respawnTime = null;
     this.cooldownEndTime = 0;
+    this.classSkillCooldownEndTime = 0;
     this.didQuit = false;
 
     this.isTrainer = false;
@@ -322,7 +323,10 @@ Employee.prototype.fullHeal = function() {
 Employee.prototype.cleanse = function() {
     for(key in this.status) {
         var statusName = key;
-        if (this.status[statusName]) this.status[statusName].destroy();    
+        var status = this.status[statusName];
+        if (status && status.canBeCleansed) {
+            status.destroy();
+        }
     }
 }
 
