@@ -10,23 +10,23 @@ UserManager.prototype.fetchAllMembersInGuildRecursively = function(callback, ite
         return;
     }
     if (iter == this.guilds.length) {
-        callback();
+        if (callback) callback();
         return;
     }
 
     var guild = this.guilds[iter];
     var that = this;
 
-    this.bot.log("[ready] Fetching members in " + guild.name);
+    this.bot.log("Fetching members in " + guild.name);
     guild.fetchMembers().then(guild => {
-        that.bot.log("[ready] Finished Fetching members in " + guild.name);
+        that.bot.log("Finished Fetching members in " + guild.name);
         var memberList = guild.members.array();
         for(var i=0;i<memberList.length;i++) {
             that.members[memberList[i].id] = memberList[i];
         }
         that.fetchAllMembersInGuildRecursively(callback, iter+1);
     }).catch(err => {
-        that.bot.log("[ready] Fetching member error in " + guild.name + "!\n" + err);
+        that.bot.log("Fetching member error in " + guild.name + "!\n" + err);
         that.fetchAllMembersInGuildRecursively(callback, iter+1);
     });
 }

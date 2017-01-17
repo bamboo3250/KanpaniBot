@@ -924,6 +924,7 @@ employee.bot.on('guildMemberAdd', (member) => {
             channels[i].sendMessage(text);
         } 
     }
+    employee.userManager.fetchAllMembers();
 });
 
 employee.bot.on('guildMemberRemove', (member) => {
