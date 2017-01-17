@@ -68,6 +68,7 @@ var joinTrainingCommand = require('./commands/JoinTrainingCommand');
 var quitTrainingCommand = require('./commands/QuitTrainingCommand');
 var ceoReviveCommand = require('./commands/CeoReviveCommand');
 var swapCommand = require('./commands/SwapCommand');
+var encourageCommand = require('./commands/EncourageCommand');
 
 function EmployeeBot() {
     this.token = null;
@@ -433,6 +434,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         quitTrainingCommand.handle(message, this);
         ceoReviveCommand.handle(message, this);
         swapCommand.handle(message, this);
+        encourageCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);

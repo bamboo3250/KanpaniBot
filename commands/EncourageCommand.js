@@ -68,6 +68,6 @@ module.exports = {
             }
         }
 
-        message.reply(text);
+        bot.battleChannel.sendMessage(text);
     }
 }

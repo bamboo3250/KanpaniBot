@@ -333,8 +333,10 @@ BattlePainter.prototype.draw = function(callback) {
                                 if (unit.status[key]) {
                                     var statusName = key;
                                     var statusFileName = "images/misc/status/" + statusName + ".png";
-                                    background.composite(imageList[statusFileName], enemyUnitPanelCoordX + 44 + statusCount*17, enemyUnitPanelCoordY + 22);                                
-                                    statusCount++;
+                                    if (imageList[statusFileName]) {
+                                        background.composite(imageList[statusFileName], enemyUnitPanelCoordX + 44 + statusCount*17, enemyUnitPanelCoordY + 22);                                
+                                        statusCount++;
+                                    }
                                 }
                             }
 

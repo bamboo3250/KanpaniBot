@@ -30,6 +30,7 @@ module.exports = {
                     text += "Status: ";
                     if (trainerUnit.status["Stun"]) text += "**[Stun]** ";
                     if (trainerUnit.status["Poison"]) text += "**[Poison]** ";
+                    if (trainerUnit.status["Encourage"]) text += "**[Encourage]** ";
                     text += "\n";
                     
                     text += "Position: **" + (i == 0?"Frontline":"Backline") + "** " + "\n";

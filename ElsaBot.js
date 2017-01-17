@@ -360,26 +360,26 @@ if (isLocal) {
             isTrainer: true
         },{
             _id: "265889287281573918",  // test-bot2
-            characterId: "10350003_fcc3ce23",
+            characterId: "10550001_27d912ef",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308320",
+                _id: "308510",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3103071",
-                plus: 1
+                _id: "3105071",
+                plus: 3
             },
             equipedAccessory: {
                 _id: "330006",
-                plus: 1
+                plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "back",
+            position: "front",
             partnerId: null,
             isTrainer: true
         }
@@ -389,7 +389,7 @@ if (isLocal) {
         {
             _id: "241511566036434945",
             characterId: "10150002_765306d2",
-            exp: 5370000,//2646190,
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308119",
@@ -411,16 +411,16 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "269733140635975680",  // Hinano Guest
-            characterId: "10350003_fcc3ce23",
-            exp: 5370000,//2646190,
+            _id: "270767219875643392",  // Siegrid Guest
+            characterId: "10550001_27d912ef",
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308320",
+                _id: "308510",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3107071",
+                _id: "3105071",
                 plus: 3
             },
             equipedAccessory: {
@@ -431,7 +431,7 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "back",
+            position: "front",
             partnerId: null,
             isTrainer: true
         }
@@ -447,13 +447,14 @@ elsa.bot.on("ready", function() {
         trainingController.bot = elsa;
         if (isLocal) {
             trainingController.trainerField = [
-                [null, "240097185436270593", null],
-                [null, "265889287281573918", null]
+                //[null, "240097185436270593", "265889287281573918"],
+                [null, null, "265889287281573918"],
+                [null, null, null]
             ];
         } else {
             trainingController.trainerField = [
-                [null, "241511566036434945", null],
-                [null, "269733140635975680", null]
+                [null, "241511566036434945", "270767219875643392"],
+                [null, null, null]
             ];    
         }
         
