@@ -335,12 +335,23 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 
                 var encourageModifier = (attacker.status["Encourage"] ? 2.0 : 1.0);
 
-                var rawDamage = Math.max(1, (1 - 0.00115 * def) * atk * skillModifier * encourageModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0) - def / 4);
+                var damageBeforeDef = atk * skillModifier * encourageModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0);
+                var rawDamage = Math.max(1, (1 - 0.00115 * def) * damageBeforeDef - def / 4);
                 var hasSomeoneInFront = (targetFieldPos.row === 1 && field[0][targetFieldPos.column]);
                 rawDamage *= (hasSomeoneInFront ? 0.7 : 1.0);
 
                 var doesHit = (this.bot.functionHelper.randomInt(100) < hitRate);
-                if (!doesHit) rawDamage = 0;
+                if (!doesHit) {
+                    damageBeforeDef = 0;
+                    rawDamage = 0;
+                }
+
+                if (targetUnit.getClassId() === 4) {
+                    if (typeof expGained[targetFieldPos.row][targetFieldPos.column]] === "undefined") {
+                        expGained[field[targetFieldPos.row][targetFieldPos.column]] = 0;
+                    }
+                    expGained[field[targetFieldPos.row][targetFieldPos.column]] += damageBeforeDef * 2;
+                } 
 
                 if (rawDamage > 0 && hasSomeoneInFront) {
                     var frontUnit = this.bot.playerManager.getPlayerUnit(field[0][targetFieldPos.column]);
@@ -477,7 +488,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             for(var i=0;i<damageList[targetId].length;i++) {
                 var healHp = damageList[targetId][i].damage;
                 
-                if (!onEnemySide) expGained[attacker.playerId] += healHp * 2;
+                if (!onEnemySide) expGained[attacker.playerId] += healHp * 4;
 
                 if (i === damageList[targetId].length - 1) {
                     text += healHp + "";    
