@@ -138,7 +138,7 @@ var employees = [
         baseStats: { _str: 5, _vit: 5, _agi: 23, _dex: 22, _int: 42, _pie: 12, _luk: 6},
         maxStats: { _str: 156, _vit: 154, _agi: 291, _dex: 281, _int: 523, _pie: 263, _luk: 228}
     },{
-        _no: 212, _id: "10850005_ad800ba1", fullName: "Luciel Fuel", japaneseName: "ルツィエル・フュエル", commonNames: ["Luciel"], cwId: 21,
+        _no: 212, _id: "10850005_ad800ba1", fullName: "Luciel Feuel", japaneseName: "ルツィエル・フュエル", commonNames: ["Luciel"], cwId: 21,
         baseStats: { _str: 8, _vit: 5, _agi: 22, _dex: 20, _int: 44, _pie: 12, _luk: 7},
         maxStats: { _str: 177, _vit: 176, _agi: 268, _dex: 271, _int: 525, _pie: 263, _luk: 237}
     },
@@ -314,7 +314,7 @@ var employees = [
         baseStats: { _str: 8, _vit: 8, _agi: 14, _dex: 7, _int: 10, _pie: 25, _luk: 7},
         maxStats: { _str: 166, _vit: 246, _agi: 213, _dex: 210, _int: 290, _pie: 395, _luk: 219}
     },{
-        _no: 202, _id: "10640006_19e2e941", fullName: "Lora Swan", japaneseName: "ララ・スワン", commonNames: ["Lora", "Lala"], cwId: 0,
+        _no: 202, _id: "10640006_19e2e941", fullName: "Lara Swan", japaneseName: "ララ・スワン", commonNames: ["Lara", "Lala"], cwId: 0,
         baseStats: { _str: 9, _vit: 10, _agi: 11, _dex: 6, _int: 9, _pie: 22, _luk: 10},
         maxStats: { _str: 166, _vit: 246, _agi: 213, _dex: 210, _int: 290, _pie: 395, _luk: 219}
     },{
