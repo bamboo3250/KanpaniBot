@@ -4371,6 +4371,38 @@ module.exports = {
                     amount: 2
                 }
             ]
+        },{
+            _id: "308510", modelId: "10", name: "Apocalypse", commonNames: ["Apocalypse"],
+            characterId: "10550001_27d912ef", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 227, pdef: 0, matk: 0, mdef: 0, crit: 100, hit: 24, eva: 0,
+                    frontSkill: "Flame Fall", backSkill: "Crash"
+                },
+                "+1": { price: 6000,
+                    patk: 303, pdef: 0, matk: 0, mdef: 0, crit: 120, hit: 24, eva: 0,
+                    frontSkill: "Force Impact", backSkill: "Crash"
+                },
+                "+2": { price: 7000,
+                    patk: 390, pdef: 0, matk: 0, mdef: 0, crit: 140, hit: 24, eva: 0,
+                    frontSkill: "Force Impact", backSkill: "War Rage"
+                },
+                "+3": { price: 8000,
+                    patk: 491, pdef: 0, matk: 0, mdef: 0, crit: 180, hit: 24, eva: 0,
+                    frontSkill: "Aos Wolf", backSkill: "War Rage"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Dragon Horn",
+                    amount: 2
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                },{
+                    materialName: "Yggdrasil Branch",
+                    amount: 2
+                }
+            ]
         }
     ]
 };

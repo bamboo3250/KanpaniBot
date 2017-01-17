@@ -1341,6 +1341,24 @@ module.exports = {
                 )
             ]
         },
+        "Flame Fall": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    1.6, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_FIRE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack05", 0,
+                    true,
+                    {}
+                )
+            ]
+        },
         "Grand Down": {
             canAttack: true,
             canHeal: false,
@@ -1500,6 +1518,28 @@ module.exports = {
                     "attack05", 0,
                     true,
                     {}
+                )
+            ]
+        },
+        "Aos Wolf": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    5.2, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_FIRE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack03", 3,
+                    true,
+                    {},
+                    true,
+                    -200, -310,
+                    -380, -300,
+                    1.0
                 )
             ]
         }
