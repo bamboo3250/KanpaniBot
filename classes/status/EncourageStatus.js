@@ -7,7 +7,7 @@ function EncourageStatus(bot, ownerId, targetId) {
     var that = this;
     var INTERVAL = 10*60*1000;
     var now = new Date();
-    that.endTime = now.valueOf() + INTERVALl
+    that.endTime = now.valueOf() + INTERVAL;
 
     that.timer = setTimeout(function(){
         var targetUnit = that.bot.playerManager.getPlayerUnit(that.targetId);
