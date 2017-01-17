@@ -47,7 +47,8 @@ module.exports = {
             return;
         }
 
-        playerUnit.classSkillCooldownEndTime = now.valueOf() + 20 * 60 * 1000;
+        var COOLDOWN = 15*60*1000;
+        playerUnit.classSkillCooldownEndTime = now.valueOf() + COOLDOWN;
 
         var field = bot.battleController.randomField(userId);
         var name = playerUnit.shortName;
