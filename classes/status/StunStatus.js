@@ -12,4 +12,8 @@ StunStatus.prototype.destroy = function() {
     }
 }
 
+StunStatus.prototype.toString = function() {
+    return "[Stun]";
+}
+
 module.exports = StunStatus;

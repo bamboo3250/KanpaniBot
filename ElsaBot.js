@@ -424,7 +424,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330006",
+                _id: "330206",
                 plus: 3
             },
             materialList: {},

@@ -6,6 +6,9 @@ function EncourageStatus(bot, ownerId, targetId) {
     
     var that = this;
     var INTERVAL = 10*60*1000;
+    var now = new Date();
+    that.endTime = now.valueOf() + INTERVALl
+
     that.timer = setTimeout(function(){
         var targetUnit = that.bot.playerManager.getPlayerUnit(that.targetId);
         var targetUser = that.bot.userManager.getUser(that.targetId);
@@ -23,6 +26,12 @@ EncourageStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Encourage"] === this) unit.status["Encourage"] = null;    
     if (this.timer) clearInterval(this.timer);
+}
+
+EncourageStatus.prototype.toString = function() {
+    var now = new Date();
+    var time = this.bot.functionHelper.parseTime(this.endTime - now.valueOf());
+    return "[Encourage (" + time + ")]";
 }
 
 module.exports = EncourageStatus;

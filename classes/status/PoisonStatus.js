@@ -26,21 +26,22 @@ function PoisonStatus(bot, ownerId, targetId) {
             if (attackerUser) attackerName += " (" + attackerUser.username + ")";
 
             that.counter--;
-            var text = targetName + " took " + damage + " damage from Poison. (" + that.counter + ")\n";
             if (!attackerUnit.isTrainer) {
+                var text = targetName + " took " + damage + " damage from Poison. (" + that.counter + ")\n";
                 text += attackerName + " gained " + exp + " exp.\n";    
                 that.bot.playerManager.addExp(that.ownerId, exp);
                 that.bot.playerManager.refreshUnitForPlayerId(that.ownerId);
+                attackerUser.sendMessage(text);
             }
+
             if (isKoed) {
                 that.bot.postKoImage(that.ownerId, [that.targetId]);
-                text += targetName + " is KO-ed!\n";
+                var text = targetName + " is KO-ed by poison from " + attackerUser.username + "!\n";
+                that.bot.battleChannel.sendMessage(text);
             }
-            that.bot.battleChannel.sendMessage(text);
 
-            if (that.counter === 0 || isKoed) {
-                that.destroy();
-            }
+            if (that.counter === 0 || isKoed) that.destroy();
+            
         } else {
             that.destroy();
         }
@@ -52,6 +53,10 @@ PoisonStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Poison"] === this) unit.status["Poison"] = null;    
     if (this.timer) clearInterval(this.timer);
+}
+
+PoisonStatus.prototype.toString = function() {
+    return "[Poison (" + this.counter + ")]";
 }
 
 module.exports = PoisonStatus;

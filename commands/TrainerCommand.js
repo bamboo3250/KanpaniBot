@@ -28,9 +28,10 @@ module.exports = {
                     var percentHP = Math.floor(trainerUnit.getCurrentHP()/trainerUnit.getMaxHP()*100);
                     text += "HP: **" + trainerUnit.getCurrentHP() + "/" + trainerUnit.getMaxHP() + " (" + percentHP +"%)**" + (trainerUnit.respawnTime?" (Respawn in " + bot.functionHelper.parseTime(trainerUnit.respawnTime - now.valueOf()) + ")":"") + "\n";
                     text += "Status: ";
-                    if (trainerUnit.status["Stun"]) text += "**[Stun]** ";
-                    if (trainerUnit.status["Poison"]) text += "**[Poison]** ";
-                    if (trainerUnit.status["Encourage"]) text += "**[Encourage]** ";
+                    for(key in trainerUnit.status) {
+                        var statusName = key;
+                        if (trainerUnit.status[statusName]) text += "**" + trainerUnit.status[statusName] + "** ";    
+                    }
                     text += "\n";
                     
                     text += "Position: **" + (i == 0?"Frontline":"Backline") + "** " + "\n";
