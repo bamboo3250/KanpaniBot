@@ -38,6 +38,7 @@ function PoisonStatus(bot, ownerId, targetId) {
                 that.bot.postKoImage(that.ownerId, [that.targetId]);
                 var text = targetName + " is KO-ed by poison from " + attackerUser.username + "!\n";
                 that.bot.battleChannel.sendMessage(text);
+                bot.userManager.addRole(that.targetId, "Fainted");
             }
 
             if (that.counter === 0 || isKoed) that.destroy();
