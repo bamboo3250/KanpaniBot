@@ -1,7 +1,7 @@
 module.exports = {
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~encourage") return;
+        if (command.commandName != "~sneak") return;
 
         if (message.channel.name != "battlefield") {
             message.reply("You can only use this command in Battlefield.");
@@ -21,9 +21,9 @@ module.exports = {
             message.reply("You need to join Training first. Use `~jointraining`.");
             return;
         }
-
-        if (playerUnit.getClassId() != 5) {
-            message.reply("This skill is only available for Warriors.");
+        
+        if (playerUnit.getClassId() != 7) {
+            message.reply("This skill is only available for Rogues.");
             return;
         }
 
@@ -59,7 +59,7 @@ module.exports = {
         var name = playerUnit.shortName;
         if (playerUser) name += " (" + playerUser.username + ")";
         
-        var text = name + " used Encourage.\n";
+        var text = name + " used Sneak Attack.\n";
         for(var i=0;i<2;i++) {
             for(var j=0;j<3;j++) {
                 var unit = bot.playerManager.getPlayerUnit(field[i][j]);
@@ -67,9 +67,9 @@ module.exports = {
                     var user = bot.userManager.getUser(field[i][j]);
                     name = unit.shortName;
                     if (user) name += " (" + user.username + ")";
-                    text += "\t" + name + "'s attack is increased.\n";
+                    text += "\tThe next attack's cooldown time will be decreased for " + name + ".\n";
 
-                    bot.playerManager.applyEncourage(userId, field[i][j]);
+                    bot.playerManager.applySneak(userId, field[i][j]);
                 }
             }
         }

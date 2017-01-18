@@ -6,6 +6,7 @@ var Accessory = require('../classes/Accessory');
 var StunStatus = require('../classes/status/StunStatus');
 var PoisonStatus = require('../classes/status/PoisonStatus');
 var EncourageStatus = require('../classes/status/EncourageStatus');
+var SneakStatus = require('../classes/status/SneakStatus');
 
 function PlayerManager() {
     this.TRAINER_RESPAWN_TIME = 6*60*60*1000;
@@ -397,6 +398,13 @@ PlayerManager.prototype.applyEncourage = function(fromUserId, toUserId) {
     var targetUnit = this.getPlayerUnit(toUserId);
     if (!targetUnit.status["Encourage"]) {
         targetUnit.status["Encourage"] = new EncourageStatus(this.bot, fromUserId, toUserId);
+    }
+}
+
+PlayerManager.prototype.applySneak = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Sneak"]) {
+        targetUnit.status["Sneak"] = new SneakStatus(this.bot, fromUserId, toUserId);
     }
 }
 
