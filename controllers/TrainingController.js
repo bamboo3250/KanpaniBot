@@ -334,8 +334,13 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var isCrit = (this.bot.functionHelper.randomInt(100) < critRate);
                 
                 var encourageModifier = (attacker.status["Encourage"] ? 2.0 : 1.0);
+                var focusModifier = 1.0;
+                if (attacker.status["Focus"]) {
+                    focusModifier = attacker.status["Focus"].power / 100;
+                    attacker.status["Focus"].destroy();
+                }
 
-                var damageBeforeDef = atk * skillModifier * encourageModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0);
+                var damageBeforeDef = atk * skillModifier * encourageModifier * focusModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0);
                 var rawDamage = Math.max(1, (1 - 0.00115 * def) * damageBeforeDef - def / 4);
                 var hasSomeoneInFront = (targetFieldPos.row === 1 && field[0][targetFieldPos.column]);
                 rawDamage *= (hasSomeoneInFront ? 0.7 : 1.0);

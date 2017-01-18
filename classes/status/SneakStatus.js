@@ -5,13 +5,13 @@ function SneakStatus(bot, ownerId, targetId) {
     this.canBeCleansed = false;
 }
 
-EncourageStatus.prototype.destroy = function() {
+SneakStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Sneak"] === this) unit.status["Sneak"] = null;    
 }
 
-EncourageStatus.prototype.toString = function() {
+SneakStatus.prototype.toString = function() {
     return "[Sneak]";
 }
 
-module.exports = EncourageStatus;
+module.exports = SneakStatus;
