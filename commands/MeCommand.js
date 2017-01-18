@@ -31,6 +31,26 @@ module.exports = {
             text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (partner?"(Partner: **" + partner.username + "**)":"") + "\n";
             text += "Skill: **" + employee.getCurrentSkill() + "**";
             
+            var isSkillReady = (employee.cooldownEndTime <= now.valueOf());
+            var isClassTraitReady = (employee.classSkillCooldownEndTime <= now.valueOf());
+            if (isSkillReady) {
+                text += " **(Ready)**\n";
+            } else {
+                var time = bot.functionHelper.parseTime(employee.cooldownEndTime - now.valueOf());
+                text += " **(" + time + ")**\n";
+            }
+            text += "Class Trait: ";
+            if (employee.getClassId() === 5 || employee.getClassId() === 7 || employee.getClassId() === 8) {
+                if (isClassTraitReady) {
+                    text += " **Ready**\n";
+                } else {
+                    var time = bot.functionHelper.parseTime(employee.classSkillCooldownEndTime - now.valueOf());
+                    text += " **" + time + "**\n";
+                }   
+            } else {
+                text += "**Not available**\n";
+            }
+
             message.reply(text);
             return;
         }
