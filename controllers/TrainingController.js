@@ -668,7 +668,12 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         }
     };
 
-    attacker.cooldownEndTime = now.valueOf() + Math.floor(skill.cooldown * 60 * 1000);
+    var cooldownTime = skill.cooldown * 60 * 1000;
+    if (attacker.status["Sneak"]) {
+        cooldownTime *= 0.5;
+        attacker.status["Sneak"].destroy();
+    }
+    attacker.cooldownEndTime = now.valueOf() + Math.floor(cooldownTime);
     
     var result1 = [];
     var result2 = [];
@@ -826,7 +831,6 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
         cooldownTime *= 0.5;
         attacker.status["Sneak"].destroy();
     }
-
     attacker.cooldownEndTime = now.valueOf() + Math.floor(cooldownTime);
 
     var result1 = [];

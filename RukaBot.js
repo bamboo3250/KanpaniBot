@@ -79,8 +79,8 @@ if (isLocal) {
     ruka.playerData = [
         {
             _id: "241511566036434945",
-            characterId: "10150002_765306d2",
-            exp: 1256200,//2646190,
+            characterId: "10150002_765306d2",   // Elsa
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308119",
@@ -103,8 +103,8 @@ if (isLocal) {
             isTrainer: true
         },{
             _id: "239141420194070530", 
-            characterId: "10840001_1af29f14",
-            exp: 1256200,//2646190,
+            characterId: "10840001_1af29f14",   // Annalina
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308806",
@@ -128,7 +128,7 @@ if (isLocal) {
         },{
             _id: "268576286060838914",  // Saimi Guest
             characterId: "10750001_32935980",
-            exp: 1256200,//2646190,
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308706",
@@ -152,7 +152,7 @@ if (isLocal) {
         },{
             _id: "269733140635975680",  // Hinano Guest
             characterId: "10350003_fcc3ce23",
-            exp: 1256200,//2646190,
+            exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308320",
@@ -160,17 +160,41 @@ if (isLocal) {
             },
             equipedArmor: {
                 _id: "3107071",
-                plus: 1
+                plus: 3
             },
             equipedAccessory: {
                 _id: "330206",
-                plus: 2
+                plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
             position: "back",
+            partnerId: null,
+            isTrainer: true
+        },{
+            _id: "270767219875643392",  // Siegrid Guest
+            characterId: "10550001_27d912ef",
+            exp: 2646190,//2646190,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308510",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "3105071",
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330006",
+                plus: 2
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "front",
             partnerId: null,
             isTrainer: true
         }
@@ -191,8 +215,8 @@ ruka.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["268576286060838914", "241511566036434945", null],
-                [null, "239141420194070530", "269733140635975680"]
+                ["268576286060838914", "241511566036434945", "270767219875643392"],
+                ["239141420194070530", null, "269733140635975680"]
             ];    
         }
         

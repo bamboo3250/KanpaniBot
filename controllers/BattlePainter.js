@@ -302,6 +302,7 @@ BattlePainter.prototype.draw = function(callback) {
                                     var statusFileName = "images/misc/status/" + statusName + ".png";
                                     background.composite(imageList[statusFileName], allyUnitPanelCoordX + 44 + statusCount*17, allyUnitPanelCoordY + 22);                                
                                     statusCount++;
+                                    if (statusCount > 2) break;
                                 }
                             }
 

@@ -67,7 +67,7 @@ module.exports = {
                     var user = bot.userManager.getUser(field[i][j]);
                     name = unit.shortName;
                     if (user) name += " (" + user.username + ")";
-                    text += "\tThe next attack's cooldown time will be decreased for " + name + ".\n";
+                    text += "\t" + name + " is under Sneak Attack's effect.\n";
 
                     bot.playerManager.applySneak(userId, field[i][j]);
                 }

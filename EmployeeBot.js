@@ -70,7 +70,7 @@ var ceoReviveCommand = require('./commands/CeoReviveCommand');
 var swapCommand = require('./commands/SwapCommand');
 var encourageCommand = require('./commands/EncourageCommand');
 var sneakCommand = require('./commands/SneakCommand');
-var focusCommand = require('./commands/focusCommand');
+var focusCommand = require('./commands/FocusCommand');
 
 function EmployeeBot() {
     this.token = null;

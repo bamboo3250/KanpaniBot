@@ -67,7 +67,7 @@ module.exports = {
                     var user = bot.userManager.getUser(field[i][j]);
                     name = unit.shortName;
                     if (user) name += " (" + user.username + ")";
-                    text += "\t" + name + "'s attack is increased.\n";
+                    text += "\t" + name + " is under Encourage's effect.\n";
 
                     bot.playerManager.applyEncourage(userId, field[i][j]);
                 }
