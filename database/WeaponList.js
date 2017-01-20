@@ -4405,7 +4405,7 @@ module.exports = {
             ]
         },{
             _id: "308819", modelId: "19", name: "Dark Flower Rod", commonNames: ["Dark Flower Rod"],
-            characterId: "10850004_325a883f", type: "character", isActive: true, stats: {
+            characterId: "10850002_c4678df9", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 0, pdef: 0, matk: 169, mdef: 0, crit: 18, hit: 0, eva: 22,
                     frontSkill: "Stone Claw", backSkill: "Stone Claw"

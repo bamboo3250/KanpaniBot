@@ -330,7 +330,7 @@ elsa.commonGoodNight = elsa.commonGoodNight.concat(dialog.elsa.commonGoodNight);
 elsa.commonThanks = elsa.commonThanks.concat(dialog.elsa.commonThanks);
 
 var isLocal = true;
-isLocal = false;
+// isLocal = false;
 
 if (isLocal) {
     elsa.playerData = [
@@ -360,7 +360,7 @@ if (isLocal) {
             isTrainer: true
         },{
             _id: "265889287281573918",  // test-bot2
-            characterId: "10850004_325a883f",
+            characterId: "10850002_c4678df9",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
