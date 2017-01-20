@@ -2491,5 +2491,27 @@ module.exports = {
                 )
             ]
         },
+        "Anima": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SPELL_ATTACK,
+                    4.98, 1,
+                    SkillPhaseConst.DAMAGE_MAGICAL,
+                    SkillPhaseConst.ELEMENT_DARK,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 13,
+                    false, {
+                        "Pre-emption": true
+                    },
+                    true,
+                    -498, -370,
+                    -498, -370
+                )
+            ]
+        }
     }
 };

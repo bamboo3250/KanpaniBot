@@ -4403,6 +4403,38 @@ module.exports = {
                     amount: 2
                 }
             ]
+        },{
+            _id: "308819", modelId: "19", name: "Dark Flower Rod", commonNames: ["Dark Flower Rod"],
+            characterId: "10850004_325a883f", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 0, matk: 169, mdef: 0, crit: 18, hit: 0, eva: 22,
+                    frontSkill: "Stone Claw", backSkill: "Stone Claw"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 0, matk: 226, mdef: 0, crit: 24, hit: 0, eva: 27,
+                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 0, matk: 291, mdef: 0, crit: 28, hit: 0, eva: 33,
+                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 0, matk: 381, mdef: 0, crit: 34, hit: 0, eva: 38,
+                    frontSkill: "Anima", backSkill: "Anima"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Sun Fragment",
+                    amount: 2
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Yggdrasil Branch",
+                    amount: 2
+                }
+            ]
         }
     ]
 };
