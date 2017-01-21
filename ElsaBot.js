@@ -388,7 +388,7 @@ if (isLocal) {
     elsa.playerData = [
         {
             _id: "272257876393721867",  // Fanaril Guest
-            characterId: "10150002_765306d2",
+            characterId: "10150003_e989854c",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
