@@ -10,11 +10,11 @@ var employees = [
     },{
         _no: 181, _id: "10150003_e989854c", fullName: "Fanaril Ney", japaneseName: "ファナリル・ネイ", commonNames: ["Fanaril"], cwId: 21,
         baseStats: { _str: 34, _vit: 31, _agi: 19, _dex: 16, _int: 5, _pie: 4, _luk: 5},
-        maxStats: { _str: 395, _vit: 340, _agi: 278, _dex: 268, _int: 234, _pie: 184, _luk: 174}
+        maxStats: { _str: 385, _vit: 349, _agi: 287, _dex: 245, _int: 393, _pie: 133, _luk: 105}
     },{
         _no: 203, _id: "10150004_806e0314", fullName: "Lido Cromwell", japaneseName: "リド・クロムウェル", commonNames: ["Lido", "Reed"], cwId: 0,
         baseStats: { _str: 35, _vit: 28, _agi: 17, _dex: 20, _int: 6, _pie: 5, _luk: 5},
-        maxStats: { _str: 395, _vit: 340, _agi: 278, _dex: 268, _int: 234, _pie: 184, _luk: 174}
+        maxStats: { _str: 395, _vit: 337, _agi: 268, _dex: 288, _int: 255, _pie: 185, _luk: 164}
     },
 
     {
