@@ -4435,6 +4435,70 @@ module.exports = {
                     amount: 2
                 }
             ]
+        },{
+            _id: "308419", modelId: "19", name: "Final Spear \"Ragnarok\"", commonNames: ["Final Spear \"Ragnarok\""],
+            characterId: "10450002_bbda369b", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 81, pdef: 119, matk: 0, mdef: 23, crit: 10, hit: 8, eva: 0,
+                    frontSkill: "Double Dragon Strike", backSkill: "Double Strike"
+                },
+                "+1": { price: 6000,
+                    patk: 97, pdef: 161, matk: 0, mdef: 27, crit: 10, hit: 12, eva: 0,
+                    frontSkill: "Ice Collision", backSkill: "Double Strike"
+                },
+                "+2": { price: 7000,
+                    patk: 129, pdef: 251, matk: 0, mdef: 37, crit: 15, hit: 14, eva: 0,
+                    frontSkill: "Ice Collision", backSkill: "Full-On Collision"
+                },
+                "+3": { price: 8000,
+                    patk: 148, pdef: 302, matk: 0, mdef: 48, crit: 25, hit: 18, eva: 0,
+                    frontSkill: "Fimbulvetr", backSkill: "Full-On Collision"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Mithril Ore",
+                    amount: 2
+                },{
+                    materialName: "Garnet",
+                    amount: 1
+                },{
+                    materialName: "Dragon Horn",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "308121", modelId: "21", name: "Blue Rose", commonNames: ["Blue Rose"],
+            characterId: "10150003_e989854c", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 108, pdef: 82, matk: 0, mdef: 82, crit: 15, hit: 15, eva: 10,
+                    frontSkill: "Double Slash", backSkill: "V Slash"
+                },
+                "+1": { price: 6000,
+                    patk: 124, pdef: 86, matk: 0, mdef: 86, crit: 20, hit: 20, eva: 10,
+                    frontSkill: "Power Slash", backSkill: "V Slash"
+                },
+                "+2": { price: 7000,
+                    patk: 172, pdef: 114, matk: 0, mdef: 124, crit: 20, hit: 25, eva: 15,
+                    frontSkill: "Power Slash", backSkill: "Double Slash"
+                },
+                "+3": { price: 8000,
+                    patk: 228, pdef: 152, matk: 0, mdef: 172, crit: 25, hit: 25, eva: 20,
+                    frontSkill: "Novalis", backSkill: "Double Slash"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Sun Fragment",
+                    amount: 2
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Yggdrasil Branch",
+                    amount: 2
+                }
+            ]
         }
     ]
 };

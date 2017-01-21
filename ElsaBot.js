@@ -330,7 +330,7 @@ elsa.commonGoodNight = elsa.commonGoodNight.concat(dialog.elsa.commonGoodNight);
 elsa.commonThanks = elsa.commonThanks.concat(dialog.elsa.commonThanks);
 
 var isLocal = true;
-// isLocal = false;
+isLocal = false;
 
 if (isLocal) {
     elsa.playerData = [
@@ -360,15 +360,15 @@ if (isLocal) {
             isTrainer: true
         },{
             _id: "265889287281573918",  // test-bot2
-            characterId: "10850002_c4678df9",
+            characterId: "10150003_e989854c",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308819",
+                _id: "308121",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3108071",
+                _id: "3101071",
                 plus: 3
             },
             equipedAccessory: {
@@ -387,16 +387,16 @@ if (isLocal) {
 } else {
     elsa.playerData = [
         {
-            _id: "241511566036434945",
+            _id: "272257876393721867",  // Fanaril Guest
             characterId: "10150002_765306d2",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308119",
+                _id: "308121",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3101140",
+                _id: "3101071",
                 plus: 3
             },
             equipedAccessory: {
@@ -411,27 +411,51 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "270767219875643392",  // Siegrid Guest
-            characterId: "10550001_27d912ef",
+            _id: "272258315441143810",  // Elmina Guest
+            characterId: "10450002_bbda369b",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308510",
+                _id: "308419",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3105071",
+                _id: "3104071",
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330006",
-                plus: 2
+                _id: "330206",
+                plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
             position: "front",
+            partnerId: null,
+            isTrainer: true
+        },{
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
+            exp: 2646190,//2646190,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308819",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "3108071",
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330206",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "back",
             partnerId: null,
             isTrainer: true
         }
@@ -453,8 +477,8 @@ elsa.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "241511566036434945", "270767219875643392"],
-                [null, null, null]
+                ["272257876393721867", null, "272258315441143810"],
+                [null, "272259125256388610", null]
             ];    
         }
         

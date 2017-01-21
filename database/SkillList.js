@@ -352,6 +352,28 @@ module.exports = {
                     0.65
                 )
             ]
+        },
+        "Novalis": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SPELL_ATTACK,
+                    4.63, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 3,
+                    false,
+                    {},
+                    true,
+                    -380, -870,
+                    -380, -870,
+                    1.0
+                )
+            ]
         }
     },
 
@@ -1158,6 +1180,24 @@ module.exports = {
                 )
             ]
         },
+        "Ice Collision": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    0.95, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_ICE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack03", 3,
+                    true,
+                    {}
+                )
+            ]
+        },
         "Lovely Spear": {
             canAttack: true,
             canHeal: false,
@@ -1209,6 +1249,27 @@ module.exports = {
                     "attack03", 3,
                     true,
                     {}
+                )
+            ]
+        },
+        "Fimbulvetr": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    1.87, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_ICE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 5,
+                    true, 
+                    {},
+                    true,
+                    -1080, -540,
+                    -1730, -940
                 )
             ]
         }
