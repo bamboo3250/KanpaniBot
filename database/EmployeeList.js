@@ -26,7 +26,7 @@ var employees = [
         baseStats: { _str: 34, _vit: 14, _agi: 25, _dex: 22, _int: 6, _pie: 3, _luk: 10},
         maxStats: { _str: 395, _vit: 274, _agi: 367, _dex: 290, _int: 165, _pie: 183, _luk: 239}
     },{
-        _no: 177, _id: "10250003_1bde68b4", fullName: "Mikoto Kisaragi", japaneseName: "ミコト・キサラギ", commonNames: ["Mikoto"], cwId: 0,
+        _no: 177, _id: "10250003_1bde68b4", fullName: "Mikoto Kisaragi", japaneseName: "ミコト・キサラギ", commonNames: ["Mikoto"], cwId: 24,
         baseStats: { _str: 37, _vit: 13, _agi: 25, _dex: 21, _int: 6, _pie: 3, _luk: 10},
         maxStats: { _str: 395, _vit: 274, _agi: 367, _dex: 290, _int: 165, _pie: 183, _luk: 239}
     },
@@ -238,7 +238,7 @@ var employees = [
         baseStats: { _str: 14, _vit: 32, _agi: 10, _dex: 10, _int: 5, _pie: 5, _luk: 4},
         maxStats: { _str: 246, _vit: 474, _agi: 167, _dex: 242, _int: 162, _pie: 250, _luk: 172}
     },{
-        _no: 135, _id: "10440003_818b250b", fullName: "Ren Adelung", japaneseName: "レン・アーデルング", commonNames: ["Ren"], cwId: 0,
+        _no: 135, _id: "10440003_818b250b", fullName: "Ren Adelung", japaneseName: "レン・アーデルング", commonNames: ["Ren"], cwId: 18,
         baseStats: { _str: 13, _vit: 34, _agi: 8, _dex: 10, _int: 4, _pie: 6, _luk: 4},
         maxStats: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161}
     },{
@@ -446,7 +446,7 @@ var employees = [
         baseStats: { _str: 17, _vit: 8, _agi: 13, _dex: 9, _int: 2, _pie: 1, _luk: 4},
         maxStats: { _str: 364, _vit: 247, _agi: 317, _dex: 252, _int: 141, _pie: 148, _luk: 201}
     },{
-        _no: 148, _id: "10230007_62fc00a9", fullName: "Toka Kisaragi", japaneseName: "トウカ・キサラギ", commonNames: ["Toka", "Touka"], cwId: 0,
+        _no: 148, _id: "10230007_62fc00a9", fullName: "Toka Kisaragi", japaneseName: "トウカ・キサラギ", commonNames: ["Toka", "Touka"], cwId: 16,
         baseStats: { _str: 18, _vit: 7, _agi: 12, _dex: 9, _int: 2, _pie: 2, _luk: 3},
         maxStats: { _str: 362, _vit: 238, _agi: 326, _dex: 270, _int: 149, _pie: 158, _luk: 203}
     },{

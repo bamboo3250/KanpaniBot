@@ -397,7 +397,7 @@ if (isLocal) {
             },
             equipedArmor: {
                 _id: "3101071",
-                plus: 3
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330006",
@@ -448,7 +448,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
+                _id: "330107",
                 plus: 3
             },
             materialList: {},

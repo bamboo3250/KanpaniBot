@@ -5,7 +5,7 @@ function EncourageStatus(bot, ownerId, targetId) {
     this.canBeCleansed = false;
     
     var that = this;
-    var INTERVAL = 10*60*1000;
+    var INTERVAL = 5*60*1000;
     var now = new Date();
     that.endTime = now.valueOf() + INTERVAL;
 
