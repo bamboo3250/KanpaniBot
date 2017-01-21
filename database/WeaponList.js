@@ -4489,13 +4489,13 @@ module.exports = {
             },
             note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
                 {
-                    materialName: "Sun Fragment",
+                    materialName: "Mithril Ore",
                     amount: 2
                 },{
-                    materialName: "Black Pearl",
+                    materialName: "Rose Quartz",
                     amount: 1
                 },{
-                    materialName: "Yggdrasil Branch",
+                    materialName: "Holy Water",
                     amount: 2
                 }
             ]
