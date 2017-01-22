@@ -78,17 +78,17 @@ if (isLocal) {
 } else {
     ruka.playerData = [
         {
-            _id: "241511566036434945",
-            characterId: "10150002_765306d2",   // Elsa
+            _id: "272257876393721867",  // Fanaril Guest
+            characterId: "10150003_e989854c",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308119",
+                _id: "308121",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3101140",
-                plus: 1
+                _id: "3101071",
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330006",
@@ -102,12 +102,12 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "239141420194070530", 
-            characterId: "10840001_1af29f14",   // Annalina
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308806",
+                _id: "308819",
                 plus: 3
             },
             equipedArmor: {
@@ -115,7 +115,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
+                _id: "330107",
                 plus: 3
             },
             materialList: {},
@@ -126,21 +126,21 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "268576286060838914",  // Saimi Guest
-            characterId: "10750001_32935980",
+            _id: "272258315441143810",  // Elmina Guest
+            characterId: "10450002_bbda369b",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308419",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3107071",
-                plus: 1
+                _id: "3104071",
+                plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
-                plus: 2
+                _id: "330106",
+                plus: 3
             },
             materialList: {},
             weaponList: {},
@@ -163,7 +163,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
+                _id: "330106",
                 plus: 3
             },
             materialList: {},
@@ -187,8 +187,8 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330006",
-                plus: 2
+                _id: "330106",
+                plus: 3
             },
             materialList: {},
             weaponList: {},
@@ -215,8 +215,8 @@ ruka.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["268576286060838914", "241511566036434945", "270767219875643392"],
-                ["239141420194070530", null, "269733140635975680"]
+                ["272258315441143810", "272257876393721867", "270767219875643392"],
+                ["272259125256388610", null, "269733140635975680"]
             ];    
         }
         
