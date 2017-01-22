@@ -342,7 +342,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
                 var damageBeforeDef = atk * skillModifier * encourageModifier * focusModifier * randomFactor * elementAdvantage * (isCrit?2.0:1.0);
                 var rawDamage = Math.max(1, (1 - 0.00115 * def) * damageBeforeDef - def / 4);
-                var hasSomeoneInFront = (targetFieldPos.row === 1 && field[0][targetFieldPos.column]);
+                var frontUnit = null;
+                if (targetFieldPos.row === 1 && field[0][targetFieldPos.column]) {
+                    frontUnit = this.bot.playerManager.getPlayerUnit(field[0][targetFieldPos.column]);
+                }
+                var hasSomeoneInFront = (frontUnit && !frontUnit.isFainted());
                 rawDamage *= (hasSomeoneInFront ? 0.7 : 1.0);
 
                 var doesHit = (this.bot.functionHelper.randomInt(100) < hitRate);
@@ -359,8 +363,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 } 
 
                 if (rawDamage > 0 && hasSomeoneInFront) {
-                    var frontUnit = this.bot.playerManager.getPlayerUnit(field[0][targetFieldPos.column]);
-                    if (frontUnit.getClassId() === 4) {
+                    if (frontUnit && frontUnit.getClassId() === 4 && !frontUnit.isFainted()) {
                         var damageToFrontSoldier = Math.max(1, Math.floor(rawDamage * 0.58));
                         rawDamage *= 0.42;
                         if (typeof damageList[field[0][targetFieldPos.column]] === "undefined") damageList[field[0][targetFieldPos.column]] = [];
