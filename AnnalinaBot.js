@@ -77,21 +77,21 @@ if (isLocal) {
 } else {
     annalina.playerData = [
         {
-            _id: "239141420194070530", 
-            characterId: "10840001_1af29f14",   // Annalina
+            _id: "269733140635975680",  // Hinano Guest
+            characterId: "10350003_fcc3ce23",
             exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308806",
+                _id: "308320",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3108071",
+                _id: "3107071",
                 plus: 3
             },
             equipedAccessory: {
-                _id: "329997",
-                plus: 4
+                _id: "330107",
+                plus: 3
             },
             materialList: {},
             weaponList: {},
@@ -101,27 +101,51 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "270767219875643392",  // Siegrid Guest
-            characterId: "10550001_27d912ef",
+            _id: "272258315441143810",  // Elmina Guest
+            characterId: "10450002_bbda369b",
             exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308510",
+                _id: "308419",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3105071",
-                plus: 0
+                _id: "3104071",
+                plus: 3
             },
             equipedAccessory: {
-                _id: "330006",
-                plus: 2
+                _id: "330107",
+                plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
             position: "front",
+            partnerId: null,
+            isTrainer: true
+        },{
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
+            exp: 10707880,//2646190,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308819",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "3108071",
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330107",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "back",
             partnerId: null,
             isTrainer: true
         }
@@ -142,8 +166,8 @@ annalina.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "270767219875643392", null],
-                [null, "239141420194070530", null]
+                ["272258315441143810", null, null],
+                ["269733140635975680", null, "272259125256388610"]
             ];    
         }
         

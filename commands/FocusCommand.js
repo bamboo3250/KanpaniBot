@@ -44,6 +44,13 @@ module.exports = {
             return;
         }
 
+        if (now.valueOf() < playerUnit.cooldownEndTime) {
+            var time = bot.functionHelper.parseTime(playerUnit.cooldownEndTime - now.valueOf());
+            var text = "Your skill is still in cooldown.";
+            message.reply(text);
+            return;
+        }
+
         if (now.valueOf() < playerUnit.classSkillCooldownEndTime) {
             var remainingTime = playerUnit.classSkillCooldownEndTime - now.valueOf();
             var time = bot.functionHelper.parseTime(remainingTime);
@@ -52,7 +59,7 @@ module.exports = {
             return;
         }
 
-        var COOLDOWN = 20*60*1000;
+        var COOLDOWN = 15*60*1000;
         playerUnit.classSkillCooldownEndTime = now.valueOf() + COOLDOWN;
 
         var field = bot.battleController.randomField(userId);
