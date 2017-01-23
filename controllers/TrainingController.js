@@ -46,7 +46,7 @@ var rewardList = [
     "Yggdrasil Branch"
 ];
 
-var EXP_REWARD = 48216*2;
+var EXP_REWARD = 48216;
 
 TrainingController.prototype.didPlayerDie = function(playerId) {
     var unit = this.bot.playerManager.getPlayerUnit(playerId);
@@ -74,7 +74,7 @@ TrainingController.prototype.didPlayerDie = function(playerId) {
         var expReward = EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1));
         for(key in this.contribution) {
             var userId = key;
-            var itemAmount = this.contribution[userId] * 10;
+            var itemAmount = this.contribution[userId] * 5;
             this.contribution[userId] = 0;
             var itemReceived = {};
             for(var i=0;i<itemAmount;i++) {
