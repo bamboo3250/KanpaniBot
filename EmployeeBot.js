@@ -342,6 +342,7 @@ EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
     if (amount < 1) return true;
     if (this.remainingBread[userId] >= amount) {
         this.remainingBread[userId] -= amount;
+        this.saveBread();
         return true;
     } else {
         message.reply("You don't have enough bread.");
@@ -507,6 +508,7 @@ EmployeeBot.prototype.setBreadRegeneration = function() {
             that.remainingBread[userId] = Math.min(that.remainingBread[userId] + 1, that.cappedBread);
         }
         that.startBread = Math.min(that.startBread + 1, that.cappedBread);
+        that.saveBread();
         that.log("1 bread is given to each player");
         that.setBreadRegeneration();
     }, that.replenishTime);
@@ -532,6 +534,29 @@ EmployeeBot.prototype.loadSoul = function() {
             return;
         }
         that.hasSoul = JSON.parse(data);
+    });
+}
+
+var breadFileName = "bread.json";
+EmployeeBot.prototype.saveBread = function() {
+    var textToWrite = JSON.stringify(this.remainingBread, null, 4);
+    var that = this;
+    fs.writeFile(breadFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;
+        }
+    }); 
+}
+
+EmployeeBot.prototype.loadBread = function() {
+    var that = this;
+    fs.readFile(breadFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log(err);
+            return;
+        }
+        that.remainingBread = JSON.parse(data);
     });
 }
 
@@ -892,6 +917,7 @@ EmployeeBot.prototype.ready = function() {
         this.setBreadRegeneration();
         this.firstTimeReady = false;
         this.loadSoul();
+        this.loadBread();
         this.loadPlayer();
         this.loadDailyGift();
         this.loadUnsubscribe();

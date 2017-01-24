@@ -350,6 +350,7 @@ module.exports = {
             bot.remainingBread[userId] += amount * extraBreadPerItem;
             bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
             bot.savePlayer();
+            bot.saveBread();
             message.reply(bot.createRemainingBreadLine(message));
         } else if (isEldLight(itemName)) {
             if (!bot.isPM(message)) {

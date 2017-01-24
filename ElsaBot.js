@@ -387,41 +387,17 @@ if (isLocal) {
 } else {
     elsa.playerData = [
         {
-            _id: "272257876393721867",  // Fanaril Guest
-            characterId: "10150003_e989854c",
-            exp: 2646190,//2646190,
+            _id: "241511566036434945",  // Elsa Guest
+            characterId: "10150002_765306d2",
+            exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308121",
+                _id: "308119",
                 plus: 3
             },
             equipedArmor: {
                 _id: "3101071",
                 plus: 0
-            },
-            equipedAccessory: {
-                _id: "330006",
-                plus: 3
-            },
-            materialList: {},
-            weaponList: {},
-            armorList: {},
-            accessoryList: {},
-            position: "front",
-            partnerId: null,
-            isTrainer: true
-        },{
-            _id: "272258315441143810",  // Elmina Guest
-            characterId: "10450002_bbda369b",
-            exp: 2646190,//2646190,
-            gold: 0,
-            equipedWeapon: {
-                _id: "308419",
-                plus: 3
-            },
-            equipedArmor: {
-                _id: "3104071",
-                plus: 3
             },
             equipedAccessory: {
                 _id: "330206",
@@ -435,27 +411,27 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272259125256388610",  // Sytry Guest
-            characterId: "10850002_c4678df9",
-            exp: 2646190,//2646190,
+            _id: "273395939199156225",  // Sion Guest
+            characterId: "10250001_ff1a69c9",
+            exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308819",
+                _id: "308214",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3108071",
-                plus: 3
+                _id: "3102071",
+                plus: 0
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330206",
                 plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "back",
+            position: "front",
             partnerId: null,
             isTrainer: true
         }
@@ -477,8 +453,8 @@ elsa.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["272257876393721867", null, "272258315441143810"],
-                [null, "272259125256388610", null]
+                [null, "241511566036434945", "273395939199156225"],
+                [null, null, null]
             ];    
         }
         

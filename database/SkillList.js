@@ -179,7 +179,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Stun": true
+                        "Stun": 20
                     }
                 )
             ]
@@ -198,7 +198,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Stun": true
+                        "Stun": 20
                     }
                 )
             ]
@@ -217,7 +217,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Stun": true
+                        "Stun": 20
                     }
                 )
             ]
@@ -254,7 +254,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Stun": true
+                        "Stun": 20
                     }
                 )
             ]
@@ -445,8 +445,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Paralyze": 30,
+                    }
                 )
             ]
         },
@@ -481,8 +482,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Paralyze": 30,
+                    }
                 )
             ]
         },
@@ -553,8 +555,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Paralyze": 30,
+                    }
                 )
             ]
         },
@@ -661,8 +664,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
                     "attack06", 3,
-                    true,
-                    {},
+                    true, {
+                        "Curse": 80
+                    },
                     true,
                     -600, -610,
                     -780, -650,
@@ -1011,7 +1015,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack07", 9,
                     false, {
-                        "Stun": true
+                        "Stun": 20
                     },
                     true,
                     -200, -170,
@@ -1473,8 +1477,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 0,
-                    true,
-                    {}
+                    true, {
+                        "Paralyze": 30,
+                    }
                 )
             ]
         },
@@ -1907,7 +1912,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     false, {
-                        "Poison": true
+                        "Poison": 50
                     }
                 )
             ]
@@ -1998,7 +2003,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Poison": true
+                        "Poison": 50
                     }
                 )
             ]
@@ -2089,7 +2094,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Poison": true
+                        "Poison": 30
                     }
                 )
             ]
@@ -2108,7 +2113,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Poison": true
+                        "Poison": 10
                     }
                 )
             ]
@@ -2217,7 +2222,8 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 10,
                     true, {
-                        "Poison": true
+                        "Poison": 80,
+                        "Paralyze": 30,
                     },
                     true,
                     -360, -300,

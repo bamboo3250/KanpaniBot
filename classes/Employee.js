@@ -32,9 +32,12 @@ var Employee = function(employeeInfo, playerId = null) {
     this.isTrainer = false;
     this.status = {
         "Stun": null,
-    //     "paralyze": null,
-        "Poison": null
-    //     "curse": null,
+        "Paralyze": null,
+        "Poison": null,
+        "Curse": null,
+        "Encourage": null,
+        "Focus": null,
+        "Sneak": null
     //     "charm": null,
     //     "darkness": null,
     //     "patkdown": null,
@@ -187,7 +190,7 @@ Employee.prototype.getCurrentHP = function() {
 }
 
 Employee.prototype.getMaxHP = function() {
-    if (this.isTrainer) return 30000;
+    if (this.isTrainer) return 45000;
     
     var classId = this.getClassId();
     var bonusHp = (this.getBaseRarity() == 5?1:0);
@@ -332,6 +335,10 @@ Employee.prototype.cleanse = function() {
 
 Employee.prototype.isStunned = function() {
     return (this.status["Stun"] !== null);
+}
+
+Employee.prototype.isParalyzed = function() {
+    return (this.status["Paralyze"] !== null);
 }
 
 module.exports = Employee;

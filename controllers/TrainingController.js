@@ -233,6 +233,18 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
         return;
     }
+    if (attacker.isParalyzed()) {
+        var isParalyzed = attacker.status["Paralyze"].evoke();
+        if (isParalyzed) {
+            text = attackerName + " is paralyzed.\n";
+            result.push({
+                text: text,
+                image: null
+            });
+            this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
+            return;    
+        }
+    }
 
     var actionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
     var field = (actionOnEnemySide? battleField.enemySide: battleField.allySide);
@@ -296,6 +308,8 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     
     var stunResult = {};
     var poisonResult = {};
+    var paralyzeResult = {};
+    var curseResult = {};
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -385,30 +399,47 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 });
 
                 if (doesHit) {
-                    var STUN_CHANCE = 20;
-                    var POISON_CHANCE = 40;
+                    var STUN_CHANCE = (isNaN(skillPhase.status["Stun"]) ? 0 : skillPhase.status["Stun"]);
+                    var POISON_CHANCE = (isNaN(skillPhase.status["Poison"]) ? 0 : skillPhase.status["Poison"]);
+                    var CURSE_CHANCE = (isNaN(skillPhase.status["Curse"]) ? 0 : skillPhase.status["Curse"]);
+                    var PARALYZE_CHANCE = (isNaN(skillPhase.status["Paralyze"]) ? 0 : skillPhase.status["Paralyze"]);
+
 
                     if (attacker.getClassId() === 1 && !targetUnit.status["Stun"]) {
                         // fighter
-                        var doesStun = (this.bot.functionHelper.randomInt(100) < STUN_CHANCE);
+                        var doesStun = (this.bot.functionHelper.randomInt(100) < 20);
                         if (doesStun) {
                             this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
                         }    
                     }
-                    if (skillPhase.status["Stun"] && !targetUnit.status["Stun"]) {
+                    if (!targetUnit.status["Stun"]) {
                         var doesStun = (this.bot.functionHelper.randomInt(100) < STUN_CHANCE);
                         if (doesStun) {
                             this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
-                        }    
+                        }
                     }
-                    if (skillPhase.status["Poison"] && !targetUnit.status["Poison"]) {
+                    if (!targetUnit.status["Poison"]) {
                         var doesPoison = (this.bot.functionHelper.randomInt(100) < POISON_CHANCE);
                         if (doesPoison) {
                             this.bot.playerManager.applyPoison(attacker.playerId, targetUnit.playerId);
                             poisonResult[targetUnit.playerId] = true;
-                        }    
+                        }
+                    }
+                    if (!targetUnit.status["Paralyze"]) {
+                        var doesParalyze = (this.bot.functionHelper.randomInt(100) < PARALYZE_CHANCE);
+                        if (doesParalyze) {
+                            this.bot.playerManager.applyParalyze(attacker.playerId, targetUnit.playerId);
+                            paralyzeResult[targetUnit.playerId] = true;
+                        }
+                    }
+                    if (!targetUnit.status["Curse"]) {
+                        var doesCurse = (this.bot.functionHelper.randomInt(100) < CURSE_CHANCE);
+                        if (doesCurse) {
+                            this.bot.playerManager.applyCurse(attacker.playerId, targetUnit.playerId);
+                            curseResult[targetUnit.playerId] = true;
+                        }
                     }
                 }
             }
@@ -436,6 +467,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         }
     }
 
+    var allDamage = 0;
     for(key in damageList) {
         var targetId = key;
         var targetUnit = this.bot.playerManager.getPlayerUnit(targetId);
@@ -456,6 +488,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var damage = damageList[targetId][i].damage;
                 var type = damageList[targetId][i].type;
                 totalDamage += damage;
+                allDamage += damage;
                 if (i === damageList[targetId].length - 1) {
                     text += damage + "";    
                 } else if (i < damageList[targetId].length - 2) {
@@ -516,9 +549,15 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
         if (stunResult[targetId]) text += "\t\t" + targetName + " is stunned.\n";
         if (poisonResult[targetId]) text += "\t\t" + targetName + " is poisoned.\n";
+        if (paralyzeResult[targetId]) text += "\t\t" + targetName + " is paralyzed.\n";
+        if (curseResult[targetId]) text += "\t\t" + targetName + " is cursed.\n";
     }
-    
     if (Object.keys(expGained).length > 0) text += "\n";
+
+    if (attacker.status["Curse"]) {
+        attacker.status["Curse"].evoke(allDamage);
+    }
+
     for(key in expGained) {
         var userId = key;
         var user = this.bot.userManager.getUser(userId);

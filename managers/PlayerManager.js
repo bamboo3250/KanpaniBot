@@ -8,6 +8,8 @@ var PoisonStatus = require('../classes/status/PoisonStatus');
 var EncourageStatus = require('../classes/status/EncourageStatus');
 var SneakStatus = require('../classes/status/SneakStatus');
 var FocusStatus = require('../classes/status/FocusStatus');
+var ParalyzeStatus = require('../classes/status/ParalyzeStatus');
+var CurseStatus = require('../classes/status/CurseStatus');
 
 function PlayerManager() {
     this.TRAINER_RESPAWN_TIME = 6*60*60*1000;
@@ -413,6 +415,20 @@ PlayerManager.prototype.applyFocus = function(fromUserId, toUserId) {
     var targetUnit = this.getPlayerUnit(toUserId);
     if (!targetUnit.status["Focus"]) {
         targetUnit.status["Focus"] = new FocusStatus(this.bot, fromUserId, toUserId);
+    }
+}
+
+PlayerManager.prototype.applyParalyze = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Paralyze"]) {
+        targetUnit.status["Paralyze"] = new ParalyzeStatus(this.bot, fromUserId, toUserId);
+    }
+}
+
+PlayerManager.prototype.applyCurse = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Curse"]) {
+        targetUnit.status["Curse"] = new CurseStatus(this.bot, fromUserId, toUserId);
     }
 }
 

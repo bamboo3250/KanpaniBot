@@ -166,6 +166,7 @@ module.exports = {
 
             if (bot.remainingBread[userId] < bot.cappedBread) {
                 bot.remainingBread[userId] = Math.min(bot.remainingBread[userId] + breadGained, bot.cappedBread);    
+                bot.saveBread();
             }
             
 

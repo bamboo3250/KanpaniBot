@@ -1,4 +1,28 @@
 [{
+    _id: "241511566036434945",  // Elsa Guest
+    characterId: "10150002_765306d2",
+    exp: 2646190,//2646190,
+    gold: 0,
+    equipedWeapon: {
+        _id: "308119",
+        plus: 3
+    },
+    equipedArmor: {
+        _id: "3101071",
+        plus: 0
+    },
+    equipedAccessory: {
+        _id: "330206",
+        plus: 3
+    },
+    materialList: {},
+    weaponList: {},
+    armorList: {},
+    accessoryList: {},
+    position: "front",
+    partnerId: null,
+    isTrainer: true
+},{
     _id: "272257876393721867",  // Fanaril Guest
     characterId: "10150003_e989854c",
     exp: 2646190,//2646190,
@@ -12,7 +36,7 @@
         plus: 0
     },
     equipedAccessory: {
-        _id: "330006",
+        _id: "330206",
         plus: 3
     },
     materialList: {},
@@ -23,7 +47,7 @@
     partnerId: null,
     isTrainer: true
 },{
-    _id: "",  // Sion Guest
+    _id: "273395939199156225",  // Sion Guest
     characterId: "10250001_ff1a69c9",
     exp: 2646190,//2646190,
     gold: 0,
@@ -109,6 +133,30 @@
     },
     equipedAccessory: {
         _id: "330106",
+        plus: 3
+    },
+    materialList: {},
+    weaponList: {},
+    armorList: {},
+    accessoryList: {},
+    position: "front",
+    partnerId: null,
+    isTrainer: true
+},{
+    _id: "268576286060838914",  // Saimi Guest
+    characterId: "10750001_32935980",
+    exp: 2646190,//2646190,
+    gold: 0,
+    equipedWeapon: {
+        _id: "308706",
+        plus: 3
+    },
+    equipedArmor: {
+        _id: "3107071",
+        plus: 3
+    },
+    equipedAccessory: {
+        _id: "330206",
         plus: 3
     },
     materialList: {},
