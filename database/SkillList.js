@@ -647,6 +647,28 @@ module.exports = {
                     {}
                 )
             ]
+        },
+        "Soul Eater": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_ROW,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    3.15, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_DARK,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack06", 3,
+                    true,
+                    {},
+                    true,
+                    -200, -310,
+                    -380, -300,
+                    1.0
+                )
+            ]
         }
     },
 

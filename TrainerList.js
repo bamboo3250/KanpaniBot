@@ -23,6 +23,30 @@
     partnerId: null,
     isTrainer: true
 },{
+    _id: "",  // Sion Guest
+    characterId: "10250001_ff1a69c9",
+    exp: 2646190,//2646190,
+    gold: 0,
+    equipedWeapon: {
+        _id: "308214",
+        plus: 3
+    },
+    equipedArmor: {
+        _id: "3102071",
+        plus: 0
+    },
+    equipedAccessory: {
+        _id: "330206",
+        plus: 3
+    },
+    materialList: {},
+    weaponList: {},
+    armorList: {},
+    accessoryList: {},
+    position: "front",
+    partnerId: null,
+    isTrainer: true
+},{
     _id: "269733140635975680",  // Hinano Guest
     characterId: "10350003_fcc3ce23",
     exp: 2646190,//2646190,

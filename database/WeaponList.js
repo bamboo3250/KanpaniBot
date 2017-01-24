@@ -4276,66 +4276,66 @@ module.exports = {
                 }
             ]
         },{
-            _id: "308806", modelId: "06", name: "Holy Rod \"Storia\"", commonNames: ["Holy Rod \"Storia\""],
-            characterId: "10840001_1af29f14", type: "character", isActive: true, stats: {
-                "+0": { price: 3600,
-                    patk: 0, pdef: 0, matk: 152, mdef: 0, crit: 35, hit: 0, eva: 15,
-                    frontSkill: "Holy Cross", backSkill: "Holy Cross"
-                },
-                "+1": { price: 3960,
-                    patk: 0, pdef: 0, matk: 195, mdef: 0, crit: 45, hit: 0, eva: 25,
-                    frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
-                },
-                "+2": { price: 4500,
-                    patk: 0, pdef: 0, matk: 250, mdef: 0, crit: 50, hit: 0, eva: 25,
-                    frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
-                },
-                "+3": { price: 6120,
-                    patk: 0, pdef: 0, matk: 340, mdef: 0, crit: 55, hit: 0, eva: 30,
-                    frontSkill: "Eternal Light", backSkill: "Eternal Light"
-                }
-            },
-            note: "", devCost: 32400, levelRequired: 60, tier: 3, recipe: [
-                {
-                    materialName: "Ebony Branch",
-                    amount: 2
-                },{
-                    materialName: "Black Pearl",
-                    amount: 1
-                },{
-                    materialName: "Full Moon Fragment",
-                    amount: 2
-                }
-            ]
-        },{
-            _id: "308706", modelId: "06", name: "Duon Helios", commonNames: ["Duon Helios"],
-            characterId: "10750001_32935980", type: "character", isActive: true, stats: {
+            _id: "308121", modelId: "21", name: "Blue Rose", commonNames: ["Blue Rose"],
+            characterId: "10150003_e989854c", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 108, pdef: 10, matk: 0, mdef: 10, crit: 30, hit: 30, eva: 30,
-                    frontSkill: "Shadow Run", backSkill: "Throwing Knife"
+                    patk: 108, pdef: 82, matk: 0, mdef: 82, crit: 15, hit: 15, eva: 10,
+                    frontSkill: "Double Slash", backSkill: "V Slash"
                 },
                 "+1": { price: 6000,
-                    patk: 144, pdef: 15, matk: 0, mdef: 15, crit: 33, hit: 33, eva: 33,
-                    frontSkill: "Divine Punishment", backSkill: "Throwing Knife"
+                    patk: 124, pdef: 86, matk: 0, mdef: 86, crit: 20, hit: 20, eva: 10,
+                    frontSkill: "Power Slash", backSkill: "V Slash"
                 },
                 "+2": { price: 7000,
-                    patk: 166, pdef: 20, matk: 0, mdef: 20, crit: 36, hit: 36, eva: 36,
-                    frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
+                    patk: 172, pdef: 114, matk: 0, mdef: 124, crit: 20, hit: 25, eva: 15,
+                    frontSkill: "Power Slash", backSkill: "Double Slash"
                 },
                 "+3": { price: 8000,
-                    patk: 283, pdef: 25, matk: 0, mdef: 25, crit: 40, hit: 40, eva: 40,
-                    frontSkill: "Aion's Single Strike", backSkill: "Shadow Snake Punch"
+                    patk: 228, pdef: 152, matk: 0, mdef: 172, crit: 25, hit: 25, eva: 20,
+                    frontSkill: "Novalis", backSkill: "Double Slash"
                 }
             },
             note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
                 {
-                    materialName: "Rare Species Leather",
+                    materialName: "Mithril Ore",
                     amount: 2
                 },{
-                    materialName: "Diamond",
+                    materialName: "Rose Quartz",
                     amount: 1
                 },{
+                    materialName: "Holy Water",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "308214", modelId: "14", name: "Spirit Sword \"Soul Eater\"", commonNames: ["Spirit Sword \"Soul Eater\""],
+            characterId: "10250001_ff1a69c9", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 180, pdef: 0, matk: 0, mdef: 0, crit: 55, hit: 40, eva: 30,
+                    frontSkill: "Helmet Splitter", backSkill: "Slash"
+                },
+                "+1": { price: 6000,
+                    patk: 228, pdef: 0, matk: 0, mdef: 0, crit: 60, hit: 40, eva: 40,
+                    frontSkill: "100 Demon Slayer", backSkill: "Slash"
+                },
+                "+2": { price: 7000,
+                    patk: 284, pdef: 0, matk: 0, mdef: 0, crit: 65, hit: 45, eva: 50,
+                    frontSkill: "Secret Blade Maiyasha", backSkill: "Iaido Slash"
+                },
+                "+3": { price: 8000,
+                    patk: 347, pdef: 0, matk: 0, mdef: 0, crit: 75, hit: 50, eva: 60,
+                    frontSkill: "Soul Eater", backSkill: "Iaido Slash"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
                     materialName: "Sun Fragment",
+                    amount: 2
+                },{
+                    materialName: "Lapis Lazuli",
+                    amount: 1
+                },{
+                    materialName: "Holy Water",
                     amount: 2
                 }
             ]
@@ -4365,70 +4365,6 @@ module.exports = {
                     amount: 2
                 },{
                     materialName: "Emerald",
-                    amount: 1
-                },{
-                    materialName: "Yggdrasil Branch",
-                    amount: 2
-                }
-            ]
-        },{
-            _id: "308510", modelId: "10", name: "Apocalypse", commonNames: ["Apocalypse"],
-            characterId: "10550001_27d912ef", type: "character", isActive: true, stats: {
-                "+0": { price: 5000,
-                    patk: 227, pdef: 0, matk: 0, mdef: 0, crit: 100, hit: 24, eva: 0,
-                    frontSkill: "Flame Fall", backSkill: "Crash"
-                },
-                "+1": { price: 6000,
-                    patk: 303, pdef: 0, matk: 0, mdef: 0, crit: 120, hit: 24, eva: 0,
-                    frontSkill: "Force Impact", backSkill: "Crash"
-                },
-                "+2": { price: 7000,
-                    patk: 390, pdef: 0, matk: 0, mdef: 0, crit: 140, hit: 24, eva: 0,
-                    frontSkill: "Force Impact", backSkill: "War Rage"
-                },
-                "+3": { price: 8000,
-                    patk: 491, pdef: 0, matk: 0, mdef: 0, crit: 180, hit: 24, eva: 0,
-                    frontSkill: "Aos Wolf", backSkill: "War Rage"
-                }
-            },
-            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
-                {
-                    materialName: "Dragon Horn",
-                    amount: 2
-                },{
-                    materialName: "Diamond",
-                    amount: 1
-                },{
-                    materialName: "Yggdrasil Branch",
-                    amount: 2
-                }
-            ]
-        },{
-            _id: "308819", modelId: "19", name: "Dark Flower Rod", commonNames: ["Dark Flower Rod"],
-            characterId: "10850002_c4678df9", type: "character", isActive: true, stats: {
-                "+0": { price: 5000,
-                    patk: 0, pdef: 0, matk: 169, mdef: 0, crit: 18, hit: 0, eva: 22,
-                    frontSkill: "Stone Claw", backSkill: "Stone Claw"
-                },
-                "+1": { price: 6000,
-                    patk: 0, pdef: 0, matk: 226, mdef: 0, crit: 24, hit: 0, eva: 27,
-                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
-                },
-                "+2": { price: 7000,
-                    patk: 0, pdef: 0, matk: 291, mdef: 0, crit: 28, hit: 0, eva: 33,
-                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
-                },
-                "+3": { price: 8000,
-                    patk: 0, pdef: 0, matk: 381, mdef: 0, crit: 34, hit: 0, eva: 38,
-                    frontSkill: "Anima", backSkill: "Anima"
-                }
-            },
-            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
-                {
-                    materialName: "Sun Fragment",
-                    amount: 2
-                },{
-                    materialName: "Black Pearl",
                     amount: 1
                 },{
                     materialName: "Yggdrasil Branch",
@@ -4468,34 +4404,130 @@ module.exports = {
                 }
             ]
         },{
-            _id: "308121", modelId: "21", name: "Blue Rose", commonNames: ["Blue Rose"],
-            characterId: "10150003_e989854c", type: "character", isActive: true, stats: {
+            _id: "308510", modelId: "10", name: "Apocalypse", commonNames: ["Apocalypse"],
+            characterId: "10550001_27d912ef", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 108, pdef: 82, matk: 0, mdef: 82, crit: 15, hit: 15, eva: 10,
-                    frontSkill: "Double Slash", backSkill: "V Slash"
+                    patk: 227, pdef: 0, matk: 0, mdef: 0, crit: 100, hit: 24, eva: 0,
+                    frontSkill: "Flame Fall", backSkill: "Crash"
                 },
                 "+1": { price: 6000,
-                    patk: 124, pdef: 86, matk: 0, mdef: 86, crit: 20, hit: 20, eva: 10,
-                    frontSkill: "Power Slash", backSkill: "V Slash"
+                    patk: 303, pdef: 0, matk: 0, mdef: 0, crit: 120, hit: 24, eva: 0,
+                    frontSkill: "Force Impact", backSkill: "Crash"
                 },
                 "+2": { price: 7000,
-                    patk: 172, pdef: 114, matk: 0, mdef: 124, crit: 20, hit: 25, eva: 15,
-                    frontSkill: "Power Slash", backSkill: "Double Slash"
+                    patk: 390, pdef: 0, matk: 0, mdef: 0, crit: 140, hit: 24, eva: 0,
+                    frontSkill: "Force Impact", backSkill: "War Rage"
                 },
                 "+3": { price: 8000,
-                    patk: 228, pdef: 152, matk: 0, mdef: 172, crit: 25, hit: 25, eva: 20,
-                    frontSkill: "Novalis", backSkill: "Double Slash"
+                    patk: 491, pdef: 0, matk: 0, mdef: 0, crit: 180, hit: 24, eva: 0,
+                    frontSkill: "Aos Wolf", backSkill: "War Rage"
                 }
             },
             note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
                 {
-                    materialName: "Mithril Ore",
+                    materialName: "Dragon Horn",
                     amount: 2
                 },{
-                    materialName: "Rose Quartz",
+                    materialName: "Diamond",
                     amount: 1
                 },{
-                    materialName: "Holy Water",
+                    materialName: "Yggdrasil Branch",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "308706", modelId: "06", name: "Duon Helios", commonNames: ["Duon Helios"],
+            characterId: "10750001_32935980", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 108, pdef: 10, matk: 0, mdef: 10, crit: 30, hit: 30, eva: 30,
+                    frontSkill: "Shadow Run", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 6000,
+                    patk: 144, pdef: 15, matk: 0, mdef: 15, crit: 33, hit: 33, eva: 33,
+                    frontSkill: "Divine Punishment", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 7000,
+                    patk: 166, pdef: 20, matk: 0, mdef: 20, crit: 36, hit: 36, eva: 36,
+                    frontSkill: "Divine Punishment", backSkill: "Shadow Snake Punch"
+                },
+                "+3": { price: 8000,
+                    patk: 283, pdef: 25, matk: 0, mdef: 25, crit: 40, hit: 40, eva: 40,
+                    frontSkill: "Aion's Single Strike", backSkill: "Shadow Snake Punch"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Rare Species Leather",
+                    amount: 2
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                },{
+                    materialName: "Sun Fragment",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "308819", modelId: "19", name: "Dark Flower Rod", commonNames: ["Dark Flower Rod"],
+            characterId: "10850002_c4678df9", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 0, matk: 169, mdef: 0, crit: 18, hit: 0, eva: 22,
+                    frontSkill: "Stone Claw", backSkill: "Stone Claw"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 0, matk: 226, mdef: 0, crit: 24, hit: 0, eva: 27,
+                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 0, matk: 291, mdef: 0, crit: 28, hit: 0, eva: 33,
+                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 0, matk: 381, mdef: 0, crit: 34, hit: 0, eva: 38,
+                    frontSkill: "Anima", backSkill: "Anima"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Sun Fragment",
+                    amount: 2
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Yggdrasil Branch",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "308806", modelId: "06", name: "Holy Rod \"Storia\"", commonNames: ["Holy Rod \"Storia\""],
+            characterId: "10840001_1af29f14", type: "character", isActive: true, stats: {
+                "+0": { price: 3600,
+                    patk: 0, pdef: 0, matk: 152, mdef: 0, crit: 35, hit: 0, eva: 15,
+                    frontSkill: "Holy Cross", backSkill: "Holy Cross"
+                },
+                "+1": { price: 3960,
+                    patk: 0, pdef: 0, matk: 195, mdef: 0, crit: 45, hit: 0, eva: 25,
+                    frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
+                },
+                "+2": { price: 4500,
+                    patk: 0, pdef: 0, matk: 250, mdef: 0, crit: 50, hit: 0, eva: 25,
+                    frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
+                },
+                "+3": { price: 6120,
+                    patk: 0, pdef: 0, matk: 340, mdef: 0, crit: 55, hit: 0, eva: 30,
+                    frontSkill: "Eternal Light", backSkill: "Eternal Light"
+                }
+            },
+            note: "", devCost: 32400, levelRequired: 60, tier: 3, recipe: [
+                {
+                    materialName: "Ebony Branch",
+                    amount: 2
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Full Moon Fragment",
                     amount: 2
                 }
             ]
