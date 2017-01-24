@@ -223,6 +223,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         return;
     }
 
+    var isParalyzed = false;
+    if (attacker.isParalyzed()) {
+        isParalyzed = attacker.status["Paralyze"].evoke();   
+    }
+
     if (attacker.isStunned()) {
         attacker.status["Stun"].destroy();
         text = attackerName + " is stunned.\n";
@@ -233,17 +238,15 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
         return;
     }
-    if (attacker.isParalyzed()) {
-        var isParalyzed = attacker.status["Paralyze"].evoke();
-        if (isParalyzed) {
-            text = attackerName + " is paralyzed.\n";
-            result.push({
-                text: text,
-                image: null
-            });
-            this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
-            return;    
-        }
+    
+    if (isParalyzed) {
+        text = attackerName + " is paralyzed.\n";
+        result.push({
+            text: text,
+            image: null
+        });
+        this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
+        return;    
     }
 
     var actionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);

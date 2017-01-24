@@ -12,7 +12,7 @@
         plus: 0
     },
     equipedAccessory: {
-        _id: "330206",
+        _id: "330107",
         plus: 3
     },
     materialList: {},
@@ -36,7 +36,7 @@
         plus: 0
     },
     equipedAccessory: {
-        _id: "330206",
+        _id: "330107",
         plus: 3
     },
     materialList: {},
@@ -60,7 +60,7 @@
         plus: 0
     },
     equipedAccessory: {
-        _id: "330206",
+        _id: "330107",
         plus: 3
     },
     materialList: {},

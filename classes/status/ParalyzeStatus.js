@@ -9,7 +9,7 @@ function ParalyzeStatus(bot, ownerId, targetId) {
 ParalyzeStatus.prototype.evoke = function() {
     this.counter--;
     if (this.counter <= 0) this.destroy();
-    return (this.bot.functionHelper.randomInt(100) < 50);
+    return (this.bot.functionHelper.randomInt(100) < 33);
 }
 
 ParalyzeStatus.prototype.destroy = function() {
