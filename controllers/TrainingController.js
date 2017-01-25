@@ -46,7 +46,7 @@ var rewardList = [
     "Yggdrasil Branch"
 ];
 
-var factor = 3;
+var factor = 1;
 var EXP_REWARD = 48216 * factor;
 
 TrainingController.prototype.didPlayerDie = function(playerId) {
