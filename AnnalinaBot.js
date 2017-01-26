@@ -101,17 +101,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272258315441143810",  // Elmina Guest
-            characterId: "10450002_bbda369b",
-            exp: 10707880,//2646190,
+            _id: "273395939199156225",  // Sion Guest
+            characterId: "10250001_ff1a69c9",
+            exp: 5370000,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308419",
+                _id: "308214",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3104071",
-                plus: 3
+                _id: "3102071",
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330107",
@@ -125,12 +125,12 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272259125256388610",  // Sytry Guest
-            characterId: "10850002_c4678df9",
-            exp: 10707880,//2646190,
+            _id: "239141420194070530", 
+            characterId: "10840001_1af29f14",   // Annalina
+            exp: 5370000,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308819",
+                _id: "308806",
                 plus: 3
             },
             equipedArmor: {
@@ -138,8 +138,8 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
-                plus: 3
+                _id: "329997",
+                plus: 4
             },
             materialList: {},
             weaponList: {},
@@ -166,8 +166,8 @@ annalina.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["272258315441143810", null, null],
-                ["269733140635975680", null, "272259125256388610"]
+                [null, "273395939199156225", null],
+                ["269733140635975680", null, "239141420194070530"]
             ];    
         }
         
