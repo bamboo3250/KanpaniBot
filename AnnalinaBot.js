@@ -103,7 +103,7 @@ if (isLocal) {
         },{
             _id: "273395939199156225",  // Sion Guest
             characterId: "10250001_ff1a69c9",
-            exp: 5370000,//2646190,
+            exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308214",
@@ -127,7 +127,7 @@ if (isLocal) {
         },{
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",   // Annalina
-            exp: 5370000,//2646190,
+            exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308806",
