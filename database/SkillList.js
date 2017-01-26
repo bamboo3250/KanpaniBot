@@ -1015,7 +1015,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack07", 9,
                     false, {
-                        "Stun": 20
+                        "Stun": 10
                     },
                     true,
                     -200, -170,
@@ -2222,7 +2222,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 10,
                     true, {
-                        "Poison": 60,
+                        "Poison": 75,
                         "Paralyze": 20,
                     },
                     true,
