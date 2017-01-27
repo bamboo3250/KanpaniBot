@@ -387,17 +387,17 @@ if (isLocal) {
 } else {
     elsa.playerData = [
         {
-            _id: "241511566036434945",  // Elsa Guest
-            characterId: "10150002_765306d2",
+            _id: "270767219875643392",  // Siegrid Guest
+            characterId: "10550001_27d912ef",
             exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308119",
+                _id: "308510",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3101071",
-                plus: 0
+                _id: "3105071",
+                plus: 3
             },
             equipedAccessory: {
                 _id: "330107",
@@ -434,6 +434,30 @@ if (isLocal) {
             position: "front",
             partnerId: null,
             isTrainer: true
+        },{
+            _id: "268576286060838914",  // Saimi Guest
+            characterId: "10750001_32935980",
+            exp: 10707880,//2646190,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308706",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "3107071",
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330107",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "front",
+            partnerId: null,
+            isTrainer: true
         }
     ];
 }
@@ -453,7 +477,7 @@ elsa.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "241511566036434945", "273395939199156225"],
+                ["273395939199156225", "270767219875643392", "268576286060838914"],
                 [null, null, null]
             ];    
         }
