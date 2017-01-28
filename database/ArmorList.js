@@ -2431,4 +2431,435 @@ module.exports = {
         }
     ],
 
+    "r12": [
+        {
+            _id: "310111", name: "Grand Mail", commonNames: ["Grand Mail"],
+            classId: 1, type: "story", element: "earth", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 70, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 35
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 0, hit: 35, eva: 35
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 110, matk: 0, mdef: 110, crit: 0, hit: 35, eva: 35
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 130, matk: 0, mdef: 130, crit: 0, hit: 50, eva: 35
+                }
+            },
+            devCost: 36450, levelRequired: 69, tier: 3, recipe: [
+                {
+                    materialName: "Full Moon Fragment",
+                    amount: 1
+                },{
+                    materialName: "Ebony Branch",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310211", name: "Earth Armor \"Tsuchigumo\"", commonNames: ["Earth Armor \"Tsuchigumo\""],
+            classId: 2, type: "story", element: "earth", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 56, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 35
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 86, matk: 0, mdef: 62, crit: 40, hit: 0, eva: 65
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 116, matk: 0, mdef: 82, crit: 60, hit: 0, eva: 85
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 146, matk: 0, mdef: 102, crit: 80, hit: 0, eva: 110
+                }
+            },
+            devCost: 36450, levelRequired: 66, tier: 3, recipe: [
+                {
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Magical Water",
+                    amount: 1
+                },{
+                    materialName: "Luxurious Leather",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310311", name: "Breastplate of the Earth", commonNames: ["Breastplate of the Earth"],
+            classId: 3, type: "story", element: "earth", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 29
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 62, matk: 0, mdef: 45, crit: 0, hit: 29, eva: 29
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 82, matk: 0, mdef: 48, crit: 0, hit: 33, eva: 29
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 102, matk: 0, mdef: 51, crit: 0, hit: 37, eva: 29
+                }
+            },
+            devCost: 36450, levelRequired: 69, tier: 3, recipe: [
+                {
+                    materialName: "Gold Ore",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Luxurious Leather",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310411", name: "Grand Helm", commonNames: ["Grand Helm"],
+            classId: 4, type: "story", element: "earth", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 112, matk: 0, mdef: 70, crit: 0, hit: 0, eva: 32
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 115, matk: 0, mdef: 70, crit: 0, hit: 40, eva: 32
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 118, matk: 0, mdef: 70, crit: 0, hit: 60, eva: 32
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 121, matk: 0, mdef: 70, crit: 0, hit: 80, eva: 32
+                }
+            },
+            devCost: 36450, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Gold Ore",
+                    amount: 1
+                },{
+                    materialName: "Magical Water",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310511", name: "Belt of the Earth Mother", commonNames: ["Belt of the Earth Mother"],
+            classId: 5, type: "story", element: "earth", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 70, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 42
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 80, matk: 0, mdef: 20, crit: 33, hit: 0, eva: 42
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 90, matk: 0, mdef: 25, crit: 43, hit: 0, eva: 42
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 30, crit: 55, hit: 0, eva: 42
+                }
+            },
+            devCost: 36450, levelRequired: 67, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Ominous Cloth",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310611", name: "Earth Veil", commonNames: ["Earth Veil"],
+            classId: 6, type: "story", element: "earth", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 42, matk: 0, mdef: 98, crit: 0, hit: 0, eva: 29
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 49, matk: 0, mdef: 114, crit: 0, hit: 0, eva: 35
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 56, matk: 0, mdef: 130, crit: 0, hit: 0, eva: 41
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 63, matk: 0, mdef: 146, crit: 0, hit: 0, eva: 47
+                }
+            },
+            devCost: 36450, levelRequired: 67, tier: 3, recipe: [
+                 {
+                    materialName: "Ominous Cloth",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310711", name: "Quake Gauntlets", commonNames: ["Quake Gauntlets"],
+            classId: 7, type: "story", element: "earth", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 42, matk: 0, mdef: 42, crit: 0, hit: 0, eva: 29
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 54, matk: 0, mdef: 54, crit: 0, hit: 0, eva: 39
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 66, matk: 0, mdef: 66, crit: 0, hit: 0, eva: 49
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 78, matk: 0, mdef: 78, crit: 0, hit: 0, eva: 59
+                }
+            },
+            devCost: 36450, levelRequired: 68, tier: 3, recipe: [
+                {
+                    materialName: "Chimera Horn",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Full Moon Fragment",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310811", name: "Hat of the Earth", commonNames: ["Hat of the Earth"],
+            classId: 8, type: "story", element: "earth", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 28, matk: 0, mdef: 84, crit: 0, hit: 0, eva: 26
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 32, matk: 0, mdef: 104, crit: 0, hit: 0, eva: 36
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 36, matk: 0, mdef: 124, crit: 0, hit: 0, eva: 46
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 40, matk: 0, mdef: 144, crit: 0, hit: 0, eva: 56
+                }
+            },
+            devCost: 36450, levelRequired: 68, tier: 3, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 1
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Luxurious Leather",
+                    amount: 1
+                }
+            ]
+        }
+    ],
+
+    "r13": [
+        {
+            _id: "3101071", name: "Segment Mail", commonNames: ["Segment Mail"],
+            classId: 1, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 0, hit: 10, eva: 30
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 110, matk: 0, mdef: 110, crit: 0, hit: 25, eva: 30
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 130, matk: 0, mdef: 130, crit: 0, hit: 30, eva: 30
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 155, matk: 0, mdef: 155, crit: 0, hit: 40, eva: 30
+                }
+            },
+            devCost: 45000, levelRequired: 69, tier: 3, recipe: [
+                {
+                    materialName: "Gold Ore",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3102071", name: "Secret Armor \"Shigi\"", commonNames: ["Secret Armor \"Shigi\""],
+            classId: 2, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 72, matk: 0, mdef: 56, crit: 0, hit: 0, eva: 27
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 102, matk: 0, mdef: 74, crit: 50, hit: 0, eva: 35
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 132, matk: 0, mdef: 92, crit: 70, hit: 0, eva: 71
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 165, matk: 0, mdef: 110, crit: 90, hit: 0, eva: 85
+                }
+            },
+            devCost: 45000, levelRequired: 66, tier: 3, recipe: [
+                {
+                    materialName: "Amethyst",
+                    amount: 1
+                },{
+                    materialName: "Magical Water",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3103071", name: "Segment Plate", commonNames: ["Segment Plate"],
+            classId: 3, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 56, matk: 0, mdef: 56, crit: 0, hit: 0, eva: 25
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 76, matk: 0, mdef: 59, crit: 0, hit: 21, eva: 25
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 96, matk: 0, mdef: 62, crit: 0, hit: 25, eva: 25
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 115, matk: 0, mdef: 68, crit: 0, hit: 29, eva: 25
+                }
+            },
+            devCost: 45000, levelRequired: 69, tier: 3, recipe: [
+                {
+                    materialName: "Ominous Cloth",
+                    amount: 3
+                },{
+                    materialName: "Jade",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3104071", name: "Segment Helm", commonNames: ["Segment Helm"],
+            classId: 4, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 140, matk: 0, mdef: 85, crit: 0, hit: 30, eva: 25
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 143, matk: 0, mdef: 85, crit: 0, hit: 50, eva: 25
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 146, matk: 0, mdef: 85, crit: 0, hit: 70, eva: 25
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 150, matk: 0, mdef: 85, crit: 0, hit: 90, eva: 25
+                }
+            },
+            devCost: 45000, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Amethyst",
+                    amount: 1
+                },{
+                    materialName: "Gold Ore",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3105071", name: "Segment Belt", commonNames: ["Segment Belt"],
+            classId: 5, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 85, matk: 0, mdef: 20, crit: 0, hit: 0, eva: 30
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 105, matk: 0, mdef: 30, crit: 20, hit: 0, eva: 30
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 125, matk: 0, mdef: 40, crit: 35, hit: 0, eva: 30
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 148, matk: 0, mdef: 50, crit: 45, hit: 0, eva: 30
+                }
+            },
+            devCost: 45000, levelRequired: 67, tier: 3, recipe: [
+                {
+                    materialName: "Chimera Horn",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3106071", name: "Segment Veil", commonNames: ["Segment Veil"],
+            classId: 6, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 54, matk: 0, mdef: 127, crit: 0, hit: 0, eva: 20
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 61, matk: 0, mdef: 139, crit: 0, hit: 0, eva: 35
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 69, matk: 0, mdef: 157, crit: 0, hit: 0, eva: 50
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 75, matk: 0, mdef: 175, crit: 0, hit: 0, eva: 68
+                }
+            },
+            devCost: 45000, levelRequired: 67, tier: 3, recipe: [
+                {
+                    materialName: "Jade",
+                    amount: 1
+                },{
+                    materialName: "Chimera Horn",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3107071", name: "Segment Gauntlets", commonNames: ["Segment Gauntlets"],
+            classId: 7, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 54, matk: 0, mdef: 43, crit: 0, hit: 0, eva: 25
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 66, matk: 0, mdef: 52, crit: 0, hit: 0, eva: 35
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 78, matk: 0, mdef: 64, crit: 0, hit: 0, eva: 45
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 90, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 55
+                }
+            },
+            devCost: 45000, levelRequired: 68, tier: 3, recipe: [
+                {
+                    materialName: "Luxurious Leather",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3108071", name: "Segment Hat", commonNames: ["Segment Hat"],
+            classId: 8, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 35, matk: 0, mdef: 102, crit: 0, hit: 0, eva: 20
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 38, matk: 0, mdef: 127, crit: 0, hit: 0, eva: 30
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 42, matk: 0, mdef: 152, crit: 0, hit: 0, eva: 40
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 50, matk: 0, mdef: 170, crit: 0, hit: 0, eva: 50
+                }
+            },
+            devCost: 45000, levelRequired: 68, tier: 3, recipe: [
+                {
+                    materialName: "Ebony Branch",
+                    amount: 3
+                },{
+                    materialName: "Jade",
+                    amount: 1
+                }
+            ]
+        }
+    ],
 };
