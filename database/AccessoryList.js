@@ -503,6 +503,31 @@ module.exports = {
                     amount: 2
                 }
             ]
+        },{
+            _id: "330207", name: "Hope Bracelet", commonNames: ["R7 Bracelet"],
+            type: "story", isActive: true, stats: {
+                "+0": { price: 1800,
+                    patk: 8, pdef: 35, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
+                },
+                "+1": { price: 1850,
+                    patk: 50, pdef: 70, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
+                },
+                "+2": { price: 1900,
+                    patk: 80, pdef: 90, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
+                },
+                "+3": { price: 1950,
+                    patk: 90, pdef: 110, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
+                }
+            },
+            devCost: 40000, levelRequired: 66, tier: 3, recipe: [
+                {
+                    materialName: "Opal",
+                    amount: 2
+                },{
+                    materialName: "Amethyst",
+                    amount: 2
+                }
+            ]
         }
     ],
 

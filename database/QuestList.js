@@ -1399,7 +1399,114 @@ var quests = [
     },
 
     {
-        commonNames: ["", ""], name: "", 
+        commonNames: ["2-2-1"], name: "Security of Underground Labyrinth", 
+        isActive: true, levelRequired: 66, timeCost: 64, goldCost: 0, breadCost: 2, 
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [2], numItemDrop: 20,
+        dropList: [
+            "Amethyst", 
+            "Holy Water", 
+            "Magical Water", 
+            "Luxurious Leather", 
+            "Jade", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-2-2"], name: "Recollecting Mithril", 
+        isActive: true, levelRequired: 67, timeCost: 64, goldCost: 0, breadCost: 2, 
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [5], numItemDrop: 20,
+        dropList: [
+            "Amethyst", 
+            "Dragon Horn", 
+            "Chimera Horn", 
+            "Luxurious Leather", 
+            "Jade", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-2-3"], name: "Collecting Fruit for Sake Festival", 
+        isActive: true, levelRequired: 67, timeCost: 64, goldCost: 0, breadCost: 2, 
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [6], numItemDrop: 20,
+        dropList: [
+            "Amethyst", 
+            "Sun Fragment",
+            "Full Moon Fragment",
+            "Chimera Horn",
+            "Ominous Cloth",
+            "Jade", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-2-4"], name: "Arena Tournament: Myrmidon Level", 
+        isActive: true, levelRequired: 68, timeCost: 64, goldCost: 0, breadCost: 2, 
+        goldReward: 1400, breadReward: 0, exp: 8315, advantage: [7], numItemDrop: 20,
+        dropList: [
+            "Amethyst", 
+            "Rare Species Leather",
+            "Luxurious Leather",
+            "Sun Fragment",
+            "Jade", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-2-5"], name: "Collecting Materials for Maid Clothes", 
+        isActive: true, levelRequired: 68, timeCost: 64, goldCost: 0, breadCost: 2, 
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [8], numItemDrop: 20,
+        dropList: [
+            "Amethyst", 
+            "Ebony Branch",
+            "Yggdrasil Branch",
+            "Ominous Cloth",
+            "Jade", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-2-6"], name: "Mugwort Supply", 
+        isActive: true, levelRequired: 69, timeCost: 0, goldCost: 0, breadCost: 2, 
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [3], numItemDrop: 15,
+        dropList: [
+            "Amethyst", 
+            "Holy Cloth",
+            "Ominous Cloth",
+            "Gold Ore",
+            "Jade", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-2-7"], name: "Revenge of Magic Sword \"Ekudikisu\"", 
+        isActive: true, levelRequired: 69, timeCost: 64, goldCost: 0, breadCost: 2, 
+        goldReward: 1400, breadReward: 0, exp: 8275, advantage: [1], numItemDrop: 20,
+        dropList: [
+            "Amethyst", 
+            "Mithril Ore",
+            "Gold Ore",
+            "Ebony Branch",
+            "Jade", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-2-8"], name: "Black Knight of the Round Table", 
+        isActive: true, levelRequired: 70, timeCost: 64, goldCost: 0, breadCost: 2, 
+        goldReward: 1400, breadReward: 0, exp: 8320, advantage: [4], numItemDrop: 20,
+        dropList: [
+            "Amethyst", 
+            "Mithril Ore",
+            "Gold Ore",
+            "Magical Water",
+            "Jade", 
+            "Opal", 
+            "Malachite"
+        ]
+    },
+
+    {
+        commonNames: [""], name: "", 
         isActive: true, levelRequired: 1, timeCost: 0, goldCost: 0, breadCost: 1, 
         goldReward: 0, breadReward: 0, exp: 0, advantage: [], numItemDrop: 0,
         dropList: ["", ""]

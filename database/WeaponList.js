@@ -4242,6 +4242,242 @@ module.exports = {
         }
     ],
 
+    "r13": [
+        {
+            _id: "3001092", modelId: "13", name: "Segment Weapon", commonNames: ["Segment Weapon"],
+            classId: 1, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 95, pdef: 78, matk: 0, mdef: 100, crit: 12, hit: 25, eva: 0,
+                    frontSkill: "V Slash", backSkill: "Slash"
+                },
+                "+1": { price: 6000,
+                    patk: 130, pdef: 103, matk: 0, mdef: 135, crit: 12, hit: 25, eva: 0,
+                    frontSkill: "V Slash", backSkill: "Slash"
+                },
+                "+2": { price: 7000,
+                    patk: 175, pdef: 125, matk: 0, mdef: 175, crit: 12, hit: 25, eva: 0,
+                    frontSkill: "Flame V Slash", backSkill: "V Slash"
+                },
+                "+3": { price: 8000,
+                    patk: 225, pdef: 160, matk: 0, mdef: 195, crit: 12, hit: 25, eva: 0,
+                    frontSkill: "Flame V Slash", backSkill: "V Slash"
+                }
+            },
+            note: "", devCost: 45000, levelRequired: 69, tier: 2, recipe: [
+                {
+                    materialName: "Mithril Ore",
+                    amount: 3
+                },{
+                    materialName: "Opal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3002092", modelId: "13", name: "Hijinzettou", commonNames: ["Hijinzettou"],
+            classId: 2, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 165, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 37, eva: 0,
+                    frontSkill: "Helmet Splitter", backSkill: "Slash"
+                },
+                "+1": { price: 6000,
+                    patk: 208, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 37, eva: 0,
+                    frontSkill: "Helmet Splitter", backSkill: "Slash"
+                },
+                "+2": { price: 7000,
+                    patk: 260, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 37, eva: 0,
+                    frontSkill: "Flame Slash", backSkill: "Cleave"
+                },
+                "+3": { price: 8000,
+                    patk: 320, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 37, eva: 0,
+                    frontSkill: "Flame Slash", backSkill: "Cleave"
+                }
+            },
+            note: "", devCost: 45000, levelRequired: 66, tier: 2, recipe: [
+                {
+                    materialName: "Opal",
+                    amount: 2
+                },{
+                    materialName: "Holy Water",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3003092", modelId: "13", name: "Segment Bow", commonNames: ["Segment Bow"],
+            classId: 3, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 134, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 46, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Heavy Shot"
+                },
+                "+1": { price: 6000,
+                    patk: 175, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 46, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Heavy Shot"
+                },
+                "+2": { price: 7000,
+                    patk: 225, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 46, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Flame Shot"
+                },
+                "+3": { price: 8000,
+                    patk: 290, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 46, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Flame Shot"
+                }
+            },
+            note: "", devCost: 45000, levelRequired: 69, tier: 2, recipe: [
+                {
+                    materialName: "Holy Cloth",
+                    amount: 3
+                },{
+                    materialName: "Malachite",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3004092", modelId: "13", name: "Segment Javelin", commonNames: ["Segment Javelin"],
+            classId: 4, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 42, pdef: 110, matk: 0, mdef: 0, crit: 5, hit: 25, eva: 0,
+                    frontSkill: "Full-On Collision", backSkill: "Spear Jab"
+                },
+                "+1": { price: 6000,
+                    patk: 46, pdef: 150, matk: 0, mdef: 0, crit: 10, hit: 25, eva: 0,
+                    frontSkill: "Full-On Collision", backSkill: "Spear Jab"
+                },
+                "+2": { price: 7000,
+                    patk: 70, pdef: 200, matk: 0, mdef: 0, crit: 20, hit: 25, eva: 0,
+                    frontSkill: "Flame Piercing Collision", backSkill: "Double Strike"
+                },
+                "+3": { price: 8000,
+                    patk: 93, pdef: 265, matk: 0, mdef: 0, crit: 30, hit: 25, eva: 0,
+                    frontSkill: "Flame Piercing Collision", backSkill: "Double Strike"
+                }
+            },
+            note: "", devCost: 45000, levelRequired: 70, tier: 2, recipe: [
+                {
+                    materialName: "Mithril Ore",
+                    amount: 3
+                },{
+                    materialName: "Opal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3005092", modelId: "13", name: "Segment Hammer", commonNames: ["Segment Hammer"],
+            classId: 5, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 220, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 25, eva: 0,
+                    frontSkill: "Hammerfall", backSkill: "Crash"
+                },
+                "+1": { price: 6000,
+                    patk: 295, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 25, eva: 0,
+                    frontSkill: "Hammerfall", backSkill: "Crash"
+                },
+                "+2": { price: 7000,
+                    patk: 380, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 25, eva: 0,
+                    frontSkill: "Flamefall", backSkill: "Swing"
+                },
+                "+3": { price: 8000,
+                    patk: 480, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 25, eva: 0,
+                    frontSkill: "Flamefall", backSkill: "Swing"
+                }
+            },
+            note: "", devCost: 45000, levelRequired: 67, tier: 2, recipe: [
+                {
+                    materialName: "Opal",
+                    amount: 2
+                },{
+                    materialName: "Dragon Horn",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3006092", modelId: "13", name: "Segment Cross", commonNames: ["Segment Cross"],
+            classId: 6, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 33, matk: 120, mdef: 50, crit: 16, hit: 0, eva: 10,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 48, matk: 160, mdef: 65, crit: 16, hit: 0, eva: 10,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 55, matk: 200, mdef: 75, crit: 16, hit: 0, eva: 10,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 95, matk: 285, mdef: 95, crit: 16, hit: 0, eva: 10,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                }
+            },
+            note: "", devCost: 45000, levelRequired: 67, tier: 2, recipe: [
+                {
+                    materialName: "Malachite",
+                    amount: 2
+                },{
+                    materialName: "Sun Fragment",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3007092", modelId: "13", name: "Double Segment", commonNames: ["Double Segment"],
+            classId: 7, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 105, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 33, eva: 55,
+                    frontSkill: "Twin Attack", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 6000,
+                    patk: 138, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 38, eva: 55,
+                    frontSkill: "Twin Attack", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 7000,
+                    patk: 150, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 43, eva: 55,
+                    frontSkill: "Flame Dance Formation", backSkill: "Shadow Snake Punch"
+                },
+                "+3": { price: 8000,
+                    patk: 234, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 55, eva: 55,
+                    frontSkill: "Flame Dance Formation", backSkill: "Shadow Snake Punch"
+                }
+            },
+            note: "", devCost: 45000, levelRequired: 68, tier: 2, recipe: [
+                {
+                    materialName: "Rare Species Leather",
+                    amount: 3
+                },{
+                    materialName: "Opal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3008095", modelId: "13", name: "Secret Rod \"Segmentium\"", commonNames: ["Secret Rod \"Segmentium\""],
+            classId: 8, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 0, matk: 135, mdef: 0, crit: 15, hit: 0, eva: 10,
+                    frontSkill: "Fire Ball", backSkill: "Flare Ball"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 0, matk: 196, mdef: 0, crit: 15, hit: 0, eva: 10,
+                    frontSkill: "Fire Ball", backSkill: "Flare Ball"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 0, matk: 250, mdef: 0, crit: 15, hit: 0, eva: 10,
+                    frontSkill: "Flare Ball", backSkill: "Flare Ball"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 0, matk: 330, mdef: 0, crit: 15, hit: 0, eva: 10,
+                    frontSkill: "Flare Ball", backSkill: "Flare Ball"
+                }
+            },
+            note: "", devCost: 45000, levelRequired: 68, tier: 2, recipe: [
+                {
+                    materialName: "Yggdrasil Branch",
+                    amount: 3
+                },{
+                    materialName: "Malachite",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
     "cw": [
         {
             _id: "308119", modelId: "19", name: "Fenris Novem", commonNames: ["Fenris Novem"],
