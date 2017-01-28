@@ -2661,7 +2661,7 @@ module.exports = {
 
     "r13": [
         {
-            _id: "3101071", name: "Segment Mail", commonNames: ["Segment Mail"],
+            _id: "3101072", name: "Segment Mail", commonNames: ["Segment Mail"],
             classId: 1, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 0, hit: 10, eva: 30
@@ -2686,7 +2686,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3102071", name: "Secret Armor \"Shigi\"", commonNames: ["Secret Armor \"Shigi\""],
+            _id: "3102072", name: "Secret Armor \"Shigi\"", commonNames: ["Secret Armor \"Shigi\""],
             classId: 2, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 0, pdef: 72, matk: 0, mdef: 56, crit: 0, hit: 0, eva: 27
@@ -2711,7 +2711,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3103071", name: "Segment Plate", commonNames: ["Segment Plate"],
+            _id: "3103072", name: "Segment Plate", commonNames: ["Segment Plate"],
             classId: 3, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 0, pdef: 56, matk: 0, mdef: 56, crit: 0, hit: 0, eva: 25
@@ -2736,7 +2736,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3104071", name: "Segment Helm", commonNames: ["Segment Helm"],
+            _id: "3104072", name: "Segment Helm", commonNames: ["Segment Helm"],
             classId: 4, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 0, pdef: 140, matk: 0, mdef: 85, crit: 0, hit: 30, eva: 25
@@ -2761,7 +2761,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3105071", name: "Segment Belt", commonNames: ["Segment Belt"],
+            _id: "3105072", name: "Segment Belt", commonNames: ["Segment Belt"],
             classId: 5, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 0, pdef: 85, matk: 0, mdef: 20, crit: 0, hit: 0, eva: 30
@@ -2786,7 +2786,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3106071", name: "Segment Veil", commonNames: ["Segment Veil"],
+            _id: "3106072", name: "Segment Veil", commonNames: ["Segment Veil"],
             classId: 6, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 0, pdef: 54, matk: 0, mdef: 127, crit: 0, hit: 0, eva: 20
@@ -2811,7 +2811,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3107071", name: "Segment Gauntlets", commonNames: ["Segment Gauntlets"],
+            _id: "3107072", name: "Segment Gauntlets", commonNames: ["Segment Gauntlets"],
             classId: 7, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 0, pdef: 54, matk: 0, mdef: 43, crit: 0, hit: 0, eva: 25
@@ -2836,7 +2836,7 @@ module.exports = {
                 }
             ]
         },{
-            _id: "3108071", name: "Segment Hat", commonNames: ["Segment Hat"],
+            _id: "3108072", name: "Segment Hat", commonNames: ["Segment Hat"],
             classId: 8, type: "story", element: "", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 0, pdef: 35, matk: 0, mdef: 102, crit: 0, hit: 0, eva: 20
