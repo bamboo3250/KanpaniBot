@@ -1181,7 +1181,7 @@ module.exports = {
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
                     0.7, 3,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
-                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack03", 3,
                     true,

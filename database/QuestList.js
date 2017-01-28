@@ -1401,7 +1401,7 @@ var quests = [
     {
         commonNames: ["2-2-1"], name: "Security of Underground Labyrinth", 
         isActive: true, levelRequired: 66, timeCost: 64, goldCost: 0, breadCost: 2, 
-        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [2], numItemDrop: 20,
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [2], numItemDrop: 32,
         dropList: [
             "Amethyst", 
             "Holy Water", 
@@ -1414,7 +1414,7 @@ var quests = [
     },{
         commonNames: ["2-2-2"], name: "Recollecting Mithril", 
         isActive: true, levelRequired: 67, timeCost: 64, goldCost: 0, breadCost: 2, 
-        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [5], numItemDrop: 20,
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [5], numItemDrop: 32,
         dropList: [
             "Amethyst", 
             "Dragon Horn", 
@@ -1427,7 +1427,7 @@ var quests = [
     },{
         commonNames: ["2-2-3"], name: "Collecting Fruit for Sake Festival", 
         isActive: true, levelRequired: 67, timeCost: 64, goldCost: 0, breadCost: 2, 
-        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [6], numItemDrop: 20,
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [6], numItemDrop: 32,
         dropList: [
             "Amethyst", 
             "Sun Fragment",
@@ -1441,7 +1441,7 @@ var quests = [
     },{
         commonNames: ["2-2-4"], name: "Arena Tournament: Myrmidon Level", 
         isActive: true, levelRequired: 68, timeCost: 64, goldCost: 0, breadCost: 2, 
-        goldReward: 1400, breadReward: 0, exp: 8315, advantage: [7], numItemDrop: 20,
+        goldReward: 1400, breadReward: 0, exp: 8315, advantage: [7], numItemDrop: 32,
         dropList: [
             "Amethyst", 
             "Rare Species Leather",
@@ -1454,7 +1454,7 @@ var quests = [
     },{
         commonNames: ["2-2-5"], name: "Collecting Materials for Maid Clothes", 
         isActive: true, levelRequired: 68, timeCost: 64, goldCost: 0, breadCost: 2, 
-        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [8], numItemDrop: 20,
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [8], numItemDrop: 32,
         dropList: [
             "Amethyst", 
             "Ebony Branch",
@@ -1466,8 +1466,8 @@ var quests = [
         ]
     },{
         commonNames: ["2-2-6"], name: "Mugwort Supply", 
-        isActive: true, levelRequired: 69, timeCost: 0, goldCost: 0, breadCost: 2, 
-        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [3], numItemDrop: 15,
+        isActive: true, levelRequired: 69, timeCost: 64, goldCost: 0, breadCost: 2, 
+        goldReward: 1400, breadReward: 0, exp: 8310, advantage: [3], numItemDrop: 24,
         dropList: [
             "Amethyst", 
             "Holy Cloth",
@@ -1480,7 +1480,7 @@ var quests = [
     },{
         commonNames: ["2-2-7"], name: "Revenge of Magic Sword \"Ekudikisu\"", 
         isActive: true, levelRequired: 69, timeCost: 64, goldCost: 0, breadCost: 2, 
-        goldReward: 1400, breadReward: 0, exp: 8275, advantage: [1], numItemDrop: 20,
+        goldReward: 1400, breadReward: 0, exp: 8275, advantage: [1], numItemDrop: 32,
         dropList: [
             "Amethyst", 
             "Mithril Ore",
@@ -1493,7 +1493,7 @@ var quests = [
     },{
         commonNames: ["2-2-8"], name: "Black Knight of the Round Table", 
         isActive: true, levelRequired: 70, timeCost: 64, goldCost: 0, breadCost: 2, 
-        goldReward: 1400, breadReward: 0, exp: 8320, advantage: [4], numItemDrop: 20,
+        goldReward: 1400, breadReward: 0, exp: 8320, advantage: [4], numItemDrop: 32,
         dropList: [
             "Amethyst", 
             "Mithril Ore",
