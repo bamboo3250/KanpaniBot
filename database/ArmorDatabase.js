@@ -30,8 +30,14 @@ ArmorDatabase.prototype.getArmorByCodeName = function(codeName, classId) {
     if (typeof armorList === "undefined") return null;
 
     for(var i=0;i<armorList.length;i++) {
-        if (armorList[i].classId == classId) {
-            return armorList[i];
+        if (codeName != "ca") {
+            if (armorList[i].classId == classId) {
+                return armorList[i];
+            }    
+        } else {
+            if (armorList[i].characterId == classId) {
+                return armorList[i];
+            }
         }
     }
     return null;

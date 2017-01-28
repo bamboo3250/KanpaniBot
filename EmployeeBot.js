@@ -53,6 +53,8 @@ var unsubscribeCommand = require('./commands/UnsubscribeCommand');
 var retreatCommand = require('./commands/RetreatCommand');
 var xmasTreeCommand = require('./commands/XmasTreeCommand');
 var weaponCommand = require('./commands/WeaponCommand');
+var armorCommand = require('./commands/ArmorCommand');
+var accessoryCommand = require('./commands/AccessoryCommand');
 var setAuctionCommand = require('./commands/SetAuctionCommand');
 var auctionCommand = require('./commands/AuctionCommand');
 var bidCommand = require('./commands/BidCommand');
@@ -423,6 +425,8 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         retreatCommand.handle(message, this);
         // xmasTreeCommand.handle(message, this);
         weaponCommand.handle(message, this);
+        armorCommand.handle(message, this);
+        accessoryCommand.handle(message, this);
         setAuctionCommand.handle(message, this);
         auctionCommand.handle(message, this);
         bidCommand.handle(message, this);
