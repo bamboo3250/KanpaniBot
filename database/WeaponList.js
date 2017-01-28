@@ -4263,215 +4263,215 @@ module.exports = {
                     frontSkill: "Flame V Slash", backSkill: "V Slash"
                 }
             },
-            note: "", devCost: 40000, levelRequired: 65, tier: 2, recipe: [
+            note: "", devCost: 45000, levelRequired: 69, tier: 2, recipe: [
                 {
-                    materialName: "Gold Ore",
+                    materialName: "Mithril Ore",
                     amount: 3
                 },{
-                    materialName: "Aquamarine",
+                    materialName: "Opal",
                     amount: 2
                 }
             ]
         },{
-            _id: "3002082", modelId: "12", name: "Royal Sword", commonNames: ["Royal Sword"],
+            _id: "3002092", modelId: "13", name: "Hijinzettou", commonNames: ["Hijinzettou"],
             classId: 2, type: "story", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 150, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 3,
-                    frontSkill: "Iaido Slash", backSkill: "Slash"
+                    patk: 165, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 37, eva: 0,
+                    frontSkill: "Helmet Splitter", backSkill: "Slash"
                 },
                 "+1": { price: 6000,
-                    patk: 190, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 6,
-                    frontSkill: "Iaido Slash", backSkill: "Slash"
+                    patk: 208, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 37, eva: 0,
+                    frontSkill: "Helmet Splitter", backSkill: "Slash"
                 },
                 "+2": { price: 7000,
-                    patk: 230, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 9,
-                    frontSkill: "Slash II", backSkill: "Cleave"
+                    patk: 260, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 37, eva: 0,
+                    frontSkill: "Flame Slash", backSkill: "Cleave"
                 },
                 "+3": { price: 8000,
-                    patk: 300, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 12,
-                    frontSkill: "Slash II", backSkill: "Cleave"
+                    patk: 320, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 37, eva: 0,
+                    frontSkill: "Flame Slash", backSkill: "Cleave"
                 }
             },
-            note: "", devCost: 40000, levelRequired: 65, tier: 2, recipe: [
+            note: "", devCost: 45000, levelRequired: 66, tier: 2, recipe: [
                 {
-                    materialName: "Aquamarine",
+                    materialName: "Opal",
                     amount: 2
                 },{
-                    materialName: "Magical Water",
+                    materialName: "Holy Water",
                     amount: 3
                 }
             ]
         },{
-            _id: "3003082", modelId: "12", name: "Royal Arrow", commonNames: ["Royal Arrow"],
+            _id: "3003092", modelId: "13", name: "Segment Bow", commonNames: ["Segment Bow"],
             classId: 3, type: "story", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 120, pdef: 0, matk: 0, mdef: 30, crit: 5, hit: 45, eva: 0,
-                    frontSkill: "Chain Shot", backSkill: "Chain Shot"
+                    patk: 134, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 46, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Heavy Shot"
                 },
                 "+1": { price: 6000,
-                    patk: 160, pdef: 0, matk: 0, mdef: 45, crit: 5, hit: 45, eva: 0,
-                    frontSkill: "Chain Shot", backSkill: "Chain Shot"
+                    patk: 175, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 46, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Heavy Shot"
                 },
                 "+2": { price: 7000,
-                    patk: 205, pdef: 0, matk: 0, mdef: 50, crit: 5, hit: 45, eva: 0,
-                    frontSkill: "Chain Shot", backSkill: "Delta Shot"
+                    patk: 225, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 46, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Flame Shot"
                 },
                 "+3": { price: 8000,
-                    patk: 275, pdef: 0, matk: 0, mdef: 70, crit: 5, hit: 45, eva: 0,
-                    frontSkill: "Chain Shot", backSkill: "Delta Shot"
+                    patk: 290, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 46, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Flame Shot"
                 }
             },
-            note: "", devCost: 40000, levelRequired: 61, tier: 2, recipe: [
+            note: "", devCost: 45000, levelRequired: 69, tier: 2, recipe: [
                 {
-                    materialName: "Ominous Cloth",
+                    materialName: "Holy Cloth",
                     amount: 3
                 },{
-                    materialName: "Crystal",
+                    materialName: "Malachite",
                     amount: 2
                 }
             ]
         },{
-            _id: "3004082", modelId: "12", name: "Royal Pike", commonNames: ["Royal Pike"],
+            _id: "3004092", modelId: "13", name: "Segment Javelin", commonNames: ["Segment Javelin"],
             classId: 4, type: "story", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 40, pdef: 91, matk: 0, mdef: 25, crit: 5, hit: 24, eva: 0,
-                    frontSkill: "Double Strike", backSkill: "Spear Jab"
+                    patk: 42, pdef: 110, matk: 0, mdef: 0, crit: 5, hit: 25, eva: 0,
+                    frontSkill: "Full-On Collision", backSkill: "Spear Jab"
                 },
                 "+1": { price: 6000,
-                    patk: 55, pdef: 130, matk: 0, mdef:30, crit: 10, hit: 24, eva: 0,
-                    frontSkill: "Double Strike", backSkill: "Spear Jab"
+                    patk: 46, pdef: 150, matk: 0, mdef: 0, crit: 10, hit: 25, eva: 0,
+                    frontSkill: "Full-On Collision", backSkill: "Spear Jab"
                 },
                 "+2": { price: 7000,
-                    patk: 70, pdef: 180, matk: 0, mdef: 40, crit: 20, hit: 24, eva: 0,
-                    frontSkill: "Revised Double Strike", backSkill: "Double Strike"
+                    patk: 70, pdef: 200, matk: 0, mdef: 0, crit: 20, hit: 25, eva: 0,
+                    frontSkill: "Flame Piercing Collision", backSkill: "Double Strike"
                 },
                 "+3": { price: 8000,
-                    patk: 95, pdef: 230, matk: 0, mdef: 50, crit: 30, hit: 24, eva: 0,
-                    frontSkill: "Revised Double Strike", backSkill: "Double Strike"
+                    patk: 93, pdef: 265, matk: 0, mdef: 0, crit: 30, hit: 25, eva: 0,
+                    frontSkill: "Flame Piercing Collision", backSkill: "Double Strike"
                 }
             },
-            note: "", devCost: 40000, levelRequired: 62, tier: 2, recipe: [
+            note: "", devCost: 45000, levelRequired: 70, tier: 2, recipe: [
                 {
-                    materialName: "Gold Ore",
+                    materialName: "Mithril Ore",
                     amount: 3
                 },{
-                    materialName: "Crystal",
+                    materialName: "Opal",
                     amount: 2
                 }
             ]
         },{
-            _id: "3005082", modelId: "12", name: "Royal Pounder", commonNames: ["Royal Pounder"],
+            _id: "3005092", modelId: "13", name: "Segment Hammer", commonNames: ["Segment Hammer"],
             classId: 5, type: "story", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 200, pdef: 0, matk: 0, mdef: 60, crit: 40, hit: 24, eva: 0,
-                    frontSkill: "Swing", backSkill: "Crash"
+                    patk: 220, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 25, eva: 0,
+                    frontSkill: "Hammerfall", backSkill: "Crash"
                 },
                 "+1": { price: 6000,
-                    patk: 250, pdef: 0, matk: 0, mdef: 75, crit: 40, hit: 24, eva: 0,
-                    frontSkill: "Swing", backSkill: "Crash"
+                    patk: 295, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 25, eva: 0,
+                    frontSkill: "Hammerfall", backSkill: "Crash"
                 },
                 "+2": { price: 7000,
-                    patk: 350, pdef: 0, matk: 0, mdef: 90, crit: 40, hit: 24, eva: 0,
-                    frontSkill: "Power Swing", backSkill: "Swing"
+                    patk: 380, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 25, eva: 0,
+                    frontSkill: "Flamefall", backSkill: "Swing"
                 },
                 "+3": { price: 8000,
-                    patk: 420, pdef: 0, matk: 0, mdef: 100, crit: 40, hit: 24, eva: 0,
-                    frontSkill: "Power Swing", backSkill: "Swing"
+                    patk: 480, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 25, eva: 0,
+                    frontSkill: "Flamefall", backSkill: "Swing"
                 }
             },
-            note: "", devCost: 40000, levelRequired: 62, tier: 2, recipe: [
+            note: "", devCost: 45000, levelRequired: 67, tier: 2, recipe: [
                 {
-                    materialName: "Topaz",
+                    materialName: "Opal",
                     amount: 2
                 },{
-                    materialName: "Chimera Horn",
+                    materialName: "Dragon Horn",
                     amount: 3
                 }
             ]
         },{
-            _id: "3006082", modelId: "12", name: "Royal Mace", commonNames: ["Royal Mace"],
+            _id: "3006092", modelId: "13", name: "Segment Cross", commonNames: ["Segment Cross"],
             classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 0, pdef: 30, matk: 120, mdef: 50, crit: 16, hit: 51, eva: 0,
+                    patk: 0, pdef: 33, matk: 120, mdef: 50, crit: 16, hit: 0, eva: 10,
                     frontSkill: "Knock", backSkill: "Deep Fold"
                 },
                 "+1": { price: 6000,
-                    patk: 0, pdef: 45, matk: 160, mdef: 65, crit: 16, hit: 51, eva: 0,
+                    patk: 0, pdef: 48, matk: 160, mdef: 65, crit: 16, hit: 0, eva: 10,
                     frontSkill: "Knock", backSkill: "Deep Fold"
                 },
                 "+2": { price: 7000,
-                    patk: 0, pdef: 50, matk: 200, mdef: 80, crit: 16, hit: 51, eva: 0,
+                    patk: 0, pdef: 55, matk: 200, mdef: 75, crit: 16, hit: 0, eva: 10,
                     frontSkill: "Knock", backSkill: "Deep Fold"
                 },
                 "+3": { price: 8000,
-                    patk: 0, pdef: 60, matk: 280, mdef: 108, crit: 16, hit: 51, eva: 0,
+                    patk: 0, pdef: 95, matk: 285, mdef: 95, crit: 16, hit: 0, eva: 10,
                     frontSkill: "Knock", backSkill: "Deep Fold"
                 }
             },
-            note: "", devCost: 40000, levelRequired: 64, tier: 2, recipe: [
+            note: "", devCost: 45000, levelRequired: 67, tier: 2, recipe: [
                 {
-                    materialName: "Ruby",
+                    materialName: "Malachite",
                     amount: 2
                 },{
-                    materialName: "Chimera Horn",
+                    materialName: "Sun Fragment",
                     amount: 3
                 }
             ]
         },{
-            _id: "3007082", modelId: "12", name: "Royal Dagger", commonNames: ["Royal Dagger"],
+            _id: "3007092", modelId: "13", name: "Double Segment", commonNames: ["Double Segment"],
             classId: 7, type: "story", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 110, pdef: 0, matk: 0, mdef: 30, crit: 15, hit: 35, eva: 55,
+                    patk: 105, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 33, eva: 55,
                     frontSkill: "Twin Attack", backSkill: "Throwing Knife"
                 },
                 "+1": { price: 6000,
-                    patk: 160, pdef: 0, matk: 0, mdef: 45, crit: 15, hit: 40, eva: 55,
+                    patk: 138, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 38, eva: 55,
                     frontSkill: "Twin Attack", backSkill: "Throwing Knife"
                 },
                 "+2": { price: 7000,
-                    patk: 180, pdef: 0, matk: 0, mdef: 50, crit: 15, hit: 45, eva: 55,
-                    frontSkill: "Hardened Twin Attack", backSkill: "Shadow Snake Punch"
+                    patk: 150, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 43, eva: 55,
+                    frontSkill: "Flame Dance Formation", backSkill: "Shadow Snake Punch"
                 },
                 "+3": { price: 8000,
-                    patk: 210, pdef: 0, matk: 0, mdef: 60, crit: 15, hit: 55, eva: 55,
-                    frontSkill: "Hardened Twin Attack", backSkill: "Shadow Snake Punch"
+                    patk: 234, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 55, eva: 55,
+                    frontSkill: "Flame Dance Formation", backSkill: "Shadow Snake Punch"
                 }
             },
-            note: "", devCost: 40000, levelRequired: 63, tier: 2, recipe: [
+            note: "", devCost: 45000, levelRequired: 68, tier: 2, recipe: [
                 {
-                    materialName: "Luxurious Leather",
+                    materialName: "Rare Species Leather",
                     amount: 3
                 },{
-                    materialName: "Turquoise",
+                    materialName: "Opal",
                     amount: 2
                 }
             ]
         },{
-            _id: "3008082", modelId: "12", name: "Royal Cane", commonNames: ["Royal Cane"],
+            _id: "3008095", modelId: "13", name: "Secret Rod \"Segmentium\"", commonNames: ["Secret Rod \"Segmentium\""],
             classId: 8, type: "story", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 0, pdef: 0, matk: 130, mdef: 30, crit: 12, hit: 44, eva: 0,
-                    frontSkill: "Thunder Arrow", backSkill: "Thunder Arrow"
+                    patk: 0, pdef: 0, matk: 135, mdef: 0, crit: 15, hit: 0, eva: 10,
+                    frontSkill: "Fire Ball", backSkill: "Flare Ball"
                 },
                 "+1": { price: 6000,
-                    patk: 0, pdef: 0, matk: 180, mdef: 45, crit: 12, hit: 44, eva: 0,
-                    frontSkill: "Thunder Arrow", backSkill: "Thunder Arrow"
+                    patk: 0, pdef: 0, matk: 196, mdef: 0, crit: 15, hit: 0, eva: 10,
+                    frontSkill: "Fire Ball", backSkill: "Flare Ball"
                 },
                 "+2": { price: 7000,
-                    patk: 0, pdef: 0, matk: 220, mdef: 50, crit: 12, hit: 44, eva: 0,
-                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
+                    patk: 0, pdef: 0, matk: 250, mdef: 0, crit: 15, hit: 0, eva: 10,
+                    frontSkill: "Flare Ball", backSkill: "Flare Ball"
                 },
                 "+3": { price: 8000,
-                    patk: 0, pdef: 0, matk: 300, mdef: 70, crit: 12, hit: 44, eva: 0,
-                    frontSkill: "Voltic Arrow", backSkill: "Voltic Arrow"
+                    patk: 0, pdef: 0, matk: 330, mdef: 0, crit: 15, hit: 0, eva: 10,
+                    frontSkill: "Flare Ball", backSkill: "Flare Ball"
                 }
             },
-            note: "", devCost: 40000, levelRequired: 63, tier: 2, recipe: [
+            note: "", devCost: 45000, levelRequired: 68, tier: 2, recipe: [
                 {
-                    materialName: "Ebony Branch",
+                    materialName: "Yggdrasil Branch",
                     amount: 3
                 },{
-                    materialName: "Onyx",
+                    materialName: "Malachite",
                     amount: 2
                 }
             ]

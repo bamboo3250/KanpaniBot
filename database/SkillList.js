@@ -147,6 +147,24 @@ module.exports = {
                 )
             ]
         },
+        "Flame V Slash": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    0.8, 2,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_FIRE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 3,
+                    true,
+                    {}
+                )
+            ]
+        },
         "Dragon Fang": {
             canAttack: true,
             canHeal: false,
@@ -561,6 +579,25 @@ module.exports = {
                 )
             ]
         },
+        "Flame Slash": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    1.0, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_FIRE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 3,
+                    true, {
+                        "Paralyze": 30,
+                    }
+                )
+            ]
+        },
         "Soul Slicer": {
             canAttack: true,
             canHeal: false,
@@ -832,6 +869,24 @@ module.exports = {
                     0.6, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack08", 9,
+                    false,
+                    {}
+                )
+            ]
+        },
+        "Flame Shot": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
+                    0.95, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack08", 9,
                     false,
@@ -1188,6 +1243,24 @@ module.exports = {
                 )
             ]
         },
+        "Flame Piercing Collision": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    0.95, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_FIRE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack03", 3,
+                    true,
+                    {}
+                )
+            ]
+        },
         "Holy Style Spear": {
             canAttack: true,
             canHeal: false,
@@ -1475,6 +1548,25 @@ module.exports = {
                     0.8, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack05", 0,
+                    true, {
+                        "Paralyze": 30,
+                    }
+                )
+            ]
+        },
+        "Flamefall": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    1.6, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 0,
                     true, {
@@ -2080,6 +2172,24 @@ module.exports = {
                 )
             ]
         },
+        "Flame Dance Formation": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    0.63, 4,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_FIRE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 3,
+                    true,
+                    {}
+                )
+            ]
+        },
         "Arcade": {
             canAttack: true,
             canHeal: false,
@@ -2516,6 +2626,24 @@ module.exports = {
                     0.7, 1,
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_DARK,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 13,
+                    false,
+                    {}
+                )
+            ]
+        },
+        "Flare Ball": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_ROW,
+                    SkillPhaseConst.TYPE_SPELL_ATTACK,
+                    0.8, 1,
+                    SkillPhaseConst.DAMAGE_MAGICAL,
+                    SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 13,
                     false,
