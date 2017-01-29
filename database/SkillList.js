@@ -1776,7 +1776,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
                     false, {
-                        "Cleanse": true
+                        "Cleanse": 100
                     }
                 )
             ]
@@ -1813,7 +1813,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
                     false, {
-                        "Cleanse": true
+                        "Cleanse": 100
                     }
                 )
             ]
@@ -1832,7 +1832,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
                     false, {
-                        "Cleanse": true
+                        "Cleanse": 100
                     }
                 )
             ]
@@ -1851,7 +1851,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
                     false, {
-                        "Cleanse": true
+                        "Cleanse": 100
                     }
                 )
             ]
@@ -1870,7 +1870,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
                     false, {
-                        "Cleanse": true
+                        "Cleanse": 100
                     }
                 )
             ]
@@ -1889,7 +1889,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
                     false, {
-                        "Cleanse": true
+                        "Cleanse": 100
                     }
                 )
             ]
@@ -1926,7 +1926,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
                     false, {
-                        "Cleanse": true
+                        "Cleanse": 100
                     }
                 )
             ]
@@ -1945,7 +1945,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
                     false, {
-                        "Cleanse": true
+                        "Cleanse": 100
                     }
                 )
             ]
@@ -1964,8 +1964,31 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack02", 6,
                     false, {
-                        "Cleanse": true
+                        "Cleanse": 100
                     }
+                )
+            ]
+        },
+        "Heavenly Technique - Srishti": {
+            canAttack: false,
+            canHeal: true,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_HEALING,
+                    2.4, 1,
+                    SkillPhaseConst.DAMAGE_MAGICAL,
+                    SkillPhaseConst.ELEMENT_LIGHT,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack02", 6,
+                    false, {
+                        "Cleanse": 100,
+                        "Resurrection": 100
+                    },
+                    true,
+                    -330, -490,
+                    -330, -490
                 )
             ]
         }

@@ -4672,6 +4672,39 @@ module.exports = {
                 }
             ]
         },{
+            _id: "308621", modelId: "21", name: "Holy Mace of Clotho", commonNames: ["Holy Mace of Clotho"],
+            characterId: "10650003_314afe6a", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 62, matk: 147, mdef: 62, crit: 0, hit: 10, eva: 15,
+                    frontSkill: "Knock", backSkill: "Prayer"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 73, matk: 192, mdef: 73, crit: 0, hit: 15, eva: 15,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 96, matk: 246, mdef: 96, crit: 0, hit: 15, eva: 20,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 108, matk: 328, mdef: 108, crit: 0, hit: 20, eva: 20,
+                    frontSkill: "Knock", backSkill: "Heavenly Technique - Srishti"
+                }
+            },
+            note: "**Clotho** is the youngest of the Three Fates or Moirai in ancient Greek mythology.\n**Srishti** means \"Creation\" in Hindi.\n\nReferences:\nhttps://en.wikipedia.org/wiki/Clotho", 
+            devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Dragon Horn",
+                    amount: 2
+                },{
+                    materialName: "Emerald",
+                    amount: 1
+                },{
+                    materialName: "Mithril Ore",
+                    amount: 2
+                }
+            ]
+        },{
             _id: "308706", modelId: "06", name: "Duon Helios", commonNames: ["Duon Helios"],
             characterId: "10750001_32935980", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,
