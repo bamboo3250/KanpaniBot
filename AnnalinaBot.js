@@ -101,27 +101,27 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272259125256388610",  // Sytry Guest
-            characterId: "10850002_c4678df9",
+            _id: "270767219875643392",  // Siegrid Guest
+            characterId: "10550001_27d912ef",
             exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308819",
+                _id: "308510",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310809",
+                _id: "310509",
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330106",
                 plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "back",
+            position: "front",
             partnerId: null,
             isTrainer: true
         },{
@@ -166,8 +166,8 @@ annalina.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, null, null],
-                ["269733140635975680", "272259125256388610", "239141420194070530"]
+                [null, "270767219875643392", null],
+                ["269733140635975680", null, "239141420194070530"]
             ];    
         }
         
