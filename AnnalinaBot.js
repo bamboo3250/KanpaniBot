@@ -86,7 +86,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedArmor: {
-                _id: "3107071",
+                _id: "310709",
                 plus: 3
             },
             equipedAccessory: {
@@ -101,17 +101,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "273395939199156225",  // Sion Guest
-            characterId: "10250001_ff1a69c9",
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
             exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308214",
+                _id: "308819",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3102071",
-                plus: 0
+                _id: "310809",
+                plus: 3
             },
             equipedAccessory: {
                 _id: "330107",
@@ -121,7 +121,7 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         },{
@@ -134,7 +134,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedArmor: {
-                _id: "3108071",
+                _id: "310809",
                 plus: 3
             },
             equipedAccessory: {
@@ -166,8 +166,8 @@ annalina.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "273395939199156225", null],
-                ["269733140635975680", null, "239141420194070530"]
+                [null, null, null],
+                ["269733140635975680", "272259125256388610", "239141420194070530"]
             ];    
         }
         
