@@ -561,6 +561,13 @@ EmployeeBot.prototype.loadBread = function() {
             return;
         }
         that.remainingBread = JSON.parse(data);
+        for(key in that.remainingBread) {
+            var userId = key;
+            if (that.remainingBread[userId] < that.cappedBread) {
+                that.remainingBread[userId] = Math.min(that.cappedBread, that.remainingBread[userId] + 3);    
+            }
+        }
+        that.saveBread();
     });
 }
 
