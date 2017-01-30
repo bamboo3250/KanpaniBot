@@ -436,6 +436,9 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             if (targetUnit.isFainted() && !targetUnit.status["Resurrected"] && skillPhase.status["Resurrection"]) {
                 this.bot.playerManager.applyResurrected(attacker.playerId, targetUnit.playerId);
                 resurrectionResult[targetUnit.playerId] = true;
+                if (this.bot.userManager.doesMemberHaveRole(targetUnit.playerId, "Fainted")) {
+                    this.bot.userManager.removeRole(targetUnit.playerId, "Fainted")
+                }
             }
 
             for(var j=0;j<skillPhase.attackTimes;j++) {
