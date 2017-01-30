@@ -766,40 +766,44 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         var trainerSkillName = trainerToAttack.getCurrentSkill();
         var trainerSkill = that.bot.skillDatabase.getSkill(trainerToAttack.getClassId(), trainerSkillName);
 
-        var trainerTarget = attacker;
-        if (trainerSkill.canHeal) {
+        var trainerTargetList = [];
+        for (var i = 0; i < trainerSkill.phases.length; i++) {
+            var trainerSkillPhase = trainerSkill.phases[i];
 
-            var trainerToHealList = [];
-            for(var j=0;j<2;j++) {
-                for(var k=0;k<3;k++) {
-                    if (this.trainerField[j][k]) {
-                        var trainerToHeal = this.bot.playerManager.getPlayerUnit(this.trainerField[j][k]);
-                        var canHeal = (!trainerToHeal.isFainted());
-                        canHeal = (canHeal || (trainerToHeal.isFainted() && !trainerToHeal.status["Resurrected"] && skillPhase.status["Resurrection"]));
+            if (trainerSkillPhase.canHeal()) {
+                var trainerToHealList = [];
+                for(var j=0;j<2;j++) {
+                    for(var k=0;k<3;k++) {
+                        if (this.trainerField[j][k]) {
+                            var trainerToHeal = this.bot.playerManager.getPlayerUnit(this.trainerField[j][k]);
+                            var canHeal = (!trainerToHeal.isFainted());
+                            canHeal = (canHeal || (trainerToHeal.isFainted() && !trainerToHeal.status["Resurrected"] && trainerSkillPhase.status["Resurrection"]));
 
-                        if (canHeal) {
-                            trainerToHealList.push(trainerToHeal);
+                            if (canHeal) {
+                                trainerToHealList.push(trainerToHeal);
+                            }
                         }
                     }
                 }
-            }
-            trainerToHealList.sort(function(a, b) {
-                return a.getCurrentHP() - b.getCurrentHP();
-            });
+                trainerToHealList.sort(function(a, b) {
+                    return a.getCurrentHP() - b.getCurrentHP();
+                });
 
-            if (trainerToHealList[0]) {
-                trainerTarget = trainerToHealList[0];    
+                if (trainerToHealList[0]) {
+                    trainerTargetList.push(trainerToHealList[0]);
+                } else {
+                    trainerTargetList.push(trainerToAttack);
+                }
             } else {
-                trainerTarget = trainerToAttack;
+                trainerTargetList.push(attacker);
             }
-            
         }
         trainerToAttack.cooldownEndTime = now.valueOf() + Math.floor(trainerSkill.cooldown * 60 * 1000 / 2);
         trainerTurn = {
             side: "TRAINER",
             skill: trainerSkill,
             attacker: trainerToAttack,
-            targetUnitList: [trainerTarget],
+            targetUnitList: trainerTargetList,
             result: result2
         };
         
