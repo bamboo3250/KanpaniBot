@@ -14,7 +14,7 @@ function PoisonStatus(bot, ownerId, targetId) {
         var attackerUser = that.bot.userManager.getUser(that.ownerId);
         
         if (!targetUnit.isFainted()) {
-            var damage = Math.min(150, Math.ceil(targetUnit.getMaxHP() * 0.06));
+            var damage = Math.min(300, Math.ceil(targetUnit.getMaxHP() * 0.06));
             
             var prevHP = targetUnit.getCurrentHP();
             var isKoed = that.bot.playerManager.takeDamagePlayerUnit(targetId, damage);
