@@ -197,7 +197,7 @@ TrainingController.prototype.resolveTargets = function(skillPhase, attacker, mai
         var userId = field[resolvedArea[i].row][resolvedArea[i].column];
         if (userId) {
             var unit = this.bot.playerManager.getPlayerUnit(userId);
-            if (!unit.isFainted()) {
+            if (!unit.isFainted() || (skillPhase.status["Resurrection"] && !unit.status["Resurrected"])) {
                 result.push(resolvedArea[i]);    
             }
         }
@@ -219,7 +219,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var skillPhase = skill.phases[iter];
 
     var mainTargetUnit = targetUnitList[iter];
-    if (mainTargetUnit.isFainted()) {
+    if (mainTargetUnit.isFainted() && !skillPhase.status["Resurrection"]) {
         this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
         return;
     }
@@ -274,32 +274,6 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             painter.focusPointColumn = area[0].column;
         }
     }
-    for(var i=0;i<2;i++) {
-        for(var j=0;j<3;j++) {
-            var enemyUnit = this.bot.playerManager.getPlayerUnit(battleField.enemySide[i][j]);
-            if (enemyUnit && enemyUnit.getCurrentHP() > 0) {
-                if (enemyUnit === attacker) {
-                    painter.setEnemyState(i, j, enemyUnit, skillPhase.state, skillPhase.frame);
-                    if (skillPhase.doesApproach) {
-                        painter.moveToFrontOfAllyField(i, j, average_column);
-                    }
-                } else {
-                    painter.setEnemyState(i, j, enemyUnit);
-                }
-            }
-            var allyUnit = this.bot.playerManager.getPlayerUnit(battleField.allySide[i][j]);
-            if (allyUnit && !allyUnit.isFainted()) {
-                if (allyUnit === attacker) {
-                    painter.setAllyState(i, j, allyUnit, skillPhase.state, skillPhase.frame);
-                    if (skillPhase.doesApproach) {
-                        painter.moveToFrontOfEnemyField(i, j, average_column);
-                    }
-                } else {
-                    painter.setAllyState(i, j, allyUnit);
-                }
-            }
-        }
-    }
 
     var isKOed = {};
 
@@ -314,6 +288,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var poisonResult = {};
     var paralyzeResult = {};
     var curseResult = {};
+    var resurrectionResult = {};
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -323,6 +298,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         var targetUser = this.bot.userManager.getUser(targetUnit.playerId);
     
         if (skillPhase.canAttack()) {
+            if (targetUnit.isFainted()) continue;
 
             var atk = attacker.getAtk();
             var skillModifier = skillPhase.modifier;
@@ -359,8 +335,14 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     attacker.status["Focus"].destroy();
                 }
 
-                var damageBeforeDef = atk * skillModifier * encourageModifier * focusModifier * randomFactor * elementAdvantage * critModifier;
-                var rawDamage = Math.max(1, (1 * critModifier - 0.00115 * def) * damageBeforeDef - def / 4);
+                var damageBeforeDef = atk * skillModifier * encourageModifier * focusModifier * randomFactor * elementAdvantage;
+                var critDamageBeforeDef = damageBeforeDef * critModifier;
+
+                var rawDamage = Math.max(
+                    0.0001 * damageBeforeDef,
+                    critDamageBeforeDef - 0.00115 * def * damageBeforeDef - def / 4
+                );
+                rawDamage = Math.max(1, rawDamage);
                 var frontUnit = null;
                 if (targetFieldPos.row === 1 && field[0][targetFieldPos.column]) {
                     frontUnit = this.bot.playerManager.getPlayerUnit(field[0][targetFieldPos.column]);
@@ -378,7 +360,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     if (typeof expGained[field[targetFieldPos.row][targetFieldPos.column]] === "undefined") {
                         expGained[field[targetFieldPos.row][targetFieldPos.column]] = 0;
                     }
-                    expGained[field[targetFieldPos.row][targetFieldPos.column]] += Math.floor(damageBeforeDef * 2);
+                    expGained[field[targetFieldPos.row][targetFieldPos.column]] += Math.floor(critDamageBeforeDef * 2);
                 } 
 
                 if (rawDamage > 0 && hasSomeoneInFront) {
@@ -451,6 +433,10 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         } else {
 
             hitRateOnTargets[targetUnit.playerId] = 100;
+            if (targetUnit.isFainted() && !targetUnit.status["Resurrected"] && skillPhase.status["Resurrection"]) {
+                this.bot.playerManager.applyResurrected(attacker.playerId, targetUnit.playerId);
+                resurrectionResult[targetUnit.playerId] = true;
+            }
 
             for(var j=0;j<skillPhase.attackTimes;j++) {
                 var matk = attacker.getMAtk();
@@ -468,6 +454,33 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     damage: healHp,
                     type: "heal"
                 });
+            }
+        }
+    }
+
+    for(var i=0;i<2;i++) {
+        for(var j=0;j<3;j++) {
+            var enemyUnit = this.bot.playerManager.getPlayerUnit(battleField.enemySide[i][j]);
+            if (enemyUnit && enemyUnit.getCurrentHP() > 0) {
+                if (enemyUnit === attacker) {
+                    painter.setEnemyState(i, j, enemyUnit, skillPhase.state, skillPhase.frame);
+                    if (skillPhase.doesApproach) {
+                        painter.moveToFrontOfAllyField(i, j, average_column);
+                    }
+                } else {
+                    painter.setEnemyState(i, j, enemyUnit);
+                }
+            }
+            var allyUnit = this.bot.playerManager.getPlayerUnit(battleField.allySide[i][j]);
+            if (allyUnit && !allyUnit.isFainted()) {
+                if (allyUnit === attacker) {
+                    painter.setAllyState(i, j, allyUnit, skillPhase.state, skillPhase.frame);
+                    if (skillPhase.doesApproach) {
+                        painter.moveToFrontOfEnemyField(i, j, average_column);
+                    }
+                } else {
+                    painter.setAllyState(i, j, allyUnit);
+                }
             }
         }
     }
@@ -556,6 +569,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         if (poisonResult[targetId]) text += "\t\t" + targetName + " is poisoned.\n";
         if (paralyzeResult[targetId]) text += "\t\t" + targetName + " is paralyzed.\n";
         if (curseResult[targetId]) text += "\t\t" + targetName + " is cursed.\n";
+        if (resurrectionResult[targetId]) text += "\t\t" + targetName + " is resurrected.\n";
     }
     if (Object.keys(expGained).length > 0) text += "\n";
 
@@ -600,7 +614,7 @@ TrainingController.prototype.randomField = function(middlePlayerId) {
         var player = this.bot.playerManager.getPlayer(userId);
         var playerUnit = this.bot.playerManager.getPlayerUnit(userId);
         var hasJoinedTraining = this.bot.userManager.doesMemberHaveRole(userId, "Trainee");
-        if (playerUnit && !playerUnit.isFainted() && hasJoinedTraining) {
+        if (playerUnit && hasJoinedTraining) {
             var groupId = (groups[player.partnerId]? player.partnerId: userId);
         
             if (userId === middlePlayerId || player.partnerId === middlePlayerId) {
@@ -754,7 +768,31 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
 
         var trainerTarget = attacker;
         if (trainerSkill.canHeal) {
-            trainerTarget = trainerToAttack;
+
+            var trainerToHealList = [];
+            for(var j=0;j<2;j++) {
+                for(var k=0;k<3;k++) {
+                    if (this.trainerField[j][k]) {
+                        var trainerToHeal = this.bot.playerManager.getPlayerUnit(this.trainerField[j][k]);
+                        var canHeal = (!trainerToHeal.isFainted());
+                        canHeal = (canHeal || (trainerToHeal.isFainted() && !trainerToHeal.status["Resurrected"] && skillPhase.status["Resurrection"]));
+
+                        if (canHeal) {
+                            trainerToHealList.push(trainerToHeal);
+                        }
+                    }
+                }
+            }
+            trainerToHealList.sort(function(a, b) {
+                return a.getCurrentHP() - b.getCurrentHP();
+            });
+
+            if (trainerToHealList[0]) {
+                trainerTarget = trainerToHealList[0];    
+            } else {
+                trainerTarget = trainerToAttack;
+            }
+            
         }
         trainerToAttack.cooldownEndTime = now.valueOf() + Math.floor(trainerSkill.cooldown * 60 * 1000 / 2);
         trainerTurn = {
@@ -827,7 +865,6 @@ TrainingController.prototype.executeBattle = function(turnQueue, iter, battleFie
     } else {
         that.executeBattle(turnQueue, iter+1, battleField, koResult, resultText, imageList, callback);
     }
-    
 }
 
 TrainingController.prototype.heal = function(attacker, targetUnitList, callback) {
@@ -868,6 +905,11 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
             if (skillPhase.isSelfTarget()) {
                 if (targetUnitList[i] !== attacker) {
                     targetUnitList.splice(i, 0, attacker);
+                }
+            } else {
+                if (targetUnitList[i].isFainted() && !skillPhase.status["Resurrection"]) {
+                    callback(null, "You cannot heal a fainted trainer.", null, null, true);
+                    return;
                 }
             }
         }

@@ -201,6 +201,10 @@ var employees = [
         _no: 206, _id: "10240006_33767f9f", fullName: "Enju Imakurusu", japaneseName: "エンジュ・イマクルス", commonNames: ["Enju"], cwId: 0,
         baseStats: { _str: 22, _vit: 9, _agi: 17, _dex: 15, _int: 5, _pie: 2, _luk: 6},
         maxStats: { _str: 368, _vit: 241, _agi: 330, _dex: 261, _int: 152, _pie: 159, _luk: 219}
+    },{
+        _no: 215, _id: "10240007_acacfc01", fullName: "Helga Pachelbel", japaneseName: "ヘルガ・パッヘルベル ", commonNames: ["Helga"], cwId: 0,
+        baseStats: { _str: 22, _vit: 9, _agi: 16, _dex: 15, _int: 3, _pie: 3, _luk: 6},
+        maxStats: { _str: 368, _vit: 241, _agi: 330, _dex: 261, _int: 152, _pie: 159, _luk: 219}
     },
 
     {
@@ -347,6 +351,10 @@ var employees = [
         _no: 198, _id: "10740006_feff4fd6", fullName: "Nouvelia Noin", japaneseName: "ヌーヴェリア・ノイン", commonNames: ["Nouvelia"], cwId: 0,
         baseStats: { _str: 17, _vit: 5, _agi: 25, _dex: 13, _int: 2, _pie: 3, _luk: 16},
         maxStats: { _str: 296, _vit: 174, _agi: 378, _dex: 307, _int: 152, _pie: 161, _luk: 250}
+    },{
+        _no: 6, _id: "10749001_c4309017", fullName: "[Illusion] Elmi Leino", japaneseName: "[幻影] エルミ・レイノ", commonNames: ["EX Elmi", "Elmi EX"], cwId: 1,
+        baseStats: { _str: 20, _vit: 5, _agi: 24, _dex: 14, _int: 3, _pie: 3, _luk: 14},
+        maxStats: { _str: 296, _vit: 174, _agi: 378, _dex: 307, _int: 152, _pie: 161, _luk: 250}
     },
 
     {
@@ -418,6 +426,10 @@ var employees = [
     },{
         _no: 180, _id: "10130009_4364e1e1", fullName: "Nadege Lolona", japaneseName: "ナデージュ・ロロナ", commonNames: ["Nadege"], cwId: 0,
         baseStats: { _str: 13, _vit: 14, _agi: 11, _dex: 10, _int: 1, _pie: 2, _luk: 3},
+        maxStats: { _str: 342, _vit: 318, _agi: 238, _dex: 240, _int: 201, _pie: 169, _luk: 159}
+    },{
+        _no: 216, _id: "10130010_ee640fc9", fullName: "Rhiwril Noler", japaneseName: "リウリル・ノレア", commonNames: ["Rhiwril"], cwId: 0,
+        baseStats: { _str: 14, _vit: 14, _agi: 11, _dex: 10, _int: 1, _pie: 3, _luk: 2},
         maxStats: { _str: 342, _vit: 318, _agi: 238, _dex: 240, _int: 201, _pie: 169, _luk: 159}
     },
 

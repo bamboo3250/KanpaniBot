@@ -37,7 +37,8 @@ var Employee = function(employeeInfo, playerId = null) {
         "Curse": null,
         "Encourage": null,
         "Focus": null,
-        "Sneak": null
+        "Sneak": null,
+        "Resurrected": null
     //     "charm": null,
     //     "darkness": null,
     //     "patkdown": null,
@@ -190,7 +191,7 @@ Employee.prototype.getCurrentHP = function() {
 }
 
 Employee.prototype.getMaxHP = function() {
-    if (this.isTrainer) return 45000;
+    if (this.isTrainer) return 20000;
     
     var classId = this.getClassId();
     var bonusHp = (this.getBaseRarity() == 5?1:0);
@@ -320,7 +321,17 @@ Employee.prototype.isFainted = function() {
 
 Employee.prototype.fullHeal = function() {
     this.currentHP = this.getMaxHP();
-    this.cleanse();
+    this.fullCleanse();
+}
+
+Employee.prototype.fullCleanse = function() {
+    for(key in this.status) {
+        var statusName = key;
+        var status = this.status[statusName];
+        if (status) {
+            status.destroy();
+        }
+    }
 }
 
 Employee.prototype.cleanse = function() {

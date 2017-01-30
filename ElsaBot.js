@@ -337,7 +337,7 @@ if (isLocal) {
         {
             _id: "240097185436270593",  // test-bot
             characterId: "10150002_765306d2",
-            exp: 2646190,//2646190,
+            exp: 1,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308119",
@@ -360,15 +360,15 @@ if (isLocal) {
             isTrainer: true
         },{
             _id: "265889287281573918",  // test-bot2
-            characterId: "10250001_ff1a69c9",
-            exp: 2646190,//2646190,
+            characterId: "10650003_314afe6a",
+            exp: 1,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308214",
+                _id: "308621",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3102071",
+                _id: "3106071",
                 plus: 3
             },
             equipedAccessory: {
@@ -379,7 +379,7 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         }
@@ -411,17 +411,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "273395939199156225",  // Sion Guest
-            characterId: "10250001_ff1a69c9",
-            exp: 10707880,//2646190,
+            _id: "275533845984575488",  // Nona Guest
+            characterId: "10650003_314afe6a",
+            exp: 10707880,//5370000,
             gold: 0,
             equipedWeapon: {
-                _id: "308214",
+                _id: "308621",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3102071",
-                plus: 0
+                _id: "3106071",
+                plus: 3
             },
             equipedAccessory: {
                 _id: "330107",
@@ -431,7 +431,7 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         },{
@@ -472,13 +472,13 @@ elsa.bot.on("ready", function() {
         if (isLocal) {
             trainingController.trainerField = [
                 //[null, "240097185436270593", "265889287281573918"],
-                [null, null, "265889287281573918"],
-                [null, null, null]
+                [null, "240097185436270593", null],
+                [null, "265889287281573918", null]
             ];
         } else {
             trainingController.trainerField = [
-                ["273395939199156225", "270767219875643392", "268576286060838914"],
-                [null, null, null]
+                [null, "270767219875643392", "268576286060838914"],
+                [null, "275533845984575488", null]
             ];    
         }
         

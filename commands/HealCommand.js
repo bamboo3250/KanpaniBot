@@ -43,10 +43,6 @@ module.exports = {
                 message.reply("One of your targets does not have character.");
                 return;
             }
-            if (targetUnit.getCurrentHP() === 0) {
-                message.reply("You cannot target a fainted player.");
-                return;
-            }
             targetUnitList.push(targetUnit);
         };
 
