@@ -43,6 +43,10 @@ module.exports = {
                 message.reply("One of your targets does not have character.");
                 return;
             }
+            if (targetUnit && targetUnit.isTrainer) {
+                message.reply("You cannot heal a trainer.");
+                return;
+            }
             targetUnitList.push(targetUnit);
         };
 

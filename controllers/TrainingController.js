@@ -907,7 +907,7 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
                     targetUnitList.splice(i, 0, attacker);
                 }
             } else {
-                if (targetUnitList[i].isFainted() && !skillPhase.status["Resurrection"]) {
+                if (targetUnitList[i].isFainted() && (!skillPhase.status["Resurrection"] || targetUnitList[i].status["Resurrected"])) {
                     callback(null, "You cannot heal a fainted trainer.", null, null, true);
                     return;
                 }
