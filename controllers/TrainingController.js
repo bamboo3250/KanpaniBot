@@ -289,6 +289,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var paralyzeResult = {};
     var curseResult = {};
     var resurrectionResult = {};
+    var darknessResult = {};
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -313,7 +314,13 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 atk = attacker.getMAtk();
                 def = targetUnit.getMDef();
             }
-            var hitValue = attacker.getHit() + attacker.getDEX()*0.65;
+
+            var darknessModifier = (attacker.status["Darkness"] ? 0.5 : 1);
+            if (attacker.status["Darkness"]) {
+                attacker.status["Darkness"].evoke();
+            }
+
+            var hitValue = (attacker.getHit() + attacker.getDEX()*0.65) * darknessModifier;
             var evadeValue = targetUnit.getEva() + targetUnit.getAGI()*0.20;
             var hitRate = Math.floor(60 + (hitValue - evadeValue)*0.2);
             hitRate = Math.max(10, hitRate);
@@ -390,7 +397,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     var POISON_CHANCE = (isNaN(skillPhase.status["Poison"]) ? 0 : skillPhase.status["Poison"]);
                     var CURSE_CHANCE = (isNaN(skillPhase.status["Curse"]) ? 0 : skillPhase.status["Curse"]);
                     var PARALYZE_CHANCE = (isNaN(skillPhase.status["Paralyze"]) ? 0 : skillPhase.status["Paralyze"]);
-
+                    var DARKNESS_CHANCE = (isNaN(skillPhase.status["Darkness"]) ? 0 : skillPhase.status["Darkness"]);
 
                     if (attacker.getClassId() === 1 && !targetUnit.status["Stun"]) {
                         // fighter
@@ -426,6 +433,13 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesCurse) {
                             this.bot.playerManager.applyCurse(attacker.playerId, targetUnit.playerId);
                             curseResult[targetUnit.playerId] = true;
+                        }
+                    }
+                    if (!targetUnit.status["Darkness"]) {
+                        var doesDarkness = (this.bot.functionHelper.randomInt(100) < DARKNESS_CHANCE);
+                        if (doesDarkness) {
+                            this.bot.playerManager.applyDarkness(attacker.playerId, targetUnit.playerId);
+                            darknessResult[targetUnit.playerId] = true;
                         }
                     }
                 }
@@ -573,6 +587,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         if (paralyzeResult[targetId]) text += "\t\t" + targetName + " is paralyzed.\n";
         if (curseResult[targetId]) text += "\t\t" + targetName + " is cursed.\n";
         if (resurrectionResult[targetId]) text += "\t\t" + targetName + " is resurrected.\n";
+        if (darknessResult[targetId]) text += "\t\t" + targetName + " is under Darkness's effect.\n";
     }
     if (Object.keys(expGained).length > 0) text += "\n";
 

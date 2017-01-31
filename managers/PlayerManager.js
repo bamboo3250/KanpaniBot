@@ -11,6 +11,7 @@ var FocusStatus = require('../classes/status/FocusStatus');
 var ParalyzeStatus = require('../classes/status/ParalyzeStatus');
 var CurseStatus = require('../classes/status/CurseStatus');
 var ResurrectedStatus = require('../classes/status/ResurrectedStatus');
+var DarknessStatus = require('../classes/status/DarknessStatus');
 
 function PlayerManager() {
     this.TRAINER_RESPAWN_TIME = 6*60*60*1000;
@@ -439,5 +440,13 @@ PlayerManager.prototype.applyResurrected = function(fromUserId, toUserId) {
         targetUnit.status["Resurrected"] = new ResurrectedStatus(this.bot, fromUserId, toUserId);
     }
 }
+
+PlayerManager.prototype.applyDarkness = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Darkness"]) {
+        targetUnit.status["Darkness"] = new DarknessStatus(this.bot, fromUserId, toUserId);
+    }
+}
+
 
 module.exports = new PlayerManager();
