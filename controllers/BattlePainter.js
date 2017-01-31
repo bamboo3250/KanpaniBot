@@ -205,10 +205,12 @@ BattlePainter.prototype.draw = function(callback) {
                         var frameNo = that.states["ally"][i][j].frame;
                         var coord = convertCoordinate(that.states["ally"][i][j].row, that.states["ally"][i][j].column);
 
-                        imageList[spriteFileName].crop((frameNo%5) * 360, Math.floor(frameNo/5) * 270, 360, 270);
-                        background
-                            .composite(shadow, coord.x + 110, coord.y + 160)
-                            .composite(imageList[spriteFileName], coord.x, coord.y);
+                        if (imageList[spriteFileName]) {
+                                imageList[spriteFileName].crop((frameNo%5) * 360, Math.floor(frameNo/5) * 270, 360, 270);
+                                background
+                                    .composite(shadow, coord.x + 110, coord.y + 160)
+                                    .composite(imageList[spriteFileName], coord.x, coord.y);    
+                        }
                     }
                 }
             }
