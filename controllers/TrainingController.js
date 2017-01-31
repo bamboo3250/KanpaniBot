@@ -367,7 +367,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     if (typeof expGained[field[targetFieldPos.row][targetFieldPos.column]] === "undefined") {
                         expGained[field[targetFieldPos.row][targetFieldPos.column]] = 0;
                     }
-                    expGained[field[targetFieldPos.row][targetFieldPos.column]] += Math.floor(critDamageBeforeDef * 2);
+                    expGained[field[targetFieldPos.row][targetFieldPos.column]] += Math.floor(critDamageBeforeDef);
                 } 
 
                 if (rawDamage > 0 && hasSomeoneInFront) {
