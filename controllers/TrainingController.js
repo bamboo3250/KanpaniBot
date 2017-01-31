@@ -315,7 +315,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 def = targetUnit.getMDef();
             }
 
-            var darknessModifier = (attacker.status["Darkness"] ? 0.5 : 1);
+            var darknessModifier = (attacker.status["Darkness"] ? 0.15 : 1);
             if (attacker.status["Darkness"]) {
                 attacker.status["Darkness"].evoke();
             }

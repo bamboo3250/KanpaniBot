@@ -362,8 +362,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {},
+                    true, {
+                        "Darkness": 30
+                    },
                     true,
                     -200, -310,
                     -380, -300,
