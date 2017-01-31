@@ -80,14 +80,14 @@ if (isLocal) {
         {
             _id: "241511566036434945",  // Elsa Guest
             characterId: "10150002_765306d2",
-            exp: 5370000,//2646190,
+            exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308119",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310109",
+                _id: "310108",
                 plus: 0
             },
             equipedAccessory: {
@@ -102,16 +102,16 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272257876393721867",  // Fanaril Guest
-            characterId: "10150003_e989854c",
-            exp: 5370000,//2646190,
+            _id: "273395939199156225",  // Sion Guest
+            characterId: "10250001_ff1a69c9",
+            exp: 10707880,//5370000,
             gold: 0,
             equipedWeapon: {
-                _id: "308121",
+                _id: "308214",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310109",
+                _id: "310208",
                 plus: 0
             },
             equipedAccessory: {
@@ -128,14 +128,14 @@ if (isLocal) {
         },{
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",   // Annalina
-            exp: 5370000,//2646190,
+            exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308806",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310809",
+                _id: "310808",
                 plus: 3
             },
             equipedAccessory: {
@@ -150,40 +150,40 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "270767219875643392",  // Siegrid Guest
-            characterId: "10550001_27d912ef",
-            exp: 5370000,//2646190,
+            _id: "275533845984575488",  // Nona Guest
+            characterId: "10650003_314afe6a",
+            exp: 10707880,//5370000,
             gold: 0,
             equipedWeapon: {
-                _id: "308510",
+                _id: "308621",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310509",
+                _id: "310608",
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330106",
+                _id: "330107",
                 plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         },{
             _id: "269733140635975680",  // Hinano Guest
             characterId: "10350003_fcc3ce23",
-            exp: 5370000,//2646190,
+            exp: 10707880,//2646190,
             gold: 0,
             equipedWeapon: {
                 _id: "308320",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310709",
+                _id: "310708",
                 plus: 3
             },
             equipedAccessory: {
@@ -215,8 +215,8 @@ ruka.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["241511566036434945", "270767219875643392", "272257876393721867"],
-                ["269733140635975680", null, "239141420194070530"]
+                ["241511566036434945", null, "273395939199156225"],
+                ["269733140635975680", "275533845984575488", "239141420194070530"]
             ];    
         }
         
