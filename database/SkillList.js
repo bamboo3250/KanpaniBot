@@ -1078,6 +1078,26 @@ module.exports = {
                     -200, -170
                 )
             ]
+        },
+        "Elf's Squall": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SPELL_ATTACK,
+                    1.37, 4,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_LIGHT,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack07", 9,
+                    false, {},
+                    true,
+                    -1600, -900,
+                    -1600, -900
+                )
+            ]
         }
     },
 

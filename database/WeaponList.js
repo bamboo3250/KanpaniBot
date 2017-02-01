@@ -4576,6 +4576,38 @@ module.exports = {
                 }
             ]
         },{
+            _id: "308319", modelId: "19", name: "Bow of God \"Caldia\"", commonNames: ["Bow of God \"Caldia\""],
+            characterId: "10350002_63194dbd", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 143, pdef: 0, matk: 0, mdef: 0, crit: 24, hit: 24, eva: 22,
+                    frontSkill: "Twin Shot", backSkill: "Triple Shot"
+                },
+                "+1": { price: 6000,
+                    patk: 179, pdef: 0, matk: 0, mdef: 0, crit: 32, hit: 32, eva: 26,
+                    frontSkill: "Twin Shot", backSkill: "Delta Shot"
+                },
+                "+2": { price: 7000,
+                    patk: 197, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 42, eva: 30,
+                    frontSkill: "Chain Shot", backSkill: "Vermilion Cannon"
+                },
+                "+3": { price: 8000,
+                    patk: 324, pdef: 0, matk: 0, mdef: 0, crit: 54, hit: 54, eva: 36,
+                    frontSkill: "Chain Shot", backSkill: "Elf's Squall"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Holy Cloth",
+                    amount: 2
+                },{
+                    materialName: "Emerald",
+                    amount: 1
+                },{
+                    materialName: "Yggdrasil Branch",
+                    amount: 2
+                }
+            ]
+        },{
             _id: "308320", modelId: "20", name: "Nasu Sunshine Bow", commonNames: ["Nasu Sunshine Bow"],
             characterId: "10350003_fcc3ce23", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,
