@@ -447,12 +447,14 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         } else {
 
             hitRateOnTargets[targetUnit.playerId] = 100;
+            var isResurrected = false;
             if (targetUnit.isFainted() && !targetUnit.status["Resurrected"] && skillPhase.status["Resurrection"]) {
                 this.bot.playerManager.applyResurrected(attacker.playerId, targetUnit.playerId);
                 resurrectionResult[targetUnit.playerId] = true;
                 if (this.bot.userManager.doesMemberHaveRole(targetUnit.playerId, "Fainted")) {
                     this.bot.userManager.removeRole(targetUnit.playerId, "Fainted")
                 }
+                isResurrected = true;
             }
 
             for(var j=0;j<skillPhase.attackTimes;j++) {
@@ -460,6 +462,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var skillModifier = skillPhase.modifier;
                 var healHp = Math.floor(matk * skillModifier);
                 
+                if (isResurrected) healHp = 9999999;
                 healHp = this.bot.playerManager.healPlayerUnit(targetUnit.playerId, healHp);
 
                 if (skillPhase.status["Cleanse"]) {
