@@ -96,6 +96,30 @@
         partnerId: null,
         isTrainer: true
     },{
+        _id: "",  // Elie Guest
+        characterId: "10350002_63194dbd",
+        exp: 5370000,//5370000,
+        gold: 0,
+        equipedWeapon: {
+            _id: "308319",
+            plus: 3
+        },
+        equipedArmor: {
+            _id: "3107071",
+            plus: 3
+        },
+        equipedAccessory: {
+            _id: "330206",
+            plus: 3
+        },
+        materialList: {},
+        weaponList: {},
+        armorList: {},
+        accessoryList: {},
+        position: "back",
+        partnerId: null,
+        isTrainer: true
+    },{
         _id: "272258315441143810",  // Elmina Guest
         characterId: "10450002_bbda369b",
         exp: 5370000,//5370000,

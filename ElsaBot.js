@@ -360,19 +360,19 @@ if (isLocal) {
             isTrainer: true
         },{
             _id: "265889287281573918",  // test-bot2
-            characterId: "10650003_314afe6a",
+            characterId: "10350002_63194dbd",
             exp: 1,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308621",
+                _id: "308319",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3106071",
+                _id: "3103071",
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
