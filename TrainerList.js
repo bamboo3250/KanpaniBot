@@ -96,7 +96,7 @@
         partnerId: null,
         isTrainer: true
     },{
-        _id: "",  // Elie Guest
+        _id: "276547911381417985",  // Elie Guest
         characterId: "10350002_63194dbd",
         exp: 5370000,//5370000,
         gold: 0,

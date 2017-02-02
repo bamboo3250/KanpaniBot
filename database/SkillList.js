@@ -124,8 +124,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Patk Down": 10
+                    }
                 )
             ]
         },
@@ -344,8 +345,10 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Pdef Down": 10,
+                        "Mdef Down": 10,
+                    }
                 )
             ]
         },
@@ -538,8 +541,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Pdef Down": 10
+                    }
                 )
             ]
         },
@@ -684,8 +688,10 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Pdef Down": 10
+                        "Mdef Down": 10
+                    }
                 )
             ]
         },
@@ -782,8 +788,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack08", 9,
-                    false,
-                    {}
+                    false, {
+                        "Matk Down": 10
+                    }
                 )
             ]
         },
@@ -962,8 +969,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack08", 9,
-                    false,
-                    {}
+                    false, {
+                        "Patk Down": 10
+                    }
                 )
             ]
         },
@@ -1052,8 +1060,10 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack08", 9,
-                    false,
-                    {}
+                    false, {
+                        "Pdef Down": 10,
+                        "Mdef Down": 10
+                    }
                 )
             ]
         },
@@ -1094,8 +1104,8 @@ module.exports = {
                     "attack07", 9,
                     false, {},
                     true,
-                    -1600, -900,
-                    -1600, -900
+                    -1450, -700,
+                    -1450, -700
                 )
             ]
         }
@@ -1367,8 +1377,10 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack03", 3,
-                    true,
-                    {}
+                    true, {
+                        "Pdef Down": 10,
+                        "Mdef Down": 10
+                    }
                 )
             ]
         },
@@ -1717,8 +1729,10 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 0,
-                    true,
-                    {}
+                    true, {
+                        "Pdef Down": 10,
+                        "Mdef Down": 10
+                    }
                 )
             ]
         },
@@ -2120,8 +2134,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Pdef Down": 10
+                    }
                 )
             ]
         },
@@ -2175,8 +2190,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    false,
-                    {}
+                    false, {
+                        "Mdef Down": 10
+                    }
                 )
             ]
         },
@@ -2193,8 +2209,10 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Pdef Down": 10,
+                        "Patk Down": 10
+                    }
                 )
             ]
         },
@@ -2357,8 +2375,10 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Pdef Down": 10,
+                        "Mdef Down": 10
+                    }
                 )
             ]
         },

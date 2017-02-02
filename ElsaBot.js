@@ -387,16 +387,16 @@ if (isLocal) {
 } else {
     elsa.playerData = [
         {
-            _id: "270767219875643392",  // Siegrid Guest
-            characterId: "10550001_27d912ef",
-            exp: 10707880,//2646190,
+            _id: "272258315441143810",  // Elmina Guest
+            characterId: "10450002_bbda369b",
+            exp: 10707880,//5370000,
             gold: 0,
             equipedWeapon: {
-                _id: "308510",
+                _id: "308419",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3105071",
+                _id: "3104071",
                 plus: 3
             },
             equipedAccessory: {
@@ -435,12 +435,12 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "268576286060838914",  // Saimi Guest
-            characterId: "10750001_32935980",
-            exp: 10707880,//2646190,
+            _id: "276547911381417985",  // Elie Guest
+            characterId: "10350002_63194dbd",
+            exp: 10707880,//5370000,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308319",
                 plus: 3
             },
             equipedArmor: {
@@ -448,14 +448,14 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330206",
                 plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         }
@@ -477,8 +477,8 @@ elsa.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "270767219875643392", "268576286060838914"],
-                [null, "275533845984575488", null]
+                [null, "272258315441143810", null],
+                [null, "275533845984575488", "276547911381417985"]
             ];    
         }
         

@@ -12,6 +12,11 @@ var ParalyzeStatus = require('../classes/status/ParalyzeStatus');
 var CurseStatus = require('../classes/status/CurseStatus');
 var ResurrectedStatus = require('../classes/status/ResurrectedStatus');
 var DarknessStatus = require('../classes/status/DarknessStatus');
+var PatkDownStatus = require('../classes/status/PatkDownStatus');
+var PdefDownStatus = require('../classes/status/PdefDownStatus');
+var MatkDownStatus = require('../classes/status/MatkDownStatus');
+var MdefDownStatus = require('../classes/status/MdefDownStatus');
+
 
 function PlayerManager() {
     this.TRAINER_RESPAWN_TIME = 6*60*60*1000;
@@ -448,5 +453,32 @@ PlayerManager.prototype.applyDarkness = function(fromUserId, toUserId) {
     }
 }
 
+PlayerManager.prototype.applyPatkDown = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Patk Down"]) {
+        targetUnit.status["Patk Down"] = new PatkDownStatus(this.bot, fromUserId, toUserId);
+    }
+}
+
+PlayerManager.prototype.applyPdefDown = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Pdef Down"]) {
+        targetUnit.status["Pdef Down"] = new PdefDownStatus(this.bot, fromUserId, toUserId);
+    }
+}
+
+PlayerManager.prototype.applyMatkDown = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Matk Down"]) {
+        targetUnit.status["Matk Down"] = new MatkDownStatus(this.bot, fromUserId, toUserId);
+    }
+}
+
+PlayerManager.prototype.applyMdefDown = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Mdef Down"]) {
+        targetUnit.status["Mdef Down"] = new MdefDownStatus(this.bot, fromUserId, toUserId);
+    }
+}
 
 module.exports = new PlayerManager();

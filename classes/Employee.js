@@ -38,16 +38,17 @@ var Employee = function(employeeInfo, playerId = null) {
         "Encourage": null,
         "Focus": null,
         "Sneak": null,
-        "Resurrected": null
+        "Resurrected": null,
+        "Darkness": null,
+        "Patk Down": null,
+        "Pdef Down": null,
+        "Matk Down": null,
+        "Mdef Down": null,
+    
     //     "charm": null,
-    //     "darkness": null,
-    //     "patkdown": null,
     //     "patkup": null,
-    //     "matkdown": null,
     //     "matkup": null,
-    //     "pdefdown": null,
     //     "pdefup": null,
-    //     "mdefdown": null,
     //     "mdefup": null,
     //     "frozen": null,
     };

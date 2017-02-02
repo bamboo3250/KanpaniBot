@@ -290,6 +290,10 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var curseResult = {};
     var resurrectionResult = {};
     var darknessResult = {};
+    var patkDownResult = {};
+    var pdefDownResult = {};
+    var matkDownResult = {};
+    var mdefDownResult = {};
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -301,18 +305,25 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         if (skillPhase.canAttack()) {
             if (targetUnit.isFainted()) continue;
 
-            var atk = attacker.getAtk();
+            var encourageModifier = (attacker.status["Encourage"] ? 2.0 : 1.0);
+            var patkDownModifier = (attacker.status["Patk Down"] ? 2/3 : 1.0);
+            var matkDownModifier = (attacker.status["Matk Down"] ? 2/3 : 1.0);
+            var pdefDownModifier = (targetUnit.status["Patk Down"] ? 2/3 : 1.0);
+            var mdefDownModifier = (targetUnit.status["Matk Down"] ? 2/3 : 1.0);
+
+            var atk = attacker.getAtk() * patkDownModifier;
             var skillModifier = skillPhase.modifier;
             var critRate = Math.floor(attacker.getCrit()*0.35 - (targetUnit.getLUK()*0.1));
             critRate = Math.max(5, critRate);
             critRate = Math.min(95, critRate);
             critRateOnTargets[targetUnit.playerId] = critRate;
             var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
-            var def = targetUnit.getDef();
+            var def = targetUnit.getDef() * pdefDownModifier;
 
+            
             if (skillPhase.useMagicalDamage()) {
-                atk = attacker.getMAtk();
-                def = targetUnit.getMDef();
+                atk = attacker.getMAtk() * matkDownModifier;
+                def = targetUnit.getMDef() * mdefDownModifier;
             }
 
             if (attacker.status["Resurrected"]) {
@@ -342,7 +353,6 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 var isCrit = (this.bot.functionHelper.randomInt(100) < critRate);
                 var critModifier = (isCrit ? 1.5 : 1.0);
 
-                var encourageModifier = (attacker.status["Encourage"] ? 2.0 : 1.0);
                 var focusModifier = 1.0;
                 if (attacker.status["Focus"]) {
                     focusModifier = attacker.status["Focus"].power / 100;
@@ -405,6 +415,10 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     var CURSE_CHANCE = (isNaN(skillPhase.status["Curse"]) ? 0 : skillPhase.status["Curse"]);
                     var PARALYZE_CHANCE = (isNaN(skillPhase.status["Paralyze"]) ? 0 : skillPhase.status["Paralyze"]);
                     var DARKNESS_CHANCE = (isNaN(skillPhase.status["Darkness"]) ? 0 : skillPhase.status["Darkness"]);
+                    var PATK_DOWN_CHANCE = (isNaN(skillPhase.status["Patk Down"]) ? 0 : skillPhase.status["Patk Down"]);
+                    var PDEF_DOWN_CHANCE = (isNaN(skillPhase.status["Pdef Down"]) ? 0 : skillPhase.status["Pdef Down"]);
+                    var MATK_DOWN_CHANCE = (isNaN(skillPhase.status["Matk Down"]) ? 0 : skillPhase.status["Matk Down"]);
+                    var MDEF_DOWN_CHANCE = (isNaN(skillPhase.status["Mdef Down"]) ? 0 : skillPhase.status["Mdef Down"]);
 
                     if (attacker.getClassId() === 1 && !targetUnit.status["Stun"]) {
                         // fighter
@@ -449,6 +463,35 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                             darknessResult[targetUnit.playerId] = true;
                         }
                     }
+                    if (!targetUnit.status["Patk Down"]) {
+                        var doesPatkDown = (this.bot.functionHelper.randomInt(100) < PATK_DOWN_CHANCE);
+                        if (doesPatkDown) {
+                            this.bot.playerManager.applyPatkDown(attacker.playerId, targetUnit.playerId);
+                            patkDownResult[targetUnit.playerId] = true;
+                        }
+                    }
+                    if (!targetUnit.status["Pdef Down"]) {
+                        var doesPdefDown = (this.bot.functionHelper.randomInt(100) < PDEF_DOWN_CHANCE);
+                        if (doesPdefDown) {
+                            this.bot.playerManager.applyPdefDown(attacker.playerId, targetUnit.playerId);
+                            pdefDownResult[targetUnit.playerId] = true;
+                        }
+                    }
+                    if (!targetUnit.status["Matk Down"]) {
+                        var doesMatkDown = (this.bot.functionHelper.randomInt(100) < MATK_DOWN_CHANCE);
+                        if (doesMatkDown) {
+                            this.bot.playerManager.applyMatkDown(attacker.playerId, targetUnit.playerId);
+                            matkDownResult[targetUnit.playerId] = true;
+                        }
+                    }
+                    if (!targetUnit.status["Mdef Down"]) {
+                        var doesMdefDown = (this.bot.functionHelper.randomInt(100) < MDEF_DOWN_CHANCE);
+                        if (doesMdefDown) {
+                            this.bot.playerManager.applyMdefDown(attacker.playerId, targetUnit.playerId);
+                            mdefDownResult[targetUnit.playerId] = true;
+                        }
+                    }
+                    
                 }
             }
         } else {
@@ -598,6 +641,10 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         if (curseResult[targetId]) text += "\t\t" + targetName + " is cursed.\n";
         if (resurrectionResult[targetId]) text += "\t\t" + targetName + " is resurrected.\n";
         if (darknessResult[targetId]) text += "\t\t" + targetName + " is under Darkness's effect.\n";
+        if (patkDownResult[targetId]) text += "\t\t" + targetName + " is under Patk Down's effect.\n";
+        if (pdefDownResult[targetId]) text += "\t\t" + targetName + " is under Pdef Down's effect.\n";
+        if (matkDownResult[targetId]) text += "\t\t" + targetName + " is under Matk Down's effect.\n";
+        if (mdefDownResult[targetId]) text += "\t\t" + targetName + " is under Mdef Down's effect.\n";
     }
     if (Object.keys(expGained).length > 0) text += "\n";
 
