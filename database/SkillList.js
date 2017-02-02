@@ -689,7 +689,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Pdef Down": 10
+                        "Pdef Down": 10,
                         "Mdef Down": 10
                     }
                 )
