@@ -422,7 +422,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
                     if (attacker.getClassId() === 1 && !targetUnit.status["Stun"]) {
                         // fighter
-                        var doesStun = (this.bot.functionHelper.randomInt(100) < 20);
+                        var doesStun = (this.bot.functionHelper.randomInt(100) < 10);
                         if (doesStun) {
                             this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
