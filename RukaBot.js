@@ -102,17 +102,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "273395939199156225",  // Sion Guest
-            characterId: "10250001_ff1a69c9",
-            exp: 10707880,//5370000,
+            _id: "268576286060838914",  // Saimi Guest
+            characterId: "10750001_32935980",
+            exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308214",
+                _id: "308706",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310208",
-                plus: 0
+                _id: "3107071",
+                plus: 3
             },
             equipedAccessory: {
                 _id: "330107",
@@ -126,21 +126,21 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "239141420194070530", 
-            characterId: "10840001_1af29f14",   // Annalina
-            exp: 10707880,//2646190,
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
+            exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308806",
+                _id: "308819",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310808",
+                _id: "3108071",
                 plus: 3
             },
             equipedAccessory: {
-                _id: "329997",
-                plus: 4
+                _id: "330107",
+                plus: 3
             },
             materialList: {},
             weaponList: {},
@@ -174,20 +174,20 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "269733140635975680",  // Hinano Guest
-            characterId: "10350003_fcc3ce23",
-            exp: 10707880,//2646190,
+            _id: "276547911381417985",  // Elie Guest
+            characterId: "10350002_63194dbd",
+            exp: 10707880,//5370000,
             gold: 0,
             equipedWeapon: {
-                _id: "308320",
+                _id: "308319",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310708",
+                _id: "3107071",
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330206",
                 plus: 3
             },
             materialList: {},
@@ -215,8 +215,8 @@ ruka.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["241511566036434945", null, "273395939199156225"],
-                ["269733140635975680", "275533845984575488", "239141420194070530"]
+                ["241511566036434945", null, "268576286060838914"],
+                ["272259125256388610", "275533845984575488", "276547911381417985"]
             ];    
         }
         
