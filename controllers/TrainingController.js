@@ -426,6 +426,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesStun) {
                             this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
                         }    
                     }
                     if (!targetUnit.status["Stun"]) {
@@ -433,6 +434,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesStun) {
                             this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
                             stunResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
                         }
                     }
                     if (!targetUnit.status["Poison"]) {
@@ -447,6 +449,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesParalyze) {
                             this.bot.playerManager.applyParalyze(attacker.playerId, targetUnit.playerId);
                             paralyzeResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
                         }
                     }
                     if (!targetUnit.status["Curse"]) {
@@ -454,6 +457,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesCurse) {
                             this.bot.playerManager.applyCurse(attacker.playerId, targetUnit.playerId);
                             curseResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
                         }
                     }
                     if (!targetUnit.status["Darkness"]) {
@@ -461,6 +465,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesDarkness) {
                             this.bot.playerManager.applyDarkness(attacker.playerId, targetUnit.playerId);
                             darknessResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
                         }
                     }
                     if (!targetUnit.status["Patk Down"]) {
@@ -468,6 +473,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesPatkDown) {
                             this.bot.playerManager.applyPatkDown(attacker.playerId, targetUnit.playerId);
                             patkDownResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
                         }
                     }
                     if (!targetUnit.status["Pdef Down"]) {
@@ -475,6 +481,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesPdefDown) {
                             this.bot.playerManager.applyPdefDown(attacker.playerId, targetUnit.playerId);
                             pdefDownResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
                         }
                     }
                     if (!targetUnit.status["Matk Down"]) {
@@ -482,6 +489,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesMatkDown) {
                             this.bot.playerManager.applyMatkDown(attacker.playerId, targetUnit.playerId);
                             matkDownResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
                         }
                     }
                     if (!targetUnit.status["Mdef Down"]) {
@@ -489,6 +497,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesMdefDown) {
                             this.bot.playerManager.applyMdefDown(attacker.playerId, targetUnit.playerId);
                             mdefDownResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
                         }
                     }
                     
