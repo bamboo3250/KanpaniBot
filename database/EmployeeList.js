@@ -130,7 +130,7 @@ var employees = [
         baseStats: { _str: 7, _vit: 6, _agi: 17, _dex: 20, _int: 44, _pie: 12, _luk: 7},
         maxStats: { _str: 177, _vit: 176, _agi: 268, _dex: 271, _int: 525, _pie: 263, _luk: 237}
     },{
-        _no: 173, _id: "10850003_5bbd0e67", fullName: "Sarah-Moon Kjaell", japaneseName: "サラ＝ムーン・シエル", commonNames: ["Sarah-Moon", "Sara-Moon", "Sarah Moon", "Sara Moon"], cwId: 0,
+        _no: 173, _id: "10850003_5bbd0e67", fullName: "Sarah-Moon Kjaell", japaneseName: "サラ＝ムーン・シエル", commonNames: ["Sarah-Moon", "Sara-Moon", "Sarah Moon", "Sara Moon"], cwId: 20,
         baseStats: { _str: 5, _vit: 5, _agi: 22, _dex: 19, _int: 44, _pie: 12, _luk: 6},
         maxStats: { _str: 164, _vit: 156, _agi: 281, _dex: 270, _int: 533, _pie: 261, _luk: 228}
     },{
@@ -340,7 +340,7 @@ var employees = [
         baseStats: { _str: 14, _vit: 4, _agi: 24, _dex: 17, _int: 2, _pie: 3, _luk: 16},
         maxStats: { _str: 296, _vit: 174, _agi: 378, _dex: 307, _int: 152, _pie: 161, _luk: 250}
     },{
-        _no: 161, _id: "10740004_1a3b4eab", fullName: "Auli Hayha", japaneseName: "アウリ・ハユハ", commonNames: ["Auli"], cwId: 0,
+        _no: 161, _id: "10740004_1a3b4eab", fullName: "Auli Hayha", japaneseName: "アウリ・ハユハ", commonNames: ["Auli"], cwId: 21,
         baseStats: { _str: 15, _vit: 4, _agi: 24, _dex: 16, _int: 3, _pie: 3, _luk: 15},
         maxStats: { _str: 296, _vit: 174, _agi: 378, _dex: 307, _int: 152, _pie: 161, _luk: 250}
     },{
@@ -630,7 +630,7 @@ var employees = [
         baseStats: { _str: 5, _vit: 8, _agi: 7, _dex: 5, _int: 7, _pie: 18, _luk: 5},
         maxStats: { _str: 160, _vit: 238, _agi: 207, _dex: 218, _int: 280, _pie: 386, _luk: 205}
     },{
-        _no: 176, _id: "10630009_9ba79ac7", fullName: "Clarice Rigby", japaneseName: "クラリス・リグビー", commonNames: ["Clarice"], cwId: 0,
+        _no: 176, _id: "10630009_9ba79ac7", fullName: "Clarice Rigby", japaneseName: "クラリス・リグビー", commonNames: ["Clarice"], cwId: 23,
         baseStats: { _str: 5, _vit: 8, _agi: 7, _dex: 4, _int: 7, _pie: 18, _luk: 4},
         maxStats: { _str: 160, _vit: 238, _agi: 207, _dex: 218, _int: 280, _pie: 386, _luk: 205}
     },{
