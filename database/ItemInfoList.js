@@ -128,7 +128,7 @@ var itemInfos = [
     },{
         _id: "70006105_1", itemName: "Holy Water", price: 1000
     },{
-        _id: "70006106_1", itemName: "Beautiful Demonic Water", price: 1000
+        _id: "70006106_1", itemName: "Demonic Violet Water", price: 1000
     },{
         _id: "70006107_1", itemName: "Shining Spirit Water", price: 750
     },

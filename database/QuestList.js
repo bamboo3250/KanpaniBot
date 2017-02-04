@@ -1506,6 +1506,104 @@ var quests = [
     },
 
     {
+        commonNames: ["2-3-1"], name: "Protecting the Local History Book", 
+        isActive: true, levelRequired: 71, timeCost: 68, goldCost: 0, breadCost: 2, 
+        goldReward: 1600, breadReward: 0, exp: 8985, advantage: [1], numItemDrop: 32,
+        dropList: [
+            "Mithril Ore", 
+            "Demon Ore", 
+            "Jade", 
+            "Amethyst", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-3-2"], name: "Threatening Letter to Maid Cafe", 
+        isActive: true, levelRequired: 71, timeCost: 68, goldCost: 0, breadCost: 2, 
+        goldReward: 1600, breadReward: 0, exp: 8970, advantage: [7], numItemDrop: 32,
+        dropList: [
+            "Rare Species Leather", 
+            "Demon Beast Leather", 
+            "Jade", 
+            "Amethyst", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-3-3"], name: "Els Dark Cross", 
+        isActive: true, levelRequired: 71, timeCost: 68, goldCost: 0, breadCost: 2, 
+        goldReward: 1600, breadReward: 0, exp: 8960, advantage: [6], numItemDrop: 32,
+        dropList: [
+            "Sun Fragment", 
+            "Demon World Fragment", 
+            "Jade", 
+            "Amethyst", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-3-4"], name: "Collecting the Fragrant Wood", 
+        isActive: true, levelRequired: 71, timeCost: 68, goldCost: 0, breadCost: 2, 
+        goldReward: 1600, breadReward: 0, exp: 8980, advantage: [2], numItemDrop: 32,
+        dropList: [
+            "Holy Water", 
+            "Demonic Violet Water", 
+            "Jade", 
+            "Amethyst", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-3-5"], name: "Transporting the Omimai", 
+        isActive: true, levelRequired: 71, timeCost: 68, goldCost: 0, breadCost: 2, 
+        goldReward: 1600, breadReward: 0, exp: 8970, advantage: [5], numItemDrop: 32,
+        dropList: [
+            "Dragon Horn", 
+            "Demon Beast Horn", 
+            "Jade", 
+            "Amethyst", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-3-6"], name: "One-point Attack", 
+        isActive: true, levelRequired: 71, timeCost: 68, goldCost: 0, breadCost: 2, 
+        goldReward: 1600, breadReward: 0, exp: 8985, advantage: [3], numItemDrop: 40,
+        dropList: [
+            "Holy Cloth", 
+            "Demonic Cloth", 
+            "Jade", 
+            "Amethyst", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-3-7"], name: "Searching Toka", 
+        isActive: true, levelRequired: 71, timeCost: 68, goldCost: 0, breadCost: 2, 
+        goldReward: 1600, breadReward: 0, exp: 8970, advantage: [4], numItemDrop: 32,
+        dropList: [
+            "Mithril Ore", 
+            "Demon Ore", 
+            "Jade", 
+            "Amethyst", 
+            "Opal", 
+            "Malachite"
+        ]
+    },{
+        commonNames: ["2-3-8"], name: "Preparing the Exorcising Barrier", 
+        isActive: true, levelRequired: 71, timeCost: 68, goldCost: 0, breadCost: 2, 
+        goldReward: 1600, breadReward: 0, exp: 8985, advantage: [8], numItemDrop: 40,
+        dropList: [
+            "Yggdrasil Branch", 
+            "Demon Tree Branch", 
+            "Jade", 
+            "Amethyst", 
+            "Opal", 
+            "Malachite"
+        ]
+    },
+
+    {
         commonNames: [""], name: "", 
         isActive: true, levelRequired: 1, timeCost: 0, goldCost: 0, breadCost: 1, 
         goldReward: 0, breadReward: 0, exp: 0, advantage: [], numItemDrop: 0,

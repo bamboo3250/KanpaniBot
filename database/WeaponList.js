@@ -4392,19 +4392,19 @@ module.exports = {
             _id: "3006092", modelId: "13", name: "Segment Cross", commonNames: ["Segment Cross"],
             classId: 6, type: "story", isActive: true, stats: {
                 "+0": { price: 5000,
-                    patk: 0, pdef: 33, matk: 120, mdef: 50, crit: 16, hit: 0, eva: 10,
+                    patk: 0, pdef: 33, matk: 120, mdef: 50, crit: 0, hit: 10, eva: 0,
                     frontSkill: "Knock", backSkill: "Deep Fold"
                 },
                 "+1": { price: 6000,
-                    patk: 0, pdef: 48, matk: 160, mdef: 65, crit: 16, hit: 0, eva: 10,
+                    patk: 0, pdef: 48, matk: 160, mdef: 65, crit: 0, hit: 10, eva: 0,
                     frontSkill: "Knock", backSkill: "Deep Fold"
                 },
                 "+2": { price: 7000,
-                    patk: 0, pdef: 55, matk: 200, mdef: 75, crit: 16, hit: 0, eva: 10,
+                    patk: 0, pdef: 55, matk: 200, mdef: 75, crit: 0, hit: 10, eva: 0,
                     frontSkill: "Knock", backSkill: "Deep Fold"
                 },
                 "+3": { price: 8000,
-                    patk: 0, pdef: 95, matk: 285, mdef: 95, crit: 16, hit: 0, eva: 10,
+                    patk: 0, pdef: 95, matk: 285, mdef: 95, crit: 0, hit: 10, eva: 0,
                     frontSkill: "Knock", backSkill: "Deep Fold"
                 }
             },
@@ -4469,6 +4469,242 @@ module.exports = {
             note: "", devCost: 45000, levelRequired: 68, tier: 2, recipe: [
                 {
                     materialName: "Yggdrasil Branch",
+                    amount: 3
+                },{
+                    materialName: "Malachite",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
+    "r14": [
+        {
+            _id: "3001093", modelId: "14", name: "Sword of Raven", commonNames: ["Sword of Raven"],
+            classId: 1, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 105, pdef: 88, matk: 0, mdef: 110, crit: 12, hit: 35, eva: 0,
+                    frontSkill: "V Slash", backSkill: "Slash"
+                },
+                "+1": { price: 6000,
+                    patk: 140, pdef: 113, matk: 0, mdef: 145, crit: 12, hit: 35, eva: 0,
+                    frontSkill: "V Slash", backSkill: "Slash"
+                },
+                "+2": { price: 7000,
+                    patk: 185, pdef: 135, matk: 0, mdef: 185, crit: 12, hit: 35, eva: 0,
+                    frontSkill: "Frost Edge", backSkill: "V Slash"
+                },
+                "+3": { price: 8000,
+                    patk: 235, pdef: 170, matk: 0, mdef: 205, crit: 12, hit: 35, eva: 0,
+                    frontSkill: "Frost Edge", backSkill: "V Slash"
+                }
+            },
+            note: "", devCost: 50000, levelRequired: 71, tier: 2, recipe: [
+                {
+                    materialName: "Demon Ore",
+                    amount: 3
+                },{
+                    materialName: "Opal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3002093", modelId: "14", name: "Crow-eye Blade", commonNames: ["Crow-eye Blade"],
+            classId: 2, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 175, pdef: 0, matk: 0, mdef: 0, crit: 47, hit: 37, eva: 0,
+                    frontSkill: "Helmet Splitter", backSkill: "Slash"
+                },
+                "+1": { price: 6000,
+                    patk: 218, pdef: 0, matk: 0, mdef: 0, crit: 47, hit: 37, eva: 0,
+                    frontSkill: "Helmet Splitter", backSkill: "Slash"
+                },
+                "+2": { price: 7000,
+                    patk: 260, pdef: 0, matk: 0, mdef: 0, crit: 47, hit: 37, eva: 0,
+                    frontSkill: "Ice Dancing Blade", backSkill: "Cleave"
+                },
+                "+3": { price: 8000,
+                    patk: 330, pdef: 0, matk: 0, mdef: 0, crit: 47, hit: 37, eva: 0,
+                    frontSkill: "Ice Dancing Blade", backSkill: "Cleave"
+                }
+            },
+            note: "", devCost: 50000, levelRequired: 71, tier: 2, recipe: [
+                {
+                    materialName: "Opal",
+                    amount: 2
+                },{
+                    materialName: "Demonic Violet Water",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3003093", modelId: "14", name: "Black Raven", commonNames: ["Black Raven"],
+            classId: 3, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 144, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 56, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Heavy Shot"
+                },
+                "+1": { price: 6000,
+                    patk: 185, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 56, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Heavy Shot"
+                },
+                "+2": { price: 7000,
+                    patk: 235, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 56, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Ice Shot"
+                },
+                "+3": { price: 8000,
+                    patk: 300, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 56, eva: 0,
+                    frontSkill: "Chain Shot", backSkill: "Ice Shot"
+                }
+            },
+            note: "", devCost: 50000, levelRequired: 71, tier: 2, recipe: [
+                {
+                    materialName: "Demonic Cloth",
+                    amount: 3
+                },{
+                    materialName: "Malachite",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3004093", modelId: "14", name: "Raven Piercer", commonNames: ["Raven Piercer"],
+            classId: 4, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 52, pdef: 120, matk: 0, mdef: 0, crit: 5, hit: 35, eva: 0,
+                    frontSkill: "Full-On Collision", backSkill: "Spear Jab"
+                },
+                "+1": { price: 6000,
+                    patk: 56, pdef: 160, matk: 0, mdef: 0, crit: 10, hit: 35, eva: 0,
+                    frontSkill: "Full-On Collision", backSkill: "Spear Jab"
+                },
+                "+2": { price: 7000,
+                    patk: 80, pdef: 210, matk: 0, mdef: 0, crit: 20, hit: 35, eva: 0,
+                    frontSkill: "Ice Collision", backSkill: "Double Strike"
+                },
+                "+3": { price: 8000,
+                    patk: 103, pdef: 275, matk: 0, mdef: 0, crit: 30, hit: 35, eva: 0,
+                    frontSkill: "Ice Collision", backSkill: "Double Strike"
+                }
+            },
+            note: "", devCost: 50000, levelRequired: 71, tier: 2, recipe: [
+                {
+                    materialName: "Demon Ore",
+                    amount: 3
+                },{
+                    materialName: "Opal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3005093", modelId: "14", name: "Raven Pounder", commonNames: ["Raven Pounder"],
+            classId: 5, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 230, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 0,
+                    frontSkill: "Hammerfall", backSkill: "Crash"
+                },
+                "+1": { price: 6000,
+                    patk: 305, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 0,
+                    frontSkill: "Hammerfall", backSkill: "Crash"
+                },
+                "+2": { price: 7000,
+                    patk: 390, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 0,
+                    frontSkill: "Ice Age", backSkill: "Swing"
+                },
+                "+3": { price: 8000,
+                    patk: 490, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 35, eva: 0,
+                    frontSkill: "Ice Age", backSkill: "Swing"
+                }
+            },
+            note: "", devCost: 50000, levelRequired: 71, tier: 2, recipe: [
+                {
+                    materialName: "Opal",
+                    amount: 2
+                },{
+                    materialName: "Demon Beast Horn",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3006093", modelId: "14", name: "Raven Cross", commonNames: ["Raven Cross"],
+            classId: 6, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 43, matk: 130, mdef: 60, crit: 0, hit: 20, eva: 0,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 58, matk: 170, mdef: 75, crit: 0, hit: 20, eva: 0,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 65, matk: 210, mdef: 85, crit: 0, hit: 20, eva: 0,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 105, matk: 295, mdef: 105, crit: 0, hit: 20, eva: 0,
+                    frontSkill: "Knock", backSkill: "Deep Fold"
+                }
+            },
+            note: "", devCost: 50000, levelRequired: 71, tier: 2, recipe: [
+                {
+                    materialName: "Malachite",
+                    amount: 2
+                },{
+                    materialName: "Demon World Fragment",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3007093", modelId: "14", name: "Symmetry Crow", commonNames: ["Symmetry Crow"],
+            classId: 7, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 111, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 43, eva: 65,
+                    frontSkill: "Twin Attack", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 6000,
+                    patk: 144, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 48, eva: 65,
+                    frontSkill: "Twin Attack", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 7000,
+                    patk: 156, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 53, eva: 65,
+                    frontSkill: "Icy Wind", backSkill: "Shadow Snake Punch"
+                },
+                "+3": { price: 8000,
+                    patk: 240, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 65, eva: 65,
+                    frontSkill: "Icy Wind", backSkill: "Shadow Snake Punch"
+                }
+            },
+            note: "", devCost: 50000, levelRequired: 71, tier: 2, recipe: [
+                {
+                    materialName: "Demon Beast Leather",
+                    amount: 3
+                },{
+                    materialName: "Opal",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3008096", modelId: "14", name: "Crow Cane", commonNames: ["Crow Cane"],
+            classId: 8, type: "story", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 0, matk: 145, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Ice Strike", backSkill: "Ice Strike"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 0, matk: 206, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Ice Strike", backSkill: "Ice Strike"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Frostbite", backSkill: "Frostbite"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 0, matk: 340, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Frostbite", backSkill: "Frostbite"
+                }
+            },
+            note: "", devCost: 50000, levelRequired: 71, tier: 2, recipe: [
+                {
+                    materialName: "Demon Tree Branch",
                     amount: 3
                 },{
                     materialName: "Malachite",

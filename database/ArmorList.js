@@ -2862,4 +2862,616 @@ module.exports = {
             ]
         }
     ],
+
+    "r14": [
+        {
+            _id: "310112", name: "Sacred Mail", commonNames: ["Sacred Mail"],
+            classId: 1, type: "story", element: "light", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 80, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 25
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 100, crit: 0, hit: 25, eva: 25
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 120, matk: 0, mdef: 120, crit: 0, hit: 25, eva: 25
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 140, matk: 0, mdef: 140, crit: 0, hit: 40, eva: 25
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Mithril Ore",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310212", name: "Divine Armor \"Ten\"", commonNames: ["Divine Armor \"Ten\""],
+            classId: 2, type: "story", element: "light", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 66, matk: 0, mdef: 52, crit: 0, hit: 0, eva: 25
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 96, matk: 0, mdef: 72, crit: 40, hit: 0, eva: 55
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 126, matk: 0, mdef: 92, crit: 60, hit: 0, eva: 75
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 156, matk: 0, mdef: 112, crit: 80, hit: 0, eva: 100
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Amethyst",
+                    amount: 1
+                },{
+                    materialName: "Holy Water",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "310312", name: "Artemis Plate", commonNames: ["Artemis Plate"],
+            classId: 3, type: "story", element: "light", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 52, matk: 0, mdef: 52, crit: 0, hit: 0, eva: 19
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 72, matk: 0, mdef: 55, crit: 0, hit: 19, eva: 19
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 92, matk: 0, mdef: 58, crit: 0, hit: 23, eva: 19
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 112, matk: 0, mdef: 61, crit: 0, hit: 27, eva: 19
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Holy Cloth",
+                    amount: 3
+                },{
+                    materialName: "Jade",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310412", name: "Moonlight Helm", commonNames: ["Moonlight Helm"],
+            classId: 4, type: "story", element: "light", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 122, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 22
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 125, matk: 0, mdef: 80, crit: 0, hit: 30, eva: 22
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 128, matk: 0, mdef: 80, crit: 0, hit: 50, eva: 22
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 131, matk: 0, mdef: 80, crit: 0, hit: 70, eva: 22
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Amethyst",
+                    amount: 1
+                },{
+                    materialName: "Mithril Ore",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "310512", name: "Blitz Belt", commonNames: ["Blitz Belt"],
+            classId: 5, type: "story", element: "light", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 80, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 32
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 90, matk: 0, mdef: 33, crit: 33, hit: 0, eva: 32
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 43, crit: 43, hit: 0, eva: 32
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 110, matk: 0, mdef: 55, crit: 55, hit: 0, eva: 32
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Dragon Horn",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310612", name: "Weiss Veil", commonNames: ["Weiss Veil"],
+            classId: 6, type: "story", element: "light", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 52, matk: 0, mdef: 108, crit: 0, hit: 0, eva: 19
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 59, matk: 0, mdef: 124, crit: 0, hit: 0, eva: 25
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 66, matk: 0, mdef: 140, crit: 0, hit: 0, eva: 31
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 73, matk: 0, mdef: 156, crit: 0, hit: 0, eva: 37
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Jade",
+                    amount: 1
+                },{
+                    materialName: "Sun Fragment",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "310712", name: "Shining Gauntlets", commonNames: ["Shining Gauntlets"],
+            classId: 7, type: "story", element: "light", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 52, matk: 0, mdef: 52, crit: 0, hit: 0, eva: 19
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 64, matk: 0, mdef: 64, crit: 0, hit: 0, eva: 29
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 76, matk: 0, mdef: 76, crit: 0, hit: 0, eva: 39
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 88, matk: 0, mdef: 88, crit: 0, hit: 0, eva: 49
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Rare Species Leather",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310812", name: "Hat of Goddess and Spirit", commonNames: ["Hat of Goddess and Spirit"],
+            classId: 8, type: "story", element: "light", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 38, matk: 0, mdef: 94, crit: 0, hit: 0, eva: 16
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 42, matk: 0, mdef: 114, crit: 0, hit: 0, eva: 26
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 46, matk: 0, mdef: 134, crit: 0, hit: 0, eva: 36
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 50, matk: 0, mdef: 154, crit: 0, hit: 0, eva: 46
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Yggdrasil Branch",
+                    amount: 3
+                },{
+                    materialName: "Jade",
+                    amount: 1
+                }
+            ]
+        }
+    ],
+
+    "r15": [
+        {
+            _id: "310113", name: "Dynamis Mail", commonNames: ["Dynamis Mail"],
+            classId: 1, type: "story", element: "dark", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 80, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 25
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 100, crit: 0, hit: 25, eva: 25
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 120, matk: 0, mdef: 120, crit: 0, hit: 25, eva: 25
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 140, matk: 0, mdef: 140, crit: 0, hit: 40, eva: 25
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Mithril Ore",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310213", name: "Demon Yasha Armor", commonNames: ["Demon Yasha Armor"],
+            classId: 2, type: "story", element: "dark", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 66, matk: 0, mdef: 52, crit: 0, hit: 0, eva: 25
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 96, matk: 0, mdef: 72, crit: 40, hit: 0, eva: 55
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 126, matk: 0, mdef: 92, crit: 60, hit: 0, eva: 75
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 156, matk: 0, mdef: 112, crit: 80, hit: 0, eva: 100
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Amethyst",
+                    amount: 1
+                },{
+                    materialName: "Holy Water",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "310313", name: "Devil God Plate", commonNames: ["Devil God Plate"],
+            classId: 3, type: "story", element: "dark", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 52, matk: 0, mdef: 52, crit: 0, hit: 0, eva: 19
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 72, matk: 0, mdef: 55, crit: 0, hit: 19, eva: 19
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 92, matk: 0, mdef: 58, crit: 0, hit: 23, eva: 19
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 112, matk: 0, mdef: 61, crit: 0, hit: 27, eva: 19
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Holy Cloth",
+                    amount: 3
+                },{
+                    materialName: "Jade",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310413", name: "Demonic Helm", commonNames: ["Demonic Helm"],
+            classId: 4, type: "story", element: "dark", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 122, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 22
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 125, matk: 0, mdef: 80, crit: 0, hit: 30, eva: 22
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 128, matk: 0, mdef: 80, crit: 0, hit: 50, eva: 22
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 131, matk: 0, mdef: 80, crit: 0, hit: 70, eva: 22
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Amethyst",
+                    amount: 1
+                },{
+                    materialName: "Mithril Ore",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "310513", name: "Hades Belt", commonNames: ["Hades Belt"],
+            classId: 5, type: "story", element: "dark", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 80, matk: 0, mdef: 0, crit: 0, hit: 0, eva: 32
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 90, matk: 0, mdef: 33, crit: 33, hit: 0, eva: 32
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 43, crit: 43, hit: 0, eva: 32
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 110, matk: 0, mdef: 55, crit: 55, hit: 0, eva: 32
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Dragon Horn",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310613", name: "Schwarz Veil", commonNames: ["Schwarz Veil"],
+            classId: 6, type: "story", element: "dark", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 52, matk: 0, mdef: 108, crit: 0, hit: 0, eva: 19
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 59, matk: 0, mdef: 124, crit: 0, hit: 0, eva: 25
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 66, matk: 0, mdef: 140, crit: 0, hit: 0, eva: 31
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 73, matk: 0, mdef: 156, crit: 0, hit: 0, eva: 37
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Jade",
+                    amount: 1
+                },{
+                    materialName: "Sun Fragment",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "310713", name: "Darkness Gauntlets", commonNames: ["Darkness Gauntlets"],
+            classId: 7, type: "story", element: "dark", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 52, matk: 0, mdef: 52, crit: 0, hit: 0, eva: 19
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 64, matk: 0, mdef: 64, crit: 0, hit: 0, eva: 29
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 76, matk: 0, mdef: 76, crit: 0, hit: 0, eva: 39
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 88, matk: 0, mdef: 88, crit: 0, hit: 0, eva: 49
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Rare Species Leather",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "310813", name: "Hat of Abyss and Darkness", commonNames: ["Hat of Abyss and Darkness"],
+            classId: 8, type: "story", element: "dark", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 38, matk: 0, mdef: 94, crit: 0, hit: 0, eva: 16
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 42, matk: 0, mdef: 114, crit: 0, hit: 0, eva: 26
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 46, matk: 0, mdef: 134, crit: 0, hit: 0, eva: 36
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 50, matk: 0, mdef: 154, crit: 0, hit: 0, eva: 46
+                }
+            },
+            devCost: 45000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Yggdrasil Branch",
+                    amount: 3
+                },{
+                    materialName: "Jade",
+                    amount: 1
+                }
+            ]
+        }
+    ],
+
+    "r16": [
+        {
+            _id: "3101073", name: "Raven Mail", commonNames: ["Raven Mail"],
+            classId: 1, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 100, crit: 0, hit: 20, eva: 40
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 120, matk: 0, mdef: 120, crit: 0, hit: 35, eva: 40
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 140, matk: 0, mdef: 140, crit: 0, hit: 40, eva: 40
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 165, matk: 0, mdef: 165, crit: 0, hit: 50, eva: 40
+                }
+            },
+            devCost: 50000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Mithril Ore",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3102073", name: "Crow Armor", commonNames: ["Crow Armor"],
+            classId: 2, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 82, matk: 0, mdef: 66, crit: 0, hit: 0, eva: 37
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 112, matk: 0, mdef: 84, crit: 50, hit: 0, eva: 45
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 142, matk: 0, mdef: 102, crit: 70, hit: 0, eva: 81
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 175, matk: 0, mdef: 120, crit: 90, hit: 0, eva: 95
+                }
+            },
+            devCost: 50000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Amethyst",
+                    amount: 1
+                },{
+                    materialName: "Holy Water",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3103073", name: "Raven Plate", commonNames: ["Raven Plate"],
+            classId: 3, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 66, matk: 0, mdef: 66, crit: 0, hit: 0, eva: 35
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 86, matk: 0, mdef: 69, crit: 0, hit: 31, eva: 35
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 106, matk: 0, mdef: 72 crit: 0, hit: 35, eva: 35
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 125, matk: 0, mdef: 78, crit: 0, hit: 39, eva: 35
+                }
+            },
+            devCost: 50000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Holy Cloth",
+                    amount: 3
+                },{
+                    materialName: "Jade",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3104073", name: "Raven Helm", commonNames: ["Raven Helm"],
+            classId: 4, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 150, matk: 0, mdef: 95, crit: 0, hit: 40, eva: 35
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 153, matk: 0, mdef: 95, crit: 0, hit: 60, eva: 35
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 156, matk: 0, mdef: 95, crit: 0, hit: 80, eva: 35
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 160, matk: 0, mdef: 95, crit: 0, hit: 1000, eva: 35
+                }
+            },
+            devCost: 50000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Amethyst",
+                    amount: 1
+                },{
+                    materialName: "Mithril Ore",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3105073", name: "Raven Belt", commonNames: ["Raven Belt"],
+            classId: 5, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 95, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 40
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 115, matk: 0, mdef: 40, crit: 20, hit: 0, eva: 40
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 135, matk: 0, mdef: 50, crit: 35, hit: 0, eva: 40
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 158, matk: 0, mdef: 60, crit: 45, hit: 0, eva: 40
+                }
+            },
+            devCost: 50000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Dragon Horn",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3106073", name: "Raven Veil", commonNames: ["Raven Veil"],
+            classId: 6, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 64, matk: 0, mdef: 137, crit: 0, hit: 0, eva: 30
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 71, matk: 0, mdef: 149, crit: 0, hit: 0, eva: 45
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 79, matk: 0, mdef: 167, crit: 0, hit: 0, eva: 60
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 85, matk: 0, mdef: 185, crit: 0, hit: 0, eva: 78
+                }
+            },
+            devCost: 50000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Jade",
+                    amount: 1
+                },{
+                    materialName: "Sun Fragment",
+                    amount: 3
+                }
+            ]
+        },{
+            _id: "3107073", name: "Raven Gauntlets", commonNames: ["Raven Gauntlets"],
+            classId: 7, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 64, matk: 0, mdef: 53, crit: 0, hit: 0, eva: 35
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 76, matk: 0, mdef: 62, crit: 0, hit: 0, eva: 45
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 88, matk: 0, mdef: 74, crit: 0, hit: 0, eva: 55
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 100, matk: 0, mdef: 90, crit: 0, hit: 0, eva: 65
+                }
+            },
+            devCost: 50000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Rare Species Leather",
+                    amount: 3
+                },{
+                    materialName: "Amethyst",
+                    amount: 1
+                }
+            ]
+        },{
+            _id: "3108073", name: "Raven Hat", commonNames: ["Raven Hat"],
+            classId: 8, type: "story", element: "", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 45, matk: 0, mdef: 112, crit: 0, hit: 0, eva: 30
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 48, matk: 0, mdef: 137, crit: 0, hit: 0, eva: 40
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 52, matk: 0, mdef: 162, crit: 0, hit: 0, eva: 50
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 60, matk: 0, mdef: 180, crit: 0, hit: 0, eva: 60
+                }
+            },
+            devCost: 50000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Yggdrasil Branch",
+                    amount: 3
+                },{
+                    materialName: "Jade",
+                    amount: 1
+                }
+            ]
+        }
+    ],
 };
