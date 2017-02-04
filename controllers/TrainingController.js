@@ -328,19 +328,26 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             var pdefDownModifier = (targetUnit.status["Pdef Down"] ? 2/3 : 1.0);
             var mdefDownModifier = (targetUnit.status["Mdef Down"] ? 2/3 : 1.0);
 
-            var atk = attacker.getAtk() * patkDownModifier;
+            var isPdefDownUsed = false;
+            var isMdefDownUsed = false;
+
+            var atk = attacker.getAtk();
             var skillModifier = skillPhase.modifier;
             var critRate = Math.floor(attacker.getCrit()*0.35 - (targetUnit.getLUK()*0.1));
             critRate = Math.max(5, critRate);
             critRate = Math.min(95, critRate);
             critRateOnTargets[targetUnit.playerId] = critRate;
             var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
-            var def = targetUnit.getDef() * pdefDownModifier;
+            var def = targetUnit.getDef();
 
-            
             if (skillPhase.useMagicalDamage()) {
-                atk = attacker.getMAtk() * matkDownModifier;
-                def = targetUnit.getMDef() * mdefDownModifier;
+                atk = atk * matkDownModifier;
+                def = def * mdefDownModifier;
+                if (targetUnit.status["Mdef Down"]) isMdefDownUsed = true;
+            } else {
+                atk = atk * patkDownModifier;
+                def = def * pdefDownModifier;
+                if (targetUnit.status["Pdef Down"]) isPdefDownUsed = true;
             }
 
             if (attacker.status["Resurrected"]) {
@@ -365,6 +372,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             }
             hitRateOnTargets[targetUnit.playerId] = hitRate;
 
+            var totalDamage = 0;
             for(var j=0;j<skillPhase.attackTimes;j++) {
                 var randomFactor = this.bot.functionHelper.randomArbitrary(1/1.1, 1.1);
                 var isCrit = (this.bot.functionHelper.randomInt(100) < critRate);
@@ -384,6 +392,8 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     critDamageBeforeDef - 0.00115 * def * damageBeforeDef - def / 4
                 );
                 rawDamage = Math.max(1, rawDamage);
+                totalDamage += rawDamage;
+
                 var frontUnit = null;
                 if (targetFieldPos.row === 1 && field[0][targetFieldPos.column]) {
                     frontUnit = this.bot.playerManager.getPlayerUnit(field[0][targetFieldPos.column]);
@@ -465,7 +475,6 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesCurse) {
                             this.bot.playerManager.applyCurse(attacker.playerId, targetUnit.playerId);
                             curseResult[targetUnit.playerId] = true;
-                            expGained[attacker.playerId] += 2000;
                         }
                     }
                     if (!targetUnit.status["Darkness"]) {
@@ -489,7 +498,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesPdefDown) {
                             this.bot.playerManager.applyPdefDown(attacker.playerId, targetUnit.playerId);
                             pdefDownResult[targetUnit.playerId] = true;
-                            expGained[attacker.playerId] += 2000;
+                            // expGained[attacker.playerId] += 2000;
                         }
                     }
                     if (!targetUnit.status["Matk Down"]) {
@@ -505,12 +514,20 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesMdefDown) {
                             this.bot.playerManager.applyMdefDown(attacker.playerId, targetUnit.playerId);
                             mdefDownResult[targetUnit.playerId] = true;
-                            expGained[attacker.playerId] += 2000;
+                            // expGained[attacker.playerId] += 2000;
                         }
                     }
                     
                 }
             }
+
+            if (isMdefDownUsed && targetUnit.status["Mdef Down"]) {
+                targetUnit.status["Mdef Down"].absorbDamage(totalDamage);
+            }
+            if (isPdefDownUsed && targetUnit.status["Pdef Down"]) {
+                targetUnit.status["Pdef Down"].absorbDamage(totalDamage);
+            }
+
         } else {
 
             hitRateOnTargets[targetUnit.playerId] = 100;
