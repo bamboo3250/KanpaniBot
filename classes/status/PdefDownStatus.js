@@ -23,7 +23,7 @@ function PDefDownStatus(bot, ownerId, targetId) {
 }
 
 PDefDownStatus.prototype.absorbDamage = function(damage) {
-    var exp = Math.ceil(damage/10);
+    var exp = Math.ceil(damage/3);
 
     var attackerUnit = this.bot.playerManager.getPlayerUnit(this.ownerId);
     var attackerUser = this.bot.userManager.getUser(this.ownerId);

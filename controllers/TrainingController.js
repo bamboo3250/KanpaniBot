@@ -500,7 +500,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesPdefDown) {
                             this.bot.playerManager.applyPdefDown(attacker.playerId, targetUnit.playerId);
                             pdefDownResult[targetUnit.playerId] = true;
-                            // expGained[attacker.playerId] += 2000;
+                            expGained[attacker.playerId] += 1000;
                         }
                     }
                     if (!targetUnit.status["Matk Down"]) {
@@ -516,7 +516,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         if (doesMdefDown) {
                             this.bot.playerManager.applyMdefDown(attacker.playerId, targetUnit.playerId);
                             mdefDownResult[targetUnit.playerId] = true;
-                            // expGained[attacker.playerId] += 2000;
+                            expGained[attacker.playerId] += 1000;
                         }
                     }
                     
