@@ -9,7 +9,9 @@ function TrainingController() {
         [null,null,null],
         [null,null,null]
     ];
-    this.contribution = {};
+    this.contribution = {
+        "147367023247228928": 1
+    };
 }
 
 TrainingController.prototype.didAllTrainersDie = function() {
@@ -341,12 +343,12 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             var def = targetUnit.getDef();
 
             if (skillPhase.useMagicalDamage()) {
-                atk = atk * matkDownModifier;
-                def = def * mdefDownModifier;
+                atk = attacker.getMAtk() * matkDownModifier;
+                def = targetUnit.getMDef() * mdefDownModifier;
                 if (targetUnit.status["Mdef Down"]) isMdefDownUsed = true;
             } else {
-                atk = atk * patkDownModifier;
-                def = def * pdefDownModifier;
+                atk = attacker.getAtk() * patkDownModifier;
+                def = targetUnit.getDef() * pdefDownModifier;
                 if (targetUnit.status["Pdef Down"]) isPdefDownUsed = true;
             }
 
