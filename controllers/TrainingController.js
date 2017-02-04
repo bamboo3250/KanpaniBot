@@ -9,7 +9,9 @@ function TrainingController() {
         [null,null,null],
         [null,null,null]
     ];
-    this.contribution = {};
+    this.contribution = {
+        "147367023247228928": 1
+    };
 }
 
 TrainingController.prototype.didAllTrainersDie = function() {
