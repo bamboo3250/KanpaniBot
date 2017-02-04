@@ -1,6 +1,8 @@
 var Employee = require('../classes/Employee');
 var Jimp = require("jimp");
 
+var factor = 2;
+
 module.exports = {
     runQuest: function(bot, questName, bread, user, message, timeInMillis) {
         var quest = bot.questDatabase.getQuestByName(questName);
@@ -109,7 +111,7 @@ module.exports = {
 
             var extraExp = Math.floor(quest.exp*0.1);
             // var randomExp = bot.functionHelper.randomInt(extraExp + 1);
-            var expGained = Math.floor((isSuccess ? quest.exp : 0) * modifier);
+            var expGained = Math.floor((isSuccess ? quest.exp : 0) * modifier) * factor;
             var goldGained = Math.floor((isSuccess ? quest.goldReward : 0) * modifier);
             var breadGained = (isSuccess ? quest.breadReward : 0);
             var bonusExp = Math.floor(expGained * 0.3);
@@ -121,7 +123,7 @@ module.exports = {
 
             var drop = {};
             if (isSuccess) {
-                var numDrop = Math.floor(quest.numItemDrop * modifier);
+                var numDrop = Math.floor(quest.numItemDrop * modifier) * factor;
                 for(var i=0;i<numDrop;i++) {
                     var itemName = bot.functionHelper.randomObject(quest.dropList);
                     if (typeof drop[itemName] === "undefined") drop[itemName] = 0;
