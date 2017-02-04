@@ -325,10 +325,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             if (targetUnit.isFainted()) continue;
 
             var encourageModifier = (attacker.status["Encourage"] ? 2.0 : 1.0);
-            var patkDownModifier = (attacker.status["Patk Down"] ? 2/3 : 1.0);
-            var matkDownModifier = (attacker.status["Matk Down"] ? 2/3 : 1.0);
-            var pdefDownModifier = (targetUnit.status["Pdef Down"] ? 2/3 : 1.0);
-            var mdefDownModifier = (targetUnit.status["Mdef Down"] ? 2/3 : 1.0);
+            
+            var patkDownModifier = (attacker.status["Patk Down"] ? 0.5 : 1.0);
+            var matkDownModifier = (attacker.status["Matk Down"] ? 0.5 : 1.0);
+            var pdefDownModifier = (targetUnit.status["Pdef Down"] ? 0.5 : 1.0);
+            var mdefDownModifier = (targetUnit.status["Mdef Down"] ? 0.5 : 1.0);
 
             var isPdefDownUsed = false;
             var isMdefDownUsed = false;
