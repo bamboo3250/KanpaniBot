@@ -545,7 +545,7 @@ module.exports = {
                     patk: 90, pdef: 80, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
                 },
                 "+3": { price: 1500,
-                    patk: 110, pdef: 90, matk: 6, mdef: 6, crit: 20, hit: 800, eva: 0
+                    patk: 110, pdef: 90, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
                 }
             },
             devCost: 40000, levelRequired: 71, tier: 3, recipe: [

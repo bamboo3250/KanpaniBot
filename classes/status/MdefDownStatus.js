@@ -25,8 +25,8 @@ function MDefDownStatus(bot, ownerId, targetId) {
 MDefDownStatus.prototype.absorbDamage = function(damage) {
     var exp = Math.ceil(damage/10);
 
-    var attackerUnit = that.bot.playerManager.getPlayerUnit(that.ownerId);
-    var attackerUser = that.bot.userManager.getUser(that.ownerId);
+    var attackerUnit = this.bot.playerManager.getPlayerUnit(this.ownerId);
+    var attackerUser = this.bot.userManager.getUser(this.ownerId);
     var attackerName = attackerUnit.shortName;
     if (attackerUser) attackerName += " (" + attackerUser.username + ")";
 
