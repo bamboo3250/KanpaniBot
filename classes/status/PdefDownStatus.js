@@ -31,7 +31,7 @@ PDefDownStatus.prototype.absorbDamage = function(damage) {
     if (attackerUser) attackerName += " (" + attackerUser.username + ")";
 
     if (!attackerUnit.isTrainer) {
-        var text += attackerName + " gained " + exp + " exp from Pdef Down.\n";    
+        var text = attackerName + " gained " + exp + " exp from Pdef Down.\n";    
         this.bot.playerManager.addExp(this.ownerId, exp);
         this.bot.playerManager.refreshUnitForPlayerId(this.ownerId);
         this.bot.battleChannel.sendMessage(text);
