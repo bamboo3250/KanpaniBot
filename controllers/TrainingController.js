@@ -295,6 +295,23 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var matkDownResult = {};
     var mdefDownResult = {};
 
+    if (attacker.getClassId() === 1 && !mainTargetUnit.status["Stun"]) {
+        // fighter class trait
+        var doesStun = (this.bot.functionHelper.randomInt(100) < 30);
+        if (doesStun) {
+            for(var i=0;i<targets.length;i++) {
+                var targetFieldPos = targets[i];
+                var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
+                if (mainTargetUnit === targetUnit) {
+                    this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
+                    stunResult[targetUnit.playerId] = true;
+                    expGained[attacker.playerId] += 2000;
+                    break;
+                }
+            }
+        }
+    }
+
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
         var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
@@ -420,15 +437,6 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     var MATK_DOWN_CHANCE = (isNaN(skillPhase.status["Matk Down"]) ? 0 : skillPhase.status["Matk Down"]);
                     var MDEF_DOWN_CHANCE = (isNaN(skillPhase.status["Mdef Down"]) ? 0 : skillPhase.status["Mdef Down"]);
 
-                    if (attacker.getClassId() === 1 && !targetUnit.status["Stun"]) {
-                        // fighter
-                        var doesStun = (this.bot.functionHelper.randomInt(100) < 10);
-                        if (doesStun) {
-                            this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
-                            stunResult[targetUnit.playerId] = true;
-                            expGained[attacker.playerId] += 2000;
-                        }    
-                    }
                     if (!targetUnit.status["Stun"]) {
                         var doesStun = (this.bot.functionHelper.randomInt(100) < STUN_CHANCE);
                         if (doesStun) {

@@ -125,7 +125,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Patk Down": 10
+                        "Patk Down": 30
                     }
                 )
             ]
@@ -198,7 +198,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Stun": 20
+                        "Stun": 30
                     }
                 )
             ]
@@ -217,7 +217,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Stun": 20
+                        "Stun": 30
                     }
                 )
             ]
@@ -273,7 +273,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Stun": 20
+                        "Stun": 30
                     }
                 )
             ]
@@ -346,8 +346,8 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Pdef Down": 10,
-                        "Mdef Down": 10,
+                        "Pdef Down": 20,
+                        "Mdef Down": 20,
                     }
                 )
             ]
@@ -542,7 +542,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Pdef Down": 10
+                        "Pdef Down": 20
                     }
                 )
             ]
@@ -689,8 +689,8 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Pdef Down": 10,
-                        "Mdef Down": 10
+                        "Pdef Down": 20,
+                        "Mdef Down": 20
                     }
                 )
             ]
@@ -789,7 +789,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack08", 9,
                     false, {
-                        "Matk Down": 10
+                        "Matk Down": 30
                     }
                 )
             ]
@@ -1061,8 +1061,8 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack08", 9,
                     false, {
-                        "Pdef Down": 10,
-                        "Mdef Down": 10
+                        "Pdef Down": 20,
+                        "Mdef Down": 20
                     }
                 )
             ]
@@ -1378,8 +1378,8 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack03", 3,
                     true, {
-                        "Pdef Down": 10,
-                        "Mdef Down": 10
+                        "Pdef Down": 20,
+                        "Mdef Down": 20
                     }
                 )
             ]
@@ -1730,8 +1730,8 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 0,
                     true, {
-                        "Pdef Down": 10,
-                        "Mdef Down": 10
+                        "Pdef Down": 15,
+                        "Mdef Down": 15
                     }
                 )
             ]
@@ -2191,7 +2191,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     false, {
-                        "Mdef Down": 10
+                        "Mdef Down": 30
                     }
                 )
             ]
@@ -2210,8 +2210,8 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Pdef Down": 10,
-                        "Patk Down": 10
+                        "Pdef Down": 50,
+                        "Patk Down": 50
                     }
                 )
             ]
@@ -2266,7 +2266,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Poison": 30
+                        "Poison": 15
                     }
                 )
             ]
@@ -2376,8 +2376,8 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
                     true, {
-                        "Pdef Down": 10,
-                        "Mdef Down": 10
+                        "Pdef Down": 20,
+                        "Mdef Down": 20
                     }
                 )
             ]
