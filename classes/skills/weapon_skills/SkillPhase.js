@@ -101,6 +101,16 @@ SkillPhase.prototype.getElementFactor = function(targetElement) {
         if (targetElement === "wind") return 2.0;
         return 1.0;
     }
+    if (this.element === SkillPhaseConst.ELEMENT_DARK) {
+        if (targetElement === "dark") return 0.5;
+        if (targetElement === "light") return 2.0;
+        return 1.0;
+    }
+    if (this.element === SkillPhaseConst.ELEMENT_LIGHT) {
+        if (targetElement === "light") return 0.5;
+        if (targetElement === "dark") return 2.0;
+        return 1.0;
+    }
     return 1.0;
 }
 

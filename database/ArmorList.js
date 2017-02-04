@@ -3360,7 +3360,7 @@ module.exports = {
                     patk: 0, pdef: 156, matk: 0, mdef: 95, crit: 0, hit: 80, eva: 35
                 },
                 "+3": { price: 8000,
-                    patk: 0, pdef: 160, matk: 0, mdef: 95, crit: 0, hit: 1000, eva: 35
+                    patk: 0, pdef: 160, matk: 0, mdef: 95, crit: 0, hit: 100, eva: 35
                 }
             },
             devCost: 50000, levelRequired: 71, tier: 3, recipe: [
