@@ -3332,7 +3332,7 @@ module.exports = {
                     patk: 0, pdef: 86, matk: 0, mdef: 69, crit: 0, hit: 31, eva: 35
                 },
                 "+2": { price: 7000,
-                    patk: 0, pdef: 106, matk: 0, mdef: 72 crit: 0, hit: 35, eva: 35
+                    patk: 0, pdef: 106, matk: 0, mdef: 72, crit: 0, hit: 35, eva: 35
                 },
                 "+3": { price: 8000,
                     patk: 0, pdef: 125, matk: 0, mdef: 78, crit: 0, hit: 39, eva: 35
