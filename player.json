@@ -1,7 +1,7 @@
 {
     "162995652152786944": {
         "characterId": "10850003_5bbd0e67",
-        "exp": 12308892,
+        "exp": 12310506,
         "equipedWeapon": {
             "_id": "3008091",
             "plus": 0
@@ -631,7 +631,7 @@
     },
     "196169177931841536": {
         "characterId": "10350003_fcc3ce23",
-        "exp": 11351556,
+        "exp": 11366596,
         "equipedWeapon": {
             "_id": "308320",
             "plus": 3
@@ -2910,7 +2910,7 @@
     },
     "224136431730163722": {
         "characterId": "10850005_ad800ba1",
-        "exp": 14626918,
+        "exp": 14631037,
         "equipedWeapon": {
             "_id": "3008091",
             "plus": 3
@@ -3356,7 +3356,7 @@
     },
     "190452357295767552": {
         "characterId": "10850002_c4678df9",
-        "exp": 13584098,
+        "exp": 13606601,
         "equipedWeapon": {
             "_id": "308819",
             "plus": 3
@@ -3986,7 +3986,7 @@
                 "+4": 0
             }
         },
-        "gold": 62623,
+        "gold": 59623,
         "position": "front",
         "partnerId": null,
         "ceoPower": false,
@@ -4817,7 +4817,7 @@
     },
     "135142639744843776": {
         "characterId": "10650003_314afe6a",
-        "exp": 12465277,
+        "exp": 12466877,
         "equipedWeapon": {
             "_id": "3006091",
             "plus": 3
@@ -6763,7 +6763,7 @@
     },
     "160934943285837824": {
         "characterId": "10150002_765306d2",
-        "exp": 15298380,
+        "exp": 15309602,
         "equipedWeapon": {
             "_id": "308119",
             "plus": 3
@@ -7479,7 +7479,7 @@
     },
     "147670477605699584": {
         "characterId": "10150003_e989854c",
-        "exp": 16005827,
+        "exp": 16012223,
         "equipedWeapon": {
             "_id": "308121",
             "plus": 3
@@ -8695,7 +8695,7 @@
     },
     "147299927674978304": {
         "characterId": "10450002_bbda369b",
-        "exp": 9841570,
+        "exp": 9845545,
         "equipedWeapon": {
             "_id": "308419",
             "plus": 3
@@ -8745,7 +8745,7 @@
             "1st Anni. W. Hammer": 1,
             "Black Pearl": 825,
             "Magical Water": 1387,
-            "Forge": 3,
+            "Forge": 2,
             "Chimera Horn": 1489,
             "Full Moon Fragment": 2196,
             "Luxurious Leather": 960,
@@ -8760,17 +8760,17 @@
             "Weapon Hammer": 43,
             "Eld Light": 0,
             "Unmelting Ice": 1440,
-            "Armor Hammer": 14,
+            "Armor Hammer": 11,
             "Ominous Cloth": 1733,
             "Aroma Oil": 550,
             "Magnificent Silver Coin": 0,
             "Opal": 245,
             "Jade": 395,
-            "Amethyst": 240,
+            "Amethyst": 204,
             "Malachite": 403,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Mithril Ore": 181,
+            "Mithril Ore": 109,
             "Holy Cloth": 101,
             "Sun Fragment": 94,
             "Dragon Horn": 85,
@@ -8914,6 +8914,13 @@
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
+            },
+            "3104073": {
+                "+0": 0,
+                "+1": 22,
+                "+2": 14,
+                "+3": 0,
+                "+4": 0
             }
         },
         "accessoryList": {
@@ -8946,7 +8953,7 @@
                 "+4": 0
             }
         },
-        "gold": 15254393,
+        "gold": 14354393,
         "position": "front",
         "partnerId": "147297020963454976",
         "ceoPower": false,
@@ -12013,7 +12020,7 @@
     },
     "167613810192941056": {
         "characterId": "10450004_4de7335d",
-        "exp": 5605172,
+        "exp": 5606100,
         "gold": 13359361,
         "equipedWeapon": {
             "_id": "300409",
@@ -12969,7 +12976,7 @@
     },
     "147473142804250624": {
         "characterId": "10450002_bbda369b",
-        "exp": 7515631,
+        "exp": 7521289,
         "gold": 463140,
         "equipedWeapon": {
             "_id": "308419",
@@ -12999,7 +13006,7 @@
             "Beautiful Cloth": 552,
             "Silver Ore": 62,
             "Aquamarine": 254,
-            "Gold Mailbox": 12,
+            "Gold Mailbox": 11,
             "Maple Branch": 96,
             "Evergreen Oak Branch": 63,
             "Water Buffalo Horn": 81,
@@ -13536,7 +13543,7 @@
             "Tanned Leather": 111,
             "Evergreen Oak Branch": 466,
             "Water Buffalo Horn": 34,
-            "Gold Mailbox": 3,
+            "Gold Mailbox": 13,
             "Beautiful Cloth": 483,
             "Topaz": 94,
             "Silver Ore": 72,
@@ -13980,7 +13987,7 @@
     },
     "257195656874164225": {
         "characterId": "10350004_9524487b",
-        "exp": 3915396,
+        "exp": 3916641,
         "gold": 3200,
         "equipedWeapon": {
             "_id": "3003091",
@@ -14047,7 +14054,7 @@
             "Dragon Horn": 78,
             "Holy Water": 68,
             "Yggdrasil Branch": 80,
-            "Gold Mailbox": 3
+            "Gold Mailbox": 13
         },
         "weaponList": {
             "300306": {
@@ -14138,7 +14145,7 @@
     },
     "257207971405103114": {
         "characterId": "10650003_314afe6a",
-        "exp": 9394940,
+        "exp": 9404513,
         "gold": 2847852,
         "equipedWeapon": {
             "_id": "300609",
@@ -14149,7 +14156,7 @@
             "plus": 3
         },
         "equipedAccessory": {
-            "_id": "330107",
+            "_id": "330006",
             "plus": 3
         },
         "materialList": {
@@ -14534,7 +14541,7 @@
                 "+0": 1,
                 "+1": 96,
                 "+2": 67,
-                "+3": 1,
+                "+3": 0,
                 "+4": 0
             },
             "330103": {
@@ -14548,7 +14555,7 @@
                 "+0": 0,
                 "+1": 6,
                 "+2": 5,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "330206": {
@@ -14573,7 +14580,7 @@
     },
     "253374750007492608": {
         "characterId": "10750002_498ddb63",
-        "exp": 6185109,
+        "exp": 6193057,
         "gold": 17185572,
         "equipedWeapon": {
             "_id": "300709",
@@ -14595,7 +14602,7 @@
             "Unmelting Ice": 307,
             "Crystal": 735,
             "Star Fragment": 2,
-            "Gold Mailbox": 3,
+            "Gold Mailbox": 13,
             "Soft Leather": 9,
             "Ruby": 664,
             "Eld Light": 0,
@@ -15227,7 +15234,7 @@
     },
     "259609683189432320": {
         "characterId": "10650002_ae907df4",
-        "exp": 2326462,
+        "exp": 2327374,
         "gold": 1502697,
         "equipedWeapon": {
             "_id": "300609",
@@ -15429,7 +15436,7 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
-                "+4": 1
+                "+4": 0
             },
             "3007881": {
                 "+0": 0,
@@ -19210,7 +19217,7 @@
     "269352663538335744": {
         "_id": "269352663538335744",
         "characterId": "10650004_58ad7832",
-        "exp": 2342089,
+        "exp": 2346490,
         "gold": 838534,
         "equipedWeapon": {
             "_id": "300609",
@@ -19336,7 +19343,7 @@
     "269444567529422849": {
         "_id": "269444567529422849",
         "characterId": "10350002_63194dbd",
-        "exp": 3169887,
+        "exp": 3171933,
         "gold": 2011554,
         "equipedWeapon": {
             "_id": "300309",
@@ -20489,7 +20496,7 @@
     "149516684917473280": {
         "_id": "149516684917473280",
         "characterId": "10140002_d3d896dc",
-        "exp": 115,
+        "exp": 2121,
         "gold": 1700,
         "equipedWeapon": {
             "_id": "300101",
