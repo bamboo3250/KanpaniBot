@@ -531,6 +531,35 @@ module.exports = {
         }
     ],
 
+    "r8": [
+        {
+            _id: "330008", name: "Ring of Hades", commonNames: ["R8 Ring"],
+            type: "story", isActive: true, stats: {
+                "+0": { price: 1350,
+                    patk: 35, pdef: 8, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
+                },
+                "+1": { price: 1400,
+                    patk: 70, pdef: 50, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
+                },
+                "+2": { price: 1450,
+                    patk: 90, pdef: 80, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
+                },
+                "+3": { price: 1500,
+                    patk: 110, pdef: 90, matk: 6, mdef: 6, crit: 20, hit: 800, eva: 0
+                }
+            },
+            devCost: 40000, levelRequired: 71, tier: 3, recipe: [
+                {
+                    materialName: "Malachite",
+                    amount: 2
+                },{
+                    materialName: "Jade",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
     "labyrinth": [
         {
             _id: "360201", name: "Labyrinth Ring", commonNames: ["Labyrinth Ring"],
