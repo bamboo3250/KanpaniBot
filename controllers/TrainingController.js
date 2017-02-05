@@ -297,22 +297,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var matkDownResult = {};
     var mdefDownResult = {};
 
-    if (attacker.getClassId() === 1 && !mainTargetUnit.status["Stun"]) {
-        // fighter class trait
-        var doesStun = (this.bot.functionHelper.randomInt(100) < 30);
-        if (doesStun) {
-            for(var i=0;i<targets.length;i++) {
-                var targetFieldPos = targets[i];
-                var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
-                if (mainTargetUnit === targetUnit) {
-                    this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
-                    stunResult[targetUnit.playerId] = true;
-                    expGained[attacker.playerId] += 2000;
-                    break;
-                }
-            }
-        }
-    }
+    var doesHitMainTarget = false;
 
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
@@ -325,7 +310,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             if (targetUnit.isFainted()) continue;
 
             var encourageModifier = (attacker.status["Encourage"] ? 2.0 : 1.0);
-            
+
             var patkDownModifier = (attacker.status["Patk Down"] ? 0.5 : 1.0);
             var matkDownModifier = (attacker.status["Matk Down"] ? 0.5 : 1.0);
             var pdefDownModifier = (targetUnit.status["Pdef Down"] ? 0.5 : 1.0);
@@ -408,6 +393,10 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 if (!doesHit) {
                     damageBeforeDef = 0;
                     rawDamage = 0;
+                } else {
+                    if (mainTargetUnit === targetUnit) {
+                        doesHitMainTarget = true;
+                    }
                 }
 
                 if (targetUnit.getClassId() === 4) {
@@ -561,6 +550,23 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     damage: healHp,
                     type: "heal"
                 });
+            }
+        }
+    }
+
+    if (attacker.getClassId() === 1 && !mainTargetUnit.status["Stun"] && doesHitMainTarget) {
+        // fighter class trait
+        var doesStun = (this.bot.functionHelper.randomInt(100) < 30);
+        if (doesStun) {
+            for(var i=0;i<targets.length;i++) {
+                var targetFieldPos = targets[i];
+                var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
+                if (mainTargetUnit === targetUnit) {
+                    this.bot.playerManager.applyStun(attacker.playerId, targetUnit.playerId);
+                    stunResult[targetUnit.playerId] = true;
+                    expGained[attacker.playerId] += 2000;
+                    break;
+                }
             }
         }
     }
