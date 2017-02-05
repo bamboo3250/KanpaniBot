@@ -387,16 +387,16 @@ if (isLocal) {
 } else {
     elsa.playerData = [
         {
-            _id: "272258315441143810",  // Elmina Guest
-            characterId: "10450002_bbda369b",
-            exp: 10707880,//5370000,
+            _id: "272257876393721867",  // Fanaril Guest
+            characterId: "10150003_e989854c",
+            exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308419",
+                _id: "308121",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3104071",
+                _id: "310112",
                 plus: 3
             },
             equipedAccessory: {
@@ -420,7 +420,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedArmor: {
-                _id: "3106071",
+                _id: "310612",
                 plus: 3
             },
             equipedAccessory: {
@@ -435,21 +435,21 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "276547911381417985",  // Elie Guest
-            characterId: "10350002_63194dbd",
-            exp: 10707880,//5370000,
+            _id: "239141420194070530", 
+            characterId: "10840001_1af29f14",   // Annalina
+            exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308319",
+                _id: "308806",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3107071",
+                _id: "310812",
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
-                plus: 3
+                _id: "329997",
+                plus: 4
             },
             materialList: {},
             weaponList: {},
@@ -477,8 +477,8 @@ elsa.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "272258315441143810", null],
-                [null, "275533845984575488", "276547911381417985"]
+                [null, "272257876393721867", null],
+                [null, "275533845984575488", "239141420194070530"]
             ];    
         }
         
