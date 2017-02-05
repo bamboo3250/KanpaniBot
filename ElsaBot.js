@@ -444,7 +444,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedArmor: {
-                _id: "310812",
+                _id: "310813",
                 plus: 3
             },
             equipedAccessory: {
