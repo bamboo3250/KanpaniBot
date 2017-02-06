@@ -289,6 +289,10 @@ function EmployeeBot() {
     }
 }
 
+EmployeeBot.prototype.randomArmor = function(classId) {
+    return "310" + classId + this.functionHelper.randomObject(["08", "09", "10", "11", "12", "13", "073"]);
+}
+
 EmployeeBot.prototype.isPM = function(message) {
     return ((typeof message.guild === "undefined") || message.guild == null);
 }

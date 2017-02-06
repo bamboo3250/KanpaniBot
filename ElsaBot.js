@@ -1,4 +1,4 @@
-var elsa = require('./EmployeeBot');
+var myBot = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
 var fs = require('fs');
@@ -102,14 +102,14 @@ var status = [
     }
 ];
 
-elsa.declineNotEnoughBread = elsa.declineNotEnoughBread.concat(dialog.elsa.decline);
+myBot.declineNotEnoughBread = myBot.declineNotEnoughBread.concat(dialog.elsa.decline);
 var affectionFileName = "affection.json";
 
 function saveAffection() {
     var textToWrite = JSON.stringify(affection, null, 4);
     fs.writeFile(affectionFileName, textToWrite, function(err) {
         if(err) {
-            elsa.log(err);
+            myBot.log(err);
             return;
         }
     }); 
@@ -118,7 +118,7 @@ function saveAffection() {
 function loadAffection() {
     fs.readFile(affectionFileName, 'utf8', function (err, data) {
         if (err) {
-            elsa.log(err);
+            myBot.log(err);
             return;
         }
         affection = JSON.parse(data);
@@ -129,7 +129,7 @@ const REWARD_ROLE_NAME = 'Ally of Kemomin';
 
 function updateRole(message, member) {
     if (member == null) return;
-    if (elsa.isPM(message)) return;
+    if (myBot.isPM(message)) return;
     var allyRole = message.guild.roles.find('name', REWARD_ROLE_NAME);
     if (allyRole == null) return;
     
@@ -137,12 +137,12 @@ function updateRole(message, member) {
     if (affection[userId] >= 100) {
         member.addRole(allyRole).then(guildMember => {
         }).catch(err => {
-            elsa.log("Sorry, I don't have permission to add this Role.");
+            myBot.log("Sorry, I don't have permission to add this Role.");
         });
     } else {
         member.removeRole(allyRole).then(guildMember => {
         }).catch(err => {
-            elsa.log("Sorry, I don't have permission to remove this Role.");
+            myBot.log("Sorry, I don't have permission to remove this Role.");
         });
     }
 }
@@ -151,23 +151,23 @@ function handlePatCommand(message) {
     var userId = message.author.id;
     if (typeof lastTimePat[userId] === "undefined") lastTimePat[userId] = 0;
     if (typeof affection[userId] === "undefined") affection[userId] = 0;
-    if (message.channel.name === elsa.dmmChannelName) return;
-    if (!elsa.consumeBread(message)) return;
+    if (message.channel.name === myBot.dmmChannelName) return;
+    if (!myBot.consumeBread(message)) return;
 
     var now = new Date();
     var index = 0;
     if (now.valueOf() - lastTimePat[userId] < 2*60*1000) {
-        index = elsa.functionHelper.randomIntRange(0, 3);
+        index = myBot.functionHelper.randomIntRange(0, 3);
     } else {
-        index = elsa.functionHelper.randomIntRange(1, 8);
+        index = myBot.functionHelper.randomIntRange(1, 8);
     }
     var point = affection[userId] + touches[index].point;
     affection[userId] = Math.max(Math.min(point, 100), -100);
-    elsa.total_bread++;
+    myBot.total_bread++;
     
     var text = touches[index].text + "\n";
     text += "Affection: " + affection[userId] + "/100 (" + (touches[index].point>=0?"+":"") + touches[index].point + ")\n";
-    text += elsa.createRemainingBreadLine(message);
+    text += myBot.createRemainingBreadLine(message);
     
     message.reply(text);
     lastTimePat[userId] = now.valueOf();
@@ -192,7 +192,7 @@ function handleStatusCommand(message) {
 }
 
 function handleRankingCommand(message) {
-    if (elsa.preventPM(message)) return;
+    if (myBot.preventPM(message)) return;
     var result = [];
     for (key in affection) {
         result.push({
@@ -225,7 +225,7 @@ function handleRankingCommand(message) {
 }
 
 function handleMyRankingCommand(message) {
-    if (elsa.preventPM(message)) return;
+    if (myBot.preventPM(message)) return;
     var result = [];
     for (key in affection) {
         result.push({
@@ -277,7 +277,7 @@ function handleMyRankingCommand(message) {
 }
 
 function handleReduceCommand(message) {
-    if (!elsa.isAdmin(message)) return;
+    if (!myBot.isAdmin(message)) return;
     for(key in affection) {
         affection[key] = Math.floor(affection[key]/2);
     }
@@ -285,17 +285,17 @@ function handleReduceCommand(message) {
 }
 
 function handleResetCommand(message) {
-    if (!elsa.isAdmin(message)) return;
+    if (!myBot.isAdmin(message)) return;
     affection = {};
     saveAffection();
 }
 
-elsa.bot.on("message", function(message) {
-    if (message.channel.type === "text" && message.channel.name === elsa.nutakuChannelName 
-            && message.author.id != elsa.bot.user.id) {
-        elsa.hasNewMessage = true;
+myBot.bot.on("message", function(message) {
+    if (message.channel.type === "text" && message.channel.name === myBot.nutakuChannelName 
+            && message.author.id != myBot.bot.user.id) {
+        myBot.hasNewMessage = true;
     }
-    elsa.initBreadIfNeed(message.author.id);
+    myBot.initBreadIfNeed(message.author.id);
 
     var command = message.content.trim().toLowerCase();
     switch (command) {
@@ -318,22 +318,22 @@ elsa.bot.on("message", function(message) {
         handleResetCommand(message);
         break;
     default:
-        elsa.handleCommonCommand(message);
+        myBot.handleCommonCommand(message);
         break;
     }
 });
 
-elsa.greetings = dialog.elsa.greetings;
-elsa.idleTalks = dialog.elsa.idleTalks;
-elsa.commonGoodMorning = elsa.commonGoodMorning.concat(dialog.elsa.commonGoodMorning);
-elsa.commonGoodNight = elsa.commonGoodNight.concat(dialog.elsa.commonGoodNight);
-elsa.commonThanks = elsa.commonThanks.concat(dialog.elsa.commonThanks);
+myBot.greetings = dialog.elsa.greetings;
+myBot.idleTalks = dialog.elsa.idleTalks;
+myBot.commonGoodMorning = myBot.commonGoodMorning.concat(dialog.elsa.commonGoodMorning);
+myBot.commonGoodNight = myBot.commonGoodNight.concat(dialog.elsa.commonGoodNight);
+myBot.commonThanks = myBot.commonThanks.concat(dialog.elsa.commonThanks);
 
 var isLocal = true;
 isLocal = false;
 
 if (isLocal) {
-    elsa.playerData = [
+    myBot.playerData = [
         {
             _id: "240097185436270593",  // test-bot
             characterId: "10150002_765306d2",
@@ -385,7 +385,7 @@ if (isLocal) {
         }
     ];
 } else {
-    elsa.playerData = [
+    myBot.playerData = [
         {
             _id: "272257876393721867",  // Fanaril Guest
             characterId: "10150003_e989854c",
@@ -462,13 +462,13 @@ if (isLocal) {
     ];
 }
 
-elsa.bot.on("ready", function() {
-    if (elsa.ready()) {
+myBot.bot.on("ready", function() {
+    if (myBot.ready()) {
         loadAffection();
-        for(var i=0;i<elsa.playerData.length;i++) {
-            elsa.playerManager.createUnitForPlayer(elsa.playerData[i]);    
+        for(var i=0;i<myBot.playerData.length;i++) {
+            myBot.playerManager.createUnitForPlayer(myBot.playerData[i]);    
         }
-        trainingController.bot = elsa;
+        trainingController.bot = myBot;
         if (isLocal) {
             trainingController.trainerField = [
                 //[null, "240097185436270593", "265889287281573918"],
@@ -482,10 +482,10 @@ elsa.bot.on("ready", function() {
             ];    
         }
         
-        elsa.battleController = trainingController;
+        myBot.battleController = trainingController;
     }
     
 });
 
-elsa.token = config.elsa;
-elsa.login();
+myBot.token = config.elsa;
+myBot.login();

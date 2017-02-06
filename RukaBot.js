@@ -1,30 +1,29 @@
-var ruka = require('./EmployeeBot');
+var myBot = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
 
 var trainingController = require('./controllers/TrainingController');
 
-ruka.declineNotEnoughBread = ruka.declineNotEnoughBread.concat(dialog.ruka.decline);
+myBot.declineNotEnoughBread = myBot.declineNotEnoughBread.concat(dialog.ruka.decline);
 
-ruka.canUseBreadToRoll = true;
+myBot.canUseBreadToRoll = true;
 
-ruka.bot.on("message", function(message) {
-    ruka.initBreadIfNeed(message.author.id);
-    ruka.handleCommonCommand(message);
+myBot.bot.on("message", function(message) {
+    myBot.initBreadIfNeed(message.author.id);
+    myBot.handleCommonCommand(message);
 });
 
-ruka.greetings = dialog.ruka.greetings;
-ruka.idleTalks = dialog.ruka.idleTalks;
-ruka.commonGoodMorning = ruka.commonGoodMorning.concat(dialog.ruka.commonGoodMorning);
-ruka.commonGoodNight = ruka.commonGoodNight.concat(dialog.ruka.commonGoodNight);
-ruka.commonThanks = ruka.commonThanks.concat(dialog.ruka.commonThanks);
-
+myBot.greetings = dialog.ruka.greetings;
+myBot.idleTalks = dialog.ruka.idleTalks;
+myBot.commonGoodMorning = myBot.commonGoodMorning.concat(dialog.ruka.commonGoodMorning);
+myBot.commonGoodNight = myBot.commonGoodNight.concat(dialog.ruka.commonGoodNight);
+myBot.commonThanks = myBot.commonThanks.concat(dialog.ruka.commonThanks);
 
 var isLocal = true;
 isLocal = false;
 
 if (isLocal) {
-    ruka.playerData = [
+    myBot.playerData = [
         {
             _id: "240097185436270593",  // test-bot
             characterId: "10150002_765306d2",
@@ -76,7 +75,7 @@ if (isLocal) {
         }
     ];
 } else {
-    ruka.playerData = [
+    myBot.playerData = [
         {
             _id: "241511566036434945",  // Elsa Guest
             characterId: "10150002_765306d2",
@@ -87,7 +86,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedArmor: {
-                _id: "310108",
+                _id: myBot.randomArmor(1),
                 plus: 0
             },
             equipedAccessory: {
@@ -102,16 +101,16 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "268576286060838914",  // Saimi Guest
-            characterId: "10750001_32935980",
+            _id: "270767219875643392",  // Siegrid Guest
+            characterId: "10550001_27d912ef",
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308510",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3107071",
+                _id: myBot.randomArmor(5),
                 plus: 3
             },
             equipedAccessory: {
@@ -126,17 +125,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272259125256388610",  // Sytry Guest
-            characterId: "10850002_c4678df9",
+            _id: "273395939199156225",  // Sion Guest
+            characterId: "10250001_ff1a69c9",
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308819",
+                _id: "308214",
                 plus: 3
             },
             equipedArmor: {
-                _id: "3108071",
-                plus: 3
+                _id: myBot.randomArmor(2),
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330107",
@@ -146,20 +145,20 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "back",
+            position: "front",
             partnerId: null,
             isTrainer: true
         },{
-            _id: "275533845984575488",  // Nona Guest
-            characterId: "10650003_314afe6a",
-            exp: 10707880,//5370000,
+            _id: "269733140635975680",  // Hinano Guest
+            characterId: "10350003_fcc3ce23",
+            exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308621",
+                _id: "308320",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310608",
+                _id: myBot.randomArmor(3),
                 plus: 3
             },
             equipedAccessory: {
@@ -183,7 +182,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedArmor: {
-                _id: "3107071",
+                _id: myBot.randomArmor(3),
                 plus: 3
             },
             equipedAccessory: {
@@ -202,12 +201,12 @@ if (isLocal) {
 }
 
 
-ruka.bot.on("ready", function() {
-    if (ruka.ready()) {
-        for(var i=0;i<ruka.playerData.length;i++) {
-            ruka.playerManager.createUnitForPlayer(ruka.playerData[i]);    
+myBot.bot.on("ready", function() {
+    if (myBot.ready()) {
+        for(var i=0;i<myBot.playerData.length;i++) {
+            myBot.playerManager.createUnitForPlayer(myBot.playerData[i]);    
         }
-        trainingController.bot = ruka;
+        trainingController.bot = myBot;
         if (isLocal) {
             trainingController.trainerField = [
                 ["240097185436270593", null, null],
@@ -220,9 +219,9 @@ ruka.bot.on("ready", function() {
             ];    
         }
         
-        ruka.battleController = trainingController;
+        myBot.battleController = trainingController;
     }
 });
 
-ruka.token = config.ruka;
-ruka.login();
+myBot.token = config.ruka;
+myBot.login();

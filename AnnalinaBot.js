@@ -1,15 +1,15 @@
-var annalina = require('./EmployeeBot');
+var myBot = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
 
 var trainingController = require('./controllers/TrainingController');
 
 var answerTexts = dialog.annalina.answers;
-annalina.declineNotEnoughBread = annalina.declineNotEnoughBread.concat(dialog.annalina.decline);
+myBot.declineNotEnoughBread = myBot.declineNotEnoughBread.concat(dialog.annalina.decline);
 
 function handleQuestion(message) {
     var authorId = message.author.id;
-    var text = answerTexts[annalina.functionHelper.randomInt(answerTexts.length)];
+    var text = answerTexts[myBot.functionHelper.randomInt(answerTexts.length)];
     message.reply(text);
 }
 
@@ -19,12 +19,12 @@ function getCommand(message) {
     return text.split(" ")[0];
 }
 
-annalina.bot.on("message", function(message) {
-    if (message.channel.type === "text" && message.channel.name === annalina.nutakuChannelName 
-            && message.author.id != annalina.bot.user.id) {
-        annalina.hasNewMessage = true;
+myBot.bot.on("message", function(message) {
+    if (message.channel.type === "text" && message.channel.name === myBot.nutakuChannelName 
+            && message.author.id != myBot.bot.user.id) {
+        myBot.hasNewMessage = true;
     }
-    annalina.initBreadIfNeed(message.author.id);
+    myBot.initBreadIfNeed(message.author.id);
 
     var command = getCommand(message);
     switch (command) {
@@ -32,22 +32,22 @@ annalina.bot.on("message", function(message) {
         handleQuestion(message);
         break;
     default:
-        annalina.handleCommonCommand(message);
+        myBot.handleCommonCommand(message);
         break;
     }
 });
 
-annalina.greetings = dialog.annalina.greetings;
-annalina.idleTalks = dialog.annalina.idleTalks;
-annalina.commonGoodMorning = annalina.commonGoodMorning.concat(dialog.annalina.commonGoodMorning);
-annalina.commonGoodNight = annalina.commonGoodNight.concat(dialog.annalina.commonGoodNight);
-annalina.commonThanks = annalina.commonThanks.concat(dialog.annalina.commonThanks);
+myBot.greetings = dialog.annalina.greetings;
+myBot.idleTalks = dialog.annalina.idleTalks;
+myBot.commonGoodMorning = myBot.commonGoodMorning.concat(dialog.annalina.commonGoodMorning);
+myBot.commonGoodNight = myBot.commonGoodNight.concat(dialog.annalina.commonGoodNight);
+myBot.commonThanks = myBot.commonThanks.concat(dialog.annalina.commonThanks);
 
 var isLocal = true;
 isLocal = false;
 
 if (isLocal) {
-    annalina.playerData = [
+    myBot.playerData = [
         {
             _id: "240097185436270593",  // test-bot
             characterId: "10750001_32935980",
@@ -75,7 +75,7 @@ if (isLocal) {
         }
     ];
 } else {
-    annalina.playerData = [
+    myBot.playerData = [
         {
             _id: "270767219875643392",  // Siegrid Guest
             characterId: "10550001_27d912ef",
@@ -153,12 +153,12 @@ if (isLocal) {
 }
 
 
-annalina.bot.on("ready", function() {
-    if (annalina.ready()) {
-        for(var i=0;i<annalina.playerData.length;i++) {
-            annalina.playerManager.createUnitForPlayer(annalina.playerData[i]);    
+myBot.bot.on("ready", function() {
+    if (myBot.ready()) {
+        for(var i=0;i<myBot.playerData.length;i++) {
+            myBot.playerManager.createUnitForPlayer(myBot.playerData[i]);    
         }
-        trainingController.bot = annalina;
+        trainingController.bot = myBot;
         if (isLocal) {
             trainingController.trainerField = [
                 [null, null, null],
@@ -171,9 +171,9 @@ annalina.bot.on("ready", function() {
             ];    
         }
         
-        annalina.battleController = trainingController;
+        myBot.battleController = trainingController;
     }
 });
 
-annalina.token = config.annalina;
-annalina.login();
+myBot.token = config.annalina;
+myBot.login();
