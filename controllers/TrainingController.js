@@ -9,9 +9,7 @@ function TrainingController() {
         [null,null,null],
         [null,null,null]
     ];
-    this.contribution = {
-        "147367023247228928": 1
-    };
+    this.contribution = {};
 }
 
 TrainingController.prototype.didAllTrainersDie = function() {
@@ -380,8 +378,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     critDamageBeforeDef - 0.00115 * def * damageBeforeDef - def / 4
                 );
                 rawDamage = Math.max(1, rawDamage);
-                totalDamage += rawDamage;
-
+                
                 var frontUnit = null;
                 if (targetFieldPos.row === 1 && field[0][targetFieldPos.column]) {
                     frontUnit = this.bot.playerManager.getPlayerUnit(field[0][targetFieldPos.column]);
@@ -398,6 +395,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         doesHitMainTarget = true;
                     }
                 }
+                totalDamage += rawDamage;
 
                 if (targetUnit.getClassId() === 4) {
                     if (typeof expGained[field[targetFieldPos.row][targetFieldPos.column]] === "undefined") {
@@ -513,10 +511,10 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 }
             }
 
-            if (isMdefDownUsed && targetUnit.status["Mdef Down"]) {
+            if (isMdefDownUsed && targetUnit.status["Mdef Down"] && totalDamage > 0 && targetUnit.status["Mdef Down"].ownerId != attacker.playerId) {
                 targetUnit.status["Mdef Down"].absorbDamage(totalDamage);
             }
-            if (isPdefDownUsed && targetUnit.status["Pdef Down"]) {
+            if (isPdefDownUsed && targetUnit.status["Pdef Down"] && totalDamage > 0 && targetUnit.status["Mdef Down"].ownerId != attacker.playerId) {
                 targetUnit.status["Pdef Down"].absorbDamage(totalDamage);
             }
 
