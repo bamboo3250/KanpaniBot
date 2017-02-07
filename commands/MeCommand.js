@@ -50,6 +50,12 @@ module.exports = {
             } else {
                 text += "**Not available**\n";
             }
+            if (bot.battleController && bot.battleController.contribution) {
+                if (typeof bot.battleController.contribution[userId] === "undefined") {
+                    bot.battleController.contribution[userId] = 0;
+                }
+                text += "Actions: **" + bot.battleController.contribution[userId] + "**";
+            }
 
             message.reply(text);
             return;

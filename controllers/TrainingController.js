@@ -76,13 +76,13 @@ TrainingController.prototype.endBattle = function(endBattleByTimeout) {
     var now = new Date();
     this.respawnTime = now.valueOf() + that.bot.playerManager.TRAINER_RESPAWN_TIME;
     setTimeout(function() {
-        for(key in this.bot.playerManager.playerUnits) {
+        for(key in that.bot.playerManager.playerUnits) {
             var userId = key;
-            var userUnit = this.bot.playerManager.playerUnits[userId];
+            var userUnit = that.bot.playerManager.playerUnits[userId];
             if (userUnit && userUnit.isTrainer) {
                 userUnit.fullHeal();
-                if (this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
-                    this.bot.userManager.removeRole(userId, "Fainted")
+                if (that.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
+                    that.bot.userManager.removeRole(userId, "Fainted")
                 }
             }
         }
@@ -96,28 +96,29 @@ TrainingController.prototype.endBattle = function(endBattleByTimeout) {
     var expReward = Math.floor((EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1))) * endBattleFactor);
     for(key in this.contribution) {
         var userId = key;
-        var itemAmount = Math.floor(this.contribution[userId] * 5 * factor * endBattleFactor);
-        this.contribution[userId] = 0;
-        var itemReceived = {};
-        for(var i=0;i<itemAmount;i++) {
-            var itemName = this.bot.functionHelper.randomObject(rewardList);
-            if (typeof itemReceived[itemName] === "undefined") itemReceived[itemName] = 0;
-            itemReceived[itemName]++;
+        if (this.contribution[userId] > 0) {
+            var itemAmount = Math.floor(this.contribution[userId] * 5 * factor * endBattleFactor);
+            this.contribution[userId] = 0;
+            var itemReceived = {};
+            for(var i=0;i<itemAmount;i++) {
+                var itemName = this.bot.functionHelper.randomObject(rewardList);
+                if (typeof itemReceived[itemName] === "undefined") itemReceived[itemName] = 0;
+                itemReceived[itemName]++;
+            }
+            var text = "You have received **" + itemAmount + " items** and **" + expReward + " EXP** for defeating all Trainers:\n";
+            for(itemKey in itemReceived) {
+                var itemName = itemKey;
+                text += itemName + " x" + itemReceived[itemName] + "\n";
+                this.bot.playerManager.addItem(userId, itemName, itemReceived[itemName]);
+            }
+            this.bot.playerManager.addExp(userId, expReward);
+            var user = this.bot.userManager.getUser(userId);
+            if (user) {
+                user.sendMessage(text);
+            }
+            this.bot.playerManager.refreshUnitForPlayerId(userId);
         }
-        var text = "You have received **" + itemAmount + " items** and **" + expReward + " EXP** for defeating all Trainers:\n";
-        for(itemKey in itemReceived) {
-            var itemName = itemKey;
-            text += itemName + " x" + itemReceived[itemName] + "\n";
-            this.bot.playerManager.addItem(userId, itemName, itemReceived[itemName]);
-        }
-        this.bot.playerManager.addExp(userId, expReward);
-        var user = this.bot.userManager.getUser(userId);
-        if (user) {
-            user.sendMessage(text);
-        }
-        this.bot.playerManager.refreshUnitForPlayerId(userId);
     }
-    this.contribution = {};
     this.saveContribution();
     this.bot.savePlayer();
 }

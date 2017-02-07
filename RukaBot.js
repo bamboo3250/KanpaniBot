@@ -200,7 +200,6 @@ if (isLocal) {
     ];
 }
 
-
 myBot.bot.on("ready", function() {
     if (myBot.ready()) {
         for(var i=0;i<myBot.playerData.length;i++) {
@@ -220,8 +219,9 @@ myBot.bot.on("ready", function() {
                 ["269733140635975680", null, "276547911381417985"]
             ];    
         }
-        
+
         myBot.battleController = trainingController;
+        trainingController.setTimer();
     }
 });
 

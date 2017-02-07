@@ -77,20 +77,20 @@ if (isLocal) {
 } else {
     myBot.playerData = [
         {
-            _id: "270767219875643392",  // Siegrid Guest
-            characterId: "10550001_27d912ef",
-            exp: 10707880,//10707880,
+            _id: "272258315441143810",  // Elmina Guest
+            characterId: "10450002_bbda369b",
+            exp: 2646190,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308510",
+                _id: "308419",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310513",
-                plus: 3
+                _id: myBot.randomArmor(4),
+                plus: 0
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330207",
                 plus: 3
             },
             materialList: {},
@@ -101,33 +101,33 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "276547911381417985",  // Elie Guest
-            characterId: "10350002_63194dbd",
-            exp: 10707880,//10707880,
+            _id: "268576286060838914",  // Saimi Guest
+            characterId: "10750001_32935980",
+            exp: 2646190,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308319",
+                _id: "308706",
                 plus: 3
             },
             equipedArmor: {
-                _id: "310713",
-                plus: 3
+                _id: myBot.randomArmor(7),
+                plus: 0
             },
             equipedAccessory: {
-                _id: "330206",
+                _id: "330007",
                 plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "back",
+            position: "front",
             partnerId: null,
             isTrainer: true
         },{
             _id: "272259125256388610",  // Sytry Guest
             characterId: "10850002_c4678df9",
-            exp: 10707880,//10707880,
+            exp: 2646190,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308819",
@@ -135,7 +135,7 @@ if (isLocal) {
             },
             equipedArmor: {
                 _id: "310813",
-                plus: 3
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330107",
@@ -168,12 +168,13 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "270767219875643392", null],
-                ["276547911381417985", null, "272259125256388610"]
+                [null, "272258315441143810", "268576286060838914"],
+                [null, "272259125256388610", null]
             ];    
         }
         
         myBot.battleController = trainingController;
+        trainingController.setTimer();
     }
 });
 
