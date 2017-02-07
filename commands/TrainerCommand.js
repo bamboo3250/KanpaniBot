@@ -44,12 +44,12 @@ module.exports = {
         if (bot.battleController.endTime) {
             var remainTime = bot.battleController.endTime - now.valueOf();
             var time = bot.functionHelper.parseTime(remainTime);
-            text += "Remaining Time: **" + time + "**";    
+            text += "Remaining Time: **" + time + "**\n";    
         }
         if (bot.battleController.respawnTime) {
             var remainTime = bot.battleController.respawnTime - now.valueOf();
             var time = bot.functionHelper.parseTime(remainTime);
-            text += "Respawn Time: " + time + "**";    
+            text += "Respawn Time: **" + time + "**";    
         }
         
         if (text.length > 0) {

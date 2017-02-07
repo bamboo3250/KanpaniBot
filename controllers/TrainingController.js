@@ -65,16 +65,25 @@ TrainingController.prototype.endBattle = function(endBattleByTimeout) {
     for(key in this.bot.playerManager.playerUnits) {
         var userId = key;
         var userUnit = this.bot.playerManager.playerUnits[userId];
-        if (userUnit && !userUnit.isTrainer) {
-            userUnit.fullHeal();
-            if (this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
-                this.bot.userManager.removeRole(userId, "Fainted")
+        if (userUnit) {
+            if (!userUnit.isTrainer) {
+                userUnit.fullHeal();
+                if (this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
+                    this.bot.userManager.removeRole(userId, "Fainted")
+                }
+            } else {
+                userUnit.currentHP = 0;
+                if (!this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
+                    this.bot.userManager.addRole(userId, "Fainted")
+                }
             }
         }
     }
     var that = this;
     var now = new Date();
     this.respawnTime = now.valueOf() + that.bot.playerManager.TRAINER_RESPAWN_TIME;
+    this.endTime = null;
+
     setTimeout(function() {
         for(key in that.bot.playerManager.playerUnits) {
             var userId = key;
