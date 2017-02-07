@@ -514,7 +514,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             if (isMdefDownUsed && targetUnit.status["Mdef Down"] && totalDamage > 0 && targetUnit.status["Mdef Down"].ownerId != attacker.playerId) {
                 targetUnit.status["Mdef Down"].absorbDamage(totalDamage);
             }
-            if (isPdefDownUsed && targetUnit.status["Pdef Down"] && totalDamage > 0 && targetUnit.status["Mdef Down"].ownerId != attacker.playerId) {
+            if (isPdefDownUsed && targetUnit.status["Pdef Down"] && totalDamage > 0 && targetUnit.status["Pdef Down"].ownerId != attacker.playerId) {
                 targetUnit.status["Pdef Down"].absorbDamage(totalDamage);
             }
 
