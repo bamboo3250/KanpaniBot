@@ -16,8 +16,10 @@ function PAtkDownStatus(bot, ownerId, targetId) {
         var targetName = targetUnit.shortName;
         if (targetUser) targetName += " (" + targetUser.username + ")";
         
-        var text = "Patk Down has expired on " + targetName + ".";
-        that.bot.battleChannel.sendMessage(text);
+        if (!targetUnit.isFainted()) {
+            var text = "Patk Down has expired on " + targetName + ".";
+            that.bot.battleChannel.sendMessage(text);
+        }
         that.destroy();
     }, INTERVAL);
 }

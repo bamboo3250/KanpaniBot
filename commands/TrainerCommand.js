@@ -40,6 +40,18 @@ module.exports = {
                 }
             }
         }
+        var now = new Date();
+        if (bot.battleController.endTime) {
+            var remainTime = bot.battleController.endTime - now.valueOf();
+            var time = bot.functionHelper.parseTime(remainTime);
+            text += "\Remaining Time: " + time;    
+        }
+        if (bot.battleController.respawnTime) {
+            var remainTime = bot.battleController.respawnTime - now.valueOf();
+            var time = bot.functionHelper.parseTime(remainTime);
+            text += "\uRespawn Time: " + time;    
+        }
+        
         if (text.length > 0) {
             message.channel.sendMessage(text);    
         } else {

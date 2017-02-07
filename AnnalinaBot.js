@@ -159,6 +159,8 @@ myBot.bot.on("ready", function() {
             myBot.playerManager.createUnitForPlayer(myBot.playerData[i]);    
         }
         trainingController.bot = myBot;
+        trainingController.loadContribution();
+        
         if (isLocal) {
             trainingController.trainerField = [
                 [null, null, null],

@@ -1,6 +1,7 @@
 var BattleField = require('../classes/BattleField');
 var BattlePainter = require('./BattlePainter');
 var Jimp = require("jimp");
+var fs = require('fs');
 
 function TrainingController() {
     this.type = "training";
@@ -10,6 +11,115 @@ function TrainingController() {
         [null,null,null]
     ];
     this.contribution = {};
+    this.endTime = null;
+    this.respawnTime = null;
+    this.timer = null;
+}
+
+var contributionFileName = "bfcontribution.json";
+TrainingController.prototype.loadContribution = function() {
+    var that = this;
+    fs.readFile(contributionFileName, 'utf8', function (err, data) {
+        if (err && that.bot) {
+            that.bot.log(err);
+            return;
+        }
+        that.contribution = JSON.parse(data);
+    });
+}
+
+
+TrainingController.prototype.saveContribution = function() {
+    var textToWrite = JSON.stringify(this.contribution, null, 4);
+    var that = this;
+    fs.writeFile(contributionFileName, textToWrite, function(err) {
+        if(err && that.bot) {
+            that.bot.log(err);
+            return;
+        }
+    }); 
+}
+
+TrainingController.prototype.setTimer = function() {
+    var numTrainer = 0;
+    for(var i=0;i<2;i++) {
+        for(var j=0;j<3;j++) {
+            if (this.trainerField[i][j]) numTrainer++;
+        }
+    }
+    var now = new Date();
+    var bfDuration = numTrainer * 60 * 60 * 1000;
+    this.endTime = now.valueOf() + bfDuration;
+    this.respawnTime = null;
+    var that = this;
+    this.timer = setTimeout(function() {
+        that.endBattle(true);
+    }, bfDuration);
+}
+
+TrainingController.prototype.endBattle = function(endBattleByTimeout) {
+    if (this.timer) {
+        clearTimeout(this.timer);
+    }
+
+    for(key in this.bot.playerManager.playerUnits) {
+        var userId = key;
+        var userUnit = this.bot.playerManager.playerUnits[userId];
+        if (userUnit && !userUnit.isTrainer) {
+            userUnit.fullHeal();
+            if (this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
+                this.bot.userManager.removeRole(userId, "Fainted")
+            }
+        }
+    }
+    var that = this;
+    var now = new Date();
+    this.respawnTime = now.valueOf() + that.bot.playerManager.TRAINER_RESPAWN_TIME;
+    setTimeout(function() {
+        for(key in this.bot.playerManager.playerUnits) {
+            var userId = key;
+            var userUnit = this.bot.playerManager.playerUnits[userId];
+            if (userUnit && userUnit.isTrainer) {
+                userUnit.fullHeal();
+                if (this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
+                    this.bot.userManager.removeRole(userId, "Fainted")
+                }
+            }
+        }
+
+        var traineeRole = that.bot.battleChannel.guild.roles.find('name', 'Trainee');
+        that.bot.battleChannel.sendMessage(traineeRole + " All Trainers are ready for new battle.");
+        that.setTimer();
+    }, that.bot.playerManager.TRAINER_RESPAWN_TIME);
+
+    var endBattleFactor = (endBattleByTimeout ? 0.5 : 1.0);
+    var expReward = Math.floor((EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1))) * endBattleFactor);
+    for(key in this.contribution) {
+        var userId = key;
+        var itemAmount = Math.floor(this.contribution[userId] * 5 * factor * endBattleFactor);
+        this.contribution[userId] = 0;
+        var itemReceived = {};
+        for(var i=0;i<itemAmount;i++) {
+            var itemName = this.bot.functionHelper.randomObject(rewardList);
+            if (typeof itemReceived[itemName] === "undefined") itemReceived[itemName] = 0;
+            itemReceived[itemName]++;
+        }
+        var text = "You have received **" + itemAmount + " items** and **" + expReward + " EXP** for defeating all Trainers:\n";
+        for(itemKey in itemReceived) {
+            var itemName = itemKey;
+            text += itemName + " x" + itemReceived[itemName] + "\n";
+            this.bot.playerManager.addItem(userId, itemName, itemReceived[itemName]);
+        }
+        this.bot.playerManager.addExp(userId, expReward);
+        var user = this.bot.userManager.getUser(userId);
+        if (user) {
+            user.sendMessage(text);
+        }
+        this.bot.playerManager.refreshUnitForPlayerId(userId);
+    }
+    this.contribution = {};
+    this.saveContribution();
+    this.bot.savePlayer();
 }
 
 TrainingController.prototype.didAllTrainersDie = function() {
@@ -52,52 +162,7 @@ var EXP_REWARD = 48216 * factor;
 TrainingController.prototype.didPlayerDie = function(playerId) {
     var unit = this.bot.playerManager.getPlayerUnit(playerId);
     if (unit && unit.isTrainer && this.didAllTrainersDie()) {
-        for(key in this.bot.playerManager.playerUnits) {
-            var userId = key;
-            var userUnit = this.bot.playerManager.playerUnits[userId];
-            if (userUnit) {
-                if (!userUnit.isTrainer) {
-                    userUnit.fullHeal();
-                    if (this.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
-                        this.bot.userManager.removeRole(userId, "Fainted")
-                    }
-                } else {
-                    this.bot.playerManager.setRespawn(userId);
-                }
-            }
-        }
-        var that = this;
-        setTimeout(function() {
-            var traineeRole = that.bot.battleChannel.guild.roles.find('name', 'Trainee');
-            that.bot.battleChannel.sendMessage(traineeRole + " All Trainers are ready for new battle.");
-        }, that.bot.playerManager.TRAINER_RESPAWN_TIME);
-
-        var expReward = EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1));
-        for(key in this.contribution) {
-            var userId = key;
-            var itemAmount = this.contribution[userId] * 5 * factor + 200;
-            this.contribution[userId] = 0;
-            var itemReceived = {};
-            for(var i=0;i<itemAmount;i++) {
-                var itemName = this.bot.functionHelper.randomObject(rewardList);
-                if (typeof itemReceived[itemName] === "undefined") itemReceived[itemName] = 0;
-                itemReceived[itemName]++;
-            }
-            var text = "You have received **" + itemAmount + " items** and **" + expReward + " EXP** for defeating all Trainers:\n";
-            for(itemKey in itemReceived) {
-                var itemName = itemKey;
-                text += itemName + " x" + itemReceived[itemName] + "\n";
-                this.bot.playerManager.addItem(userId, itemName, itemReceived[itemName]);
-            }
-            this.bot.playerManager.addExp(userId, expReward);
-            var user = this.bot.userManager.getUser(userId);
-            if (user) {
-                user.sendMessage(text);
-            }
-            this.bot.playerManager.refreshUnitForPlayerId(userId);
-        }
-        this.contribution = {};
-        this.bot.savePlayer();
+        this.endBattle(false);
     }
 }
 
@@ -865,6 +930,7 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         that.contribution[attacker.playerId] = 0;
     }
     that.contribution[attacker.playerId]++;
+    this.saveContribution();
 
     var playerTurn = {
         side: "PLAYER",
@@ -1070,11 +1136,12 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
         }
     };
     
-    if (typeof that.contribution[attacker.playerId] === "undefined") {
-        that.contribution[attacker.playerId] = 0;
-    }
     if (!this.didAllTrainersDie()) {
+        if (typeof that.contribution[attacker.playerId] === "undefined") {
+            that.contribution[attacker.playerId] = 0;
+        }
         that.contribution[attacker.playerId]++;
+        this.saveContribution();
     }
     
     var playerTurn = {
