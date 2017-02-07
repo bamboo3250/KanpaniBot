@@ -1452,8 +1452,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 5,
-                    true, 
-                    {},
+                    true, {
+                        "Mdef Down": 10
+                    },
                     true,
                     -1080, -540,
                     -1730, -940
