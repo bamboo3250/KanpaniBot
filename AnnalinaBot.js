@@ -134,7 +134,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedArmor: {
-                _id: "310813",
+                _id: myBot.randomArmor(8),
                 plus: 0
             },
             equipedAccessory: {

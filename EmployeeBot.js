@@ -211,6 +211,8 @@ function EmployeeBot() {
 
     this.logChannel = null;
     this.battleChannel = null;
+
+    this.disconnectTimer = null;
     // Event stuffs
     // this.christmasTreeContribution = {};
     // this.christmasTreeMilestones = {
@@ -986,11 +988,17 @@ employee.bot.on('guildMemberRemove', (member) => {
 
 employee.bot.on('disconnect', (event) => {
     console.log("disconnected");
-    // employee.login();
+    employee.disconnectTimer = setTimeout(function() {
+        employee.bot.destroy().then(function() {
+            employee.bot = new Discord.Client();
+            employee.login();
+        });
+    }, 60*1000);
 });
 
 employee.bot.on('reconnecting', (event) => {
     console.log("reconnecting");
+    clearTimeout(employee.disconnectTimer);
 });
 
 process.on('uncaughtException', function (err) {
