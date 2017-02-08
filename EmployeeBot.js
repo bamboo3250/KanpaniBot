@@ -963,53 +963,45 @@ EmployeeBot.prototype.login = function() {
 
 var employee = new EmployeeBot();
 
-EmployeeBot.prototype.setup = function() {
-    var that = this;
-    that.bot.on('guildMemberAdd', (member) => {
-        var channels = member.guild.channels.array();
-        for(var i=0;i<channels.length;i++) {
-            if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
-                var text = "**" + member.user.username + "** has joined.\n";
-                text += "Member count: " + member.guild.memberCount;
-                channels[i].sendMessage(text);
-            } 
+employee.bot.on('guildMemberAdd', (member) => {
+    var channels = member.guild.channels.array();
+    for(var i=0;i<channels.length;i++) {
+        if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
+            var text = "**" + member.user.username + "** has joined.\n";
+            text += "Member count: " + member.guild.memberCount;
+            channels[i].sendMessage(text);
+        } 
+    }
+    employee.userManager.fetchAllMembers();
+});
+
+employee.bot.on('guildMemberRemove', (member) => {
+    var channels = member.guild.channels.array();
+    for(var i=0;i<channels.length;i++) {
+        if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
+            var text = "**" + member.user.username + "** has leaved.\n";
+            text += "Member count: " + member.guild.memberCount;
+            channels[i].sendMessage(text);
+        } 
+    }
+});
+
+employee.bot.on('disconnect', (event) => {
+    console.log("disconnected");
+    employee.disconnectTimer = setTimeout(function() {
+        if (employee.battleController && employee.battleController.type == "training") {
+            employee.battleController.saveSession(function() {
+                console.log("killed process");
+                process.exit();
+            });
         }
-        that.userManager.fetchAllMembers();
-    });
+    }, 60*1000);
+});
 
-    that.bot.on('guildMemberRemove', (member) => {
-        var channels = member.guild.channels.array();
-        for(var i=0;i<channels.length;i++) {
-            if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
-                var text = "**" + member.user.username + "** has leaved.\n";
-                text += "Member count: " + member.guild.memberCount;
-                channels[i].sendMessage(text);
-            } 
-        }
-    });
-
-    that.bot.on('disconnect', (event) => {
-        console.log("disconnected");
-        that.disconnectTimer = setTimeout(function() {
-            console.log("destroying");
-            that.bot.destroy().then(function() {
-                that.bot = new Discord.Client();
-                if (typeof that.individualSetup == 'function') {
-                    that.individualSetup();
-                }
-                that.login();
-                console.log("relogin");
-            }).catch(err => {
-                console.log(err);
-            });;
-        }, 60*1000);
-    });
-
-    that.bot.on('reconnecting', (event) => {
-        console.log("reconnecting");
-        clearTimeout(that.disconnectTimer);
-    });
-}
+employee.bot.on('reconnecting', (event) => {
+    console.log("reconnecting");
+    clearTimeout(employee.disconnectTimer);
+});
 
 process.on('uncaughtException', function (err) {
     employee.log('Uncaught Exception: \n' + err.stack);

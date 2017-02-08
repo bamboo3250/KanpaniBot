@@ -10,33 +10,46 @@ function TrainingController() {
         [null,null,null],
         [null,null,null]
     ];
-    this.contribution = {};
+    this.trainingSession = {
+        contribution: {},
+        trainerHP: {}
+    }
     this.endTime = null;
     this.respawnTime = null;
     this.timer = null;
 }
 
-var contributionFileName = "bfcontribution.json";
-TrainingController.prototype.loadContribution = function() {
+var trainingSessionFileName = "trainingSession.json";
+TrainingController.prototype.loadSession = function() {
     var that = this;
-    fs.readFile(contributionFileName, 'utf8', function (err, data) {
+    fs.readFile(trainingSessionFileName, 'utf8', function (err, data) {
         if (err && that.bot) {
             that.bot.log(err);
             return;
         }
-        that.contribution = JSON.parse(data);
+        that.trainingSession = JSON.parse(data);
     });
 }
 
 
-TrainingController.prototype.saveContribution = function() {
-    var textToWrite = JSON.stringify(this.contribution, null, 4);
+TrainingController.prototype.saveSession = function(callback) {
+    for(var i=0;i<2;i++) {
+        for(var j=0;j<3;j++) {
+            var trainer = this.bot.playerManager.getPlayerUnit(this.trainerField[i][j]);
+            if (trainer) {
+                this.trainingSession.trainerHP[trainer.playerId] = trainer.getCurrentHP()l
+            }
+        }
+    }
+
+    var textToWrite = JSON.stringify(this.trainingSession, null, 4);
     var that = this;
-    fs.writeFile(contributionFileName, textToWrite, function(err) {
+    fs.writeFile(trainingSessionFileName, textToWrite, function(err) {
         if(err && that.bot) {
             that.bot.log(err);
             return;
         }
+        if (typeof callback == "function") callback();
     }); 
 }
 
@@ -103,11 +116,11 @@ TrainingController.prototype.endBattle = function(endBattleByTimeout) {
 
     var endBattleFactor = (endBattleByTimeout ? 0.5 : 1.0);
     var expReward = Math.floor((EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1))) * endBattleFactor);
-    for(key in this.contribution) {
+    for(key in this.trainingSession.contribution) {
         var userId = key;
-        if (this.contribution[userId] > 0) {
-            var itemAmount = Math.floor(this.contribution[userId] * 5 * factor * endBattleFactor);
-            this.contribution[userId] = 0;
+        if (this.trainingSession.contribution[userId] > 0) {
+            var itemAmount = Math.floor(this.trainingSession.contribution[userId] * 5 * factor * endBattleFactor);
+            this.trainingSession.contribution[userId] = 0;
             var itemReceived = {};
             for(var i=0;i<itemAmount;i++) {
                 var itemName = this.bot.functionHelper.randomObject(rewardList);
@@ -936,10 +949,10 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
     battleField.enemySide = this.trainerField;
     battleField.allySide = this.randomField(attacker.playerId);
 
-    if (typeof that.contribution[attacker.playerId] === "undefined") {
-        that.contribution[attacker.playerId] = 0;
+    if (typeof that.trainingSession.contribution[attacker.playerId] === "undefined") {
+        that.trainingSession.contribution[attacker.playerId] = 0;
     }
-    that.contribution[attacker.playerId]++;
+    that.trainingSession.contribution[attacker.playerId]++;
     this.saveContribution();
 
     var playerTurn = {
@@ -1147,10 +1160,10 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
     };
     
     if (!this.didAllTrainersDie()) {
-        if (typeof that.contribution[attacker.playerId] === "undefined") {
-            that.contribution[attacker.playerId] = 0;
+        if (typeof that.trainingSession.contribution[attacker.playerId] === "undefined") {
+            that.trainingSession.contribution[attacker.playerId] = 0;
         }
-        that.contribution[attacker.playerId]++;
+        that.trainingSession.contribution[attacker.playerId]++;
         this.saveContribution();
     }
     

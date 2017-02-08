@@ -134,54 +134,48 @@ if (isLocal) {
     ];
 }
 
-myBot.individualSetup = function() {
-    var that = this;
-    that.setup();
+myBot.bot.on("message", function(message) {
+    if (message.channel.type === "text" && message.channel.name === myBot.nutakuChannelName 
+            && message.author.id != myBot.bot.user.id) {
+        myBot.hasNewMessage = true;
+    }
+    myBot.initBreadIfNeed(message.author.id);
 
-    that.bot.on("message", function(message) {
-        if (message.channel.type === "text" && message.channel.name === myBot.nutakuChannelName 
-                && message.author.id != myBot.bot.user.id) {
-            that.hasNewMessage = true;
+    var command = getCommand(message);
+    switch (command) {
+    case "~question":
+        handleQuestion(message);
+        break;
+    default:
+        myBot.handleCommonCommand(message);
+        break;
+    }
+});
+
+myBot.bot.on("ready", function() {
+    if (myBot.ready()) {
+        for(var i=0;i<myBot.playerData.length;i++) {
+            myBot.playerManager.createUnitForPlayer(myBot.playerData[i]);    
         }
-        that.initBreadIfNeed(message.author.id);
-
-        var command = getCommand(message);
-        switch (command) {
-        case "~question":
-            handleQuestion(message);
-            break;
-        default:
-            that.handleCommonCommand(message);
-            break;
+        trainingController.bot = myBot;
+        trainingController.loadSession();
+        
+        if (isLocal) {
+            trainingController.trainerField = [
+                [null, null, null],
+                [null, "240097185436270593", null]
+            ];
+        } else {
+            trainingController.trainerField = [
+                [null, "272258315441143810", "268576286060838914"],
+                [null, "272259125256388610", null]
+            ];    
         }
-    });
+        
+        that.battleController = trainingController;
+        trainingController.setTimer();
+    }
+});
 
-    that.bot.on("ready", function() {
-        if (that.ready()) {
-            for(var i=0;i<that.playerData.length;i++) {
-                that.playerManager.createUnitForPlayer(that.playerData[i]);    
-            }
-            trainingController.bot = that;
-            trainingController.loadContribution();
-            
-            if (isLocal) {
-                trainingController.trainerField = [
-                    [null, null, null],
-                    [null, "240097185436270593", null]
-                ];
-            } else {
-                trainingController.trainerField = [
-                    [null, "272258315441143810", "268576286060838914"],
-                    [null, "272259125256388610", null]
-                ];    
-            }
-            
-            that.battleController = trainingController;
-            trainingController.setTimer();
-        }
-    });
-}
-
-myBot.individualSetup();
 myBot.token = config.annalina;
 myBot.login();

@@ -405,72 +405,66 @@ if (isLocal) {
     ];
 }
 
-myBot.individualSetup = function() {
-    var that = this;
-    that.setup();
+myBot.bot.on("message", function(message) {
+    if (message.channel.type === "text" && message.channel.name === myBot.nutakuChannelName 
+            && message.author.id != myBot.bot.user.id) {
+        myBot.hasNewMessage = true;
+    }
+    myBot.initBreadIfNeed(message.author.id);
 
-    that.bot.on("message", function(message) {
-        if (message.channel.type === "text" && message.channel.name === that.nutakuChannelName 
-                && message.author.id != that.bot.user.id) {
-            that.hasNewMessage = true;
+    var command = message.content.trim().toLowerCase();
+    switch (command) {
+    case "~pat":
+        handlePatCommand(message);
+        break;
+    case "~status":
+        handleStatusCommand(message);
+        break;
+    case "~rank":
+        handleRankingCommand(message);
+        break;
+    case "~myrank":
+        handleMyRankingCommand(message);
+        break;
+    case "~reduce":
+        handleReduceCommand(message);
+        break;
+    case "~reset":
+        handleResetCommand(message);
+        break;
+    default:
+        myBot.handleCommonCommand(message);
+        break;
+    }
+});
+
+myBot.bot.on("ready", function() {
+    if (myBot.ready()) {
+        loadAffection();
+        for(var i=0;i<myBot.playerData.length;i++) {
+            myBot.playerManager.createUnitForPlayer(myBot.playerData[i]);    
         }
-        that.initBreadIfNeed(message.author.id);
-
-        var command = message.content.trim().toLowerCase();
-        switch (command) {
-        case "~pat":
-            handlePatCommand(message);
-            break;
-        case "~status":
-            handleStatusCommand(message);
-            break;
-        case "~rank":
-            handleRankingCommand(message);
-            break;
-        case "~myrank":
-            handleMyRankingCommand(message);
-            break;
-        case "~reduce":
-            handleReduceCommand(message);
-            break;
-        case "~reset":
-            handleResetCommand(message);
-            break;
-        default:
-            that.handleCommonCommand(message);
-            break;
-        }
-    });
-
-    that.bot.on("ready", function() {
-        if (that.ready()) {
-            loadAffection();
-            for(var i=0;i<that.playerData.length;i++) {
-                that.playerManager.createUnitForPlayer(that.playerData[i]);    
-            }
-            trainingController.bot = that;
-            trainingController.loadContribution();
-            
-            if (isLocal) {
-                trainingController.trainerField = [
-                    //[null, "240097185436270593", "265889287281573918"],
-                    [null, "240097185436270593", null],
-                    [null, null, null]
-                ];
-            } else {
-                trainingController.trainerField = [
-                    ["270767219875643392", null, "278911842859089920"],
-                    [null, "239141420194070530", null]
-                ];    
-            }
-            
-            that.battleController = trainingController;
-            trainingController.setTimer();
+        trainingController.bot = myBot;
+        trainingController.loadSession();
+        
+        if (isLocal) {
+            trainingController.trainerField = [
+                //[null, "240097185436270593", "265889287281573918"],
+                [null, "240097185436270593", null],
+                [null, null, null]
+            ];
+        } else {
+            trainingController.trainerField = [
+                ["270767219875643392", null, "278911842859089920"],
+                [null, "239141420194070530", null]
+            ];    
         }
         
-    });
-}
+        myBot.battleController = trainingController;
+        trainingController.setTimer();
+    }
+    
+});
 
-myBot.individualSetup();
 myBot.token = config.elsa;
 myBot.login();
