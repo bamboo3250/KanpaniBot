@@ -1832,6 +1832,29 @@ module.exports = {
                     0.9
                 )
             ]
+        },
+        "Gorgeous Pound": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    1.83, 1,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack03", 3,
+                    true, {
+                        "Stun": 10
+                    },
+                    true,
+                    0, -550,
+                    0, -550,
+                    0.9
+                )
+            ]
         }
     },
 

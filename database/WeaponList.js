@@ -4940,6 +4940,38 @@ module.exports = {
                 }
             ]
         },{
+            _id: "308524", modelId: "24", name: "Jewel Crusher", commonNames: ["Jewel Crusher"],
+            characterId: "10550002_5cc7900c", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 222, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 30, eva: 0,
+                    frontSkill: "Hammerfall", backSkill: "Crash"
+                },
+                "+1": { price: 6000,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 30, eva: 0,
+                    frontSkill: "Grand Down", backSkill: "Crash"
+                },
+                "+2": { price: 7000,
+                    patk: 386, pdef: 0, matk: 0, mdef: 0, crit: 50, hit: 40, eva: 0,
+                    frontSkill: "Grand Down", backSkill: "Hammerfall"
+                },
+                "+3": { price: 8000,
+                    patk: 488, pdef: 0, matk: 0, mdef: 0, crit: 65, hit: 45, eva: 0,
+                    frontSkill: "Gorgeous Pound", backSkill: "War Rage"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Dragon Horn",
+                    amount: 2
+                },{
+                    materialName: "Diamond",
+                    amount: 1
+                },{
+                    materialName: "Yggdrasil Branch",
+                    amount: 2
+                }
+            ]
+        },{
             _id: "308621", modelId: "21", name: "Holy Mace of Clotho", commonNames: ["Holy Mace of Clotho"],
             characterId: "10650003_314afe6a", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,
