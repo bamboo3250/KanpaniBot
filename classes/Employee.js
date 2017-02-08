@@ -1,5 +1,3 @@
-var StunStatus = require('./status/StunStatus');
-
 var Employee = function(employeeInfo, playerId = null) {
     this.DOMAIN = "http://img4.kanpani.jp";
 

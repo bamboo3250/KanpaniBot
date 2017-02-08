@@ -168,6 +168,30 @@
             partnerId: null,
             isTrainer: true
         },{
+            _id: "278911842859089920",  // Nhano Guest
+            characterId: "10550002_5cc7900c",
+            exp: 10707880,//10707880,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308524",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: myBot.randomArmor(5),
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330107",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "front",
+            partnerId: null,
+            isTrainer: true
+        },{
             _id: "275533845984575488",  // Nona Guest
             characterId: "10650003_314afe6a",
             exp: 10707880,//10707880,
