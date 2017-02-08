@@ -31,6 +31,14 @@ myBot.bot.on("message", function(message) {
     case "~question":
         handleQuestion(message);
         break;
+    case "~destroy":
+        console.log("destroying");
+        myBot.bot.destroy().then(function() {
+            myBot.bot = new Discord.Client();
+            myBot.login();
+            console.log("relogin");
+        });
+        break;
     default:
         myBot.handleCommonCommand(message);
         break;

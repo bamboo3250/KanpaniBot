@@ -989,9 +989,11 @@ employee.bot.on('guildMemberRemove', (member) => {
 employee.bot.on('disconnect', (event) => {
     console.log("disconnected");
     employee.disconnectTimer = setTimeout(function() {
+        console.log("destroying");
         employee.bot.destroy().then(function() {
             employee.bot = new Discord.Client();
             employee.login();
+            console.log("relogin");
         });
     }, 60*1000);
 });
