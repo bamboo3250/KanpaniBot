@@ -206,7 +206,6 @@ myBot.bot.on("ready", function() {
             myBot.playerManager.createUnitForPlayer(myBot.playerData[i]);    
         }
         trainingController.bot = myBot;
-        trainingController.loadSession();
         
         if (isLocal) {
             trainingController.trainerField = [
@@ -222,6 +221,7 @@ myBot.bot.on("ready", function() {
 
         myBot.battleController = trainingController;
         trainingController.setTimer();
+        trainingController.loadSession();
     }
 });
 

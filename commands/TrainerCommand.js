@@ -41,13 +41,13 @@ module.exports = {
             }
         }
         var now = new Date();
-        if (bot.battleController.endTime) {
-            var remainTime = bot.battleController.endTime - now.valueOf();
+        if (bot.battleController.trainingSession.endTime) {
+            var remainTime = bot.battleController.trainingSession.endTime - now.valueOf();
             var time = bot.functionHelper.parseTime(remainTime);
             text += "Remaining Time: **" + time + "**\n";    
         }
-        if (bot.battleController.respawnTime) {
-            var remainTime = bot.battleController.respawnTime - now.valueOf();
+        if (bot.battleController.trainingSession.respawnTime) {
+            var remainTime = bot.battleController.trainingSession.respawnTime - now.valueOf();
             var time = bot.functionHelper.parseTime(remainTime);
             text += "Respawn Time: **" + time + "**";    
         }

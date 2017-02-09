@@ -34,7 +34,7 @@ var myTopCommand = require('./commands/MyTopCommand');
 var rollCommand = require('./commands/RollCommand');
 var takeCommand = require('./commands/TakeCommand');
 var grindCommand = require('./commands/GrindCommand');
-var totalBreadCommand = require('./commands/TotalBreadCommand');
+var adminCommand = require('./commands/AdminCommand');
 var questCommand = require('./commands/QuestCommand');
 var inventoryCommand = require('./commands/InventoryCommand');
 var sellCommand = require('./commands/SellCommand');
@@ -412,7 +412,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         rollCommand.handle(message, this);
         takeCommand.handle(message, this);
         grindCommand.handle(message, this);
-        totalBreadCommand.handle(message, this);
+        adminCommand.handle(message, this);
         questCommand.handle(message, this);
         inventoryCommand.handle(message, this);
         sellCommand.handle(message, this);

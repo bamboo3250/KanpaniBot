@@ -12,11 +12,12 @@ function TrainingController() {
     ];
     this.trainingSession = {
         contribution: {},
-        trainerHP: {}
+        trainerHP: {},
+        endTime: null,
+        respawnTime: null
     }
-    this.endTime = null;
-    this.respawnTime = null;
-    this.timer = null;
+    this.endTimer = null;
+    this.respawnTimer = null;
 }
 
 var trainingSessionFileName = "trainingSession.json";
@@ -28,6 +29,21 @@ TrainingController.prototype.loadSession = function() {
             return;
         }
         that.trainingSession = JSON.parse(data);
+        for(key in that.trainingSession.trainerHP) {
+            var trainerId = key;
+            var trainerHP = that.trainingSession.trainerHP[key];
+            var trainer = that.bot.playerManager.getPlayerUnit(trainerId);
+            trainer.currentHP = trainerHP;
+        }
+        var now = new Date();
+        if (that.trainingSession.endTime) {
+            var remainEndTime = Math.max(0, that.trainingSession.endTime - now.valueOf());
+            that.setEndTimer(remainEndTime);
+        }
+        if (that.trainingSession.respawnTime) {
+            var remainRespawnTime = Math.max(0, that.trainingSession.respawnTime - now.valueOf());
+            that.setRespawnTimer(remainRespawnTime);
+        }
     });
 }
 
@@ -37,7 +53,7 @@ TrainingController.prototype.saveSession = function(callback) {
         for(var j=0;j<3;j++) {
             var trainer = this.bot.playerManager.getPlayerUnit(this.trainerField[i][j]);
             if (trainer) {
-                this.trainingSession.trainerHP[trainer.playerId] = trainer.getCurrentHP()l
+                this.trainingSession.trainerHP[trainer.playerId] = trainer.getCurrentHP();
             }
         }
     }
@@ -53,26 +69,58 @@ TrainingController.prototype.saveSession = function(callback) {
     }); 
 }
 
-TrainingController.prototype.setTimer = function() {
+TrainingController.prototype.setEndTimer = function(duration) {
     var numTrainer = 0;
     for(var i=0;i<2;i++) {
         for(var j=0;j<3;j++) {
             if (this.trainerField[i][j]) numTrainer++;
         }
     }
+    if (typeof duration == "undefined") {
+        duration = numTrainer * 60 * 60 * 1000;
+    }
+    
     var now = new Date();
-    var bfDuration = numTrainer * 60 * 60 * 1000;
-    this.endTime = now.valueOf() + bfDuration;
-    this.respawnTime = null;
+    this.trainingSession.endTime = now.valueOf() + duration;
+    this.trainingSession.respawnTime = null;
+    
     var that = this;
-    this.timer = setTimeout(function() {
+    this.endTimer = setTimeout(function() {
         that.endBattle(true);
-    }, bfDuration);
+    }, duration);
+}
+
+TrainingController.prototype.setRespawnTimer = function(duration) {
+    if (typeof duration == "undefined") {
+        duration = this.bot.playerManager.TRAINER_RESPAWN_TIME;
+    }
+
+    var now = new Date();
+    this.trainingSession.endTime = null;
+    this.trainingSession.respawnTime = now.valueOf() + duration;
+    
+    var that = this;
+    this.respawnTimer = setTimeout(function() {
+        for(key in that.bot.playerManager.playerUnits) {
+            var userId = key;
+            var userUnit = that.bot.playerManager.playerUnits[userId];
+            if (userUnit) {
+                userUnit.fullHeal();
+                if (that.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
+                    that.bot.userManager.removeRole(userId, "Fainted")
+                }
+            }
+        }
+
+        var traineeRole = that.bot.battleChannel.guild.roles.find('name', 'Trainee');
+        that.bot.battleChannel.sendMessage(traineeRole + " All Trainers are ready for new battle.");
+        that.setEndTimer();
+    }, duration);
 }
 
 TrainingController.prototype.endBattle = function(endBattleByTimeout) {
-    if (this.timer) {
-        clearTimeout(this.timer);
+    if (this.endTimer) {
+        clearTimeout(this.endTimer);
     }
 
     for(key in this.bot.playerManager.playerUnits) {
@@ -92,27 +140,8 @@ TrainingController.prototype.endBattle = function(endBattleByTimeout) {
             }
         }
     }
-    var that = this;
-    var now = new Date();
-    this.respawnTime = now.valueOf() + that.bot.playerManager.TRAINER_RESPAWN_TIME;
-    this.endTime = null;
-
-    setTimeout(function() {
-        for(key in that.bot.playerManager.playerUnits) {
-            var userId = key;
-            var userUnit = that.bot.playerManager.playerUnits[userId];
-            if (userUnit && userUnit.isTrainer) {
-                userUnit.fullHeal();
-                if (that.bot.userManager.doesMemberHaveRole(userId, "Fainted")) {
-                    that.bot.userManager.removeRole(userId, "Fainted")
-                }
-            }
-        }
-
-        var traineeRole = that.bot.battleChannel.guild.roles.find('name', 'Trainee');
-        that.bot.battleChannel.sendMessage(traineeRole + " All Trainers are ready for new battle.");
-        that.setTimer();
-    }, that.bot.playerManager.TRAINER_RESPAWN_TIME);
+    
+    this.setRespawnTimer();
 
     var endBattleFactor = (endBattleByTimeout ? 0.5 : 1.0);
     var expReward = Math.floor((EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1))) * endBattleFactor);
@@ -141,7 +170,7 @@ TrainingController.prototype.endBattle = function(endBattleByTimeout) {
             this.bot.playerManager.refreshUnitForPlayerId(userId);
         }
     }
-    this.saveContribution();
+    this.saveSession();
     this.bot.savePlayer();
 }
 
@@ -953,7 +982,7 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         that.trainingSession.contribution[attacker.playerId] = 0;
     }
     that.trainingSession.contribution[attacker.playerId]++;
-    this.saveContribution();
+    this.saveSession();
 
     var playerTurn = {
         side: "PLAYER",
@@ -1164,7 +1193,7 @@ TrainingController.prototype.heal = function(attacker, targetUnitList, callback)
             that.trainingSession.contribution[attacker.playerId] = 0;
         }
         that.trainingSession.contribution[attacker.playerId]++;
-        this.saveContribution();
+        this.saveSession();
     }
     
     var playerTurn = {
