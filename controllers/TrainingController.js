@@ -20,6 +20,16 @@ function TrainingController() {
     this.respawnTimer = null;
 }
 
+TrainingController.prototype.resetAllTrainers = function() {
+    if (!this.bot) return;
+    for(var i=0;i<2;i++) {
+        for (var j=0;j<3;j++) {
+            var trainer = this.bot.playerManager.getPlayerUnit(this.trainerField[i][j]);
+            if (trainer) trainer.fullHeal();
+        }
+    }
+}
+
 var trainingSessionFileName = "trainingSession.json";
 TrainingController.prototype.loadSession = function() {
     var that = this;
@@ -36,6 +46,12 @@ TrainingController.prototype.loadSession = function() {
             trainer.currentHP = trainerHP;
         }
         var now = new Date();
+        if (!that.trainingSession.endTime && !that.trainingSession.respawnTime) {
+            that.setEndTimer();
+            that.resetAllTrainers();
+            return;
+        }
+
         if (that.trainingSession.endTime) {
             var remainEndTime = Math.max(0, that.trainingSession.endTime - now.valueOf());
             that.setEndTimer(remainEndTime);
