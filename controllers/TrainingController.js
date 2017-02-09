@@ -28,6 +28,8 @@ TrainingController.prototype.resetAllTrainers = function() {
             if (trainer) trainer.fullHeal();
         }
     }
+    clearTimeout(this.respawnTimer);
+    this.trainingSession.respawnTime = null;
 }
 
 var trainingSessionFileName = "trainingSession.json";
