@@ -220,7 +220,6 @@ myBot.bot.on("ready", function() {
         }
 
         myBot.battleController = trainingController;
-        trainingController.setTimer();
         trainingController.loadSession();
     }
 });
