@@ -45,7 +45,7 @@ TrainingController.prototype.loadSession = function() {
             var trainerId = key;
             var trainerHP = that.trainingSession.trainerHP[key];
             var trainer = that.bot.playerManager.getPlayerUnit(trainerId);
-            trainer.currentHP = trainerHP;
+            if (trainer) trainer.currentHP = trainerHP;
         }
         var now = new Date();
         if (!that.trainingSession.endTime && !that.trainingSession.respawnTime) {
