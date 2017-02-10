@@ -619,8 +619,38 @@ module.exports = {
                 }
             ]
         }
+    ],
+
+    "valentine": [
+        {
+            _id: "329996", name: "White Ring", commonNames: ["Valentine Ring"],
+            type: "event", isActive: true, stats: {
+                "+0": { price: 1225,
+                    patk: 0, pdef: 7, matk: 0, mdef: 7, crit: 0, hit: 0, eva: 7
+                },
+                "+1": { price: 1225,
+                    patk: 0, pdef: 14, matk: 0, mdef: 14, crit: 0, hit: 0, eva: 10
+                },
+                "+2": { price: 1225,
+                    patk: 0, pdef: 20, matk: 0, mdef: 20, crit: 0, hit: 0, eva: 15
+                },
+                "+3": { price: 1225,
+                    patk: 0, pdef: 30, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 15
+                },
+                "+4": { price: 1225,
+                    patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 50, hit: 0, eva: 30
+                }
+            },
+            devCost: 11000, levelRequired: 10, tier: 5, recipe: [
+                {
+                    materialName: "Silver Ore",
+                    amount: 2
+                },{
+                    materialName: "Crystal",
+                    amount: 2
+                }
+            ]
+        }
     ]
     
-
-
 };

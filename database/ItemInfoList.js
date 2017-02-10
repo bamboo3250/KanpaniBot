@@ -205,7 +205,20 @@ var itemInfos = [
 
     {
         _id: "40074501_1", itemName: "Aroma Oil", price: 50
+    },
+
+    {
+        _id: "14001101_1", itemName: "Chocolate Bar", price: 50
+    },{
+        _id: "14001102_1", itemName: "Nuts", price: 50
+    },{
+        _id: "14001103_1", itemName: "Fruit", price: 50
     }
+
+    ,{
+        _id: "40088001_1", itemName: "Magical Cacao", price: 50
+    }
+
 
 ];
 
