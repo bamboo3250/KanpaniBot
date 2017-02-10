@@ -4714,6 +4714,298 @@ module.exports = {
         }
     ],
 
+    "valentine1": [
+        {
+            _id: "3001980", modelId: "98", name: "Valentine Sword", commonNames: ["Valentine Sword"],
+            classId: 1, type: "event", isActive: true, stats: {
+                "+0": { price: 1000,
+                    patk: 50, pdef: 50, matk: 0, mdef: 45, crit: 5, hit: 5, eva: 0,
+                    frontSkill: "Heart Slash", backSkill: "Slash"
+                },
+                "+1": { price: 1200,
+                    patk: 70, pdef: 70, matk: 0, mdef: 65, crit: 7, hit: 7, eva: 0,
+                    frontSkill: "Heart Slash", backSkill: "Slash"
+                },
+                "+2": { price: 1400,
+                    patk: 90, pdef: 90, matk: 0, mdef: 85, crit: 9, hit: 9, eva: 0,
+                    frontSkill: "Heart Slash", backSkill: "Slash"
+                },
+                "+3": { price: 1600,
+                    patk: 110, pdef: 110, matk: 0, mdef: 105, crit: 11, hit: 11, eva: 0,
+                    frontSkill: "Heart Slash", backSkill: "Slash"
+                },
+                "+4": { price: 2000,
+                    patk: 160, pdef: 160, matk: 0, mdef: 155, crit: 30, hit: 20, eva: 0,
+                    frontSkill: "Heart Slash", backSkill: "Slash"
+                }
+            },
+            note: "", devCost: 12000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Chocolate Bar",
+                    amount: 2
+                },{
+                    materialName: "Nuts",
+                    amount: 2
+                },{
+                    materialName: "Fruit",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3002980", modelId: "98", name: "Chokokoigatana", commonNames: ["Chokokoigatana"],
+            classId: 2, type: "event", isActive: true, stats: {
+                "+0": { price: 1000,
+                    patk: 111, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 5, eva: 0,
+                    frontSkill: "Illicit Love", backSkill: "Slash"
+                },
+                "+1": { price: 1200,
+                    patk: 133, pdef: 0, matk: 0, mdef: 0, crit: 23, hit: 5, eva: 0,
+                    frontSkill: "Illicit Love", backSkill: "Slash"
+                },
+                "+2": { price: 1400,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 26, hit: 5, eva: 0,
+                    frontSkill: "Illicit Love", backSkill: "Slash"
+                },
+                "+3": { price: 1600,
+                    patk: 177, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 5, eva: 33,
+                    frontSkill: "Illicit Love", backSkill: "Slash"
+                },
+                "+4": { price: 2000,
+                    patk: 277, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 5, eva: 0,
+                    frontSkill: "Illicit Love", backSkill: "Slash"
+                }
+            },
+            note: "", devCost: 12000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Chocolate Bar",
+                    amount: 2
+                },{
+                    materialName: "Nuts",
+                    amount: 2
+                },{
+                    materialName: "Fruit",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3003980", modelId: "98", name: "Love Syndrome", commonNames: ["Love Syndrome"],
+            classId: 3, type: "event", isActive: true, stats: {
+                "+0": { price: 1000,
+                    patk: 80, pdef: 0, matk: 0, mdef: 0, crit: 6, hit: 10, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Cupid's Arrow"
+                },
+                "+1": { price: 1200,
+                    patk: 90, pdef: 0, matk: 0, mdef: 0, crit: 7, hit: 20, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Cupid's Arrow"
+                },
+                "+2": { price: 1400,
+                    patk: 110, pdef: 0, matk: 0, mdef: 0, crit: 8, hit: 30, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Cupid's Arrow"
+                },
+                "+3": { price: 1600,
+                    patk: 140, pdef: 0, matk: 0, mdef: 0, crit: 9, hit: 40, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Cupid's Arrow"
+                },
+                "+4": { price: 2000,
+                    patk: 255, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 53, eva: 0,
+                    frontSkill: "Single Shot", backSkill: "Cupid's Arrow"
+                }
+            },
+            note: "", devCost: 12000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Chocolate Bar",
+                    amount: 2
+                },{
+                    materialName: "Nuts",
+                    amount: 2
+                },{
+                    materialName: "Fruit",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3004980", modelId: "98", name: "Gateau Umbrella", commonNames: ["Gateau Umbrella"],
+            classId: 4, type: "event", isActive: true, stats: {
+                "+0": { price: 1000,
+                    patk: 20, pdef: 40, matk: 0, mdef: 0, crit: 4, hit: 5, eva: 0,
+                    frontSkill: "Lovely Spear", backSkill: "Spear Jab"
+                },
+                "+1": { price: 1200,
+                    patk: 35, pdef: 60, matk: 0, mdef: 0, crit: 5, hit: 7, eva: 0,
+                    frontSkill: "Lovely Spear", backSkill: "Spear Jab"
+                },
+                "+2": { price: 1400,
+                    patk: 50, pdef: 90, matk: 0, mdef: 0, crit: 6, hit: 9, eva: 0,
+                    frontSkill: "Lovely Spear", backSkill: "Spear Jab"
+                },
+                "+3": { price: 1600,
+                    patk: 65, pdef: 130, matk: 0, mdef: 0, crit: 7, hit: 11, eva: 0,
+                    frontSkill: "Lovely Spear", backSkill: "Spear Jab"
+                },
+                "+4": { price: 2000,
+                    patk: 88, pdef: 210, matk: 0, mdef: 0, crit: 10, hit: 15, eva: 0,
+                    frontSkill: "Lovely Spear", backSkill: "Spear Jab"
+                }
+            },
+            note: "", devCost: 12000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Chocolate Bar",
+                    amount: 2
+                },{
+                    materialName: "Nuts",
+                    amount: 2
+                },{
+                    materialName: "Fruit",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3005980", modelId: "98", name: "Graviton Love", commonNames: ["Graviton Love"],
+            classId: 5, type: "event", isActive: true, stats: {
+                "+0": { price: 1000,
+                    patk: 100, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 11, eva: 0,
+                    frontSkill: "Love Impact", backSkill: "Crash"
+                },
+                "+1": { price: 1200,
+                    patk: 150, pdef: 0, matk: 0, mdef: 0, crit: 11, hit: 12, eva: 0,
+                    frontSkill: "Love Impact", backSkill: "Crash"
+                },
+                "+2": { price: 1400,
+                    patk: 200, pdef: 0, matk: 0, mdef: 0, crit: 12, hit: 13, eva: 0,
+                    frontSkill: "Love Impact", backSkill: "Crash"
+                },
+                "+3": { price: 1600,
+                    patk: 250, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 14, eva: 0,
+                    frontSkill: "Love Impact", backSkill: "Crash"
+                },
+                "+4": { price: 2000,
+                    patk: 400, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 20, eva: 0,
+                    frontSkill: "Love Impact", backSkill: "Crash"
+                }
+            },
+            note: "", devCost: 12000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Chocolate Bar",
+                    amount: 2
+                },{
+                    materialName: "Nuts",
+                    amount: 2
+                },{
+                    materialName: "Fruit",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3006980", modelId: "98", name: "Giant Truffle", commonNames: ["Giant Truffle"],
+            classId: 6, type: "event", isActive: true, stats: {
+                "+0": { price: 1000,
+                    patk: 0, pdef: 30, matk: 100, mdef: 30, crit: 0, hit: 0, eva: 10,
+                    frontSkill: "Knock", backSkill: "Refreshing Love"
+                },
+                "+1": { price: 1200,
+                    patk: 0, pdef: 40, matk: 110, mdef: 40, crit: 0, hit: 0, eva: 15,
+                    frontSkill: "Knock", backSkill: "Refreshing Love"
+                },
+                "+2": { price: 1400,
+                    patk: 0, pdef: 50, matk: 120, mdef: 50, crit: 0, hit: 0, eva: 20,
+                    frontSkill: "Knock", backSkill: "Refreshing Love"
+                },
+                "+3": { price: 1600,
+                    patk: 0, pdef: 60, matk: 130, mdef: 60, crit: 0, hit: 0, eva: 25,
+                    frontSkill: "Knock", backSkill: "Refreshing Love"
+                },
+                "+4": { price: 2000,
+                    patk: 0, pdef: 85, matk: 220, mdef: 85, crit: 0, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Refreshing Love"
+                }
+            },
+            note: "", devCost: 12000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Chocolate Bar",
+                    amount: 2
+                },{
+                    materialName: "Nuts",
+                    amount: 2
+                },{
+                    materialName: "Fruit",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3007980", modelId: "98", name: "Chocolat Knife", commonNames: ["Chocolat Knife"],
+            classId: 7, type: "event", isActive: true, stats: {
+                "+0": { price: 1000,
+                    patk: 50, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 10, eva: 10,
+                    frontSkill: "Triple Sugar", backSkill: "Throwing Knife"
+                },
+                "+1": { price: 1200,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 20, eva: 20,
+                    frontSkill: "Triple Sugar", backSkill: "Throwing Knife"
+                },
+                "+2": { price: 1400,
+                    patk: 90, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 30, eva: 30,
+                    frontSkill: "Triple Sugar", backSkill: "Throwing Knife"
+                },
+                "+3": { price: 1600,
+                    patk: 110, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 40, eva: 40,
+                    frontSkill: "Triple Sugar", backSkill: "Throwing Knife"
+                },
+                "+4": { price: 2000,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 50, hit: 50, eva: 50,
+                    frontSkill: "Triple Sugar", backSkill: "Throwing Knife"
+                }
+            },
+            note: "", devCost: 12000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Chocolate Bar",
+                    amount: 2
+                },{
+                    materialName: "Nuts",
+                    amount: 2
+                },{
+                    materialName: "Fruit",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3008980", modelId: "98", name: "Forked Love", commonNames: ["Forked Love"],
+            classId: 8, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 50, mdef: 50, crit: 5, hit: 15, eva: 0,
+                    frontSkill: "Honey Trap", backSkill: "Honey Trap"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 80, mdef: 60, crit: 6, hit: 18, eva: 0,
+                    frontSkill: "Honey Trap", backSkill: "Honey Trap"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 110, mdef: 70, crit: 7, hit: 21, eva: 0,
+                    frontSkill: "Honey Trap", backSkill: "Honey Trap"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 140, mdef: 80, crit: 8, hit: 24, eva: 0,
+                    frontSkill: "Honey Trap", backSkill: "Honey Trap"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 210, mdef: 100, crit: 15, hit: 40, eva: 0,
+                    frontSkill: "Honey Trap", backSkill: "Honey Trap"
+                }
+            },
+            note: "", devCost: 12000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Chocolate Bar",
+                    amount: 2
+                },{
+                    materialName: "Nuts",
+                    amount: 2
+                },{
+                    materialName: "Fruit",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
     "cw": [
         {
             _id: "308119", modelId: "19", name: "Fenris Novem", commonNames: ["Fenris Novem"],

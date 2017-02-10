@@ -327,8 +327,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Charm": 15
+                    }
                 )
             ]
         },
@@ -689,8 +690,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Charm": 30
+                    }
                 )
             ]
         },
@@ -970,8 +972,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack08", 9,
-                    false,
-                    {}
+                    false, {
+                        "Charm": 15
+                    }
                 )
             ]
         },
@@ -1396,8 +1399,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack03", 3,
-                    true,
-                    {}
+                    true, {
+                        "Charm": 15
+                    }
                 )
             ]
         },
@@ -1768,8 +1772,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 0,
-                    true,
-                    {}
+                    true, {
+                        "Charm": 20
+                    }
                 )
             ]
         },
@@ -2455,8 +2460,9 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 3,
-                    true,
-                    {}
+                    true, {
+                        "Charm": 15
+                    }
                 )
             ]
         },
@@ -2904,6 +2910,25 @@ module.exports = {
                     "attack01", 13,
                     false,
                     {}
+                )
+            ]
+        },
+        "Honey Trap": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    SkillPhaseConst.TYPE_SPELL_ATTACK,
+                    0.7, 1,
+                    SkillPhaseConst.DAMAGE_MAGICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 13,
+                    false, {
+                        "Charm": 10
+                    }
                 )
             ]
         },
