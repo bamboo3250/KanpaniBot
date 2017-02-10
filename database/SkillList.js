@@ -746,7 +746,7 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack06", 3,
                     true, {
-                        "Curse": 80
+                        "Curse": 20
                     },
                     true,
                     -600, -610,
