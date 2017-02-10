@@ -29,7 +29,7 @@ module.exports = {
         }
 
         player.characterId = bot.rollResult[userId];
-        var expToPay = Math.min(100000, Math.floor(player.exp/2));
+        var expToPay = Math.ceil(player.exp*0.1);
         player.exp -= expToPay;
         
         if (player.equipedWeapon) {
