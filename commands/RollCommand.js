@@ -3,11 +3,14 @@ var Jimp = require("jimp");
 
 module.exports = {
     handle: function(message, bot) {
-        var text = message.content.trim().toLowerCase();
-        if (text != "~roll") return;
-        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) {
+
+        var command = bot.functionHelper.parseCommand(message);
+        if (command.commandName != "~roll") return;
+        if (!bot.isPM(message)) {
+            message.reply("You can roll in Private Message only.");
             return;
         }
+
         var userId = message.author.id;
         if (typeof bot.freeRoll[userId] === "undefined") bot.freeRoll[userId] = 4;
 
