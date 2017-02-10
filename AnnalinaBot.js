@@ -172,7 +172,7 @@ myBot.bot.on("ready", function() {
             ];    
         }
         
-        that.battleController = trainingController;
+        myBot.battleController = trainingController;
         trainingController.loadSession();
     }
 });
