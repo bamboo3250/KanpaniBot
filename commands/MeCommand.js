@@ -135,7 +135,8 @@ module.exports = {
             }
 
             var itemCellFileName = "images/misc/itemCell.png";
-            var backgroundFileName = bot.functionHelper.randomObject(bot.backgroundManager.backgroundFileNames);
+            //var backgroundFileName = bot.functionHelper.randomObject(bot.backgroundManager.backgroundFileNames);
+            var backgroundFileName = "valentine_forest.jpg";
             backgroundFileName = "images/misc/background/" + backgroundFileName;
             var shadowFileName = "images/misc/shadow.png";
 
