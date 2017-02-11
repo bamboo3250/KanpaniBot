@@ -71,8 +71,13 @@ module.exports = {
         }
 
         bot.grindId[userId] = setTimeout(function() {
+            var expMultiplier = (bot.runQuestStatus[userId].expMultiplier ? bot.runQuestStatus[userId].expMultiplier : 1);
+            var goldMultiplier = (bot.runQuestStatus[userId].goldMultiplier ? bot.runQuestStatus[userId].goldMultiplier : 1);
+
             bot.runQuestStatus[userId] = {
-                quest: "", endTime: -1, bread: 0
+                quest: "", endTime: -1, bread: 0,
+                expMultiplier: 1,
+                goldMultiplier: 1
             };
             bot.saveRunQuestStatus();
             bot.grindId[userId] = null;
@@ -116,8 +121,8 @@ module.exports = {
 
             var extraExp = Math.floor(quest.exp*0.1);
             // var randomExp = bot.functionHelper.randomInt(extraExp + 1);
-            var expGained = Math.floor((isSuccess ? quest.exp : 0) * modifier) * factor;
-            var goldGained = Math.floor((isSuccess ? quest.goldReward : 0) * modifier);
+            var expGained = Math.floor((isSuccess ? quest.exp : 0) * modifier * expMultiplier) * factor;
+            var goldGained = Math.floor((isSuccess ? quest.goldReward : 0) * modifier * goldMultiplier);
             var breadGained = (isSuccess ? quest.breadReward : 0);
             var bonusExp = Math.floor(expGained * 0.3);
             text += "EXP gained: **" + expGained + "**" + (partnerId?" (+" + bonusExp + ")":"") + "\n";
@@ -302,7 +307,9 @@ module.exports = {
 
         if (typeof bot.runQuestStatus[userId] === "undefined") {
             bot.runQuestStatus[userId] = {
-                quest: "", endTime: -1, bread: 0
+                quest: "", endTime: -1, bread: 0,
+                goldMultiplier: 1,
+                expMultiplier: 1
             };
         }
 
@@ -341,6 +348,15 @@ module.exports = {
         bot.runQuestStatus[userId].quest = quest.commonNames[0];
         bot.runQuestStatus[userId].endTime = now.valueOf() + timeCost * 1000;
         bot.runQuestStatus[userId].bread = breadNeeded;
+
+        if (bot.grindEffect[userId] && bot.grindEffect[userId].itemName != "") {
+            if (bot.grindEffect[userId].itemName == "Chocolate Chip Ice" 
+                && quest.name.startsWith("Valentine's Day Limited Quest")) {
+
+                bot.runQuestStatus[userId].expMultiplier = 2;
+            }
+        }
+
         bot.saveRunQuestStatus();
         // bot.log(message.author.username + " " + text + " " + (new Date()));
 

@@ -213,6 +213,8 @@ var itemInfos = [
         _id: "14001102_1", itemName: "Nuts", price: 50
     },{
         _id: "14001103_1", itemName: "Fruit", price: 50
+    },{
+        _id: "40069003_1", itemName: "Chocolate Chip Ice", price: 0
     }
 
     ,{

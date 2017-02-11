@@ -53,11 +53,19 @@ function isAromaOil(itemName) {
     return contains(itemListList, itemName);
 }
 
+function isIceCream(itemName) {
+    var itemListList = [
+        "Chocolate Chip Ice"
+    ];
+    return contains(itemListList, itemName);
+}
+
 function isUsable(itemName) {
     return isMailbox(itemName) 
         || isHammer(itemName) 
         || isForge(itemName) 
-        || isBread(itemName);
+        || isBread(itemName)
+        || isIceCream(itemName);
         // || isEldLight(itemName) 
         // || isAromaOil(itemName);
 }
@@ -508,6 +516,40 @@ module.exports = {
             bot.saveAroma();
             message.channel.sendFile("images/misc/aroma.png", "png", text);
             
+        } else if (isIceCream(itemName)) {
+            if (isUsingAll) {
+                message.reply("You can only use this item one by one.");
+                return;
+            }
+
+            if (typeof bot.grindEffect[userId] === "undefined") {
+                bot.grindEffect[userId] = {
+                    itemName: "",
+                    endTime: 0
+                }
+            }
+            var now = new Date();
+            if (bot.grindEffect[userId].itemName != "") {
+                var remainingTime = bot.grindEffect[userId].endTime - now.valueOf();
+                var time = bot.functionHelper.parseTime(remainingTime);
+                message.reply("You have already been under effect of another Ice Cream! It will end in **" + time + "**");
+                return;
+            }
+            var effectDuration = 3*60*60*1000;    // 3 hours
+            bot.grindEffect[userId].itemName = materialInfo.itemName;
+            bot.grindEffect[userId].endTime = now.valueOf() + effectDuration;
+
+            setTimeout(function() {
+                bot.grindEffect[userId] = {
+                    itemName: "",
+                    endTime: 0
+                }
+                message.author.sendMessage("The effect of **" + materialInfo.itemName + "** has faded away.");
+            }, effectDuration);
+
+            bot.playerManager.spendItem(userId, materialInfo.itemName);
+            bot.savePlayer();
+            message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 3 hours.");
         }
     }
 }

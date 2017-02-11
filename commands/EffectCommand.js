@@ -24,6 +24,12 @@ module.exports = {
             var time = bot.functionHelper.parseTime(remainingTime);
             text += "**" + bot.forgeEffect[userId].itemName + "**: " + time + "\n";
         }
+        if (typeof bot.grindEffect[userId] !== "undefined" && bot.grindEffect[userId].itemName !== "") {
+            var now = new Date();
+            var remainingTime = bot.grindEffect[userId].endTime - now.valueOf();
+            var time = bot.functionHelper.parseTime(remainingTime);
+            text += "**" + bot.grindEffect[userId].itemName + "**: " + time + "\n";
+        }
         if (text === "") {
             text = "No item is activated.";
         }

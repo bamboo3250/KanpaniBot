@@ -205,6 +205,7 @@ function EmployeeBot() {
     this.mailboxEffect = {};
     this.hammerEffect = {};
     this.forgeEffect = {};
+    this.grindEffect = {};
     this.unsubscribe = {};
     this.grindId = {};
     this.auctionId = {};

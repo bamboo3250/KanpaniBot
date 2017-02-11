@@ -378,7 +378,8 @@ var quests = [
             "Chocolate Bar",
             "Nuts",
             "Fruit",
-            "Gold Mailbox"
+            "Gold Mailbox",
+            "Chocolate Chip Ice"
         ]
     },{
         commonNames: ["Valentine1-hard"], name: "Valentine's Day Limited Quest: Hard", 
@@ -446,7 +447,8 @@ var quests = [
             "Nuts",
             "Fruit",
             "Gold Mailbox",
-            "Weapon Hammer"
+            "Weapon Hammer",
+            "Chocolate Chip Ice"
         ]
     },
 
