@@ -929,9 +929,9 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.95, 1,
+                    1.5, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,

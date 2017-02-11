@@ -588,7 +588,7 @@ module.exports = {
 
     "xmas1": [
         {
-            _id: "329997", name: "Christmas Necklace X", commonNames: ["Xmas1 Necklace"],
+            _id: "3299970", name: "Christmas Necklace X", commonNames: ["Xmas1 Necklace"],
             type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 30, matk: 0, mdef: 30, crit: 0, hit: 0, eva: 15
@@ -623,7 +623,7 @@ module.exports = {
 
     "valentine": [
         {
-            _id: "329996", name: "White Ring", commonNames: ["Valentine Ring"],
+            _id: "3299960", name: "White Ring", commonNames: ["Valentine Ring"],
             type: "event", isActive: true, stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 7, matk: 0, mdef: 7, crit: 0, hit: 0, eva: 7
