@@ -618,7 +618,7 @@ EmployeeBot.prototype.savePlayer = function() {
     }); 
 }
 
-EmployeeBot.prototype.loadPlayer = function() {
+EmployeeBot.prototype.loadPlayer = function(callback) {
     var that = this;
     fs.readFile(playerFileName, 'utf8', function (err, data) {
         if (err) return;
@@ -660,7 +660,7 @@ EmployeeBot.prototype.loadPlayer = function() {
             that.playerManager.createUnitForPlayer(player);
             var unit = that.playerManager.getPlayerUnit(userId);
         }
-
+        if (typeof callback == "function") callback();
     });
 }
 
@@ -935,16 +935,18 @@ EmployeeBot.prototype.ready = function() {
         this.firstTimeReady = false;
         this.loadSoul();
         this.loadBread();
-        this.loadPlayer();
         this.loadDailyGift();
         this.loadUnsubscribe();
         // this.loadChristmasTree();
-        this.userManager.fetchAllMembers(function() {
-            that.loadRunQuestStatus();
-            that.loadAuction();
-            that.loadAroma();
-            that.removeFaintedRole();
+        this.loadPlayer(function() {
+            that.userManager.fetchAllMembers(function() {
+                that.loadRunQuestStatus();
+                that.loadAuction();
+                that.loadAroma();
+                that.removeFaintedRole();
+            });
         });
+        
 
         return true;
     } else {

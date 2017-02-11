@@ -9,6 +9,11 @@ module.exports = {
         var userId = user.id;
         var player = bot.playerManager.getPlayer(userId);
         var employee = bot.playerManager.getPlayerUnit(userId);
+        if (!player || !employee) {
+            bot.log("Null player or employee");
+            return;
+        }            
+
         var partnerId = player.partnerId;
         
         if (quest == null) {
