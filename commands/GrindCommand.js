@@ -1,7 +1,7 @@
 var Employee = require('../classes/Employee');
 var Jimp = require("jimp");
 
-var factor = 2;
+var factor = 1;
 
 module.exports = {
     runQuest: function(bot, questName, bread, user, message, timeInMillis) {

@@ -303,15 +303,15 @@ if (isLocal) {
     myBot.playerData = [
         {
             _id: "240097185436270593",  // test-bot
-            characterId: "10550002_5cc7900c",
+            characterId: "10650001_d58eff17",
             exp: 2646190,//2646190,
             gold: 0,
             equipedWeapon: {
-                _id: "308524",
-                plus: 3
+                _id: "3006980",
+                plus: 4
             },
             equipedArmor: {
-                _id: "3101140",
+                _id: "3106140",
                 plus: 1
             },
             equipedAccessory: {
@@ -322,7 +322,7 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         }
@@ -330,17 +330,17 @@ if (isLocal) {
 } else {
     myBot.playerData = [
         {
-            _id: "270767219875643392",  // Siegrid Guest
-            characterId: "10550001_27d912ef",
+            _id: "241511566036434945",  // Elsa Guest
+            characterId: "10150002_765306d2",
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308510",
+                _id: "3001980",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(5),
-                plus: 3
+                _id: myBot.randomArmor(1),
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330107",
@@ -354,16 +354,16 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "278911842859089920",  // Nhano Guest
-            characterId: "10550002_5cc7900c",
+            _id: "275533845984575488",  // Nona Guest
+            characterId: "10650003_314afe6a",
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308524",
-                plus: 3
+                _id: "3006980",
+                plus: 4
             },
             equipedArmor: {
-                _id: myBot.randomArmor(5),
+                _id: myBot.randomArmor(6),
                 plus: 3
             },
             equipedAccessory: {
@@ -374,25 +374,25 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         },{
-            _id: "239141420194070530", 
-            characterId: "10840001_1af29f14",   // Annalina
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308806",
-                plus: 3
+                _id: "3008980",
+                plus: 4
             },
             equipedArmor: {
                 _id: myBot.randomArmor(8),
                 plus: 3
             },
             equipedAccessory: {
-                _id: "329997",
-                plus: 4
+                _id: "330107",
+                plus: 3
             },
             materialList: {},
             weaponList: {},
@@ -449,13 +449,13 @@ myBot.bot.on("ready", function() {
         if (isLocal) {
             trainingController.trainerField = [
                 //[null, "240097185436270593", "265889287281573918"],
-                [null, "240097185436270593", null],
-                [null, null, null]
+                [null, null, null],
+                [null, "240097185436270593", null]
             ];
         } else {
             trainingController.trainerField = [
-                ["270767219875643392", null, "278911842859089920"],
-                [null, "239141420194070530", null]
+                [null, "241511566036434945", null],
+                [null, "272259125256388610", "275533845984575488"]
             ];    
         }
         
