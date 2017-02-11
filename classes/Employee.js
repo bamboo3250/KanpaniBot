@@ -42,8 +42,7 @@ var Employee = function(employeeInfo, playerId = null) {
         "Pdef Down": null,
         "Matk Down": null,
         "Mdef Down": null,
-    
-    //     "charm": null,
+        "Charm": null,
     //     "patkup": null,
     //     "matkup": null,
     //     "pdefup": null,
@@ -349,6 +348,10 @@ Employee.prototype.isStunned = function() {
 
 Employee.prototype.isParalyzed = function() {
     return (this.status["Paralyze"] !== null);
+}
+
+Employee.prototype.isCharmed = function() {
+    return (this.status["Charm"] !== null);
 }
 
 module.exports = Employee;

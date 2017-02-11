@@ -16,7 +16,7 @@ var PatkDownStatus = require('../classes/status/PatkDownStatus');
 var PdefDownStatus = require('../classes/status/PdefDownStatus');
 var MatkDownStatus = require('../classes/status/MatkDownStatus');
 var MdefDownStatus = require('../classes/status/MdefDownStatus');
-
+var CharmStatus = require('../classes/status/CharmStatus');
 
 function PlayerManager() {
     this.TRAINER_RESPAWN_TIME = 6*60*60*1000;
@@ -478,6 +478,13 @@ PlayerManager.prototype.applyMdefDown = function(fromUserId, toUserId) {
     var targetUnit = this.getPlayerUnit(toUserId);
     if (!targetUnit.status["Mdef Down"]) {
         targetUnit.status["Mdef Down"] = new MdefDownStatus(this.bot, fromUserId, toUserId);
+    }
+}
+
+PlayerManager.prototype.applyCharm = function(fromUserId, toUserId) {
+    var targetUnit = this.getPlayerUnit(toUserId);
+    if (!targetUnit.status["Charm"]) {
+        targetUnit.status["Charm"] = new CharmStatus(this.bot, fromUserId, toUserId);
     }
 }
 

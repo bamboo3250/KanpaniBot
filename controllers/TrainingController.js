@@ -267,6 +267,7 @@ TrainingController.prototype.hasFrontlineUnit = function(field) {
 }
 
 TrainingController.prototype.checkMask = function(skillPhase, mask, mainTargetPos, field) {
+    if (!mainTargetPos) return false;
     if (mask[mainTargetPos.row][mainTargetPos.column]) {
         if (!skillPhase.isShortAttack()) return true;
 
@@ -359,9 +360,49 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         return;
     }
 
+    var actionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
+    var field = (actionOnEnemySide? battleField.enemySide: battleField.allySide);
+    var targets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, field);
+    
+
     var isParalyzed = false;
+    var isCharmed = attacker.isCharmed();
+
     if (attacker.isParalyzed()) {
         isParalyzed = attacker.status["Paralyze"].evoke();   
+    }
+    if (isCharmed) {
+        var charmOwnerId = attacker.status["Charm"].ownerId;
+        attacker.status["Charm"].evoke();
+
+        if (skillPhase.canAttack()) {
+            for(var i=0;i<targets.length;i++) {
+                var targetFieldPos = targets[i];
+                var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
+                if (targetUnit && !targetUnit.isFainted() && targetUnit.playerId == charmOwnerId) {
+                    text = attackerName + " is charmed.\n";
+                    result.push({
+                        text: text,
+                        image: null
+                    });
+                    this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
+                    return
+                }
+            }    
+        } else {    // Healing
+            var charmOwnerUnit = this.bot.playerManager.getPlayerUnit(charmOwnerId);
+            if (charmOwnerUnit && (!charmOwnerUnit.isFainted() || skillPhase.status["Resurrection"])) {
+                mainTargetUnit = charmOwnerUnit;
+                var newActionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
+                var newField = (actionOnEnemySide? battleField.enemySide: battleField.allySide);
+                var newTargets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, field);
+                if (newTargets.length > 0) {
+                    actionOnEnemySide = newActionOnEnemySide;
+                    field = newField;
+                    targets = newTargets;
+                }
+            }
+        }
     }
 
     if (attacker.isStunned()) {
@@ -385,10 +426,12 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         return;    
     }
 
-    var actionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
-    var field = (actionOnEnemySide? battleField.enemySide: battleField.allySide);
-    var targets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, field);
     var area = this.resolveArea(skillPhase, attacker, mainTargetUnit, field);
+    if (area.length <= 0) {
+        this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
+        return; 
+    }
+
     var average_column = 0;
     for(var i=0;i<area.length;i++) average_column += area[i].column;
     average_column = average_column / area.length;
@@ -429,6 +472,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var pdefDownResult = {};
     var matkDownResult = {};
     var mdefDownResult = {};
+    var charmResult = {};
 
     var doesHitMainTarget = false;
 
@@ -571,6 +615,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     var PDEF_DOWN_CHANCE = (isNaN(skillPhase.status["Pdef Down"]) ? 0 : skillPhase.status["Pdef Down"]);
                     var MATK_DOWN_CHANCE = (isNaN(skillPhase.status["Matk Down"]) ? 0 : skillPhase.status["Matk Down"]);
                     var MDEF_DOWN_CHANCE = (isNaN(skillPhase.status["Mdef Down"]) ? 0 : skillPhase.status["Mdef Down"]);
+                    var CHARM_CHANCE = (isNaN(skillPhase.status["Charm"]) ? 0 : skillPhase.status["Charm"]);
 
                     if (!targetUnit.status["Stun"]) {
                         var doesStun = (this.bot.functionHelper.randomInt(100) < STUN_CHANCE);
@@ -642,7 +687,14 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                             expGained[attacker.playerId] += 1000;
                         }
                     }
-                    
+                    if (!targetUnit.status["Charm"]) {
+                        var doesCharm = (this.bot.functionHelper.randomInt(100) < CHARM_CHANCE);
+                        if (doesCharm) {
+                            this.bot.playerManager.applyCharm(attacker.playerId, targetUnit.playerId);
+                            charmResult[targetUnit.playerId] = true;
+                            expGained[attacker.playerId] += 2000;
+                        }
+                    }
                 }
             }
 
@@ -821,6 +873,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         if (pdefDownResult[targetId]) text += "\t\t" + targetName + " is under Pdef Down's effect.\n";
         if (matkDownResult[targetId]) text += "\t\t" + targetName + " is under Matk Down's effect.\n";
         if (mdefDownResult[targetId]) text += "\t\t" + targetName + " is under Mdef Down's effect.\n";
+        if (charmResult[targetId]) text += "\t\t" + targetName + " is charmed.\n";
     }
     if (Object.keys(expGained).length > 0) text += "\n";
 
