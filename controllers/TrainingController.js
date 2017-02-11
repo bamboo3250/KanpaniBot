@@ -395,7 +395,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 mainTargetUnit = charmOwnerUnit;
                 var newActionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
                 var newField = (newActionOnEnemySide? battleField.enemySide: battleField.allySide);
-                var newTargets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, field);
+                var newTargets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, newField);
                 if (newTargets.length > 0) {
                     actionOnEnemySide = newActionOnEnemySide;
                     field = newField;
@@ -479,6 +479,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
         var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
+        if (!targetUnit) continue;
 
         var targetName = targetUnit.shortName;
         var targetUser = this.bot.userManager.getUser(targetUnit.playerId);
