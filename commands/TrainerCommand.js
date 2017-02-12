@@ -44,7 +44,7 @@ module.exports = {
         if (bot.battleController.trainingSession.endTime) {
             var remainTime = bot.battleController.trainingSession.endTime - now.valueOf();
             var time = bot.functionHelper.parseTime(remainTime);
-            text += "Remaining Time: **" + time + "**\n";    
+            text += "Remaining Time: **" + time + "**\n";
         }
         if (bot.battleController.trainingSession.respawnTime) {
             var remainTime = bot.battleController.trainingSession.respawnTime - now.valueOf();

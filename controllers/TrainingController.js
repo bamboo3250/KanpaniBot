@@ -690,7 +690,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     }
                     if (!targetUnit.status["Charm"]) {
                         var doesCharm = (this.bot.functionHelper.randomInt(100) < CHARM_CHANCE);
-                        if (doesCharm && !targetUnit.accessory.effect["Charm Defence"]) {
+                        if (doesCharm && (!targetUnit.accessory || !targetUnit.accessory.effect["Charm Defence"])) {
                             this.bot.playerManager.applyCharm(attacker.playerId, targetUnit.playerId);
                             charmResult[targetUnit.playerId] = true;
                             expGained[attacker.playerId] += 2000;
