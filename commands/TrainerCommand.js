@@ -21,9 +21,10 @@ module.exports = {
                 var trainerUser = bot.userManager.getUser(trainerId);
 
                 if (trainerId && trainerUnit && trainerUser) {
-                    const elementEmoji = (message.guild == null ? trainerUnit.element : message.guild.emojis.find('name', 'k' + trainerUnit.element));
+                    //const elementEmoji = (message.guild == null ? trainerUnit.element : message.guild.emojis.find('name', 'k' + trainerUnit.element));
+                    const classEmoji = (message.guild == null ? trainerUnit.getClass() : message.guild.emojis.find('name', 'k' + trainerUnit.getClass().toLowerCase()));
                     text += "User: **" + trainerUser.username + "**\n";
-                    text += "Character: **" + trainerUnit.fullName + "** (Lv.**" + trainerUnit.levelCached  + "**)\n";
+                    text += "Character: **" + trainerUnit.fullName + "** (" + (classEmoji?classEmoji+", ":"") + "Lv.**" + trainerUnit.levelCached  + "**)\n";
                     var now = new Date();
                     var percentHP = Math.floor(trainerUnit.getCurrentHP()/trainerUnit.getMaxHP()*100);
                     text += "HP: **" + trainerUnit.getCurrentHP() + "/" + trainerUnit.getMaxHP() + " (" + percentHP +"%)**" + (trainerUnit.respawnTime?" (Respawn in " + bot.functionHelper.parseTime(trainerUnit.respawnTime - now.valueOf()) + ")":"") + "\n";
