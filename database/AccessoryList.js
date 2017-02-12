@@ -16,7 +16,7 @@ module.exports = {
                     patk: 1, pdef: 1, matk: 1, mdef: 1, crit: 10, hit: 10, eva: 10
                 }
             },
-            devCost: 2250, levelRequired: 1, tier: 2, recipe: [
+            effect: {}, devCost: 2250, levelRequired: 1, tier: 2, recipe: [
                 {
                     materialName: "Crystal",
                     amount: 1
@@ -38,7 +38,7 @@ module.exports = {
                     patk: 2, pdef: 2, matk: 15, mdef: 15, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 6750, levelRequired: 1, tier: 2, recipe: [
+            effect: {}, devCost: 6750, levelRequired: 1, tier: 2, recipe: [
                 {
                     materialName: "Ruby",
                     amount: 1
@@ -60,7 +60,7 @@ module.exports = {
                     patk: 15, pdef: 15, matk: 3, mdef: 3, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 3060, levelRequired: 1, tier: 2, recipe: [
+            effect: {}, devCost: 3060, levelRequired: 1, tier: 2, recipe: [
                 {
                     materialName: "Turquoise",
                     amount: 1
@@ -86,7 +86,7 @@ module.exports = {
                     patk: 5, pdef: 5, matk: 3, mdef: 3, crit: 15, hit: 15, eva: 15
                 }
             },
-            devCost: 3780, levelRequired: 1, tier: 2, recipe: [
+            effect: {}, devCost: 3780, levelRequired: 1, tier: 2, recipe: [
                 {
                     materialName: "Crystal",
                     amount: 2
@@ -108,7 +108,7 @@ module.exports = {
                     patk: 10, pdef: 10, matk: 40, mdef: 40, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 9180, levelRequired: 2, tier: 2, recipe: [
+            effect: {}, devCost: 9180, levelRequired: 2, tier: 2, recipe: [
                 {
                     materialName: "Ruby",
                     amount: 2
@@ -130,7 +130,7 @@ module.exports = {
                     patk: 50, pdef: 50, matk: 9, mdef: 9, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 5180, levelRequired: 2, tier: 2, recipe: [
+            effect: {}, devCost: 5180, levelRequired: 2, tier: 2, recipe: [
                 {
                     materialName: "Turquoise",
                     amount: 2
@@ -156,7 +156,7 @@ module.exports = {
                     patk: 10, pdef: 2, matk: 2, mdef: 2, crit: 35, hit: 35, eva: 35
                 }
             },
-            devCost: 6300, levelRequired: 6, tier: 3, recipe: [
+            effect: {}, devCost: 6300, levelRequired: 6, tier: 3, recipe: [
                 {
                     materialName: "Crystal",
                     amount: 1
@@ -181,7 +181,7 @@ module.exports = {
                     patk: 20, pdef: 4, matk: 50, mdef: 50, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 13860, levelRequired: 8, tier: 3, recipe: [
+            effect: {}, devCost: 13860, levelRequired: 8, tier: 3, recipe: [
                 {
                     materialName: "Ruby",
                     amount: 1
@@ -206,7 +206,7 @@ module.exports = {
                     patk: 70, pdef: 70, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 8510, levelRequired: 6, tier: 3, recipe: [
+            effect: {}, devCost: 8510, levelRequired: 6, tier: 3, recipe: [
                 {
                     materialName: "Turquoise",
                     amount: 2
@@ -235,7 +235,7 @@ module.exports = {
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 60, hit: 60, eva: 60
                 }
             },
-            devCost: 7200, levelRequired: 11, tier: 3, recipe: [
+            effect: {}, devCost: 7200, levelRequired: 11, tier: 3, recipe: [
                 {
                     materialName: "Crystal",
                     amount: 1
@@ -260,7 +260,7 @@ module.exports = {
                     patk: 4, pdef: 4, matk: 70, mdef: 70, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 15840, levelRequired: 12, tier: 3, recipe: [
+            effect: {}, devCost: 15840, levelRequired: 12, tier: 3, recipe: [
                 {
                     materialName: "Ruby",
                     amount: 1
@@ -285,7 +285,7 @@ module.exports = {
                     patk: 80, pdef: 80, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 9720, levelRequired: 20, tier: 3, recipe: [
+            effect: {}, devCost: 9720, levelRequired: 20, tier: 3, recipe: [
                 {
                     materialName: "Turquoise",
                     amount: 2
@@ -314,7 +314,7 @@ module.exports = {
                     patk: 2, pdef: 2, matk: 2, mdef: 2, crit: 80, hit: 80, eva: 80
                 }
             },
-            devCost: 10940, levelRequired: 36, tier: 3, recipe: [
+            effect: {}, devCost: 10940, levelRequired: 36, tier: 3, recipe: [
                 {
                     materialName: "Crystal",
                     amount: 2
@@ -339,7 +339,7 @@ module.exports = {
                     patk: 4, pdef: 4, matk: 80, mdef: 80, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 6750, levelRequired: 36, tier: 3, recipe: [
+            effect: {}, devCost: 6750, levelRequired: 36, tier: 3, recipe: [
                 {
                     materialName: "Ruby",
                     amount: 2
@@ -364,7 +364,7 @@ module.exports = {
                     patk: 85, pdef: 85, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 0
                 }
             },
-            devCost: 14990, levelRequired: 36, tier: 3, recipe: [
+            effect: {}, devCost: 14990, levelRequired: 36, tier: 3, recipe: [
                 {
                     materialName: "Topaz",
                     amount: 2
@@ -390,7 +390,7 @@ module.exports = {
                     patk: 2, pdef: 10, matk: 2, mdef: 2, crit: 100, hit: 100, eva: 100
                 }
             },
-            devCost: 11180, levelRequired: 42, tier: 3, recipe: [
+            effect: {}, devCost: 11180, levelRequired: 42, tier: 3, recipe: [
                 {
                     materialName: "Crystal",
                     amount: 2
@@ -415,7 +415,7 @@ module.exports = {
                     patk: 4, pdef: 20, matk: 90, mdef: 90, crit: 0, hit: 0, eva: 20
                 }
             },
-            devCost: 28980, levelRequired: 42, tier: 3, recipe: [
+            effect: {}, devCost: 28980, levelRequired: 42, tier: 3, recipe: [
                 {
                     materialName: "Ruby",
                     amount: 2
@@ -437,7 +437,7 @@ module.exports = {
                     patk: 100, pdef: 100, matk: 6, mdef: 6, crit: 0, hit: 0, eva: 20
                 }
             },
-            devCost: 14990, levelRequired: 44, tier: 3, recipe: [
+            effect: {}, devCost: 14990, levelRequired: 44, tier: 3, recipe: [
                 {
                     materialName: "Rose Quartz",
                     amount: 1
@@ -466,7 +466,7 @@ module.exports = {
                     patk: 0, pdef: 20, matk: 0, mdef: 20, crit: 80, hit: 80, eva: 140
                 }
             },
-            devCost: 12560, levelRequired: 51, tier: 3, recipe: [
+            effect: {}, devCost: 12560, levelRequired: 51, tier: 3, recipe: [
                 {
                     materialName: "Crystal",
                     amount: 1
@@ -494,7 +494,7 @@ module.exports = {
                     patk: 0, pdef: 36, matk: 100, mdef: 100, crit: 0, hit: 0, eva: 10
                 }
             },
-            devCost: 40000, levelRequired: 61, tier: 3, recipe: [
+            effect: {}, devCost: 40000, levelRequired: 61, tier: 3, recipe: [
                 {
                     materialName: "Crystal",
                     amount: 2
@@ -519,7 +519,7 @@ module.exports = {
                     patk: 90, pdef: 110, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
                 }
             },
-            devCost: 40000, levelRequired: 66, tier: 3, recipe: [
+            effect: {}, devCost: 40000, levelRequired: 66, tier: 3, recipe: [
                 {
                     materialName: "Opal",
                     amount: 2
@@ -548,7 +548,7 @@ module.exports = {
                     patk: 110, pdef: 90, matk: 6, mdef: 6, crit: 20, hit: 0, eva: 0
                 }
             },
-            devCost: 40000, levelRequired: 71, tier: 3, recipe: [
+            effect: {}, devCost: 40000, levelRequired: 71, tier: 3, recipe: [
                 {
                     materialName: "Malachite",
                     amount: 2
@@ -577,7 +577,7 @@ module.exports = {
                     patk: 30, pdef: 30, matk: 30, mdef: 30, crit: 30, hit: 0, eva: 30
                 }
             },
-            devCost: 20000, levelRequired: 25, tier: 2, recipe: [
+            effect: {}, devCost: 20000, levelRequired: 25, tier: 2, recipe: [
                 {
                     materialName: "Labyrinth Fragment",
                     amount: 2
@@ -606,7 +606,7 @@ module.exports = {
                     patk: 0, pdef: 80, matk: 0, mdef: 80, crit: 0, hit: 0, eva: 40
                 }
             },
-            devCost: 12250, levelRequired: 10, tier: 5, recipe: [
+            effect: {}, devCost: 12250, levelRequired: 10, tier: 5, recipe: [
                 {
                     materialName: "Holy Sprig",
                     amount: 2
@@ -641,7 +641,9 @@ module.exports = {
                     patk: 0, pdef: 90, matk: 0, mdef: 90, crit: 50, hit: 0, eva: 30
                 }
             },
-            devCost: 11000, levelRequired: 10, tier: 5, recipe: [
+            effect: {
+                "Charm Defence": true
+            }, devCost: 11000, levelRequired: 10, tier: 5, recipe: [
                 {
                     materialName: "Silver Ore",
                     amount: 2

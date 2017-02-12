@@ -11,6 +11,8 @@ function Accessory(accessoryInfo, plus = 0) {
     this.crit       = accessoryInfo.stats["+"+plus].crit;
     this.hit        = accessoryInfo.stats["+"+plus].hit;
     this.eva        = accessoryInfo.stats["+"+plus].eva;
+
+    this.effect     = accessoryInfo.effect;
 }
 
 module.exports = Accessory;
