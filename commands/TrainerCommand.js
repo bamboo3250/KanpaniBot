@@ -23,7 +23,7 @@ module.exports = {
                 if (trainerId && trainerUnit && trainerUser) {
                     const elementEmoji = (message.guild == null ? trainerUnit.element : message.guild.emojis.find('name', 'k' + trainerUnit.element));
                     text += "User: **" + trainerUser.username + "**\n";
-                    text += "Character: **" + trainerUnit.fullName + "** (" + (elementEmoji?elementEmoji+", ":"") + "Lv.**" + trainerUnit.levelCached  + "**)\n";
+                    text += "Character: **" + trainerUnit.fullName + "** (Lv.**" + trainerUnit.levelCached  + "**)\n";
                     var now = new Date();
                     var percentHP = Math.floor(trainerUnit.getCurrentHP()/trainerUnit.getMaxHP()*100);
                     text += "HP: **" + trainerUnit.getCurrentHP() + "/" + trainerUnit.getMaxHP() + " (" + percentHP +"%)**" + (trainerUnit.respawnTime?" (Respawn in " + bot.functionHelper.parseTime(trainerUnit.respawnTime - now.valueOf()) + ")":"") + "\n";
