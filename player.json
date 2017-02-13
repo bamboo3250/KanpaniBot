@@ -1,10 +1,10 @@
 {
     "162995652152786944": {
         "characterId": "10850003_5bbd0e67",
-        "exp": 14535588,
+        "exp": 15380570,
         "equipedWeapon": {
-            "_id": "3008091",
-            "plus": 0
+            "_id": "3008980",
+            "plus": 4
         },
         "equipedArmor": {
             "_id": "3108072",
@@ -36,8 +36,8 @@
             "Half Moon Fragment": 0,
             "Water Buffalo Horn": 34,
             "Shimmering Water": 165,
-            "Rose Quartz": 4249,
-            "Gold Mailbox": 25,
+            "Rose Quartz": 4252,
+            "Gold Mailbox": 34,
             "Silver Mailbox": 15,
             "Luxurious Cloth": 76,
             "Hard Leather": 1907,
@@ -48,22 +48,22 @@
             "Labyrinth Fragment": 13,
             "Evergreen Oak Branch": 7,
             "Silver Ore": 26,
-            "Diamond": 2207,
-            "Black Pearl": 1810,
-            "Gold Ore": 2621,
-            "Chimera Horn": 2386,
+            "Diamond": 2210,
+            "Black Pearl": 1816,
+            "Gold Ore": 2625,
+            "Chimera Horn": 2388,
             "Forge": 15,
-            "Magical Water": 4118,
-            "Emerald": 3960,
-            "Ominous Cloth": 1918,
-            "Ebony Branch": 2041,
-            "Lapis Lazuli": 4235,
-            "Full Moon Fragment": 2079,
-            "Garnet": 2073,
-            "Luxurious Leather": 3717,
-            "Weapon Hammer": 44,
+            "Magical Water": 4121,
+            "Emerald": 3961,
+            "Ominous Cloth": 1919,
+            "Ebony Branch": 2043,
+            "Lapis Lazuli": 4237,
+            "Full Moon Fragment": 2080,
+            "Garnet": 2074,
+            "Luxurious Leather": 3719,
+            "Weapon Hammer": 53,
             "Armor Hammer": 41,
-            "Accessory Hammer": 56,
+            "Accessory Hammer": 57,
             "Food Pack": 10,
             "Bread": 2,
             "Christmas Eve Stardust": 218,
@@ -79,17 +79,17 @@
             "Malachite": 368,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Mithril Ore": 95,
-            "Holy Cloth": 97,
-            "Rare Species Leather": 87,
-            "Yggdrasil Branch": 124,
-            "Dragon Horn": 49,
+            "Mithril Ore": 97,
+            "Holy Cloth": 100,
+            "Rare Species Leather": 91,
+            "Yggdrasil Branch": 127,
+            "Dragon Horn": 50,
             "Holy Water": 113,
-            "Sun Fragment": 105,
-            "Chocolate Chip Ice": 3,
-            "Nuts": 91,
-            "Fruit": 101,
-            "Chocolate Bar": 106
+            "Sun Fragment": 106,
+            "Chocolate Chip Ice": 6,
+            "Nuts": 295,
+            "Fruit": 287,
+            "Chocolate Bar": 291
         },
         "weaponList": {
             "300801": {
@@ -352,7 +352,7 @@
                 "+4": 0
             },
             "3008091": {
-                "+0": 1,
+                "+0": 2,
                 "+1": 2,
                 "+2": 11,
                 "+3": 0,
@@ -545,7 +545,7 @@
                 "+4": 2
             }
         },
-        "gold": 2886639,
+        "gold": 4006639,
         "position": "back",
         "partnerId": "167613810192941056",
         "ceoPower": false,
@@ -656,9 +656,9 @@
     },
     "196169177931841536": {
         "characterId": "10350003_fcc3ce23",
-        "exp": 14638077,
+        "exp": 15473401,
         "equipedWeapon": {
-            "_id": "300309",
+            "_id": "308320",
             "plus": 3
         },
         "equipedArmor": {
@@ -666,8 +666,8 @@
             "plus": 2
         },
         "equipedAccessory": {
-            "_id": "330207",
-            "plus": 3
+            "_id": "3299960",
+            "plus": 4
         },
         "materialList": {
             "Rare Silver Coin": 13,
@@ -681,7 +681,7 @@
             "Iron Ore": 1173,
             "Onyx": 960,
             "Crescent Moon Fragment": 35,
-            "Crystal": 676,
+            "Crystal": 616,
             "Water Buffalo Horn": 71,
             "Evergreen Oak Branch": 57,
             "Turquoise": 1027,
@@ -696,29 +696,29 @@
             "Mountain Goat Horn": 51,
             "Shimmering Water": 202,
             "Copper Ore": 10,
-            "Silver Ore": 1181,
+            "Silver Ore": 1121,
             "Labyrinth Fragment": 591,
-            "Rose Quartz": 836,
+            "Rose Quartz": 839,
             "Hard Leather": 123,
             "Half Moon Fragment": 13,
             "Silver Mailbox": 7,
             "Forge": 25,
             "Star Fragment": 4,
-            "Magical Water": 1550,
-            "Black Pearl": 2191,
-            "Ebony Branch": 2253,
-            "Luxurious Leather": 3326,
-            "Ominous Cloth": 847,
+            "Magical Water": 1553,
+            "Black Pearl": 2194,
+            "Ebony Branch": 2206,
+            "Luxurious Leather": 3327,
+            "Ominous Cloth": 804,
             "Emerald": 1061,
-            "Gold Ore": 2388,
-            "Lapis Lazuli": 1037,
-            "Diamond": 234,
-            "Chimera Horn": 2451,
-            "Garnet": 1053,
-            "Gold Mailbox": 19,
-            "Weapon Hammer": 31,
+            "Gold Ore": 2391,
+            "Lapis Lazuli": 1039,
+            "Diamond": 237,
+            "Chimera Horn": 2452,
+            "Garnet": 1056,
+            "Gold Mailbox": 25,
+            "Weapon Hammer": 34,
             "Armor Hammer": 12,
-            "Accessory Hammer": 13,
+            "Accessory Hammer": 12,
             "Food Pack": 3,
             "Bread": 0,
             "Christmas Eve Stardust": 1031,
@@ -726,7 +726,7 @@
             "Ice Crystal": 1036,
             "Eld Light": 0,
             "Unmelting Ice": 285,
-            "Full Moon Fragment": 1229,
+            "Full Moon Fragment": 1231,
             "Aroma Oil": 500,
             "Magnificent Silver Coin": 901,
             "Opal": 804,
@@ -735,18 +735,18 @@
             "Malachite": 858,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Mithril Ore": 22,
-            "Holy Cloth": 518,
-            "Rare Species Leather": 105,
-            "Sun Fragment": 108,
-            "Yggdrasil Branch": 93,
-            "Holy Water": 86,
-            "Dragon Horn": 54,
+            "Mithril Ore": 23,
+            "Holy Cloth": 521,
+            "Rare Species Leather": 107,
+            "Sun Fragment": 109,
+            "Yggdrasil Branch": 94,
+            "Holy Water": 87,
+            "Dragon Horn": 55,
             "Demonic Cloth": 445,
-            "Chocolate Chip Ice": 0,
-            "Fruit": 57,
-            "Nuts": 51,
-            "Chocolate Bar": 68
+            "Chocolate Chip Ice": 8,
+            "Fruit": 136,
+            "Nuts": 152,
+            "Chocolate Bar": 165
         },
         "weaponList": {
             "300301": {
@@ -802,14 +802,14 @@
                 "+0": 3,
                 "+1": 1,
                 "+2": 0,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "308320": {
                 "+0": 0,
                 "+1": 17,
                 "+2": 13,
-                "+3": 1,
+                "+3": 0,
                 "+4": 0
             },
             "340300": {
@@ -837,6 +837,13 @@
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3001980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 1,
                 "+3": 0,
                 "+4": 0
             },
@@ -868,6 +875,13 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3002980": {
+                "+0": 0,
+                "+1": 2,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
             "3002990": {
                 "+0": 0,
                 "+1": 0,
@@ -890,9 +904,9 @@
                 "+4": 0
             },
             "3003091": {
-                "+0": 0,
-                "+1": 8,
-                "+2": 7,
+                "+0": 1,
+                "+1": 17,
+                "+2": 13,
                 "+3": 1,
                 "+4": 0
             },
@@ -931,6 +945,13 @@
                 "+3": 0,
                 "+4": 1
             },
+            "3003980": {
+                "+0": 0,
+                "+1": 2,
+                "+2": 2,
+                "+3": 0,
+                "+4": 0
+            },
             "3003990": {
                 "+0": 0,
                 "+1": 0,
@@ -955,6 +976,13 @@
             "3004881": {
                 "+0": 0,
                 "+1": 0,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
+            "3004980": {
+                "+0": 0,
+                "+1": 3,
                 "+2": 1,
                 "+3": 0,
                 "+4": 0
@@ -987,6 +1015,13 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3005980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 0,
+                "+3": 0,
+                "+4": 1
+            },
             "3005990": {
                 "+0": 0,
                 "+1": 0,
@@ -1011,6 +1046,13 @@
             "3006881": {
                 "+0": 0,
                 "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3006980": {
+                "+0": 0,
+                "+1": 4,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
@@ -1043,6 +1085,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3007980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 0,
+                "+3": 1,
+                "+4": 0
+            },
             "3007990": {
                 "+0": 0,
                 "+1": 0,
@@ -1069,6 +1118,13 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 2,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 0,
+                "+3": 0,
                 "+4": 0
             },
             "3008990": {
@@ -1154,7 +1210,7 @@
                 "+0": 1,
                 "+1": 26,
                 "+2": 5,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             }
         },
@@ -1191,7 +1247,14 @@
                 "+0": 10,
                 "+1": 38,
                 "+2": 32,
-                "+3": 0,
+                "+3": 1,
+                "+4": 0
+            },
+            "3299960": {
+                "+0": 0,
+                "+1": 11,
+                "+2": 14,
+                "+3": 3,
                 "+4": 0
             },
             "3299970": {
@@ -1202,7 +1265,7 @@
                 "+4": 1
             }
         },
-        "gold": 67261915,
+        "gold": 76997565,
         "position": "back",
         "partnerId": "147367023247228928",
         "ceoPower": false,
@@ -1210,7 +1273,7 @@
     },
     "204778746115260417": {
         "characterId": "10150003_e989854c",
-        "exp": 6858700,
+        "exp": 7006739,
         "equipedWeapon": {
             "_id": "308121",
             "plus": 3
@@ -1254,29 +1317,29 @@
             "Aquamarine": 915,
             "1st Anni. Acc. Hammer": 1,
             "1st Anni. W. Hammer": 0,
-            "Gold Mailbox": 21,
-            "Diamond": 1206,
+            "Gold Mailbox": 23,
+            "Diamond": 1208,
             "Luxurious Leather": 1092,
-            "Black Pearl": 1099,
-            "Ebony Branch": 992,
-            "Chimera Horn": 1125,
-            "Emerald": 1240,
+            "Black Pearl": 1100,
+            "Ebony Branch": 993,
+            "Chimera Horn": 1127,
+            "Emerald": 1242,
             "Garnet": 1336,
-            "Magical Water": 1011,
-            "Gold Ore": 691,
-            "Lapis Lazuli": 1057,
+            "Magical Water": 1012,
+            "Gold Ore": 692,
+            "Lapis Lazuli": 1058,
             "Rose Quartz": 1212,
             "Silver Mailbox": 25,
             "Full Moon Fragment": 741,
             "Forge": 7,
             "Armor Hammer": 28,
-            "Accessory Hammer": 27,
+            "Accessory Hammer": 28,
             "Food Pack": 8,
             "Bread": 0,
             "Christmas Eve Stardust": 228,
             "Holy Sprig": 215,
             "Ice Crystal": 243,
-            "Weapon Hammer": 14,
+            "Weapon Hammer": 15,
             "Ominous Cloth": 1069,
             "Eld Light": 0,
             "Unmelting Ice": 829,
@@ -1288,13 +1351,17 @@
             "Malachite": 336,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Holy Cloth": 54,
-            "Yggdrasil Branch": 49,
-            "Rare Species Leather": 51,
-            "Sun Fragment": 60,
-            "Dragon Horn": 45,
-            "Holy Water": 33,
-            "Mithril Ore": 33
+            "Holy Cloth": 56,
+            "Yggdrasil Branch": 50,
+            "Rare Species Leather": 52,
+            "Sun Fragment": 61,
+            "Dragon Horn": 46,
+            "Holy Water": 35,
+            "Mithril Ore": 34,
+            "Chocolate Bar": 56,
+            "Fruit": 45,
+            "Nuts": 45,
+            "Chocolate Chip Ice": 1
         },
         "weaponList": {
             "300105": {
@@ -1645,7 +1712,7 @@
                 "+4": 0
             }
         },
-        "gold": 19080416,
+        "gold": 19610416,
         "position": "front",
         "partnerId": "256682454151069696",
         "ceoPower": false,
@@ -1653,10 +1720,10 @@
     },
     "147367023247228928": {
         "characterId": "10450003_2400b505",
-        "exp": 18145454,
+        "exp": 18917216,
         "equipedWeapon": {
-            "_id": "300409",
-            "plus": 3
+            "_id": "3004980",
+            "plus": 4
         },
         "equipedArmor": {
             "_id": "3104140",
@@ -1669,7 +1736,7 @@
         "materialList": {
             "Copper Ore": 7,
             "Mountain Goat Horn": 88,
-            "Crystal": 390,
+            "Crystal": 388,
             "Star Fragment": 7,
             "Soft Leather": 19,
             "Water": 14,
@@ -1678,45 +1745,45 @@
             "Pure White Cloth": 14,
             "Onyx": 500,
             "Clear Water": 20,
-            "Tanned Leather": 543,
+            "Tanned Leather": 545,
             "Iron Ore": 130,
             "Crescent Moon Fragment": 54,
             "Aquamarine": 500,
             "Luxurious Cloth": 208,
             "Water Buffalo Horn": 80,
             "Beautiful Cloth": 255,
-            "Topaz": 500,
+            "Topaz": 503,
             "Unicorn Horn": 151,
             "Shimmering Water": 67,
-            "Rose Quartz": 500,
+            "Rose Quartz": 509,
             "Silver Ore": 27,
             "Maple Branch": 138,
             "Tree Branch": 24,
             "Evergreen Oak Branch": 75,
-            "Hard Leather": 531,
+            "Hard Leather": 536,
             "1st Anni. W. Hammer": 7,
             "Labyrinth Fragment": 378,
             "Half Moon Fragment": 58,
-            "Silver Mailbox": 5,
+            "Silver Mailbox": 4,
             "1st Anni. Acc. Hammer": 3,
-            "Ominous Cloth": 1407,
-            "Black Pearl": 503,
-            "Magical Water": 1812,
-            "Full Moon Fragment": 502,
-            "Chimera Horn": 546,
-            "Ebony Branch": 562,
-            "Luxurious Leather": 504,
-            "Emerald": 504,
-            "Garnet": 557,
-            "Diamond": 502,
-            "Lapis Lazuli": 504,
-            "Gold Ore": 505,
-            "Gold Mailbox": 14,
+            "Ominous Cloth": 1413,
+            "Black Pearl": 512,
+            "Magical Water": 1820,
+            "Full Moon Fragment": 507,
+            "Chimera Horn": 550,
+            "Ebony Branch": 566,
+            "Luxurious Leather": 512,
+            "Emerald": 516,
+            "Garnet": 560,
+            "Diamond": 507,
+            "Lapis Lazuli": 516,
+            "Gold Ore": 504,
+            "Gold Mailbox": 22,
             "Armor Hammer": 18,
             "Food Pack": 3,
             "Bread": 0,
-            "Accessory Hammer": 22,
-            "Weapon Hammer": 34,
+            "Accessory Hammer": 23,
+            "Weapon Hammer": 42,
             "Eld Light": 0,
             "Unmelting Ice": 500,
             "Forge": 14,
@@ -1728,19 +1795,19 @@
             "Malachite": 514,
             "Tanzanite": 300,
             "Sapphire": 300,
-            "Mithril Ore": 484,
-            "Holy Cloth": 172,
-            "Dragon Horn": 265,
-            "Holy Water": 189,
-            "Sun Fragment": 186,
-            "Yggdrasil Branch": 177,
-            "Rare Species Leather": 168,
+            "Mithril Ore": 491,
+            "Holy Cloth": 174,
+            "Dragon Horn": 271,
+            "Holy Water": 197,
+            "Sun Fragment": 197,
+            "Yggdrasil Branch": 181,
+            "Rare Species Leather": 176,
             "Demon Ore": 282,
             "Demon Beast Horn": 20,
-            "Chocolate Chip Ice": 2,
-            "Chocolate Bar": 53,
-            "Nuts": 54,
-            "Fruit": 63
+            "Chocolate Chip Ice": 3,
+            "Chocolate Bar": 117,
+            "Nuts": 110,
+            "Fruit": 114
         },
         "weaponList": {
             "300401": {
@@ -1759,9 +1826,9 @@
             },
             "300409": {
                 "+0": 0,
-                "+1": 8,
+                "+1": 0,
                 "+2": 1,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "3001781": {
@@ -1792,6 +1859,13 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3001980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
             "3002781": {
                 "+0": 0,
                 "+1": 0,
@@ -1820,9 +1894,16 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3002980": {
+                "+0": 2,
+                "+1": 0,
+                "+2": 0,
+                "+3": 1,
+                "+4": 0
+            },
             "3003791": {
                 "+0": 0,
-                "+1": 1,
+                "+1": 0,
                 "+2": 0,
                 "+3": 1,
                 "+4": 0
@@ -1841,16 +1922,23 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3003980": {
+                "+0": 1,
+                "+1": 0,
+                "+2": 2,
+                "+3": 0,
+                "+4": 0
+            },
             "3004082": {
                 "+0": 0,
-                "+1": 9,
+                "+1": 1,
                 "+2": 4,
                 "+3": 0,
                 "+4": 0
             },
             "3004091": {
-                "+0": 0,
-                "+1": 5,
+                "+0": 1,
+                "+1": 0,
                 "+2": 5,
                 "+3": 1,
                 "+4": 0
@@ -1883,6 +1971,13 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3004980": {
+                "+0": 3,
+                "+1": 0,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
             "3005791": {
                 "+0": 0,
                 "+1": 1,
@@ -1898,6 +1993,13 @@
                 "+4": 0
             },
             "3005881": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 1,
+                "+4": 0
+            },
+            "3005980": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
@@ -1925,6 +2027,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3006980": {
+                "+0": 0,
+                "+1": 2,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
             "3007791": {
                 "+0": 0,
                 "+1": 0,
@@ -1942,6 +2051,13 @@
             "3007881": {
                 "+0": 0,
                 "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3007980": {
+                "+0": 0,
+                "+1": 1,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
@@ -1970,6 +2086,13 @@
             "3008881": {
                 "+0": 0,
                 "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 0,
+                "+1": 1,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
@@ -2049,7 +2172,7 @@
                 "+4": 0
             }
         },
-        "gold": 342622359,
+        "gold": 343753929,
         "position": "front",
         "partnerId": "196169177931841536",
         "ceoPower": false,
@@ -2057,7 +2180,7 @@
     },
     "148220188037349376": {
         "characterId": "10150003_e989854c",
-        "exp": 5571062,
+        "exp": 5884665,
         "equipedWeapon": {
             "_id": "308121",
             "plus": 2
@@ -2101,12 +2224,12 @@
             "Beautiful Cloth": 27,
             "Tanned Leather": 83,
             "Labyrinth Fragment": 28,
-            "Gold Mailbox": 13,
-            "Rose Quartz": 416,
+            "Gold Mailbox": 22,
+            "Rose Quartz": 417,
             "Silver Mailbox": 0,
-            "Weapon Hammer": 6,
+            "Weapon Hammer": 16,
             "Forge": 13,
-            "Accessory Hammer": 12,
+            "Accessory Hammer": 13,
             "Food Pack": 10,
             "Bread": 1,
             "Holy Sprig": 98,
@@ -2114,20 +2237,20 @@
             "Ice Crystal": 94,
             "Ominous Cloth": 516,
             "Black Pearl": 466,
-            "Full Moon Fragment": 493,
+            "Full Moon Fragment": 496,
             "Ebony Branch": 550,
-            "Luxurious Leather": 464,
+            "Luxurious Leather": 466,
             "Chimera Horn": 827,
             "Eld Light": 0,
             "Unmelting Ice": 214,
             "Gold Ore": 462,
             "Armor Hammer": 8,
             "Aroma Oil": 150,
-            "Lapis Lazuli": 563,
+            "Lapis Lazuli": 565,
             "Diamond": 492,
-            "Garnet": 514,
-            "Magical Water": 428,
-            "Emerald": 454,
+            "Garnet": 515,
+            "Magical Water": 429,
+            "Emerald": 455,
             "Magnificent Silver Coin": 50,
             "Opal": 389,
             "Jade": 400,
@@ -2137,15 +2260,15 @@
             "Holy Cloth": 42,
             "Rare Species Leather": 66,
             "Yggdrasil Branch": 52,
-            "Mithril Ore": 9,
-            "Dragon Horn": 44,
-            "Sun Fragment": 50,
+            "Mithril Ore": 10,
+            "Dragon Horn": 46,
+            "Sun Fragment": 51,
             "Holy Water": 4,
             "Amethyst": 47,
-            "Nuts": 53,
-            "Chocolate Bar": 50,
-            "Fruit": 39,
-            "Chocolate Chip Ice": 3
+            "Nuts": 199,
+            "Chocolate Bar": 190,
+            "Fruit": 180,
+            "Chocolate Chip Ice": 7
         },
         "weaponList": {
             "300101": {
@@ -2615,7 +2738,7 @@
                 "+4": 1
             }
         },
-        "gold": 3435818,
+        "gold": 5025818,
         "position": "front",
         "partnerId": "147296942974566400",
         "ceoPower": false,
@@ -2985,10 +3108,10 @@
     },
     "224136431730163722": {
         "characterId": "10850005_ad800ba1",
-        "exp": 19905950,
+        "exp": 19822285,
         "equipedWeapon": {
-            "_id": "3008082",
-            "plus": 3
+            "_id": "3008980",
+            "plus": 4
         },
         "equipedArmor": {
             "_id": "3108140",
@@ -3009,71 +3132,72 @@
             "Silver Coin Purse": 0,
             "Crescent Moon Fragment": 164,
             "Onyx": 1481,
-            "Crystal": 1101,
-            "Iron Ore": 94,
+            "Crystal": 1086,
+            "Iron Ore": 98,
             "Clear Water": 98,
-            "Water Buffalo Horn": 81,
-            "Beautiful Cloth": 101,
-            "Aquamarine": 1692,
-            "Topaz": 4251,
-            "Maple Branch": 223,
-            "Evergreen Oak Branch": 88,
+            "Water Buffalo Horn": 83,
+            "Beautiful Cloth": 104,
+            "Aquamarine": 1707,
+            "Topaz": 4299,
+            "Maple Branch": 224,
+            "Evergreen Oak Branch": 93,
             "Star Fragment": 13,
-            "Half Moon Fragment": 132,
+            "Half Moon Fragment": 135,
             "Hard Leather": 2508,
-            "Shimmering Water": 395,
-            "Tanned Leather": 2579,
-            "Silver Ore": 1,
-            "Unicorn Horn": 108,
+            "Shimmering Water": 411,
+            "Tanned Leather": 2583,
+            "Silver Ore": 21,
+            "Unicorn Horn": 145,
             "Luxurious Cloth": 141,
             "Silver Mailbox": 4,
             "1st Anni. W. Hammer": 2,
-            "Diamond": 1175,
-            "Ominous Cloth": 1754,
-            "Black Pearl": 1542,
-            "Magical Water": 4933,
-            "Gold Mailbox": 19,
-            "Emerald": 3084,
-            "Lapis Lazuli": 3444,
-            "Rose Quartz": 3478,
-            "Gold Ore": 2245,
+            "Diamond": 1219,
+            "Ominous Cloth": 1758,
+            "Black Pearl": 1548,
+            "Magical Water": 4952,
+            "Gold Mailbox": 21,
+            "Emerald": 3097,
+            "Lapis Lazuli": 3464,
+            "Rose Quartz": 3496,
+            "Gold Ore": 2300,
             "Chimera Horn": 2278,
-            "Garnet": 1874,
-            "Luxurious Leather": 4241,
-            "Full Moon Fragment": 2041,
+            "Garnet": 1921,
+            "Luxurious Leather": 4245,
+            "Full Moon Fragment": 2044,
             "Armor Hammer": 65,
-            "Ebony Branch": 1444,
-            "Accessory Hammer": 36,
-            "Labyrinth Fragment": 743,
+            "Ebony Branch": 1445,
+            "Accessory Hammer": 33,
+            "Labyrinth Fragment": 763,
             "Food Pack": 1,
             "Bread": 0,
-            "Weapon Hammer": 32,
+            "Weapon Hammer": 31,
             "Christmas Eve Stardust": 28,
             "Holy Sprig": 27,
             "Ice Crystal": 34,
             "Eld Light": 0,
             "Unmelting Ice": 514,
-            "Forge": 8,
+            "Forge": 7,
             "Aroma Oil": 950,
             "Magnificent Silver Coin": 1397,
-            "Jade": 1573,
-            "Malachite": 1514,
+            "Jade": 1599,
+            "Malachite": 1529,
             "Sapphire": 337,
-            "Mithril Ore": 227,
-            "Holy Cloth": 112,
-            "Dragon Horn": 175,
-            "Sun Fragment": 209,
-            "Holy Water": 199,
-            "Yggdrasil Branch": 1255,
-            "Rare Species Leather": 218,
-            "Opal": 1258,
+            "Mithril Ore": 249,
+            "Holy Cloth": 113,
+            "Dragon Horn": 179,
+            "Sun Fragment": 214,
+            "Holy Water": 200,
+            "Yggdrasil Branch": 1260,
+            "Rare Species Leather": 20,
+            "Opal": 1273,
             "Demon Tree Branch": 1134,
-            "Amethyst": 1170,
+            "Amethyst": 1188,
             "Demon Beast Leather": 36,
-            "Chocolate Chip Ice": 3,
-            "Nuts": 109,
-            "Chocolate Bar": 117,
-            "Fruit": 94
+            "Chocolate Chip Ice": 5,
+            "Nuts": 118,
+            "Chocolate Bar": 116,
+            "Fruit": 104,
+            "Demon Ore": 21
         },
         "weaponList": {
             "300305": {
@@ -3139,6 +3263,13 @@
                 "+3": 4,
                 "+4": 0
             },
+            "3001980": {
+                "+0": 0,
+                "+1": 2,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
             "3001990": {
                 "+0": 0,
                 "+1": 0,
@@ -3173,6 +3304,13 @@
                 "+2": 16,
                 "+3": 5,
                 "+4": 2
+            },
+            "3002980": {
+                "+0": 0,
+                "+1": 7,
+                "+2": 3,
+                "+3": 2,
+                "+4": 0
             },
             "3003081": {
                 "+0": 1,
@@ -3223,6 +3361,13 @@
                 "+3": 2,
                 "+4": 1
             },
+            "3003980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 2,
+                "+3": 0,
+                "+4": 0
+            },
             "3004781": {
                 "+0": 1,
                 "+1": 0,
@@ -3250,6 +3395,13 @@
                 "+2": 10,
                 "+3": 2,
                 "+4": 0
+            },
+            "3004980": {
+                "+0": 0,
+                "+1": 2,
+                "+2": 2,
+                "+3": 0,
+                "+4": 1
             },
             "3005781": {
                 "+0": 2,
@@ -3279,6 +3431,13 @@
                 "+3": 5,
                 "+4": 2
             },
+            "3005980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 2,
+                "+3": 1,
+                "+4": 0
+            },
             "3006781": {
                 "+0": 2,
                 "+1": 1,
@@ -3306,6 +3465,13 @@
                 "+2": 13,
                 "+3": 6,
                 "+4": 2
+            },
+            "3006980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 1,
+                "+3": 2,
+                "+4": 0
             },
             "3007781": {
                 "+0": 0,
@@ -3335,11 +3501,18 @@
                 "+3": 2,
                 "+4": 1
             },
+            "3007980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 0,
+                "+3": 3,
+                "+4": 0
+            },
             "3008082": {
                 "+0": 1,
                 "+1": 46,
                 "+2": 9,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "3008091": {
@@ -3391,6 +3564,13 @@
                 "+3": 5,
                 "+4": 0
             },
+            "3008980": {
+                "+0": 0,
+                "+1": 4,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
             "3008990": {
                 "+0": 0,
                 "+1": 0,
@@ -3439,7 +3619,7 @@
                 "+0": 0,
                 "+1": 0,
                 "+2": 1,
-                "+3": 1,
+                "+3": 0,
                 "+4": 0
             },
             "3108140": {
@@ -3488,13 +3668,13 @@
             },
             "3299960": {
                 "+0": 0,
-                "+1": 55,
-                "+2": 43,
-                "+3": 21,
+                "+1": 93,
+                "+2": 56,
+                "+3": 29,
                 "+4": 1
             }
         },
-        "gold": 8782864,
+        "gold": 16527189,
         "position": "back",
         "partnerId": "147670477605699584",
         "ceoPower": false,
@@ -3551,7 +3731,7 @@
             "Lapis Lazuli": 462,
             "Garnet": 385,
             "Armor Hammer": 53,
-            "Accessory Hammer": 55,
+            "Accessory Hammer": 56,
             "Food Pack": 0,
             "Bread": 0,
             "Eld Light": 0,
@@ -4005,7 +4185,7 @@
             "Diamond": 174,
             "Food Pack": 7,
             "Bread": 2,
-            "Accessory Hammer": 3,
+            "Accessory Hammer": 4,
             "Weapon Hammer": 10,
             "Silver Mailbox": 1,
             "Black Pearl": 107,
@@ -4618,7 +4798,7 @@
     },
     "199414869336915968": {
         "characterId": "10450003_2400b505",
-        "exp": 3355413,
+        "exp": 3434829,
         "equipedWeapon": null,
         "equipedArmor": {
             "_id": "310406",
@@ -4634,7 +4814,7 @@
             "Mountain Goat Horn": 349,
             "Old Silver Coin": 3,
             "Star Fragment": 18,
-            "Crystal": 1389,
+            "Crystal": 1423,
             "Soft Leather": 9,
             "Silver Coin Purse": 16,
             "Turquoise": 181,
@@ -4647,7 +4827,7 @@
             "Iron Ore": 151,
             "Clear Water": 47,
             "Evergreen Oak Branch": 75,
-            "Topaz": 1374,
+            "Topaz": 1418,
             "Aquamarine": 251,
             "Maple Branch": 66,
             "Beautiful Cloth": 13,
@@ -4659,25 +4839,25 @@
             "Unicorn Horn": 361,
             "Tree Branch": 66,
             "Luxurious Cloth": 25,
-            "Rose Quartz": 1464,
+            "Rose Quartz": 1493,
             "Food Pack": 6,
             "Bread": 2,
             "Black Pearl": 329,
             "Ominous Cloth": 17,
-            "Accessory Hammer": 3,
+            "Accessory Hammer": 4,
             "Weapon Hammer": 11,
             "Ebony Branch": 1,
             "Luxurious Leather": 134,
-            "Magical Water": 1279,
-            "Full Moon Fragment": 1292,
+            "Magical Water": 1319,
+            "Full Moon Fragment": 1338,
             "Silver Mailbox": 0,
-            "Chimera Horn": 1479,
-            "Gold Ore": 1496,
+            "Chimera Horn": 1516,
+            "Gold Ore": 1537,
             "Aroma Oil": 5,
-            "Garnet": 1471,
-            "Emerald": 1404,
-            "Lapis Lazuli": 1405,
-            "Diamond": 1358,
+            "Garnet": 1507,
+            "Emerald": 1444,
+            "Lapis Lazuli": 1443,
+            "Diamond": 1405,
             "Armor Hammer": 2,
             "Amethyst": 336,
             "Malachite": 336,
@@ -4726,7 +4906,7 @@
                 "+4": 0
             }
         },
-        "gold": 851866,
+        "gold": 872566,
         "position": "front",
         "partnerId": null,
         "ceoPower": false,
@@ -4734,7 +4914,7 @@
     },
     "181315212639600640": {
         "characterId": "10750001_32935980",
-        "exp": 7484661,
+        "exp": 7571509,
         "equipedWeapon": {
             "_id": "3007091",
             "plus": 2
@@ -4761,7 +4941,7 @@
             "Tanned Leather": 188,
             "Clear Water": 330,
             "Onyx": 1745,
-            "Beautiful Cloth": 1753,
+            "Beautiful Cloth": 1788,
             "Iron Ore": 152,
             "Crescent Moon Fragment": 32,
             "Topaz": 1703,
@@ -4771,27 +4951,27 @@
             "Water Buffalo Horn": 23,
             "Maple Branch": 72,
             "Evergreen Oak Branch": 41,
-            "Luxurious Cloth": 1708,
+            "Luxurious Cloth": 1750,
             "Unicorn Horn": 90,
-            "Rose Quartz": 3422,
+            "Rose Quartz": 3460,
             "Shimmering Water": 324,
             "Hard Leather": 1,
             "1st Anni. Acc. Hammer": 1,
             "Gold Mailbox": 27,
             "Silver Ore": 158,
-            "Diamond": 3664,
+            "Diamond": 3703,
             "1st Anni. W. Hammer": 3,
             "Magical Water": 1917,
             "Black Pearl": 1737,
             "Chimera Horn": 1847,
             "Gold Ore": 1800,
-            "Lapis Lazuli": 3364,
-            "Emerald": 3314,
+            "Lapis Lazuli": 3408,
+            "Emerald": 3358,
             "Garnet": 1795,
             "Ebony Branch": 1608,
             "Luxurious Leather": 1302,
-            "Full Moon Fragment": 3113,
-            "Ominous Cloth": 3479,
+            "Full Moon Fragment": 3159,
+            "Ominous Cloth": 3511,
             "Silver Mailbox": 24,
             "Weapon Hammer": 55,
             "Forge": 10,
@@ -4951,7 +5131,7 @@
                 "+4": 0
             }
         },
-        "gold": 9419771,
+        "gold": 9442651,
         "position": "front",
         "partnerId": null,
         "ceoPower": false,
@@ -4975,9 +5155,9 @@
     },
     "135142639744843776": {
         "characterId": "10650003_314afe6a",
-        "exp": 16210226,
+        "exp": 16961871,
         "equipedWeapon": {
-            "_id": "308621",
+            "_id": "300609",
             "plus": 3
         },
         "equipedArmor": {
@@ -4985,8 +5165,8 @@
             "plus": 3
         },
         "equipedAccessory": {
-            "_id": "330006",
-            "plus": 2
+            "_id": "3299960",
+            "plus": 4
         },
         "materialList": {
             "Copper Ore": 9,
@@ -5014,28 +5194,28 @@
             "Unicorn Horn": 90,
             "Tree Branch": 2,
             "Clear Water": 53,
-            "Rose Quartz": 2816,
+            "Rose Quartz": 2826,
             "Hard Leather": 33,
             "Shimmering Water": 56,
             "Labyrinth Fragment": 115,
             "1st Anni. Acc. Hammer": 4,
-            "Forge": 17,
-            "Full Moon Fragment": 1333,
-            "Gold Ore": 1501,
-            "Chimera Horn": 780,
-            "Garnet": 934,
-            "Emerald": 525,
-            "Diamond": 838,
-            "Lapis Lazuli": 2736,
-            "Magical Water": 1281,
-            "Ominous Cloth": 3026,
-            "Black Pearl": 2933,
-            "Ebony Branch": 3369,
-            "Gold Mailbox": 29,
+            "Forge": 15,
+            "Full Moon Fragment": 1339,
+            "Gold Ore": 1502,
+            "Chimera Horn": 784,
+            "Garnet": 939,
+            "Emerald": 531,
+            "Diamond": 841,
+            "Lapis Lazuli": 2738,
+            "Magical Water": 1283,
+            "Ominous Cloth": 3032,
+            "Black Pearl": 2937,
+            "Ebony Branch": 3373,
+            "Gold Mailbox": 40,
             "Silver Mailbox": 12,
-            "Weapon Hammer": 55,
+            "Weapon Hammer": 58,
             "Armor Hammer": 35,
-            "Accessory Hammer": 30,
+            "Accessory Hammer": 31,
             "Food Pack": 0,
             "Bread": 0,
             "Ice Crystal": 836,
@@ -5043,7 +5223,7 @@
             "Holy Sprig": 882,
             "Eld Light": 2,
             "Unmelting Ice": 1135,
-            "Luxurious Leather": 986,
+            "Luxurious Leather": 991,
             "Aroma Oil": 1200,
             "Magnificent Silver Coin": 0,
             "Opal": 842,
@@ -5052,22 +5232,22 @@
             "Malachite": 830,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Mithril Ore": 98,
-            "Holy Cloth": 197,
-            "Rare Species Leather": 185,
-            "Yggdrasil Branch": 191,
-            "Holy Water": 179,
-            "Dragon Horn": 356,
-            "Sun Fragment": 82,
+            "Mithril Ore": 103,
+            "Holy Cloth": 204,
+            "Rare Species Leather": 189,
+            "Yggdrasil Branch": 196,
+            "Holy Water": 186,
+            "Dragon Horn": 360,
+            "Sun Fragment": 87,
             "Demon Ore": 182,
             "Demon Beast Horn": 256,
             "Demonic Cloth": 28,
             "Demonic Violet Water": 35,
             "Demon World Fragment": 16,
-            "Chocolate Chip Ice": 4,
-            "Fruit": 90,
-            "Nuts": 96,
-            "Chocolate Bar": 96
+            "Chocolate Chip Ice": 12,
+            "Fruit": 14,
+            "Nuts": 35,
+            "Chocolate Bar": 48
         },
         "weaponList": {
             "300605": {
@@ -5081,14 +5261,14 @@
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
-                "+3": 1,
+                "+3": 0,
                 "+4": 0
             },
             "308621": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "3001781": {
@@ -5110,6 +5290,13 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3001980": {
+                "+0": 15,
+                "+1": 5,
+                "+2": 6,
+                "+3": 2,
                 "+4": 0
             },
             "3001990": {
@@ -5140,6 +5327,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3002980": {
+                "+0": 13,
+                "+1": 12,
+                "+2": 6,
+                "+3": 4,
+                "+4": 0
+            },
             "3002990": {
                 "+0": 0,
                 "+1": 0,
@@ -5166,6 +5360,13 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3003980": {
+                "+0": 11,
+                "+1": 9,
+                "+2": 7,
+                "+3": 3,
                 "+4": 0
             },
             "3003990": {
@@ -5203,6 +5404,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3004980": {
+                "+0": 8,
+                "+1": 5,
+                "+2": 6,
+                "+3": 1,
+                "+4": 0
+            },
             "3004990": {
                 "+0": 0,
                 "+1": 0,
@@ -5235,6 +5443,13 @@
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3005980": {
+                "+0": 9,
+                "+1": 5,
+                "+2": 5,
                 "+3": 0,
                 "+4": 0
             },
@@ -5301,6 +5516,13 @@
                 "+3": 0,
                 "+4": 1
             },
+            "3006980": {
+                "+0": 14,
+                "+1": 12,
+                "+2": 5,
+                "+3": 2,
+                "+4": 0
+            },
             "3006990": {
                 "+0": 0,
                 "+1": 0,
@@ -5329,6 +5551,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3007980": {
+                "+0": 6,
+                "+1": 12,
+                "+2": 10,
+                "+3": 1,
+                "+4": 1
+            },
             "3007990": {
                 "+0": 0,
                 "+1": 0,
@@ -5355,6 +5584,13 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 8,
+                "+1": 11,
+                "+2": 6,
+                "+3": 3,
                 "+4": 0
             },
             "3008990": {
@@ -5413,7 +5649,7 @@
             "330006": {
                 "+0": 0,
                 "+1": 13,
-                "+2": 8,
+                "+2": 9,
                 "+3": 0,
                 "+4": 0
             },
@@ -5443,10 +5679,10 @@
                 "+1": 32,
                 "+2": 28,
                 "+3": 14,
-                "+4": 1
+                "+4": 0
             }
         },
-        "gold": 14792880,
+        "gold": 15256880,
         "position": "back",
         "partnerId": "84532228486336512",
         "ceoPower": false,
@@ -5454,7 +5690,7 @@
     },
     "147297020963454976": {
         "characterId": "10650002_ae907df4",
-        "exp": 13859562,
+        "exp": 14568769,
         "equipedWeapon": {
             "_id": "3006082",
             "plus": 2
@@ -5474,7 +5710,7 @@
             "Star Fragment": 27,
             "Old Silver Coin": 6,
             "Tree Branch": 17,
-            "Crystal": 971,
+            "Crystal": 969,
             "Ruby": 1092,
             "Soft Leather": 14,
             "Silver Coin Purse": 4,
@@ -5493,36 +5729,36 @@
             "Luxurious Cloth": 475,
             "Aquamarine": 1278,
             "Unicorn Horn": 755,
-            "Rose Quartz": 2021,
+            "Rose Quartz": 2023,
             "Clear Water": 176,
-            "Gold Mailbox": 10,
+            "Gold Mailbox": 19,
             "Silver Mailbox": 0,
             "Hard Leather": 534,
             "1st Anni. W. Hammer": 2,
             "Evergreen Oak Branch": 53,
             "Forge": 19,
             "Maple Branch": 209,
-            "Silver Ore": 383,
-            "Diamond": 2203,
+            "Silver Ore": 381,
+            "Diamond": 2204,
             "Ominous Cloth": 1658,
-            "Black Pearl": 1402,
-            "Ebony Branch": 1375,
+            "Black Pearl": 1405,
+            "Ebony Branch": 1377,
             "Luxurious Leather": 1860,
-            "Magical Water": 1466,
-            "Full Moon Fragment": 1484,
-            "Chimera Horn": 1976,
+            "Magical Water": 1468,
+            "Full Moon Fragment": 1487,
+            "Chimera Horn": 1977,
             "Gold Ore": 1680,
             "Garnet": 1480,
-            "Emerald": 2045,
-            "Lapis Lazuli": 1749,
+            "Emerald": 2046,
+            "Lapis Lazuli": 1751,
             "Armor Hammer": 44,
-            "Accessory Hammer": 43,
+            "Accessory Hammer": 44,
             "Food Pack": 3,
             "Bread": 0,
             "Christmas Eve Stardust": 1002,
             "Holy Sprig": 894,
             "Ice Crystal": 976,
-            "Weapon Hammer": 74,
+            "Weapon Hammer": 80,
             "Unmelting Ice": 1296,
             "Eld Light": 0,
             "Aroma Oil": 650,
@@ -5535,11 +5771,11 @@
             "Sapphire": 337,
             "Mithril Ore": 201,
             "Holy Cloth": 181,
-            "Sun Fragment": 188,
-            "Rare Species Leather": 164,
-            "Yggdrasil Branch": 155,
-            "Dragon Horn": 264,
-            "Holy Water": 252,
+            "Sun Fragment": 189,
+            "Rare Species Leather": 166,
+            "Yggdrasil Branch": 158,
+            "Dragon Horn": 265,
+            "Holy Water": 253,
             "Labyrinth Fragment": 57,
             "Demon World Fragment": 88,
             "Demon Ore": 84,
@@ -5548,10 +5784,10 @@
             "Demon Beast Horn": 60,
             "Demonic Cloth": 84,
             "Demon Tree Branch": 28,
-            "Chocolate Chip Ice": 3,
-            "Nuts": 17,
-            "Fruit": 21,
-            "Chocolate Bar": 20
+            "Chocolate Chip Ice": 14,
+            "Nuts": 214,
+            "Fruit": 199,
+            "Chocolate Bar": 216
         },
         "weaponList": {
             "300609": {
@@ -5887,6 +6123,13 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3299960": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
             "3299970": {
                 "+0": 0,
                 "+1": 0,
@@ -5895,7 +6138,7 @@
                 "+4": 0
             }
         },
-        "gold": 9788453,
+        "gold": 11897453,
         "position": "back",
         "partnerId": "147299927674978304",
         "ceoPower": false,
@@ -5973,7 +6216,7 @@
     },
     "165636296797192203": {
         "characterId": "10140006_c1219267",
-        "exp": 4541180,
+        "exp": 4790630,
         "equipedWeapon": {
             "_id": "3001881",
             "plus": 4
@@ -5994,7 +6237,7 @@
             "Tree Branch": 11,
             "Mountain Goat Horn": 14,
             "Star Fragment": 58,
-            "Crystal": 2298,
+            "Crystal": 2276,
             "Soft Leather": 34,
             "Ruby": 1153,
             "Turquoise": 1315,
@@ -6009,7 +6252,7 @@
             "Food Pack": 10,
             "Bread": 3,
             "Accessory Hammer": 26,
-            "Weapon Hammer": 29,
+            "Weapon Hammer": 32,
             "Water Buffalo Horn": 128,
             "Silver Mailbox": 8,
             "Beautiful Cloth": 40,
@@ -6027,10 +6270,10 @@
             "Armor Hammer": 14,
             "Ominous Cloth": 1238,
             "Luxurious Leather": 1159,
-            "Gold Mailbox": 16,
+            "Gold Mailbox": 21,
             "Forge": 12,
             "Aroma Oil": 300,
-            "Silver Ore": 22,
+            "Silver Ore": 0,
             "Topaz": 1423,
             "Aquamarine": 1054,
             "Garnet": 1728,
@@ -6043,11 +6286,11 @@
             "Hard Leather": 65,
             "Luxurious Cloth": 47,
             "Unicorn Horn": 41,
-            "Opal": 922,
+            "Opal": 914,
             "Labyrinth Fragment": 17,
             "Shimmering Water": 22,
             "Jade": 970,
-            "Amethyst": 915,
+            "Amethyst": 907,
             "Malachite": 960,
             "Tanzanite": 336,
             "Sapphire": 337,
@@ -6064,10 +6307,10 @@
             "Demon World Fragment": 3,
             "Demonic Violet Water": 14,
             "Demon Tree Branch": 9,
-            "Chocolate Chip Ice": 4,
-            "Fruit": 95,
-            "Nuts": 91,
-            "Chocolate Bar": 93
+            "Chocolate Chip Ice": 7,
+            "Fruit": 174,
+            "Nuts": 172,
+            "Chocolate Bar": 164
         },
         "weaponList": {
             "300109": {
@@ -6098,6 +6341,13 @@
                 "+3": 0,
                 "+4": 1
             },
+            "3001980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 2,
+                "+3": 0,
+                "+4": 0
+            },
             "3002871": {
                 "+0": 0,
                 "+1": 1,
@@ -6110,6 +6360,13 @@
                 "+1": 2,
                 "+2": 3,
                 "+3": 0,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 0,
+                "+1": 4,
+                "+2": 1,
+                "+3": 2,
                 "+4": 0
             },
             "3002990": {
@@ -6133,6 +6390,13 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3003980": {
+                "+0": 1,
+                "+1": 2,
+                "+2": 2,
+                "+3": 0,
+                "+4": 0
+            },
             "3004871": {
                 "+0": 1,
                 "+1": 2,
@@ -6145,6 +6409,13 @@
                 "+1": 1,
                 "+2": 3,
                 "+3": 0,
+                "+4": 0
+            },
+            "3004980": {
+                "+0": 0,
+                "+1": 5,
+                "+2": 1,
+                "+3": 1,
                 "+4": 0
             },
             "3004990": {
@@ -6168,6 +6439,13 @@
                 "+3": 2,
                 "+4": 0
             },
+            "3005980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
             "3006871": {
                 "+0": 1,
                 "+1": 1,
@@ -6181,6 +6459,13 @@
                 "+2": 0,
                 "+3": 1,
                 "+4": 1
+            },
+            "3006980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 2,
+                "+3": 1,
+                "+4": 0
             },
             "3007871": {
                 "+0": 0,
@@ -6196,11 +6481,25 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3007980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 2,
+                "+3": 1,
+                "+4": 0
+            },
             "3008881": {
                 "+0": 1,
                 "+1": 3,
                 "+2": 4,
                 "+3": 1,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 0,
+                "+3": 0,
                 "+4": 0
             },
             "3008990": {
@@ -6297,9 +6596,23 @@
                 "+2": 5,
                 "+3": 0,
                 "+4": 0
+            },
+            "330207": {
+                "+0": 0,
+                "+1": 4,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3299960": {
+                "+0": 0,
+                "+1": 5,
+                "+2": 3,
+                "+3": 2,
+                "+4": 1
             }
         },
-        "gold": 1176606,
+        "gold": 2057606,
         "position": "front",
         "partnerId": null,
         "ceoPower": false,
@@ -6307,7 +6620,7 @@
     },
     "147305572012654592": {
         "characterId": "10450004_4de7335d",
-        "exp": 5329640,
+        "exp": 5640694,
         "equipedWeapon": {
             "_id": "3004082",
             "plus": 1
@@ -6371,9 +6684,9 @@
             "Food Pack": 0,
             "Ice Crystal": 767,
             "Holy Sprig": 794,
-            "Gold Mailbox": 19,
+            "Gold Mailbox": 33,
             "Christmas Eve Stardust": 844,
-            "Weapon Hammer": 62,
+            "Weapon Hammer": 70,
             "Eld Light": 4,
             "Armor Hammer": 31,
             "Unmelting Ice": 980,
@@ -6386,10 +6699,10 @@
             "Holy Cloth": 6,
             "Mithril Ore": 6,
             "Holy Water": 9,
-            "Nuts": 94,
-            "Fruit": 111,
-            "Chocolate Bar": 79,
-            "Chocolate Chip Ice": 5
+            "Nuts": 240,
+            "Fruit": 251,
+            "Chocolate Bar": 215,
+            "Chocolate Chip Ice": 11
         },
         "weaponList": {
             "300401": {
@@ -6572,7 +6885,7 @@
                 "+4": 0
             }
         },
-        "gold": 43899545,
+        "gold": 45489545,
         "position": "front",
         "partnerId": "257195656874164225",
         "ceoPower": false,
@@ -6580,7 +6893,7 @@
     },
     "147296942974566400": {
         "characterId": "10650004_58ad7832",
-        "exp": 6298120,
+        "exp": 6392327,
         "equipedWeapon": {
             "_id": "3006082",
             "plus": 2
@@ -6602,7 +6915,7 @@
             "Water": 3,
             "Soft Leather": 3,
             "Turquoise": 1765,
-            "Ruby": 2382,
+            "Ruby": 2398,
             "Tanned Leather": 179,
             "Onyx": 1297,
             "Clear Water": 5,
@@ -6616,11 +6929,11 @@
             "Half Moon Fragment": 600,
             "Shimmering Water": 97,
             "Tree Branch": 4,
-            "Maple Branch": 1086,
+            "Maple Branch": 1102,
             "Unicorn Horn": 138,
-            "Evergreen Oak Branch": 1058,
+            "Evergreen Oak Branch": 1074,
             "1st Anni. Acc. Hammer": 3,
-            "Rose Quartz": 2410,
+            "Rose Quartz": 2422,
             "Silver Mailbox": 4,
             "Gold Mailbox": 16,
             "Silver Ore": 159,
@@ -6629,7 +6942,7 @@
             "Armor Hammer": 11,
             "Diamond": 1318,
             "Garnet": 1322,
-            "Lapis Lazuli": 2446,
+            "Lapis Lazuli": 2464,
             "Magical Water": 1397,
             "Gold Ore": 1357,
             "Chimera Horn": 1445,
@@ -6642,10 +6955,10 @@
             "Holy Sprig": 88,
             "Christmas Eve Stardust": 100,
             "Unmelting Ice": 20,
-            "Black Pearl": 2070,
+            "Black Pearl": 2090,
             "Aroma Oil": 150,
-            "Ominous Cloth": 2126,
-            "Ebony Branch": 2131,
+            "Ominous Cloth": 2137,
+            "Ebony Branch": 2142,
             "Magnificent Silver Coin": 1032,
             "Luxurious Leather": 1081,
             "Amethyst": 336,
@@ -6695,7 +7008,7 @@
                 "+4": 0
             }
         },
-        "gold": 6867124,
+        "gold": 6872444,
         "position": "back",
         "partnerId": "148220188037349376",
         "ceoPower": false,
@@ -6703,7 +7016,7 @@
     },
     "84532228486336512": {
         "characterId": "10250003_1bde68b4",
-        "exp": 12228454,
+        "exp": 12594947,
         "equipedWeapon": {
             "_id": "300209",
             "plus": 3
@@ -6747,17 +7060,17 @@
             "Silver Mailbox": 14,
             "1st Anni. W. Hammer": 5,
             "Luxurious Cloth": 160,
-            "Chimera Horn": 1590,
-            "Lapis Lazuli": 985,
+            "Chimera Horn": 1592,
+            "Lapis Lazuli": 986,
             "Magical Water": 1519,
-            "Emerald": 1157,
-            "Garnet": 1099,
+            "Emerald": 1158,
+            "Garnet": 1100,
             "Rose Quartz": 1781,
-            "Black Pearl": 1382,
-            "Diamond": 1511,
+            "Black Pearl": 1383,
+            "Diamond": 1512,
             "Gold Ore": 2483,
             "Full Moon Fragment": 1775,
-            "Gold Mailbox": 8,
+            "Gold Mailbox": 14,
             "Labyrinth Fragment": 474,
             "Food Pack": 6,
             "Bread": 1,
@@ -6765,11 +7078,11 @@
             "Holy Sprig": 352,
             "Ice Crystal": 302,
             "Christmas Eve Stardust": 284,
-            "Weapon Hammer": 36,
+            "Weapon Hammer": 40,
             "Luxurious Leather": 2242,
             "Eld Light": 0,
-            "Ominous Cloth": 1281,
-            "Ebony Branch": 1378,
+            "Ominous Cloth": 1282,
+            "Ebony Branch": 1379,
             "Unmelting Ice": 370,
             "Armor Hammer": 3,
             "Aroma Oil": 150,
@@ -6783,7 +7096,7 @@
             "Dragon Horn": 114,
             "Rare Species Leather": 115,
             "Sun Fragment": 92,
-            "Holy Water": 321,
+            "Holy Water": 322,
             "Yggdrasil Branch": 107,
             "Amethyst": 376,
             "Opal": 333,
@@ -6795,10 +7108,10 @@
             "Demon Beast Horn": 11,
             "Demonic Cloth": 16,
             "Demon Tree Branch": 7,
-            "Chocolate Chip Ice": 10,
-            "Nuts": 93,
-            "Fruit": 90,
-            "Chocolate Bar": 95
+            "Chocolate Chip Ice": 13,
+            "Nuts": 196,
+            "Fruit": 179,
+            "Chocolate Bar": 190
         },
         "weaponList": {
             "300105": {
@@ -6988,7 +7301,7 @@
                 "+4": 0
             }
         },
-        "gold": 156324571,
+        "gold": 157384571,
         "position": "front",
         "partnerId": "135142639744843776",
         "ceoPower": false,
@@ -7089,7 +7402,7 @@
     },
     "160934943285837824": {
         "characterId": "10150002_765306d2",
-        "exp": 19739650,
+        "exp": 19822800,
         "equipedWeapon": {
             "_id": "308119",
             "plus": 3
@@ -7134,20 +7447,20 @@
             "Topaz": 4338,
             "Luxurious Cloth": 511,
             "Silver Mailbox": 12,
-            "Rose Quartz": 4171,
+            "Rose Quartz": 4175,
             "1st Anni. W. Hammer": 5,
-            "Magical Water": 4389,
+            "Magical Water": 4392,
             "Lapis Lazuli": 4623,
-            "Diamond": 2697,
-            "Black Pearl": 1468,
-            "Garnet": 1964,
-            "Chimera Horn": 2302,
-            "Gold Ore": 2204,
-            "Emerald": 4953,
-            "Ebony Branch": 1647,
-            "Ominous Cloth": 2314,
-            "Full Moon Fragment": 2772,
-            "Gold Mailbox": 27,
+            "Diamond": 2701,
+            "Black Pearl": 1473,
+            "Garnet": 1965,
+            "Chimera Horn": 2303,
+            "Gold Ore": 2205,
+            "Emerald": 4956,
+            "Ebony Branch": 1649,
+            "Ominous Cloth": 2316,
+            "Full Moon Fragment": 2773,
+            "Gold Mailbox": 30,
             "Forge": 11,
             "Armor Hammer": 12,
             "Accessory Hammer": 12,
@@ -7156,8 +7469,8 @@
             "Ice Crystal": 1,
             "Holy Sprig": 9,
             "Christmas Eve Stardust": 1,
-            "Weapon Hammer": 29,
-            "Luxurious Leather": 4136,
+            "Weapon Hammer": 32,
+            "Luxurious Leather": 4139,
             "Eld Light": 30,
             "Unmelting Ice": 703,
             "Aroma Oil": 1000,
@@ -7168,17 +7481,17 @@
             "Malachite": 338,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Mithril Ore": 56,
-            "Holy Cloth": 163,
-            "Dragon Horn": 158,
-            "Holy Water": 154,
-            "Yggdrasil Branch": 103,
-            "Rare Species Leather": 173,
-            "Sun Fragment": 110,
-            "Chocolate Chip Ice": 2,
-            "Chocolate Bar": 49,
-            "Nuts": 45,
-            "Fruit": 50
+            "Mithril Ore": 58,
+            "Holy Cloth": 164,
+            "Dragon Horn": 162,
+            "Holy Water": 156,
+            "Yggdrasil Branch": 105,
+            "Rare Species Leather": 176,
+            "Sun Fragment": 111,
+            "Chocolate Chip Ice": 16,
+            "Chocolate Bar": 186,
+            "Nuts": 178,
+            "Fruit": 210
         },
         "weaponList": {
             "300105": {
@@ -7515,7 +7828,7 @@
                 "+4": 0
             }
         },
-        "gold": 18302827,
+        "gold": 19892827,
         "position": "front",
         "partnerId": "277870896616701953",
         "ceoPower": false,
@@ -7823,7 +8136,7 @@
     },
     "147670477605699584": {
         "characterId": "10150003_e989854c",
-        "exp": 20132118,
+        "exp": 19915772,
         "equipedWeapon": {
             "_id": "308121",
             "plus": 3
@@ -7866,30 +8179,30 @@
             "Labyrinth Fragment": 549,
             "1st Anni. W. Hammer": 0,
             "Silver Mailbox": 16,
-            "Black Pearl": 1433,
-            "Magical Water": 3827,
-            "Gold Mailbox": 34,
-            "Ebony Branch": 1567,
-            "Luxurious Leather": 2481,
-            "Garnet": 1598,
-            "Chimera Horn": 2317,
-            "Rose Quartz": 3709,
-            "Lapis Lazuli": 3007,
-            "Emerald": 3838,
-            "Gold Ore": 1719,
-            "Diamond": 2179,
+            "Black Pearl": 1435,
+            "Magical Water": 3832,
+            "Gold Mailbox": 46,
+            "Ebony Branch": 1571,
+            "Luxurious Leather": 2482,
+            "Garnet": 1600,
+            "Chimera Horn": 2318,
+            "Rose Quartz": 3711,
+            "Lapis Lazuli": 3012,
+            "Emerald": 3839,
+            "Gold Ore": 1723,
+            "Diamond": 2181,
             "Forge": 6,
-            "Full Moon Fragment": 2627,
-            "Weapon Hammer": 21,
+            "Full Moon Fragment": 2633,
+            "Weapon Hammer": 28,
             "Armor Hammer": 10,
-            "Accessory Hammer": 6,
+            "Accessory Hammer": 7,
             "Food Pack": 2,
             "Bread": 0,
             "Christmas Eve Stardust": 325,
             "Ice Crystal": 324,
             "Holy Sprig": 446,
             "Eld Light": 0,
-            "Ominous Cloth": 2134,
+            "Ominous Cloth": 2135,
             "Unmelting Ice": 932,
             "Aroma Oil": 1050,
             "Magnificent Silver Coin": 0,
@@ -7899,24 +8212,24 @@
             "Malachite": 1404,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Mithril Ore": 369,
-            "Holy Cloth": 151,
-            "Holy Water": 197,
-            "Dragon Horn": 131,
-            "Rare Species Leather": 223,
-            "Sun Fragment": 217,
-            "Yggdrasil Branch": 229,
+            "Mithril Ore": 372,
+            "Holy Cloth": 155,
+            "Holy Water": 204,
+            "Dragon Horn": 135,
+            "Rare Species Leather": 229,
+            "Sun Fragment": 219,
+            "Yggdrasil Branch": 232,
             "Demon Tree Branch": 42,
             "Demon Ore": 895,
-            "Chocolate Chip Ice": 4,
-            "Nuts": 101,
-            "Fruit": 82,
-            "Chocolate Bar": 98
+            "Chocolate Chip Ice": 3,
+            "Nuts": 80,
+            "Fruit": 90,
+            "Chocolate Bar": 89
         },
         "weaponList": {
             "300101": {
                 "+0": 0,
-                "+1": 6,
+                "+1": 0,
                 "+2": 0,
                 "+3": 1,
                 "+4": 0
@@ -8005,6 +8318,13 @@
                 "+3": 0,
                 "+4": 1
             },
+            "3001980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 4,
+                "+3": 1,
+                "+4": 1
+            },
             "3001990": {
                 "+0": 0,
                 "+1": 0,
@@ -8031,6 +8351,13 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 2,
+                "+3": 2,
                 "+4": 0
             },
             "3002990": {
@@ -8068,6 +8395,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3003980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 2,
+                "+3": 2,
+                "+4": 0
+            },
             "3003990": {
                 "+0": 0,
                 "+1": 0,
@@ -8103,6 +8437,13 @@
                 "+3": 0,
                 "+4": 1
             },
+            "3004980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 1,
+                "+3": 1,
+                "+4": 0
+            },
             "3004990": {
                 "+0": 0,
                 "+1": 0,
@@ -8128,6 +8469,13 @@
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
+                "+3": 0,
+                "+4": 1
+            },
+            "3005980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 4,
                 "+3": 0,
                 "+4": 1
             },
@@ -8166,6 +8514,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3006980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 2,
+                "+3": 2,
+                "+4": 0
+            },
             "3006990": {
                 "+0": 0,
                 "+1": 0,
@@ -8201,6 +8556,13 @@
                 "+3": 0,
                 "+4": 1
             },
+            "3007980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 2,
+                "+3": 0,
+                "+4": 0
+            },
             "3007990": {
                 "+0": 0,
                 "+1": 0,
@@ -8230,6 +8592,13 @@
                 "+4": 0
             },
             "3008881": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3008980": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
@@ -8374,7 +8743,7 @@
                 "+4": 0
             }
         },
-        "gold": 45332914,
+        "gold": 46335302,
         "position": "front",
         "partnerId": "224136431730163722",
         "ceoPower": false,
@@ -9081,7 +9450,7 @@
     },
     "147299927674978304": {
         "characterId": "10250001_ff1a69c9",
-        "exp": 13452803,
+        "exp": 14307558,
         "equipedWeapon": {
             "_id": "308214",
             "plus": 3
@@ -9098,7 +9467,7 @@
             "Rare Silver Coin": 4,
             "Copper Ore": 30,
             "Mountain Goat Horn": 26,
-            "Crystal": 890,
+            "Crystal": 858,
             "Star Fragment": 8,
             "Water": 35,
             "Soft Leather": 3,
@@ -9109,7 +9478,7 @@
             "Onyx": 508,
             "Tanned Leather": 73,
             "Iron Ore": 172,
-            "Silver Ore": 196,
+            "Silver Ore": 164,
             "Aquamarine": 1029,
             "Topaz": 1159,
             "Crescent Moon Fragment": 125,
@@ -9121,33 +9490,33 @@
             "Evergreen Oak Branch": 48,
             "Maple Branch": 42,
             "Unicorn Horn": 8,
-            "Rose Quartz": 2565,
+            "Rose Quartz": 2568,
             "Shimmering Water": 230,
             "1st Anni. Acc. Hammer": 2,
             "Half Moon Fragment": 146,
-            "Gold Mailbox": 20,
+            "Gold Mailbox": 32,
             "Silver Mailbox": 0,
-            "Diamond": 2499,
+            "Diamond": 2506,
             "1st Anni. W. Hammer": 1,
-            "Black Pearl": 884,
-            "Magical Water": 1430,
+            "Black Pearl": 889,
+            "Magical Water": 1432,
             "Forge": 3,
-            "Chimera Horn": 1527,
-            "Full Moon Fragment": 2680,
-            "Luxurious Leather": 1010,
-            "Ebony Branch": 1006,
-            "Gold Ore": 1663,
-            "Lapis Lazuli": 2439,
-            "Garnet": 749,
-            "Emerald": 1549,
+            "Chimera Horn": 1531,
+            "Full Moon Fragment": 2682,
+            "Luxurious Leather": 1012,
+            "Ebony Branch": 1012,
+            "Gold Ore": 1666,
+            "Lapis Lazuli": 2444,
+            "Garnet": 753,
+            "Emerald": 1551,
             "Accessory Hammer": 16,
             "Food Pack": 5,
             "Bread": 1,
-            "Weapon Hammer": 44,
+            "Weapon Hammer": 51,
             "Eld Light": 0,
             "Unmelting Ice": 1440,
             "Armor Hammer": 4,
-            "Ominous Cloth": 2217,
+            "Ominous Cloth": 2218,
             "Aroma Oil": 550,
             "Magnificent Silver Coin": 0,
             "Opal": 460,
@@ -9156,19 +9525,19 @@
             "Malachite": 601,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Mithril Ore": 51,
-            "Holy Cloth": 141,
-            "Sun Fragment": 46,
-            "Dragon Horn": 131,
-            "Yggdrasil Branch": 163,
-            "Holy Water": 169,
-            "Rare Species Leather": 139,
+            "Mithril Ore": 52,
+            "Holy Cloth": 143,
+            "Sun Fragment": 48,
+            "Dragon Horn": 135,
+            "Yggdrasil Branch": 168,
+            "Holy Water": 171,
+            "Rare Species Leather": 142,
             "Labyrinth Fragment": 83,
             "Demonic Violet Water": 209,
-            "Chocolate Chip Ice": 6,
-            "Chocolate Bar": 106,
-            "Nuts": 98,
-            "Fruit": 113
+            "Chocolate Chip Ice": 11,
+            "Chocolate Bar": 246,
+            "Nuts": 248,
+            "Fruit": 247
         },
         "weaponList": {
             "300408": {
@@ -9379,14 +9748,14 @@
                 "+4": 0
             },
             "3299960": {
-                "+0": 0,
-                "+1": 1,
-                "+2": 0,
-                "+3": 0,
+                "+0": 1,
+                "+1": 7,
+                "+2": 6,
+                "+3": 3,
                 "+4": 0
             }
         },
-        "gold": 9954483,
+        "gold": 11368483,
         "position": "front",
         "partnerId": "147297020963454976",
         "ceoPower": false,
@@ -9465,9 +9834,9 @@
     },
     "241749295655550977": {
         "characterId": "10750002_498ddb63",
-        "exp": 4159709,
+        "exp": 4228249,
         "equipedWeapon": {
-            "_id": "3007092",
+            "_id": "3007980",
             "plus": 2
         },
         "equipedArmor": {
@@ -9508,7 +9877,7 @@
             "Mountain Goat Horn": 68,
             "Rose Quartz": 783,
             "Water": 100,
-            "Gold Mailbox": 22,
+            "Gold Mailbox": 24,
             "Labyrinth Fragment": 51,
             "Iron Ore": 82,
             "Silver Mailbox": 5,
@@ -9525,8 +9894,8 @@
             "Christmas Eve Stardust": 130,
             "Ice Crystal": 152,
             "Holy Sprig": 138,
-            "Accessory Hammer": 6,
-            "Weapon Hammer": 9,
+            "Accessory Hammer": 7,
+            "Weapon Hammer": 10,
             "Eld Light": 0,
             "Chimera Horn": 289,
             "Unmelting Ice": 240,
@@ -9550,10 +9919,10 @@
             "Dragon Horn": 25,
             "Rare Species Leather": 10,
             "Holy Cloth": 21,
-            "Chocolate Chip Ice": 5,
-            "Fruit": 22,
-            "Nuts": 29,
-            "Chocolate Bar": 18
+            "Chocolate Chip Ice": 7,
+            "Fruit": 34,
+            "Nuts": 40,
+            "Chocolate Bar": 32
         },
         "weaponList": {
             "300106": {
@@ -9670,9 +10039,9 @@
             },
             "3001980": {
                 "+0": 2,
-                "+1": 2,
+                "+1": 3,
                 "+2": 1,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "3001990": {
@@ -9704,8 +10073,8 @@
                 "+4": 0
             },
             "3002980": {
-                "+0": 2,
-                "+1": 3,
+                "+0": 4,
+                "+1": 4,
                 "+2": 1,
                 "+3": 0,
                 "+4": 0
@@ -9770,7 +10139,7 @@
                 "+0": 2,
                 "+1": 2,
                 "+2": 0,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "3003990": {
@@ -9851,8 +10220,8 @@
                 "+4": 0
             },
             "3005980": {
-                "+0": 1,
-                "+1": 0,
+                "+0": 4,
+                "+1": 1,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
@@ -9886,7 +10255,7 @@
                 "+4": 0
             },
             "3006980": {
-                "+0": 1,
+                "+0": 3,
                 "+1": 2,
                 "+2": 1,
                 "+3": 1,
@@ -9923,7 +10292,7 @@
             "3007092": {
                 "+0": 0,
                 "+1": 6,
-                "+2": 0,
+                "+2": 1,
                 "+3": 0,
                 "+4": 0
             },
@@ -10233,7 +10602,7 @@
                 "+4": 0
             }
         },
-        "gold": 9818951,
+        "gold": 10086951,
         "position": "front",
         "partnerId": "166400407675994112",
         "ceoPower": false,
@@ -10858,7 +11227,7 @@
             "Forge": 6,
             "Hard Leather": 103,
             "Silver Mailbox": 1,
-            "Accessory Hammer": 3,
+            "Accessory Hammer": 4,
             "Food Pack": 7,
             "Bread": 0,
             "Weapon Hammer": 4,
@@ -11310,8 +11679,8 @@
     },
     "146993389907214336": {
         "characterId": "10730003_bd8c345b",
-        "exp": 6681583,
-        "gold": 12681735,
+        "exp": 6708723,
+        "gold": 12688885,
         "equipedWeapon": {
             "_id": "3007781",
             "plus": 4
@@ -11342,9 +11711,9 @@
             "Tanned Leather": 110,
             "Aquamarine": 1736,
             "Iron Ore": 145,
-            "Beautiful Cloth": 1366,
+            "Beautiful Cloth": 1383,
             "Topaz": 2091,
-            "Luxurious Cloth": 1235,
+            "Luxurious Cloth": 1247,
             "Unicorn Horn": 0,
             "Maple Branch": 16,
             "Evergreen Oak Branch": 7,
@@ -11353,25 +11722,25 @@
             "Half Moon Fragment": 86,
             "Silver Ore": 136,
             "Silver Mailbox": 16,
-            "Rose Quartz": 2853,
+            "Rose Quartz": 2861,
             "Gold Mailbox": 17,
             "Hard Leather": 7,
             "Tree Branch": 4,
-            "Diamond": 2956,
-            "Ominous Cloth": 2726,
+            "Diamond": 2972,
+            "Ominous Cloth": 2738,
             "Black Pearl": 1501,
             "Luxurious Leather": 1356,
             "Ebony Branch": 1527,
             "Magical Water": 1898,
-            "Full Moon Fragment": 2723,
+            "Full Moon Fragment": 2734,
             "Chimera Horn": 2036,
             "Gold Ore": 2160,
-            "Lapis Lazuli": 2908,
-            "Emerald": 2844,
+            "Lapis Lazuli": 2921,
+            "Emerald": 2855,
             "Garnet": 1711,
             "Forge": 10,
             "Armor Hammer": 42,
-            "Accessory Hammer": 47,
+            "Accessory Hammer": 48,
             "Food Pack": 6,
             "Bread": 1,
             "Holy Sprig": 375,
@@ -11855,7 +12224,7 @@
             "Food Pack": 8,
             "Star Fragment": 1,
             "Armor Hammer": 2,
-            "Accessory Hammer": 1,
+            "Accessory Hammer": 2,
             "Opal": 336,
             "Amethyst": 336,
             "Malachite": 336,
@@ -11991,9 +12360,9 @@
         "_id": "249808426685693953"
     },
     "166400407675994112": {
-        "characterId": "10650003_314afe6a",
-        "exp": 4509460,
-        "gold": 1387868,
+        "characterId": "10750002_498ddb63",
+        "exp": 4083682,
+        "gold": 1187868,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
@@ -12004,31 +12373,31 @@
             "Crystal": 1,
             "Star Fragment": 40,
             "Pure White Cloth": 269,
-            "Beautiful Cloth": 365,
+            "Beautiful Cloth": 378,
             "Ruby": 639,
             "Onyx": 772,
-            "Iron Ore": 681,
-            "Tanned Leather": 234,
-            "Luxurious Cloth": 372,
+            "Iron Ore": 692,
+            "Tanned Leather": 244,
+            "Luxurious Cloth": 384,
             "Aquamarine": 666,
             "Topaz": 677,
-            "Clear Water": 241,
-            "Crescent Moon Fragment": 217,
-            "Silver Ore": 93,
-            "Maple Branch": 110,
-            "Evergreen Oak Branch": 179,
-            "Water Buffalo Horn": 191,
-            "Half Moon Fragment": 218,
-            "Unicorn Horn": 80,
-            "Hard Leather": 191,
-            "Shimmering Water": 125,
+            "Clear Water": 253,
+            "Crescent Moon Fragment": 229,
+            "Silver Ore": 105,
+            "Maple Branch": 120,
+            "Evergreen Oak Branch": 191,
+            "Water Buffalo Horn": 200,
+            "Half Moon Fragment": 227,
+            "Unicorn Horn": 86,
+            "Hard Leather": 201,
+            "Shimmering Water": 133,
             "Soft Leather": 5,
             "Rose Quartz": 647,
             "Water": 53,
-            "Labyrinth Fragment": 508,
+            "Labyrinth Fragment": 612,
             "Silver Mailbox": 0,
             "1st Anni. W. Hammer": 0,
-            "Gold Mailbox": 4,
+            "Gold Mailbox": 0,
             "Ominous Cloth": 1078,
             "Black Pearl": 634,
             "Turquoise": 602,
@@ -12046,7 +12415,7 @@
             "Luxurious Leather": 1367,
             "Ebony Branch": 702,
             "Armor Hammer": 1,
-            "Accessory Hammer": 6,
+            "Accessory Hammer": 7,
             "Food Pack": 0,
             "Bread": 0,
             "Holy Sprig": 38,
@@ -12563,8 +12932,8 @@
     },
     "167613810192941056": {
         "characterId": "10450004_4de7335d",
-        "exp": 5869887,
-        "gold": 13359361,
+        "exp": 6105083,
+        "gold": 13366311,
         "equipedWeapon": {
             "_id": "300409",
             "plus": 2
@@ -12585,7 +12954,7 @@
             "Pure White Cloth": 18,
             "Turquoise": 391,
             "Crystal": 359,
-            "Tanned Leather": 928,
+            "Tanned Leather": 942,
             "Evergreen Oak Branch": 59,
             "Onyx": 331,
             "Mountain Goat Horn": 3,
@@ -12599,9 +12968,9 @@
             "Luxurious Cloth": 82,
             "Aquamarine": 389,
             "Shimmering Water": 20,
-            "Topaz": 1235,
+            "Topaz": 1255,
             "Water": 6,
-            "Rose Quartz": 929,
+            "Rose Quartz": 948,
             "Beautiful Cloth": 36,
             "Maple Branch": 29,
             "Silver Ore": 63,
@@ -12616,24 +12985,24 @@
             "Eld Light": 0,
             "Unmelting Ice": 0,
             "Chimera Horn": 488,
-            "Magical Water": 1357,
+            "Magical Water": 1377,
             "Full Moon Fragment": 482,
             "Ebony Branch": 417,
             "Ominous Cloth": 450,
-            "Luxurious Leather": 1290,
+            "Luxurious Leather": 1310,
             "Gold Ore": 340,
             "Forge": 6,
             "Aroma Oil": 150,
             "Diamond": 407,
-            "Emerald": 980,
+            "Emerald": 998,
             "Garnet": 456,
             "Magnificent Silver Coin": 0,
-            "Lapis Lazuli": 1255,
+            "Lapis Lazuli": 1275,
             "Armor Hammer": 11,
             "Half Moon Fragment": 6,
             "Opal": 336,
             "Jade": 336,
-            "Hard Leather": 856,
+            "Hard Leather": 875,
             "Amethyst": 336,
             "Unicorn Horn": 17,
             "Malachite": 336,
@@ -13193,7 +13562,7 @@
             "Magical Water": 95,
             "Black Pearl": 576,
             "Chimera Horn": 575,
-            "Accessory Hammer": 4,
+            "Accessory Hammer": 5,
             "Food Pack": 1,
             "Gold Ore": 418,
             "Bread": 0,
@@ -13519,10 +13888,10 @@
     },
     "147473142804250624": {
         "characterId": "10550004_aafa95ca",
-        "exp": 11864023,
-        "gold": 26395819,
+        "exp": 12704139,
+        "gold": 27692719,
         "equipedWeapon": {
-            "_id": "3005092",
+            "_id": "300509",
             "plus": 3
         },
         "equipedArmor": {
@@ -13538,79 +13907,79 @@
             "Rare Silver Coin": 5,
             "Mountain Goat Horn": 16,
             "Tree Branch": 14,
-            "Crystal": 153,
+            "Crystal": 123,
             "Star Fragment": 15,
-            "Crescent Moon Fragment": 70,
-            "Iron Ore": 103,
+            "Crescent Moon Fragment": 73,
+            "Iron Ore": 107,
             "Ruby": 62,
             "Onyx": 172,
-            "Clear Water": 123,
-            "Tanned Leather": 734,
-            "Beautiful Cloth": 572,
-            "Silver Ore": 80,
+            "Clear Water": 125,
+            "Tanned Leather": 735,
+            "Beautiful Cloth": 577,
+            "Silver Ore": 55,
             "Aquamarine": 254,
-            "Gold Mailbox": 12,
-            "Maple Branch": 104,
-            "Evergreen Oak Branch": 71,
-            "Water Buffalo Horn": 95,
+            "Gold Mailbox": 11,
+            "Maple Branch": 105,
+            "Evergreen Oak Branch": 74,
+            "Water Buffalo Horn": 96,
             "Turquoise": 145,
             "Topaz": 692,
             "Soft Leather": 36,
-            "Shimmering Water": 199,
+            "Shimmering Water": 200,
             "Hard Leather": 728,
-            "Weapon Hammer": 6,
-            "Unicorn Horn": 13,
-            "Luxurious Cloth": 572,
-            "Labyrinth Fragment": 391,
-            "Half Moon Fragment": 84,
+            "Weapon Hammer": 4,
+            "Unicorn Horn": 17,
+            "Luxurious Cloth": 575,
+            "Labyrinth Fragment": 405,
+            "Half Moon Fragment": 87,
             "Forge": 3,
             "Armor Hammer": 0,
-            "Rose Quartz": 881,
+            "Rose Quartz": 887,
             "Water": 41,
             "Accessory Hammer": 0,
-            "Food Pack": 2,
+            "Food Pack": 0,
             "Bread": 0,
             "Christmas Eve Stardust": 139,
             "Holy Sprig": 149,
             "Ice Crystal": 140,
-            "Diamond": 650,
+            "Diamond": 653,
             "Silver Mailbox": 0,
-            "Black Pearl": 335,
+            "Black Pearl": 339,
             "Eld Light": 0,
             "Unmelting Ice": 181,
-            "Ominous Cloth": 800,
-            "Luxurious Leather": 563,
-            "Ebony Branch": 260,
-            "Gold Ore": 360,
-            "Chimera Horn": 388,
-            "Magical Water": 1028,
-            "Full Moon Fragment": 378,
+            "Ominous Cloth": 805,
+            "Luxurious Leather": 566,
+            "Ebony Branch": 264,
+            "Gold Ore": 367,
+            "Chimera Horn": 392,
+            "Magical Water": 1034,
+            "Full Moon Fragment": 383,
             "Aroma Oil": 570,
-            "Lapis Lazuli": 104,
-            "Emerald": 651,
+            "Lapis Lazuli": 107,
+            "Emerald": 657,
             "Magnificent Silver Coin": 124,
-            "Garnet": 216,
+            "Garnet": 221,
             "Opal": 789,
             "Jade": 760,
             "Amethyst": 807,
             "Malachite": 829,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Mithril Ore": 81,
-            "Holy Cloth": 100,
-            "Sun Fragment": 152,
-            "Dragon Horn": 168,
-            "Rare Species Leather": 133,
-            "Yggdrasil Branch": 297,
-            "Holy Water": 205,
+            "Mithril Ore": 88,
+            "Holy Cloth": 109,
+            "Sun Fragment": 155,
+            "Dragon Horn": 173,
+            "Rare Species Leather": 139,
+            "Yggdrasil Branch": 302,
+            "Holy Water": 209,
             "Demon Beast Horn": 155,
             "Demon Ore": 30,
             "Demon Tree Branch": 206,
             "Demonic Cloth": 37,
-            "Chocolate Chip Ice": 3,
-            "Fruit": 25,
-            "Nuts": 8,
-            "Chocolate Bar": 33
+            "Chocolate Chip Ice": 10,
+            "Fruit": 16,
+            "Nuts": 4,
+            "Chocolate Bar": 30
         },
         "weaponList": {
             "300409": {
@@ -13638,7 +14007,7 @@
                 "+0": 0,
                 "+1": 11,
                 "+2": 3,
-                "+3": 1,
+                "+3": 0,
                 "+4": 0
             },
             "300801": {
@@ -13713,9 +14082,9 @@
             },
             "3001980": {
                 "+0": 0,
-                "+1": 3,
-                "+2": 1,
-                "+3": 1,
+                "+1": 6,
+                "+2": 5,
+                "+3": 2,
                 "+4": 0
             },
             "3001990": {
@@ -13734,8 +14103,8 @@
             },
             "3002980": {
                 "+0": 0,
-                "+1": 1,
-                "+2": 2,
+                "+1": 3,
+                "+2": 6,
                 "+3": 1,
                 "+4": 0
             },
@@ -13762,8 +14131,8 @@
             },
             "3003980": {
                 "+0": 0,
-                "+1": 3,
-                "+2": 0,
+                "+1": 6,
+                "+2": 2,
                 "+3": 1,
                 "+4": 0
             },
@@ -13790,9 +14159,9 @@
             },
             "3004980": {
                 "+0": 0,
-                "+1": 0,
+                "+1": 3,
                 "+2": 2,
-                "+3": 2,
+                "+3": 3,
                 "+4": 0
             },
             "3005091": {
@@ -13806,7 +14175,7 @@
                 "+0": 0,
                 "+1": 38,
                 "+2": 6,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "3005093": {
@@ -13832,10 +14201,10 @@
             },
             "3005980": {
                 "+0": 0,
-                "+1": 1,
-                "+2": 2,
+                "+1": 8,
+                "+2": 4,
                 "+3": 1,
-                "+4": 0
+                "+4": 1
             },
             "3005990": {
                 "+0": 1,
@@ -13853,9 +14222,9 @@
             },
             "3006980": {
                 "+0": 0,
-                "+1": 4,
-                "+2": 1,
-                "+3": 1,
+                "+1": 10,
+                "+2": 2,
+                "+3": 2,
                 "+4": 0
             },
             "3006990": {
@@ -13888,9 +14257,9 @@
             },
             "3007980": {
                 "+0": 0,
-                "+1": 8,
-                "+2": 0,
-                "+3": 1,
+                "+1": 16,
+                "+2": 3,
+                "+3": 2,
                 "+4": 1
             },
             "3007990": {
@@ -13930,10 +14299,10 @@
             },
             "3008980": {
                 "+0": 0,
-                "+1": 5,
-                "+2": 2,
+                "+1": 8,
+                "+2": 7,
                 "+3": 1,
-                "+4": 1
+                "+4": 0
             },
             "3008990": {
                 "+0": 0,
@@ -14228,9 +14597,9 @@
             },
             "3299960": {
                 "+0": 1,
-                "+1": 0,
-                "+2": 0,
-                "+3": 1,
+                "+1": 8,
+                "+2": 6,
+                "+3": 2,
                 "+4": 0
             },
             "3299970": {
@@ -14248,8 +14617,8 @@
     },
     "209059462638469120": {
         "characterId": "10140006_c1219267",
-        "exp": 1461380,
-        "gold": 1535938,
+        "exp": 1489820,
+        "gold": 1543938,
         "equipedWeapon": {
             "_id": "300106",
             "plus": 2
@@ -14263,7 +14632,7 @@
             "plus": 1
         },
         "materialList": {
-            "Rare Silver Coin": 105,
+            "Rare Silver Coin": 115,
             "Water": 27,
             "Tree Branch": 12,
             "Old Silver Coin": 0,
@@ -14271,20 +14640,20 @@
             "Copper Ore": 66,
             "Star Fragment": 17,
             "Crystal": 30,
-            "Ruby": 636,
+            "Ruby": 647,
             "Soft Leather": 9,
             "Silver Coin Purse": 0,
-            "Turquoise": 702,
+            "Turquoise": 707,
             "Pure White Cloth": 8,
             "Iron Ore": 90,
             "Crescent Moon Fragment": 90,
-            "Onyx": 741,
+            "Onyx": 747,
             "Clear Water": 27,
             "Tanned Leather": 111,
-            "Evergreen Oak Branch": 573,
+            "Evergreen Oak Branch": 592,
             "Water Buffalo Horn": 34,
             "Gold Mailbox": 13,
-            "Beautiful Cloth": 599,
+            "Beautiful Cloth": 608,
             "Topaz": 94,
             "Silver Ore": 72,
             "Aquamarine": 120,
@@ -14297,7 +14666,7 @@
             "Rose Quartz": 28,
             "Food Pack": 7,
             "Bread": 1,
-            "Accessory Hammer": 3,
+            "Accessory Hammer": 4,
             "Weapon Hammer": 11,
             "Silver Mailbox": 1,
             "Black Pearl": 60,
@@ -14512,7 +14881,7 @@
     },
     "256682454151069696": {
         "characterId": "10850005_ad800ba1",
-        "exp": 1682569,
+        "exp": 1707514,
         "gold": 5516595,
         "equipedWeapon": {
             "_id": "300808",
@@ -14730,48 +15099,51 @@
     },
     "257195656874164225": {
         "characterId": "10350004_9524487b",
-        "exp": 6055160,
-        "gold": 28970665,
+        "exp": 6492996,
+        "gold": 29481665,
         "equipedWeapon": {
             "_id": "3003091",
             "plus": 3
         },
         "equipedArmor": null,
-        "equipedAccessory": null,
+        "equipedAccessory": {
+            "_id": "3299960",
+            "plus": 4
+        },
         "materialList": {
             "Rare Silver Coin": 0,
             "Copper Ore": 20,
             "Food Pack": 3,
             "Bread": 0,
-            "Weapon Hammer": 29,
+            "Weapon Hammer": 32,
             "Unmelting Ice": 20,
             "Tree Branch": 20,
             "Aroma Oil": 340,
-            "Black Pearl": 152,
-            "Emerald": 339,
-            "Gold Ore": 731,
+            "Black Pearl": 156,
+            "Emerald": 340,
+            "Gold Ore": 736,
             "Aquamarine": 566,
-            "Diamond": 468,
+            "Diamond": 470,
             "Turquoise": 317,
-            "Lapis Lazuli": 112,
+            "Lapis Lazuli": 116,
             "Magnificent Silver Coin": 104,
-            "Luxurious Leather": 825,
+            "Luxurious Leather": 831,
             "Onyx": 719,
-            "Garnet": 475,
+            "Garnet": 482,
             "Ruby": 1101,
-            "Full Moon Fragment": 425,
-            "Chimera Horn": 711,
-            "Rose Quartz": 437,
-            "Magical Water": 450,
+            "Full Moon Fragment": 426,
+            "Chimera Horn": 715,
+            "Rose Quartz": 445,
+            "Magical Water": 457,
             "Topaz": 582,
-            "Ominous Cloth": 331,
-            "Crystal": 535,
+            "Ominous Cloth": 333,
+            "Crystal": 505,
             "Armor Hammer": 23,
-            "Ebony Branch": 383,
-            "Forge": 7,
-            "Accessory Hammer": 15,
+            "Ebony Branch": 385,
+            "Forge": 6,
+            "Accessory Hammer": 14,
             "Iron Ore": 52,
-            "Silver Ore": 37,
+            "Silver Ore": 7,
             "Opal": 336,
             "Jade": 336,
             "Labyrinth Fragment": 119,
@@ -14791,17 +15163,17 @@
             "Malachite": 336,
             "Hard Leather": 12,
             "Mithril Ore": 133,
-            "Holy Cloth": 125,
-            "Sun Fragment": 121,
-            "Rare Species Leather": 116,
-            "Dragon Horn": 137,
-            "Holy Water": 132,
-            "Yggdrasil Branch": 135,
-            "Gold Mailbox": 14,
-            "Chocolate Chip Ice": 2,
-            "Nuts": 68,
-            "Fruit": 77,
-            "Chocolate Bar": 84
+            "Holy Cloth": 130,
+            "Sun Fragment": 125,
+            "Rare Species Leather": 118,
+            "Dragon Horn": 142,
+            "Holy Water": 134,
+            "Yggdrasil Branch": 139,
+            "Gold Mailbox": 16,
+            "Chocolate Chip Ice": 4,
+            "Nuts": 90,
+            "Fruit": 131,
+            "Chocolate Bar": 109
         },
         "weaponList": {
             "300306": {
@@ -14818,12 +15190,26 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3001980": {
+                "+0": 2,
+                "+1": 4,
+                "+2": 0,
+                "+3": 1,
+                "+4": 0
+            },
             "3002781": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
                 "+4": 1
+            },
+            "3002980": {
+                "+0": 8,
+                "+1": 4,
+                "+2": 0,
+                "+3": 2,
+                "+4": 0
             },
             "3003091": {
                 "+0": 0,
@@ -14839,10 +15225,24 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3003980": {
+                "+0": 3,
+                "+1": 2,
+                "+2": 2,
+                "+3": 1,
+                "+4": 0
+            },
             "3004781": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3004980": {
+                "+0": 3,
+                "+1": 2,
+                "+2": 2,
                 "+3": 0,
                 "+4": 0
             },
@@ -14853,11 +15253,25 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3005980": {
+                "+0": 5,
+                "+1": 0,
+                "+2": 3,
+                "+3": 0,
+                "+4": 0
+            },
             "3006781": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3006980": {
+                "+0": 2,
+                "+1": 3,
+                "+2": 0,
+                "+3": 1,
                 "+4": 0
             },
             "3007781": {
@@ -14867,11 +15281,25 @@
                 "+3": 0,
                 "+4": 2
             },
+            "3007980": {
+                "+0": 2,
+                "+1": 1,
+                "+2": 4,
+                "+3": 0,
+                "+4": 0
+            },
             "3008781": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 1,
+                "+1": 4,
+                "+2": 0,
+                "+3": 2,
                 "+4": 0
             }
         },
@@ -14883,6 +15311,13 @@
                 "+2": 14,
                 "+3": 0,
                 "+4": 0
+            },
+            "3299960": {
+                "+0": 0,
+                "+1": 17,
+                "+2": 7,
+                "+3": 5,
+                "+4": 0
             }
         },
         "position": "back",
@@ -14892,10 +15327,10 @@
     },
     "257207971405103114": {
         "characterId": "10650003_314afe6a",
-        "exp": 13523762,
-        "gold": 17927817,
+        "exp": 14413929,
+        "gold": 19136767,
         "equipedWeapon": {
-            "_id": "308621",
+            "_id": "300609",
             "plus": 3
         },
         "equipedArmor": {
@@ -14903,11 +15338,11 @@
             "plus": 3
         },
         "equipedAccessory": {
-            "_id": "330107",
+            "_id": "330006",
             "plus": 3
         },
         "materialList": {
-            "Accessory Hammer": 35,
+            "Accessory Hammer": 36,
             "Copper Ore": 2,
             "Rare Silver Coin": 0,
             "Water": 3,
@@ -14936,29 +15371,29 @@
             "Ice Crystal": 707,
             "Christmas Eve Stardust": 686,
             "Silver Mailbox": 0,
-            "Weapon Hammer": 10,
+            "Weapon Hammer": 20,
             "Maple Branch": 51,
             "Evergreen Oak Branch": 70,
-            "Black Pearl": 2063,
+            "Black Pearl": 2068,
             "Eld Light": 0,
-            "Magical Water": 1889,
-            "Chimera Horn": 1539,
+            "Magical Water": 1894,
+            "Chimera Horn": 1543,
             "Armor Hammer": 5,
-            "Ominous Cloth": 1401,
+            "Ominous Cloth": 1403,
             "Unmelting Ice": 1232,
-            "Gold Ore": 290,
-            "Luxurious Leather": 2437,
-            "Full Moon Fragment": 1063,
-            "Ebony Branch": 1288,
-            "Gold Mailbox": 14,
-            "Forge": 10,
+            "Gold Ore": 291,
+            "Luxurious Leather": 2442,
+            "Full Moon Fragment": 1067,
+            "Ebony Branch": 1295,
+            "Gold Mailbox": 22,
+            "Forge": 9,
             "Aroma Oil": 950,
-            "Lapis Lazuli": 1685,
+            "Lapis Lazuli": 1687,
             "Magnificent Silver Coin": 0,
-            "Rose Quartz": 1706,
-            "Garnet": 1403,
+            "Rose Quartz": 1708,
+            "Garnet": 1406,
             "Emerald": 1397,
-            "Diamond": 2039,
+            "Diamond": 2041,
             "Unicorn Horn": 116,
             "Silver Ore": 42,
             "Opal": 1292,
@@ -14967,13 +15402,13 @@
             "Malachite": 1250,
             "Tanzanite": 336,
             "Sapphire": 337,
-            "Mithril Ore": 55,
-            "Holy Cloth": 202,
-            "Dragon Horn": 71,
-            "Rare Species Leather": 215,
-            "Yggdrasil Branch": 363,
-            "Holy Water": 196,
-            "Sun Fragment": 619,
+            "Mithril Ore": 58,
+            "Holy Cloth": 204,
+            "Dragon Horn": 75,
+            "Rare Species Leather": 217,
+            "Yggdrasil Branch": 367,
+            "Holy Water": 197,
+            "Sun Fragment": 626,
             "Half Moon Fragment": 64,
             "Labyrinth Fragment": 385,
             "Water Buffalo Horn": 63,
@@ -14982,10 +15417,10 @@
             "Demon World Fragment": 528,
             "Demon Beast Horn": 92,
             "Demon Tree Branch": 244,
-            "Chocolate Chip Ice": 2,
-            "Nuts": 91,
-            "Chocolate Bar": 84,
-            "Fruit": 91
+            "Chocolate Chip Ice": 8,
+            "Nuts": 143,
+            "Chocolate Bar": 136,
+            "Fruit": 102
         },
         "weaponList": {
             "300109": {
@@ -15027,14 +15462,14 @@
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
-                "+3": 1,
+                "+3": 0,
                 "+4": 0
             },
             "308621": {
                 "+0": 0,
                 "+1": 86,
                 "+2": 63,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "3001781": {
@@ -15058,6 +15493,13 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3001980": {
+                "+0": 6,
+                "+1": 6,
+                "+2": 7,
+                "+3": 0,
+                "+4": 0
+            },
             "3002781": {
                 "+0": 0,
                 "+1": 0,
@@ -15077,6 +15519,13 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 6,
+                "+1": 3,
+                "+2": 2,
+                "+3": 2,
                 "+4": 0
             },
             "3002990": {
@@ -15107,6 +15556,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3003980": {
+                "+0": 6,
+                "+1": 3,
+                "+2": 5,
+                "+3": 2,
+                "+4": 0
+            },
             "3004781": {
                 "+0": 0,
                 "+1": 0,
@@ -15135,6 +15591,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3004980": {
+                "+0": 5,
+                "+1": 6,
+                "+2": 4,
+                "+3": 0,
+                "+4": 2
+            },
             "3005781": {
                 "+0": 0,
                 "+1": 0,
@@ -15154,6 +15617,13 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3005980": {
+                "+0": 11,
+                "+1": 8,
+                "+2": 2,
+                "+3": 2,
                 "+4": 0
             },
             "3006081": {
@@ -15198,6 +15668,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3006980": {
+                "+0": 9,
+                "+1": 7,
+                "+2": 1,
+                "+3": 1,
+                "+4": 0
+            },
             "3006990": {
                 "+0": 0,
                 "+1": 0,
@@ -15226,6 +15703,13 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3007980": {
+                "+0": 9,
+                "+1": 5,
+                "+2": 3,
+                "+3": 2,
+                "+4": 1
+            },
             "3008781": {
                 "+0": 0,
                 "+1": 0,
@@ -15245,6 +15729,13 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 12,
+                "+1": 6,
+                "+2": 4,
+                "+3": 2,
                 "+4": 0
             }
         },
@@ -15304,7 +15795,7 @@
                 "+0": 1,
                 "+1": 96,
                 "+2": 66,
-                "+3": 1,
+                "+3": 0,
                 "+4": 0
             },
             "330008": {
@@ -15325,7 +15816,7 @@
                 "+0": 0,
                 "+1": 6,
                 "+2": 4,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "330206": {
@@ -15364,8 +15855,8 @@
     },
     "253374750007492608": {
         "characterId": "10750002_498ddb63",
-        "exp": 11429490,
-        "gold": 16446072,
+        "exp": 12546715,
+        "gold": 10564072,
         "equipedWeapon": {
             "_id": "300709",
             "plus": 3
@@ -15382,36 +15873,36 @@
             "Food Pack": 4,
             "Copper Ore": 26,
             "Rare Silver Coin": 7,
-            "Accessory Hammer": 42,
+            "Accessory Hammer": 43,
             "Unmelting Ice": 307,
             "Crystal": 735,
             "Star Fragment": 2,
-            "Gold Mailbox": 14,
+            "Gold Mailbox": 24,
             "Soft Leather": 9,
             "Ruby": 652,
             "Eld Light": 0,
             "Silver Mailbox": 2,
-            "Luxurious Leather": 2370,
+            "Luxurious Leather": 2375,
             "Armor Hammer": 48,
-            "Gold Ore": 1075,
+            "Gold Ore": 1084,
             "Forge": 17,
-            "Ominous Cloth": 917,
-            "Magical Water": 2766,
-            "Full Moon Fragment": 944,
-            "Chimera Horn": 1087,
-            "Ebony Branch": 954,
-            "Weapon Hammer": 57,
+            "Ominous Cloth": 920,
+            "Magical Water": 2774,
+            "Full Moon Fragment": 950,
+            "Chimera Horn": 1093,
+            "Ebony Branch": 956,
+            "Weapon Hammer": 60,
             "Aroma Oil": 540,
-            "Rose Quartz": 2685,
-            "Black Pearl": 814,
-            "Garnet": 1019,
+            "Rose Quartz": 2688,
+            "Black Pearl": 817,
+            "Garnet": 1021,
             "Turquoise": 586,
             "Onyx": 641,
             "Aquamarine": 705,
             "Magnificent Silver Coin": 658,
-            "Lapis Lazuli": 2539,
-            "Diamond": 950,
-            "Emerald": 2570,
+            "Lapis Lazuli": 2544,
+            "Diamond": 955,
+            "Emerald": 2574,
             "Topaz": 2558,
             "Bread": 0,
             "Luxurious Cloth": 17,
@@ -15435,19 +15926,19 @@
             "Tanzanite": 336,
             "Sapphire": 337,
             "Mountain Goat Horn": 18,
-            "Yggdrasil Branch": 178,
-            "Dragon Horn": 205,
-            "Rare Species Leather": 173,
-            "Sun Fragment": 227,
-            "Mithril Ore": 215,
-            "Holy Cloth": 145,
-            "Holy Water": 210,
+            "Yggdrasil Branch": 188,
+            "Dragon Horn": 210,
+            "Rare Species Leather": 381,
+            "Sun Fragment": 231,
+            "Mithril Ore": 223,
+            "Holy Cloth": 147,
+            "Holy Water": 217,
             "Malachite": 14,
             "Demon Tree Branch": 19,
-            "Chocolate Chip Ice": 4,
-            "Fruit": 95,
-            "Nuts": 102,
-            "Chocolate Bar": 87
+            "Chocolate Chip Ice": 12,
+            "Fruit": 291,
+            "Nuts": 300,
+            "Chocolate Bar": 269
         },
         "weaponList": {
             "300706": {
@@ -15698,6 +16189,13 @@
                 "+2": 1,
                 "+3": 0,
                 "+4": 0
+            },
+            "3299960": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 1
             }
         },
         "position": "front",
@@ -16059,7 +16557,7 @@
     },
     "259609683189432320": {
         "characterId": "10650002_ae907df4",
-        "exp": 2869189,
+        "exp": 2976438,
         "gold": 344342,
         "equipedWeapon": {
             "_id": "300609",
@@ -16084,28 +16582,28 @@
             "Soft Leather": 2,
             "Pure White Cloth": 1,
             "Turquoise": 301,
-            "Black Pearl": 287,
+            "Black Pearl": 289,
             "Eld Light": 0,
             "Chimera Horn": 252,
             "Gold Ore": 322,
-            "Magical Water": 491,
+            "Magical Water": 492,
             "Luxurious Leather": 351,
             "Silver Mailbox": 0,
             "Ebony Branch": 484,
             "Gold Mailbox": 7,
-            "Full Moon Fragment": 409,
+            "Full Moon Fragment": 411,
             "Ominous Cloth": 366,
-            "Accessory Hammer": 16,
+            "Accessory Hammer": 17,
             "Weapon Hammer": 11,
             "Armor Hammer": 11,
             "Aroma Oil": 150,
-            "Emerald": 313,
+            "Emerald": 314,
             "Diamond": 327,
             "Topaz": 334,
             "Garnet": 370,
             "Onyx": 315,
             "Ruby": 299,
-            "Rose Quartz": 326,
+            "Rose Quartz": 327,
             "Aquamarine": 267,
             "Lapis Lazuli": 320,
             "Magnificent Silver Coin": 296,
@@ -16125,11 +16623,11 @@
             "Tanzanite": 336,
             "Sapphire": 337,
             "Clear Water": 13,
-            "Mithril Ore": 29,
+            "Mithril Ore": 30,
             "Holy Cloth": 46,
-            "Dragon Horn": 52,
+            "Dragon Horn": 53,
             "Holy Water": 60,
-            "Yggdrasil Branch": 41,
+            "Yggdrasil Branch": 42,
             "Sun Fragment": 28,
             "Rare Species Leather": 51,
             "Food Pack": 2,
@@ -16373,7 +16871,7 @@
                 "+4": 0
             }
         },
-        "position": "back",
+        "position": "front",
         "partnerId": null,
         "ceoPower": false,
         "_id": "259609683189432320"
@@ -17711,7 +18209,7 @@
     },
     "260551175487750144": {
         "characterId": "10650004_58ad7832",
-        "exp": 1777501,
+        "exp": 1977061,
         "gold": 1662331,
         "equipedWeapon": {
             "_id": "3006082",
@@ -18675,7 +19173,7 @@
             "Rare Silver Coin": 0,
             "Copper Ore": 23,
             "Water": 5,
-            "Accessory Hammer": 1,
+            "Accessory Hammer": 2,
             "Soft Leather": 2,
             "Crystal": 7,
             "Ruby": 16,
@@ -19766,7 +20264,7 @@
     "268238880799588352": {
         "_id": "268238880799588352",
         "characterId": "10650003_314afe6a",
-        "exp": 894741,
+        "exp": 948428,
         "gold": 505294,
         "equipedWeapon": {
             "_id": "300609",
@@ -19798,8 +20296,8 @@
             "Mithril Ore": 19,
             "Yggdrasil Branch": 24,
             "Ominous Cloth": 18,
-            "Gold Ore": 3,
-            "Diamond": 13,
+            "Gold Ore": 4,
+            "Diamond": 14,
             "Dragon Horn": 29,
             "Ebony Branch": 19,
             "Holy Water": 25,
@@ -19821,7 +20319,7 @@
             "Unicorn Horn": 5,
             "Evergreen Oak Branch": 4,
             "Ruby": 8,
-            "Black Pearl": 32,
+            "Black Pearl": 35,
             "Hard Leather": 11,
             "Luxurious Cloth": 4,
             "Beautiful Cloth": 5,
@@ -20077,8 +20575,8 @@
     "269352663538335744": {
         "_id": "269352663538335744",
         "characterId": "10650004_58ad7832",
-        "exp": 6966239,
-        "gold": 1472484,
+        "exp": 8065677,
+        "gold": 3018484,
         "equipedWeapon": {
             "_id": "3006990",
             "plus": 4
@@ -20095,59 +20593,60 @@
             "Copper Ore": 0,
             "Rare Silver Coin": 12,
             "Water": 26,
-            "Yggdrasil Branch": 74,
+            "Yggdrasil Branch": 75,
             "Ruby": 0,
             "Silver Coin Purse": 6,
             "Turquoise": 3,
             "Pure White Cloth": 5,
-            "Diamond": 295,
-            "Mithril Ore": 74,
-            "Luxurious Leather": 984,
-            "Emerald": 1060,
-            "Full Moon Fragment": 288,
-            "Garnet": 286,
-            "Holy Water": 77,
-            "Chimera Horn": 116,
-            "Rare Species Leather": 91,
-            "Ebony Branch": 81,
-            "Holy Cloth": 76,
-            "Sun Fragment": 91,
-            "Gold Mailbox": 14,
+            "Diamond": 297,
+            "Mithril Ore": 79,
+            "Luxurious Leather": 991,
+            "Emerald": 1065,
+            "Full Moon Fragment": 292,
+            "Garnet": 292,
+            "Holy Water": 82,
+            "Chimera Horn": 120,
+            "Rare Species Leather": 98,
+            "Ebony Branch": 83,
+            "Holy Cloth": 83,
+            "Sun Fragment": 94,
+            "Gold Mailbox": 21,
             "Shimmering Water": 33,
-            "Rose Quartz": 1139,
+            "Rose Quartz": 1143,
             "Tanned Leather": 970,
             "Beautiful Cloth": 6,
             "Clear Water": 5,
             "Topaz": 1167,
             "Aquamarine": 39,
             "Onyx": 14,
-            "Black Pearl": 106,
+            "Black Pearl": 107,
             "Lapis Lazuli": 1245,
-            "Ominous Cloth": 73,
+            "Ominous Cloth": 78,
             "Maple Branch": 9,
             "Tree Branch": 18,
             "Hard Leather": 930,
             "Evergreen Oak Branch": 13,
-            "Magical Water": 1227,
-            "Dragon Horn": 79,
-            "Gold Ore": 198,
+            "Magical Water": 1232,
+            "Dragon Horn": 83,
+            "Gold Ore": 201,
             "Food Pack": 2,
             "Iron Ore": 27,
             "Crystal": 72,
             "Labyrinth Fragment": 14,
             "Unicorn Horn": 6,
             "Luxurious Cloth": 3,
-            "Weapon Hammer": 2,
+            "Weapon Hammer": 8,
             "Forge": 5,
             "Armor Hammer": 0,
             "Crescent Moon Fragment": 2,
             "Silver Ore": 3,
             "Half Moon Fragment": 4,
             "Water Buffalo Horn": 2,
-            "Chocolate Chip Ice": 1,
-            "Nuts": 105,
-            "Chocolate Bar": 99,
-            "Fruit": 111
+            "Chocolate Chip Ice": 7,
+            "Nuts": 199,
+            "Chocolate Bar": 194,
+            "Fruit": 235,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300601": {
@@ -20178,6 +20677,41 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3001980": {
+                "+0": 2,
+                "+1": 1,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 3,
+                "+1": 2,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
+            "3003980": {
+                "+0": 1,
+                "+1": 2,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3004980": {
+                "+0": 3,
+                "+1": 4,
+                "+2": 0,
+                "+3": 1,
+                "+4": 0
+            },
+            "3005980": {
+                "+0": 1,
+                "+1": 1,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
             "3006081": {
                 "+0": 1,
                 "+1": 76,
@@ -20192,11 +20726,32 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3006980": {
+                "+0": 2,
+                "+1": 0,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
             "3006990": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3007980": {
+                "+0": 1,
+                "+1": 1,
+                "+2": 3,
+                "+3": 0,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 2,
+                "+1": 3,
+                "+2": 1,
+                "+3": 2,
                 "+4": 0
             }
         },
@@ -20239,8 +20794,8 @@
     "269444567529422849": {
         "_id": "269444567529422849",
         "characterId": "10350002_63194dbd",
-        "exp": 8532458,
-        "gold": 3336970,
+        "exp": 9431236,
+        "gold": 3549065,
         "equipedWeapon": {
             "_id": "308319",
             "plus": 3
@@ -20256,26 +20811,26 @@
         "materialList": {
             "Copper Ore": 15,
             "Rare Silver Coin": 0,
-            "Ominous Cloth": 374,
-            "Luxurious Leather": 580,
-            "Holy Water": 131,
-            "Gold Ore": 152,
-            "Emerald": 511,
-            "Mithril Ore": 164,
-            "Magical Water": 447,
-            "Chimera Horn": 272,
-            "Sun Fragment": 116,
-            "Black Pearl": 174,
-            "Rare Species Leather": 128,
-            "Full Moon Fragment": 315,
-            "Holy Cloth": 110,
-            "Rose Quartz": 636,
-            "Garnet": 157,
-            "Yggdrasil Branch": 309,
-            "Ebony Branch": 198,
-            "Diamond": 318,
-            "Lapis Lazuli": 147,
-            "Dragon Horn": 291,
+            "Ominous Cloth": 361,
+            "Luxurious Leather": 581,
+            "Holy Water": 134,
+            "Gold Ore": 156,
+            "Emerald": 498,
+            "Mithril Ore": 167,
+            "Magical Water": 449,
+            "Chimera Horn": 277,
+            "Sun Fragment": 119,
+            "Black Pearl": 175,
+            "Rare Species Leather": 130,
+            "Full Moon Fragment": 319,
+            "Holy Cloth": 113,
+            "Rose Quartz": 641,
+            "Garnet": 162,
+            "Yggdrasil Branch": 313,
+            "Ebony Branch": 170,
+            "Diamond": 325,
+            "Lapis Lazuli": 150,
+            "Dragon Horn": 295,
             "Aquamarine": 81,
             "Water": 17,
             "Ruby": 5,
@@ -20298,10 +20853,10 @@
             "Half Moon Fragment": 41,
             "Hard Leather": 351,
             "Luxurious Cloth": 205,
-            "Gold Mailbox": 15,
+            "Gold Mailbox": 18,
             "Crystal": 0,
             "Food Pack": 0,
-            "Weapon Hammer": 11,
+            "Weapon Hammer": 10,
             "Forge": 5,
             "Armor Hammer": 0,
             "Jade": 548,
@@ -20312,16 +20867,17 @@
             "Demon Ore": 27,
             "Demonic Cloth": 213,
             "Demon Beast Horn": 23,
-            "Chocolate Chip Ice": 4,
-            "Chocolate Bar": 68,
-            "Nuts": 85,
-            "Fruit": 92
+            "Chocolate Chip Ice": 7,
+            "Chocolate Bar": 16,
+            "Nuts": 68,
+            "Fruit": 104,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300309": {
                 "+0": 0,
-                "+1": 0,
-                "+2": 0,
+                "+1": 14,
+                "+2": 1,
                 "+3": 0,
                 "+4": 0
             },
@@ -20369,16 +20925,16 @@
             },
             "3001980": {
                 "+0": 0,
-                "+1": 1,
-                "+2": 0,
-                "+3": 0,
-                "+4": 0
+                "+1": 6,
+                "+2": 4,
+                "+3": 3,
+                "+4": 1
             },
             "3002980": {
                 "+0": 0,
-                "+1": 1,
-                "+2": 1,
-                "+3": 0,
+                "+1": 3,
+                "+2": 4,
+                "+3": 1,
                 "+4": 2
             },
             "3003092": {
@@ -20404,23 +20960,23 @@
             },
             "3003980": {
                 "+0": 0,
-                "+1": 2,
-                "+2": 0,
-                "+3": 0,
+                "+1": 5,
+                "+2": 4,
+                "+3": 2,
                 "+4": 0
             },
             "3004980": {
                 "+0": 0,
-                "+1": 1,
-                "+2": 1,
-                "+3": 0,
+                "+1": 6,
+                "+2": 8,
+                "+3": 2,
                 "+4": 0
             },
             "3005980": {
                 "+0": 0,
-                "+1": 0,
-                "+2": 0,
-                "+3": 1,
+                "+1": 4,
+                "+2": 2,
+                "+3": 2,
                 "+4": 0
             },
             "3006081": {
@@ -20439,23 +20995,23 @@
             },
             "3006980": {
                 "+0": 0,
-                "+1": 1,
-                "+2": 2,
-                "+3": 0,
+                "+1": 10,
+                "+2": 3,
+                "+3": 4,
                 "+4": 0
             },
             "3007980": {
                 "+0": 0,
-                "+1": 1,
-                "+2": 0,
-                "+3": 0,
+                "+1": 10,
+                "+2": 4,
+                "+3": 1,
                 "+4": 0
             },
             "3008980": {
                 "+0": 0,
-                "+1": 2,
-                "+2": 0,
-                "+3": 0,
+                "+1": 8,
+                "+2": 4,
+                "+3": 4,
                 "+4": 0
             }
         },
@@ -20689,7 +21245,8 @@
             "Weapon Hammer": 8,
             "Forge": 7,
             "Armor Hammer": 1,
-            "Chocolate Chip Ice": 1
+            "Chocolate Chip Ice": 1,
+            "Accessory Hammer": 1
         },
         "weaponList": {},
         "armorList": {},
@@ -20701,15 +21258,15 @@
     "271777518443429890": {
         "_id": "271777518443429890",
         "characterId": "10450004_4de7335d",
-        "exp": 21825,
-        "gold": 107032,
+        "exp": 39260,
+        "gold": 112032,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
         "materialList": {
             "Black Pearl": 5,
             "Rare Silver Coin": 15,
-            "Copper Ore": 5,
+            "Copper Ore": 18,
             "Old Silver Coin": 17,
             "Tree Branch": 5,
             "Star Fragment": 20,
@@ -20720,15 +21277,19 @@
             "Crystal": 46,
             "Mountain Goat Horn": 10,
             "Gold Mailbox": 11,
-            "Crescent Moon Fragment": 10,
-            "Iron Ore": 9,
-            "Onyx": 31,
+            "Crescent Moon Fragment": 21,
+            "Iron Ore": 31,
+            "Onyx": 48,
             "Armor Hammer": 1,
-            "Aquamarine": 22,
-            "Turquoise": 41,
-            "Tanned Leather": 26,
+            "Aquamarine": 37,
+            "Turquoise": 53,
+            "Tanned Leather": 37,
             "Weapon Hammer": 5,
-            "Pure White Cloth": 21
+            "Pure White Cloth": 21,
+            "Accessory Hammer": 1,
+            "Silver Ore": 16,
+            "Topaz": 16,
+            "Maple Branch": 7
         },
         "weaponList": {
             "300401": {
@@ -20756,8 +21317,8 @@
     "265411232809353216": {
         "_id": "265411232809353216",
         "characterId": "10150001_0d4d8431",
-        "exp": 1525900,
-        "gold": 229480,
+        "exp": 1811076,
+        "gold": 1019480,
         "equipedWeapon": {
             "_id": "300109",
             "plus": 3
@@ -20773,22 +21334,22 @@
         "materialList": {
             "Rare Silver Coin": 0,
             "Copper Ore": 10,
-            "Black Pearl": 76,
+            "Black Pearl": 79,
             "Water": 4,
-            "Rose Quartz": 54,
-            "Dragon Horn": 43,
-            "Holy Water": 55,
-            "Emerald": 67,
+            "Rose Quartz": 56,
+            "Dragon Horn": 45,
+            "Holy Water": 56,
+            "Emerald": 68,
             "Tree Branch": 23,
             "Old Silver Coin": 0,
             "Mountain Goat Horn": 24,
-            "Weapon Hammer": 2,
-            "Sun Fragment": 54,
-            "Mithril Ore": 51,
-            "Rare Species Leather": 39,
+            "Weapon Hammer": 3,
+            "Sun Fragment": 56,
+            "Mithril Ore": 53,
+            "Rare Species Leather": 41,
             "Lapis Lazuli": 60,
-            "Diamond": 72,
-            "Full Moon Fragment": 54,
+            "Diamond": 73,
+            "Full Moon Fragment": 56,
             "Gold Ore": 61,
             "Star Fragment": 8,
             "Tanned Leather": 1,
@@ -20803,27 +21364,28 @@
             "Maple Branch": 1,
             "Ruby": 7,
             "Evergreen Oak Branch": 1,
-            "Forge": 6,
+            "Forge": 5,
             "Crystal": 1,
-            "Magical Water": 42,
-            "Holy Cloth": 53,
-            "Ominous Cloth": 50,
-            "Garnet": 57,
-            "Luxurious Leather": 41,
+            "Magical Water": 44,
+            "Holy Cloth": 54,
+            "Ominous Cloth": 52,
+            "Garnet": 58,
+            "Luxurious Leather": 44,
             "Ebony Branch": 45,
-            "Yggdrasil Branch": 59,
+            "Yggdrasil Branch": 61,
             "Soft Leather": 2,
             "Food Pack": 1,
-            "Chimera Horn": 83,
-            "Gold Mailbox": 11,
+            "Chimera Horn": 84,
+            "Gold Mailbox": 20,
             "Turquoise": 6,
             "Half Moon Fragment": 3,
             "Armor Hammer": 1,
             "Iron Ore": 12,
             "Chocolate Chip Ice": 1,
-            "Fruit": 22,
-            "Nuts": 19,
-            "Chocolate Bar": 16
+            "Fruit": 70,
+            "Nuts": 73,
+            "Chocolate Bar": 64,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300109": {
@@ -20889,11 +21451,67 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3001980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 6,
+                "+3": 0,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
             "3002990": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3003980": {
+                "+0": 0,
+                "+1": 5,
+                "+2": 2,
+                "+3": 1,
+                "+4": 0
+            },
+            "3004980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 0,
+                "+3": 2,
+                "+4": 0
+            },
+            "3005980": {
+                "+0": 0,
+                "+1": 5,
+                "+2": 1,
+                "+3": 2,
+                "+4": 0
+            },
+            "3006980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
+            "3007980": {
+                "+0": 0,
+                "+1": 5,
+                "+2": 1,
+                "+3": 1,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 0,
+                "+3": 1,
                 "+4": 0
             }
         },
@@ -20957,22 +21575,22 @@
     "271776086851846146": {
         "_id": "271776086851846146",
         "characterId": "10450004_4de7335d",
-        "exp": 3719238,
-        "gold": 1364989,
+        "exp": 4435435,
+        "gold": 22351729,
         "equipedWeapon": {
             "_id": "300409",
             "plus": 3
         },
         "equipedArmor": {
-            "_id": "310405",
-            "plus": 1
+            "_id": "310408",
+            "plus": 2
         },
         "equipedAccessory": {
             "_id": "330207",
             "plus": 3
         },
         "materialList": {
-            "Weapon Hammer": 7,
+            "Weapon Hammer": 11,
             "Forge": 7,
             "Food Pack": 2,
             "Rare Silver Coin": 8,
@@ -20988,40 +21606,41 @@
             "Turquoise": 8,
             "Water Buffalo Horn": 2,
             "Onyx": 26,
-            "Gold Mailbox": 17,
+            "Gold Mailbox": 26,
             "Clear Water": 9,
-            "Rose Quartz": 697,
+            "Rose Quartz": 199,
             "Topaz": 689,
             "Beautiful Cloth": 25,
             "Water": 11,
             "Shimmering Water": 16,
             "Tanned Leather": 566,
             "Ominous Cloth": 24,
-            "Luxurious Leather": 570,
-            "Lapis Lazuli": 677,
-            "Emerald": 684,
-            "Full Moon Fragment": 130,
-            "Ebony Branch": 24,
-            "Magical Water": 687,
-            "Armor Hammer": 1,
-            "Mithril Ore": 21,
-            "Gold Ore": 166,
-            "Rare Species Leather": 32,
-            "Black Pearl": 34,
+            "Luxurious Leather": 574,
+            "Lapis Lazuli": 183,
+            "Emerald": 185,
+            "Full Moon Fragment": 132,
+            "Ebony Branch": 25,
+            "Magical Water": 669,
+            "Armor Hammer": 0,
+            "Mithril Ore": 25,
+            "Gold Ore": 149,
+            "Rare Species Leather": 33,
+            "Black Pearl": 23,
             "Diamond": 174,
-            "Chimera Horn": 148,
+            "Chimera Horn": 149,
             "Crystal": 124,
-            "Garnet": 158,
-            "Sun Fragment": 22,
-            "Holy Cloth": 20,
-            "Holy Water": 17,
-            "Dragon Horn": 29,
-            "Yggdrasil Branch": 22,
+            "Garnet": 157,
+            "Sun Fragment": 23,
+            "Holy Cloth": 22,
+            "Holy Water": 18,
+            "Dragon Horn": 32,
+            "Yggdrasil Branch": 23,
             "Hard Leather": 532,
-            "Chocolate Chip Ice": 2,
-            "Fruit": 86,
-            "Chocolate Bar": 100,
-            "Nuts": 104
+            "Chocolate Chip Ice": 8,
+            "Fruit": 231,
+            "Chocolate Bar": 244,
+            "Nuts": 243,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300402": {
@@ -21063,22 +21682,36 @@
         "armorList": {
             "310405": {
                 "+0": 1,
-                "+1": 0,
+                "+1": 1,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
             },
             "310408": {
                 "+0": 1,
-                "+1": 0,
-                "+2": 0,
+                "+1": 10,
+                "+2": 2,
                 "+3": 0,
                 "+4": 0
             },
             "310409": {
                 "+0": 0,
                 "+1": 1,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
+            "310410": {
+                "+0": 0,
+                "+1": 1,
                 "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "310411": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 1,
                 "+3": 0,
                 "+4": 0
             }
@@ -21097,6 +21730,13 @@
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
+            },
+            "3299960": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 1
             }
         },
         "position": "front",
@@ -21106,8 +21746,8 @@
     "273141988050599936": {
         "_id": "273141988050599936",
         "characterId": "10540007_746f8727",
-        "exp": 60481,
-        "gold": 20965,
+        "exp": 88096,
+        "gold": 28865,
         "equipedWeapon": {
             "_id": "300501",
             "plus": 2
@@ -21118,7 +21758,7 @@
             "Food Pack": 0,
             "Gold Mailbox": 10,
             "Armor Hammer": 1,
-            "Copper Ore": 10,
+            "Copper Ore": 34,
             "Rare Silver Coin": 8,
             "Soft Leather": 17,
             "Ruby": 23,
@@ -21131,13 +21771,16 @@
             "Diamond": 1,
             "Rare Species Leather": 1,
             "Chocolate Chip Ice": 1,
-            "Topaz": 3,
-            "Onyx": 3,
-            "Aquamarine": 3,
-            "Iron Ore": 5,
-            "Silver Ore": 2,
-            "Crescent Moon Fragment": 1,
-            "Turquoise": 4
+            "Topaz": 33,
+            "Onyx": 31,
+            "Aquamarine": 25,
+            "Iron Ore": 26,
+            "Silver Ore": 21,
+            "Crescent Moon Fragment": 29,
+            "Turquoise": 29,
+            "Accessory Hammer": 1,
+            "Maple Branch": 24,
+            "Tanned Leather": 19
         },
         "weaponList": {
             "300501": {
@@ -21157,8 +21800,8 @@
     "273142448291708928": {
         "_id": "273142448291708928",
         "characterId": "10150002_765306d2",
-        "exp": 9740,
-        "gold": 12105,
+        "exp": 34430,
+        "gold": 19205,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
@@ -21167,14 +21810,23 @@
             "Gold Mailbox": 12,
             "Armor Hammer": 1,
             "Rare Silver Coin": 7,
-            "Copper Ore": 8,
+            "Copper Ore": 37,
             "Mountain Goat Horn": 60,
             "Weapon Hammer": 5,
-            "Turquoise": 11,
+            "Turquoise": 34,
             "Crystal": 16,
             "Pure White Cloth": 17,
             "Ruby": 16,
-            "Black Pearl": 10
+            "Black Pearl": 10,
+            "Accessory Hammer": 1,
+            "Topaz": 16,
+            "Aquamarine": 20,
+            "Crescent Moon Fragment": 23,
+            "Onyx": 16,
+            "Silver Ore": 20,
+            "Iron Ore": 13,
+            "Tanned Leather": 14,
+            "Maple Branch": 6
         },
         "weaponList": {},
         "armorList": {},
@@ -21186,24 +21838,33 @@
     "273143158462742528": {
         "_id": "273143158462742528",
         "characterId": "10840004_97d11831",
-        "exp": 9650,
-        "gold": 12815,
+        "exp": 34340,
+        "gold": 19915,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
         "materialList": {
             "Food Pack": 0,
             "Gold Mailbox": 12,
-            "Copper Ore": 19,
+            "Copper Ore": 40,
             "Rare Silver Coin": 11,
             "Star Fragment": 15,
             "Old Silver Coin": 15,
             "Armor Hammer": 1,
             "Weapon Hammer": 5,
-            "Turquoise": 12,
+            "Turquoise": 35,
             "Pure White Cloth": 19,
             "Crystal": 14,
-            "Ruby": 15
+            "Ruby": 15,
+            "Accessory Hammer": 1,
+            "Aquamarine": 19,
+            "Iron Ore": 11,
+            "Silver Ore": 14,
+            "Topaz": 24,
+            "Onyx": 24,
+            "Crescent Moon Fragment": 21,
+            "Tanned Leather": 11,
+            "Maple Branch": 12
         },
         "weaponList": {},
         "armorList": {},
@@ -21214,9 +21875,9 @@
     },
     "273143720075853824": {
         "_id": "273143720075853824",
-        "characterId": "10240002_218f7b24",
-        "exp": 21200,
-        "gold": 5285,
+        "characterId": "10650004_58ad7832",
+        "exp": 43770,
+        "gold": 12385,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
@@ -21224,18 +21885,25 @@
             "Food Pack": 2,
             "Gold Mailbox": 12,
             "Rare Silver Coin": 8,
-            "Copper Ore": 7,
+            "Copper Ore": 31,
             "Old Silver Coin": 27,
             "Star Fragment": 33,
             "Armor Hammer": 1,
-            "Tanned Leather": 27,
+            "Tanned Leather": 38,
             "Clear Water": 16,
             "Ruby": 39,
-            "Onyx": 22,
+            "Onyx": 42,
             "Weapon Hammer": 5,
             "Crystal": 16,
-            "Turquoise": 17,
-            "Pure White Cloth": 13
+            "Turquoise": 28,
+            "Pure White Cloth": 13,
+            "Accessory Hammer": 1,
+            "Silver Ore": 22,
+            "Aquamarine": 21,
+            "Iron Ore": 21,
+            "Topaz": 17,
+            "Crescent Moon Fragment": 23,
+            "Maple Branch": 10
         },
         "weaponList": {},
         "armorList": {},
@@ -21247,8 +21915,8 @@
     "273144275774996481": {
         "_id": "273144275774996481",
         "characterId": "10130008_dcbe627f",
-        "exp": 2380,
-        "gold": 19805,
+        "exp": 15075,
+        "gold": 23560,
         "equipedWeapon": {
             "_id": "300101",
             "plus": 0
@@ -21258,7 +21926,7 @@
         "materialList": {
             "Food Pack": 2,
             "Gold Mailbox": 12,
-            "Copper Ore": 7,
+            "Copper Ore": 13,
             "Rare Silver Coin": 0,
             "Armor Hammer": 1,
             "Weapon Hammer": 5,
@@ -21266,7 +21934,18 @@
             "Rose Quartz": 10,
             "Mountain Goat Horn": 60,
             "Black Pearl": 10,
-            "Chocolate Chip Ice": 1
+            "Chocolate Chip Ice": 1,
+            "Accessory Hammer": 1,
+            "Onyx": 18,
+            "Tanned Leather": 11,
+            "Clear Water": 14,
+            "Ruby": 10,
+            "Topaz": 9,
+            "Silver Ore": 3,
+            "Crescent Moon Fragment": 5,
+            "Turquoise": 2,
+            "Aquamarine": 5,
+            "Iron Ore": 2
         },
         "weaponList": {
             "300101": {
@@ -21293,24 +21972,33 @@
     "273144805654003713": {
         "_id": "273144805654003713",
         "characterId": "10440003_818b250b",
-        "exp": 17425,
-        "gold": 5130,
+        "exp": 34860,
+        "gold": 10130,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
         "materialList": {
             "Food Pack": 2,
             "Gold Mailbox": 12,
-            "Copper Ore": 11,
+            "Copper Ore": 32,
             "Rare Silver Coin": 4,
             "Old Silver Coin": 25,
             "Star Fragment": 35,
             "Armor Hammer": 1,
             "Pure White Cloth": 30,
-            "Turquoise": 33,
+            "Turquoise": 48,
             "Crystal": 27,
             "Ruby": 30,
-            "Weapon Hammer": 5
+            "Weapon Hammer": 5,
+            "Accessory Hammer": 1,
+            "Crescent Moon Fragment": 24,
+            "Iron Ore": 16,
+            "Topaz": 12,
+            "Silver Ore": 15,
+            "Aquamarine": 13,
+            "Onyx": 10,
+            "Maple Branch": 10,
+            "Tanned Leather": 4
         },
         "weaponList": {},
         "armorList": {},
@@ -21322,8 +22010,8 @@
     "273145447248429056": {
         "_id": "273145447248429056",
         "characterId": "10740006_feff4fd6",
-        "exp": 9975,
-        "gold": 4915,
+        "exp": 34665,
+        "gold": 12965,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
@@ -21331,21 +22019,24 @@
             "Food Pack": 2,
             "Gold Mailbox": 12,
             "Rare Silver Coin": 11,
-            "Copper Ore": 12,
+            "Copper Ore": 37,
             "Old Silver Coin": 17,
             "Star Fragment": 13,
             "Armor Hammer": 1,
             "Crystal": 11,
             "Ruby": 6,
             "Pure White Cloth": 6,
-            "Turquoise": 13,
-            "Onyx": 14,
-            "Topaz": 7,
-            "Aquamarine": 11,
-            "Crescent Moon Fragment": 14,
+            "Turquoise": 36,
+            "Onyx": 29,
+            "Topaz": 26,
+            "Aquamarine": 28,
+            "Crescent Moon Fragment": 28,
             "Silver Ore": 9,
-            "Iron Ore": 11,
-            "Weapon Hammer": 5
+            "Iron Ore": 36,
+            "Weapon Hammer": 5,
+            "Accessory Hammer": 1,
+            "Maple Branch": 9,
+            "Tanned Leather": 10
         },
         "weaponList": {},
         "armorList": {},
@@ -21357,8 +22048,8 @@
     "273145916607954955": {
         "_id": "273145916607954955",
         "characterId": "10550003_c31d1392",
-        "exp": 107137,
-        "gold": 1915,
+        "exp": 114392,
+        "gold": 4015,
         "equipedWeapon": {
             "_id": "300501",
             "plus": 1
@@ -21368,7 +22059,7 @@
         "materialList": {
             "Food Pack": 2,
             "Gold Mailbox": 11,
-            "Copper Ore": 6,
+            "Copper Ore": 9,
             "Rare Silver Coin": 9,
             "Old Silver Coin": 17,
             "Star Fragment": 13,
@@ -21376,7 +22067,7 @@
             "Ruby": 14,
             "Crystal": 17,
             "Pure White Cloth": 15,
-            "Turquoise": 14,
+            "Turquoise": 19,
             "Weapon Hammer": 5,
             "Yggdrasil Branch": 2,
             "Emerald": 1,
@@ -21386,7 +22077,14 @@
             "Holy Water": 1,
             "Holy Cloth": 1,
             "Gold Ore": 1,
-            "Dragon Horn": 1
+            "Dragon Horn": 1,
+            "Accessory Hammer": 1,
+            "Crescent Moon Fragment": 2,
+            "Silver Ore": 8,
+            "Topaz": 6,
+            "Onyx": 5,
+            "Aquamarine": 6,
+            "Iron Ore": 5
         },
         "weaponList": {
             "300501": {
@@ -21406,8 +22104,8 @@
     "273146377712959488": {
         "_id": "273146377712959488",
         "characterId": "10540001_825282e1",
-        "exp": 3408,
-        "gold": 2550,
+        "exp": 16808,
+        "gold": 6480,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
@@ -21415,11 +22113,22 @@
             "Food Pack": 2,
             "Gold Mailbox": 12,
             "Rare Silver Coin": 32,
-            "Copper Ore": 8,
+            "Copper Ore": 15,
             "Tree Branch": 20,
             "Armor Hammer": 1,
-            "Crystal": 14,
-            "Star Fragment": 16
+            "Crystal": 25,
+            "Star Fragment": 16,
+            "Accessory Hammer": 1,
+            "Water Buffalo Horn": 4,
+            "Ruby": 3,
+            "Clear Water": 8,
+            "Onyx": 9,
+            "Silver Ore": 7,
+            "Iron Ore": 2,
+            "Crescent Moon Fragment": 3,
+            "Aquamarine": 4,
+            "Topaz": 8,
+            "Turquoise": 4
         },
         "weaponList": {},
         "armorList": {},
@@ -21431,33 +22140,37 @@
     "273147188283179009": {
         "_id": "273147188283179009",
         "characterId": "10140007_5efb11f9",
-        "exp": 30324,
-        "gold": 5985,
+        "exp": 57939,
+        "gold": 13885,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
         "materialList": {
             "Food Pack": 2,
             "Gold Mailbox": 10,
-            "Copper Ore": 6,
+            "Copper Ore": 29,
             "Rare Silver Coin": 48,
             "Tree Branch": 21,
             "Armor Hammer": 1,
             "Star Fragment": 14,
             "Crystal": 31,
-            "Iron Ore": 24,
-            "Crescent Moon Fragment": 21,
-            "Onyx": 24,
+            "Iron Ore": 59,
+            "Crescent Moon Fragment": 51,
+            "Onyx": 48,
             "Weapon Hammer": 5,
             "Rose Quartz": 10,
-            "Topaz": 29,
+            "Topaz": 48,
             "Shimmering Water": 22,
             "Soft Leather": 13,
             "Ruby": 14,
-            "Turquoise": 14,
+            "Turquoise": 34,
             "Hard Leather": 13,
             "Beautiful Cloth": 19,
-            "Tanned Leather": 17
+            "Tanned Leather": 38,
+            "Accessory Hammer": 1,
+            "Silver Ore": 27,
+            "Aquamarine": 23,
+            "Maple Branch": 18
         },
         "weaponList": {
             "300101": {
@@ -21477,8 +22190,8 @@
     "274417511922008066": {
         "_id": "274417511922008066",
         "characterId": "10650003_314afe6a",
-        "exp": 1153508,
-        "gold": 479729,
+        "exp": 1424389,
+        "gold": 1269729,
         "equipedWeapon": {
             "_id": "3006082",
             "plus": 2
@@ -21497,41 +22210,42 @@
             "Water": 4,
             "Old Silver Coin": 0,
             "Mountain Goat Horn": 12,
-            "Rose Quartz": 11,
-            "Emerald": 21,
+            "Rose Quartz": 12,
+            "Emerald": 22,
             "Sun Fragment": 13,
-            "Mithril Ore": 27,
-            "Luxurious Leather": 16,
+            "Mithril Ore": 29,
+            "Luxurious Leather": 17,
             "Ominous Cloth": 20,
-            "Holy Water": 29,
+            "Holy Water": 31,
             "Lapis Lazuli": 25,
-            "Diamond": 18,
+            "Diamond": 19,
             "Armor Hammer": 1,
             "Ebony Branch": 23,
             "Black Pearl": 20,
-            "Garnet": 40,
+            "Garnet": 43,
             "Chimera Horn": 21,
-            "Full Moon Fragment": 26,
+            "Full Moon Fragment": 28,
             "Food Pack": 1,
             "Holy Cloth": 19,
             "Magical Water": 18,
             "Dragon Horn": 20,
             "Rare Species Leather": 17,
-            "Yggdrasil Branch": 22,
-            "Gold Ore": 14,
-            "Gold Mailbox": 11,
+            "Yggdrasil Branch": 23,
+            "Gold Ore": 15,
+            "Gold Mailbox": 16,
             "Half Moon Fragment": 5,
             "Star Fragment": 8,
             "Crescent Moon Fragment": 3,
             "Unicorn Horn": 4,
             "Aquamarine": 5,
             "Ruby": 4,
-            "Forge": 5,
-            "Weapon Hammer": 5,
-            "Chocolate Chip Ice": 1,
-            "Nuts": 25,
-            "Chocolate Bar": 18,
-            "Fruit": 15
+            "Forge": 4,
+            "Weapon Hammer": 4,
+            "Chocolate Chip Ice": 5,
+            "Nuts": 76,
+            "Chocolate Bar": 73,
+            "Fruit": 61,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300602": {
@@ -21562,10 +22276,66 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3001980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 0,
+                "+1": 6,
+                "+2": 3,
+                "+3": 1,
+                "+4": 0
+            },
+            "3003980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 3,
+                "+3": 0,
+                "+4": 0
+            },
+            "3004980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 2,
+                "+3": 1,
+                "+4": 0
+            },
+            "3005980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 2,
+                "+3": 0,
+                "+4": 1
+            },
             "3006082": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3006980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3007980": {
+                "+0": 0,
+                "+1": 4,
+                "+2": 1,
+                "+3": 3,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 0,
+                "+1": 5,
+                "+2": 2,
                 "+3": 0,
                 "+4": 0
             }
@@ -21609,32 +22379,35 @@
     "274965106163449867": {
         "_id": "274965106163449867",
         "characterId": "10430009_8eedd1a8",
-        "exp": 30636,
-        "gold": 6274,
+        "exp": 32670,
+        "gold": 6920,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
         "materialList": {
             "Copper Ore": 7,
-            "Rare Silver Coin": 13,
+            "Rare Silver Coin": 15,
             "Tree Branch": 3,
             "Old Silver Coin": 3,
             "Mountain Goat Horn": 16,
             "Food Pack": 1,
             "Forge": 5,
-            "Ruby": 52,
+            "Ruby": 55,
             "Soft Leather": 44,
             "Turquoise": 21,
             "Silver Coin Purse": 5,
             "Water": 13,
-            "Crystal": 35,
+            "Crystal": 37,
             "Weapon Hammer": 5,
             "Pure White Cloth": 22,
             "Rose Quartz": 10,
-            "Iron Ore": 7,
+            "Iron Ore": 11,
             "Crescent Moon Fragment": 7,
-            "Onyx": 5,
-            "Chocolate Chip Ice": 1
+            "Onyx": 7,
+            "Chocolate Chip Ice": 1,
+            "Accessory Hammer": 1,
+            "Clear Water": 4,
+            "Tanned Leather": 1
         },
         "weaponList": {},
         "armorList": {},
@@ -21766,9 +22539,9 @@
     },
     "149516684917473280": {
         "_id": "149516684917473280",
-        "characterId": "10140002_d3d896dc",
-        "exp": 2369642,
-        "gold": 1434680,
+        "characterId": "10150001_0d4d8431",
+        "exp": 2419760,
+        "gold": 1170480,
         "equipedWeapon": {
             "_id": "3001093",
             "plus": 3
@@ -21782,58 +22555,59 @@
             "plus": 3
         },
         "materialList": {
-            "Gold Mailbox": 5,
+            "Gold Mailbox": 1,
             "Rare Silver Coin": 0,
             "Copper Ore": 3,
             "Onyx": 78,
-            "Crescent Moon Fragment": 82,
-            "Iron Ore": 62,
+            "Crescent Moon Fragment": 89,
+            "Iron Ore": 74,
             "Crystal": 26,
             "Turquoise": 10,
             "Topaz": 135,
-            "Half Moon Fragment": 108,
+            "Half Moon Fragment": 126,
             "Star Fragment": 2,
             "Aquamarine": 188,
-            "Garnet": 91,
-            "Full Moon Fragment": 96,
-            "Dragon Horn": 50,
-            "Yggdrasil Branch": 33,
-            "Black Pearl": 102,
+            "Garnet": 92,
+            "Full Moon Fragment": 98,
+            "Dragon Horn": 51,
+            "Yggdrasil Branch": 34,
+            "Black Pearl": 88,
             "Sun Fragment": 32,
             "Chimera Horn": 234,
-            "Gold Ore": 189,
-            "Holy Water": 45,
-            "Holy Cloth": 41,
-            "Ominous Cloth": 71,
+            "Gold Ore": 168,
+            "Holy Water": 46,
+            "Holy Cloth": 42,
+            "Ominous Cloth": 72,
             "Luxurious Leather": 94,
             "Emerald": 246,
             "Diamond": 114,
-            "Rare Species Leather": 54,
-            "Magical Water": 135,
-            "Lapis Lazuli": 123,
+            "Rare Species Leather": 55,
+            "Magical Water": 115,
+            "Lapis Lazuli": 125,
             "Rose Quartz": 153,
             "Ebony Branch": 84,
             "Mithril Ore": 137,
-            "Hard Leather": 139,
-            "Shimmering Water": 149,
-            "Beautiful Cloth": 58,
-            "Tanned Leather": 91,
-            "Maple Branch": 126,
-            "Evergreen Oak Branch": 76,
+            "Hard Leather": 145,
+            "Shimmering Water": 158,
+            "Beautiful Cloth": 69,
+            "Tanned Leather": 102,
+            "Maple Branch": 137,
+            "Evergreen Oak Branch": 87,
             "Tree Branch": 14,
             "Ruby": 151,
-            "Forge": 5,
-            "Labyrinth Fragment": 400,
-            "Luxurious Cloth": 66,
-            "Water Buffalo Horn": 52,
-            "Clear Water": 45,
-            "Silver Ore": 80,
-            "Unicorn Horn": 118,
-            "Weapon Hammer": 9,
-            "Chocolate Chip Ice": 3,
-            "Nuts": 91,
-            "Chocolate Bar": 75,
-            "Fruit": 87
+            "Forge": 3,
+            "Labyrinth Fragment": 495,
+            "Luxurious Cloth": 77,
+            "Water Buffalo Horn": 69,
+            "Clear Water": 56,
+            "Silver Ore": 86,
+            "Unicorn Horn": 132,
+            "Weapon Hammer": 13,
+            "Chocolate Chip Ice": 6,
+            "Nuts": 23,
+            "Chocolate Bar": 7,
+            "Fruit": 14,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300101": {
@@ -21850,6 +22624,13 @@
                 "+3": 1,
                 "+4": 0
             },
+            "3001091": {
+                "+0": 10,
+                "+1": 1,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
             "3001093": {
                 "+0": 0,
                 "+1": 0,
@@ -21857,11 +22638,60 @@
                 "+3": 0,
                 "+4": 0
             },
-            "3007980": {
-                "+0": 0,
-                "+1": 1,
+            "3001980": {
+                "+0": 8,
+                "+1": 3,
+                "+2": 4,
+                "+3": 2,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 7,
+                "+1": 5,
                 "+2": 0,
+                "+3": 1,
+                "+4": 0
+            },
+            "3003980": {
+                "+0": 5,
+                "+1": 4,
+                "+2": 2,
                 "+3": 0,
+                "+4": 0
+            },
+            "3004980": {
+                "+0": 4,
+                "+1": 4,
+                "+2": 0,
+                "+3": 1,
+                "+4": 0
+            },
+            "3005980": {
+                "+0": 6,
+                "+1": 5,
+                "+2": 9,
+                "+3": 0,
+                "+4": 0
+            },
+            "3006980": {
+                "+0": 6,
+                "+1": 6,
+                "+2": 4,
+                "+3": 1,
+                "+4": 0
+            },
+            "3007980": {
+                "+0": 5,
+                "+1": 5,
+                "+2": 2,
+                "+3": 3,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 2,
+                "+1": 5,
+                "+2": 6,
+                "+3": 2,
                 "+4": 0
             }
         },
@@ -21910,70 +22740,88 @@
     },
     "148630567859126272": {
         "_id": "148630567859126272",
-        "characterId": "10830001_d4a263bc",
-        "exp": 1054625,
-        "gold": 2417329,
+        "characterId": "10140001_a8c6143f",
+        "exp": 1113419,
+        "gold": 2085909,
         "equipedWeapon": {
-            "_id": "300805",
+            "_id": "3001091",
             "plus": 2
         },
         "equipedArmor": {
-            "_id": "310807",
-            "plus": 1
+            "_id": "310107",
+            "plus": 2
         },
-        "equipedAccessory": null,
+        "equipedAccessory": {
+            "_id": "330206",
+            "plus": 2
+        },
         "materialList": {
             "Copper Ore": 4,
             "Rare Silver Coin": 0,
             "Mountain Goat Horn": 30,
             "Star Fragment": 45,
-            "Crystal": 117,
+            "Crystal": 136,
             "Forge": 5,
-            "Emerald": 81,
-            "Magical Water": 103,
-            "Luxurious Leather": 23,
-            "Ominous Cloth": 22,
-            "Full Moon Fragment": 118,
-            "Garnet": 76,
-            "Chimera Horn": 104,
-            "Lapis Lazuli": 101,
+            "Emerald": 107,
+            "Magical Water": 123,
+            "Luxurious Leather": 25,
+            "Ominous Cloth": 27,
+            "Full Moon Fragment": 139,
+            "Garnet": 102,
+            "Chimera Horn": 117,
+            "Lapis Lazuli": 118,
             "Aquamarine": 94,
             "Shimmering Water": 80,
             "Water": 66,
-            "Clear Water": 80,
-            "Ruby": 96,
+            "Clear Water": 82,
+            "Ruby": 94,
             "Onyx": 87,
-            "Topaz": 222,
-            "Beautiful Cloth": 98,
-            "Yggdrasil Branch": 25,
-            "Gold Ore": 109,
-            "Dragon Horn": 24,
-            "Rare Species Leather": 16,
-            "Weapon Hammer": 5,
-            "Black Pearl": 20,
+            "Topaz": 243,
+            "Beautiful Cloth": 103,
+            "Yggdrasil Branch": 28,
+            "Gold Ore": 130,
+            "Dragon Horn": 26,
+            "Rare Species Leather": 20,
+            "Weapon Hammer": 4,
+            "Black Pearl": 19,
             "Ebony Branch": 15,
-            "Sun Fragment": 19,
-            "Diamond": 79,
-            "Rose Quartz": 91,
-            "Holy Water": 17,
-            "Mithril Ore": 25,
-            "Holy Cloth": 17,
-            "Maple Branch": 15,
-            "Labyrinth Fragment": 88,
-            "Tanned Leather": 29,
-            "Silver Ore": 34,
-            "Unicorn Horn": 8,
-            "Hard Leather": 6,
-            "Iron Ore": 15,
-            "Crescent Moon Fragment": 39,
-            "Luxurious Cloth": 31,
-            "Evergreen Oak Branch": 8,
-            "Turquoise": 26,
-            "Half Moon Fragment": 26,
-            "Water Buffalo Horn": 10,
-            "Chocolate Chip Ice": 1
+            "Sun Fragment": 21,
+            "Diamond": 110,
+            "Rose Quartz": 107,
+            "Holy Water": 19,
+            "Mithril Ore": 28,
+            "Holy Cloth": 21,
+            "Maple Branch": 16,
+            "Labyrinth Fragment": 124,
+            "Tanned Leather": 36,
+            "Silver Ore": 31,
+            "Unicorn Horn": 12,
+            "Hard Leather": 8,
+            "Iron Ore": 19,
+            "Crescent Moon Fragment": 46,
+            "Luxurious Cloth": 33,
+            "Evergreen Oak Branch": 17,
+            "Turquoise": 21,
+            "Half Moon Fragment": 29,
+            "Water Buffalo Horn": 15,
+            "Chocolate Chip Ice": 1,
+            "Accessory Hammer": 1
         },
         "weaponList": {
+            "300107": {
+                "+0": 1,
+                "+1": 3,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "300108": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
             "300201": {
                 "+0": 0,
                 "+1": 0,
@@ -21991,12 +22839,40 @@
             "300805": {
                 "+0": 0,
                 "+1": 0,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
+            "3001081": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3001091": {
+                "+0": 0,
+                "+1": 1,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
             }
         },
         "armorList": {
+            "310107": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "310110": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
             "310801": {
                 "+0": 1,
                 "+1": 0,
@@ -22013,7 +22889,7 @@
             },
             "310807": {
                 "+0": 0,
-                "+1": 1,
+                "+1": 2,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
@@ -22026,9 +22902,16 @@
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
+            },
+            "330206": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
             }
         },
-        "position": "back",
+        "position": "front",
         "partnerId": null,
         "ceoPower": false
     },
@@ -22051,8 +22934,8 @@
     "277870896616701953": {
         "_id": "277870896616701953",
         "characterId": "10550003_c31d1392",
-        "exp": 2122852,
-        "gold": 694253,
+        "exp": 2607082,
+        "gold": 1754253,
         "equipedWeapon": {
             "_id": "300503",
             "plus": 3
@@ -22074,26 +22957,26 @@
             "Beautiful Cloth": 10,
             "Tanned Leather": 21,
             "Luxurious Cloth": 52,
-            "Magical Water": 230,
-            "Rare Species Leather": 25,
+            "Magical Water": 231,
+            "Rare Species Leather": 29,
             "Sun Fragment": 30,
-            "Black Pearl": 55,
-            "Full Moon Fragment": 227,
-            "Ebony Branch": 25,
-            "Lapis Lazuli": 210,
-            "Gold Ore": 225,
+            "Black Pearl": 57,
+            "Full Moon Fragment": 229,
+            "Ebony Branch": 26,
+            "Lapis Lazuli": 213,
+            "Gold Ore": 227,
             "Mithril Ore": 22,
-            "Luxurious Leather": 33,
-            "Holy Water": 26,
-            "Emerald": 246,
-            "Yggdrasil Branch": 39,
-            "Dragon Horn": 41,
+            "Luxurious Leather": 34,
+            "Holy Water": 28,
+            "Emerald": 247,
+            "Yggdrasil Branch": 40,
+            "Dragon Horn": 44,
             "Chimera Horn": 215,
-            "Ominous Cloth": 30,
-            "Rose Quartz": 189,
-            "Garnet": 241,
-            "Holy Cloth": 30,
-            "Diamond": 221,
+            "Ominous Cloth": 33,
+            "Rose Quartz": 190,
+            "Garnet": 243,
+            "Holy Cloth": 35,
+            "Diamond": 222,
             "Water Buffalo Horn": 4,
             "Shimmering Water": 5,
             "Hard Leather": 10,
@@ -22105,12 +22988,13 @@
             "Crescent Moon Fragment": 21,
             "Maple Branch": 2,
             "Silver Ore": 1,
-            "Gold Mailbox": 2,
-            "Chocolate Chip Ice": 1,
-            "Chocolate Bar": 53,
-            "Fruit": 48,
-            "Nuts": 45,
-            "Weapon Hammer": 1
+            "Gold Mailbox": 6,
+            "Chocolate Chip Ice": 0,
+            "Chocolate Bar": 152,
+            "Fruit": 136,
+            "Nuts": 144,
+            "Weapon Hammer": 11,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300101": {
@@ -22181,15 +23065,15 @@
     "153196027015462912": {
         "_id": "153196027015462912",
         "characterId": "10540002_f94c0002",
-        "exp": 412067,
-        "gold": 78192,
+        "exp": 608846,
+        "gold": 250372,
         "equipedWeapon": {
             "_id": "300508",
             "plus": 2
         },
         "equipedArmor": {
-            "_id": "310508",
-            "plus": 0
+            "_id": "310509",
+            "plus": 1
         },
         "equipedAccessory": {
             "_id": "330206",
@@ -22202,7 +23086,7 @@
             "Tree Branch": 20,
             "Old Silver Coin": 0,
             "Mountain Goat Horn": 25,
-            "Rose Quartz": 13,
+            "Rose Quartz": 11,
             "Star Fragment": 11,
             "Crystal": 41,
             "Ruby": 69,
@@ -22213,7 +23097,7 @@
             "Onyx": 58,
             "Iron Ore": 14,
             "Crescent Moon Fragment": 19,
-            "Black Pearl": 22,
+            "Black Pearl": 13,
             "Tanned Leather": 26,
             "Clear Water": 18,
             "Water Buffalo Horn": 10,
@@ -22225,28 +23109,29 @@
             "Silver Ore": 5,
             "Shimmering Water": 3,
             "Luxurious Cloth": 23,
-            "Chimera Horn": 7,
-            "Sun Fragment": 7,
+            "Chimera Horn": 5,
+            "Sun Fragment": 8,
             "Lapis Lazuli": 5,
-            "Magical Water": 10,
+            "Magical Water": 11,
             "Dragon Horn": 6,
-            "Luxurious Leather": 4,
-            "Yggdrasil Branch": 6,
-            "Ebony Branch": 2,
-            "Emerald": 2,
+            "Luxurious Leather": 3,
+            "Yggdrasil Branch": 8,
+            "Ebony Branch": 0,
+            "Emerald": 3,
             "Aquamarine": 14,
             "Topaz": 6,
-            "Mithril Ore": 7,
-            "Holy Cloth": 3,
-            "Full Moon Fragment": 4,
-            "Holy Water": 2,
-            "Ominous Cloth": 7,
-            "Diamond": 3,
+            "Mithril Ore": 9,
+            "Holy Cloth": 4,
+            "Full Moon Fragment": 7,
+            "Holy Water": 4,
+            "Ominous Cloth": 6,
+            "Diamond": 1,
             "Garnet": 2,
-            "Rare Species Leather": 3,
-            "Gold Ore": 5,
+            "Rare Species Leather": 5,
+            "Gold Ore": 7,
             "Hard Leather": 4,
-            "Chocolate Chip Ice": 1
+            "Chocolate Chip Ice": 1,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300501": {
@@ -22287,6 +23172,13 @@
             "300508": {
                 "+0": 0,
                 "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "300509": {
+                "+0": 0,
+                "+1": 1,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
@@ -22336,6 +23228,13 @@
                 "+4": 0
             },
             "310508": {
+                "+0": 1,
+                "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "310509": {
                 "+0": 0,
                 "+1": 0,
                 "+2": 0,
@@ -22359,8 +23258,8 @@
     "211073258076897280": {
         "_id": "211073258076897280",
         "characterId": "10850002_c4678df9",
-        "exp": 1469472,
-        "gold": 11822900,
+        "exp": 2074943,
+        "gold": 12039259,
         "equipedWeapon": {
             "_id": "308819",
             "plus": 3
@@ -22376,30 +23275,30 @@
         "materialList": {
             "Rare Silver Coin": 0,
             "Copper Ore": 1,
-            "Weapon Hammer": 4,
+            "Weapon Hammer": 9,
             "Tree Branch": 6,
             "Water": 7,
             "Soft Leather": 4,
-            "Crystal": 46,
-            "Rose Quartz": 43,
-            "Gold Ore": 69,
-            "Holy Water": 40,
-            "Rare Species Leather": 42,
-            "Sun Fragment": 29,
-            "Chimera Horn": 155,
-            "Lapis Lazuli": 24,
-            "Full Moon Fragment": 55,
+            "Crystal": 16,
+            "Rose Quartz": 45,
+            "Gold Ore": 73,
+            "Holy Water": 44,
+            "Rare Species Leather": 43,
+            "Sun Fragment": 32,
+            "Chimera Horn": 156,
+            "Lapis Lazuli": 25,
+            "Full Moon Fragment": 56,
             "Black Pearl": 53,
-            "Dragon Horn": 38,
-            "Yggdrasil Branch": 35,
-            "Holy Cloth": 44,
-            "Emerald": 47,
-            "Magical Water": 109,
+            "Dragon Horn": 40,
+            "Yggdrasil Branch": 39,
+            "Holy Cloth": 45,
+            "Emerald": 17,
+            "Magical Water": 113,
             "Mithril Ore": 33,
             "Diamond": 66,
-            "Luxurious Leather": 68,
-            "Garnet": 73,
-            "Ominous Cloth": 133,
+            "Luxurious Leather": 70,
+            "Garnet": 75,
+            "Ominous Cloth": 136,
             "Ebony Branch": 156,
             "Half Moon Fragment": 31,
             "Star Fragment": 11,
@@ -22422,11 +23321,12 @@
             "Silver Ore": 36,
             "Tanned Leather": 28,
             "Topaz": 95,
-            "Gold Mailbox": 4,
-            "Chocolate Chip Ice": 4,
-            "Fruit": 46,
-            "Chocolate Bar": 41,
-            "Nuts": 56
+            "Gold Mailbox": 10,
+            "Chocolate Chip Ice": 8,
+            "Fruit": 42,
+            "Chocolate Bar": 52,
+            "Nuts": 83,
+            "Accessory Hammer": 0
         },
         "weaponList": {
             "300601": {
@@ -22457,9 +23357,58 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3001980": {
+                "+0": 4,
+                "+1": 4,
+                "+2": 4,
+                "+3": 0,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 7,
+                "+1": 1,
+                "+2": 1,
+                "+3": 2,
+                "+4": 0
+            },
+            "3003980": {
+                "+0": 0,
+                "+1": 3,
+                "+2": 5,
+                "+3": 0,
+                "+4": 0
+            },
+            "3004980": {
+                "+0": 5,
+                "+1": 5,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
+            "3005980": {
+                "+0": 3,
+                "+1": 4,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
             "3006082": {
                 "+0": 0,
                 "+1": 0,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
+            "3006980": {
+                "+0": 1,
+                "+1": 3,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
+            "3007980": {
+                "+0": 2,
+                "+1": 3,
                 "+2": 1,
                 "+3": 0,
                 "+4": 0
@@ -22470,19 +23419,26 @@
                 "+2": 1,
                 "+3": 0,
                 "+4": 0
+            },
+            "3008980": {
+                "+0": 2,
+                "+1": 1,
+                "+2": 2,
+                "+3": 1,
+                "+4": 0
             }
         },
         "armorList": {
             "310601": {
                 "+0": 0,
-                "+1": 1,
-                "+2": 1,
+                "+1": 0,
+                "+2": 0,
                 "+3": 0,
                 "+4": 0
             },
             "310810": {
-                "+0": 6,
-                "+1": 1,
+                "+0": 5,
+                "+1": 0,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
@@ -22499,7 +23455,7 @@
             "330107": {
                 "+0": 0,
                 "+1": 0,
-                "+2": 0,
+                "+2": 7,
                 "+3": 0,
                 "+4": 0
             }
@@ -22511,8 +23467,8 @@
     "178533579842781186": {
         "_id": "178533579842781186",
         "characterId": "10450003_2400b505",
-        "exp": 1314301,
-        "gold": 4294867,
+        "exp": 1790188,
+        "gold": 3834367,
         "equipedWeapon": {
             "_id": "3004990",
             "plus": 4
@@ -22533,7 +23489,7 @@
             "Tree Branch": 25,
             "Old Silver Coin": 0,
             "Mountain Goat Horn": 12,
-            "Crystal": 51,
+            "Crystal": 25,
             "Soft Leather": 9,
             "Ruby": 77,
             "Onyx": 53,
@@ -22544,13 +23500,13 @@
             "Mithril Ore": 21,
             "Dragon Horn": 28,
             "Emerald": 58,
-            "Black Pearl": 52,
-            "Full Moon Fragment": 46,
+            "Black Pearl": 53,
+            "Full Moon Fragment": 47,
             "Holy Water": 20,
-            "Holy Cloth": 23,
+            "Holy Cloth": 24,
             "Rare Species Leather": 20,
-            "Ebony Branch": 32,
-            "Gold Ore": 35,
+            "Ebony Branch": 33,
+            "Gold Ore": 2,
             "Garnet": 72,
             "Chimera Horn": 64,
             "Sun Fragment": 21,
@@ -22573,14 +23529,15 @@
             "Iron Ore": 25,
             "Crescent Moon Fragment": 6,
             "Ominous Cloth": 31,
-            "Diamond": 74,
-            "Gold Mailbox": 6,
+            "Diamond": 75,
+            "Gold Mailbox": 11,
             "Unicorn Horn": 13,
-            "Silver Ore": 4,
-            "Chocolate Chip Ice": 7,
-            "Fruit": 92,
-            "Chocolate Bar": 89,
-            "Nuts": 95
+            "Silver Ore": 0,
+            "Chocolate Chip Ice": 6,
+            "Fruit": 19,
+            "Chocolate Bar": 10,
+            "Nuts": 13,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300301": {
@@ -22604,10 +23561,45 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3001980": {
+                "+0": 2,
+                "+1": 0,
+                "+2": 1,
+                "+3": 3,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
+            "3003980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 1,
+                "+4": 0
+            },
             "3004081": {
-                "+0": 4,
+                "+0": 0,
                 "+1": 2,
                 "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3004082": {
+                "+0": 3,
+                "+1": 8,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3004980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 1,
                 "+3": 0,
                 "+4": 0
             },
@@ -22616,6 +23608,34 @@
                 "+1": 0,
                 "+2": 0,
                 "+3": 0,
+                "+4": 0
+            },
+            "3005980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 3,
+                "+4": 1
+            },
+            "3006980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 2,
+                "+4": 0
+            },
+            "3007980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 0,
+                "+3": 2,
+                "+4": 1
+            },
+            "3008980": {
+                "+0": 0,
+                "+1": 1,
+                "+2": 0,
+                "+3": 2,
                 "+4": 0
             }
         },
@@ -22684,6 +23704,13 @@
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
+            },
+            "3299960": {
+                "+0": 1,
+                "+1": 1,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
             }
         },
         "position": "front",
@@ -22693,8 +23720,8 @@
     "222209133154271232": {
         "_id": "222209133154271232",
         "characterId": "10350002_63194dbd",
-        "exp": 1387492,
-        "gold": 3278000,
+        "exp": 2099240,
+        "gold": 5343825,
         "equipedWeapon": {
             "_id": "3003093",
             "plus": 3
@@ -22708,7 +23735,7 @@
             "plus": 2
         },
         "materialList": {
-            "Rose Quartz": 71,
+            "Rose Quartz": 29,
             "Rare Silver Coin": 0,
             "Copper Ore": 1,
             "Water": 8,
@@ -22716,14 +23743,14 @@
             "Old Silver Coin": 0,
             "Mountain Goat Horn": 12,
             "Star Fragment": 22,
-            "Turquoise": 65,
+            "Turquoise": 50,
             "Evergreen Oak Branch": 55,
             "Beautiful Cloth": 20,
             "Onyx": 59,
             "Aquamarine": 115,
             "Ruby": 119,
             "Clear Water": 39,
-            "Maple Branch": 75,
+            "Maple Branch": 5,
             "Iron Ore": 90,
             "Tanned Leather": 39,
             "Topaz": 105,
@@ -22731,40 +23758,47 @@
             "Soft Leather": 1,
             "Unicorn Horn": 29,
             "Water Buffalo Horn": 25,
-            "Holy Water": 46,
-            "Full Moon Fragment": 52,
-            "Lapis Lazuli": 78,
-            "Rare Species Leather": 53,
-            "Sun Fragment": 43,
-            "Magical Water": 83,
-            "Yggdrasil Branch": 44,
-            "Mithril Ore": 48,
-            "Luxurious Leather": 45,
-            "Holy Cloth": 55,
-            "Ebony Branch": 24,
-            "Garnet": 81,
-            "Diamond": 19,
-            "Black Pearl": 83,
-            "Emerald": 33,
-            "Chimera Horn": 99,
-            "Ominous Cloth": 5,
-            "Gold Ore": 140,
-            "Dragon Horn": 36,
+            "Holy Water": 58,
+            "Full Moon Fragment": 62,
+            "Lapis Lazuli": 90,
+            "Rare Species Leather": 69,
+            "Sun Fragment": 52,
+            "Magical Water": 104,
+            "Yggdrasil Branch": 56,
+            "Mithril Ore": 58,
+            "Luxurious Leather": 54,
+            "Holy Cloth": 64,
+            "Ebony Branch": 31,
+            "Garnet": 92,
+            "Diamond": 23,
+            "Black Pearl": 44,
+            "Emerald": 42,
+            "Chimera Horn": 105,
+            "Ominous Cloth": 17,
+            "Gold Ore": 152,
+            "Dragon Horn": 46,
             "Silver Ore": 0,
             "Labyrinth Fragment": 151,
             "Half Moon Fragment": 42,
             "Crescent Moon Fragment": 52,
             "Shimmering Water": 79,
-            "Luxurious Cloth": 15,
-            "Gold Mailbox": 7,
+            "Luxurious Cloth": 0,
+            "Gold Mailbox": 15,
             "Crystal": 21,
-            "Chocolate Chip Ice": 6,
-            "Chocolate Bar": 51,
-            "Fruit": 64,
-            "Weapon Hammer": 8,
-            "Nuts": 49
+            "Chocolate Chip Ice": 12,
+            "Chocolate Bar": 138,
+            "Fruit": 174,
+            "Weapon Hammer": 12,
+            "Nuts": 139
         },
         "weaponList": {
+            "300307": {
+                "+0": 9,
+                "+1": 6,
+                "+2": 1,
+                "+3": 0,
+                "+4": 0
+            },
             "300802": {
                 "+0": 0,
                 "+1": 1,
@@ -22787,15 +23821,15 @@
                 "+4": 0
             },
             "3001980": {
-                "+0": 0,
-                "+1": 2,
-                "+2": 2,
+                "+0": 1,
+                "+1": 4,
+                "+2": 3,
                 "+3": 1,
-                "+4": 0
+                "+4": 1
             },
             "3002980": {
-                "+0": 1,
-                "+1": 1,
+                "+0": 2,
+                "+1": 3,
                 "+2": 0,
                 "+3": 0,
                 "+4": 0
@@ -22822,28 +23856,28 @@
                 "+4": 0
             },
             "3003980": {
-                "+0": 1,
-                "+1": 1,
+                "+0": 3,
+                "+1": 2,
                 "+2": 1,
                 "+3": 0,
                 "+4": 0
             },
             "3004980": {
-                "+0": 0,
-                "+1": 1,
-                "+2": 0,
+                "+0": 2,
+                "+1": 2,
+                "+2": 1,
                 "+3": 0,
                 "+4": 0
             },
             "3005980": {
-                "+0": 0,
-                "+1": 2,
+                "+0": 1,
+                "+1": 4,
                 "+2": 0,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             },
             "3006980": {
-                "+0": 1,
+                "+0": 2,
                 "+1": 1,
                 "+2": 2,
                 "+3": 1,
@@ -22852,7 +23886,7 @@
             "3007980": {
                 "+0": 0,
                 "+1": 1,
-                "+2": 3,
+                "+2": 6,
                 "+3": 0,
                 "+4": 0
             },
@@ -22867,7 +23901,7 @@
                 "+0": 1,
                 "+1": 0,
                 "+2": 1,
-                "+3": 0,
+                "+3": 1,
                 "+4": 0
             }
         },
@@ -22931,8 +23965,8 @@
     "279026188243173386": {
         "_id": "279026188243173386",
         "characterId": "10350003_fcc3ce23",
-        "exp": 995679,
-        "gold": 1289678,
+        "exp": 1673364,
+        "gold": 5493938,
         "equipedWeapon": {
             "_id": "308320",
             "plus": 2
@@ -22948,54 +23982,55 @@
         "materialList": {
             "Copper Ore": 2,
             "Rare Silver Coin": 0,
-            "Black Pearl": 45,
-            "Yggdrasil Branch": 27,
-            "Ebony Branch": 24,
-            "Holy Water": 22,
-            "Diamond": 23,
-            "Chimera Horn": 33,
-            "Holy Cloth": 20,
-            "Magical Water": 23,
-            "Full Moon Fragment": 58,
-            "Garnet": 20,
-            "Lapis Lazuli": 11,
-            "Sun Fragment": 27,
-            "Dragon Horn": 20,
-            "Ominous Cloth": 17,
-            "Rose Quartz": 24,
-            "Topaz": 89,
+            "Black Pearl": 2,
+            "Yggdrasil Branch": 34,
+            "Ebony Branch": 33,
+            "Holy Water": 30,
+            "Diamond": 30,
+            "Chimera Horn": 37,
+            "Holy Cloth": 31,
+            "Magical Water": 33,
+            "Full Moon Fragment": 66,
+            "Garnet": 30,
+            "Lapis Lazuli": 17,
+            "Sun Fragment": 32,
+            "Dragon Horn": 32,
+            "Ominous Cloth": 27,
+            "Rose Quartz": 7,
+            "Topaz": 39,
             "Water Buffalo Horn": 50,
             "Onyx": 19,
             "Unicorn Horn": 53,
-            "Turquoise": 81,
+            "Turquoise": 70,
             "Mountain Goat Horn": 17,
-            "Ruby": 73,
+            "Ruby": 23,
             "Tanned Leather": 71,
-            "Luxurious Leather": 14,
-            "Rare Species Leather": 24,
-            "Gold Ore": 40,
-            "Emerald": 26,
-            "Mithril Ore": 24,
+            "Luxurious Leather": 20,
+            "Rare Species Leather": 34,
+            "Gold Ore": 48,
+            "Emerald": 6,
+            "Mithril Ore": 33,
             "Labyrinth Fragment": 210,
             "Clear Water": 29,
             "Half Moon Fragment": 93,
-            "Maple Branch": 21,
+            "Maple Branch": 39,
             "Shimmering Water": 36,
-            "Luxurious Cloth": 25,
+            "Luxurious Cloth": 14,
             "Beautiful Cloth": 23,
             "Hard Leather": 70,
             "Crescent Moon Fragment": 64,
             "Iron Ore": 31,
             "Silver Ore": 1,
             "Evergreen Oak Branch": 27,
-            "Gold Mailbox": 3,
+            "Gold Mailbox": 6,
             "Crystal": 0,
-            "Aquamarine": 82,
-            "Chocolate Chip Ice": 6,
-            "Fruit": 111,
-            "Chocolate Bar": 99,
-            "Nuts": 85,
-            "Weapon Hammer": 2
+            "Aquamarine": 32,
+            "Chocolate Chip Ice": 9,
+            "Fruit": 164,
+            "Chocolate Bar": 127,
+            "Nuts": 160,
+            "Weapon Hammer": 5,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300201": {
@@ -23013,9 +24048,9 @@
                 "+4": 0
             },
             "300307": {
-                "+0": 0,
-                "+1": 1,
-                "+2": 0,
+                "+0": 5,
+                "+1": 5,
+                "+2": 1,
                 "+3": 0,
                 "+4": 0
             },
@@ -23027,10 +24062,17 @@
                 "+4": 0
             },
             "3001980": {
-                "+0": 1,
-                "+1": 0,
-                "+2": 0,
+                "+0": 4,
+                "+1": 3,
+                "+2": 2,
                 "+3": 0,
+                "+4": 0
+            },
+            "3002980": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 1,
+                "+3": 1,
                 "+4": 0
             },
             "3003081": {
@@ -23040,15 +24082,43 @@
                 "+3": 0,
                 "+4": 0
             },
+            "3003980": {
+                "+0": 3,
+                "+1": 3,
+                "+2": 2,
+                "+3": 0,
+                "+4": 0
+            },
             "3004980": {
-                "+0": 0,
+                "+0": 3,
+                "+1": 2,
+                "+2": 2,
+                "+3": 1,
+                "+4": 0
+            },
+            "3005980": {
+                "+0": 3,
                 "+1": 1,
                 "+2": 1,
                 "+3": 0,
                 "+4": 0
             },
             "3006980": {
-                "+0": 0,
+                "+0": 4,
+                "+1": 3,
+                "+2": 0,
+                "+3": 1,
+                "+4": 0
+            },
+            "3007980": {
+                "+0": 2,
+                "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            },
+            "3008980": {
+                "+0": 3,
                 "+1": 1,
                 "+2": 0,
                 "+3": 0,
@@ -23110,7 +24180,8 @@
             "Fruit": 19,
             "Chocolate Bar": 19,
             "Nuts": 29,
-            "Silver Mailbox": 3
+            "Silver Mailbox": 3,
+            "Accessory Hammer": 1
         },
         "weaponList": {
             "300801": {
@@ -23137,19 +24208,34 @@
     },
     "280098264085168138": {
         "_id": "280098264085168138",
-        "characterId": "10530003_a8c67f34",
-        "exp": 1176,
-        "gold": 13221,
-        "equipedWeapon": null,
+        "characterId": "10820001_7129f3b2",
+        "exp": 5181,
+        "gold": 54542,
+        "equipedWeapon": {
+            "_id": "300801",
+            "plus": 1
+        },
         "equipedArmor": null,
         "equipedAccessory": null,
         "materialList": {
             "Copper Ore": 9,
             "Rare Silver Coin": 1,
-            "Ruby": 2,
-            "Soft Leather": 2
+            "Ruby": 3,
+            "Soft Leather": 5,
+            "Accessory Hammer": 1,
+            "Chocolate Bar": 6,
+            "Fruit": 3,
+            "Nuts": 1
         },
-        "weaponList": {},
+        "weaponList": {
+            "300801": {
+                "+0": 0,
+                "+1": 0,
+                "+2": 0,
+                "+3": 0,
+                "+4": 0
+            }
+        },
         "armorList": {},
         "accessoryList": {},
         "position": "front",
@@ -23159,15 +24245,33 @@
     "197537355752669184": {
         "_id": "197537355752669184",
         "characterId": "10349001_eea406c9",
-        "exp": 112,
-        "gold": 100,
+        "exp": 572,
+        "gold": 600,
         "equipedWeapon": null,
         "equipedArmor": null,
         "equipedAccessory": null,
         "materialList": {
             "Rare Silver Coin": 2,
-            "Copper Ore": 1
+            "Copper Ore": 1,
+            "Accessory Hammer": 1,
+            "Water": 20
         },
+        "weaponList": {},
+        "armorList": {},
+        "accessoryList": {},
+        "position": "front",
+        "partnerId": null,
+        "ceoPower": false
+    },
+    "104619483485716480": {
+        "_id": "104619483485716480",
+        "characterId": "10740006_feff4fd6",
+        "exp": 0,
+        "gold": 0,
+        "equipedWeapon": null,
+        "equipedArmor": null,
+        "equipedAccessory": null,
+        "materialList": {},
         "weaponList": {},
         "armorList": {},
         "accessoryList": {},
