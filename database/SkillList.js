@@ -1662,9 +1662,7 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 0,
-                    true, {
-                        "Paralyze": 30,
-                    }
+                    true, {}
                 )
             ]
         },
@@ -1676,14 +1674,12 @@ module.exports = {
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_SINGLE,
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.6, 1,
+                    0.8, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 0,
-                    true, {
-                        "Paralyze": 30,
-                    }
+                    true, {}
                 )
             ]
         },
