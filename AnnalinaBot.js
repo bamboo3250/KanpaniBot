@@ -112,7 +112,7 @@ if (isLocal) {
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3001980",
+                _id: "3003980",
                 plus: 4
             },
             equipedArmor: {
