@@ -5006,6 +5006,494 @@ module.exports = {
         }
     ],
 
+    "valentine2-black": [
+        {
+            _id: "3001851", modelId: "85", name: "Patisserie Blade", commonNames: ["Patisserie Blade"],
+            classId: 1, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
+                    frontSkill: "Nappe Slash", backSkill: "Slash"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 16, eva: 18,
+                    frontSkill: "Nappe Slash", backSkill: "Slash"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 16, eva: 22,
+                    frontSkill: "Nappe Slash", backSkill: "V Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 16, eva: 28,
+                    frontSkill: "Nappe Slash", backSkill: "V Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 16, eva: 35,
+                    frontSkill: "Nappe Slash", backSkill: "V Slash"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3002851", modelId: "85", name: "Chou - Ikiiggatana", commonNames: ["Chou - Ikiiggatana"],
+            classId: 2, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Slash"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Slash"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Cleave"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Cleave"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 0, eva: 40,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Cleave"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3003851", modelId: "85", name: "Love Bow \"Honmei\"", commonNames: ["Love Bow \"Honmei\""],
+            classId: 3, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Single Shot", backSkill: "Gift Snipe"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Single Shot", backSkill: "Gift Snipe"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Twin Shot", backSkill: "Gift Snipe"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Twin Shot", backSkill: "Gift Snipe"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Twin Shot", backSkill: "Gift Snipe"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3004851", modelId: "85", name: "Cream Cacao Lance", commonNames: ["Cream Cacao Lance"],
+            classId: 4, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Squeeze Strike", backSkill: "Spear Jab"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Squeeze Strike", backSkill: "Spear Jab"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Squeeze Strike", backSkill: "Double Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Squeeze Strike", backSkill: "Double Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Squeeze Strike", backSkill: "Double Strike"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3005851", modelId: "85", name: "Warrior Beater", commonNames: ["Warrior Beater"],
+            classId: 5, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Fouet Impact", backSkill: "Crash"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Fouet Impact", backSkill: "Crash"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Fouet Impact", backSkill: "Swing"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Fouet Impact", backSkill: "Swing"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Fouet Impact", backSkill: "Swing"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3006851", modelId: "85", name: "Claudius 2nd", commonNames: ["Claudius 2nd"],
+            classId: 6, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3007851", modelId: "85", name: "Battle Spoon Oosaji", commonNames: ["Battle Spoon Oosaji"],
+            classId: 7, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Twin Attack"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Twin Attack"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Dance Formation"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Dance Formation"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Dance Formation"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3008851", modelId: "85", name: "Cacao Mass Wand", commonNames: ["Cacao Mass Wand"],
+            classId: 8, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Fire Ball", backSkill: "Theobroma"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Fire Ball", backSkill: "Theobroma"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Darkness Blade", backSkill: "Theobroma"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Darkness Blade", backSkill: "Theobroma"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Darkness Blade", backSkill: "Theobroma"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
+    "valentine2-white": [
+        {
+            _id: "3001861", modelId: "86", name: "Spatule Sword", commonNames: ["Spatule Sword"],
+            classId: 1, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
+                    frontSkill: "Nappe Slash", backSkill: "Slash"
+                },
+                "+1": { price: 1500,
+                    patk: 71, pdef: 66, matk: 0, mdef: 73, crit: 19, hit: 16, eva: 18,
+                    frontSkill: "Nappe Slash", backSkill: "Slash"
+                },
+                "+2": { price: 1500,
+                    patk: 92, pdef: 81, matk: 0, mdef: 91, crit: 24, hit: 16, eva: 22,
+                    frontSkill: "Nappe Slash", backSkill: "V Slash"
+                },
+                "+3": { price: 1500,
+                    patk: 107, pdef: 95, matk: 0, mdef: 100, crit: 27, hit: 16, eva: 28,
+                    frontSkill: "Nappe Slash", backSkill: "V Slash"
+                },
+                "+4": { price: 1500,
+                    patk: 173, pdef: 154, matk: 0, mdef: 157, crit: 35, hit: 16, eva: 35,
+                    frontSkill: "Nappe Slash", backSkill: "V Slash"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3002861", modelId: "86", name: "Shin - Hanabanaomaru", commonNames: ["Shin - Hanabanaomaru"],
+            classId: 2, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Slash"
+                },
+                "+1": { price: 1500,
+                    patk: 119, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 25,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Slash"
+                },
+                "+2": { price: 1500,
+                    patk: 160, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 30,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Cleave"
+                },
+                "+3": { price: 1500,
+                    patk: 186, pdef: 0, matk: 0, mdef: 0, crit: 40, hit: 0, eva: 33,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Cleave"
+                },
+                "+4": { price: 1500,
+                    patk: 298, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 0, eva: 40,
+                    frontSkill: "Thousand-Night Powder Sword", backSkill: "Cleave"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3003861", modelId: "86", name: "Bow of Lupercus", commonNames: ["Bow of Lupercus"],
+            classId: 3, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
+                    frontSkill: "Single Shot", backSkill: "Gift Snipe"
+                },
+                "+1": { price: 1500,
+                    patk: 93, pdef: 0, matk: 0, mdef: 0, crit: 17, hit: 0, eva: 18,
+                    frontSkill: "Single Shot", backSkill: "Gift Snipe"
+                },
+                "+2": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 21,
+                    frontSkill: "Twin Shot", backSkill: "Gift Snipe"
+                },
+                "+3": { price: 1500,
+                    patk: 155, pdef: 0, matk: 0, mdef: 0, crit: 29, hit: 0, eva: 35,
+                    frontSkill: "Twin Shot", backSkill: "Gift Snipe"
+                },
+                "+4": { price: 1500,
+                    patk: 269, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 40,
+                    frontSkill: "Twin Shot", backSkill: "Gift Snipe"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3004861", modelId: "86", name: "Cream Cacao Spear", commonNames: ["Cream Cacao Spear"],
+            classId: 4, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
+                    frontSkill: "Squeeze Strike", backSkill: "Spear Jab"
+                },
+                "+1": { price: 1500,
+                    patk: 32, pdef: 69, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 20,
+                    frontSkill: "Squeeze Strike", backSkill: "Spear Jab"
+                },
+                "+2": { price: 1500,
+                    patk: 41, pdef: 95, matk: 0, mdef: 0, crit: 20, hit: 0, eva: 22,
+                    frontSkill: "Squeeze Strike", backSkill: "Double Strike"
+                },
+                "+3": { price: 1500,
+                    patk: 46, pdef: 129, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 23,
+                    frontSkill: "Squeeze Strike", backSkill: "Double Strike"
+                },
+                "+4": { price: 1500,
+                    patk: 82, pdef: 246, matk: 0, mdef: 0, crit: 35, hit: 0, eva: 25,
+                    frontSkill: "Squeeze Strike", backSkill: "Double Strike"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3005861", modelId: "86", name: "Warrior Whipper", commonNames: ["Warrior Whipper"],
+            classId: 5, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Fouet Impact", backSkill: "Crash"
+                },
+                "+1": { price: 1500,
+                    patk: 148, pdef: 0, matk: 0, mdef: 0, crit: 18, hit: 0, eva: 18,
+                    frontSkill: "Fouet Impact", backSkill: "Crash"
+                },
+                "+2": { price: 1500,
+                    patk: 187, pdef: 0, matk: 0, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Fouet Impact", backSkill: "Swing"
+                },
+                "+3": { price: 1500,
+                    patk: 248, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 25,
+                    frontSkill: "Fouet Impact", backSkill: "Swing"
+                },
+                "+4": { price: 1500,
+                    patk: 450, pdef: 0, matk: 0, mdef: 0, crit: 30, hit: 0, eva: 30,
+                    frontSkill: "Fouet Impact", backSkill: "Swing"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3006861", modelId: "86", name: "Saint Valentine", commonNames: ["Saint Valentine"],
+            classId: 6, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 28, matk: 73, mdef: 30, crit: 16, hit: 0, eva: 29,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 37, matk: 95, mdef: 40, crit: 19, hit: 0, eva: 30,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 49, matk: 119, mdef: 49, crit: 22, hit: 0, eva: 32,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 89, matk: 230, mdef: 91, crit: 25, hit: 0, eva: 35,
+                    frontSkill: "Knock", backSkill: "Cake de Heal"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3007861", modelId: "86", name: "Lovely Spoon Oosaji", commonNames: ["Lovely Spoon Oosaji"],
+            classId: 7, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Twin Attack"
+                },
+                "+1": { price: 1500,
+                    patk: 70, pdef: 0, matk: 0, mdef: 0, crit: 37, hit: 25, eva: 37,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Twin Attack"
+                },
+                "+2": { price: 1500,
+                    patk: 79, pdef: 0, matk: 0, mdef: 0, crit: 39, hit: 25, eva: 39,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Dance Formation"
+                },
+                "+3": { price: 1500,
+                    patk: 122, pdef: 0, matk: 0, mdef: 0, crit: 42, hit: 30, eva: 42,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Dance Formation"
+                },
+                "+4": { price: 1500,
+                    patk: 204, pdef: 0, matk: 0, mdef: 0, crit: 45, hit: 30, eva: 45,
+                    frontSkill: "Sprinkle Sugar", backSkill: "Dance Formation"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        },{
+            _id: "3008861", modelId: "86", name: "Yunofes Wand", commonNames: ["Yunofes Wand"],
+            classId: 8, type: "event", isActive: true, stats: {
+                "+0": { price: 1500,
+                    patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
+                    frontSkill: "Fire Ball", backSkill: "Theobroma"
+                },
+                "+1": { price: 1500,
+                    patk: 0, pdef: 0, matk: 93, mdef: 0, crit: 19, hit: 0, eva: 19,
+                    frontSkill: "Fire Ball", backSkill: "Theobroma"
+                },
+                "+2": { price: 1500,
+                    patk: 0, pdef: 0, matk: 118, mdef: 0, crit: 23, hit: 0, eva: 23,
+                    frontSkill: "Darkness Blade", backSkill: "Theobroma"
+                },
+                "+3": { price: 1500,
+                    patk: 0, pdef: 0, matk: 160, mdef: 0, crit: 24, hit: 0, eva: 24,
+                    frontSkill: "Darkness Blade", backSkill: "Theobroma"
+                },
+                "+4": { price: 1500,
+                    patk: 0, pdef: 0, matk: 260, mdef: 0, crit: 35, hit: 0, eva: 35,
+                    frontSkill: "Darkness Blade", backSkill: "Theobroma"
+                }
+            },
+            note: "", devCost: 15000, levelRequired: 10, tier: 4, recipe: [
+                {
+                    materialName: "Magical Cacao",
+                    amount: 2
+                }
+            ]
+        }
+    ],
+
     "cw": [
         {
             _id: "308119", modelId: "19", name: "Fenris Novem", commonNames: ["Fenris Novem"],
@@ -5204,7 +5692,7 @@ module.exports = {
             characterId: "10550001_27d912ef", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,
                     patk: 227, pdef: 0, matk: 0, mdef: 0, crit: 100, hit: 24, eva: 0,
-                    frontSkill: "Flame Fall", backSkill: "Crash"
+                    frontSkill: "Flamefall", backSkill: "Crash"
                 },
                 "+1": { price: 6000,
                     patk: 303, pdef: 0, matk: 0, mdef: 0, crit: 120, hit: 24, eva: 0,

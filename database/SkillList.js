@@ -371,6 +371,25 @@ module.exports = {
                 )
             ]
         },
+        "Nappe Slash": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    0.7, 3,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 3,
+                    true, {
+                        "Charm": 25,
+                    }
+                )
+            ]
+        },
         "Einzelkampf": {
             canAttack: true,
             canHeal: false,
@@ -730,6 +749,25 @@ module.exports = {
                     true, {
                         "Pdef Down": 20,
                         "Mdef Down": 20
+                    }
+                )
+            ]
+        },
+        "Thousand-Night Powder Sword": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    0.75, 3,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 3,
+                    true, {
+                        "Charm": 15
                     }
                 )
             ]
@@ -1125,6 +1163,25 @@ module.exports = {
                 )
             ]
         },
+        "Gift Snipe": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
+                    0.77, 2,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack08", 9,
+                    false, {
+                        "Charm": 20
+                    }
+                )
+            ]
+        },
         "Nasu-style Secret Move - Hinano": {
             canAttack: true,
             canHeal: false,
@@ -1443,6 +1500,25 @@ module.exports = {
                 )
             ]
         },
+        "Beast Sweeper": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    0.7, 3,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack03", 3,
+                    true, {
+                        "Charm": 20
+                    }
+                )
+            ]
+        },
         "Fimbulvetr": {
             canAttack: true,
             canHeal: false,
@@ -1587,24 +1663,6 @@ module.exports = {
                     0.95, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
-                    SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
-                )
-            ]
-        },
-        "Flame Fall": {
-            canAttack: true,
-            canHeal: false,
-            cooldown: 5,
-            phases: [
-                new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
-                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.6, 1,
-                    SkillPhaseConst.DAMAGE_PHYSICAL,
-                    SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
                     "attack05", 0,
                     true,
@@ -1808,6 +1866,25 @@ module.exports = {
                     true, {
                         "Pdef Down": 15,
                         "Mdef Down": 15
+                    }
+                )
+            ]
+        },
+        "Fouet Impact": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    0.8, 2,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack05", 0,
+                    true, {
+                        "Charm": 20
                     }
                 )
             ]
@@ -2085,6 +2162,25 @@ module.exports = {
             ]
         },
         "Refreshing Moment": {
+            canAttack: false,
+            canHeal: true,
+            cooldown: 8,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                    SkillPhaseConst.TYPE_HEALING,
+                    0.5, 1,
+                    SkillPhaseConst.DAMAGE_MAGICAL,
+                    SkillPhaseConst.ELEMENT_LIGHT,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack02", 6,
+                    false, {
+                        "Cleanse": 100
+                    }
+                )
+            ]
+        },
+        "Cake de Heal": {
             canAttack: false,
             canHeal: true,
             cooldown: 8,
@@ -2496,6 +2592,26 @@ module.exports = {
                     true, {
                         "Pdef Down": 20,
                         "Mdef Down": 20
+                    }
+                )
+            ]
+        },
+        "Sprinkle Sugar": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_ROW,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
+                    0.7, 2,
+                    SkillPhaseConst.DAMAGE_PHYSICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 3,
+                    true, {
+                        "Charm": 15,
+                        "Darkness": 15
                     }
                 )
             ]
@@ -2918,6 +3034,25 @@ module.exports = {
                     SkillPhaseConst.SKILL_PATTERN_ALL,
                     SkillPhaseConst.TYPE_SPELL_ATTACK,
                     0.7, 1,
+                    SkillPhaseConst.DAMAGE_MAGICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 13,
+                    false, {
+                        "Charm": 10
+                    }
+                )
+            ]
+        },
+        "Theobroma": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 5,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                    SkillPhaseConst.TYPE_SPELL_ATTACK,
+                    0.55, 3,
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
