@@ -221,6 +221,11 @@ var itemInfos = [
         _id: "40088001_1", itemName: "Magical Cacao", price: 50
     }
 
+    ,{
+        _id: "91000101_1", itemName: "Promotion Badge", price: 0
+    }
+
+
 
 ];
 

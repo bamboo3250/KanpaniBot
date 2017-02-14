@@ -19,5 +19,7 @@ module.exports = {
             chocolate = bot.kettle.chocolate[userId];
         }
         text += "Your Chocolate: **" + chocolate + "**\n"
+
+        message.reply(text);
     }
 }

@@ -62,6 +62,9 @@ var wakeUpCommand = require('./commands/WakeUpCommand');
 var aromaCommand = require('./commands/AromaCommand');
 var sellPageCommand = require('./commands/SellPageCommand');
 var ceoPowerCommand = require('./commands/CEOPowerCommand');
+var kettleCommand = require('./commands/KettleCommand');
+var shopCommand = require('./commands/ShopCommand');
+var buyCommand = require('./commands/BuyCommand');
 
 var attackCommand = require('./commands/AttackCommand');
 var healCommand = require('./commands/HealCommand');
@@ -209,6 +212,7 @@ function EmployeeBot() {
     this.unsubscribe = {};
     this.grindId = {};
     this.auctionId = {};
+    this.shop = {};
 
     this.logChannel = null;
     this.battleChannel = null;
@@ -456,6 +460,9 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         encourageCommand.handle(message, this);
         sneakCommand.handle(message, this);
         focusCommand.handle(message, this);
+        kettleCommand.handle(message, this);
+        shopCommand.handle(message, this);
+        buyCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -698,6 +705,37 @@ EmployeeBot.prototype.loadDailyGift = function() {
     });
 }
 
+var shopFileName = "shop.json";
+EmployeeBot.prototype.saveShop = function() {
+    var textToWrite = JSON.stringify(this.shop, null, 4);
+    var that = this;
+    fs.writeFile(shopFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    }); 
+}
+
+EmployeeBot.prototype.loadShop = function() {
+    var that = this;
+    this.log("loadShop");
+    console.log("loadShop");
+    fs.readFile(shopFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadShop] Read file error.\n" + err);
+            return;
+        }
+        try {
+            that.shop = JSON.parse(data);
+        }
+        catch (err) {
+            console.log(err);
+            that.log(err);
+        }
+    });
+}
+
 // var christmasTreeFileName = "christmasTree.json";
 // EmployeeBot.prototype.saveChristmasTree = function() {
 //     var textToWrite = JSON.stringify(this.christmasTreeContribution, null, 4);
@@ -789,7 +827,7 @@ EmployeeBot.prototype.loadKettle = function() {
 }
 
 var cacaoRequiredForLevel = [
-    0, 6, 16, 33, 60, 105, 177, 295, 488, 802
+    0, 6, 16, 33, 60, 105, 177, 295, 488, 802,
     1313, 2148, 3507, 5723, 9336, 15224, 24821, 40465, 65964, 107528
 ];
 
@@ -808,7 +846,7 @@ EmployeeBot.prototype.getKettleLevel = function() {
 EmployeeBot.prototype.getCacaoRequiredUntilNextLevel = function() {
     var curLevel = this.getKettleLevel();
     var nextLevel = Math.min(curLevel+1, cacaoRequiredForLevel.length);
-    return cacaoRequiredForLevel[nextLevel-1] - cacaoRequiredForLevel[curLevel-1];
+    return cacaoRequiredForLevel[nextLevel-1] - this.kettle.totalCacao;
 }
 
 EmployeeBot.prototype.getKettleProduction = function() {
@@ -1021,6 +1059,7 @@ EmployeeBot.prototype.ready = function() {
         this.loadBread();
         this.loadDailyGift();
         this.loadUnsubscribe();
+        this.loadShop();
         // this.loadChristmasTree();
         this.loadPlayer(function() {
             that.userManager.fetchAllMembers(function() {

@@ -1,0 +1,58 @@
+{
+    "Promotion Badge": {
+        "amount": 5,
+        "maxAmount": 5,
+        "price": {
+            "amount": 34000000,
+            "unit": "Chocolate"
+        }
+    },
+    "Weapon Hammer": {
+        "amount": 500,
+        "maxAmount": 500,
+        "price": {
+            "amount": 1000000,
+            "unit": "Chocolate"
+        }
+    },
+    "Armor Hammer": {
+        "amount": 500,
+        "maxAmount": 500,
+        "price": {
+            "amount": 1000000,
+            "unit": "Chocolate"
+        }
+    },
+    "Accessory Hammer": {
+        "amount": 500,
+        "maxAmount": 500,
+        "price": {
+            "amount": 1000000,
+            "unit": "Chocolate"
+        }
+    },
+    "Gold Mailbox": {
+        "amount": 100,
+        "maxAmount": 100,
+        "price": {
+            "amount": 4000000,
+            "unit": "Chocolate"
+        }
+    },
+    "Forge": {
+        "amount": 100,
+        "maxAmount": 100,
+        "price": {
+            "amount": 4000000,
+            "unit": "Chocolate"
+        }
+    },
+    "Food Pack": {
+        "amount": 50,
+        "maxAmount": 50,
+        "price": {
+            "amount": 3000000,
+            "unit": "Chocolate"
+        }
+    }
+}
