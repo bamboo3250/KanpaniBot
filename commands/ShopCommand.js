@@ -3,6 +3,11 @@ module.exports = {
         var command = bot.functionHelper.parseCommand(message);
         if (command.commandName != "~shop") return;
 
+        if (!bot.isPM(message)) {
+            message.reply("You can roll in Private Message only.");
+            return;
+        }
+
         var text = "";
         for(key in bot.shop) {
             var itemName = key;
