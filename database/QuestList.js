@@ -455,28 +455,28 @@ var quests = [
     {
         commonNames: ["Valentine2-beginner"], name: "Valentine's Day Limited Quest: Beginner", 
         isActive: true, levelRequired: 10, timeCost: 30, goldCost: 0, breadCost: 1, 
-        goldReward: 10000, breadReward: 0, exp: 2000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 45,
+        goldReward: 20000, breadReward: 0, exp: 2000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 45,
         dropList: [
             "Magical Cacao"
         ]
     },{
         commonNames: ["Valentine2-inter"], name: "Valentine's Day Limited Quest: Intermediate", 
         isActive: true, levelRequired: 30, timeCost: 60, goldCost: 0, breadCost: 1, 
-        goldReward: 15000, breadReward: 0, exp: 6000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 90,
+        goldReward: 30000, breadReward: 0, exp: 6000, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 90,
         dropList: [
             "Magical Cacao"
         ]
     },{
         commonNames: ["Valentine2-hard"], name: "Valentine's Day Limited Quest: Hard", 
         isActive: true, levelRequired: 50, timeCost: 90, goldCost: 0, breadCost: 1, 
-        goldReward: 20000, breadReward: 0, exp: 10800, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 135,
+        goldReward: 40000, breadReward: 0, exp: 10800, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 135,
         dropList: [
             "Magical Cacao"
         ]
     },{
         commonNames: ["Valentine2-ultra"], name: "Valentine's Day Limited Quest: Ultra", 
         isActive: true, levelRequired: 70, timeCost: 120, goldCost: 0, breadCost: 1, 
-        goldReward: 20000, breadReward: 0, exp: 15600, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 200,
+        goldReward: 80000, breadReward: 0, exp: 15600, advantage: [1, 2, 3, 4, 5, 6, 7, 8], numItemDrop: 200,
         dropList: [
             "Magical Cacao"
         ]

@@ -332,10 +332,10 @@ if (isLocal) {
         {
             _id: "241511566036434945",  // Elsa Guest
             characterId: "10150002_765306d2",
-            exp: 5370000,//10707880,
+            exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3001980",
+                _id: "3001851",
                 plus: 3
             },
             equipedArmor: {
@@ -356,10 +356,10 @@ if (isLocal) {
         },{
             _id: "275533845984575488",  // Nona Guest
             characterId: "10650003_314afe6a",
-            exp: 5370000,//10707880,
+            exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3006980",
+                _id: "3006851",
                 plus: 4
             },
             equipedArmor: {
@@ -380,10 +380,10 @@ if (isLocal) {
         },{
             _id: "272259125256388610",  // Sytry Guest
             characterId: "10850002_c4678df9",
-            exp: 5370000,//10707880,
+            exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3008980",
+                _id: "3008851",
                 plus: 4
             },
             equipedArmor: {
