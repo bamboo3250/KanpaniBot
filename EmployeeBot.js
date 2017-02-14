@@ -242,54 +242,59 @@ function EmployeeBot() {
     //         amount: 3
     //     }
     // }
-    this.aromaEffect = null;
-    this.aromaTimeout = null;
+    //this.aromaEffect = null;
+    //this.aromaTimeout = null;
 
-    this.aromaRewardList = [
-        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-        "Magnificent Silver Coin",
-        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-        "Magnificent Silver Coin",
-        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-        "Magnificent Silver Coin",
-        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-        "Magnificent Silver Coin",
-        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-        "Magnificent Silver Coin",
-        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-        "Magnificent Silver Coin",
-        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-        "Magnificent Silver Coin",
-        "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-        "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-        "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-        "Magnificent Silver Coin",
-        "Weapon Hammer",
-        "Armor Hammer",
-        "Accessory Hammer",
-        "Forge"
-    ];
+    // this.aromaRewardList = [
+    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+    //     "Magnificent Silver Coin",
+    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+    //     "Magnificent Silver Coin",
+    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+    //     "Magnificent Silver Coin",
+    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+    //     "Magnificent Silver Coin",
+    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+    //     "Magnificent Silver Coin",
+    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+    //     "Magnificent Silver Coin",
+    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+    //     "Magnificent Silver Coin",
+    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
+    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
+    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
+    //     "Magnificent Silver Coin",
+    //     "Weapon Hammer",
+    //     "Armor Hammer",
+    //     "Accessory Hammer",
+    //     "Forge"
+    // ];
 
-    this.aromaLimitReward = {
-        "Weapon Hammer": 5,
-        "Armor Hammer": 5,
-        "Accessory Hammer": 5,
-        "Forge": 1
-    }
+    // this.aromaLimitReward = {
+    //     "Weapon Hammer": 5,
+    //     "Armor Hammer": 5,
+    //     "Accessory Hammer": 5,
+    //     "Forge": 1
+    // }
+    this.kettle = {
+        totalCacao: 0,
+        contribution: {},
+        chocolate: {}
+    };
 }
 
 EmployeeBot.prototype.randomArmor = function(classId) {
@@ -730,7 +735,7 @@ EmployeeBot.prototype.saveAroma = function() {
             that.log(err);
             return;  
         } 
-    }); 
+    });
 }
 
 EmployeeBot.prototype.loadAroma = function() {
@@ -750,6 +755,84 @@ EmployeeBot.prototype.loadAroma = function() {
             that.log(err);
         }
     });
+}
+
+var kettleFileName = "kettle.json";
+EmployeeBot.prototype.saveKettle = function() {
+    var textToWrite = JSON.stringify(this.kettle, null, 4);
+    var that = this;
+    fs.writeFile(kettleFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;  
+        } 
+    });
+}
+
+EmployeeBot.prototype.loadKettle = function() {
+    var that = this;
+    this.log("loadKettle");
+    fs.readFile(kettleFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log("[loadKettle] Read file error.\n" + err);
+            that.startKettle();
+            return;
+        }
+        try {
+            that.kettle = JSON.parse(data);
+            that.startKettle();
+        }
+        catch (err) {
+            that.log(err);
+        }
+    });
+}
+
+var cacaoRequiredForLevel = [
+    0, 6, 16, 33, 60, 105, 177, 295, 488, 802
+    1313, 2148, 3507, 5723, 9336, 15224, 24821, 40465, 65964, 107528
+];
+
+var productionForLevel = [
+    60, 120, 240, 360, 480, 600, 900, 1200, 1500, 1800,
+    2100, 2400, 2880, 3360, 3840, 4320, 4800, 5280, 5760, 6720
+];
+
+EmployeeBot.prototype.getKettleLevel = function() {
+    for(var i=0;i<cacaoRequiredForLevel.length;i++) {
+        if (cacaoRequiredForLevel[i] > this.kettle.totalCacao) return i;
+    }
+    return cacaoRequiredForLevel.length;
+}
+
+EmployeeBot.prototype.getCacaoRequiredUntilNextLevel = function() {
+    var curLevel = this.getKettleLevel();
+    var nextLevel = Math.min(curLevel+1, cacaoRequiredForLevel.length);
+    return cacaoRequiredForLevel[nextLevel-1] - cacaoRequiredForLevel[curLevel-1];
+}
+
+EmployeeBot.prototype.getKettleProduction = function() {
+    return productionForLevel[this.getKettleLevel() - 1];
+}
+
+EmployeeBot.prototype.startKettle = function() {
+    var that = this;
+    setInterval(function() {
+        var production = that.getKettleProduction();
+        for(key in that.kettle.contribution) {
+            var userId = key;
+            if (that.kettle.contribution[userId] > 0) {
+                that.kettle.contribution[userId]--;
+
+                if (typeof that.kettle.chocolate[userId] == "undefined") {
+                    that.kettle.chocolate[userId] = 0;
+                }
+                that.kettle.chocolate[userId] += production;
+            }
+        }
+
+        that.saveKettle();
+    }, 60*1000);
 }
 
 var runQuestStatusFileName = "runQuestStatus.json";
@@ -943,11 +1026,11 @@ EmployeeBot.prototype.ready = function() {
             that.userManager.fetchAllMembers(function() {
                 that.loadRunQuestStatus();
                 that.loadAuction();
-                that.loadAroma();
+                //that.loadAroma();
                 that.removeFaintedRole();
             });
         });
-        
+        this.loadKettle();
 
         return true;
     } else {

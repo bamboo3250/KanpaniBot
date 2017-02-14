@@ -53,6 +53,13 @@ function isAromaOil(itemName) {
     return contains(itemListList, itemName);
 }
 
+function isCacao(itemName) {
+    var itemListList = [
+        "Magical Cacao"
+    ];
+    return contains(itemListList, itemName);
+}
+
 function isIceCream(itemName) {
     var itemListList = [
         "Chocolate Chip Ice"
@@ -65,7 +72,8 @@ function isUsable(itemName) {
         || isHammer(itemName) 
         || isForge(itemName) 
         || isBread(itemName)
-        || isIceCream(itemName);
+        || isIceCream(itemName)
+        || isCacao(itemName);
         // || isEldLight(itemName) 
         // || isAromaOil(itemName);
 }
@@ -550,6 +558,22 @@ module.exports = {
             bot.playerManager.spendItem(userId, materialInfo.itemName);
             bot.savePlayer();
             message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 3 hours.");
+        } else if (isCacao(itemName)) {
+            var amount = 1;
+            if (isUsingAll) {
+                amount = player.materialList[materialInfo.itemName];
+            }
+
+            bot.kettle.totalCacao += amount;
+            if (typeof bot.kettle.contribution[userId] === "undefined") {
+                bot.kettle.contribution[userId] = 0;
+            }
+            bot.kettle.contribution[userId] += amount;
+
+            bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
+            bot.savePlayer();
+            bot.saveKettle();
+            message.reply("You have contributed **" + amount + " " + materialInfo.itemName + "** to the Alchemy Kettle.");
         }
     }
 }
