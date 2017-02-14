@@ -27,7 +27,7 @@ function MAtkDownStatus(bot, ownerId, targetId) {
 MAtkDownStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Matk Down"] === this) unit.status["Matk Down"] = null;    
-    if (this.timer) clearInterval(this.timer);
+    if (this.timer) clearTimeout(this.timer);
 }
 
 MAtkDownStatus.prototype.toString = function() {

@@ -43,7 +43,7 @@ PDefDownStatus.prototype.absorbDamage = function(damage) {
 PDefDownStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Pdef Down"] === this) unit.status["Pdef Down"] = null;    
-    if (this.timer) clearInterval(this.timer);
+    if (this.timer) clearTimeout(this.timer);
 }
 
 PDefDownStatus.prototype.toString = function() {

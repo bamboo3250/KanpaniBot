@@ -43,7 +43,7 @@ MDefDownStatus.prototype.absorbDamage = function(damage) {
 MDefDownStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Mdef Down"] === this) unit.status["Mdef Down"] = null;    
-    if (this.timer) clearInterval(this.timer);
+    if (this.timer) clearTimeout(this.timer);
 }
 
 MDefDownStatus.prototype.toString = function() {

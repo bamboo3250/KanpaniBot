@@ -27,7 +27,7 @@ function PAtkDownStatus(bot, ownerId, targetId) {
 PAtkDownStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Patk Down"] === this) unit.status["Patk Down"] = null;    
-    if (this.timer) clearInterval(this.timer);
+    if (this.timer) clearTimeout(this.timer);
 }
 
 PAtkDownStatus.prototype.toString = function() {
