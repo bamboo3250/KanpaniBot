@@ -26,7 +26,8 @@ function isEventEquipment(codeName) {
         "xmas3-white",
         "xmas3-black",
         "valentine1",
-        "valentine2"
+        "valentine2-black",
+        "valentine2-white"
     ];
     return contains(itemListList, codeName);
 }
