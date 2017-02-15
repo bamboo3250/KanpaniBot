@@ -82,7 +82,7 @@ if (isLocal) {
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3001980",
+                _id: "3001861",
                 plus: 4
             },
             equipedArmor: {
@@ -106,7 +106,7 @@ if (isLocal) {
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3005980",
+                _id: "3005861",
                 plus: 4
             },
             equipedArmor: {
@@ -130,7 +130,7 @@ if (isLocal) {
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3007980",
+                _id: "3007861",
                 plus: 4
             },
             equipedArmor: {
@@ -154,7 +154,7 @@ if (isLocal) {
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3003980",
+                _id: "3003861",
                 plus: 4
             },
             equipedArmor: {
@@ -178,7 +178,7 @@ if (isLocal) {
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3008980",
+                _id: "3008861",
                 plus: 4
             },
             equipedArmor: {
