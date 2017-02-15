@@ -35,7 +35,7 @@
         "amount": 100,
         "maxAmount": 100,
         "price": {
-            "amount": 4000000,
+            "amount": 2000000,
             "unit": "Chocolate"
         }
     },
@@ -52,6 +52,14 @@
         "maxAmount": 50,
         "price": {
             "amount": 3000000,
+            "unit": "Chocolate"
+        }
+    },
+    "Chocolate Chip Ice": {
+        "amount": 999,
+        "maxAmount": 999,
+        "price": {
+            "amount": 500000,
             "unit": "Chocolate"
         }
     }
