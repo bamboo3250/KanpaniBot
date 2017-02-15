@@ -16,7 +16,7 @@
         }
     },
     "Armor Hammer": {
-        "amount": 500,
+        "amount": 499,
         "maxAmount": 500,
         "price": {
             "amount": 1000000,
