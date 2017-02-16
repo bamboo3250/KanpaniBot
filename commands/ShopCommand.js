@@ -4,7 +4,7 @@ module.exports = {
         if (command.commandName != "~shop") return;
 
         if (!bot.isPM(message)) {
-            message.reply("You can roll in Private Message only.");
+            message.reply("You can use this command in Private Message only.");
             return;
         }
 

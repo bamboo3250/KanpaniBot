@@ -276,6 +276,7 @@ module.exports = {
         if (!text.startsWith("~grind ") && !text.startsWith("~fullgrind ")) return;
         if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) return;
 
+        var userId = message.author.id;
         var isFullGrind = text.startsWith("~fullgrind ");
         var questName = text.substring(7 + (isFullGrind?4:0)).trim().toLowerCase();
         var quest = bot.questDatabase.getQuestByName(questName);
@@ -288,12 +289,18 @@ module.exports = {
             return;
         }
 
-        if (isFullGrind && quest.name === "Phantom Labyrinth") {
-            message.reply("You cannot use Full Grind for Phantom Labyrinth.");
+        if (quest.itemRequired) {
+            if (!bot.expTicketEffect[userId] || bot.expTicketEffect[userId].itemName != quest.itemRequired) {
+                message.reply("You need to use **" + quest.itemRequired + "** to grind this quest.");
+                return;
+            }
+        }        
+
+        if (isFullGrind && (quest.name === "Phantom Labyrinth" || quest.name === "EXP Palace")) {
+            message.reply("You cannot use Full Grind for " + quest.name + ".");
             return;
         }
 
-        var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
         if (player == null) {
             message.reply("You haven't selected your character.");

@@ -67,13 +67,21 @@ function isIceCream(itemName) {
     return contains(itemListList, itemName);
 }
 
+function isExpTicket(itemName) {
+    var itemListList = [
+        "EXP Palace Invitation"
+    ];
+    return contains(itemListList, itemName);
+}
+
 function isUsable(itemName) {
     return isMailbox(itemName) 
         || isHammer(itemName) 
         || isForge(itemName) 
         || isBread(itemName)
         || isIceCream(itemName)
-        || isCacao(itemName);
+        || isCacao(itemName)
+        || isExpTicket(itemName);
         // || isEldLight(itemName) 
         // || isAromaOil(itemName);
 }
@@ -574,6 +582,40 @@ module.exports = {
             bot.savePlayer();
             bot.saveKettle();
             message.reply("You have contributed **" + amount + " " + materialInfo.itemName + "** to the Alchemy Kettle.");
+        } else if (isExpTicket(itemName)) {
+            if (isUsingAll) {
+                message.reply("You can only use this item one by one.");
+                return;
+            }
+
+            if (typeof bot.expTicketEffect[userId] === "undefined") {
+                bot.expTicketEffect[userId] = {
+                    itemName: "",
+                    endTime: 0
+                }
+            }
+            var now = new Date();
+            if (bot.expTicketEffect[userId].itemName != "") {
+                var remainingTime = bot.expTicketEffect[userId].endTime - now.valueOf();
+                var time = bot.functionHelper.parseTime(remainingTime);
+                message.reply("You have already been under the effect of another Invitation Ticket! It will end in **" + time + "**");
+                return;
+            }
+            var effectDuration = 15*60*1000;    // 15 minutes
+            bot.expTicketEffect[userId].itemName = materialInfo.itemName;
+            bot.expTicketEffect[userId].endTime = now.valueOf() + effectDuration;
+
+            setTimeout(function() {
+                bot.expTicketEffect[userId] = {
+                    itemName: "",
+                    endTime: 0
+                }
+                message.author.sendMessage("The effect of **" + materialInfo.itemName + "** has faded away.");
+            }, effectDuration);
+
+            bot.playerManager.spendItem(userId, materialInfo.itemName);
+            bot.savePlayer();
+            message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 15 minutes.");
         }
     }
 }

@@ -209,6 +209,7 @@ function EmployeeBot() {
     this.hammerEffect = {};
     this.forgeEffect = {};
     this.grindEffect = {};
+    this.expTicketEffect = {};
     this.unsubscribe = {};
     this.grindId = {};
     this.auctionId = {};

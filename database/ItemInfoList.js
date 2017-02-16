@@ -223,6 +223,8 @@ var itemInfos = [
 
     ,{
         _id: "91000101_1", itemName: "Promotion Badge", price: 0
+    },{
+        _id: "50000103_1", itemName: "EXP Palace Invitation", price: 0
     }
 
 
