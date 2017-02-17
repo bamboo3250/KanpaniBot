@@ -1094,6 +1094,7 @@ EmployeeBot.prototype.ready = function() {
                 that.loadAuction();
                 //that.loadAroma();
                 that.removeFaintedRole();
+                that.saveSilenced();
             });
         });
         this.loadKettle();

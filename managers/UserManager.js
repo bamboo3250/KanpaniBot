@@ -40,7 +40,6 @@ UserManager.prototype.fetchAllMembersInGuildRecursively = function(callback, ite
 UserManager.prototype.fetchAllMembers = function(callback) {
     this.guilds = this.bot.bot.guilds.array();
     this.fetchAllMembersInGuildRecursively(callback, 0);
-    this.bot.saveSilenced();
 }
 
 UserManager.prototype.getMember = function(id) {
