@@ -203,6 +203,7 @@ function EmployeeBot() {
     this.rollResult = {};
     this.canUseBreadToRoll = false;
 
+    this.silenced = {}
     this.runQuestStatus = {};
     this.freeMe = {};
     this.mailboxEffect = {};
@@ -558,6 +559,29 @@ EmployeeBot.prototype.loadSoul = function() {
             return;
         }
         that.hasSoul = JSON.parse(data);
+    });
+}
+
+var silencedFileName = "silenced.json";
+EmployeeBot.prototype.saveSilenced = function() {
+    var textToWrite = JSON.stringify(this.silenced, null, 4);
+    var that = this;
+    fs.writeFile(silencedFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;
+        }
+    }); 
+}
+
+EmployeeBot.prototype.loadSilenced = function() {
+    var that = this;
+    fs.readFile(silencedFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log(err);
+            return;
+        }
+        that.silenced = JSON.parse(data);
     });
 }
 
@@ -1061,6 +1085,7 @@ EmployeeBot.prototype.ready = function() {
         this.loadDailyGift();
         this.loadUnsubscribe();
         this.loadShop();
+        this.loadSilenced();
         // this.loadChristmasTree();
         this.loadPlayer(function() {
             that.userManager.fetchAllMembers(function() {

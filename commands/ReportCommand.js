@@ -44,6 +44,8 @@ module.exports = {
                         if (guildMember.roles.has(reportedRole.id)) return;
 
                         guildMember.addRole(reportedRole).then(output => {
+                            bot.silenced[reportedUser.id] = true;
+                            bot.saveSilenced();
                             message.channel.sendMessage(guildMember.user + " is now silenced.");
                         }).catch(err => {
                             bot.log("[Report] Adding Reported role failed.");
