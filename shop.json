@@ -51,7 +51,7 @@
         "amount": 50,
         "maxAmount": 50,
         "price": {
-            "amount": 3000000,
+            "amount": 1500000,
             "unit": "Chocolate"
         }
     },
@@ -60,6 +60,13 @@
         "maxAmount": 999,
         "price": {
             "amount": 500000,
+            "unit": "Chocolate"
+        }
+    },"EXP Palace Invitation": {
+        "amount": 15,
+        "maxAmount": 15,
+        "price": {
+            "amount": 3000000,
             "unit": "Chocolate"
         }
     }
