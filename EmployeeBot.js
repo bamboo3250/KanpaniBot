@@ -872,7 +872,7 @@ EmployeeBot.prototype.getKettleLevel = function() {
 EmployeeBot.prototype.getCacaoRequiredUntilNextLevel = function() {
     var curLevel = this.getKettleLevel();
     var nextLevel = Math.min(curLevel+1, cacaoRequiredForLevel.length);
-    return cacaoRequiredForLevel[nextLevel-1] - this.kettle.totalCacao;
+    return Math.max(0, cacaoRequiredForLevel[nextLevel-1] - this.kettle.totalCacao);
 }
 
 EmployeeBot.prototype.getKettleProduction = function() {
