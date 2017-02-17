@@ -80,7 +80,7 @@ var employees = [
         baseStats: { _str: 50, _vit: 20, _agi: 10, _dex: 12, _int: 1, _pie: 1, _luk: 20},
         maxStats: { _str: 510, _vit: 308, _agi: 271, _dex: 188, _int: 154, _pie: 173, _luk: 309}
     },{
-        _no: 189, _id: "10550004_aafa95ca", fullName: "Verg Vuze", japaneseName: "ヴェルグ・ヴューゼ", commonNames: ["Verg"], cwId: 0,
+        _no: 189, _id: "10550004_aafa95ca", fullName: "Verg Vuze", japaneseName: "ヴェルグ・ヴューゼ", commonNames: ["Verg"], cwId: 27,
         baseStats: { _str: 50, _vit: 17, _agi: 10, _dex: 12, _int: 4, _pie: 1, _luk: 20},
         maxStats: { _str: 510, _vit: 308, _agi: 271, _dex: 188, _int: 154, _pie: 173, _luk: 309}
     },
@@ -224,7 +224,7 @@ var employees = [
         baseStats: { _str: 9, _vit: 2, _agi: 24, _dex: 28, _int: 3, _pie: 5, _luk: 3},
         maxStats: { _str: 162, _vit: 209, _agi: 388, _dex: 460, _int: 159, _pie: 160, _luk: 174}
     },{
-        _no: 183, _id: "10340006_d46bd908", fullName: "Miriam Loschmidt", japaneseName: "ミリアム・ロシュミット", commonNames: ["Miriam"], cwId: 0,
+        _no: 183, _id: "10340006_d46bd908", fullName: "Miriam Loschmidt", japaneseName: "ミリアム・ロシュミット", commonNames: ["Miriam"], cwId: 21,
         baseStats: { _str: 1, _vit: 4, _agi: 27, _dex: 30, _int: 6, _pie: 1, _luk: 8},
         maxStats: { _str: 162, _vit: 209, _agi: 388, _dex: 460, _int: 159, _pie: 160, _luk: 174}
     },{
@@ -288,7 +288,7 @@ var employees = [
         baseStats: { _str: 26, _vit: 16, _agi: 10, _dex: 4, _int: 1, _pie: 3, _luk: 12},
         maxStats: { _str: 473, _vit: 277, _agi: 225, _dex: 160, _int: 151, _pie: 171, _luk: 275}
     },{
-        _no: 191, _id: "10540006_ebb504b9", fullName: "Harmonics Acs", japaneseName: "ハーモニクス・アクス", commonNames: ["Harmonics"], cwId: 0,
+        _no: 191, _id: "10540006_ebb504b9", fullName: "Harmonics Acs", japaneseName: "ハーモニクス・アクス", commonNames: ["Harmonics"], cwId: 28,
         baseStats: { _str: 36, _vit: 12, _agi: 12, _dex: 4, _int: 1, _pie: 3, _luk: 10},
         maxStats: { _str: 473, _vit: 277, _agi: 225, _dex: 160, _int: 151, _pie: 171, _luk: 275}
     },{
