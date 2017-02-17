@@ -571,6 +571,7 @@ EmployeeBot.prototype.saveSilenced = function() {
             that.log(err);
             return;
         }
+        that.log("Saved Silenced");
     }); 
 }
 

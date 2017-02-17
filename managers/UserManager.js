@@ -26,6 +26,9 @@ UserManager.prototype.fetchAllMembersInGuildRecursively = function(callback, ite
             if (that.doesMemberHaveRole(memberList[i].id, "Reported")) {
                 that.bot.silenced[memberList[i].id] = true;
             }
+            if (that.bot.silenced[memberList[i].id] && !that.doesMemberHaveRole(memberList[i].id, "Reported")) {
+                that.bot.log("Silenced " + memberList[i].user.username);
+            }
         }
         that.fetchAllMembersInGuildRecursively(callback, iter+1);
     }).catch(err => {
