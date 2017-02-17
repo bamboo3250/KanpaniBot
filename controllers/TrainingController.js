@@ -476,17 +476,12 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
     var doesHitMainTarget = false;
 
-    var focusModifier = 1.0;
-    if (attacker.status["Focus"]) {
-        focusModifier = attacker.status["Focus"].power / 100;
-        attacker.status["Focus"].destroy();
-    }
-
-    var darknessModifier = (attacker.status["Darkness"] ? 0.15 : 1);
-    if (attacker.status["Darkness"]) {
-        attacker.status["Darkness"].evoke();
-    }
-
+    var focusModifier       = (attacker.status["Focus"] ? attacker.status["Focus"].power / 100 : 1.0);
+    var darknessModifier    = (attacker.status["Darkness"] ? 0.15 : 1);
+    var encourageModifier   = (attacker.status["Encourage"] ? 2.0 : 1.0);
+    var patkDownModifier    = (attacker.status["Patk Down"] ? 0.5 : 1.0);
+    var matkDownModifier    = (attacker.status["Matk Down"] ? 0.5 : 1.0);
+    
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
         var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
@@ -494,17 +489,13 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
         var targetName = targetUnit.shortName;
         var targetUser = this.bot.userManager.getUser(targetUnit.playerId);
-    
+        
+        var pdefDownModifier    = (targetUnit.status["Pdef Down"] ? 0.5 : 1.0);
+        var mdefDownModifier    = (targetUnit.status["Mdef Down"] ? 0.5 : 1.0);
+
         if (skillPhase.canAttack()) {
             if (targetUnit.isFainted()) continue;
-
-            var encourageModifier = (attacker.status["Encourage"] ? 2.0 : 1.0);
-
-            var patkDownModifier = (attacker.status["Patk Down"] ? 0.5 : 1.0);
-            var matkDownModifier = (attacker.status["Matk Down"] ? 0.5 : 1.0);
-            var pdefDownModifier = (targetUnit.status["Pdef Down"] ? 0.5 : 1.0);
-            var mdefDownModifier = (targetUnit.status["Mdef Down"] ? 0.5 : 1.0);
-
+            
             var isPdefDownUsed = false;
             var isMdefDownUsed = false;
 
@@ -1137,6 +1128,8 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
     }  
 
     this.executeBattle(turnQueue, 0, battleField, koResult, "", [], function(text, imageName) {
+        if (attacker.status["Focus"]) attacker.status["Focus"].destroy();
+        if (attacker.status["Darkness"]) attacker.status["Darkness"].evoke();
         callback(null, text, imageName, koResult);
     });
 }
