@@ -615,7 +615,7 @@ module.exports = {
 
             bot.playerManager.spendItem(userId, materialInfo.itemName);
             bot.savePlayer();
-            message.reply("You have used **" + materialInfo.itemName + "**. Its effect will last for 15 minutes.");
+            message.reply("You have used **" + materialInfo.itemName + "**. You can access to **EXP Palace** now by using command `~grind exp-palace`.\nIts effect will last for 15 minutes.");
         }
     }
 }

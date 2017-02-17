@@ -64,7 +64,7 @@ if (isLocal) {
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3002980",
+                _id: "3002851",
                 plus: 4
             },
             equipedArmor: {
@@ -88,7 +88,7 @@ if (isLocal) {
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3005980",
+                _id: "3005851",
                 plus: 4
             },
             equipedArmor: {
@@ -112,7 +112,7 @@ if (isLocal) {
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3003980",
+                _id: "3003851",
                 plus: 4
             },
             equipedArmor: {
