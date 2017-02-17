@@ -476,6 +476,17 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
     var doesHitMainTarget = false;
 
+    var focusModifier = 1.0;
+    if (attacker.status["Focus"]) {
+        focusModifier = attacker.status["Focus"].power / 100;
+        attacker.status["Focus"].destroy();
+    }
+
+    var darknessModifier = (attacker.status["Darkness"] ? 0.15 : 1);
+    if (attacker.status["Darkness"]) {
+        attacker.status["Darkness"].evoke();
+    }
+
     for(var i=0;i<targets.length;i++) {
         var targetFieldPos = targets[i];
         var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
@@ -523,11 +534,6 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                 def = def * 0.8;
             }
 
-            var darknessModifier = (attacker.status["Darkness"] ? 0.15 : 1);
-            if (attacker.status["Darkness"]) {
-                attacker.status["Darkness"].evoke();
-            }
-
             var hitValue = (attacker.getHit() + attacker.getDEX()*0.65) * darknessModifier;
             var evadeValue = targetUnit.getEva() + targetUnit.getAGI()*0.20;
             var hitRate = Math.floor(60 + (hitValue - evadeValue)*0.2);
@@ -539,16 +545,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             hitRateOnTargets[targetUnit.playerId] = hitRate;
 
             var totalDamage = 0;
+
             for(var j=0;j<skillPhase.attackTimes;j++) {
                 var randomFactor = this.bot.functionHelper.randomArbitrary(1/1.1, 1.1);
                 var isCrit = (this.bot.functionHelper.randomInt(100) < critRate);
                 var critModifier = (isCrit ? 1.5 : 1.0);
-
-                var focusModifier = 1.0;
-                if (attacker.status["Focus"]) {
-                    focusModifier = attacker.status["Focus"].power / 100;
-                    attacker.status["Focus"].destroy();
-                }
 
                 var damageBeforeDef = atk * skillModifier * encourageModifier * focusModifier * randomFactor * elementAdvantage;
                 var critDamageBeforeDef = damageBeforeDef * critModifier;
