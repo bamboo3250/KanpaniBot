@@ -77,20 +77,20 @@ if (isLocal) {
 } else {
     myBot.playerData = [
         {
-            _id: "272257876393721867",  // Fanaril Guest
-            characterId: "10150003_e989854c",
+            _id: "273395939199156225",  // Sion Guest
+            characterId: "10250001_ff1a69c9",
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3001861",
-                plus: 4
+                _id: "308214",
+                plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(1),
+                _id: myBot.randomArmor(2),
                 plus: 0
             },
             equipedAccessory: {
-                _id: "330207",
+                _id: "330107",
                 plus: 3
             },
             materialList: {},
@@ -106,15 +106,15 @@ if (isLocal) {
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3005861",
-                plus: 4
+                _id: "308510",
+                plus: 3
             },
             equipedArmor: {
                 _id: myBot.randomArmor(5),
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330207",
+                _id: "330107",
                 plus: 3
             },
             materialList: {},
@@ -125,44 +125,44 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "268576286060838914",  // Saimi Guest
-            characterId: "10750001_32935980",
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3007861",
-                plus: 4
+                _id: "308819",
+                plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(7),
+                _id: myBot.randomArmor(8),
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330207",
+                _id: "330107",
                 plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         },{
-            _id: "269733140635975680",  // Hinano Guest
-            characterId: "10350003_fcc3ce23",
+            _id: "276547911381417985",  // Elie Guest
+            characterId: "10350002_63194dbd",
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3003861",
-                plus: 4
+                _id: "308319",
+                plus: 3
             },
             equipedArmor: {
                 _id: myBot.randomArmor(3),
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330207",
+                _id: "330206",
                 plus: 3
             },
             materialList: {},
@@ -178,16 +178,16 @@ if (isLocal) {
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "3008861",
-                plus: 4
+                _id: "308806",
+                plus: 3
             },
             equipedArmor: {
                 _id: myBot.randomArmor(8),
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
-                plus: 3
+                _id: "329997",
+                plus: 4
             },
             materialList: {},
             weaponList: {},
@@ -214,8 +214,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["270767219875643392", "272257876393721867", "268576286060838914"],
-                ["269733140635975680", null, "239141420194070530"]
+                ["273395939199156225", null, "270767219875643392"],
+                ["272259125256388610", "276547911381417985", "239141420194070530"]
             ];    
         }
 
