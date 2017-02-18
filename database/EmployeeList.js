@@ -116,7 +116,7 @@ var employees = [
         maxStats1: { _str: 695, _vit: 420, _agi: 364, _dex: 266, _int: 222, _pie: 266, _luk: 411},
         maxStats2: { _str: 956, _vit: 598, _agi: 505, _dex: 367, _int: 316, _pie: 373, _luk: 580},
     },{
-        _no: 189, _id: "10550004_aafa95ca", fullName: "Verg Vuze", japaneseName: "ヴェルグ・ヴューゼ", commonNames: ["Verg"], cwId: 0,
+        _no: 189, _id: "10550004_aafa95ca", fullName: "Verg Vuze", japaneseName: "ヴェルグ・ヴューゼ", commonNames: ["Verg"], cwId: 27,
         baseStats: { _str: 50, _vit: 17, _agi: 10, _dex: 12, _int: 4, _pie: 1, _luk: 20},
         maxStats0: { _str: 514, _vit: 286, _agi: 248, _dex: 182, _int: 233, _pie: 139, _luk: 312},
         maxStats1: { _str: 696, _vit: 406, _agi: 329, _dex: 266, _int: 322, _pie: 216, _luk: 420},
@@ -326,7 +326,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: 183, _id: "10340006_d46bd908", fullName: "Miriam Loschmidt", japaneseName: "ミリアム・ロシュミット", commonNames: ["Miriam"], cwId: 0,
+        _no: 183, _id: "10340006_d46bd908", fullName: "Miriam Loschmidt", japaneseName: "ミリアム・ロシュミット", commonNames: ["Miriam"], cwId: 21,
         baseStats: { _str: 1, _vit: 4, _agi: 27, _dex: 30, _int: 6, _pie: 1, _luk: 8},
         maxStats0: { _str: 162, _vit: 209, _agi: 388, _dex: 460, _int: 159, _pie: 160, _luk: 174},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -420,7 +420,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: 191, _id: "10540006_ebb504b9", fullName: "Harmonics Acs", japaneseName: "ハーモニクス・アクス", commonNames: ["Harmonics"], cwId: 0,
+        _no: 191, _id: "10540006_ebb504b9", fullName: "Harmonics Acs", japaneseName: "ハーモニクス・アクス", commonNames: ["Harmonics"], cwId: 28,
         baseStats: { _str: 36, _vit: 12, _agi: 12, _dex: 4, _int: 1, _pie: 3, _luk: 10},
         maxStats0: { _str: 473, _vit: 277, _agi: 225, _dex: 160, _int: 151, _pie: 171, _luk: 275},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},

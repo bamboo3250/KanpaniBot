@@ -23,6 +23,13 @@ UserManager.prototype.fetchAllMembersInGuildRecursively = function(callback, ite
         var memberList = guild.members.array();
         for(var i=0;i<memberList.length;i++) {
             that.members[memberList[i].id] = memberList[i];
+            if (that.doesMemberHaveRole(memberList[i].id, "Reported")) {
+                that.bot.silenced[memberList[i].id] = true;
+            }
+            if (that.bot.silenced[memberList[i].id] && !that.doesMemberHaveRole(memberList[i].id, "Reported")) {
+                that.addRole(memberList[i].id, "Reported");
+                that.bot.log("Silenced " + memberList[i].user.username);
+            }
         }
         that.fetchAllMembersInGuildRecursively(callback, iter+1);
     }).catch(err => {

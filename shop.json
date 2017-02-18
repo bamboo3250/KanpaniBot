@@ -11,15 +11,15 @@
         "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 1000000,
+            "amount": 750000,
             "unit": "Chocolate"
         }
     },
     "Armor Hammer": {
-        "amount": 499,
+        "amount": 498,
         "maxAmount": 500,
         "price": {
-            "amount": 1000000,
+            "amount": 750000,
             "unit": "Chocolate"
         }
     },
@@ -27,7 +27,7 @@
         "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 1000000,
+            "amount": 750000,
             "unit": "Chocolate"
         }
     },
@@ -35,7 +35,7 @@
         "amount": 100,
         "maxAmount": 100,
         "price": {
-            "amount": 2000000,
+            "amount": 1000000,
             "unit": "Chocolate"
         }
     },
@@ -43,12 +43,12 @@
         "amount": 100,
         "maxAmount": 100,
         "price": {
-            "amount": 4000000,
+            "amount": 2000000,
             "unit": "Chocolate"
         }
     },
     "Food Pack": {
-        "amount": 45,
+        "amount": 2,
         "maxAmount": 50,
         "price": {
             "amount": 1500000,
@@ -62,8 +62,9 @@
             "amount": 500000,
             "unit": "Chocolate"
         }
-    },"EXP Palace Invitation": {
-        "amount": 15,
+    },
+    "EXP Palace Invitation": {
+        "amount": 9,
         "maxAmount": 15,
         "price": {
             "amount": 3000000,

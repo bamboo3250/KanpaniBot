@@ -204,6 +204,7 @@ function EmployeeBot() {
     this.rollResult = {};
     this.canUseBreadToRoll = false;
 
+    this.silenced = {}
     this.runQuestStatus = {};
     this.freeMe = {};
     this.mailboxEffect = {};
@@ -563,6 +564,30 @@ EmployeeBot.prototype.loadSoul = function() {
     });
 }
 
+var silencedFileName = "silenced.json";
+EmployeeBot.prototype.saveSilenced = function() {
+    var textToWrite = JSON.stringify(this.silenced, null, 4);
+    var that = this;
+    fs.writeFile(silencedFileName, textToWrite, function(err) {
+        if(err) {
+            that.log(err);
+            return;
+        }
+        that.log("Saved Silenced");
+    }); 
+}
+
+EmployeeBot.prototype.loadSilenced = function() {
+    var that = this;
+    fs.readFile(silencedFileName, 'utf8', function (err, data) {
+        if (err) {
+            that.log(err);
+            return;
+        }
+        that.silenced = JSON.parse(data);
+    });
+}
+
 var breadFileName = "bread.json";
 EmployeeBot.prototype.saveBread = function() {
     var textToWrite = JSON.stringify(this.remainingBread, null, 4);
@@ -854,7 +879,7 @@ EmployeeBot.prototype.getKettleLevel = function() {
 EmployeeBot.prototype.getCacaoRequiredUntilNextLevel = function() {
     var curLevel = this.getKettleLevel();
     var nextLevel = Math.min(curLevel+1, cacaoRequiredForLevel.length);
-    return cacaoRequiredForLevel[nextLevel-1] - this.kettle.totalCacao;
+    return Math.max(0, cacaoRequiredForLevel[nextLevel-1] - this.kettle.totalCacao);
 }
 
 EmployeeBot.prototype.getKettleProduction = function() {
@@ -1069,6 +1094,7 @@ EmployeeBot.prototype.ready = function() {
         this.loadDailyGift();
         this.loadUnsubscribe();
         this.loadShop();
+        this.loadSilenced();
         // this.loadChristmasTree();
         this.loadPlayer(function() {
             that.userManager.fetchAllMembers(function() {
@@ -1076,6 +1102,7 @@ EmployeeBot.prototype.ready = function() {
                 that.loadAuction();
                 //that.loadAroma();
                 that.removeFaintedRole();
+                that.saveSilenced();
             });
         });
         this.loadKettle();
