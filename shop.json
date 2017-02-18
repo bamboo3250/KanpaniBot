@@ -11,7 +11,7 @@
         "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 1000000,
+            "amount": 750000,
             "unit": "Chocolate"
         }
     },
@@ -19,7 +19,7 @@
         "amount": 498,
         "maxAmount": 500,
         "price": {
-            "amount": 1000000,
+            "amount": 750000,
             "unit": "Chocolate"
         }
     },
@@ -27,7 +27,7 @@
         "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 1000000,
+            "amount": 750000,
             "unit": "Chocolate"
         }
     },
@@ -35,7 +35,7 @@
         "amount": 100,
         "maxAmount": 100,
         "price": {
-            "amount": 2000000,
+            "amount": 1000000,
             "unit": "Chocolate"
         }
     },
@@ -43,7 +43,7 @@
         "amount": 100,
         "maxAmount": 100,
         "price": {
-            "amount": 4000000,
+            "amount": 2000000,
             "unit": "Chocolate"
         }
     },
