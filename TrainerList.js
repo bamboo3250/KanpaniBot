@@ -2,6 +2,7 @@
         {
             _id: "241511566036434945",  // Elsa Guest
             characterId: "10150002_765306d2",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -26,6 +27,7 @@
         },{
             _id: "272257876393721867",  // Fanaril Guest
             characterId: "10150003_e989854c",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -50,6 +52,7 @@
         },{
             _id: "273395939199156225",  // Sion Guest
             characterId: "10250001_ff1a69c9",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -74,6 +77,7 @@
         },{
             _id: "269733140635975680",  // Hinano Guest
             characterId: "10350003_fcc3ce23",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -98,6 +102,7 @@
         },{
             _id: "276547911381417985",  // Elie Guest
             characterId: "10350002_63194dbd",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -122,6 +127,7 @@
         },{
             _id: "272258315441143810",  // Elmina Guest
             characterId: "10450002_bbda369b",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -146,6 +152,7 @@
         },{
             _id: "270767219875643392",  // Siegrid Guest
             characterId: "10550001_27d912ef",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -170,6 +177,7 @@
         },{
             _id: "278911842859089920",  // Nhano Guest
             characterId: "10550002_5cc7900c",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -194,6 +202,7 @@
         },{
             _id: "275533845984575488",  // Nona Guest
             characterId: "10650003_314afe6a",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -218,6 +227,7 @@
         },{
             _id: "268576286060838914",  // Saimi Guest
             characterId: "10750001_32935980",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -242,6 +252,7 @@
         },{
             _id: "272259125256388610",  // Sytry Guest
             characterId: "10850002_c4678df9",
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -266,6 +277,7 @@
         },{
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",   // Annalina
+            promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {

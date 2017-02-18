@@ -27,6 +27,7 @@ if (isLocal) {
         {
             _id: "240097185436270593",  // test-bot
             characterId: "10150002_765306d2",
+            promotion: 0,
             exp: 551340,//2646190,
             gold: 0,
             equipedWeapon: {
@@ -51,6 +52,7 @@ if (isLocal) {
         },{
             _id: "265889287281573918",  // test-bot2
             characterId: "10840001_1af29f14",
+            promotion: 0,
             exp: 551340,//2646190,
             gold: 0,
             equipedWeapon: {
@@ -79,6 +81,7 @@ if (isLocal) {
         {
             _id: "273395939199156225",  // Sion Guest
             characterId: "10250001_ff1a69c9",
+            promotion: 0,
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -103,6 +106,7 @@ if (isLocal) {
         },{
             _id: "270767219875643392",  // Siegrid Guest
             characterId: "10550001_27d912ef",
+            promotion: 0,
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -127,6 +131,7 @@ if (isLocal) {
         },{
             _id: "272259125256388610",  // Sytry Guest
             characterId: "10850002_c4678df9",
+            promotion: 0,
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -151,6 +156,7 @@ if (isLocal) {
         },{
             _id: "276547911381417985",  // Elie Guest
             characterId: "10350002_63194dbd",
+            promotion: 0,
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
@@ -175,6 +181,7 @@ if (isLocal) {
         },{
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",   // Annalina
+            promotion: 0,
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
