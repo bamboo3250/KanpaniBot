@@ -25,6 +25,7 @@ module.exports = {
             bot.playerManager.addExp(userId, exp);
             bot.playerManager.refreshUnitForPlayerId(userId);
             bot.savePlayer();
+        }
         if (command.commandName === "~unsilence") {
             var userId = command.args[0];
             if (!userId) return;
