@@ -8,7 +8,7 @@
         }
     },
     "Weapon Hammer": {
-        "amount": 500,
+        "amount": 447,
         "maxAmount": 500,
         "price": {
             "amount": 750000,
@@ -16,7 +16,7 @@
         }
     },
     "Armor Hammer": {
-        "amount": 498,
+        "amount": 459,
         "maxAmount": 500,
         "price": {
             "amount": 750000,
@@ -24,7 +24,7 @@
         }
     },
     "Accessory Hammer": {
-        "amount": 500,
+        "amount": 456,
         "maxAmount": 500,
         "price": {
             "amount": 750000,
@@ -32,7 +32,7 @@
         }
     },
     "Gold Mailbox": {
-        "amount": 100,
+        "amount": 92,
         "maxAmount": 100,
         "price": {
             "amount": 1000000,
@@ -40,7 +40,7 @@
         }
     },
     "Forge": {
-        "amount": 100,
+        "amount": 85,
         "maxAmount": 100,
         "price": {
             "amount": 2000000,
@@ -48,7 +48,7 @@
         }
     },
     "Food Pack": {
-        "amount": 2,
+        "amount": 0,
         "maxAmount": 50,
         "price": {
             "amount": 1500000,
@@ -64,7 +64,7 @@
         }
     },
     "EXP Palace Invitation": {
-        "amount": 9,
+        "amount": 0,
         "maxAmount": 15,
         "price": {
             "amount": 3000000,
