@@ -19,7 +19,11 @@ module.exports = {
             if (player.partnerId != null) {
                 partner = bot.userManager.getUser(player.partnerId);     
             }
-            text += "Character: **" + employee.fullName + "** (" + (elementEmoji?elementEmoji+", ":"") + "Lv.**" + employee.levelCached  + "**)\n";
+
+            var elementText = (elementEmoji?elementEmoji+", ":"");
+            var promotionText = (employee.promotion>1?"**Section Manager**, ":(employee.promotion>0?"**Chief**, ":""));
+            var levelText = "Lv.**" + employee.levelCached  + "**";
+            text += "Character: **" + employee.fullName + "** (" + elementText + promotionText + levelText  + ")\n";
             var now = new Date();
             text += "HP: **" + employee.getCurrentHP() + "/" + employee.getMaxHP() + "**" + (employee.respawnTime?" (Respawn in " + bot.functionHelper.parseTime(employee.respawnTime - now.valueOf()) + ")":"") + "\n";
             text += "Status: ";
@@ -82,9 +86,9 @@ module.exports = {
         ];
 
         var partnerSpriteFileName = null
+        var partner = bot.playerManager.getPlayer(player.partnerId);
+        var partnerEmployee = bot.playerManager.getPlayerUnit(player.partnerId);
         if (player.partnerId) {
-            var partner = bot.playerManager.getPlayer(player.partnerId);
-            var partnerEmployee = bot.playerManager.getPlayerUnit(player.partnerId);
             
             var partnerSpriteUrl = bot.urlHelper.getSpriteImageURL(partnerEmployee);
             partnerSpriteFileName = "images/enemy/" + bot.urlHelper.getSpriteImageName(partnerEmployee);
@@ -176,17 +180,72 @@ module.exports = {
                 }
                 shadowImage.scale(0.6);
 
+                var glowingImage = enemySpriteImage.clone();
+                if (employee.promotion > 0) {
+                    glowingImage.scan(0, 0, glowingImage.bitmap.width, glowingImage.bitmap.height, function (x, y, idx) {
+                        var red   = this.bitmap.data[ idx + 0 ];
+                        var green = this.bitmap.data[ idx + 1 ];
+                        var blue  = this.bitmap.data[ idx + 2 ];
+                        var alpha = this.bitmap.data[ idx + 3 ];
+                        if (alpha > 0) {
+                            if (employee.promotion == 1) {
+                                this.bitmap.data[ idx + 0 ] = 255;
+                                this.bitmap.data[ idx + 1 ] = 0;
+                                this.bitmap.data[ idx + 2 ] = 255;
+                                this.bitmap.data[ idx + 3 ] = 200;
+                            } else {
+                                this.bitmap.data[ idx + 0 ] = 0;
+                                this.bitmap.data[ idx + 1 ] = 0;
+                                this.bitmap.data[ idx + 2 ] = 255;
+                                this.bitmap.data[ idx + 3 ] = 200;
+                            }
+                        }
+                    });
+                    glowingImage.gaussian(7);
+                }
+
+                var glowingPartnerImage = null;
+                if (partnerEmployee && partnerImage) {
+                    glowingPartnerImage = partnerImage.clone();
+                    if (partnerEmployee.promotion > 0) {
+                        glowingPartnerImage.scan(0, 0, glowingPartnerImage.bitmap.width, glowingPartnerImage.bitmap.height, function (x, y, idx) {
+                            var red   = this.bitmap.data[ idx + 0 ];
+                            var green = this.bitmap.data[ idx + 1 ];
+                            var blue  = this.bitmap.data[ idx + 2 ];
+                            var alpha = this.bitmap.data[ idx + 3 ];
+                            if (alpha > 0) {
+                                if (partnerEmployee.promotion == 1) {
+                                    this.bitmap.data[ idx + 0 ] = 255;
+                                    this.bitmap.data[ idx + 1 ] = 0;
+                                    this.bitmap.data[ idx + 2 ] = 255;
+                                    this.bitmap.data[ idx + 3 ] = 200;
+                                } else {
+                                    this.bitmap.data[ idx + 0 ] = 0;
+                                    this.bitmap.data[ idx + 1 ] = 0;
+                                    this.bitmap.data[ idx + 2 ] = 255;
+                                    this.bitmap.data[ idx + 3 ] = 200;
+                                }
+                            }
+                        });
+                        glowingPartnerImage.gaussian(7);
+                    }
+                }
+                
+
                 if (player.partnerId && player.position === "front") {
                     backgroundImage
                     .composite(shadowImage, 3-15, 100-5)
+                    .composite(glowingPartnerImage, -102, -65)
                     .composite(partnerImage, -102, -65);
                 }
                 backgroundImage
                 .composite(shadowImage, 105-15, 165-5)
+                .composite(glowingImage, 0, 0)
                 .composite(enemySpriteImage, 0, 0);
                 if (player.partnerId && player.position === "back") {
                     backgroundImage
                     .composite(shadowImage, 207-15, 230-5)
+                    .composite(glowingPartnerImage, 102, 65)
                     .composite(partnerImage, 102, 65);
                 }
                 backgroundImage
@@ -230,7 +289,10 @@ module.exports = {
                             partner = bot.userManager.getUser(player.partnerId);     
                         }
                         text += "Position: **" + (player.position == "front"?"Frontline":"Backline") + "** " + (partner?"(Partner: **" + partner.username + "**)":"") + "\n";
-                        text += "Character: **" + employee.fullName + "** (" + (elementEmoji?elementEmoji+", ":"") + "Lv.**" + employee.levelCached  + "**)\n";
+                        var elementText = (elementEmoji?elementEmoji+", ":"");
+                        var promotionText = (employee.promotion>1?"**Section Manager**, ":(employee.promotion>0?"**Chief**, ":""));
+                        var levelText = "Lv.**" + employee.levelCached  + "**";
+                        text += "Character: **" + employee.fullName + "** (" + elementText + promotionText + levelText  + ")\n";
                         text += "Rarity: ";
                         for(var i=0;i<employee.getBaseRarity();i++) text += ":star:";
                         text += "\n";

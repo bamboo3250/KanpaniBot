@@ -18,5 +18,14 @@ module.exports = {
             bot.battleController.resetAllTrainers();
             return;
         }
+        if (command.commandName === "~addexp") {
+            var userId = command.args[0];
+            var exp = parseInt(command.args[1]);
+            
+            bot.playerManager.addExp(userId, exp);
+            bot.playerManager.refreshUnitForPlayerId(userId);
+            bot.savePlayer();
+            return;
+        }
     }
 }

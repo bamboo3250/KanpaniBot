@@ -54,7 +54,7 @@ UserManager.prototype.doesMemberHaveRole = function(id, roleName) {
     return member.roles.exists("name", roleName);
 }
 
-UserManager.prototype.addRole = function(id, roleName) {
+UserManager.prototype.addRole = function(id, roleName, callback) {
     var member = this.getMember(id);
     if (!member) return;
     if (this.doesMemberHaveRole(id, roleName)) return;
@@ -63,13 +63,15 @@ UserManager.prototype.addRole = function(id, roleName) {
     if (!role) return;
     var that = this;
     member.addRole(role).then(outputMember => {
+        this.members[id] = outputMember;
         that.bot.log(roleName + " Role added for " + outputMember.user.username + ".");
+        if (typeof callback === "function") callback();
     }).catch(err => {
         that.bot.log("[addRole] " + err);
     });
 }
 
-UserManager.prototype.removeRole = function(id, roleName) {
+UserManager.prototype.removeRole = function(id, roleName, callback) {
     var member = this.getMember(id);
     if (!member) return;
     if (!this.doesMemberHaveRole(id, roleName)) return;
@@ -78,7 +80,9 @@ UserManager.prototype.removeRole = function(id, roleName) {
     if (!role) return;
     var that = this;
     member.removeRole(role).then(outputMember => {
-        that.bot.log(roleName + " Role removed for " + outputMember.user.username + ".");
+        this.members[id] = outputMember;
+        that.bot.log(role.name + " Role removed for " + outputMember.user.username + ".");
+        if (typeof callback === "function") callback();
     }).catch(err => {
         that.bot.log("[removeRole] " + err);
     });

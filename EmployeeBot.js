@@ -65,6 +65,7 @@ var ceoPowerCommand = require('./commands/CEOPowerCommand');
 var kettleCommand = require('./commands/KettleCommand');
 var shopCommand = require('./commands/ShopCommand');
 var buyCommand = require('./commands/BuyCommand');
+var promoteCommand = require('./commands/PromoteCommand');
 
 var attackCommand = require('./commands/AttackCommand');
 var healCommand = require('./commands/HealCommand');
@@ -464,6 +465,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         kettleCommand.handle(message, this);
         shopCommand.handle(message, this);
         buyCommand.handle(message, this);
+        promoteCommand.handle(message, this);
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -633,9 +635,14 @@ EmployeeBot.prototype.savePlayer = function() {
 }
 
 EmployeeBot.prototype.loadPlayer = function(callback) {
+    console.log("loadPlayer")
     var that = this;
     fs.readFile(playerFileName, 'utf8', function (err, data) {
-        if (err) return;
+
+        if (err) {
+            console.log(err);
+            return;
+        }
         try {
             that.playerManager.playerDict = JSON.parse(data);
         }
@@ -659,11 +666,8 @@ EmployeeBot.prototype.loadPlayer = function(callback) {
                 var user = that.userManager.getUser(userId);
                 if (user) that.log("Unequip Armor for " + user.username);
             }
-            if (typeof player.ceoPower === "undefined") {
-                player.ceoPower = false;
-            }
-            if (typeof player._id === "undefined") {
-                player._id = userId;
+            if (typeof player.promotion === "undefined") {
+                player.promotion = 0;
             }
         }
         that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
@@ -811,7 +815,9 @@ EmployeeBot.prototype.saveKettle = function() {
 EmployeeBot.prototype.loadKettle = function() {
     var that = this;
     this.log("loadKettle");
+    console.log("load Kettle")
     fs.readFile(kettleFileName, 'utf8', function (err, data) {
+        console.log("Read Kettle");
         if (err) {
             that.log("[loadKettle] Read file error.\n" + err);
             that.startKettle();
@@ -823,6 +829,7 @@ EmployeeBot.prototype.loadKettle = function() {
         }
         catch (err) {
             that.log(err);
+            console.log(err);
         }
     });
 }
@@ -855,6 +862,7 @@ EmployeeBot.prototype.getKettleProduction = function() {
 }
 
 EmployeeBot.prototype.startKettle = function() {
+    console.log("started Kettle")
     var that = this;
     setInterval(function() {
         var production = that.getKettleProduction();

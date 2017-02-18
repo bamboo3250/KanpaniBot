@@ -32,6 +32,7 @@ PlayerManager.prototype.createNewPlayer = function(userId) {
     this.playerDict[userId] = {
         _id: userId,
         characterId: "",
+        promotion: 0,
         exp: 0,
         gold: 0,
         equipedWeapon: null,
@@ -308,6 +309,7 @@ PlayerManager.prototype.refreshUnitForPlayer = function(player) {
     if (!player) return null;
     if (this.playerUnits[player._id]) {
         var employee = this.playerUnits[player._id];
+        employee.promotion = player.promotion;
         employee.setExp(player.exp);
         employee.position = player.position;
 
