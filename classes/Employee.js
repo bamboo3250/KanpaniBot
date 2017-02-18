@@ -7,12 +7,13 @@ var Employee = function(employeeInfo, playerId = null) {
     this.fullName = employeeInfo.fullName;
     this.shortName = employeeInfo.commonNames[0];
     this.japaneseName = employeeInfo.japaneseName;
-    this.baseStats = employeeInfo.baseStats;
-    this.maxStats = employeeInfo.maxStats;
     this.cwId = employeeInfo.cwId;
     this.baseStats = employeeInfo.baseStats;
-    this.maxStats = employeeInfo.maxStats;
+    this.maxStats0 = employeeInfo.maxStats0;
+    this.maxStats1 = employeeInfo.maxStats1;
+    this.maxStats2 = employeeInfo.maxStats2;
 
+    this.promotion = 0;
     this.exp = 0;
     this.levelCached = 1
     this.weapon = null;
@@ -73,18 +74,27 @@ Employee.prototype.getBaseRarity = function() {
 
 Employee.prototype.getRarity = function() {
     var rarity = 1;
-    if (this.levelCached < 10) {
-        rarity = 1;
-    } else if (this.levelCached < 20) {
-        rarity = 2;
-    } else if (this.levelCached < 30) {
-        rarity = 3;
-    } else if (this.levelCached < 50) {
-        rarity = 4;
-    } else if (this.levelCached < 70) {
-        rarity = 5;
-    } else if (this.levelCached < 90) {
-        rarity = 6;
+
+    if (this.promotion == 0) {
+        if (this.levelCached < 10) {
+            rarity = 1;
+        } else if (this.levelCached < 20) {
+            rarity = 2;
+        } else if (this.levelCached < 30) {
+            rarity = 3;
+        } else if (this.levelCached < 50) {
+            rarity = 4;
+        } else if (this.levelCached < 70) {
+            rarity = 5;
+        } else if (this.levelCached < 90) {
+            rarity = 6;
+        } else {
+            if (this.getBaseRarity() == 5) {
+                rarity = 7;
+            } else {
+                rarity = 6;
+            }
+        }    
     } else {
         if (this.getBaseRarity() == 5) {
             rarity = 7;
@@ -92,6 +102,7 @@ Employee.prototype.getRarity = function() {
             rarity = 6;
         }
     }
+    
     return Math.max(this.getBaseRarity(), rarity);
 }
 
@@ -109,21 +120,63 @@ var expForLevel = [
     1356700, 1464600, 1580600, 1703181, 1835100, 1979400, 2127000, 2289000, 2461300, 2646190, 
     2840000, 3050000, 3280000, 3520000, 3780000, 4050000, 4380000, 4700000, 5010000, 5370000, 
     5760000, 6200000, 6620000, 7090000, 7600000, 8140000, 8720000, 9340000, 10000000, 10707880, 
-    11460000, 12270000, 13140000, 14060000, 15050000, 16110000, 17240000, 18450000, 19739650];
+    11460000, 12270000, 13140000, 14060000, 15050000, 16110000, 17240000, 18450000, 19739650
+];
+var expForLevel1 = [
+    0, 260, 920, 2600, 4900, 11000, 23400, 55400, 100000, 150000,
+    210000, 290000, 410000, 580000, 810000, 1140000, 1590000, 2220000, 3110000, 4340000, 
+    4680000, 5390000, 6090000, 6790000, 7790000, 8790000, 9790000, 10790000, 11790000, 14787420
+];
+var expForLevel2 = [
+    0, 500, 2000, 7500, 18000, 37000, 71000, 120000, 210000, 330000,
+    470000, 680000, 960000, 1320000, 1760000, 2300000, 2980000, 3780000, 4760000, 5900000, 
+    7250000, 8820000, 10600000, 12720000, 15110000, 17830000, 20910000, 24360000, 28250000, 32585968
+];
+
+Employee.prototype.getMaxLevel = function() {
+    if (this.promotion == 0) {
+        return (this.getBaseRarity() < 5? 90 : 99);
+    } else if (this.promotion == 1) {
+        return expForLevel1.length;
+    } else if (this.promotion == 2) {
+        return expForLevel2.length;
+    }
+    return 0;
+}
 
 Employee.prototype.getMaxExp = function() {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
-    return expForLevel[maxLevel-1];
+    if (this.promotion == 0) {
+        return expForLevel[this.getMaxLevel()-1];
+    } else if (this.promotion == 1) {
+        return expForLevel1[this.getMaxLevel()-1];
+    } else if (this.promotion == 2) {
+        return expForLevel2[this.getMaxLevel()-1];
+    }
+    return 999999999
 }
 
 Employee.prototype.setExp = function(expToSet) {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
-    this.exp = Math.min(expToSet, expForLevel[maxLevel-1]);
+    var maxLevel = this.getMaxLevel();
+    var maxExp = this.getMaxExp();
+
+    this.exp = Math.min(expToSet, maxExp);
     this.levelCached = maxLevel;
     for(var i=0;i<maxLevel;i++) {
-        if (this.exp <expForLevel[i]) {
-            this.levelCached = i;
-            break;
+        if (this.promotion == 0) {
+            if (this.exp < expForLevel[i]) {
+                this.levelCached = i;
+                break;
+            }    
+        } else if (this.promotion == 1) {
+            if (this.exp < expForLevel1[i]) {
+                this.levelCached = i;
+                break;
+            }    
+        } else if (this.promotion == 2) {
+            if (this.exp < expForLevel2[i]) {
+                this.levelCached = i;
+                break;
+            }    
         }
     }
 }
@@ -133,55 +186,136 @@ Employee.prototype.addExp = function(expToAdd) {
 }
 
 Employee.prototype.getExpToNextLevel = function() {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
+    var maxLevel = this.getMaxLevel();
     for(var i=0;i<maxLevel;i++) {
-        if (this.exp <expForLevel[i]) {
-            return expForLevel[i] - this.exp;
+        if (this.promotion == 0) {
+            if (this.exp < expForLevel[i]) return expForLevel[i] - this.exp;
+        } else if (this.promotion == 1) {
+            if (this.exp < expForLevel1[i]) return expForLevel1[i] - this.exp;
+        } else if (this.promotion == 2) {
+            if (this.exp < expForLevel1[i]) return expForLevel2[i] - this.exp;
         }
     }
     return 0;
 }
 
 Employee.prototype.getVIT = function() {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
-    var slope = (this.maxStats._vit - this.baseStats._vit) / (maxLevel - 1);
-    return Math.floor(this.baseStats._vit + (this.levelCached - 1)*slope + 0.5);
+    var maxLevel = this.getMaxLevel();
+    var baseStats = 0, maxStats = 0;
+    if (this.promotion == 0) {
+        baseStats = this.baseStats._vit;
+        maxStats = this.maxStats0._vit;
+    } else if (this.promotion == 1) {
+        baseStats = Math.ceil(this.maxStats0._vit / 2);
+        maxStats = this.maxStats1._vit;
+    } else if (this.promotion == 2) {
+        baseStats = Math.ceil(this.maxStats1._vit / 2);
+        maxStats = this.maxStats2._vit;
+    }
+    var slope = (maxStats - baseStats) / (maxLevel - 1);
+    return Math.ceil(baseStats + (this.levelCached - 1)*slope);
 }
 
 Employee.prototype.getSTR = function() {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
-    var slope = (this.maxStats._str - this.baseStats._str) / (maxLevel - 1);
-    return Math.floor(this.baseStats._str + (this.levelCached - 1)*slope + 0.5);
+    var maxLevel = this.getMaxLevel();
+    var baseStats = 0, maxStats = 0;
+    if (this.promotion == 0) {
+        baseStats = this.baseStats._str;
+        maxStats = this.maxStats0._str;
+    } else if (this.promotion == 1) {
+        baseStats = Math.ceil(this.maxStats0._str / 2);
+        maxStats = this.maxStats1._str;
+    } else if (this.promotion == 2) {
+        baseStats = Math.ceil(this.maxStats1._str / 2);
+        maxStats = this.maxStats2._str;
+    }
+    var slope = (maxStats - baseStats) / (maxLevel - 1);
+    return Math.ceil(baseStats + (this.levelCached - 1)*slope);
 }
 
 Employee.prototype.getINT = function() {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
-    var slope = (this.maxStats._int - this.baseStats._int) / (maxLevel - 1);
-    return Math.floor(this.baseStats._int + (this.levelCached - 1)*slope + 0.5);
+    var maxLevel = this.getMaxLevel();
+    var baseStats = 0, maxStats = 0;
+    if (this.promotion == 0) {
+        baseStats = this.baseStats._int;
+        maxStats = this.maxStats0._int;
+    } else if (this.promotion == 1) {
+        baseStats = Math.ceil(this.maxStats0._int / 2);
+        maxStats = this.maxStats1._int;
+    } else if (this.promotion == 2) {
+        baseStats = Math.ceil(this.maxStats1._int / 2);
+        maxStats = this.maxStats2._int;
+    }
+    var slope = (maxStats - baseStats) / (maxLevel - 1);
+    return Math.ceil(baseStats + (this.levelCached - 1)*slope);
 }
 
 Employee.prototype.getPIE = function() {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
-    var slope = (this.maxStats._pie - this.baseStats._pie) / (maxLevel - 1);
-    return Math.floor(this.baseStats._pie + (this.levelCached - 1)*slope + 0.5);
+    var maxLevel = this.getMaxLevel();
+    var baseStats = 0, maxStats = 0;
+    if (this.promotion == 0) {
+        baseStats = this.baseStats._pie;
+        maxStats = this.maxStats0._pie;
+    } else if (this.promotion == 1) {
+        baseStats = Math.ceil(this.maxStats0._pie / 2);
+        maxStats = this.maxStats1._pie;
+    } else if (this.promotion == 2) {
+        baseStats = Math.ceil(this.maxStats1._pie / 2);
+        maxStats = this.maxStats2._pie;
+    }
+    var slope = (maxStats - baseStats) / (maxLevel - 1);
+    return Math.ceil(baseStats + (this.levelCached - 1)*slope);
 }
 
 Employee.prototype.getDEX = function() {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
-    var slope = (this.maxStats._dex - this.baseStats._dex) / (maxLevel - 1);
-    return Math.floor(this.baseStats._dex + (this.levelCached - 1)*slope + 0.5);
+    var maxLevel = this.getMaxLevel();
+    var baseStats = 0, maxStats = 0;
+    if (this.promotion == 0) {
+        baseStats = this.baseStats._dex;
+        maxStats = this.maxStats0._dex;
+    } else if (this.promotion == 1) {
+        baseStats = Math.ceil(this.maxStats0._dex / 2);
+        maxStats = this.maxStats1._dex;
+    } else if (this.promotion == 2) {
+        baseStats = Math.ceil(this.maxStats1._dex / 2);
+        maxStats = this.maxStats2._dex;
+    }
+    var slope = (maxStats - baseStats) / (maxLevel - 1);
+    return Math.ceil(baseStats + (this.levelCached - 1)*slope);
 }
 
 Employee.prototype.getAGI = function() {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
-    var slope = (this.maxStats._agi - this.baseStats._agi) / (maxLevel - 1);
-    return Math.floor(this.baseStats._agi + (this.levelCached - 1)*slope + 0.5);
+    var maxLevel = this.getMaxLevel();
+    var baseStats = 0, maxStats = 0;
+    if (this.promotion == 0) {
+        baseStats = this.baseStats._agi;
+        maxStats = this.maxStats0._agi;
+    } else if (this.promotion == 1) {
+        baseStats = Math.ceil(this.maxStats0._agi / 2);
+        maxStats = this.maxStats1._agi;
+    } else if (this.promotion == 2) {
+        baseStats = Math.ceil(this.maxStats1._agi / 2);
+        maxStats = this.maxStats2._agi;
+    }
+    var slope = (maxStats - baseStats) / (maxLevel - 1);
+    return Math.ceil(baseStats + (this.levelCached - 1)*slope);
 }
 
 Employee.prototype.getLUK = function() {
-    var maxLevel = (this.getBaseRarity() < 5? 90 : 99);
-    var slope = (this.maxStats._luk - this.baseStats._luk) / (maxLevel - 1);
-    return Math.floor(this.baseStats._luk + (this.levelCached - 1)*slope + 0.5);
+    var maxLevel = this.getMaxLevel();
+    var baseStats = 0, maxStats = 0;
+    if (this.promotion == 0) {
+        baseStats = this.baseStats._luk;
+        maxStats = this.maxStats0._luk;
+    } else if (this.promotion == 1) {
+        baseStats = Math.ceil(this.maxStats0._luk / 2);
+        maxStats = this.maxStats1._luk;
+    } else if (this.promotion == 2) {
+        baseStats = Math.ceil(this.maxStats1._luk / 2);
+        maxStats = this.maxStats2._luk;
+    }
+    var slope = (maxStats - baseStats) / (maxLevel - 1);
+    return Math.ceil(baseStats + (this.levelCached - 1)*slope);
 }
 
 Employee.prototype.getCurrentHP = function() {
