@@ -139,8 +139,8 @@ BattlePainter.prototype.draw = function(callback) {
             return;
         }
 
-        //var backgroundFileName = "images/misc/background/battlefield_01.jpg";
-        var backgroundFileName = "images/misc/background/valentine_forest.jpg";
+        var backgroundFileName = "images/misc/background/battlefield_01.jpg";
+        // var backgroundFileName = "images/misc/background/valentine_forest.jpg";
         readQueue.push(backgroundFileName);
 
         var effectFileName = null;

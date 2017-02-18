@@ -4717,7 +4717,7 @@ module.exports = {
     "valentine1": [
         {
             _id: "3001980", modelId: "98", name: "Valentine Sword", commonNames: ["Valentine Sword"],
-            classId: 1, type: "event", isActive: true, stats: {
+            classId: 1, type: "event", isActive: false, stats: {
                 "+0": { price: 1000,
                     patk: 50, pdef: 50, matk: 0, mdef: 45, crit: 5, hit: 5, eva: 0,
                     frontSkill: "Heart Slash", backSkill: "Slash"
@@ -4753,7 +4753,7 @@ module.exports = {
             ]
         },{
             _id: "3002980", modelId: "98", name: "Chokokoigatana", commonNames: ["Chokokoigatana"],
-            classId: 2, type: "event", isActive: true, stats: {
+            classId: 2, type: "event", isActive: false, stats: {
                 "+0": { price: 1000,
                     patk: 111, pdef: 0, matk: 0, mdef: 0, crit: 20, hit: 5, eva: 0,
                     frontSkill: "Illicit Love", backSkill: "Slash"
@@ -4789,7 +4789,7 @@ module.exports = {
             ]
         },{
             _id: "3003980", modelId: "98", name: "Love Syndrome", commonNames: ["Love Syndrome"],
-            classId: 3, type: "event", isActive: true, stats: {
+            classId: 3, type: "event", isActive: false, stats: {
                 "+0": { price: 1000,
                     patk: 80, pdef: 0, matk: 0, mdef: 0, crit: 6, hit: 10, eva: 0,
                     frontSkill: "Single Shot", backSkill: "Cupid's Arrow"
@@ -4825,7 +4825,7 @@ module.exports = {
             ]
         },{
             _id: "3004980", modelId: "98", name: "Gateau Umbrella", commonNames: ["Gateau Umbrella"],
-            classId: 4, type: "event", isActive: true, stats: {
+            classId: 4, type: "event", isActive: false, stats: {
                 "+0": { price: 1000,
                     patk: 20, pdef: 40, matk: 0, mdef: 0, crit: 4, hit: 5, eva: 0,
                     frontSkill: "Lovely Spear", backSkill: "Spear Jab"
@@ -4861,7 +4861,7 @@ module.exports = {
             ]
         },{
             _id: "3005980", modelId: "98", name: "Graviton Love", commonNames: ["Graviton Love"],
-            classId: 5, type: "event", isActive: true, stats: {
+            classId: 5, type: "event", isActive: false, stats: {
                 "+0": { price: 1000,
                     patk: 100, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 11, eva: 0,
                     frontSkill: "Love Impact", backSkill: "Crash"
@@ -4897,7 +4897,7 @@ module.exports = {
             ]
         },{
             _id: "3006980", modelId: "98", name: "Giant Truffle", commonNames: ["Giant Truffle"],
-            classId: 6, type: "event", isActive: true, stats: {
+            classId: 6, type: "event", isActive: false, stats: {
                 "+0": { price: 1000,
                     patk: 0, pdef: 30, matk: 100, mdef: 30, crit: 0, hit: 0, eva: 10,
                     frontSkill: "Knock", backSkill: "Refreshing Love"
@@ -4933,7 +4933,7 @@ module.exports = {
             ]
         },{
             _id: "3007980", modelId: "98", name: "Chocolat Knife", commonNames: ["Chocolat Knife"],
-            classId: 7, type: "event", isActive: true, stats: {
+            classId: 7, type: "event", isActive: false, stats: {
                 "+0": { price: 1000,
                     patk: 50, pdef: 0, matk: 0, mdef: 0, crit: 10, hit: 10, eva: 10,
                     frontSkill: "Triple Sugar", backSkill: "Throwing Knife"
@@ -4969,7 +4969,7 @@ module.exports = {
             ]
         },{
             _id: "3008980", modelId: "98", name: "Forked Love", commonNames: ["Forked Love"],
-            classId: 8, type: "event", isActive: true, stats: {
+            classId: 8, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 0, matk: 50, mdef: 50, crit: 5, hit: 15, eva: 0,
                     frontSkill: "Honey Trap", backSkill: "Honey Trap"
@@ -5009,7 +5009,7 @@ module.exports = {
     "valentine2-black": [
         {
             _id: "3001851", modelId: "85", name: "Patisserie Blade", commonNames: ["Patisserie Blade"],
-            classId: 1, type: "event", isActive: true, stats: {
+            classId: 1, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
                     frontSkill: "Nappe Slash", backSkill: "Slash"
@@ -5039,7 +5039,7 @@ module.exports = {
             ]
         },{
             _id: "3002851", modelId: "85", name: "Chou - Ikiiggatana", commonNames: ["Chou - Ikiiggatana"],
-            classId: 2, type: "event", isActive: true, stats: {
+            classId: 2, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
                     frontSkill: "Thousand-Night Powder Sword", backSkill: "Slash"
@@ -5069,7 +5069,7 @@ module.exports = {
             ]
         },{
             _id: "3003851", modelId: "85", name: "Love Bow \"Honmei\"", commonNames: ["Love Bow \"Honmei\""],
-            classId: 3, type: "event", isActive: true, stats: {
+            classId: 3, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
                     frontSkill: "Single Shot", backSkill: "Gift Snipe"
@@ -5099,7 +5099,7 @@ module.exports = {
             ]
         },{
             _id: "3004851", modelId: "85", name: "Cream Cacao Lance", commonNames: ["Cream Cacao Lance"],
-            classId: 4, type: "event", isActive: true, stats: {
+            classId: 4, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
                     frontSkill: "Squeeze Strike", backSkill: "Spear Jab"
@@ -5129,7 +5129,7 @@ module.exports = {
             ]
         },{
             _id: "3005851", modelId: "85", name: "Warrior Beater", commonNames: ["Warrior Beater"],
-            classId: 5, type: "event", isActive: true, stats: {
+            classId: 5, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Fouet Impact", backSkill: "Crash"
@@ -5159,7 +5159,7 @@ module.exports = {
             ]
         },{
             _id: "3006851", modelId: "85", name: "Claudius 2nd", commonNames: ["Claudius 2nd"],
-            classId: 6, type: "event", isActive: true, stats: {
+            classId: 6, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
                     frontSkill: "Knock", backSkill: "Cake de Heal"
@@ -5189,7 +5189,7 @@ module.exports = {
             ]
         },{
             _id: "3007851", modelId: "85", name: "Battle Spoon Oosaji", commonNames: ["Battle Spoon Oosaji"],
-            classId: 7, type: "event", isActive: true, stats: {
+            classId: 7, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
                     frontSkill: "Sprinkle Sugar", backSkill: "Twin Attack"
@@ -5219,7 +5219,7 @@ module.exports = {
             ]
         },{
             _id: "3008851", modelId: "85", name: "Cacao Mass Wand", commonNames: ["Cacao Mass Wand"],
-            classId: 8, type: "event", isActive: true, stats: {
+            classId: 8, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Fire Ball", backSkill: "Theobroma"
@@ -5253,7 +5253,7 @@ module.exports = {
     "valentine2-white": [
         {
             _id: "3001861", modelId: "86", name: "Spatule Sword", commonNames: ["Spatule Sword"],
-            classId: 1, type: "event", isActive: true, stats: {
+            classId: 1, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 56, pdef: 54, matk: 0, mdef: 55, crit: 16, hit: 16, eva: 15,
                     frontSkill: "Nappe Slash", backSkill: "Slash"
@@ -5283,7 +5283,7 @@ module.exports = {
             ]
         },{
             _id: "3002861", modelId: "86", name: "Shin - Hanabanaomaru", commonNames: ["Shin - Hanabanaomaru"],
-            classId: 2, type: "event", isActive: true, stats: {
+            classId: 2, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 98, pdef: 0, matk: 0, mdef: 0, crit: 25, hit: 0, eva: 21,
                     frontSkill: "Thousand-Night Powder Sword", backSkill: "Slash"
@@ -5313,7 +5313,7 @@ module.exports = {
             ]
         },{
             _id: "3003861", modelId: "86", name: "Bow of Lupercus", commonNames: ["Bow of Lupercus"],
-            classId: 3, type: "event", isActive: true, stats: {
+            classId: 3, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 73, pdef: 0, matk: 0, mdef: 0, crit: 13, hit: 0, eva: 15,
                     frontSkill: "Single Shot", backSkill: "Gift Snipe"
@@ -5343,7 +5343,7 @@ module.exports = {
             ]
         },{
             _id: "3004861", modelId: "86", name: "Cream Cacao Spear", commonNames: ["Cream Cacao Spear"],
-            classId: 4, type: "event", isActive: true, stats: {
+            classId: 4, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 29, pdef: 55, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 17,
                     frontSkill: "Squeeze Strike", backSkill: "Spear Jab"
@@ -5373,7 +5373,7 @@ module.exports = {
             ]
         },{
             _id: "3005861", modelId: "86", name: "Warrior Whipper", commonNames: ["Warrior Whipper"],
-            classId: 5, type: "event", isActive: true, stats: {
+            classId: 5, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 114, pdef: 0, matk: 0, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Fouet Impact", backSkill: "Crash"
@@ -5403,7 +5403,7 @@ module.exports = {
             ]
         },{
             _id: "3006861", modelId: "86", name: "Saint Valentine", commonNames: ["Saint Valentine"],
-            classId: 6, type: "event", isActive: true, stats: {
+            classId: 6, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 24, matk: 57, mdef: 24, crit: 13, hit: 0, eva: 27,
                     frontSkill: "Knock", backSkill: "Cake de Heal"
@@ -5433,7 +5433,7 @@ module.exports = {
             ]
         },{
             _id: "3007861", modelId: "86", name: "Lovely Spoon Oosaji", commonNames: ["Lovely Spoon Oosaji"],
-            classId: 7, type: "event", isActive: true, stats: {
+            classId: 7, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 55, pdef: 0, matk: 0, mdef: 0, crit: 35, hit: 20, eva: 35,
                     frontSkill: "Sprinkle Sugar", backSkill: "Twin Attack"
@@ -5463,7 +5463,7 @@ module.exports = {
             ]
         },{
             _id: "3008861", modelId: "86", name: "Yunofes Wand", commonNames: ["Yunofes Wand"],
-            classId: 8, type: "event", isActive: true, stats: {
+            classId: 8, type: "event", isActive: false, stats: {
                 "+0": { price: 1500,
                     patk: 0, pdef: 0, matk: 68, mdef: 0, crit: 15, hit: 0, eva: 15,
                     frontSkill: "Fire Ball", backSkill: "Theobroma"
