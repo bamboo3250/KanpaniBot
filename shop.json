@@ -1,14 +1,14 @@
 {
     "Promotion Badge": {
-        "amount": 5,
-        "maxAmount": 5,
+        "amount": 0,
+        "maxAmount": 3,
         "price": {
             "amount": 34000000,
             "unit": "Chocolate"
         }
     },
     "Weapon Hammer": {
-        "amount": 447,
+        "amount": 495,
         "maxAmount": 500,
         "price": {
             "amount": 750000,
@@ -16,7 +16,7 @@
         }
     },
     "Armor Hammer": {
-        "amount": 459,
+        "amount": 481,
         "maxAmount": 500,
         "price": {
             "amount": 750000,
@@ -24,7 +24,7 @@
         }
     },
     "Accessory Hammer": {
-        "amount": 456,
+        "amount": 498,
         "maxAmount": 500,
         "price": {
             "amount": 750000,
@@ -32,7 +32,7 @@
         }
     },
     "Gold Mailbox": {
-        "amount": 92,
+        "amount": 99,
         "maxAmount": 100,
         "price": {
             "amount": 1000000,
@@ -40,7 +40,7 @@
         }
     },
     "Forge": {
-        "amount": 85,
+        "amount": 84,
         "maxAmount": 100,
         "price": {
             "amount": 2000000,
