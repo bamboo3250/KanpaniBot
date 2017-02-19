@@ -19,7 +19,7 @@ var MdefDownStatus = require('../classes/status/MdefDownStatus');
 var CharmStatus = require('../classes/status/CharmStatus');
 
 function PlayerManager() {
-    this.TRAINER_RESPAWN_TIME = 6*60*60*1000;
+    this.TRAINER_RESPAWN_TIME = 8*60*60*1000;
 
     this.playerUnits = {};
     this.mobUnits = {};

@@ -1128,8 +1128,6 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
     }  
 
     this.executeBattle(turnQueue, 0, battleField, koResult, "", [], function(text, imageName) {
-        if (attacker.status["Focus"]) attacker.status["Focus"].destroy();
-        if (attacker.status["Darkness"]) attacker.status["Darkness"].evoke();
         callback(null, text, imageName, koResult);
     });
 }
@@ -1164,6 +1162,9 @@ TrainingController.prototype.executeBattle = function(turnQueue, iter, battleFie
                 if (turn.result[i].image) imageList.push(turn.result[i].image);
             }
             turn.result = [];
+            if (turn.attacker.status["Darkness"]) turn.attacker.status["Darkness"].evoke();
+            if (turn.attacker.status["Focus"]) turn.attacker.status["Focus"].destroy();
+
             that.executeBattle(turnQueue, iter+1, battleField, koResult, resultText, imageList, callback);
         });    
     } else {

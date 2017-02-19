@@ -624,7 +624,7 @@ module.exports = {
     "valentine": [
         {
             _id: "3299960", name: "White Ring", commonNames: ["Valentine Ring"],
-            type: "event", isActive: true, stats: {
+            type: "event", isActive: false, stats: {
                 "+0": { price: 1225,
                     patk: 0, pdef: 7, matk: 0, mdef: 7, crit: 0, hit: 0, eva: 7
                 },
