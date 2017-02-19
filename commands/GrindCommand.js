@@ -30,7 +30,8 @@ module.exports = {
         for(var i=0;i<quest.advantage.length;i++) {
             if (quest.advantage[i] == employee.getClassId()) chanceToSuccess = 85;
         }
-        var bonusFromLevel = employee.levelCached - quest.levelRequired;
+        var level = (employee.promotion == 0 ? employee.levelCached : 99);
+        var bonusFromLevel = level - quest.levelRequired;
         var bonusFromWeapon = 0;
         if (player.equipedWeapon) {
             var weapon = bot.weaponDatabase.getWeaponById(player.equipedWeapon._id);
@@ -307,7 +308,7 @@ module.exports = {
             return;
         }
         var employee = bot.playerManager.getPlayerUnit(userId);
-        if (employee.levelCached < quest.levelRequired) {
+        if (employee.promotion == 0 && employee.levelCached < quest.levelRequired) {
             message.reply("Your level (**Lv." + employee.levelCached + "**) is too low for this quest. The minimum is **Lv." + quest.levelRequired + "**.");
             return;
         }
