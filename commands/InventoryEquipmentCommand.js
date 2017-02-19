@@ -68,8 +68,8 @@ module.exports = {
 
         equipmentIdList.sort(function(a, b) {
             if (b.plus != a.plus) return b.plus - a.plus;
-            if (a._id < b._id) return -1;
-            if (a._id > b._id) return 1;
+            if (a._id < b._id) return 1;
+            if (a._id > b._id) return -1;
         })
 
         var equipmentFileNameList = [];

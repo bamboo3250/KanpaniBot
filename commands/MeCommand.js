@@ -50,7 +50,7 @@ module.exports = {
                 } else {
                     var time = bot.functionHelper.parseTime(employee.classSkillCooldownEndTime - now.valueOf());
                     text += " **" + time + "**\n";
-                }   
+                }
             } else {
                 text += "**Not available**\n";
             }
@@ -216,7 +216,7 @@ module.exports = {
                             if (alpha > 0) {
                                 if (partnerEmployee.promotion == 1) {
                                     this.bitmap.data[ idx + 0 ] = 255;
-                                    this.bitmap.data[ idx + 1 ] = 0;
+                                    this.bitmap.data[ idx + 1 ] = 80;
                                     this.bitmap.data[ idx + 2 ] = 255;
                                     this.bitmap.data[ idx + 3 ] = 200;
                                 } else {

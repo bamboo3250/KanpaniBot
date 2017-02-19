@@ -25,7 +25,7 @@ function EncourageStatus(bot, ownerId, targetId) {
 EncourageStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Encourage"] === this) unit.status["Encourage"] = null;    
-    if (this.timer) clearInterval(this.timer);
+    if (this.timer) clearTimeout(this.timer);
 }
 
 EncourageStatus.prototype.toString = function() {
