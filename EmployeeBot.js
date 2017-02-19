@@ -112,8 +112,8 @@ function EmployeeBot() {
     this.dmmMaintenanceList = [
         {
             name: "DMM KG Maintenance",
-            startTime: "Feb 17 2017 14:00:00 GMT+0900",
-            endTime: "Feb 17 2017 17:00:00 GMT+0900"
+            startTime: "Feb 24 2017 14:00:00 GMT+0900",
+            endTime: "Feb 24 2017 17:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
@@ -331,12 +331,6 @@ EmployeeBot.prototype.checkNoSoul = function(message) {
 
 EmployeeBot.prototype.isAdmin = function(message) {
     return (message.author.id === "162995652152786944");
-}
-
-EmployeeBot.prototype.handleSleepCommand = function(message) {
-    if (message.author.id != "162995652152786944") return;
-    //message.channel.sendMessage("I'm going to sleep now~");
-    //this.bot.destroy();
 }
 
 EmployeeBot.prototype.initBreadIfNeed = function(userId) {
@@ -794,36 +788,36 @@ EmployeeBot.prototype.loadShop = function() {
 //     });
 // }
 
-var aromaFileName = "aroma.json";
-EmployeeBot.prototype.saveAroma = function() {
-    var textToWrite = JSON.stringify(this.aromaEffect, null, 4);
-    var that = this;
-    fs.writeFile(aromaFileName, textToWrite, function(err) {
-        if(err) {
-            that.log(err);
-            return;  
-        } 
-    });
-}
+// var aromaFileName = "aroma.json";
+// EmployeeBot.prototype.saveAroma = function() {
+//     var textToWrite = JSON.stringify(this.aromaEffect, null, 4);
+//     var that = this;
+//     fs.writeFile(aromaFileName, textToWrite, function(err) {
+//         if(err) {
+//             that.log(err);
+//             return;  
+//         } 
+//     });
+// }
 
-EmployeeBot.prototype.loadAroma = function() {
-    var that = this;
-    this.log("loadAroma");
-    console.log("loadAroma");
-    fs.readFile(aromaFileName, 'utf8', function (err, data) {
-        if (err) {
-            that.log("[loadAroma] Read file error.\n" + err);
-            return;
-        }
-        try {
-            that.aromaEffect = JSON.parse(data);
-            useCommand.setAromaTimeout(that);
-        }
-        catch (err) {
-            that.log(err);
-        }
-    });
-}
+// EmployeeBot.prototype.loadAroma = function() {
+//     var that = this;
+//     this.log("loadAroma");
+//     console.log("loadAroma");
+//     fs.readFile(aromaFileName, 'utf8', function (err, data) {
+//         if (err) {
+//             that.log("[loadAroma] Read file error.\n" + err);
+//             return;
+//         }
+//         try {
+//             that.aromaEffect = JSON.parse(data);
+//             useCommand.setAromaTimeout(that);
+//         }
+//         catch (err) {
+//             that.log(err);
+//         }
+//     });
+// }
 
 var kettleFileName = "kettle.json";
 EmployeeBot.prototype.saveKettle = function() {
