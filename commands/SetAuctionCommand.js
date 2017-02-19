@@ -129,8 +129,8 @@ module.exports = {
             message.reply("The starting price must be at least 1 Gold.");
             return;   
         }
-        if (startingPrice > 10000000) {
-            message.reply("The starting price must be at most 10,000,000 Gold.");
+        if (startingPrice > 100000000) {
+            message.reply("The starting price must be at most 100,000,000 Gold.");
             return;   
         }
 
