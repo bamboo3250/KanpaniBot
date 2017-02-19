@@ -392,11 +392,12 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         } else {    // Healing
             var charmOwnerUnit = this.bot.playerManager.getPlayerUnit(charmOwnerId);
             if (charmOwnerUnit && (!charmOwnerUnit.isFainted() || skillPhase.status["Resurrection"])) {
-                mainTargetUnit = charmOwnerUnit;
-                var newActionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
+                var newMainTargetUnit = charmOwnerUnit;
+                var newActionOnEnemySide = battleField.isEnemy(newMainTargetUnit.playerId);
                 var newField = (newActionOnEnemySide? battleField.enemySide: battleField.allySide);
-                var newTargets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, newField);
+                var newTargets = this.resolveTargets(skillPhase, attacker, newMainTargetUnit, newField);
                 if (newTargets.length > 0) {
+                    mainTargetUnit = newMainTargetUnit
                     actionOnEnemySide = newActionOnEnemySide;
                     field = newField;
                     targets = newTargets;
