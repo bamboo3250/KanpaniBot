@@ -14,7 +14,7 @@ module.exports = {
         var questList = bot.questDatabase.questList;
         var result = [];
         for(var i=0;i<questList.length;i++) {
-            if (questList[i].name != "" && questList[i].levelRequired <= employee.levelCached) {
+            if (questList[i].name != "" && (employee.promotion > 0 || questList[i].levelRequired <= employee.levelCached)) {
                 result.push(questList[i].commonNames[0]);
             }
         }
