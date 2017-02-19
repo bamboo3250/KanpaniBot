@@ -42,5 +42,11 @@ module.exports = {
             bot.saveSilenced();
             return;
         }
+        if (command.commandName === "~restock") {
+            for(key in bot.shop) {
+                bot.shop[key].amount = bot.shop[key].maxAmount;
+            }
+            bot.saveShop();
+        }
     }
 }
