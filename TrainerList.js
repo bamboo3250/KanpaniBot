@@ -200,6 +200,31 @@
             partnerId: null,
             isTrainer: true
         },{
+            _id: "283224327279869962",  // Eva Slade Guest
+            characterId: "10650002_ae907df4",
+            promotion: 0,
+            exp: 10707880,//10707880,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308619",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: myBot.randomArmor(6),
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330107",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "back",
+            partnerId: null,
+            isTrainer: true
+        },{
             _id: "275533845984575488",  // Nona Guest
             characterId: "10650003_314afe6a",
             promotion: 0,

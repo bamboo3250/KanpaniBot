@@ -2214,8 +2214,8 @@ module.exports = {
                     "attack02", 6,
                     false, {},
                     true,
-                    0, 0,
-                    0, 0
+                    -600, -700,
+                    -600, -700
                 ),
                 new SkillPhase(
                     SkillPhaseConst.SKILL_PATTERN_ALL,
@@ -2227,8 +2227,8 @@ module.exports = {
                     "attack02", 6,
                     false, {},
                     true,
-                    0, 0,
-                    0, 0
+                    -250, -100,
+                    -250, -300
                 ), 
             ]
         },
