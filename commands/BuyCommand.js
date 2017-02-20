@@ -3,6 +3,11 @@ module.exports = {
         var command = bot.functionHelper.parseCommand(message);
         if (command.commandName != "~buy") return;
 
+        if (!bot.isPM(message)) {
+            message.reply("You can use this command in Private Message only.");
+            return;
+        }
+        
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
         if (player === null) {
