@@ -394,9 +394,9 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             if (charmOwnerUnit && (!charmOwnerUnit.isFainted() || skillPhase.status["Resurrection"])) {
                 var newMainTargetUnit = charmOwnerUnit;
                 var newActionOnEnemySide = battleField.isEnemy(newMainTargetUnit.playerId);
-                var newField = (newActionOnEnemySide? battleField.enemySide: battleField.allySide);
+                var newField = (newActionOnEnemySide? battleField.enemySide: battleField.allySide);                
                 var newTargets = this.resolveTargets(skillPhase, attacker, newMainTargetUnit, newField);
-                if (newTargets.length > 0) {
+                if (getPosOnField(newMainTargetUnit, newField)) {
                     mainTargetUnit = newMainTargetUnit
                     actionOnEnemySide = newActionOnEnemySide;
                     field = newField;
