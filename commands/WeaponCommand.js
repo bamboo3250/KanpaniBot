@@ -44,7 +44,11 @@ module.exports = {
             }
             weaponInfo = bot.weaponDatabase.getWeaponByCodeName(codeName, classId);    
         } else {
-            var characterName = command.args[1];
+            var characterName = "";
+            for(var i=1;i<command.args.length;i++) {
+                characterName += command.args[i] + " ";
+            }
+            characterName = characterName.trim();
             var characterInfo = bot.employeeDatabase.getEmployeeByCommonName(characterName);
             if (!characterInfo) {
                 message.reply("This character doesn't exist.");
