@@ -8,7 +8,7 @@
         }
     },
     "Weapon Hammer": {
-        "amount": 495,
+        "amount": 462,
         "maxAmount": 500,
         "price": {
             "amount": 750000,
@@ -16,7 +16,7 @@
         }
     },
     "Armor Hammer": {
-        "amount": 481,
+        "amount": 408,
         "maxAmount": 500,
         "price": {
             "amount": 750000,
@@ -24,7 +24,7 @@
         }
     },
     "Accessory Hammer": {
-        "amount": 498,
+        "amount": 476,
         "maxAmount": 500,
         "price": {
             "amount": 750000,
@@ -40,7 +40,7 @@
         }
     },
     "Forge": {
-        "amount": 84,
+        "amount": 30,
         "maxAmount": 100,
         "price": {
             "amount": 2000000,
