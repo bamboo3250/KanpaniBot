@@ -5752,6 +5752,38 @@ module.exports = {
                 }
             ]
         },{
+            _id: "308619", modelId: "19", name: "Dark Cross of Els", commonNames: ["Dark Cross of Els"],
+            characterId: "10650002_ae907df4", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 60, matk: 155, mdef: 60, crit: 0, hit: 20, eva: 20,
+                    frontSkill: "Knock", backSkill: "Heavenly Breath"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 70, matk: 200, mdef: 70, crit: 0, hit: 20, eva: 20,
+                    frontSkill: "Knock", backSkill: "Healing Light"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 93, matk: 255, mdef: 93, crit: 0, hit: 25, eva: 25,
+                    frontSkill: "Knock", backSkill: "Healing Light"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 102, matk: 355, mdef: 102, crit: 0, hit: 25, eva: 25,
+                    frontSkill: "Knock", backSkill: "Holy Poetry"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Dragon Horn",
+                    amount: 2
+                },{
+                    materialName: "Emerald",
+                    amount: 1
+                },{
+                    materialName: "Mithril Ore",
+                    amount: 2
+                }
+            ]
+        },{
             _id: "308621", modelId: "21", name: "Holy Mace of Clotho", commonNames: ["Holy Mace of Clotho"],
             characterId: "10650003_314afe6a", type: "character", isActive: true, stats: {
                 "+0": { price: 5000,

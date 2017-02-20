@@ -2199,6 +2199,39 @@ module.exports = {
                 )
             ]
         },
+        "Holy Poetry": {
+            canAttack: true,
+            canHeal: true,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    SkillPhaseConst.TYPE_SPELL_ATTACK,
+                    1.4, 1,
+                    SkillPhaseConst.DAMAGE_MAGICAL,
+                    SkillPhaseConst.ELEMENT_DARK,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack02", 6,
+                    false, {},
+                    true,
+                    0, 0,
+                    0, 0
+                ),
+                new SkillPhase(
+                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    SkillPhaseConst.TYPE_HEALING,
+                    0.68, 1,
+                    SkillPhaseConst.DAMAGE_MAGICAL,
+                    SkillPhaseConst.ELEMENT_LIGHT,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack02", 6,
+                    false, {},
+                    true,
+                    0, 0,
+                    0, 0
+                ), 
+            ]
+        },
         "Heavenly Technique - Srishti": {
             canAttack: false,
             canHeal: true,
