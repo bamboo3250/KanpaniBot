@@ -98,6 +98,11 @@ module.exports = {
         var command = bot.functionHelper.parseCommand(message);
         if (command.commandName !== "~setauction") return;
 
+        if (!bot.isPM(message) && message.channel.name != 'market') {
+            message.reply('You can only set a new auction either in PM or in Market channel.');
+            return;
+        }
+
         var userId = message.author.id;
         if (!bot.auctionManager.canSetAuction(userId)) {
             message.reply("You cannot set a new auction now.");

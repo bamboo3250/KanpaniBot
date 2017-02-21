@@ -2,6 +2,12 @@ module.exports = {
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
         if (command.commandName != "~bid") return;
+
+        if (!bot.isPM(message) && message.channel.name != 'market') {
+            message.reply('You can only bid either in PM or in Market channel.');
+            return;
+        }
+
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
         if (!player) {
