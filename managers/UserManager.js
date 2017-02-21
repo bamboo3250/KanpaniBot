@@ -1,7 +1,7 @@
-function UserManager() {
+function UserManager(bot) {
+    this.bot = bot;
     this.members = {};
     this.guilds = null;
-    this.bot = null;
 }
 
 UserManager.prototype.fetchAllMembersInGuildRecursively = function(callback, iter) {
@@ -102,4 +102,4 @@ UserManager.prototype.announceLevel = function(id, newLevel) {
     }
 }
 
-module.exports = new UserManager();
+module.exports = UserManager;

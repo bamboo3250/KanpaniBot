@@ -62,4 +62,4 @@ BackgroundManager.prototype.getChristmasBackgrounds = function() {
     ];
 }
 
-module.exports = new BackgroundManager();
+module.exports = BackgroundManager;

@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 var Employee = require('../classes/Employee');
 var Weapon = require('../classes/Weapon');
 var Armor = require('../classes/Armor');
@@ -18,14 +20,13 @@ var MatkDownStatus = require('../classes/status/MatkDownStatus');
 var MdefDownStatus = require('../classes/status/MdefDownStatus');
 var CharmStatus = require('../classes/status/CharmStatus');
 
-function PlayerManager() {
+function PlayerManager(bot) {
     this.TRAINER_RESPAWN_TIME = 8*60*60*1000;
 
+    this.bot = bot;
+    this.playerDict = {};
     this.playerUnits = {};
     this.mobUnits = {};
-    this.bot = null;
-
-    this.playerDict = {};
 }
 
 PlayerManager.prototype.createNewPlayer = function(userId) {
@@ -54,6 +55,60 @@ PlayerManager.prototype.getPlayer = function(userId) {
     var player = this.playerDict[userId];
     if (typeof player === "undefined") return null;
     return player;
+}
+
+var playerFileName = "player.json";
+PlayerManager.prototype.savePlayer = function() {
+    var textToWrite = JSON.stringify(this.playerDict, null, 4);
+    var that = this;
+    fs.writeFile(playerFileName, textToWrite, function(err) {
+        if(err) {
+            that.bot.log(err);
+            return;  
+        } 
+    }); 
+}
+
+PlayerManager.prototype.loadPlayer = function(callback) {
+    console.log("loadPlayer")
+    var that = this;
+    fs.readFile(playerFileName, 'utf8', function (err, data) {
+        if (err) { console.log(err); return; }
+
+        try {
+            that.playerDict = JSON.parse(data);
+        }
+        catch (err) {
+            that.bot.log(err);
+        }
+
+        // migration
+        for(key in that.playerDict) {
+            var userId = key;
+            var player = that.getPlayer(userId);
+            player.exp = Math.floor(player.exp);
+            
+            var characterClassId = player.characterId.substring(2,3);
+            if (player.equipedWeapon && characterClassId != player.equipedWeapon._id.substring(3,4)) {
+                that.unequipWeapon(userId);
+                var user = that.bot.getUser(userId);
+                if (user) that.bot.log("Unequip Weapon for " + user.username);
+            }
+            if (player.equipedArmor && characterClassId != player.equipedArmor._id.substring(3,4)) {
+                that.unequipArmor(userId);
+                var user = that.bot.getUser(userId);
+                if (user) that.bot.log("Unequip Armor for " + user.username);
+            }
+        }
+        that.bot.log("Number of players: " + Object.keys(that.playerDict).length);
+
+        for(key in that.playerDict) {
+            var userId = key;
+            var player = that.getPlayer(userId);
+            that.createUnitForPlayer(player);
+        }
+        if (typeof callback == "function") callback();
+    });
 }
 
 PlayerManager.prototype.addItem = function(userId, itemName, amount = 1) {
@@ -490,4 +545,4 @@ PlayerManager.prototype.applyCharm = function(fromUserId, toUserId) {
     }
 }
 
-module.exports = new PlayerManager();
+module.exports = PlayerManager;

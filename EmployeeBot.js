@@ -1,82 +1,82 @@
-var Discord = require("discord.js");
+var Discord = require('discord.js');
 
-var employeeDatabase = require('./database/EmployeeDatabase');
-var questDatabase = require('./database/QuestDatabase');
-var itemInfoDatabase = require('./database/ItemInfoDatabase');
-var weaponDatabase = require('./database/WeaponDatabase');
-var armorDatabase = require('./database/ArmorDatabase');
-var accessoryDatabase = require('./database/AccessoryDatabase');
-var skillDatabase = require('./database/SkillDatabase');
+var employeeDatabase    = require('./database/EmployeeDatabase');
+var questDatabase       = require('./database/QuestDatabase');
+var itemInfoDatabase    = require('./database/ItemInfoDatabase');
+var weaponDatabase      = require('./database/WeaponDatabase');
+var armorDatabase       = require('./database/ArmorDatabase');
+var accessoryDatabase   = require('./database/AccessoryDatabase');
+var skillDatabase       = require('./database/SkillDatabase');
 
-var playerManager = require('./managers/PlayerManager');
-var userManager = require('./managers/UserManager');
-var backgroundManager = require('./managers/BackgroundManager');
-var auctionManager = require('./managers/AuctionManager');
-var imageManager = require('./managers/ImageManager');
+var PlayerManager       = require('./managers/PlayerManager');
+var UserManager         = require('./managers/UserManager');
+var BackgroundManager   = require('./managers/BackgroundManager');
+var AuctionManager      = require('./managers/AuctionManager');
+var ImageManager        = require('./managers/ImageManager');
 
-var imageHelper = require('./helpers/ImageHelper');
-var functionHelper = require('./helpers/FunctionHelper');
-var urlHelper = require('./helpers/UrlHelper');
-var fs = require('fs');
-var Jimp = require("jimp");
+var fs              = require('fs');
+var Jimp            = require('jimp');
+var imageHelper     = require('./helpers/ImageHelper');
+var functionHelper  = require('./helpers/FunctionHelper');
+var urlHelper       = require('./helpers/UrlHelper');
 
-var dailyCommand = require('./commands/DailyCommand');
-var maintenanceCommand = require('./commands/MaintenanceCommand');
-var basicGreetingCommand = require('./commands/BasicGreetingCommand');
-var specialCommand = require('./commands/SpecialCommand');
-var breadCommand = require('./commands/BreadCommand');
-var assignRoleCommand = require('./commands/AssignRoleCommand');
-var giveBreadCommand = require('./commands/GiveBreadCommand');
-var charaCommand = require('./commands/CharaCommand');
-var meCommand = require('./commands/MeCommand');
-var topCommand = require('./commands/TopCommand');
-var myTopCommand = require('./commands/MyTopCommand');
-var rollCommand = require('./commands/RollCommand');
-var takeCommand = require('./commands/TakeCommand');
-var grindCommand = require('./commands/GrindCommand');
-var adminCommand = require('./commands/AdminCommand');
-var questCommand = require('./commands/QuestCommand');
-var inventoryCommand = require('./commands/InventoryCommand');
-var sellCommand = require('./commands/SellCommand');
-var useCommand = require('./commands/UseCommand');
-var craftCommand = require('./commands/CraftCommand');
-var inventoryEquipmentCommand = require('./commands/InventoryEquipmentCommand');
-var equipCommand = require('./commands/EquipCommand');
-var reportCommand = require('./commands/ReportCommand');
-var setDailyGiftCommand = require('./commands/SetDailyGiftCommand');
-var dailyGiftCommand = require('./commands/DailyGiftCommand');
-var effectCommand = require('./commands/EffectCommand');
-var toFrontCommand = require('./commands/ToFrontCommand');
-var toBackCommand = require('./commands/ToBackCommand');
-var itemDropCommand = require('./commands/ItemDropCommand');
-var unsubscribeCommand = require('./commands/UnsubscribeCommand');
-var retreatCommand = require('./commands/RetreatCommand');
-var xmasTreeCommand = require('./commands/XmasTreeCommand');
-var weaponCommand = require('./commands/WeaponCommand');
-var armorCommand = require('./commands/ArmorCommand');
-var accessoryCommand = require('./commands/AccessoryCommand');
-var setAuctionCommand = require('./commands/SetAuctionCommand');
-var auctionCommand = require('./commands/AuctionCommand');
-var bidCommand = require('./commands/BidCommand');
-var wakeUpCommand = require('./commands/WakeUpCommand');
-var aromaCommand = require('./commands/AromaCommand');
-var sellPageCommand = require('./commands/SellPageCommand');
-var ceoPowerCommand = require('./commands/CEOPowerCommand');
-var kettleCommand = require('./commands/KettleCommand');
-var shopCommand = require('./commands/ShopCommand');
-var buyCommand = require('./commands/BuyCommand');
-var promoteCommand = require('./commands/PromoteCommand');
+var dailyCommand                = require('./commands/DailyCommand');
+var maintenanceCommand          = require('./commands/MaintenanceCommand');
+var basicGreetingCommand        = require('./commands/BasicGreetingCommand');
+var specialCommand              = require('./commands/SpecialCommand');
+var breadCommand                = require('./commands/BreadCommand');
+var assignRoleCommand           = require('./commands/AssignRoleCommand');
+var giveBreadCommand            = require('./commands/GiveBreadCommand');
+var charaCommand                = require('./commands/CharaCommand');
+var meCommand                   = require('./commands/MeCommand');
+var topCommand                  = require('./commands/TopCommand');
+var myTopCommand                = require('./commands/MyTopCommand');
+var rollCommand                 = require('./commands/RollCommand');
+var takeCommand                 = require('./commands/TakeCommand');
+var grindCommand                = require('./commands/GrindCommand');
+var adminCommand                = require('./commands/AdminCommand');
+var questCommand                = require('./commands/QuestCommand');
+var inventoryCommand            = require('./commands/InventoryCommand');
+var sellCommand                 = require('./commands/SellCommand');
+var useCommand                  = require('./commands/UseCommand');
+var craftCommand                = require('./commands/CraftCommand');
+var inventoryEquipmentCommand   = require('./commands/InventoryEquipmentCommand');
+var equipCommand                = require('./commands/EquipCommand');
+var reportCommand               = require('./commands/ReportCommand');
+var setDailyGiftCommand         = require('./commands/SetDailyGiftCommand');
+var dailyGiftCommand            = require('./commands/DailyGiftCommand');
+var effectCommand               = require('./commands/EffectCommand');
+var toFrontCommand              = require('./commands/ToFrontCommand');
+var toBackCommand               = require('./commands/ToBackCommand');
+var itemDropCommand             = require('./commands/ItemDropCommand');
+var unsubscribeCommand          = require('./commands/UnsubscribeCommand');
+var retreatCommand              = require('./commands/RetreatCommand');
+var xmasTreeCommand             = require('./commands/XmasTreeCommand');
+var weaponCommand               = require('./commands/WeaponCommand');
+var armorCommand                = require('./commands/ArmorCommand');
+var accessoryCommand            = require('./commands/AccessoryCommand');
+var setAuctionCommand           = require('./commands/SetAuctionCommand');
+var auctionCommand              = require('./commands/AuctionCommand');
+var bidCommand                  = require('./commands/BidCommand');
+var wakeUpCommand               = require('./commands/WakeUpCommand');
+var aromaCommand                = require('./commands/AromaCommand');
+var sellPageCommand             = require('./commands/SellPageCommand');
+var ceoPowerCommand             = require('./commands/CEOPowerCommand');
+var kettleCommand               = require('./commands/KettleCommand');
+var shopCommand                 = require('./commands/ShopCommand');
+var buyCommand                  = require('./commands/BuyCommand');
+var promoteCommand              = require('./commands/PromoteCommand');
 
-var attackCommand = require('./commands/AttackCommand');
-var healCommand = require('./commands/HealCommand');
-var trainerCommand = require('./commands/TrainerCommand');
-var joinTrainingCommand = require('./commands/JoinTrainingCommand');
-var quitTrainingCommand = require('./commands/QuitTrainingCommand');
-var ceoReviveCommand = require('./commands/CeoReviveCommand');
-var swapCommand = require('./commands/SwapCommand');
-var encourageCommand = require('./commands/EncourageCommand');
-var sneakCommand = require('./commands/SneakCommand');
-var focusCommand = require('./commands/FocusCommand');
+var attackCommand               = require('./commands/AttackCommand');
+var healCommand                 = require('./commands/HealCommand');
+var trainerCommand              = require('./commands/TrainerCommand');
+var joinTrainingCommand         = require('./commands/JoinTrainingCommand');
+var quitTrainingCommand         = require('./commands/QuitTrainingCommand');
+var ceoReviveCommand            = require('./commands/CeoReviveCommand');
+var swapCommand                 = require('./commands/SwapCommand');
+var encourageCommand            = require('./commands/EncourageCommand');
+var sneakCommand                = require('./commands/SneakCommand');
+var focusCommand                = require('./commands/FocusCommand');
 
 function EmployeeBot() {
     this.token = null;
@@ -97,15 +97,12 @@ function EmployeeBot() {
     this.functionHelper = functionHelper;
     this.urlHelper = urlHelper;
     
-    this.playerManager = playerManager;
-    playerManager.bot = this;
-    this.userManager = userManager;
-    userManager.bot = this;
-    this.backgroundManager = backgroundManager;
-    this.auctionManager = auctionManager;
-    this.imageManager = imageManager;
-    imageManager.bot = this;
-    imageManager.init();
+    this.playerManager      = new PlayerManager(this);
+    this.userManager        = new UserManager(this);
+    this.backgroundManager  = new BackgroundManager();
+    this.auctionManager     = new AuctionManager();
+    this.imageManager       = new ImageManager(this);
+    this.imageManager.init();
 
     this.battleController = null;
 
@@ -150,24 +147,6 @@ function EmployeeBot() {
         "You are welcomed :heart:",
         "No problem",
     ];
-    // this.halloween = [
-    //     "Happy Halloween",
-    //     "Happy Halloween :jack_o_lantern:",
-    //     "Happy Halloween :ghost:",
-    //     "Happy Halloween :spider_web:",
-    //     "Happy Halloween :bat:",
-    //     ":jack_o_lantern:",
-    //     ":ghost:",
-    //     ":spider_web: ",
-    //     ":bat: "
-    // ];
-    // this.trickortreat = [
-    //     "",
-    //     "*gives* :candy:",
-    //     "*gives* :cookie:",
-    //     ":p",
-    //     ";p",
-    // ];
     
     this.hasNewMessage = false;
     this.lastTimeSayingHi = 0;
@@ -217,86 +196,13 @@ function EmployeeBot() {
     this.auctionId = {};
     this.shop = {};
 
+    this.mainChannel = null;
     this.logChannel = null;
+    this.marketChannel = null;
     this.battleChannel = null;
 
     this.disconnectTimer = null;
-    // Event stuffs
-    // this.christmasTreeContribution = {};
-    // this.christmasTreeMilestones = {
-    //     "10": {
-    //         itemName: "Black Pearl",
-    //         amount: 10
-    //     },
-    //     "50": {
-    //         itemName: "Unmelting Ice",
-    //         amount: 20
-    //     },
-    //     "100": {
-    //         itemName: "Gold Mailbox",
-    //         amount: 1
-    //     },
-    //     "500": {
-    //         itemName: "Weapon Hammer",
-    //         amount: 5
-    //     },
-    //     "1000": {
-    //         itemName: "Forge",
-    //         amount: 1
-    //     },
-    //     "3000": {
-    //         itemName: "Forge",
-    //         amount: 3
-    //     }
-    // }
-    //this.aromaEffect = null;
-    //this.aromaTimeout = null;
-
-    // this.aromaRewardList = [
-    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-    //     "Magnificent Silver Coin",
-    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-    //     "Magnificent Silver Coin",
-    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-    //     "Magnificent Silver Coin",
-    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-    //     "Magnificent Silver Coin",
-    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-    //     "Magnificent Silver Coin",
-    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-    //     "Magnificent Silver Coin",
-    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-    //     "Magnificent Silver Coin",
-    //     "Gold Ore","Ominous Cloth","Chimera Horn","Luxurious Leather","Full Moon Fragment","Magical Water","Ebony Branch",
-    //     "Crystal","Ruby","Onyx","Aquamarine","Topaz","Turquoise",
-    //     "Diamond","Rose Quartz","Black Pearl","Lapis Lazuli","Garnet","Emerald",
-    //     "Magnificent Silver Coin",
-    //     "Weapon Hammer",
-    //     "Armor Hammer",
-    //     "Accessory Hammer",
-    //     "Forge"
-    // ];
-
-    // this.aromaLimitReward = {
-    //     "Weapon Hammer": 5,
-    //     "Armor Hammer": 5,
-    //     "Accessory Hammer": 5,
-    //     "Forge": 1
-    // }
+   
     this.kettle = {
         totalCacao: 0,
         contribution: {},
@@ -344,8 +250,7 @@ EmployeeBot.prototype.createRemainingBreadLine = function(message) {
     if (this.isPM(message)) {
         return "Remaining Bread: " + this.remainingBread[userId];
     } else {
-        const breadEmoji = message.guild.emojis.find('name', 'kbread');
-        return "Remaining Bread: " + breadEmoji + " x" + this.remainingBread[userId];    
+        return "Remaining Bread: " + this.getEmoji('kbread') + " x" + this.remainingBread[userId];    
     }
 }
 
@@ -411,7 +316,6 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         specialCommand.handle(message, this);
         breadCommand.handle(message, this);
         assignRoleCommand.handle(message, this);
-        // giveBreadCommand.handle(message, this);
         charaCommand.handle(message, this);
         meCommand.handle(message, this);
         topCommand.handle(message, this);
@@ -436,15 +340,12 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         itemDropCommand.handle(message, this);
         unsubscribeCommand.handle(message, this);
         retreatCommand.handle(message, this);
-        // xmasTreeCommand.handle(message, this);
         weaponCommand.handle(message, this);
         armorCommand.handle(message, this);
         accessoryCommand.handle(message, this);
         setAuctionCommand.handle(message, this);
         auctionCommand.handle(message, this);
         bidCommand.handle(message, this);
-        wakeUpCommand.handle(message, this);
-        aromaCommand.handle(message, this);
         sellPageCommand.handle(message, this);
         ceoPowerCommand.handle(message, this);
         attackCommand.handle(message, this);
@@ -491,13 +392,7 @@ EmployeeBot.prototype.setDailyDrawReminderForNutaku = function() {
     var time = this.functionHelper.getTimeUntilDaily(this.nutakuDailyRemind); 
     var that = this;
     setTimeout(function() {
-        var channels = that.bot.channels.array();
-        for(var i=0;i<channels.length;i++) {
-            if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
-                var nutakuRole = channels[i].guild.roles.find('name', 'Nutaku');
-                channels[i].sendMessage(nutakuRole + "\n**Reminder: 15 minutes until Daily Draw Reset**")
-            }
-        }
+        that.sendMessageToMainChannel(that.getRole('Nutaku') + "\n**Reminder: 15 minutes until Daily Draw Reset**")
         setTimeout(function(){
             that.setDailyDrawReminderForNutaku();    
         }, 30*1000);
@@ -508,13 +403,7 @@ EmployeeBot.prototype.setDailyDrawReminderForDmm = function() {
     var time = this.functionHelper.getTimeUntilDaily(this.dmmDailyRemind); 
     var that = this;
     setTimeout(function() {
-        var channels = that.bot.channels.array();
-        for(var i=0;i<channels.length;i++) {
-            if (channels[i].type === "text" && channels[i].name === that.nutakuChannelName) {
-                var dmmRole = channels[i].guild.roles.find('name', 'DMM');
-                channels[i].sendMessage(dmmRole + "\n**Reminder: 15 minutes until Daily Draw Reset**")
-            }
-        }
+        that.sendMessageToMainChannel(that.getRole('DMM') + "\n**Reminder: 15 minutes until Daily Draw Reset**")
         setTimeout(function(){
             that.setDailyDrawReminderForDmm();
         }, 30*1000);
@@ -641,64 +530,12 @@ EmployeeBot.prototype.loadUnsubscribe = function() {
     });
 }
 
-var playerFileName = "player.json";
 EmployeeBot.prototype.savePlayer = function() {
-    var textToWrite = JSON.stringify(this.playerManager.playerDict, null, 4);
-    var that = this;
-    fs.writeFile(playerFileName, textToWrite, function(err) {
-        if(err) {
-            that.log(err);
-            return;  
-        } 
-    }); 
+    this.playerManager.savePlayer();
 }
 
-EmployeeBot.prototype.loadPlayer = function(callback) {
-    console.log("loadPlayer")
-    var that = this;
-    fs.readFile(playerFileName, 'utf8', function (err, data) {
-
-        if (err) {
-            console.log(err);
-            return;
-        }
-        try {
-            that.playerManager.playerDict = JSON.parse(data);
-        }
-        catch (err) {
-            that.playerManager.playerDict = {};
-            that.log(err);
-        }
-        // migration
-        for(key in that.playerManager.playerDict) {
-            var userId = key;
-            var player = that.playerManager.playerDict[userId];
-            player.exp = Math.floor(player.exp);
-            var characterClassId = player.characterId.substring(2,3);
-            if (player.equipedWeapon && characterClassId != player.equipedWeapon._id.substring(3,4)) {
-                that.playerManager.unequipWeapon(userId);
-                var user = that.userManager.getUser(userId);
-                if (user) that.log("Unequip Weapon for " + user.username);
-            }
-            if (player.equipedArmor && characterClassId != player.equipedArmor._id.substring(3,4)) {
-                that.playerManager.unequipArmor(userId);
-                var user = that.userManager.getUser(userId);
-                if (user) that.log("Unequip Armor for " + user.username);
-            }
-            if (typeof player.promotion === "undefined") {
-                player.promotion = 0;
-            }
-        }
-        that.log("Number of players: " + Object.keys(that.playerManager.playerDict).length);
-
-        for(key in that.playerManager.playerDict) {
-            var userId = key;
-            var player = that.playerManager.getPlayer(userId);
-            that.playerManager.createUnitForPlayer(player);
-            var unit = that.playerManager.getPlayerUnit(userId);
-        }
-        if (typeof callback == "function") callback();
-    });
+EmployeeBot.prototype.getUser = function(userId) {
+    return this.userManager.getUser(userId);
 }
 
 var dailyGiftFileName = "dailygift.json";
@@ -759,65 +596,6 @@ EmployeeBot.prototype.loadShop = function() {
         }
     });
 }
-
-// var christmasTreeFileName = "christmasTree.json";
-// EmployeeBot.prototype.saveChristmasTree = function() {
-//     var textToWrite = JSON.stringify(this.christmasTreeContribution, null, 4);
-//     var that = this;
-//     fs.writeFile(christmasTreeFileName, textToWrite, function(err) {
-//         if(err) {
-//             that.log(err);
-//             return;  
-//         } 
-//     }); 
-// }
-
-// EmployeeBot.prototype.loadChristmasTree = function() {
-//     var that = this;
-//     fs.readFile(christmasTreeFileName, 'utf8', function (err, data) {
-//         if (err) {
-//             that.log("[loadChristmasTree] Read file error.\n" + err);
-//             return;
-//         }
-//         try {
-//             that.christmasTreeContribution = JSON.parse(data);
-//         }
-//         catch (err) {
-//             that.log(err);
-//         }
-//     });
-// }
-
-// var aromaFileName = "aroma.json";
-// EmployeeBot.prototype.saveAroma = function() {
-//     var textToWrite = JSON.stringify(this.aromaEffect, null, 4);
-//     var that = this;
-//     fs.writeFile(aromaFileName, textToWrite, function(err) {
-//         if(err) {
-//             that.log(err);
-//             return;  
-//         } 
-//     });
-// }
-
-// EmployeeBot.prototype.loadAroma = function() {
-//     var that = this;
-//     this.log("loadAroma");
-//     console.log("loadAroma");
-//     fs.readFile(aromaFileName, 'utf8', function (err, data) {
-//         if (err) {
-//             that.log("[loadAroma] Read file error.\n" + err);
-//             return;
-//         }
-//         try {
-//             that.aromaEffect = JSON.parse(data);
-//             useCommand.setAromaTimeout(that);
-//         }
-//         catch (err) {
-//             that.log(err);
-//         }
-//     });
-// }
 
 var kettleFileName = "kettle.json";
 EmployeeBot.prototype.saveKettle = function() {
@@ -951,7 +729,6 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
                 that.log(text);
             }
         }
-        // if (text != "") that.log(text);
     });
 }
 
@@ -989,16 +766,6 @@ EmployeeBot.prototype.loadAuction = function() {
             setAuctionCommand.setNotice(that, userId);
         }
     });
-}
-
-EmployeeBot.prototype.sendMessageToMainChannel = function(text) {
-    var channels = this.bot.channels.array();
-    for(var i=0;i<channels.length;i++) {
-        if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
-            channels[i].sendMessage(text);
-            return;
-        }
-    }
 }
 
 EmployeeBot.prototype.removeFaintedRole = function() {
@@ -1054,25 +821,25 @@ EmployeeBot.prototype.ready = function() {
     if (this.firstTimeReady) {
         var channels = this.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
-            // if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
-            //     // this.greeting(channels[i]);
-            // }
+            if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
+                this.mainChannel = channels[i];
+            }
             if (channels[i].type === "text" && channels[i].name === "log") {
                 this.logChannel = channels[i];
             }
             if (channels[i].type === "text" && channels[i].name === "battlefield") {
                 this.battleChannel = channels[i];
             }
+            if (channels[i].type === "text" && channels[i].name === "market") {
+                this.marketChannel = channels[i];
+            }
         }
+        console.log("mainChannel is " + (this.mainChannel?"on":"off"));    
         console.log("logChannel is " + (this.logChannel?"on":"off"));    
-        console.log("battleChannel is " + (this.battleChannel?"on":"off"));    
-        
-        var text = "Bot is on. Serving on " + channels.length + " channels\n";
-        // for(var i=0;i<channels.length;i++) {
-        //     var channelName = (channels[i].name ? channels[i].name : channels[i].recipient.username);
-        //     text += (i+1) + ". " + channelName + " (" + (channels[i].guild ? channels[i].guild.name : "PM") + ")\n";
-        // }
-        text += "-----";
+        console.log("battleChannel is " + (this.battleChannel?"on":"off"));
+        console.log("marketChannel is " + (this.marketChannel?"on":"off"));
+
+        var text = "Bot is on. Serving on " + channels.length + " channels\n-----";
         this.log(text);
         console.log(text);
 
@@ -1089,12 +856,10 @@ EmployeeBot.prototype.ready = function() {
         this.loadUnsubscribe();
         this.loadShop();
         this.loadSilenced();
-        // this.loadChristmasTree();
-        this.loadPlayer(function() {
+        this.playerManager.loadPlayer(function() {
             that.userManager.fetchAllMembers(function() {
                 that.loadRunQuestStatus();
                 that.loadAuction();
-                //that.loadAroma();
                 that.removeFaintedRole();
                 that.saveSilenced();
             });
@@ -1106,6 +871,24 @@ EmployeeBot.prototype.ready = function() {
         this.log("Bot is restarted");
         return false;
     }
+}
+
+EmployeeBot.prototype.getEmoji = function(emojiName) {
+    if (!this.mainChannel) return null;
+    return this.mainChannel.guild.emojis.find('name', emojiName);    
+}
+
+EmployeeBot.prototype.getRole = function(roleName) {
+    if (!this.mainChannel) return null;
+    return this.mainChannel.guild.roles.find('name', roleName);    
+}
+
+EmployeeBot.prototype.sendMessageToMainChannel = function(text) {
+    if (this.mainChannel) this.mainChannel.sendMessage(text);
+}
+
+EmployeeBot.prototype.sendMessageToMarketChannel = function(text) {
+    if (this.marketChannel) this.marketChannel.sendMessage(text);
 }
 
 EmployeeBot.prototype.log = function(text) {

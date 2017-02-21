@@ -66,4 +66,4 @@ AuctionManager.prototype.setBid = function(userId, targetUserId, price) {
     }
 }
 
-module.exports = new AuctionManager();
+module.exports = AuctionManager;

@@ -1,5 +1,5 @@
-function ImageManager() {
-    this.bot = null;
+function ImageManager(bot) {
+    this.bot = bot;
     this.imageDict = {};
 }
 
@@ -81,4 +81,4 @@ ImageManager.prototype.getDamage = function(type, digit) {
     return this.imageDict["images/misc/damage/"+type+""+digit+".png"];
 };
 
-module.exports = new ImageManager();
+module.exports = ImageManager;
