@@ -129,17 +129,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272259125256388610",  // Sytry Guest
-            characterId: "10850002_c4678df9",
+            _id: "283224327279869962",  // Eva Slade Guest
+            characterId: "10650002_ae907df4",
             promotion: 0,
             exp: 5370000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308819",
+                _id: "308619",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(8),
+                _id: myBot.randomArmor(6),
                 plus: 3
             },
             equipedAccessory: {
