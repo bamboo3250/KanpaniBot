@@ -70,7 +70,7 @@ UserManager.prototype.addRole = function(id, roleName, callback) {
     if (!role) return;
     var that = this;
     member.addRole(role).then(outputMember => {
-        this.members[id] = outputMember;
+        that.members[id] = outputMember;
         that.bot.log(roleName + " Role added for " + outputMember.user.username + ".");
         if (typeof callback === "function") callback();
     }).catch(err => {
@@ -87,7 +87,7 @@ UserManager.prototype.removeRole = function(id, roleName, callback) {
     if (!role) return;
     var that = this;
     member.removeRole(role).then(outputMember => {
-        this.members[id] = outputMember;
+        that.members[id] = outputMember;
         that.bot.log(role.name + " Role removed for " + outputMember.user.username + ".");
         if (typeof callback === "function") callback();
     }).catch(err => {
