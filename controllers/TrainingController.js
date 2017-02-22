@@ -904,7 +904,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     });
 }
 
-TrainingController.prototype.randomField = function(middlePlayerId) {
+TrainingController.prototype.randomField = function(middlePlayerId, secondaryPlayerIdOnTheField) {
     var field = [[null,null,null],[null,null,null]];
     var groups = {};
     for(key in this.bot.playerManager.playerDict) {
@@ -920,6 +920,15 @@ TrainingController.prototype.randomField = function(middlePlayerId) {
                     field[0][1] = userId;
                 } else {
                     field[1][1] = userId;
+                }
+                continue;
+            }
+
+            if (secondaryPlayerIdOnTheField && (userId === secondaryPlayerIdOnTheField || player.partnerId === secondaryPlayerIdOnTheField)) {
+                if (player.position === "front") {
+                    field[0][2] = userId;
+                } else {
+                    field[1][2] = userId;
                 }
                 continue;
             }
@@ -947,7 +956,7 @@ TrainingController.prototype.randomField = function(middlePlayerId) {
         field[1][0] = chosenGroup.backline;
         groupList.splice(chosenGroupIndex, 1);
     }
-    if (groupList.length > 0) {
+    if (groupList.length > 0 && !field[0][2] && !field[1][2]) {
         var chosenGroupIndex = this.bot.functionHelper.randomInt(groupList.length);
         var chosenGroup = groupList[chosenGroupIndex];
         field[0][2] = chosenGroup.frontline;
@@ -1002,6 +1011,7 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         return;   
     }
 
+    var secondaryPlayerIdOnTheField = null;
     while(targetUnitList.length < skill.phases.length) {
         targetUnitList.push(targetUnitList[targetUnitList.length-1]);
     }
@@ -1022,6 +1032,10 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
                 var targetPos = getPosOnField(targetUnitList[i], this.trainerField);
                 if (targetPos) {
                     targetUnitList[i] = attacker;
+                } else {
+                    if (targetUnitList[i].playerId != attacker.playerId) {
+                        secondaryPlayerIdOnTheField = targetUnitList[i].playerId;    
+                    }
                 }
             }
         }
@@ -1041,7 +1055,7 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
 
     var battleField = new BattleField();
     battleField.enemySide = this.trainerField;
-    battleField.allySide = this.randomField(attacker.playerId);
+    battleField.allySide = this.randomField(attacker.playerId, secondaryPlayerIdOnTheField);
 
     if (typeof that.trainingSession.contribution[attacker.playerId] === "undefined") {
         that.trainingSession.contribution[attacker.playerId] = 0;
