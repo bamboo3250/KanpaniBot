@@ -84,17 +84,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "268576286060838914",  // Saimi Guest
-            characterId: "10750001_32935980",
+            _id: "278911842859089920",  // Nhano Guest
+            characterId: "10550002_5cc7900c",
             promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308524",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(7),
+                _id: myBot.randomArmor(5),
                 plus: 3
             },
             equipedAccessory: {
@@ -109,13 +109,13 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "275533845984575488",  // Nona Guest
-            characterId: "10650003_314afe6a",
+            _id: "283224327279869962",  // Eva Slade Guest
+            characterId: "10650002_ae907df4",
             promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308621",
+                _id: "308619",
                 plus: 3
             },
             equipedArmor: {
@@ -170,8 +170,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "272257876393721867", "268576286060838914"],
-                [null, "275533845984575488", null]
+                [null, "272257876393721867", "278911842859089920"],
+                [null, "283224327279869962", null]
             ];    
         }
         
