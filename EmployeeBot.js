@@ -109,7 +109,7 @@ function EmployeeBot() {
     this.dmmMaintenanceList = [
         {
             name: "DMM KG Maintenance",
-            startTime: "Feb 24 2017 14:00:00 GMT+0900",
+            startTime: "Feb 24 2017 13:00:00 GMT+0900",
             endTime: "Feb 24 2017 17:00:00 GMT+0900"
         }
     ];

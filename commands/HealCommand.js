@@ -12,7 +12,7 @@ module.exports = {
         var playerUnit = bot.playerManager.getPlayerUnit(userId);
         
         if (!playerUnit) {
-            message.reply("You need to select character first.");
+            message.author.sendMessage("You need to select character first.");
             return;
         }
 
@@ -26,13 +26,13 @@ module.exports = {
             } else {
                 text += " You cannot heal now."
             }
-            message.reply(text); 
+            message.author.sendMessage(text); 
             return;
         }
 
         var targetList = command.mentionIds;
         if (targetList.length === 0) {
-            message.reply("You need to specify your target.");
+            message.author.sendMessage("You need to specify your target.");
             return;
         }
 
@@ -40,18 +40,18 @@ module.exports = {
         for (var i = 0; i < targetList.length; i++) {
             var targetUnit = bot.playerManager.getPlayerUnit(targetList[i]);
             if (!targetUnit) {
-                message.reply("One of your targets does not have character.");
+                message.author.sendMessage("One of your targets does not have character.");
                 return;
             }
             if (targetUnit && targetUnit.isTrainer) {
-                message.reply("You cannot heal a trainer.");
+                message.author.sendMessage("You cannot heal a trainer.");
                 return;
             }
             targetUnitList.push(targetUnit);
         };
 
         if (!bot.battleController) {
-            message.reply("You cannot do battle now.");
+            message.author.sendMessage("You cannot do battle now.");
             return;
         }
 
@@ -69,7 +69,7 @@ module.exports = {
                 message.channel.sendFile(imageFileName, "png", text);
             } else {
                 if (shouldMention) {
-                    message.reply(text);
+                    message.author.sendMessage(text);
                 } else {
                     message.channel.sendMessage(text);
                 }
