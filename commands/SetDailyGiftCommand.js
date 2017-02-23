@@ -30,7 +30,11 @@ module.exports = {
         },{
             itemName: "Rose Quartz",
             quantity: 10
+        },{
+            itemName: "EXP Palace Invitation",
+            quantity: 1
         }
+
     ],
     handle: function(message, bot) {
         if (!bot.isAdmin(message)) return;
