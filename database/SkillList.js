@@ -3109,14 +3109,15 @@ module.exports = {
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
                     "attack01", 13,
-                    false, {
-                        "Pre-emption": true
-                    },
+                    false, {},
                     true,
                     -330, -490,
                     -330, -490
                 )
-            ]
+            ],
+            effect: {
+                "Pre-emption": true
+            }
         }
     }
 };

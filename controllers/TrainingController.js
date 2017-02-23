@@ -1075,9 +1075,11 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
 
     var trainerToAttack = that.randomTrainer();
     var isTrainerSkillReady = (trainerToAttack && trainerToAttack.cooldownEndTime <= now.valueOf());
+    var trainerSkill = null;
+
     if (trainerToAttack && !trainerToAttack.isFainted() && isTrainerSkillReady) {
         var trainerSkillName = trainerToAttack.getCurrentSkill();
-        var trainerSkill = that.bot.skillDatabase.getSkill(trainerToAttack.getClassId(), trainerSkillName);
+        trainerSkill = that.bot.skillDatabase.getSkill(trainerToAttack.getClassId(), trainerSkillName);
 
         var trainerTargetList = [];
         for (var i = 0; i < trainerSkill.phases.length; i++) {
@@ -1122,7 +1124,21 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
         
     }   
 
-    if (!trainerToAttack || attacker.getAGI() >= trainerToAttack.getAGI()) {
+    var isAttackerFaster = true;
+    var isAttackerPreepmtive = (skill && skill.effect && skill.effect["Pre-emption"]);
+    var isTrainerPreepmtive = (trainerSkill && trainerSkill.effect && trainerSkill.effect["Pre-emption"]);
+    if (isAttackerPreepmtive == isTrainerPreepmtive) {
+        if (trainerToAttack) {
+            isAttackerFaster = attacker.getAGI() >= trainerToAttack.getAGI();    
+        } else {
+            isAttackerFaster = true;
+        }
+        
+    } else {
+        isAttackerFaster = isAttackerPreepmtive;
+    }
+
+    if (!trainerToAttack || isAttackerFaster) {
         turnQueue.push(playerTurn);
         if (trainerToAttack && trainerTurn) turnQueue.push(trainerTurn);
         if (attacker.getClassId() === 7 && attacker.position === "front") {
