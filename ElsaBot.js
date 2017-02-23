@@ -380,17 +380,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "283224327279869962",  // Eva Slade Guest
-            characterId: "10650002_ae907df4",
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
             promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308619",
+                _id: "308819",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(6),
+                _id: myBot.randomArmor(8),
                 plus: 3
             },
             equipedAccessory: {
@@ -458,7 +458,7 @@ myBot.bot.on("ready", function() {
         } else {
             trainingController.trainerField = [
                 [null, "241511566036434945", null],
-                ["269733140635975680", "283224327279869962", null]
+                [null, "269733140635975680", "272259125256388610"]
             ];    
         }
         
