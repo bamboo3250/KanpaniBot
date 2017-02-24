@@ -201,7 +201,7 @@ module.exports = {
                             }
                         }
                     });
-                    glowingImage.gaussian(7);
+                    //glowingImage.gaussian(7);
                 }
 
                 var glowingPartnerImage = null;
@@ -227,7 +227,7 @@ module.exports = {
                                 }
                             }
                         });
-                        glowingPartnerImage.gaussian(7);
+                        //glowingPartnerImage.gaussian(7);
                     }
                 }
                 
