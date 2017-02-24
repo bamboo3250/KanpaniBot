@@ -933,9 +933,22 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.6
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.6
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.6
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.6
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.6, 4,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -951,9 +964,19 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.9
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.9
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.9
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.9, 3,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -971,9 +994,19 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.75
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.75
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.75
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.75, 3,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -990,9 +1023,13 @@ module.exports = {
             cooldown: 12,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ROW,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ROW,
+                            modifier: 3.15
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    3.15, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
@@ -1016,9 +1053,13 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.0
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.0, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1034,9 +1075,16 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.9
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.9
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.9, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1052,9 +1100,19 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.8
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.8
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.8, 3,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1070,9 +1128,13 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.5
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.5, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1089,9 +1151,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ROW,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ROW,
+                            modifier: 0.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.8, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1107,9 +1173,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.7
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.7, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1125,9 +1195,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.7
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.7, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1143,9 +1217,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.55
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.55, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1161,9 +1239,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ALL,
+                            modifier: 0.6
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ALL,
+                            modifier: 0.6
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.6, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1179,9 +1264,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.5
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.5, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1197,9 +1286,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.95
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.95, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1215,9 +1308,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 1.0
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.0, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1234,9 +1331,13 @@ module.exports = {
             cooldown: 10,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.8, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
@@ -1252,9 +1353,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 1.0
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.0, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1270,9 +1375,13 @@ module.exports = {
             cooldown: 10,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ALL,
+                            modifier: 0.9
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.9, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1289,9 +1398,13 @@ module.exports = {
             cooldown: 10,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ALL,
+                            modifier: 0.9
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.9, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1307,9 +1420,13 @@ module.exports = {
             cooldown: 12,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ROW,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ROW,
+                            modifier: 2.16
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    2.16, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1325,9 +1442,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.75
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.75, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
@@ -1343,9 +1464,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                            modifier: 0.7
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.7, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1361,9 +1486,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.8, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1381,9 +1510,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.77
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.77
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    0.77, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1400,9 +1536,13 @@ module.exports = {
             cooldown: 12,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ALL,
+                            modifier: 1.77
+                        }
+                    ],
                     SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
-                    1.77, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
@@ -1422,9 +1562,22 @@ module.exports = {
             cooldown: 12,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.37
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.37
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.37
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.37
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SPELL_ATTACK,
-                    1.37, 4,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
@@ -1445,9 +1598,13 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.9
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.9, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1463,9 +1620,16 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.8
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.8, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1481,9 +1645,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.9
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.9, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1499,9 +1667,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.85
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.85, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1517,9 +1689,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ROW,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ROW,
+                            modifier: 0.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.8, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
@@ -1535,9 +1711,19 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.7
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.7
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.7
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.7, 3,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1553,9 +1739,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.9
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.9, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
@@ -1571,9 +1761,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.85
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.85
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.85, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1589,9 +1786,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                            modifier: 0.7
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                            modifier: 0.7
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.7, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1607,9 +1811,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.95
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.95, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1625,9 +1833,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.95
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.95, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1643,9 +1855,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.8, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
@@ -1661,9 +1877,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.65
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_COLUMN,
+                            modifier: 0.65
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.65, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1680,9 +1903,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                            modifier: 0.6
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                            modifier: 0.6
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.6, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1698,9 +1928,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ROW,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ROW,
+                            modifier: 0.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.8, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1712,34 +1946,19 @@ module.exports = {
                 )
             ]
         },
-        "Beast Sweeper": {
-            canAttack: true,
-            canHeal: false,
-            cooldown: 5,
-            phases: [
-                new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
-                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.7, 3,
-                    SkillPhaseConst.DAMAGE_PHYSICAL,
-                    SkillPhaseConst.ELEMENT_NONE,
-                    SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true, {
-                        "Charm": 20
-                    }
-                )
-            ]
-        },
         "Fimbulvetr": {
             canAttack: true,
             canHeal: false,
             cooldown: 12,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_ALL,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ALL,
+                            modifier: 1.87
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.87, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1762,9 +1981,13 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.0
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.0, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1780,9 +2003,16 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.9
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.9
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.9, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1798,9 +2028,13 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.0
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.0, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1816,9 +2050,13 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.6
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.6, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1834,9 +2072,16 @@ module.exports = {
             cooldown: 3,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.9
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.9
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.9, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1852,9 +2097,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.8, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
@@ -1870,9 +2119,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.95
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.95
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.95, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1888,9 +2144,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                            modifier: 0.7
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                            modifier: 0.7
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.7, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_EARTH,
                     SkillPhaseConst.TARGET_ANY,
@@ -1906,9 +2169,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SQUARE,
+                            modifier: 0.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.8, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1925,9 +2192,13 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.6
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.6, 1,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1942,9 +2213,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.8
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 0.8
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.8, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
@@ -1959,9 +2237,16 @@ module.exports = {
             cooldown: 5,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.0
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.0
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.0, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
@@ -1977,9 +2262,19 @@ module.exports = {
             cooldown: 10,
             phases: [
                 new SkillPhase(
-                    SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.09
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.09
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 1.09
+                        }
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    1.09, 3,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
