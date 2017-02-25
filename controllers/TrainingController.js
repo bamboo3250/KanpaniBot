@@ -341,7 +341,7 @@ TrainingController.prototype.resolveTargets = function(skillPhase, idx, attacker
 
 TrainingController.prototype.isUnderAttack = function(unit, skillPhase, attacker, mainTarget, field) {
     for(var i=0;i<skillPhase.attackInstances.length;i++) {
-        var targets = resolveTargets(skillPhase, i, attacker, mainTarget, field);
+        var targets = this.resolveTargets(skillPhase, i, attacker, mainTarget, field);
         for(var j=0;j<targets.length;j++) {
             if (unit.playerId == field[targets[j].row][targets[j].column]) return true;
         }
