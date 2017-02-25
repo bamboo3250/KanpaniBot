@@ -2517,7 +2517,6 @@ module.exports = {
                         }
                     ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    2.0, 1,
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_EARTH,
                     SkillPhaseConst.TARGET_ANY,
