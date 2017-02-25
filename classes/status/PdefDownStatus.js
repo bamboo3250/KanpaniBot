@@ -3,7 +3,8 @@ function PDefDownStatus(bot, ownerId, targetId) {
     this.ownerId = ownerId;
     this.targetId = targetId;
     this.canBeCleansed = true;
-    
+    this.totalAbsorbDamage = 0;
+
     var that = this;
     var INTERVAL = 10*60*1000;
     var now = new Date();
@@ -25,7 +26,11 @@ function PDefDownStatus(bot, ownerId, targetId) {
 }
 
 PDefDownStatus.prototype.absorbDamage = function(damage) {
-    var exp = Math.ceil(damage/2);
+    this.totalAbsorbDamage += damage;
+}
+
+PDefDownStatus.prototype.destroy = function() {
+    var exp = Math.ceil(this.totalAbsorbDamage/2);
 
     var attackerUnit = this.bot.playerManager.getPlayerUnit(this.ownerId);
     var attackerUser = this.bot.userManager.getUser(this.ownerId);
@@ -38,9 +43,7 @@ PDefDownStatus.prototype.absorbDamage = function(damage) {
         this.bot.playerManager.refreshUnitForPlayerId(this.ownerId);
         this.bot.battleChannel.sendMessage(text);
     }
-}
 
-PDefDownStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Pdef Down"] === this) unit.status["Pdef Down"] = null;    
     if (this.timer) clearTimeout(this.timer);

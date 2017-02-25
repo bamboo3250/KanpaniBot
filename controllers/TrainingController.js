@@ -284,8 +284,8 @@ TrainingController.prototype.checkMask = function(skillPhase, mask, mainTargetPo
     return false;
 }
 
-TrainingController.prototype.selectMask = function(skillPhase, mainTargetPos, field) {
-    var masks = skillPhase.getPatternMask();
+TrainingController.prototype.selectMask = function(skillPhase, idx, mainTargetPos, field) {
+    var masks = skillPhase.getPatternMask(idx);
     for(var i=0;i<masks.length;i++) {
         if (this.checkMask(skillPhase, masks[i], mainTargetPos, field)) {
             return masks[i];
@@ -311,9 +311,9 @@ TrainingController.prototype.selectMask = function(skillPhase, mainTargetPos, fi
     return null;
 }
 
-TrainingController.prototype.resolveArea = function(skillPhase, attacker, mainTarget, field) {
+TrainingController.prototype.resolveArea = function(skillPhase, idx, attacker, mainTarget, field) {
     var mainTargetPos = getPosOnField(mainTarget, field);
-    var mask = this.selectMask(skillPhase, mainTargetPos, field);
+    var mask = this.selectMask(skillPhase, idx, mainTargetPos, field);
 
     var result = [];
     for(var i=0;i<2;i++) {
@@ -326,19 +326,27 @@ TrainingController.prototype.resolveArea = function(skillPhase, attacker, mainTa
     return result;
 }
 
-TrainingController.prototype.resolveTargets = function(skillPhase, attacker, mainTarget, field) {
-    var resolvedArea = this.resolveArea(skillPhase, attacker, mainTarget, field);
+TrainingController.prototype.resolveTargets = function(skillPhase, idx, attacker, mainTarget, field) {
+    var resolvedArea = this.resolveArea(skillPhase, idx, attacker, mainTarget, field);
     var result = [];
     for(var i=0;i<resolvedArea.length;i++) {
         var userId = field[resolvedArea[i].row][resolvedArea[i].column];
-        if (userId) {
-            var unit = this.bot.playerManager.getPlayerUnit(userId);
-            if (!unit.isFainted() || (skillPhase.status["Resurrection"] && !unit.status["Resurrected"])) {
-                result.push(resolvedArea[i]);    
-            }
+        var unit = this.bot.playerManager.getPlayerUnit(userId);
+        if (unit && (!unit.isFainted() || (skillPhase.status["Resurrection"] && !unit.status["Resurrected"]))) {
+            result.push(resolvedArea[i]);    
         }
     }
     return result;
+}
+
+TrainingController.prototype.isUnderAttack = function(unit, skillPhase, attacker, mainTarget, field) {
+    for(var i=0;i<skillPhase.attackInstances.length;i++) {
+        var targets = resolveTargets(skillPhase, i, attacker, mainTarget, field);
+        for(var j=0;j<targets.length;j++) {
+            if (unit.playerId == field[targets[j].row][targets[j].column]) return true;
+        }
+    }
+    return false;
 }
 
 TrainingController.prototype.attackRecursively = function(skill, attacker, targetUnitList, battleField, iter, result, koResult, callback) {
@@ -362,45 +370,38 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
     var actionOnEnemySide = battleField.isEnemy(mainTargetUnit.playerId);
     var field = (actionOnEnemySide? battleField.enemySide: battleField.allySide);
-    var targets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, field);
-    
+    //var targets = this.resolveTargets(skillPhase, attacker, mainTargetUnit, field);
 
-    var isParalyzed = false;
+    var isParalyzed = (attacker.isParalyzed() && attacker.status["Paralyze"].evoke());
     var isCharmed = attacker.isCharmed();
 
-    if (attacker.isParalyzed()) {
-        isParalyzed = attacker.status["Paralyze"].evoke();   
-    }
     if (isCharmed) {
         var charmOwnerId = attacker.status["Charm"].ownerId;
+        var charmOwner = this.bot.playerManager.getPlayerUnit(charmOwnerId);
         attacker.status["Charm"].evoke();
 
         if (skillPhase.canAttack()) {
-            for(var i=0;i<targets.length;i++) {
-                var targetFieldPos = targets[i];
-                var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
-                if (targetUnit && !targetUnit.isFainted() && targetUnit.playerId == charmOwnerId) {
-                    text = attackerName + " is charmed.\n";
-                    result.push({
-                        text: text,
-                        image: null
-                    });
-                    this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
-                    return
-                }
-            }    
+            if (this.isUnderAttack(charmOwner, skillPhase, attacker, mainTargetUnit, field)) {
+                text = attackerName + " is charmed.\n";
+                result.push({
+                    text: text,
+                    image: null
+                });
+                this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
+                return
+            } 
         } else {    // Healing
             var charmOwnerUnit = this.bot.playerManager.getPlayerUnit(charmOwnerId);
             if (charmOwnerUnit && (!charmOwnerUnit.isFainted() || skillPhase.status["Resurrection"])) {
                 var newMainTargetUnit = charmOwnerUnit;
                 var newActionOnEnemySide = battleField.isEnemy(newMainTargetUnit.playerId);
                 var newField = (newActionOnEnemySide? battleField.enemySide: battleField.allySide);                
-                var newTargets = this.resolveTargets(skillPhase, attacker, newMainTargetUnit, newField);
+                //var newTargets = this.resolveTargets(skillPhase, attacker, newMainTargetUnit, newField);
                 if (getPosOnField(newMainTargetUnit, newField)) {
                     mainTargetUnit = newMainTargetUnit
                     actionOnEnemySide = newActionOnEnemySide;
                     field = newField;
-                    targets = newTargets;
+                    //targets = newTargets;
                 }
             }
         }
@@ -427,7 +428,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         return;    
     }
 
-    var area = this.resolveArea(skillPhase, attacker, mainTargetUnit, field);
+    var area = this.resolveArea(skillPhase, 0, attacker, mainTargetUnit, field);
     if (area.length <= 0) {
         this.attackRecursively(skill, attacker, targetUnitList, battleField, iter+1, result, koResult, callback);
         return; 
@@ -482,63 +483,58 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
     var encourageModifier   = (attacker.status["Encourage"] ? 2.0 : 1.0);
     var patkDownModifier    = (attacker.status["Patk Down"] ? 0.5 : 1.0);
     var matkDownModifier    = (attacker.status["Matk Down"] ? 0.5 : 1.0);
-    
-    for(var i=0;i<targets.length;i++) {
-        var targetFieldPos = targets[i];
-        var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
-        if (!targetUnit) continue;
+    var pdefDownModifier    = (targetUnit.status["Pdef Down"] ? 0.5 : 1.0);
+    var mdefDownModifier    = (targetUnit.status["Mdef Down"] ? 0.5 : 1.0);
 
-        var targetName = targetUnit.shortName;
-        var targetUser = this.bot.userManager.getUser(targetUnit.playerId);
-        
-        var pdefDownModifier    = (targetUnit.status["Pdef Down"] ? 0.5 : 1.0);
-        var mdefDownModifier    = (targetUnit.status["Mdef Down"] ? 0.5 : 1.0);
+    // Damage calculation
+    for(var k=0;k<skillPhase.attackInstances.length;k++) {
+        var skillModifier = skillPhase.attackInstances[k].modifier;
+        var targets = this.resolveTargets(skillPhase, k, attacker, mainTargetUnit, field);
 
-        if (skillPhase.canAttack()) {
-            if (targetUnit.isFainted()) continue;
+        for(var i=0;i<targets.length;i++) {
+            var targetFieldPos = targets[i];
+            var targetUnit = this.bot.playerManager.getPlayerUnit(field[targetFieldPos.row][targetFieldPos.column]);
+            if (!targetUnit) continue;
+
+            var targetName = targetUnit.shortName;
+            var targetUser = this.bot.userManager.getUser(targetUnit.playerId);
             
-            var isPdefDownUsed = false;
-            var isMdefDownUsed = false;
+            if (skillPhase.canAttack()) {
+                if (targetUnit.isFainted()) continue;
+                
+                var isPdefDownUsed = false;
+                var isMdefDownUsed = false;
+                
+                var atk = attacker.getAtk();
+                var critRate = Math.floor(attacker.getCrit()*0.35 - (targetUnit.getLUK()*0.1));
+                critRate = Math.max(5, critRate);
+                critRate = Math.min(95, critRate);
+                critRateOnTargets[targetUnit.playerId] = critRate;
+                var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
+                var def = targetUnit.getDef();
 
-            var atk = attacker.getAtk();
-            var skillModifier = skillPhase.modifier;
-            var critRate = Math.floor(attacker.getCrit()*0.35 - (targetUnit.getLUK()*0.1));
-            critRate = Math.max(5, critRate);
-            critRate = Math.min(95, critRate);
-            critRateOnTargets[targetUnit.playerId] = critRate;
-            var elementAdvantage = skillPhase.getElementFactor(targetUnit.element);
-            var def = targetUnit.getDef();
+                if (skillPhase.useMagicalDamage()) {
+                    atk = attacker.getMAtk() * matkDownModifier;
+                    def = targetUnit.getMDef() * mdefDownModifier;
+                    if (targetUnit.status["Mdef Down"]) isMdefDownUsed = true;
+                } else {
+                    atk = attacker.getAtk() * patkDownModifier;
+                    def = targetUnit.getDef() * pdefDownModifier;
+                    if (targetUnit.status["Pdef Down"]) isPdefDownUsed = true;
+                }
 
-            if (skillPhase.useMagicalDamage()) {
-                atk = attacker.getMAtk() * matkDownModifier;
-                def = targetUnit.getMDef() * mdefDownModifier;
-                if (targetUnit.status["Mdef Down"]) isMdefDownUsed = true;
-            } else {
-                atk = attacker.getAtk() * patkDownModifier;
-                def = targetUnit.getDef() * pdefDownModifier;
-                if (targetUnit.status["Pdef Down"]) isPdefDownUsed = true;
-            }
+                if (attacker.status["Resurrected"]) atk = atk * 0.8;
+                if (targetUnit.status["Resurrected"]) def = def * 0.8;
 
-            if (attacker.status["Resurrected"]) {
-                atk = atk * 0.8;
-            }
-            if (targetUnit.status["Resurrected"]) {
-                def = def * 0.8;
-            }
+                var hitValue = (attacker.getHit() + attacker.getDEX()*0.65) * darknessModifier;
+                var evadeValue = targetUnit.getEva() + targetUnit.getAGI()*0.20;
+                var hitRate = Math.floor(60 + (hitValue - evadeValue)*0.2);
+                hitRate = Math.max(10, hitRate);
+                hitRate = Math.min(99, hitRate);
+                if (skillPhase.isSpellAttack()) hitRate = 100;
 
-            var hitValue = (attacker.getHit() + attacker.getDEX()*0.65) * darknessModifier;
-            var evadeValue = targetUnit.getEva() + targetUnit.getAGI()*0.20;
-            var hitRate = Math.floor(60 + (hitValue - evadeValue)*0.2);
-            hitRate = Math.max(10, hitRate);
-            hitRate = Math.min(99, hitRate);
-            if (skillPhase.isSpellAttack()) {
-                hitRate = 100;
-            }
-            hitRateOnTargets[targetUnit.playerId] = hitRate;
+                hitRateOnTargets[targetUnit.playerId] = hitRate;
 
-            var totalDamage = 0;
-
-            for(var j=0;j<skillPhase.attackTimes;j++) {
                 var randomFactor = this.bot.functionHelper.randomArbitrary(1/1.1, 1.1);
                 var isCrit = (this.bot.functionHelper.randomInt(100) < critRate);
                 var critModifier = (isCrit ? 1.5 : 1.0);
@@ -551,7 +547,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     critDamageBeforeDef - 0.00115 * def * damageBeforeDef - def / 4
                 );
                 rawDamage = Math.max(1, rawDamage);
-                
+                    
                 var frontUnit = null;
                 if (targetFieldPos.row === 1 && field[0][targetFieldPos.column]) {
                     frontUnit = this.bot.playerManager.getPlayerUnit(field[0][targetFieldPos.column]);
@@ -564,13 +560,10 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                     damageBeforeDef = 0;
                     rawDamage = 0;
                 } else {
-                    if (mainTargetUnit === targetUnit) {
-                        doesHitMainTarget = true;
-                    }
+                    doesHitMainTarget |= (mainTargetUnit === targetUnit);
                 }
-                totalDamage += rawDamage;
-
-                if (targetUnit.getClassId() === 4) {
+                    
+                if (targetUnit.getClassId() === 4) {    // soldier
                     if (typeof expGained[field[targetFieldPos.row][targetFieldPos.column]] === "undefined") {
                         expGained[field[targetFieldPos.row][targetFieldPos.column]] = 0;
                     }
@@ -690,31 +683,28 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
                         }
                     }
                 }
-            }
-
-            if (isMdefDownUsed && targetUnit.status["Mdef Down"] && totalDamage > 0 && targetUnit.status["Mdef Down"].ownerId != attacker.playerId) {
-                targetUnit.status["Mdef Down"].absorbDamage(totalDamage);
-            }
-            if (isPdefDownUsed && targetUnit.status["Pdef Down"] && totalDamage > 0 && targetUnit.status["Pdef Down"].ownerId != attacker.playerId) {
-                targetUnit.status["Pdef Down"].absorbDamage(totalDamage);
-            }
-
-        } else {
-
-            hitRateOnTargets[targetUnit.playerId] = 100;
-            var isResurrected = false;
-            if (targetUnit.isFainted() && !targetUnit.status["Resurrected"] && skillPhase.status["Resurrection"]) {
-                this.bot.playerManager.applyResurrected(attacker.playerId, targetUnit.playerId);
-                resurrectionResult[targetUnit.playerId] = true;
-                if (this.bot.userManager.doesMemberHaveRole(targetUnit.playerId, "Fainted")) {
-                    this.bot.userManager.removeRole(targetUnit.playerId, "Fainted")
+                
+                if (isMdefDownUsed && targetUnit.status["Mdef Down"] && targetUnit.status["Mdef Down"].ownerId != attacker.playerId) {
+                    targetUnit.status["Mdef Down"].absorbDamage(damage);
                 }
-                isResurrected = true;
-            }
+                if (isPdefDownUsed && targetUnit.status["Pdef Down"] && targetUnit.status["Pdef Down"].ownerId != attacker.playerId) {
+                    targetUnit.status["Pdef Down"].absorbDamage(damage);
+                }
 
-            for(var j=0;j<skillPhase.attackTimes;j++) {
+            } else {
+
+                hitRateOnTargets[targetUnit.playerId] = 100;
+                var isResurrected = false;
+                if (targetUnit.isFainted() && !targetUnit.status["Resurrected"] && skillPhase.status["Resurrection"]) {
+                    this.bot.playerManager.applyResurrected(attacker.playerId, targetUnit.playerId);
+                    resurrectionResult[targetUnit.playerId] = true;
+                    if (this.bot.userManager.doesMemberHaveRole(targetUnit.playerId, "Fainted")) {
+                        this.bot.userManager.removeRole(targetUnit.playerId, "Fainted")
+                    }
+                    isResurrected = true;
+                }
+
                 var matk = attacker.getMAtk();
-                var skillModifier = skillPhase.modifier;
                 var healHp = Math.floor(matk * skillModifier);
                 
                 if (isResurrected) healHp = 9999999;
@@ -732,6 +722,8 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             }
         }
     }
+
+    
 
     if (attacker.getClassId() === 1 && !mainTargetUnit.status["Stun"] && doesHitMainTarget) {
         // fighter class trait

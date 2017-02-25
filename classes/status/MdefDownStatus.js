@@ -3,7 +3,8 @@ function MDefDownStatus(bot, ownerId, targetId) {
     this.ownerId = ownerId;
     this.targetId = targetId;
     this.canBeCleansed = true;
-    
+    this.totalAbsorbDamage = 0;
+
     var that = this;
     var INTERVAL = 10*60*1000;
     var now = new Date();
@@ -25,8 +26,11 @@ function MDefDownStatus(bot, ownerId, targetId) {
 }
 
 MDefDownStatus.prototype.absorbDamage = function(damage) {
-    var exp = Math.ceil(damage/2);
+    this.totalAbsorbDamage += damage;
+}
 
+MDefDownStatus.prototype.destroy = function() {
+    var exp = Math.ceil(this.totalAbsorbDamage/2);
     var attackerUnit = this.bot.playerManager.getPlayerUnit(this.ownerId);
     var attackerUser = this.bot.userManager.getUser(this.ownerId);
     var attackerName = attackerUnit.shortName;
@@ -38,9 +42,7 @@ MDefDownStatus.prototype.absorbDamage = function(damage) {
         this.bot.playerManager.refreshUnitForPlayerId(this.ownerId);
         this.bot.battleChannel.sendMessage(text);
     }
-}
 
-MDefDownStatus.prototype.destroy = function() {
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);
     if (unit.status["Mdef Down"] === this) unit.status["Mdef Down"] = null;    
     if (this.timer) clearTimeout(this.timer);
