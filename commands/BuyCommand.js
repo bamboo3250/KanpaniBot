@@ -53,7 +53,7 @@ module.exports = {
 
         } else if (bot.shop[materialInfo.itemName].price.unit == "Gold") {
             if (player.gold < bot.shop[materialInfo.itemName].price.amount) {
-                message.reply("You don't have enough Chocolate to purchase this item.");
+                message.reply("You don't have enough Gold to purchase this item.");
                 return;
             }
 

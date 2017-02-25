@@ -1,74 +1,58 @@
 {
     "Promotion Badge": {
-        "amount": 0,
+        "amount": 3,
         "maxAmount": 3,
         "price": {
-            "amount": 34000000,
-            "unit": "Chocolate"
+            "amount": 100000000,
+            "unit": "Gold"
         }
     },
     "Weapon Hammer": {
-        "amount": 402,
+        "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 750000,
-            "unit": "Chocolate"
+            "amount": 5000000,
+            "unit": "Gold"
         }
     },
     "Armor Hammer": {
-        "amount": 346,
+        "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 750000,
-            "unit": "Chocolate"
+            "amount": 5000000,
+            "unit": "Gold"
         }
     },
     "Accessory Hammer": {
-        "amount": 444,
+        "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 750000,
-            "unit": "Chocolate"
+            "amount": 5000000,
+            "unit": "Gold"
         }
     },
     "Gold Mailbox": {
-        "amount": 97,
+        "amount": 100,
         "maxAmount": 100,
         "price": {
-            "amount": 1000000,
-            "unit": "Chocolate"
+            "amount": 10000000,
+            "unit": "Gold"
         }
     },
     "Forge": {
-        "amount": 0,
+        "amount": 100,
         "maxAmount": 100,
         "price": {
-            "amount": 2000000,
-            "unit": "Chocolate"
+            "amount": 30000000,
+            "unit": "Gold"
         }
     },
     "Food Pack": {
-        "amount": 0,
-        "maxAmount": 50,
+        "amount": 100,
+        "maxAmount": 100,
         "price": {
-            "amount": 1500000,
-            "unit": "Chocolate"
-        }
-    },
-    "Chocolate Chip Ice": {
-        "amount": 999,
-        "maxAmount": 999,
-        "price": {
-            "amount": 500000,
-            "unit": "Chocolate"
-        }
-    },
-    "EXP Palace Invitation": {
-        "amount": 0,
-        "maxAmount": 15,
-        "price": {
-            "amount": 3000000,
-            "unit": "Chocolate"
+            "amount": 5000000,
+            "unit": "Gold"
         }
     }
 }
