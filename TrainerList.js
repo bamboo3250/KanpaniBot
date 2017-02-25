@@ -300,6 +300,31 @@
             partnerId: null,
             isTrainer: true
         },{
+            _id: "284990845315317760",  // Luciel
+            characterId: "10850005_ad800ba1",
+            promotion: 0,
+            exp: 10707880,//10707880,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308821",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: myBot.randomArmor(8),
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330107",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "back",
+            partnerId: null,
+            isTrainer: true
+        },{
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",   // Annalina
             promotion: 0,

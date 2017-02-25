@@ -14,7 +14,7 @@ module.exports = {
                             pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
                             modifier: 1.0
                         }
-                    ]
+                    ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
@@ -4004,6 +4004,35 @@ module.exports = {
                     true,
                     -330, -490,
                     -330, -490
+                )
+            ]
+        },
+        "Doom": {
+            canAttack: true,
+            canHeal: false,
+            cooldown: 12,
+            phases: [
+                new SkillPhase(
+                    [
+                        {
+                            pattern: SkillPhaseConst.SKILL_PATTERN_SINGLE,
+                            modifier: 4.78
+                        },{
+                            pattern: SkillPhaseConst.SKILL_PATTERN_ALL,
+                            modifier: 0.73
+                        }
+                    ],
+                    SkillPhaseConst.TYPE_SPELL_ATTACK,
+                    SkillPhaseConst.DAMAGE_MAGICAL,
+                    SkillPhaseConst.ELEMENT_NONE,
+                    SkillPhaseConst.TARGET_ANY,
+                    "attack01", 13,
+                    false, {
+                        "Charm": 10
+                    },
+                    true,
+                    -680, -1240,
+                    -680, -1240
                 )
             ]
         }
