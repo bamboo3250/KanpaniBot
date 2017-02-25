@@ -5881,6 +5881,38 @@ module.exports = {
                 }
             ]
         },{
+            _id: "308821", modelId: "21", name: "Providence", commonNames: ["Providence"],
+            characterId: "10850005_ad800ba1", type: "character", isActive: true, stats: {
+                "+0": { price: 5000,
+                    patk: 0, pdef: 0, matk: 167, mdef: 0, crit: 22, hit: 0, eva: 22,
+                    frontSkill: "Ice Strike", backSkill: "Ice Strike"
+                },
+                "+1": { price: 6000,
+                    patk: 0, pdef: 0, matk: 224, mdef: 0, crit: 28, hit: 0, eva: 28,
+                    frontSkill: "Holy Cross", backSkill: "Holy Cross"
+                },
+                "+2": { price: 7000,
+                    patk: 0, pdef: 0, matk: 289, mdef: 0, crit: 34, hit: 0, eva: 34,
+                    frontSkill: "Seraph Ray", backSkill: "Seraph Ray"
+                },
+                "+3": { price: 8000,
+                    patk: 0, pdef: 0, matk: 379, mdef: 0, crit: 42, hit: 0, eva: 42,
+                    frontSkill: "Doom", backSkill: "Doom"
+                }
+            },
+            note: "", devCost: 49220, levelRequired: 70, tier: 3, recipe: [
+                {
+                    materialName: "Sun Fragment",
+                    amount: 2
+                },{
+                    materialName: "Black Pearl",
+                    amount: 1
+                },{
+                    materialName: "Yggdrasil Branch",
+                    amount: 2
+                }
+            ]
+        },{
             _id: "308806", modelId: "06", name: "Holy Rod \"Storia\"", commonNames: ["Holy Rod \"Storia\""],
             characterId: "10840001_1af29f14", type: "character", isActive: true, stats: {
                 "+0": { price: 3600,

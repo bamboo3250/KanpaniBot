@@ -1,10 +1,8 @@
 var SkillPhaseConst = require('./SkillPhaseConst');
 
-function SkillPhase(pattern, skillType, modifier, attackTimes, damageType, element, targetType, state = "attack01", frame = 0, doesApproach = false, status = {}, hasAnimation = false, allyOffsetX = 0, allyOffsetY = 0, enemyOffsetX = 0, enemyOffsetY = 0, opacity = 1.0) {
-    this.pattern = pattern;
+function SkillPhase(attackInstances, skillType, damageType, element, targetType, state = "attack01", frame = 0, doesApproach = false, status = {}, hasAnimation = false, allyOffsetX = 0, allyOffsetY = 0, enemyOffsetX = 0, enemyOffsetY = 0, opacity = 1.0) {
+    this.attackInstances = attackInstances;
     this.skillType = skillType;
-    this.modifier = modifier;
-    this.attackTimes = attackTimes;
     this.damageType = damageType;
     this.element = element;
     this.targetType = targetType;
@@ -72,8 +70,8 @@ SkillPhase.prototype.useMagicalDamage = function() {
     return this.damageType === SkillPhaseConst.DAMAGE_MAGICAL;
 }
 
-SkillPhase.prototype.getPatternMask = function() {
-    return SKILL_PATTERN_MASKS[this.pattern];
+SkillPhase.prototype.getPatternMask = function(idx) {
+    return SKILL_PATTERN_MASKS[this.attackInstances[idx].pattern];
 }
 
 SkillPhase.prototype.isSelfTarget = function() {
