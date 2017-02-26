@@ -3419,7 +3419,6 @@ module.exports = {
                         }
                     ],
                     SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
-                    0.7, 2,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,

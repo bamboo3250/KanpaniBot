@@ -62,7 +62,6 @@ var wakeUpCommand               = require('./commands/WakeUpCommand');
 var aromaCommand                = require('./commands/AromaCommand');
 var sellPageCommand             = require('./commands/SellPageCommand');
 var ceoPowerCommand             = require('./commands/CEOPowerCommand');
-var kettleCommand               = require('./commands/KettleCommand');
 var shopCommand                 = require('./commands/ShopCommand');
 var buyCommand                  = require('./commands/BuyCommand');
 var promoteCommand              = require('./commands/PromoteCommand');
@@ -109,8 +108,8 @@ function EmployeeBot() {
     this.dmmMaintenanceList = [
         {
             name: "DMM KG Maintenance",
-            startTime: "Feb 24 2017 13:00:00 GMT+0900",
-            endTime: "Feb 24 2017 17:00:00 GMT+0900"
+            startTime: "Mar 3 2017 14:00:00 GMT+0900",
+            endTime: "Mar 3 2017 17:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
@@ -203,11 +202,11 @@ function EmployeeBot() {
 
     this.disconnectTimer = null;
    
-    this.kettle = {
-        totalCacao: 0,
-        contribution: {},
-        chocolate: {}
-    };
+    // this.kettle = {
+    //     totalCacao: 0,
+    //     contribution: {},
+    //     chocolate: {}
+    // };
 }
 
 EmployeeBot.prototype.randomArmor = function(classId) {
@@ -358,7 +357,6 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         encourageCommand.handle(message, this);
         sneakCommand.handle(message, this);
         focusCommand.handle(message, this);
-        kettleCommand.handle(message, this);
         shopCommand.handle(message, this);
         buyCommand.handle(message, this);
         promoteCommand.handle(message, this);
@@ -818,6 +816,9 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
 }
 
 EmployeeBot.prototype.ready = function() {
+    clearTimeout(employee.disconnectTimer);
+    console.log('ready');
+
     if (this.firstTimeReady) {
         var channels = this.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
@@ -864,7 +865,7 @@ EmployeeBot.prototype.ready = function() {
                 that.saveSilenced();
             });
         });
-        this.loadKettle();
+        //this.loadKettle();
 
         return true;
     } else {
@@ -938,7 +939,6 @@ employee.bot.on('disconnect', (event) => {
 
 employee.bot.on('reconnecting', (event) => {
     console.log("reconnecting");
-    clearTimeout(employee.disconnectTimer);
 });
 
 process.on('uncaughtException', function (err) {

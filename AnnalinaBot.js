@@ -59,56 +59,6 @@ if (isLocal) {
 } else {
     myBot.playerData = [
         {
-            _id: "272257876393721867",  // Fanaril Guest
-            characterId: "10150003_e989854c",
-            promotion: 0,
-            exp: 10707880,//10707880,
-            gold: 0,
-            equipedWeapon: {
-                _id: "308121",
-                plus: 3
-            },
-            equipedArmor: {
-                _id: myBot.randomArmor(1),
-                plus: 0
-            },
-            equipedAccessory: {
-                _id: "330107",
-                plus: 3
-            },
-            materialList: {},
-            weaponList: {},
-            armorList: {},
-            accessoryList: {},
-            position: "front",
-            partnerId: null,
-            isTrainer: true
-        },{
-            _id: "278911842859089920",  // Nhano Guest
-            characterId: "10550002_5cc7900c",
-            promotion: 0,
-            exp: 10707880,//10707880,
-            gold: 0,
-            equipedWeapon: {
-                _id: "308524",
-                plus: 3
-            },
-            equipedArmor: {
-                _id: myBot.randomArmor(5),
-                plus: 3
-            },
-            equipedAccessory: {
-                _id: "330107",
-                plus: 3
-            },
-            materialList: {},
-            weaponList: {},
-            armorList: {},
-            accessoryList: {},
-            position: "front",
-            partnerId: null,
-            isTrainer: true
-        },{
             _id: "283224327279869962",  // Eva Slade Guest
             characterId: "10650002_ae907df4",
             promotion: 0,
@@ -125,6 +75,81 @@ if (isLocal) {
             equipedAccessory: {
                 _id: "330107",
                 plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "back",
+            partnerId: null,
+            isTrainer: true
+        },{
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
+            promotion: 0,
+            exp: 10707880,//10707880,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308819",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: "310808",
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330207",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "front",
+            partnerId: null,
+            isTrainer: true
+        },{
+            _id: "284990845315317760",  // Luciel
+            characterId: "10850005_ad800ba1",
+            promotion: 0,
+            exp: 10707880,//10707880,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308821",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: myBot.randomArmor(8),
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330107",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "back",
+            partnerId: null,
+            isTrainer: true
+        },{
+            _id: "239141420194070530", 
+            characterId: "10840001_1af29f14",   // Annalina
+            promotion: 0,
+            exp: 10707880,//10707880,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308806",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: myBot.randomArmor(8),
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "329997",
+                plus: 4
             },
             materialList: {},
             weaponList: {},
@@ -170,8 +195,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "272257876393721867", "278911842859089920"],
-                [null, "283224327279869962", null]
+                [null, "272259125256388610", null],
+                ["284990845315317760", "283224327279869962", "239141420194070530"]
             ];    
         }
         
