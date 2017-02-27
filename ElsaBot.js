@@ -355,38 +355,38 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "269733140635975680",  // Hinano Guest
-            characterId: "10350003_fcc3ce23",
+            _id: "278911842859089920",  // Nhano Guest
+            characterId: "10550002_5cc7900c",
             promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308320",
+                _id: "308524",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(3),
+                _id: myBot.randomArmor(5),
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330207",
+                _id: "330107",
                 plus: 3
             },
             materialList: {},
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "back",
+            position: "front",
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272259125256388610",  // Sytry Guest
-            characterId: "10850002_c4678df9",
+            _id: "284990845315317760",  // Luciel
+            characterId: "10850005_ad800ba1",
             promotion: 0,
             exp: 10707880,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308819",
+                _id: "308821",
                 plus: 3
             },
             equipedArmor: {
@@ -457,8 +457,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "241511566036434945", null],
-                [null, "269733140635975680", "272259125256388610"]
+                [null, "241511566036434945", "278911842859089920"],
+                [null, "284990845315317760", null]
             ];    
         }
         
