@@ -1,6 +1,6 @@
 {
     "Promotion Badge": {
-        "amount": 3,
+        "amount": 0,
         "maxAmount": 3,
         "price": {
             "amount": 100000000,
@@ -16,7 +16,7 @@
         }
     },
     "Armor Hammer": {
-        "amount": 500,
+        "amount": 499,
         "maxAmount": 500,
         "price": {
             "amount": 5000000,
@@ -24,7 +24,7 @@
         }
     },
     "Accessory Hammer": {
-        "amount": 500,
+        "amount": 499,
         "maxAmount": 500,
         "price": {
             "amount": 5000000,
@@ -48,7 +48,7 @@
         }
     },
     "Food Pack": {
-        "amount": 100,
+        "amount": 0,
         "maxAmount": 100,
         "price": {
             "amount": 5000000,
