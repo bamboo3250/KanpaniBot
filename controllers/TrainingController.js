@@ -87,13 +87,18 @@ TrainingController.prototype.saveSession = function(callback) {
     }); 
 }
 
-TrainingController.prototype.setEndTimer = function(duration) {
+TrainingController.prototype.getNumTrainer = function(duration) {
     var numTrainer = 0;
     for(var i=0;i<2;i++) {
         for(var j=0;j<3;j++) {
             if (this.trainerField[i][j]) numTrainer++;
         }
     }
+    return numTrainer;
+}
+
+TrainingController.prototype.setEndTimer = function(duration) {
+    var numTrainer = this.getNumTrainer();
     if (typeof duration == "undefined") {
         duration = numTrainer * 60 * 60 * 1000;
     }
@@ -162,11 +167,12 @@ TrainingController.prototype.endBattle = function(endBattleByTimeout) {
     this.setRespawnTimer();
 
     var endBattleFactor = (endBattleByTimeout ? 0.5 : 1.0);
-    var expReward = Math.floor((EXP_REWARD + this.bot.functionHelper.randomInt(Math.floor(EXP_REWARD*0.1))) * endBattleFactor);
+    var expReward = EXP_REWARD * this.getNumTrainer();
+    expReward = Math.floor((expReward + this.bot.functionHelper.randomInt(Math.floor(expReward*0.1))) * endBattleFactor);
     for(key in this.trainingSession.contribution) {
         var userId = key;
         if (this.trainingSession.contribution[userId] > 0) {
-            var itemAmount = Math.floor(this.trainingSession.contribution[userId] * 5 * factor * endBattleFactor);
+            var itemAmount = Math.floor(this.trainingSession.contribution[userId] * 10 * factor * endBattleFactor);
             this.trainingSession.contribution[userId] = 0;
             var itemReceived = {};
             for(var i=0;i<itemAmount;i++) {
@@ -227,7 +233,7 @@ var rewardList = [
 ];
 
 var factor = 1;
-var EXP_REWARD = 48216 * factor;
+var EXP_REWARD = 16216 * factor;
 
 TrainingController.prototype.didPlayerDie = function(playerId) {
     var unit = this.bot.playerManager.getPlayerUnit(playerId);
