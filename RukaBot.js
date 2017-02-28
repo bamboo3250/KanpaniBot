@@ -81,8 +81,8 @@ if (isLocal) {
         {
             _id: "268576286060838914",  // Saimi Guest
             characterId: "10750001_32935980",
-            promotion: 0,
-            exp: 10707880,//10707880,
+            promotion: 1,
+            exp: 4340000,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308706",
@@ -104,18 +104,18 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272258315441143810",  // Elmina Guest
-            characterId: "10450002_bbda369b",
-            promotion: 0,
-            exp: 10707880,//10707880,
+            _id: "272257876393721867",  // Fanaril Guest
+            characterId: "10150003_e989854c",
+            promotion: 1,
+            exp: 4340000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308419",
+                _id: "308121",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(4),
-                plus: 3
+                _id: myBot.randomArmor(1),
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330107",
@@ -129,18 +129,18 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "275533845984575488",  // Nona Guest
-            characterId: "10650003_314afe6a",
-            promotion: 0,
-            exp: 10707880,//10707880,
+            _id: "273395939199156225",  // Sion Guest
+            characterId: "10250001_ff1a69c9",
+            promotion: 1,
+            exp: 4340000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308621",
+                _id: "308214",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(6),
-                plus: 3
+                _id: myBot.randomArmor(2),
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330107",
@@ -150,14 +150,14 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "back",
+            position: "front",
             partnerId: null,
             isTrainer: true
         },{
             _id: "276547911381417985",  // Elie Guest
             characterId: "10350002_63194dbd",
-            promotion: 0,
-            exp: 10707880,//10707880,
+            promotion: 1,
+            exp: 4340000,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308319",
@@ -179,17 +179,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "284990845315317760",  // Luciel
-            characterId: "10850005_ad800ba1",
-            promotion: 0,
-            exp: 10707880,//10707880,
+            _id: "283224327279869962",  // Eva Slade Guest
+            characterId: "10650002_ae907df4",
+            promotion: 1,
+            exp: 4340000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308821",
+                _id: "308619",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(8),
+                _id: myBot.randomArmor(6),
                 plus: 3
             },
             equipedAccessory: {
@@ -221,8 +221,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["268576286060838914", null, "272258315441143810"],
-                ["276547911381417985", "275533845984575488", "284990845315317760"]
+                ["268576286060838914", "272257876393721867", "273395939199156225"],
+                ["276547911381417985", null, "283224327279869962"]
             ];    
         }
 
