@@ -40,7 +40,14 @@ TrainingController.prototype.loadSession = function() {
             that.bot.log(err);
             return;
         }
-        that.trainingSession = JSON.parse(data);
+        try {
+            that.trainingSession = JSON.parse(data);
+        } catch (err) {
+            data = data.slice(0, data.length-1);
+            data = data.slice(0, data.lastIndexOf('}')+1);
+            that.trainingSession = JSON.parse(data);
+        }
+        
         for(key in that.trainingSession.trainerHP) {
             var trainerId = key;
             var trainerHP = that.trainingSession.trainerHP[key];
