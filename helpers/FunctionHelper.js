@@ -59,6 +59,7 @@ FunctionHelper.prototype.parseCommand = function(message) {
         if (this.isMention(args[i])) mentionIds.push(this.getIdFromMention(args[i]));
     };
     var result = {
+        userId: message.author.id,
         commandName: args[0],
         args: [],
         mentions: message.mentions,

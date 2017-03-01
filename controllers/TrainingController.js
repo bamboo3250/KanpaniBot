@@ -45,7 +45,6 @@ TrainingController.prototype.loadSession = function() {
         } catch (err) {
             data = data.slice(0, data.lastIndexOf('}'));
             data = data.slice(0, data.lastIndexOf('}')+1);
-            console.log(data);
             that.trainingSession = JSON.parse(data);
         }
         

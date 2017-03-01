@@ -371,7 +371,7 @@ module.exports = {
             }
             
             var amount = (isUsingAll ? player.materialList[materialInfo.itemName] : 1);
-            bot.remainingBread[userId] += amount * extraBreadPerItem;
+            bot.breadManager.addBread(userId, amount * extraBreadPerItem);
             bot.playerManager.spendItem(userId, materialInfo.itemName, amount);
             bot.savePlayer();
             bot.saveBread();

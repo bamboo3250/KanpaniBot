@@ -177,12 +177,12 @@ module.exports = {
             player.gold += goldGained;
             bot.initBreadIfNeed(userId);
 
-            if (bot.remainingBread[userId] < bot.cappedBread) {
-                bot.remainingBread[userId] = Math.min(bot.remainingBread[userId] + breadGained, bot.cappedBread);    
+            if (bot.breadManager.isBreadUnderCap(userId)) {
+                var newBreadAmount = Math.min(bot.addBread(userId, breadGained), bot.breadManager.cappedBread);
+                bot.breadManager.setBread(userId, newBreadAmount);
                 bot.saveBread();
             }
             
-
             var itemNameList = [];
             for(key in drop) {
                 var itemName = key;
@@ -330,14 +330,14 @@ module.exports = {
             return;
         }
 
-        if (bot.remainingBread[userId] < quest.breadCost) {
+        if (bot.breadManager.getBread(userId) < quest.breadCost) {
             message.reply("You don't have enough bread to run this quest.");
             return;
         }
 
         var modifier = 1;
         if (isFullGrind && quest.breadCost != 0) {
-            modifier = bot.remainingBread[userId] / quest.breadCost;
+            modifier = bot.bot.breadManager.getBread(userId) / quest.breadCost;
         }
 
         var goldNeeded = Math.floor(quest.goldCost * modifier);

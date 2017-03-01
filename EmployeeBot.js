@@ -13,8 +13,8 @@ var UserManager         = require('./managers/UserManager');
 var BackgroundManager   = require('./managers/BackgroundManager');
 var AuctionManager      = require('./managers/AuctionManager');
 var ImageManager        = require('./managers/ImageManager');
+var BreadManager        = require('./managers/BreadManager');
 
-var fs              = require('fs');
 var Jimp            = require('jimp');
 var imageHelper     = require('./helpers/ImageHelper');
 var functionHelper  = require('./helpers/FunctionHelper');
@@ -96,10 +96,13 @@ function EmployeeBot() {
     this.functionHelper = functionHelper;
     this.urlHelper = urlHelper;
     
+    this.fs = require('fs');
+
     this.playerManager      = new PlayerManager(this);
     this.userManager        = new UserManager(this);
     this.backgroundManager  = new BackgroundManager();
     this.auctionManager     = new AuctionManager();
+    this.breadManager       = new BreadManager(this);
     this.imageManager       = new ImageManager(this);
     this.imageManager.init();
 
@@ -157,12 +160,6 @@ function EmployeeBot() {
     this.lastTimeGoodNightToPlayers = {};
     this.lastTimeGiveCandyToPlayers = {};
 
-    this.startBread = 3;
-    this.cappedBread = 5;
-    this.replenishTime = 60*60*1000; // 1 hours
-    this.remainingBread = {};
-    this.breadReceived = {};
-    this.total_bread = 0;
     this.declineNotEnoughBread = [
         "You don't have enough bread."
     ];
@@ -224,6 +221,17 @@ EmployeeBot.prototype.preventPM = function(message) {
     } else return false;
 }
 
+EmployeeBot.prototype.sendPM = function(userId, text, photoFileName) {
+    var user = this.userManager.getUser(userId);
+    if (!user) return;
+
+    if (photoFileName) {
+        user.sendFile(photoFileName, 'png', text);
+    } else {
+        user.sendMessage(text);
+    }
+}
+
 EmployeeBot.prototype.checkNoSoul = function(message) {
     var userId = message.author.id;
     if (typeof this.hasSoul[userId] === "undefined") this.hasSoul[userId] = true;
@@ -239,34 +247,27 @@ EmployeeBot.prototype.isAdmin = function(message) {
 }
 
 EmployeeBot.prototype.initBreadIfNeed = function(userId) {
-    if (typeof this.remainingBread[userId] === "undefined") {
-        this.remainingBread[userId] = this.startBread;
-    }
+    this.breadManager.initBreadIfNeed(userId);
 }
 
 EmployeeBot.prototype.createRemainingBreadLine = function(message) {
     var userId = message.author.id;
     if (this.isPM(message)) {
-        return "Remaining Bread: " + this.remainingBread[userId];
+        return "Remaining Bread: " + this.breadManager.getBread(userId);
     } else {
-        return "Remaining Bread: " + this.getEmoji('kbread') + " x" + this.remainingBread[userId];    
+        return "Remaining Bread: " + this.getEmoji('kbread') + " x" + this.breadManager.getBread(userId);    
     }
 }
 
 EmployeeBot.prototype.consumeBread = function(message, amount = 1) {
     var userId = message.author.id;
-    this.initBreadIfNeed(userId);
     if (this.checkNoSoul(message)) return false;
-    if (message.author.id === "146556639342755840") return true;
-    if (amount < 1) return true;
-    if (this.remainingBread[userId] >= amount) {
-        this.remainingBread[userId] -= amount;
-        this.saveBread();
-        return true;
-    } else {
+    if (userId === "146556639342755840") return true;
+    if (!this.breadManager.consumeBreadIfEnough(userId, amount) {
         message.reply("You don't have enough bread.");
         return false;
     }
+    return true;
 }
 
 EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
@@ -408,25 +409,11 @@ EmployeeBot.prototype.setDailyDrawReminderForDmm = function() {
     }, time);
 }
 
-EmployeeBot.prototype.setBreadRegeneration = function() {
-    var that = this;
-    setTimeout(function() {
-        for(key in that.remainingBread) {
-            var userId = key;
-            that.remainingBread[userId] = Math.min(that.remainingBread[userId] + 1, that.cappedBread);
-        }
-        that.startBread = Math.min(that.startBread + 1, that.cappedBread);
-        that.saveBread();
-        that.log("1 bread is given to each player");
-        that.setBreadRegeneration();
-    }, that.replenishTime);
-}
-
 var soulFileName = "soul.json";
 EmployeeBot.prototype.saveSoul = function() {
     var textToWrite = JSON.stringify(this.hasSoul, null, 4);
     var that = this;
-    fs.writeFile(soulFileName, textToWrite, function(err) {
+    this.fs.writeFile(soulFileName, textToWrite, function(err) {
         if(err) {
             that.log(err);
             return;
@@ -436,7 +423,7 @@ EmployeeBot.prototype.saveSoul = function() {
 
 EmployeeBot.prototype.loadSoul = function() {
     var that = this;
-    fs.readFile(soulFileName, 'utf8', function (err, data) {
+    this.fs.readFile(soulFileName, 'utf8', function (err, data) {
         if (err) {
             that.log(err);
             return;
@@ -449,7 +436,7 @@ var silencedFileName = "silenced.json";
 EmployeeBot.prototype.saveSilenced = function() {
     var textToWrite = JSON.stringify(this.silenced, null, 4);
     var that = this;
-    fs.writeFile(silencedFileName, textToWrite, function(err) {
+    this.fs.writeFile(silencedFileName, textToWrite, function(err) {
         if(err) {
             that.log(err);
             return;
@@ -460,7 +447,7 @@ EmployeeBot.prototype.saveSilenced = function() {
 
 EmployeeBot.prototype.loadSilenced = function() {
     var that = this;
-    fs.readFile(silencedFileName, 'utf8', function (err, data) {
+    this.fs.readFile(silencedFileName, 'utf8', function (err, data) {
         if (err) {
             that.log(err);
             return;
@@ -469,41 +456,11 @@ EmployeeBot.prototype.loadSilenced = function() {
     });
 }
 
-var breadFileName = "bread.json";
-EmployeeBot.prototype.saveBread = function() {
-    var textToWrite = JSON.stringify(this.remainingBread, null, 4);
-    var that = this;
-    fs.writeFile(breadFileName, textToWrite, function(err) {
-        if(err) {
-            that.log(err);
-            return;
-        }
-    }); 
-}
-
-EmployeeBot.prototype.loadBread = function() {
-    var that = this;
-    fs.readFile(breadFileName, 'utf8', function (err, data) {
-        if (err) {
-            that.log(err);
-            return;
-        }
-        that.remainingBread = JSON.parse(data);
-        for(key in that.remainingBread) {
-            var userId = key;
-            if (that.remainingBread[userId] < that.cappedBread) {
-                that.remainingBread[userId] = Math.min(that.cappedBread, that.remainingBread[userId] + 3);    
-            }
-        }
-        that.saveBread();
-    });
-}
-
 var unsubscribeFileName = "unsubscribe.json";
 EmployeeBot.prototype.saveUnsubscribe = function() {
     var textToWrite = JSON.stringify(this.unsubscribe, null, 4);
     var that = this;
-    fs.writeFile(unsubscribeFileName, textToWrite, function(err) {
+    this.fs.writeFile(unsubscribeFileName, textToWrite, function(err) {
         if(err) {
             that.log(err);
             return;
@@ -513,7 +470,7 @@ EmployeeBot.prototype.saveUnsubscribe = function() {
 
 EmployeeBot.prototype.loadUnsubscribe = function() {
     var that = this;
-    fs.readFile(unsubscribeFileName, 'utf8', function (err, data) {
+    this.fs.readFile(unsubscribeFileName, 'utf8', function (err, data) {
         if (err) {
             that.log(err);
             return;
@@ -532,6 +489,10 @@ EmployeeBot.prototype.savePlayer = function() {
     this.playerManager.savePlayer();
 }
 
+EmployeeBot.prototype.saveBread = function() {
+    this.breadManager.saveBread();
+}
+
 EmployeeBot.prototype.getUser = function(userId) {
     return this.userManager.getUser(userId);
 }
@@ -540,7 +501,7 @@ var dailyGiftFileName = "dailygift.json";
 EmployeeBot.prototype.saveDailyGift = function() {
     var textToWrite = JSON.stringify(this.dailyGift, null, 4);
     var that = this;
-    fs.writeFile(dailyGiftFileName, textToWrite, function(err) {
+    this.fs.writeFile(dailyGiftFileName, textToWrite, function(err) {
         if(err) {
             that.log(err);
             return;  
@@ -550,7 +511,7 @@ EmployeeBot.prototype.saveDailyGift = function() {
 
 EmployeeBot.prototype.loadDailyGift = function() {
     var that = this;
-    fs.readFile(dailyGiftFileName, 'utf8', function (err, data) {
+    this.fs.readFile(dailyGiftFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadDailyGift] Read file error.\n" + err);
             return;
@@ -568,7 +529,7 @@ var shopFileName = "shop.json";
 EmployeeBot.prototype.saveShop = function() {
     var textToWrite = JSON.stringify(this.shop, null, 4);
     var that = this;
-    fs.writeFile(shopFileName, textToWrite, function(err) {
+    this.fs.writeFile(shopFileName, textToWrite, function(err) {
         if(err) {
             that.log(err);
             return;  
@@ -580,7 +541,7 @@ EmployeeBot.prototype.loadShop = function() {
     var that = this;
     this.log("loadShop");
     console.log("loadShop");
-    fs.readFile(shopFileName, 'utf8', function (err, data) {
+    this.fs.readFile(shopFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadShop] Read file error.\n" + err);
             return;
@@ -599,7 +560,7 @@ var kettleFileName = "kettle.json";
 EmployeeBot.prototype.saveKettle = function() {
     var textToWrite = JSON.stringify(this.kettle, null, 4);
     var that = this;
-    fs.writeFile(kettleFileName, textToWrite, function(err) {
+    this.fs.writeFile(kettleFileName, textToWrite, function(err) {
         if(err) {
             that.log(err);
             return;  
@@ -611,7 +572,7 @@ EmployeeBot.prototype.loadKettle = function() {
     var that = this;
     this.log("loadKettle");
     console.log("load Kettle")
-    fs.readFile(kettleFileName, 'utf8', function (err, data) {
+    this.fs.readFile(kettleFileName, 'utf8', function (err, data) {
         console.log("Read Kettle");
         if (err) {
             that.log("[loadKettle] Read file error.\n" + err);
@@ -681,7 +642,7 @@ var runQuestStatusFileName = "runQuestStatus.json";
 EmployeeBot.prototype.saveRunQuestStatus = function() {
     var textToWrite = JSON.stringify(this.runQuestStatus, null, 4);
     var that = this;
-    fs.writeFile(runQuestStatusFileName, textToWrite, function(err) {
+    this.fs.writeFile(runQuestStatusFileName, textToWrite, function(err) {
         if(err) {
             that.log(err);
             return;  
@@ -693,7 +654,7 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
     var that = this;
     this.log("loadRunQuestStatus");
     console.log("loadRunQuestStatus");
-    fs.readFile(runQuestStatusFileName, 'utf8', function (err, data) {
+    this.fs.readFile(runQuestStatusFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadRunQuestStatus] " + err);
             return;
@@ -734,7 +695,7 @@ var auctionFileName = "auction.json";
 EmployeeBot.prototype.saveAuction = function() {
     var textToWrite = JSON.stringify(this.auctionManager.auctions, null, 4);
     var that = this;
-    fs.writeFile(auctionFileName, textToWrite, function(err) {
+    this.fs.writeFile(auctionFileName, textToWrite, function(err) {
         if(err) {
             that.log(err);
             return;  
@@ -746,7 +707,7 @@ EmployeeBot.prototype.loadAuction = function() {
     var that = this;
     this.log("loadAuction");
     console.log("loadAuction");
-    fs.readFile(auctionFileName, 'utf8', function (err, data) {
+    this.fs.readFile(auctionFileName, 'utf8', function (err, data) {
         if (err) {
             that.log("[loadAuction] " + err);
             return;
@@ -852,7 +813,8 @@ EmployeeBot.prototype.ready = function() {
         this.setBreadRegeneration();
         this.firstTimeReady = false;
         this.loadSoul();
-        this.loadBread();
+        this.breadManager.loadBread();
+        this.breadManager.loadIngameBread();
         this.loadDailyGift();
         this.loadUnsubscribe();
         this.loadShop();
