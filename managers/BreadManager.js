@@ -102,8 +102,10 @@ BreadManager.prototype.setTimer = function() {
     var now = new Date();
     var nextTick = new Date();
     nextTick.setUTCSeconds(0, 0);
-    while((nextTick.getUTCMinutes() % 3) != 0) nextTick.setTime(nextTick.getTime() + 1000);
+    while((nextTick.getUTCMinutes() % 3) != 0) nextTick.setTime(nextTick.getTime() + 60*1000);
+    while(nextTick.valueOf() < now.valueOf()) nextTick.setTime(nextTick.getTime() + 3*60*1000);
     var that = this;
+    
     setTimeout(function() {
         for(key in that.ingameBread) {
             var userId = key;
@@ -114,6 +116,7 @@ BreadManager.prototype.setTimer = function() {
             }
         }
         that.saveIngameBread();
+        that.bot.log('bread tick');
         setTimeout(function() {
             that.setTimer();
         }, 1000);
