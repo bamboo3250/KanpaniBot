@@ -11,7 +11,7 @@ module.exports = {
         var breadInfo = bot.breadManager.ingameBread[userId];
         text += 'In-game Bread: ' + breadInfo.currentBread + '/' + breadInfo.maxBread + ' (+' + breadInfo.regenRate + ')\n';
 
-	var numTick = Math.ceil(Math.max(0, (breadInfo.maxBread - breadInfo.currentBread) / breadInfo.regenRate));
+        var numTick = Math.ceil(Math.max(0, (breadInfo.maxBread - breadInfo.currentBread) / breadInfo.regenRate));
         if (numTick > 0) {
             var now = new Date();
             var nextTick = new Date();
@@ -24,7 +24,5 @@ module.exports = {
         } else {
             message.reply(text + 'Your bread is full now.');
         }
-
-        
     }
 }

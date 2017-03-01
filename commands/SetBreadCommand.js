@@ -18,7 +18,7 @@ module.exports = {
         }
         bot.breadManager.saveIngameBread();
 
-	var text = 'In-game Bread: ' + breadInfo.currentBread + '/' + breadInfo.maxBread + ' (+' + breadInfo.regenRate + ')\n';
+        var text = 'In-game Bread: ' + breadInfo.currentBread + '/' + breadInfo.maxBread + ' (+' + breadInfo.regenRate + ')\n';
 
         var numTick = Math.ceil(Math.max(0, (breadInfo.maxBread - breadInfo.currentBread) / breadInfo.regenRate));
         if (numTick > 0) {

@@ -116,7 +116,6 @@ BreadManager.prototype.setTimer = function() {
             }
         }
         that.saveIngameBread();
-        that.bot.log('bread tick');
         setTimeout(function() {
             that.setTimer();
         }, 1000);
