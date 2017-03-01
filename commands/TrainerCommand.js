@@ -27,7 +27,7 @@ module.exports = {
                     
                     var promotionText = (trainerUnit.promotion>1?"**Section Manager**, ":(trainerUnit.promotion>0?"**Chief**, ":""));
                     var levelText = "Lv.**" + trainerUnit.levelCached  + "**";
-                    text += "Character: **" + trainerUnit.fullName + "(" + (classEmoji?classEmoji+", ":"")  + promotionText + levelText + ")\n";
+                    text += "Character: **" + trainerUnit.fullName + "** (" + (classEmoji?classEmoji+", ":"")  + promotionText + levelText + ")\n";
                     var now = new Date();
                     var percentHP = Math.floor(trainerUnit.getCurrentHP()/trainerUnit.getMaxHP()*100);
                     text += "HP: **" + trainerUnit.getCurrentHP() + "/" + trainerUnit.getMaxHP() + " (" + percentHP +"%)**" + (trainerUnit.respawnTime?" (Respawn in " + bot.functionHelper.parseTime(trainerUnit.respawnTime - now.valueOf()) + ")":"") + "\n";
