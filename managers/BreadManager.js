@@ -115,7 +115,7 @@ BreadManager.prototype.syncBread = function(userId) {
 
     while(setAtTime.valueOf() < now.valueOf()) {
         setAtTime.setTime(setAtTime.getTime() + 3*60*1000);
-        breadAtSet++;
+        breadAtSet += breadInfo.regenRate;
     }
     breadInfo.currentBread = breadAtSet;
     this.saveIngameBread();
