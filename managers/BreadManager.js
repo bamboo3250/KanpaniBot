@@ -89,11 +89,11 @@ BreadManager.prototype.loadBread = function() {
 ////////////// INGAME BREAD ////////////////
 
 BreadManager.prototype.initIngameBreadIfNeed = function(userId) {
-    if (typeof this.ingameBread[userId] === "undefined" || typeof this.ingameBread[userId].setAt === 'undefined') {
+    if (typeof this.ingameBread[userId] === 'undefined' || typeof this.ingameBread[userId].setAt === 'undefined') {
         var now = new Date();
         this.ingameBread[userId] = {
             setAt: now.valueOf(),
-            breatAtSet: 0,
+            breadAtSet: 0,
             currentBread: 0,
             maxBread: 9000,
             regenRate: 80
