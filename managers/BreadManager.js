@@ -118,6 +118,8 @@ BreadManager.prototype.syncBread = function(userId) {
         breadAtSet = Math.min(breadAtSet + breadInfo.regenRate, breadInfo.maxBread);
     }
     breadInfo.currentBread = breadAtSet;
+    breadInfo.breadAtSet = breadAtSet;
+    breadInfo.setAt = now.valueOf();
     this.saveIngameBread();
 }
 

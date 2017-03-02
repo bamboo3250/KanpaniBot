@@ -525,8 +525,8 @@ var employees = [
         _no: 103, _id: "10840001_1af29f14", fullName: "Annalina Rehn", japaneseName: "アンナリーナ・レーン", commonNames: ["Annalina"], cwId: 6,
         baseStats: { _str: 5, _vit: 4, _agi: 10, _dex: 14, _int: 31, _pie: 9, _luk: 5},
         maxStats0: { _str: 162, _vit: 162, _agi: 243, _dex: 255, _int: 459, _pie: 242, _luk: 209},
-        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
-        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats1: { _str: 256, _vit: 256, _agi: 356, _dex: 391, _int: 669, _pie: 355, _luk: 310},
+        maxStats2: { _str: 347, _vit: 352, _agi: 501, _dex: 548, _int: 935, _pie: 501, _luk: 433},
     },{
         _no: 128, _id: "10840002_61ec1df7", fullName: "Maria Gardeerud", japaneseName: "マリア・ヤーデルード", commonNames: ["Maria"], cwId: 17,
         baseStats: { _str: 5, _vit: 4, _agi: 11, _dex: 13, _int: 33, _pie: 8, _luk: 5},
