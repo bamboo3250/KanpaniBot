@@ -6,7 +6,7 @@ module.exports = {
         var text = bot.createRemainingBreadLine(message) + '\n';
 
         var userId = command.userId;
-        bot.breadManager.initIngameBreadIfNeed(userId);
+        bot.breadManager.syncBread(userId);
 
         var breadInfo = bot.breadManager.ingameBread[userId];
         text += 'In-game Bread: ' + breadInfo.currentBread + '/' + breadInfo.maxBread + ' (+' + breadInfo.regenRate + ')\n';

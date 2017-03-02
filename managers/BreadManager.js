@@ -89,13 +89,36 @@ BreadManager.prototype.loadBread = function() {
 ////////////// INGAME BREAD ////////////////
 
 BreadManager.prototype.initIngameBreadIfNeed = function(userId) {
-    if (typeof this.ingameBread[userId] === "undefined") {
+    if (typeof this.ingameBread[userId] === "undefined" || typeof this.ingameBread[userId].setAt === 'undefined') {
+        var now = new Date();
         this.ingameBread[userId] = {
+            setAt: now.valueOf(),
+            breatAtSet: 0,
             currentBread: 0,
             maxBread: 9000,
             regenRate: 80
         }
     }
+}
+
+BreadManager.prototype.syncBread = function(userId) {
+    this.initIngameBreadIfNeed(userId);
+    var breadInfo = that.ingameBread[userId];
+    var breadAtSet = breadInfo.breadAtSet;
+
+    var setAtTime = new Date();
+    setAtTime.setTime(breadInfo.setAt);
+    setAtTime.setUTCSeconds(0, 0);
+
+    var now = new Date();
+    while((setAtTime.getUTCMinutes() % 3) != 0) setAtTime.setTime(nextTick.getTime() + 60*1000);
+
+    while(setAtTime.valueOf() < now.valueOf()) {
+        setAtTime.setTime(setAtTime.getTime() + 3*60*1000);
+        breadAtSet++;
+    }
+    breadInfo.currentBread = breadAtSet;
+    this.saveIngameBread();
 }
 
 BreadManager.prototype.setTimer = function() {

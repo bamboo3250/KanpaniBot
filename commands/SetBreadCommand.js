@@ -16,13 +16,15 @@ module.exports = {
         if (!isNaN(command.args[2])) {
             breadInfo.regenRate = Math.max(15, Math.min(200, parseInt(command.args[2])));
         }
+        var now = new Date();
+        breadInfo.setAt = now.valueOf();
+        breadInfo.breadAtSet = breadInfo.currentBread;
         bot.breadManager.saveIngameBread();
 
         var text = 'In-game Bread: ' + breadInfo.currentBread + '/' + breadInfo.maxBread + ' (+' + breadInfo.regenRate + ')\n';
-
         var numTick = Math.ceil(Math.max(0, (breadInfo.maxBread - breadInfo.currentBread) / breadInfo.regenRate));
         if (numTick > 0) {
-            var now = new Date();
+            
             var nextTick = new Date();
             nextTick.setUTCSeconds(0, 0);
             while((nextTick.getUTCMinutes() % 3) != 0) nextTick.setTime(nextTick.getTime() + 60*1000);
