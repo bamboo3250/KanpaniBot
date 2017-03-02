@@ -112,6 +112,9 @@ BreadManager.prototype.syncBread = function(userId) {
 
     var now = new Date();
     while((setAtTime.getUTCMinutes() % 3) != 0) setAtTime.setTime(setAtTime.getTime() + 60*1000);
+    if (setAtTime.valueOf() < now.valueOf()) {
+        breadAtSet = Math.min(breadAtSet + breadInfo.regenRate, breadInfo.maxBread);
+    }
 
     while(setAtTime.valueOf() + 3*60*1000 < now.valueOf()) {
         setAtTime.setTime(setAtTime.getTime() + 3*60*1000);
