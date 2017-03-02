@@ -26,6 +26,7 @@ var basicGreetingCommand        = require('./commands/BasicGreetingCommand');
 var specialCommand              = require('./commands/SpecialCommand');
 var breadCommand                = require('./commands/BreadCommand');
 var setBreadCommand             = require('./commands/SetBreadCommand');
+var ingameBreadCommand          = require('./commands/InGameBreadCommand');
 var assignRoleCommand           = require('./commands/AssignRoleCommand');
 var giveBreadCommand            = require('./commands/GiveBreadCommand');
 var charaCommand                = require('./commands/CharaCommand');
@@ -317,6 +318,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         specialCommand.handle(message, this);
         breadCommand.handle(message, this);
         setBreadCommand.handle(message, this);
+        ingameBreadCommand.handle(message, this);
         assignRoleCommand.handle(message, this);
         charaCommand.handle(message, this);
         meCommand.handle(message, this);
