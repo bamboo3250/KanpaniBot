@@ -8,13 +8,13 @@ module.exports = {
 
         var breadInfo = bot.breadManager.ingameBread[userId];
         if (!isNaN(command.args[0])) {
-            breadInfo.currentBread = Math.max(0, parseInt(command.args[0]));
+            breadInfo.currentBread = Math.max(0, Math.min(9000, parseInt(command.args[0])));
         }
         if (!isNaN(command.args[1])) {
             breadInfo.maxBread = Math.max(3000, Math.min(9000, parseInt(command.args[1])));
         }
         if (!isNaN(command.args[2])) {
-            breadInfo.regenRate = Math.max(15, parseInt(command.args[2]));
+            breadInfo.regenRate = Math.max(15, Math.min(200, parseInt(command.args[2])));
         }
         bot.breadManager.saveIngameBread();
 
