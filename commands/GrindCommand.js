@@ -337,7 +337,7 @@ module.exports = {
 
         var modifier = 1;
         if (isFullGrind && quest.breadCost != 0) {
-            modifier = bot.bot.breadManager.getBread(userId) / quest.breadCost;
+            modifier = bot.breadManager.getBread(userId) / quest.breadCost;
         }
 
         var goldNeeded = Math.floor(quest.goldCost * modifier);
