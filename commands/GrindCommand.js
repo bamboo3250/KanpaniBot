@@ -178,7 +178,7 @@ module.exports = {
             bot.initBreadIfNeed(userId);
 
             if (bot.breadManager.isBreadUnderCap(userId)) {
-                var newBreadAmount = Math.min(bot.addBread(userId, breadGained), bot.breadManager.cappedBread);
+                var newBreadAmount = Math.min(bot.breadManager.addBread(userId, breadGained), bot.breadManager.cappedBread);
                 bot.breadManager.setBread(userId, newBreadAmount);
                 bot.saveBread();
             }
