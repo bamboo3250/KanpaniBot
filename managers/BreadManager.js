@@ -103,7 +103,7 @@ BreadManager.prototype.initIngameBreadIfNeed = function(userId) {
 
 BreadManager.prototype.syncBread = function(userId) {
     this.initIngameBreadIfNeed(userId);
-    var breadInfo = that.ingameBread[userId];
+    var breadInfo = this.ingameBread[userId];
     var breadAtSet = breadInfo.breadAtSet;
 
     var setAtTime = new Date();
