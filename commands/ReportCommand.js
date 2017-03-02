@@ -22,7 +22,7 @@ module.exports = {
         for(key in bot.report[reportedUser.id]) {
             var reporterId = key;
             var employee = bot.playerManager.getPlayerUnit(reporterId);
-            if (employee && (employee.promotion > 0 || employee.levelCached >= 70) {
+            if (employee && (employee.promotion > 0 || employee.levelCached >= 70)) {
                 text += "**" + bot.report[reportedUser.id][reporterId] + "** ";
             } else {
                 text += bot.report[reportedUser.id][reporterId] + " ";
