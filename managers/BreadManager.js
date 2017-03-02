@@ -111,7 +111,7 @@ BreadManager.prototype.syncBread = function(userId) {
     setAtTime.setUTCSeconds(0, 0);
 
     var now = new Date();
-    while((setAtTime.getUTCMinutes() % 3) != 0) setAtTime.setTime(nextTick.getTime() + 60*1000);
+    while((setAtTime.getUTCMinutes() % 3) != 0) setAtTime.setTime(setAtTime.getTime() + 60*1000);
 
     while(setAtTime.valueOf() < now.valueOf()) {
         setAtTime.setTime(setAtTime.getTime() + 3*60*1000);
