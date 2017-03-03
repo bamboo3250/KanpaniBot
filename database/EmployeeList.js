@@ -32,7 +32,7 @@ var employees = [
         maxStats1: { _str: 520, _vit: 400, _agi: 505, _dex: 408, _int: 229, _pie: 267, _luk: 324},
         maxStats2: { _str: 916, _vit: 696, _agi: 859, _dex: 712, _int: 408, _pie: 465, _luk: 554},
     },{
-        _no: 152, _id: "10250002_8404eb2a", fullName: "Hisame Shakadou", japaneseName: "ヒサメ・シャカドウ", commonNames: ["Hisame"], cwId: 0,
+        _no: 152, _id: "10250002_8404eb2a", fullName: "Hisame Shakadou", japaneseName: "ヒサメ・シャカドウ", commonNames: ["Hisame"], cwId: 21,
         baseStats: { _str: 34, _vit: 14, _agi: 25, _dex: 22, _int: 6, _pie: 3, _luk: 10},
         maxStats0: { _str: 395, _vit: 265, _agi: 366, _dex: 314, _int: 165, _pie: 173, _luk: 248},
         maxStats1: { _str: 548, _vit: 367, _agi: 504, _dex: 421, _int: 229, _pie: 234, _luk: 329},
@@ -238,7 +238,7 @@ var employees = [
         maxStats1: { _str: 494, _vit: 444, _agi: 357, _dex: 357, _int: 308, _pie: 270, _luk: 261},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: 178, _id: "10140005_ba3f1084", fullName: "Agnes Barrier", japaneseName: "アニエス・バリエ", commonNames: ["Agnes"], cwId: 0,
+        _no: 178, _id: "10140005_ba3f1084", fullName: "Agnes Barrier", japaneseName: "アニエス・バリエ", commonNames: ["Agnes"], cwId: 22,
         baseStats: { _str: 23, _vit: 23, _agi: 12, _dex: 13, _int: 2, _pie: 2, _luk: 2},
         maxStats0: { _str: 347, _vit: 304, _agi: 245, _dex: 246, _int: 214, _pie: 187, _luk: 159},
         maxStats1: { _str: 496, _vit: 445, _agi: 358, _dex: 358, _int: 312, _pie: 270, _luk: 255},
@@ -514,7 +514,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: 179, _id: "10740005_85e1cd35", fullName: "Ryle Warwick", japaneseName: "ライル・ワーウィック", commonNames: ["Ryle"], cwId: 0,
+        _no: 179, _id: "10740005_85e1cd35", fullName: "Ryle Warwick", japaneseName: "ライル・ワーウィック", commonNames: ["Ryle"], cwId: 22,
         baseStats: { _str: 18, _vit: 2, _agi: 26, _dex: 12, _int: 2, _pie: 2, _luk: 16},
         maxStats0: { _str: 296, _vit: 174, _agi: 378, _dex: 307, _int: 152, _pie: 161, _luk: 250},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
