@@ -43,6 +43,12 @@ var employees = [
         maxStats0: { _str: 398, _vit: 273, _agi: 367, _dex: 301, _int: 157, _pie: 173, _luk: 240},
         maxStats1: { _str: 521, _vit: 372, _agi: 506, _dex: 414, _int: 225, _pie: 262, _luk: 325},
         maxStats2: { _str: 912, _vit: 674, _agi: 874, _dex: 730, _int: 399, _pie: 457, _luk: 569},
+    },{
+        _no: 217, _id: "10250004_7239eeec", fullName: "Levie Yethan", japaneseName: "レヴィ・イェザン", commonNames: ["Levie"], cwId: 0,
+        baseStats: { _str: 34, _vit: 14, _agi: 25, _dex: 22, _int: 6, _pie: 3, _luk: 10},
+        maxStats0: { _str: 398, _vit: 273, _agi: 367, _dex: 301, _int: 157, _pie: 173, _luk: 240},
+        maxStats1: { _str: 521, _vit: 372, _agi: 506, _dex: 414, _int: 225, _pie: 262, _luk: 325},
+        maxStats2: { _str: 912, _vit: 674, _agi: 874, _dex: 730, _int: 399, _pie: 457, _luk: 569},
     },
 
     {
@@ -328,6 +334,12 @@ var employees = [
     },{
         _no: 183, _id: "10340006_d46bd908", fullName: "Miriam Loschmidt", japaneseName: "ミリアム・ロシュミット", commonNames: ["Miriam"], cwId: 21,
         baseStats: { _str: 1, _vit: 4, _agi: 27, _dex: 30, _int: 6, _pie: 1, _luk: 8},
+        maxStats0: { _str: 162, _vit: 209, _agi: 388, _dex: 460, _int: 159, _pie: 160, _luk: 174},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
+        _no: 218, _id: "10340007_4bb15a96", fullName: "Denisa Drexler", japaneseName: "デニサ・ドレクスレル", commonNames: ["Denisa"], cwId: 0,
+        baseStats: { _str: 6, _vit: 6, _agi: 24, _dex: 30, _int: 6, _pie: 3, _luk: 5},
         maxStats0: { _str: 162, _vit: 209, _agi: 388, _dex: 460, _int: 159, _pie: 160, _luk: 174},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -808,6 +820,12 @@ var employees = [
     },{
         _no: 184, _id: "10430009_8eedd1a8", fullName: "Aitana Ferrin", japaneseName: "アイタナ・フェリン", commonNames: ["Aitana"], cwId: 0,
         baseStats: { _str: 7, _vit: 33, _agi: 3, _dex: 5, _int: 2, _pie: 2, _luk: 2},
+        maxStats0: { _str: 249, _vit: 458, _agi: 162, _dex: 236, _int: 158, _pie: 246, _luk: 158},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
+        _no: 219, _id: "10430010_23ed3f80", fullName: "Rita Meazza", japaneseName: "リータ・メアッツァ", commonNames: ["Rita"], cwId: 0,
+        baseStats: { _str: 10, _vit: 23, _agi: 6, _dex: 7, _int: 3, _pie: 3, _luk: 3},
         maxStats0: { _str: 249, _vit: 458, _agi: 162, _dex: 236, _int: 158, _pie: 246, _luk: 158},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
