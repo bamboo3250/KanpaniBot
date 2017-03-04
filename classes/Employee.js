@@ -8,6 +8,7 @@ var Employee = function(employeeInfo, playerId = null) {
     this.shortName = employeeInfo.commonNames[0];
     this.japaneseName = employeeInfo.japaneseName;
     this.cwId = employeeInfo.cwId;
+    this.height = employeeInfo.height;
     this.baseStats = employeeInfo.baseStats;
     this.maxStats0 = employeeInfo.maxStats0;
     this.maxStats1 = employeeInfo.maxStats1;
