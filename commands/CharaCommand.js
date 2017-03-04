@@ -102,7 +102,7 @@ module.exports = {
                                 const classEmoji = (message.guild == null ? null : message.guild.emojis.find('name', emojiName));
                                 
                                 var text = '\n';
-                                text += 'Employee **No.' + (employee.isEx()?'EX':'') + (employee._no == 0? '???':employee._no)  + '**\n';
+                                text += 'Employee **No.' + employee._no + '**\n';
                                 text += 'Name: **' + employee.fullName + ' (' + employee.japaneseName + ')**\n';
                                 text += 'Class: **' + employee.getClass() + '** ' +  (classEmoji != null? classEmoji : '') + '\n';
                                 text += 'Rarity: ';

@@ -94,6 +94,10 @@ EmployeeDatabase.prototype.getSuggestionsByName = function(commonName) {
             name: this.employeeList[i].commonNames[0],
             score: getMinimumEditDistance(commonName, this.employeeList[i].japaneseName)
         });
+        nameList.push({
+            name: this.employeeList[i].commonNames[0],
+            score: getMinimumEditDistance(commonName, this.employeeList[i]._no)
+        });
     }
     nameList.sort(function(a,b) {
         if (a.score != b.score) {
