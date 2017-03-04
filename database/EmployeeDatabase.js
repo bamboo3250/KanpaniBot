@@ -21,6 +21,9 @@ EmployeeDatabase.prototype.getEmployeeByCommonName = function(commonName) {
         if (this.contains(this.employeeList[i].commonNames, commonName)) {
             return this.employeeList[i];
         }
+        if (this.contains([this.employeeList[i]._no], commonName)) {
+            return this.employeeList[i];
+        }
     }
     return null;
 }
