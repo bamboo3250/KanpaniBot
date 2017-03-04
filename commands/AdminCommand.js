@@ -47,6 +47,8 @@ module.exports = {
                 bot.shop[key].amount = bot.shop[key].maxAmount;
             }
             bot.saveShop();
+
+            bot.sendMessageToMarketChannel(bot.getRole("Trainee") + " The Shop Items have been restocked.");
         }
     }
 }
