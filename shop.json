@@ -16,7 +16,7 @@
         }
     },
     "Armor Hammer": {
-        "amount": 499,
+        "amount": 500,
         "maxAmount": 500,
         "price": {
             "amount": 5000000,
@@ -24,7 +24,7 @@
         }
     },
     "Accessory Hammer": {
-        "amount": 499,
+        "amount": 500,
         "maxAmount": 500,
         "price": {
             "amount": 5000000,
@@ -48,7 +48,7 @@
         }
     },
     "Food Pack": {
-        "amount": 0,
+        "amount": 97,
         "maxAmount": 100,
         "price": {
             "amount": 5000000,
