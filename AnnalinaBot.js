@@ -59,17 +59,17 @@ if (isLocal) {
 } else {
     myBot.playerData = [
         {
-            _id: "275533845984575488",  // Nona Guest
-            characterId: "10650003_314afe6a",
+            _id: "269733140635975680",  // Hinano Guest
+            characterId: "10350003_fcc3ce23",
             promotion: 1,
-            exp: 7790000,//10707880,
+            exp: 11000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308621",
+                _id: "308320",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(6),
+                _id: myBot.randomArmor(3),
                 plus: 3
             },
             equipedAccessory: {
@@ -84,17 +84,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "278911842859089920",  // Nhano Guest
-            characterId: "10550002_5cc7900c",
+            _id: "268576286060838914",  // Saimi Guest
+            characterId: "10750001_32935980",
             promotion: 1,
-            exp: 7790000,//10707880,
+            exp: 11000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308524",
+                _id: "308706",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(5),
+                _id: myBot.randomArmor(7),
                 plus: 3
             },
             equipedAccessory: {
@@ -112,7 +112,7 @@ if (isLocal) {
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",   // Annalina
             promotion: 1,
-            exp: 7790000,//10707880,
+            exp: 11000,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308806",
@@ -170,8 +170,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "278911842859089920", null],
-                ["275533845984575488", null, "239141420194070530"]
+                [null, "268576286060838914", null],
+                ["269733140635975680", null, "239141420194070530"]
             ];    
         }
         
