@@ -333,7 +333,7 @@ if (isLocal) {
             _id: "241511566036434945",  // Elsa Guest
             characterId: "10150002_765306d2",
             promotion: 1,
-            exp: 7790000,//10707880,
+            exp: 55400,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308119",
@@ -355,17 +355,17 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "268576286060838914",  // Saimi Guest
-            characterId: "10750001_32935980",
+            _id: "275533845984575488",  // Nona Guest
+            characterId: "10650003_314afe6a",
             promotion: 1,
-            exp: 7790000,//10707880,
+            exp: 55400,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308621",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(7),
+                _id: myBot.randomArmor(6),
                 plus: 3
             },
             equipedAccessory: {
@@ -376,14 +376,14 @@ if (isLocal) {
             weaponList: {},
             armorList: {},
             accessoryList: {},
-            position: "front",
+            position: "back",
             partnerId: null,
             isTrainer: true
         },{
             _id: "273395939199156225",  // Sion Guest
             characterId: "10250001_ff1a69c9",
             promotion: 1,
-            exp: 7790000,//10707880,
+            exp: 55400,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308214",
@@ -457,8 +457,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["268576286060838914", "241511566036434945", "273395939199156225"],
-                [null, null, null]
+                [null, "241511566036434945", "273395939199156225"],
+                [null, "275533845984575488", null]
             ];    
         }
         
