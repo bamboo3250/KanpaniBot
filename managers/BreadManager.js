@@ -58,7 +58,6 @@ BreadManager.prototype.setBreadRegeneration = function() {
         }
         that.startBread = Math.min(that.startBread + 1, that.cappedBread);
         that.saveBread();
-        that.bot.log("1 bread is given to each player");
     }, that.REPLENISH_TIME);
 }
 
