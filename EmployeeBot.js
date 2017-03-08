@@ -178,6 +178,7 @@ function EmployeeBot() {
     this.firstTimeReady = true;
     
     this.freeRoll = {};
+    this.freeChara = {};
     this.rollResult = {};
     this.canUseBreadToRoll = false;
 

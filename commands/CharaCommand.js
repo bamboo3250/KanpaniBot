@@ -34,7 +34,17 @@ module.exports = {
             if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) {
                 goldToDeduct *= 2;
             }
-            if (bot.isPM(message)) goldToDeduct = 0;
+
+            if (typeof bot.freeChara[userId] == 'undefined') {
+                bot.freeChara[userId] = 2;
+            }
+
+            if (bot.isPM(message)) {
+                goldToDeduct = 0;
+            } else if (bot.freeChara[userId] > 0) {
+                bot.freeChara[userId]--;
+                goldToDeduct = 0;
+            }
 
             var userId = message.author.id;
             var player = bot.playerManager.getPlayer(userId);
