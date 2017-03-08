@@ -59,13 +59,13 @@ if (isLocal) {
 } else {
     myBot.playerData = [
         {
-            _id: "269733140635975680",  // Hinano Guest
-            characterId: "10350003_fcc3ce23",
+            _id: "276547911381417985",  // Elie Guest
+            characterId: "10350002_63194dbd",
             promotion: 1,
-            exp: 11000,//10707880,
+            exp: 150000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308320",
+                _id: "308319",
                 plus: 3
             },
             equipedArmor: {
@@ -73,7 +73,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330206",
                 plus: 3
             },
             materialList: {},
@@ -84,18 +84,18 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "268576286060838914",  // Saimi Guest
-            characterId: "10750001_32935980",
+            _id: "272257876393721867",  // Fanaril Guest
+            characterId: "10150003_e989854c",
             promotion: 1,
-            exp: 11000,//10707880,
+            exp: 150000,//10707880,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308121",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(7),
-                plus: 3
+                _id: myBot.randomArmor(1),
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330107",
@@ -112,7 +112,7 @@ if (isLocal) {
             _id: "239141420194070530", 
             characterId: "10840001_1af29f14",   // Annalina
             promotion: 1,
-            exp: 11000,//10707880,
+            exp: 150000,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308806",
@@ -170,8 +170,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "268576286060838914", null],
-                ["269733140635975680", null, "239141420194070530"]
+                [null, "272257876393721867", null],
+                [null, "276547911381417985", "239141420194070530"]
             ];    
         }
         
