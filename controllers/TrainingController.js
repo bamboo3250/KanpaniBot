@@ -1185,9 +1185,9 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
     battleField.enemySide = this.trainerField;
     battleField.allySide = this.randomField(attacker.playerId, secondaryPlayerIdOnTheField);
 
-    attemptToEncourage(attacker, battleField.allySide);
-    attemptToFocus(attacker);
-    attemptToSneak(attacker, battleField.allySide);
+    this.attemptToEncourage(attacker, battleField.allySide);
+    this.attemptToFocus(attacker);
+    this.attemptToSneak(attacker, battleField.allySide);
 
     var cooldownTime = skill.cooldown * 60 * 1000;
     if (attacker.status["Sneak"]) {
@@ -1247,9 +1247,9 @@ TrainingController.prototype.attack = function(attacker, targetUnitList, callbac
             }
         }
 
-        attemptToEncourage(trainerToAttack, battleField.enemySide);
-        attemptToFocus(trainerToAttack, battleField.enemySide);
-        attemptToSneak(trainerToAttack, battleField.enemySide);
+        this.attemptToEncourage(trainerToAttack, battleField.enemySide);
+        this.attemptToFocus(trainerToAttack, battleField.enemySide);
+        this.attemptToSneak(trainerToAttack, battleField.enemySide);
 
         var trainerCooldownTime = trainerSkill.cooldown * 60 * 1000;
         if (trainerToAttack.status["Sneak"]) {
