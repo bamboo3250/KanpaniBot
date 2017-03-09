@@ -355,17 +355,42 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "275533845984575488",  // Nona Guest
-            characterId: "10650003_314afe6a",
+            _id: "278911842859089920",  // Nhano Guest
+            characterId: "10550002_5cc7900c",
             promotion: 1,
-            exp: 55400,//10707880,
+            exp: 150000,//150000,
             gold: 0,
             equipedWeapon: {
-                _id: "308621",
+                _id: "308524",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(6),
+                _id: myBot.randomArmor(5),
+                plus: 3
+            },
+            equipedAccessory: {
+                _id: "330107",
+                plus: 3
+            },
+            materialList: {},
+            weaponList: {},
+            armorList: {},
+            accessoryList: {},
+            position: "front",
+            partnerId: null,
+            isTrainer: true
+        },{
+            _id: "284990845315317760",  // Luciel
+            characterId: "10850005_ad800ba1",
+            promotion: 1,
+            exp: 150000,//150000,
+            gold: 0,
+            equipedWeapon: {
+                _id: "308821",
+                plus: 3
+            },
+            equipedArmor: {
+                _id: myBot.randomArmor(8),
                 plus: 3
             },
             equipedAccessory: {
@@ -377,31 +402,6 @@ if (isLocal) {
             armorList: {},
             accessoryList: {},
             position: "back",
-            partnerId: null,
-            isTrainer: true
-        },{
-            _id: "273395939199156225",  // Sion Guest
-            characterId: "10250001_ff1a69c9",
-            promotion: 1,
-            exp: 55400,//10707880,
-            gold: 0,
-            equipedWeapon: {
-                _id: "308214",
-                plus: 3
-            },
-            equipedArmor: {
-                _id: myBot.randomArmor(2),
-                plus: 0
-            },
-            equipedAccessory: {
-                _id: "330107",
-                plus: 3
-            },
-            materialList: {},
-            weaponList: {},
-            armorList: {},
-            accessoryList: {},
-            position: "front",
             partnerId: null,
             isTrainer: true
         }
@@ -457,8 +457,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "241511566036434945", "273395939199156225"],
-                [null, "275533845984575488", null]
+                [null, "241511566036434945", "278911842859089920"],
+                [null, "284990845315317760", null]
             ];    
         }
         
