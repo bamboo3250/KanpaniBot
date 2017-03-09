@@ -1107,8 +1107,8 @@ TrainingController.prototype.attemptToFocus = function(unit) {
     if (user) name += " (" + user.username + ")";
     
     var text = name + " used Focus.\n";
-    bot.playerManager.applyFocus(unit.playerId, unit.playerId);
-    bot.battleChannel.sendMessage(text);
+    this.bot.playerManager.applyFocus(unit.playerId, unit.playerId);
+    this.bot.battleChannel.sendMessage(text);
 }
 
 
