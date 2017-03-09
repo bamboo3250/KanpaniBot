@@ -360,9 +360,9 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         quitTrainingCommand.handle(message, this);
         ceoReviveCommand.handle(message, this);
         swapCommand.handle(message, this);
-        encourageCommand.handle(message, this);
-        sneakCommand.handle(message, this);
-        focusCommand.handle(message, this);
+        //encourageCommand.handle(message, this);
+        //sneakCommand.handle(message, this);
+        //focusCommand.handle(message, this);
         shopCommand.handle(message, this);
         buyCommand.handle(message, this);
         promoteCommand.handle(message, this);
