@@ -324,7 +324,7 @@ Employee.prototype.getCurrentHP = function() {
 }
 
 Employee.prototype.getMaxHP = function() {
-    if (this.isTrainer) return 35000;
+    if (this.isTrainer) return 30000;
     
     var classId = this.getClassId();
     var bonusHp = (this.getBaseRarity() == 5?1:0);

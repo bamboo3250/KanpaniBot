@@ -35,12 +35,12 @@ module.exports = {
         var isChara2 = (command.commandName === '~chara2');
 
         var costume = -1;
-        if (command.args.length > 0) {
-            if (typeof COSTUME_CODE[command.args[0]] != 'undefined') {
-                costume = COSTUME_CODE[command.args[0]];
-                command.args.splice(0, 1);
-            }
-        }
+        // if (command.args.length > 0) {
+        //     if (typeof COSTUME_CODE[command.args[0]] != 'undefined') {
+        //         costume = COSTUME_CODE[command.args[0]];
+        //         command.args.splice(0, 1);
+        //     }
+        // }
 
         var name = command.args.join(' ');
         if (name === '') return;

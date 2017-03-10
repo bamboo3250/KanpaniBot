@@ -79,21 +79,21 @@ if (isLocal) {
 } else {
     myBot.playerData = [
         {
-            _id: "278911842859089920",  // Nhano Guest
-            characterId: "10550002_5cc7900c",
+            _id: "268576286060838914",  // Saimi Guest
+            characterId: "10750001_32935980",
             promotion: 1,
-            exp: 150000,//10707880,
+            exp: 290000,//150000,
             gold: 0,
             equipedWeapon: {
-                _id: "308524",
+                _id: "308706",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(5),
+                _id: myBot.randomArmor(7),
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -107,7 +107,7 @@ if (isLocal) {
             _id: "270767219875643392",  // Siegrid Guest
             characterId: "10550001_27d912ef",
             promotion: 1,
-            exp: 150000,//10707880,
+            exp: 290000,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308510",
@@ -118,7 +118,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -129,13 +129,13 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "284990845315317760",  // Luciel
-            characterId: "10850005_ad800ba1",
+            _id: "272259125256388610",  // Sytry Guest
+            characterId: "10850002_c4678df9",
             promotion: 1,
-            exp: 150000,//10707880,
+            exp: 290000,//150000,
             gold: 0,
             equipedWeapon: {
-                _id: "308821",
+                _id: "308819",
                 plus: 3
             },
             equipedArmor: {
@@ -143,7 +143,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -157,7 +157,7 @@ if (isLocal) {
             _id: "269733140635975680",  // Hinano Guest
             characterId: "10350003_fcc3ce23",
             promotion: 1,
-            exp: 150000,//10707880,
+            exp: 290000,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308320",
@@ -168,7 +168,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -182,7 +182,7 @@ if (isLocal) {
             _id: "283224327279869962",  // Eva Slade Guest
             characterId: "10650002_ae907df4",
             promotion: 1,
-            exp: 150000,//10707880,
+            exp: 290000,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308619",
@@ -193,7 +193,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -221,8 +221,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["278911842859089920", null, "270767219875643392"],
-                ["269733140635975680", "283224327279869962", "284990845315317760"]
+                ["268576286060838914", null, "270767219875643392"],
+                ["269733140635975680", "283224327279869962", "272259125256388610"]
             ];    
         }
 
