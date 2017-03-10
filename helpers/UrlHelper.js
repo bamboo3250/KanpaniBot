@@ -16,7 +16,7 @@ UrlHelper.prototype.getIllustURL = function(employee, category) {
     return this.DOMAIN + "/img/character/" + employee.characterId + "/illust/" + category + ".png";
 }
 
-UrlHelper.prototype.getCharaSpriteImageURL = function(employeeInfo, isEnemy = true) {
+UrlHelper.prototype.getCharaSpriteImageURL = function(employeeInfo, isEnemy = true, eventCostume = -1) {
     var baseRarity = parseInt(employeeInfo.characterId.substring(3, 4));
     var star = (baseRarity === 5? 7: 6);
     var isEx = (employeeInfo.characterId.substring(4, 5) === "9");
@@ -25,11 +25,17 @@ UrlHelper.prototype.getCharaSpriteImageURL = function(employeeInfo, isEnemy = tr
     var classIdText = employeeInfo.characterId.substring(2,3);
 
     if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
-    weaponId = "3" + (isEx? "9" : "0") + (hasCW? "8" : "0") + classIdText + weaponId;
-    return this.DOMAIN + "/img/character/" + employeeInfo.characterId + "/" + (isEnemy?"enemy":"ally") + "/" + star + "_" + weaponId + "_idle.png";
+    
+    if (eventCostume == -1) {
+        weaponId = "3" + (isEx? "9" : "0") + (hasCW? "8" : "0") + classIdText + weaponId;
+        return this.DOMAIN + "/img/character/" + employeeInfo.characterId + "/" + (isEnemy?"enemy":"ally") + "/" + star + "_" + weaponId + "_idle.png";    
+    } else {
+        weaponId = "300" + classIdText + eventCostume;
+        return this.DOMAIN + "/img/character/" + employeeInfo.characterId + "/" + (isEnemy?"enemy":"ally") + "/" + weaponId + "_idle.png";
+    }
 }
 
-UrlHelper.prototype.getCharaSpriteImageName = function(employeeInfo) {
+UrlHelper.prototype.getCharaSpriteImageName = function(employeeInfo, eventCostume = -1) {
     var baseRarity = parseInt(employeeInfo.characterId.substring(3, 4));
     var star = (baseRarity === 5? 7: 6);
     var isEx = (employeeInfo.characterId.substring(4, 5) === "9");
@@ -38,8 +44,15 @@ UrlHelper.prototype.getCharaSpriteImageName = function(employeeInfo) {
     var classIdText = employeeInfo.characterId.substring(2,3);
 
     if (parseInt(weaponId) < 10) weaponId = "0" + parseInt(weaponId);
-    weaponId = "3" + (isEx? "9" : "0") + (hasCW? "8" : "0") + classIdText + weaponId;
-    return employeeInfo.characterId + "_" + star + "_" + weaponId + "_idle.png";
+    
+
+    if (eventCostume == -1) {
+        weaponId = "3" + (isEx? "9" : "0") + (hasCW? "8" : "0") + classIdText + weaponId;
+        return employeeInfo.characterId + "_" + star + "_" + weaponId + "_idle.png";
+    } else {
+        weaponId = "300" + classIdText + eventCostume;
+        return employeeInfo.characterId + "_" + weaponId + "_idle.png";
+    }
 }
 
 
