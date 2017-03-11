@@ -35,8 +35,14 @@ function BattlePainter(bot, skill, iteration, actionOnEnemySide, area) {
         this.opacity = attack.opacity;    
     }
     
-    this.focusPointRow = area[0].row;
-    this.focusPointColumn = area[0].column;
+    if (actionOnEnemySide) {
+        this.focusPointRow      = toActualRowFromEnemy(area[0].row);
+        this.focusPointColumn   = toActualColumnFromEnemy(area[0].column);
+    } else {
+        this.focusPointRow      = toActualRowFromAlly(area[0].row);
+        this.focusPointColumn   = toActualColumnFromAlly(area[0].column);
+    }
+    
 }
 
 function toActualRowFromEnemy(row) { return (1-row)*2 }
