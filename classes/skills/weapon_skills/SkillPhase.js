@@ -1,21 +1,24 @@
 var SkillPhaseConst = require('./SkillPhaseConst');
 
-function SkillPhase(attackInstances, skillType, damageType, element, targetType, state = "attack01", frame = 0, doesApproach = false, status = {}, hasAnimation = false, allyOffsetX = 0, allyOffsetY = 0, enemyOffsetX = 0, enemyOffsetY = 0, opacity = 1.0) {
+function SkillPhase(attackInstances, skillType, damageType, element, targetType, status, animation) {
     this.attackInstances = attackInstances;
     this.skillType = skillType;
     this.damageType = damageType;
     this.element = element;
     this.targetType = targetType;
-    this.state = state;
-    this.frame = frame;
-    this.doesApproach = doesApproach;
+    // this.state = state;
+    // this.frame = frame;
+    // this.doesApproach = doesApproach;
     this.status = status;
-    this.hasAnimation = hasAnimation;
-    this.allyOffsetX = allyOffsetX;
-    this.allyOffsetY = allyOffsetY;
-    this.enemyOffsetX = enemyOffsetX;
-    this.enemyOffsetY = enemyOffsetY;
-    this.opacity = opacity;
+    this.animation = animation;
+    // this.hasAnimation = hasAnimation;
+    // this.allyOffsetX = allyOffsetX;
+    // this.allyOffsetY = allyOffsetY;
+    // this.enemyOffsetX = enemyOffsetX;
+    // this.enemyOffsetY = enemyOffsetY;
+    // this.opacity = opacity;
+
+    // state = "attack01", frame = 0, doesApproach = false,
 }
 
 const SKILL_PATTERN_MASKS = [

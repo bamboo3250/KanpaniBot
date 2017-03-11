@@ -19,9 +19,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -44,9 +46,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -69,9 +73,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -91,9 +97,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -116,9 +124,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -141,9 +151,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -163,9 +175,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Patk Down": 30
+                    }, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
                     }
                 )
             ]
@@ -189,9 +204,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -214,9 +231,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -239,9 +258,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -264,9 +285,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -286,9 +309,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Stun": 30
+                    }, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
                     }
                 )
             ]
@@ -309,9 +335,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Stun": 30
+                    }, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
                     }
                 )
             ]
@@ -332,9 +361,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Stun": 20
+                    }, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
                     }
                 )
             ]
@@ -355,9 +387,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -383,9 +417,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Stun": 30
+                    }, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
                     }
                 )
             ]
@@ -406,9 +443,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -434,9 +473,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Charm": 15
+                    }, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
                     }
                 )
             ]
@@ -457,9 +499,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
+                    }
                 )
             ]
         },
@@ -482,10 +526,13 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Pdef Down": 20,
                         "Mdef Down": 20,
+                    }, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
                     }
                 )
             ]
@@ -512,9 +559,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Charm": 25,
+                    }, {
+                        state: "attack01", 
+                        frame: 3,
+                        approachType: SkillPhaseConst.APPROACH_FRONT
                     }
                 )
             ]
@@ -538,14 +588,18 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Darkness": 10
-                    },
-                    true,
-                    -200, -310,
-                    -380, -300,
-                    0.65
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                        attack: {
+                            ally    : { x: -200, y: -310},
+                            enemy   : { x: -380, y: -300},
+                            opacity : 0.65
+                        }
+                    }
                 )
             ]
         },
@@ -565,13 +619,16 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    false,
-                    {},
-                    true,
-                    -380, -870,
-                    -380, -870,
-                    1.0
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 3,
+                        attack: {
+                            ally    : { x: -380, y: -870},
+                            enemy   : { x: -380, y: -870},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ]
         }
@@ -594,9 +651,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                    }
                 )
             ]
         },
@@ -616,9 +675,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                    }
                 )
             ]
         },
@@ -638,9 +699,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                    }
                 )
             ]
         },
@@ -660,9 +723,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Paralyze": 30,
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
                     }
                 )
             ]
@@ -683,9 +749,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                    }
                 )
             ]
         },
@@ -705,9 +773,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Paralyze": 30,
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
                     }
                 )
             ]
@@ -728,9 +799,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                    }
                 )
             ]
         },
@@ -753,9 +826,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Pdef Down": 20
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
                     }
                 )
             ]
@@ -782,9 +858,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                    }
                 )
             ]
         },
@@ -804,9 +882,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Paralyze": 30,
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
                     }
                 )
             ]
@@ -827,9 +908,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Paralyze": 30,
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
                     }
                 )
             ]
@@ -850,9 +934,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Paralyze": 30,
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
                     }
                 )
             ]
@@ -873,9 +960,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                    }
                 )
             ]
         },
@@ -898,9 +987,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                    }
                 )
             ]
         },
@@ -920,9 +1011,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Charm": 30
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
                     }
                 )
             ]
@@ -952,9 +1046,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
+                    }
                 )
             ]
         },
@@ -980,10 +1076,13 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Pdef Down": 20,
                         "Mdef Down": 20
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
                     }
                 )
             ]
@@ -1010,9 +1109,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Charm": 15
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3,
                     }
                 )
             ]
@@ -1033,14 +1135,18 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack06", 3,
-                    true, {
+                    {
                         "Curse": 60
-                    },
-                    true,
-                    -600, -610,
-                    -780, -650,
-                    1.0
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack06", 
+                        frame: 3,
+                        attack: {
+                            ally    : { x: -600, y: -610},
+                            enemy   : { x: -780, y: -650},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ]
         }
@@ -1065,7 +1171,11 @@ module.exports = {
                     SkillPhaseConst.TARGET_ANY,
                     "attack08", 9,
                     false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1088,9 +1198,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1116,9 +1228,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1138,9 +1252,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false, {
+                    {
                         "Matk Down": 30
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
                     }
                 )
             ]
@@ -1161,9 +1278,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1183,9 +1302,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1205,9 +1326,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1227,9 +1350,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1252,9 +1377,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1274,9 +1401,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1296,9 +1425,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1318,9 +1449,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false, {
+                    {
                         "Charm": 15
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
                     }
                 )
             ]
@@ -1341,9 +1475,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1363,9 +1499,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1385,9 +1523,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false, {
+                    {
                         "Patk Down": 10
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
                     }
                 )
             ]
@@ -1408,9 +1549,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1430,9 +1573,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1452,9 +1597,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1474,9 +1621,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
+                    }
                 )
             ]
         },
@@ -1496,10 +1645,13 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false, {
+                    {
                         "Pdef Down": 20,
                         "Mdef Down": 20
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
                     }
                 )
             ]
@@ -1523,9 +1675,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack08", 9,
-                    false, {
+                    {
                         "Charm": 20
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack08", 
+                        frame: 9,
                     }
                 )
             ]
@@ -1546,13 +1701,18 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack07", 9,
-                    false, {
+                    {
                         "Stun": 10
-                    },
-                    true,
-                    -200, -170,
-                    -200, -170
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack07", 
+                        frame: 9,
+                        attack: {
+                            ally    : { x: -200, y: -170},
+                            enemy   : { x: -200, y: -170},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ]
         },
@@ -1581,11 +1741,16 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack07", 9,
-                    false, {},
-                    true,
-                    -1450, -700,
-                    -1450, -700
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack07", 
+                        frame: 9,
+                        attack: {
+                            ally    : { x: -1450, y: -700},
+                            enemy   : { x: -1450, y: -700},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ]
         }
@@ -1608,9 +1773,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1633,9 +1800,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1655,9 +1824,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1677,9 +1848,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1699,9 +1872,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1727,9 +1902,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1749,9 +1926,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1774,9 +1953,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1799,9 +1980,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1821,9 +2004,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1843,9 +2028,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1865,9 +2052,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1890,9 +2079,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true, {
+                    {
                         "Charm": 15
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
                     }
                 )
             ]
@@ -1916,9 +2108,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -1938,10 +2132,13 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true, {
+                    {
                         "Pdef Down": 20,
                         "Mdef Down": 20
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
                     }
                 )
             ]
@@ -1962,13 +2159,18 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 5,
-                    true, {
+                    {
                         "Mdef Down": 10
-                    },
-                    true,
-                    -1080, -540,
-                    -1730, -940
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 5,
+                        attack: {
+                            ally    : { x: -1080, y: -540},
+                            enemy   : { x: -1730, y: -940},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ]
         }
@@ -1991,9 +2193,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2016,9 +2220,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2038,9 +2244,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2060,9 +2268,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2085,9 +2295,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2107,9 +2319,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2132,9 +2346,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2157,9 +2373,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_EARTH,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2179,9 +2397,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true, {
+                    {
                         "Paralyze": 30,
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
                     }
                 )
             ]
@@ -2202,8 +2423,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true, {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2226,8 +2450,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true, {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2250,9 +2477,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2278,9 +2507,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2300,9 +2531,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2325,9 +2558,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2347,9 +2582,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true, {
+                    {
                         "Charm": 20
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
                     }
                 )
             ]
@@ -2370,9 +2608,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
+                    }
                 )
             ]
         },
@@ -2392,10 +2632,13 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true, {
+                    {
                         "Pdef Down": 15,
                         "Mdef Down": 15
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
                     }
                 )
             ]
@@ -2419,9 +2662,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 0,
-                    true, {
+                    {
                         "Charm": 20
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 0
                     }
                 )
             ]
@@ -2442,13 +2688,16 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {},
-                    true,
-                    0, -550,
-                    0, -550,
-                    0.9
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3,
+                        attack: {
+                            ally    : { x: -0, y: -550},
+                            enemy   : { x: -0, y: -550},
+                            opacity : 0.9
+                        }
+                    }
                 )
             ]
         },
@@ -2468,14 +2717,18 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true, {
+                    {
                         "Stun": 10
-                    },
-                    true,
-                    -120, -50,
-                    -120, -50,
-                    0.7
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3,
+                        attack: {
+                            ally    : { x: -120, y: -50},
+                            enemy   : { x: -120, y: -50},
+                            opacity : 0.7
+                        }
+                    }
                 )
             ]
         }
@@ -2498,9 +2751,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 4,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 4
+                    }
                 )
             ]
         },
@@ -2520,9 +2775,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_EARTH,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack03", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack03", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -2542,9 +2799,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2565,9 +2825,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
+                    }
                 )
             ]
         },
@@ -2587,9 +2849,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2610,9 +2875,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2633,9 +2901,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2656,9 +2927,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2679,9 +2953,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2702,9 +2979,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
+                    }
                 )
             ]
         },
@@ -2724,9 +3003,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2747,9 +3029,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2770,9 +3055,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2793,9 +3081,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6
                     }
                 )
             ]
@@ -2816,11 +3107,16 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {},
-                    true,
-                    -600, -700,
-                    -600, -700
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6,
+                        attack: {
+                            ally    : { x: -600, y: -700},
+                            enemy   : { x: -600, y: -700},
+                            opacity : 1.0
+                        }
+                    }
                 ),
                 new SkillPhase(
                     [
@@ -2833,11 +3129,16 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {},
-                    true,
-                    -250, -100,
-                    -250, -300
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6,
+                        attack: {
+                            ally    : { x: -250, y: -100},
+                            enemy   : { x: -250, y: -300},
+                            opacity : 1.0
+                        }
+                    }
                 ), 
             ]
         },
@@ -2857,14 +3158,19 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack02", 6,
-                    false, {
+                    {
                         "Cleanse": 100,
                         "Resurrection": 100
-                    },
-                    true,
-                    -680, -680,
-                    -680, -680
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack02", 
+                        frame: 6,
+                        attack: {
+                            ally    : { x: -680, y: -680},
+                            enemy   : { x: -680, y: -680},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ]
         }
@@ -2893,9 +3199,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -2915,9 +3223,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    false, {
+                    {
                         "Poison": 50
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -2941,9 +3252,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -2972,9 +3285,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -2994,9 +3309,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -3031,9 +3348,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Pdef Down": 10
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -3057,9 +3377,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Poison": 50
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -3083,9 +3406,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -3101,13 +3426,16 @@ module.exports = {
                             modifier: 0.6
                         }
                     ],
-                    SkillPhaseConst.TYPE_LONG_NORMAL_ATTACK,
+                    SkillPhaseConst.TYPE_SHORT_NORMAL_ATTACK,
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    false, {
+                    {
                         "Mdef Down": 30
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -3128,10 +3456,13 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Pdef Down": 50,
                         "Patk Down": 50
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -3155,9 +3486,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -3186,9 +3519,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -3217,9 +3552,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -3242,9 +3579,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Poison": 15
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -3274,9 +3614,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Poison": 15
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -3297,9 +3640,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -3319,9 +3664,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -3341,9 +3688,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Charm": 15
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -3367,9 +3717,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
+                    }
                 )
             ]
         },
@@ -3395,10 +3747,13 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Pdef Down": 20,
                         "Mdef Down": 20
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -3422,10 +3777,13 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 3,
-                    true, {
+                    {
                         "Charm": 15,
                         "Darkness": 15
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack01", 
+                        frame: 3
                     }
                 )
             ]
@@ -3446,15 +3804,19 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_PHYSICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack05", 10,
-                    true, {
+                    {
                         "Poison": 75,
                         "Paralyze": 20,
-                    },
-                    true,
-                    -360, -300,
-                    -360, -300,
-                    1.0
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_FRONT,
+                        state: "attack05", 
+                        frame: 10,
+                        attack: {
+                            ally    : { x: -360, y: -300},
+                            enemy   : { x: -360, y: -300},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ]
         }
@@ -3477,9 +3839,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3499,9 +3863,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3521,9 +3887,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_EARTH,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3543,9 +3911,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3565,9 +3935,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3587,9 +3959,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3609,9 +3983,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3631,9 +4007,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_EARTH,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3653,9 +4031,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3675,9 +4055,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3697,9 +4079,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3719,9 +4103,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3741,9 +4127,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_EARTH,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3763,9 +4151,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_WIND,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3785,9 +4175,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3807,9 +4199,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3829,9 +4223,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_FIRE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3851,9 +4247,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_ICE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3873,9 +4271,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3895,13 +4295,18 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false, {
+                    {
                         "Darkness": 10
-                    },
-                    true,
-                    -498, -370,
-                    -498, -370
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13,
+                        attack: {
+                            ally    : { x: -498, y: -370},
+                            enemy   : { x: -498, y: -370},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ]
         },
@@ -3921,9 +4326,11 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_LIGHT,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false,
-                    {}
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
+                    }
                 )
             ]
         },
@@ -3943,9 +4350,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false, {
+                    {
                         "Charm": 10
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
                     }
                 )
             ]
@@ -3972,9 +4382,12 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false, {
+                    {
                         "Charm": 10
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13
                     }
                 )
             ]
@@ -3995,11 +4408,16 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_DARK,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false, {},
-                    true,
-                    -330, -490,
-                    -330, -490
+                    {}, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13,
+                        attack: {
+                            ally    : { x: -330, y: -490},
+                            enemy   : { x: -330, y: -490},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ],
             effect: {
@@ -4025,13 +4443,18 @@ module.exports = {
                     SkillPhaseConst.DAMAGE_MAGICAL,
                     SkillPhaseConst.ELEMENT_NONE,
                     SkillPhaseConst.TARGET_ANY,
-                    "attack01", 13,
-                    false, {
+                    {
                         "Charm": 10
-                    },
-                    true,
-                    -680, -1240,
-                    -680, -1240
+                    }, {
+                        approachType: SkillPhaseConst.APPROACH_STAY,
+                        state: "attack01", 
+                        frame: 13,
+                        attack: {
+                            ally    : { x: -680, y: -1240},
+                            enemy   : { x: -680, y: -1240},
+                            opacity : 1.0
+                        }
+                    }
                 )
             ]
         }

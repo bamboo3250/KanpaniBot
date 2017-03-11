@@ -24,6 +24,10 @@ function SkillPhaseConst() {
 
     this.TARGET_ANY = 0;
     this.TARGET_SELF = 1;
+
+    this.APPROACH_STAY = 0;
+    this.APPROACH_FRONT = 1;
+    this.APPROACH_CENTER = 2;
 }
 
 module.exports = new SkillPhaseConst();

@@ -2,6 +2,7 @@ var BattleField = require('../classes/BattleField');
 var BattlePainter = require('./BattlePainter');
 var Jimp = require("jimp");
 var fs = require('fs');
+var SkillPhaseConst = require('../classes/skills/weapon_skills/SkillPhaseConst')
 
 function TrainingController() {
     this.type = "training";
@@ -446,27 +447,21 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
         return; 
     }
 
-    var average_column = 0;
-    for(var i=0;i<area.length;i++) average_column += area[i].column;
-    average_column = average_column / area.length;
-
-    var expGained = {};
-
-    var painter = new BattlePainter(this.bot);
-    if (skillPhase.hasAnimation) {
-        painter.skillNameToAnimate = skill.name + "_" + (actionOnEnemySide?"ally":"enemy") + "_" + iter;
-        painter.offsetX = (actionOnEnemySide ? skillPhase.allyOffsetX : skillPhase.enemyOffsetX);
-        painter.offsetY = (actionOnEnemySide ? skillPhase.allyOffsetY : skillPhase.enemyOffsetY);
-        painter.opacity = skillPhase.opacity;
-        if (actionOnEnemySide) {
-            painter.focusPointRow = 1 - area[area.length-1].row;
-            painter.focusPointColumn = 2 - area[area.length-1].column;
-        } else {
-            painter.focusPointRow = area[0].row + 4;
-            painter.focusPointColumn = area[0].column;
-        }
+    var maxColumn = 0;
+    var minColumn = 1000;
+    var maxRow = 0;
+    var minRow = 1000;
+    for(var i=0;i<area.length;i++) {
+        maxColumn = Math.max(maxColumn, area[i].column);
+        minColumn = Math.min(minColumn, area[i].column);
+        maxRow = Math.max(maxRow, area[i].row);
+        minRow = Math.min(minRow, area[i].row);
     }
-
+    var average_column  = (maxColumn + minColumn)/2;
+    var average_row     = (maxRow + minRow)/2;
+    
+    var painter = new BattlePainter(this.bot, skill, iter, actionOnEnemySide, area);
+    var expGained = {};
     var isKOed = {};
 
     text += attackerName + " used **" + skill.name + "**\n";
@@ -762,9 +757,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             var enemyUnit = this.bot.playerManager.getPlayerUnit(battleField.enemySide[i][j]);
             if (enemyUnit && enemyUnit.getCurrentHP() > 0) {
                 if (enemyUnit === attacker) {
-                    painter.setEnemyState(i, j, enemyUnit, skillPhase.state, skillPhase.frame);
-                    if (skillPhase.doesApproach) {
+                    painter.setEnemyState(i, j, enemyUnit, skillPhase.animation.state, skillPhase.animation.frame);
+                    if (skillPhase.approachType == SkillPhaseConst.APPROACH_FRONT) {
                         painter.moveToFrontOfAllyField(i, j, average_column);
+                    } else if (skillPhase.approachType == SkillPhaseConst.APPROACH_CENTER) {
+                        painter.moveToFrontOfAllyField(i, j, average_column, average_row);
                     }
                 } else {
                     painter.setEnemyState(i, j, enemyUnit);
@@ -773,9 +770,11 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
             var allyUnit = this.bot.playerManager.getPlayerUnit(battleField.allySide[i][j]);
             if (allyUnit && !allyUnit.isFainted()) {
                 if (allyUnit === attacker) {
-                    painter.setAllyState(i, j, allyUnit, skillPhase.state, skillPhase.frame);
-                    if (skillPhase.doesApproach) {
+                    painter.setAllyState(i, j, allyUnit, skillPhase.animation.state, skillPhase.animation.frame);
+                    if (skillPhase.approachType == SkillPhaseConst.APPROACH_FRONT) {
                         painter.moveToFrontOfEnemyField(i, j, average_column);
+                    } else if (skillPhase.approachType == SkillPhaseConst.APPROACH_CENTER) {
+                        painter.moveToFrontOfEnemyField(i, j, average_column, average_row);
                     }
                 } else {
                     painter.setAllyState(i, j, allyUnit);

@@ -1,6 +1,8 @@
 var Jimp = require("jimp");
 
-function BattlePainter(bot) {
+function BattlePainter(bot, skill, iteration, actionOnEnemySide, area) {
+    
+    this.bot = bot;
     this.states = {
         "enemy": [
             [null,null,null],
@@ -21,32 +23,44 @@ function BattlePainter(bot) {
             [[],[],[]]
         ]
     };
+    this.actionOnEnemySide = actionOnEnemySide;
+    this.animation = skill.phases[iteration].animation;
+
     this.skillNameToAnimate = null;
-    this.offsetX = 0;
-    this.offsetY = 0;
-    this.focusPointRow = 0;
-    this.focusPointColumn = 0;
-    this.opacity = 1.0;
-    this.bot = bot;
+    var attack = this.animation.attack;
+    if (attack) {
+        this.skillNameToAnimate = skill.name + "_" + (actionOnEnemySide?"ally":"enemy") + "_" + iteration;
+        this.offsetX = (actionOnEnemySide ? attack.ally.x : attack.enemy.x);
+        this.offsetY = (actionOnEnemySide ? attack.ally.y : attack.enemy.y);
+        this.opacity = attack.opacity;    
+    }
+    
+    this.focusPointRow = area[0].row;
+    this.focusPointColumn = area[0].column;
 }
+
+function toActualRowFromEnemy(row) { return (1-row)*2 }
+function toActualColumnFromEnemy(column) { return (2-column)*2 }
+function toActualRowFromAlly(row) { return (4+row)*2 }
+function toActualColumnFromAlly(column) { return (column)*2 }
 
 BattlePainter.prototype.setEnemyState = function(row, column, unit, state = "idle", frame = 0) {
     this.states["enemy"][row][column] = {
-        unit: unit,
-        state: state,
-        frame: frame,
-        row: 1-row,
-        column: 2-column
+        unit        : unit,
+        state       : state,
+        frame       : frame,
+        actualRow   : toActualRowFromEnemy(row),
+        actualColumn: toActualColumnFromEnemy(column)
     };
 }
 
 BattlePainter.prototype.setAllyState = function(row, column, unit, state = "idle", frame = 0) {
     this.states["ally"][row][column] = {
-        unit: unit,
-        state: state,
-        frame: frame,
-        row: 4+row,
-        column: column
+        unit        : unit,
+        state       : state,
+        frame       : frame,
+        actualRow   : toActualRowFromAlly(row),
+        actualColumn: toActualColumnFromAlly(column)
     };
 }
 
@@ -64,17 +78,17 @@ BattlePainter.prototype.addAllyDamage = function(row, column, damage, type = "no
     });
 }
 
-BattlePainter.prototype.moveToFrontOfEnemyField = function(row, column, newColumn) {
+BattlePainter.prototype.moveToFrontOfEnemyField = function(row, column, newColumn, newRow = -1) {
     if (this.states["ally"][row][column]) {
-        this.states["ally"][row][column].row = 2;
-        this.states["ally"][row][column].column = 2-newColumn;
+        this.states["ally"][row][column].actualRow      = toActualRowFromEnemy(newRow);
+        this.states["ally"][row][column].actualColumn   = toActualColumnFromEnemy(newColumn);
     }
 }
 
-BattlePainter.prototype.moveToFrontOfAllyField = function(row, column, newColumn) {
+BattlePainter.prototype.moveToFrontOfAllyField = function(row, column, newColumn, newRow = -1) {
     if (this.states["enemy"][row][column]) {
-        this.states["enemy"][row][column].row = 3;
-        this.states["enemy"][row][column].column = newColumn;
+        this.states["enemy"][row][column].actualRow     = toActualRowFromAlly(newRow);
+        this.states["enemy"][row][column].actualColumn  = toActualColumnFromAlly(newColumn);
     }
 }
 
@@ -82,9 +96,13 @@ function convertCoordinate(row, column) {
     var OFFSET_X = -50;
     var OFFSET_Y = 40;
     return {
-        x: OFFSET_X + 102*row + 137*column,
-        y: OFFSET_Y + 65*row - 37*column
+        x: OFFSET_X + 51*row + 68*column,
+        y: OFFSET_Y + 32*row - 18*column
     }
+    // return {
+    //     x: OFFSET_X + 102*row + 137*column,
+    //     y: OFFSET_Y + 65*row - 37*column
+    // }
 }
 
 BattlePainter.prototype.draw = function(callback) {
@@ -101,13 +119,15 @@ BattlePainter.prototype.draw = function(callback) {
                 var spriteFileName = "images/enemy/" + this.bot.urlHelper.getSpriteImageName(unit, state);
                 readQueue.push(spriteFileName);
                 queue.push({
-                    fileToDownload: spriteUrl,   fileToSave: spriteFileName
+                    fileToDownload  : spriteUrl,
+                    fileToSave      : spriteFileName
                 });
-                var thumbnailUrl = this.bot.urlHelper.getIllustURL(unit, "thumbnail");
-                var thumbnailFileName = "images/thumbnail/" + unit.characterId + ".png";
+                var thumbnailUrl        = this.bot.urlHelper.getIllustURL(unit, "thumbnail");
+                var thumbnailFileName   = "images/thumbnail/" + unit.characterId + ".png";
                 readQueue.push(thumbnailFileName);
                 queue.push({
-                    fileToDownload: thumbnailUrl,   fileToSave: thumbnailFileName
+                    fileToDownload  : thumbnailUrl,
+                    fileToSave      : thumbnailFileName
                 });
                 for(key in unit.status) statusAppear[key] = true;
             }
@@ -119,13 +139,15 @@ BattlePainter.prototype.draw = function(callback) {
                 spriteFileName = "images/ally/" + this.bot.urlHelper.getSpriteImageName(unit, state);
                 readQueue.push(spriteFileName);
                 queue.push({
-                    fileToDownload: spriteUrl,   fileToSave: spriteFileName
+                    fileToDownload: spriteUrl,
+                    fileToSave: spriteFileName
                 });
                 var thumbnailUrl = this.bot.urlHelper.getIllustURL(unit, "thumbnail");
                 var thumbnailFileName = "images/thumbnail/" + unit.characterId + ".png";
                 readQueue.push(thumbnailFileName);
                 queue.push({
-                    fileToDownload: thumbnailUrl,   fileToSave: thumbnailFileName
+                    fileToDownload: thumbnailUrl,
+                    fileToSave: thumbnailFileName
                 });
                 for(key in unit.status) statusAppear[key] = true;
             }
@@ -186,7 +208,7 @@ BattlePainter.prototype.draw = function(callback) {
                         var state = that.states["enemy"][i][j].state;
                         var spriteFileName = "images/enemy/" + that.bot.urlHelper.getSpriteImageName(unit, state);
                         var frameNo = that.states["enemy"][i][j].frame;
-                        var coord = convertCoordinate(that.states["enemy"][i][j].row, that.states["enemy"][i][j].column);
+                        var coord = convertCoordinate(that.states["enemy"][i][j].actualRow, that.states["enemy"][i][j].actualColumn);
 
                         imageList[spriteFileName].crop((frameNo%5) * 360, Math.floor(frameNo/5) * 270, 360, 270);
                         background
@@ -204,7 +226,7 @@ BattlePainter.prototype.draw = function(callback) {
                         var state = that.states["ally"][i][j].state;
                         var spriteFileName = "images/ally/" + that.bot.urlHelper.getSpriteImageName(unit, state);
                         var frameNo = that.states["ally"][i][j].frame;
-                        var coord = convertCoordinate(that.states["ally"][i][j].row, that.states["ally"][i][j].column);
+                        var coord = convertCoordinate(that.states["ally"][i][j].actualRow, that.states["ally"][i][j].actualColumn);
 
                         if (imageList[spriteFileName]) {
                                 imageList[spriteFileName].crop((frameNo%5) * 360, Math.floor(frameNo/5) * 270, 360, 270);
@@ -231,7 +253,10 @@ BattlePainter.prototype.draw = function(callback) {
                             var damage = that.damages[side][i][j][k].damage;
                             var type = that.damages[side][i][j][k].type;
 
-                            var coord = convertCoordinate(that.states[side][i][j].row, that.states[side][i][j].column);
+                            var coord = convertCoordinate(
+                                that.states[side][i][j].actualRow,
+                                that.states[side][i][j].actualColumn
+                            );
 
                             var DAMAGE_OFFSET_X = 140;
                             var DAMAGE_OFFSET_y = 0;
