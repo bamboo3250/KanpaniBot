@@ -36,7 +36,7 @@ function BattlePainter(bot, skill, iteration, actionOnEnemySide, area) {
     }
     
     if (actionOnEnemySide) {
-        this.focusPointRow      = toActualRowFromAlly(area[0].row);
+        this.focusPointRow      = toActualRowFromEnemy(area[0].row);
         this.focusPointColumn   = toActualColumnFromAlly(area[0].column);
     } else {
         this.focusPointRow      = toActualRowFromAlly(area[0].row);
