@@ -11,7 +11,7 @@
         "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 5000000,
+            "amount": 2000000,
             "unit": "Gold"
         }
     },
@@ -19,7 +19,7 @@
         "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 5000000,
+            "amount": 2000000,
             "unit": "Gold"
         }
     },
@@ -27,7 +27,7 @@
         "amount": 500,
         "maxAmount": 500,
         "price": {
-            "amount": 5000000,
+            "amount": 2000000,
             "unit": "Gold"
         }
     },
@@ -43,12 +43,12 @@
         "amount": 100,
         "maxAmount": 100,
         "price": {
-            "amount": 30000000,
+            "amount": 5000000,
             "unit": "Gold"
         }
     },
     "Food Pack": {
-        "amount": 88,
+        "amount": 87,
         "maxAmount": 100,
         "price": {
             "amount": 5000000,
