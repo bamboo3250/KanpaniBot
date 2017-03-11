@@ -14,7 +14,7 @@
                 plus: 0
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -39,7 +39,7 @@
                 plus: 0
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -64,7 +64,7 @@
                 plus: 0
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -89,7 +89,7 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -114,7 +114,7 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -139,7 +139,7 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -164,7 +164,7 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -189,7 +189,7 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -214,7 +214,7 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -264,7 +264,7 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -289,7 +289,7 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -314,7 +314,7 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -339,8 +339,8 @@
                 plus: 3
             },
             equipedAccessory: {
-                _id: "329997",
-                plus: 4
+                _id: "330006",
+                plus: 3
             },
             materialList: {},
             weaponList: {},

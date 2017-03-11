@@ -73,7 +73,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330206",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -84,21 +84,21 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "272257876393721867",  // Fanaril Guest
-            characterId: "10150003_e989854c",
+            _id: "273395939199156225",  // Sion Guest
+            characterId: "10250001_ff1a69c9",
             promotion: 1,
-            exp: 150000,//10707880,
+            exp: 150000,//150000,
             gold: 0,
             equipedWeapon: {
-                _id: "308121",
+                _id: "308214",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(1),
+                _id: myBot.randomArmor(2),
                 plus: 0
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -123,8 +123,8 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "329997",
-                plus: 4
+                _id: "330006",
+                plus: 3
             },
             materialList: {},
             weaponList: {},
@@ -170,7 +170,7 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "272257876393721867", null],
+                [null, "273395939199156225", null],
                 [null, "276547911381417985", "239141420194070530"]
             ];    
         }
