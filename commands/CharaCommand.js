@@ -86,8 +86,9 @@ module.exports = {
             var playerGold = 0;
             if (player) playerGold = player.gold;
             if (playerGold < goldToDeduct) {
-                message.reply('You need to pay **' + goldToDeduct + ' Gold** to use this command.');
-                return;
+                //message.reply('You need to pay **' + goldToDeduct + ' Gold** to use this command.');
+                //return;
+                if (!bot.consumeBread(message)) return;
             }
 
             employee = new Employee(employee);

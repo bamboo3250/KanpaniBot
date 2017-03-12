@@ -333,7 +333,7 @@ if (isLocal) {
             _id: "241511566036434945",  // Elsa Guest
             characterId: "10150002_765306d2",
             promotion: 1,
-            exp: 55400,//10707880,
+            exp: 150000,//10707880,
             gold: 0,
             equipedWeapon: {
                 _id: "308119",
@@ -344,7 +344,7 @@ if (isLocal) {
                 plus: 0
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -355,13 +355,13 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "278911842859089920",  // Nhano Guest
-            characterId: "10550002_5cc7900c",
+            _id: "270767219875643392",  // Siegrid Guest
+            characterId: "10550001_27d912ef",
             promotion: 1,
             exp: 150000,//150000,
             gold: 0,
             equipedWeapon: {
-                _id: "308524",
+                _id: "308510",
                 plus: 3
             },
             equipedArmor: {
@@ -369,7 +369,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -394,7 +394,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330107",
+                _id: "330006",
                 plus: 3
             },
             materialList: {},
@@ -457,7 +457,7 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                [null, "241511566036434945", "278911842859089920"],
+                ["241511566036434945", null, "270767219875643392"],
                 [null, "284990845315317760", null]
             ];    
         }
