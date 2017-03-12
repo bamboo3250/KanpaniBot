@@ -113,8 +113,8 @@ function EmployeeBot() {
     this.dmmMaintenanceList = [
         {
             name: "DMM KG Maintenance",
-            startTime: "Mar 10 2017 14:00:00 GMT+0900",
-            endTime: "Mar 10 2017 17:00:00 GMT+0900"
+            startTime: "Mar 17 2017 13:00:00 GMT+0900",
+            endTime: "Mar 17 2017 17:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
