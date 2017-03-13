@@ -79,18 +79,18 @@ if (isLocal) {
 } else {
     myBot.playerData = [
         {
-            _id: "268576286060838914",  // Saimi Guest
-            characterId: "10750001_32935980",
+            _id: "272257876393721867",  // Fanaril Guest
+            characterId: "10150003_e989854c",
             promotion: 1,
             exp: 290000,//150000,
             gold: 0,
             equipedWeapon: {
-                _id: "308706",
+                _id: "308121",
                 plus: 3
             },
             equipedArmor: {
-                _id: myBot.randomArmor(7),
-                plus: 3
+                _id: myBot.randomArmor(1),
+                plus: 0
             },
             equipedAccessory: {
                 _id: "330006",
@@ -179,13 +179,13 @@ if (isLocal) {
             partnerId: null,
             isTrainer: true
         },{
-            _id: "283224327279869962",  // Eva Slade Guest
-            characterId: "10650002_ae907df4",
+            _id: "275533845984575488",  // Nona Guest
+            characterId: "10650003_314afe6a",
             promotion: 1,
-            exp: 290000,//10707880,
+            exp: 290000,//150000,
             gold: 0,
             equipedWeapon: {
-                _id: "308619",
+                _id: "308621",
                 plus: 3
             },
             equipedArmor: {
@@ -193,7 +193,7 @@ if (isLocal) {
                 plus: 3
             },
             equipedAccessory: {
-                _id: "330006",
+                _id: "330107",
                 plus: 3
             },
             materialList: {},
@@ -221,8 +221,8 @@ myBot.bot.on("ready", function() {
             ];
         } else {
             trainingController.trainerField = [
-                ["268576286060838914", null, "270767219875643392"],
-                ["269733140635975680", "283224327279869962", "272259125256388610"]
+                ["272257876393721867", null, "270767219875643392"],
+                ["269733140635975680", "275533845984575488", "272259125256388610"]
             ];    
         }
 

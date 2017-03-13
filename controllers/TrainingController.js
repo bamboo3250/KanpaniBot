@@ -538,7 +538,7 @@ TrainingController.prototype.attackRecursively = function(skill, attacker, targe
 
                 var hitValue = (attacker.getHit() + attacker.getDEX()*0.65) * darknessModifier;
                 var evadeValue = targetUnit.getEva() + targetUnit.getAGI()*0.20;
-                var hitRate = Math.floor(60 + (hitValue - evadeValue)*0.2);
+                var hitRate = Math.floor(70 + (hitValue - evadeValue)*0.2);
                 hitRate = Math.max(10, hitRate);
                 hitRate = Math.min(99, hitRate);
                 if (skillPhase.isSpellAttack()) hitRate = 100;
