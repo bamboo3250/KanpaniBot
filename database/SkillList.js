@@ -595,7 +595,7 @@ module.exports = {
                         state: "attack01", 
                         frame: 3,
                         attack: {
-                            ally    : { x: -200, y: -310},
+                            ally    : { x: -380, y: -300},
                             enemy   : { x: -380, y: -300},
                             opacity : 0.65
                         }
@@ -1142,7 +1142,7 @@ module.exports = {
                         state: "attack06", 
                         frame: 3,
                         attack: {
-                            ally    : { x: -600, y: -610},
+                            ally    : { x: -880, y: -550},
                             enemy   : { x: -780, y: -650},
                             opacity : 1.0
                         }
@@ -1708,7 +1708,7 @@ module.exports = {
                         state: "attack07", 
                         frame: 9,
                         attack: {
-                            ally    : { x: -200, y: -170},
+                            ally    : { x: -500, y: -170},
                             enemy   : { x: -200, y: -170},
                             opacity : 1.0
                         }
@@ -2166,7 +2166,7 @@ module.exports = {
                         state: "attack01", 
                         frame: 5,
                         attack: {
-                            ally    : { x: -1080, y: -540},
+                            ally    : { x: -1380, y: -540},
                             enemy   : { x: -1730, y: -940},
                             opacity : 1.0
                         }
@@ -2724,7 +2724,7 @@ module.exports = {
                         state: "attack03", 
                         frame: 3,
                         attack: {
-                            ally    : { x: -120, y: -50},
+                            ally    : { x: -420, y: -50},
                             enemy   : { x: -120, y: -50},
                             opacity : 0.7
                         }
@@ -3112,7 +3112,7 @@ module.exports = {
                         state: "attack02", 
                         frame: 6,
                         attack: {
-                            ally    : { x: -600, y: -700},
+                            ally    : { x: -950, y: -750},
                             enemy   : { x: -600, y: -700},
                             opacity : 1.0
                         }
@@ -3134,7 +3134,7 @@ module.exports = {
                         state: "attack02", 
                         frame: 6,
                         attack: {
-                            ally    : { x: -250, y: -100},
+                            ally    : { x: -550, y: -100},
                             enemy   : { x: -250, y: -300},
                             opacity : 1.0
                         }
@@ -4302,8 +4302,8 @@ module.exports = {
                         state: "attack01", 
                         frame: 13,
                         attack: {
-                            ally    : { x: -498, y: -370},
-                            enemy   : { x: -498, y: -370},
+                            ally    : { x: -850, y: -370},
+                            enemy   : { x: -500, y: -370},
                             opacity : 1.0
                         }
                     }
