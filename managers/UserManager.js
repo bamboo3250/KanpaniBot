@@ -17,9 +17,9 @@ UserManager.prototype.fetchAllMembersInGuildRecursively = function(callback, ite
     var guild = this.guilds[iter];
     var that = this;
 
-    this.bot.log("Fetching members in " + guild.name);
+    //this.bot.log("Fetching members in " + guild.name);
     guild.fetchMembers().then(guild => {
-        that.bot.log("Finished Fetching members in " + guild.name);
+        //that.bot.log("Finished Fetching members in " + guild.name);
         var memberList = guild.members.array();
         for(var i=0;i<memberList.length;i++) {
             that.members[memberList[i].id] = memberList[i];

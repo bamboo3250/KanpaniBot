@@ -296,117 +296,117 @@ myBot.commonGoodMorning = myBot.commonGoodMorning.concat(dialog.elsa.commonGoodM
 myBot.commonGoodNight = myBot.commonGoodNight.concat(dialog.elsa.commonGoodNight);
 myBot.commonThanks = myBot.commonThanks.concat(dialog.elsa.commonThanks);
 
-var isLocal = true;
-isLocal = false;
+// var isLocal = true;
+// isLocal = false;
 
-if (isLocal) {
-    myBot.playerData = [
-        {
-            _id: "240097185436270593",  // test-bot
-            characterId: "10650002_ae907df4",
-            exp: 2646190,//2646190,
-            gold: 0,
-            equipedWeapon: {
-                _id: "308619",
-                plus: 3
-            },
-            equipedArmor: {
-                _id: "3106140",
-                plus: 1
-            },
-            equipedAccessory: {
-                _id: "330206",
-                plus: 1
-            },
-            materialList: {},
-            weaponList: {},
-            armorList: {},
-            accessoryList: {},
-            position: "back",
-            partnerId: null,
-            isTrainer: true
-        }
-    ];
-} else {
-    myBot.playerData = [
-        {
-            _id: "241511566036434945",  // Elsa Guest
-            characterId: "10150002_765306d2",
-            promotion: 1,
-            exp: 290000,//10707880,
-            gold: 0,
-            equipedWeapon: {
-                _id: "308119",
-                plus: 3
-            },
-            equipedArmor: {
-                _id: myBot.randomArmor(1),
-                plus: 0
-            },
-            equipedAccessory: {
-                _id: "330006",
-                plus: 3
-            },
-            materialList: {},
-            weaponList: {},
-            armorList: {},
-            accessoryList: {},
-            position: "front",
-            partnerId: null,
-            isTrainer: true
-        },{
-            _id: "270767219875643392",  // Siegrid Guest
-            characterId: "10550001_27d912ef",
-            promotion: 1,
-            exp: 290000,//150000,
-            gold: 0,
-            equipedWeapon: {
-                _id: "308510",
-                plus: 3
-            },
-            equipedArmor: {
-                _id: myBot.randomArmor(5),
-                plus: 3
-            },
-            equipedAccessory: {
-                _id: "330006",
-                plus: 3
-            },
-            materialList: {},
-            weaponList: {},
-            armorList: {},
-            accessoryList: {},
-            position: "front",
-            partnerId: null,
-            isTrainer: true
-        },{
-            _id: "284990845315317760",  // Luciel
-            characterId: "10850005_ad800ba1",
-            promotion: 1,
-            exp: 290000,//150000,
-            gold: 0,
-            equipedWeapon: {
-                _id: "308821",
-                plus: 3
-            },
-            equipedArmor: {
-                _id: myBot.randomArmor(8),
-                plus: 3
-            },
-            equipedAccessory: {
-                _id: "330006",
-                plus: 3
-            },
-            materialList: {},
-            weaponList: {},
-            armorList: {},
-            accessoryList: {},
-            position: "back",
-            partnerId: null,
-            isTrainer: true
-        }
-    ];
-}
+// if (isLocal) {
+//     myBot.playerData = [
+//         {
+//             _id: "240097185436270593",  // test-bot
+//             characterId: "10650002_ae907df4",
+//             exp: 2646190,//2646190,
+//             gold: 0,
+//             equipedWeapon: {
+//                 _id: "308619",
+//                 plus: 3
+//             },
+//             equipedArmor: {
+//                 _id: "3106140",
+//                 plus: 1
+//             },
+//             equipedAccessory: {
+//                 _id: "330206",
+//                 plus: 1
+//             },
+//             materialList: {},
+//             weaponList: {},
+//             armorList: {},
+//             accessoryList: {},
+//             position: "back",
+//             partnerId: null,
+//             isTrainer: true
+//         }
+//     ];
+// } else {
+//     myBot.playerData = [
+//         {
+//             _id: "241511566036434945",  // Elsa Guest
+//             characterId: "10150002_765306d2",
+//             promotion: 1,
+//             exp: 290000,//10707880,
+//             gold: 0,
+//             equipedWeapon: {
+//                 _id: "308119",
+//                 plus: 3
+//             },
+//             equipedArmor: {
+//                 _id: myBot.randomArmor(1),
+//                 plus: 0
+//             },
+//             equipedAccessory: {
+//                 _id: "330006",
+//                 plus: 3
+//             },
+//             materialList: {},
+//             weaponList: {},
+//             armorList: {},
+//             accessoryList: {},
+//             position: "front",
+//             partnerId: null,
+//             isTrainer: true
+//         },{
+//             _id: "270767219875643392",  // Siegrid Guest
+//             characterId: "10550001_27d912ef",
+//             promotion: 1,
+//             exp: 290000,//150000,
+//             gold: 0,
+//             equipedWeapon: {
+//                 _id: "308510",
+//                 plus: 3
+//             },
+//             equipedArmor: {
+//                 _id: myBot.randomArmor(5),
+//                 plus: 3
+//             },
+//             equipedAccessory: {
+//                 _id: "330006",
+//                 plus: 3
+//             },
+//             materialList: {},
+//             weaponList: {},
+//             armorList: {},
+//             accessoryList: {},
+//             position: "front",
+//             partnerId: null,
+//             isTrainer: true
+//         },{
+//             _id: "284990845315317760",  // Luciel
+//             characterId: "10850005_ad800ba1",
+//             promotion: 1,
+//             exp: 290000,//150000,
+//             gold: 0,
+//             equipedWeapon: {
+//                 _id: "308821",
+//                 plus: 3
+//             },
+//             equipedArmor: {
+//                 _id: myBot.randomArmor(8),
+//                 plus: 3
+//             },
+//             equipedAccessory: {
+//                 _id: "330006",
+//                 plus: 3
+//             },
+//             materialList: {},
+//             weaponList: {},
+//             armorList: {},
+//             accessoryList: {},
+//             position: "back",
+//             partnerId: null,
+//             isTrainer: true
+//         }
+//     ];
+// }
 
 myBot.bot.on("message", function(message) {
     if (message.channel.type === "text" && message.channel.name === myBot.nutakuChannelName 
@@ -444,26 +444,26 @@ myBot.bot.on("message", function(message) {
 myBot.bot.on("ready", function() {
     if (myBot.ready()) {
         loadAffection();
-        for(var i=0;i<myBot.playerData.length;i++) {
-            myBot.playerManager.createUnitForPlayer(myBot.playerData[i]);    
-        }
-        trainingController.bot = myBot;
+        // for(var i=0;i<myBot.playerData.length;i++) {
+        //     myBot.playerManager.createUnitForPlayer(myBot.playerData[i]);    
+        // }
+        // trainingController.bot = myBot;
         
-        if (isLocal) {
-            trainingController.trainerField = [
-                //[null, "240097185436270593", "265889287281573918"],
-                [null, null, null],
-                [null, "240097185436270593", null]
-            ];
-        } else {
-            trainingController.trainerField = [
-                ["241511566036434945", null, "270767219875643392"],
-                [null, "284990845315317760", null]
-            ];    
-        }
+        // if (isLocal) {
+        //     trainingController.trainerField = [
+        //         //[null, "240097185436270593", "265889287281573918"],
+        //         [null, null, null],
+        //         [null, "240097185436270593", null]
+        //     ];
+        // } else {
+        //     trainingController.trainerField = [
+        //         ["241511566036434945", null, "270767219875643392"],
+        //         [null, "284990845315317760", null]
+        //     ];    
+        // }
         
-        myBot.battleController = trainingController;
-        trainingController.loadSession();
+        // myBot.battleController = trainingController;
+        // trainingController.loadSession();
     }
     
 });

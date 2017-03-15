@@ -353,12 +353,12 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
         bidCommand.handle(message, this);
         sellPageCommand.handle(message, this);
         ceoPowerCommand.handle(message, this);
-        attackCommand.handle(message, this);
-        healCommand.handle(message, this);
-        trainerCommand.handle(message, this);
-        joinTrainingCommand.handle(message, this);
-        quitTrainingCommand.handle(message, this);
-        ceoReviveCommand.handle(message, this);
+        //attackCommand.handle(message, this);
+        //healCommand.handle(message, this);
+        //trainerCommand.handle(message, this);
+        //joinTrainingCommand.handle(message, this);
+        //quitTrainingCommand.handle(message, this);
+        //ceoReviveCommand.handle(message, this);
         swapCommand.handle(message, this);
         //encourageCommand.handle(message, this);
         //sneakCommand.handle(message, this);
@@ -794,16 +794,16 @@ EmployeeBot.prototype.ready = function() {
             if (channels[i].type === "text" && channels[i].name === "log") {
                 this.logChannel = channels[i];
             }
-            if (channels[i].type === "text" && channels[i].name === "battlefield") {
-                this.battleChannel = channels[i];
-            }
+            // if (channels[i].type === "text" && channels[i].name === "battlefield") {
+            //     this.battleChannel = channels[i];
+            // }
             if (channels[i].type === "text" && channels[i].name === "market") {
                 this.marketChannel = channels[i];
             }
         }
         console.log("mainChannel is " + (this.mainChannel?"on":"off"));    
         console.log("logChannel is " + (this.logChannel?"on":"off"));    
-        console.log("battleChannel is " + (this.battleChannel?"on":"off"));
+        //console.log("battleChannel is " + (this.battleChannel?"on":"off"));
         console.log("marketChannel is " + (this.marketChannel?"on":"off"));
 
         var text = "Bot is on. Serving on " + channels.length + " channels\n-----";
@@ -896,12 +896,13 @@ employee.bot.on('guildMemberRemove', (member) => {
 employee.bot.on('disconnect', (event) => {
     console.log("disconnected");
     employee.disconnectTimer = setTimeout(function() {
-        if (employee.battleController && employee.battleController.type == "training") {
-            employee.battleController.saveSession(function() {
-                console.log("killed process");
-                process.exit();
-            });
-        }
+        // if (employee.battleController && employee.battleController.type == "training") {
+        //     employee.battleController.saveSession(function() {
+        //         console.log("killed process");
+        //         process.exit();
+        //     });
+        // }
+        process.exit();
     }, 60*1000);
 });
 
