@@ -25,9 +25,6 @@ module.exports = {
             itemName: "Food Pack",
             quantity: 1
         },{
-            itemName: "Black Pearl",
-            quantity: 10
-        },{
             itemName: "Rose Quartz",
             quantity: 10
         },{
