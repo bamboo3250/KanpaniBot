@@ -120,7 +120,7 @@ function EmployeeBot() {
             startTime: "Mar 19 2017 21:00:00 GMT+0900",
             endTime: "Mar 19 2017 22:00:00 GMT+0900"
         },{
-            name: "Kanpani☆Storytelling Campaign",
+            name: "[DMM] Kanpani☆Storytelling Campaign",
             startTime: "Mar 17 2017 17:00:00 GMT+0900",
             endTime: "Mar 24 2017 14:00:00 GMT+0900"
         }
