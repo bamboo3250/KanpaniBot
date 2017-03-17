@@ -13,14 +13,14 @@ module.exports = {
 
             if (now.valueOf() < startTime.valueOf()) {
                 var time = bot.functionHelper.parseTime(startTime.valueOf() - now.valueOf());
-                text += "Starts in: " + time + "\n";
+                text += "Starts in: " + time;
             } else if (now.valueOf() < endTime.valueOf()) {
                 var time = bot.functionHelper.parseTime(endTime.valueOf() - now.valueOf());
-                text += "Ends in: " + time + "\n";
+                text += "Ends in: " + time;
             } else {
                 text += "Not Available.";
             }
-            text += '\n';
+            text += '\n\n';
         }
         if (text.length > 1) {
             message.channel.sendMessage(text);
