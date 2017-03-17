@@ -156,7 +156,7 @@ module.exports = {
                                 text += '\n';
                                 text += 'Height: **' + (employee.height > 0 ? employee.height + ' cm' : '???') + '**\n';
                                 channel.sendFile(imageName, 'png', text);
-                                if (player) {
+                                if (player && player.gold >= goldToDeduct) {
                                     player.gold -= goldToDeduct;
                                     bot.savePlayer();
                                 }

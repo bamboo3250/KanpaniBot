@@ -174,7 +174,7 @@ var employees = [
         maxStats1: { _str: 465, _vit: 269, _agi: 598, _dex: 459, _int: 227, _pie: 262, _luk: 371},
         maxStats2: { _str: 668, _vit: 394, _agi: 847, _dex: 649, _int: 336, _pie: 376, _luk: 531},
     },{
-        _no: "193", _id: "10750004_bfb0dea5", fullName: "Lokia Logel", japaneseName: "ロキア・ローゲル", commonNames: ["Lokia"], height: 143, cwId: 0,
+        _no: "193", _id: "10750004_bfb0dea5", fullName: "Lokia Logel", japaneseName: "ロキア・ローゲル", commonNames: ["Lokia"], height: 143, cwId: 24,
         baseStats: { _str: 26, _vit: 3, _agi: 37, _dex: 24, _int: 6, _pie: 2, _luk: 17},
         maxStats0: { _str: 336, _vit: 204, _agi: 418, _dex: 334, _int: 243, _pie: 150, _luk: 246},
         maxStats1: { _str: 460, _vit: 278, _agi: 560, _dex: 459, _int: 327, _pie: 221, _luk: 328},
@@ -558,7 +558,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "170", _id: "10840005_080b9baf", fullName: "Yui Kasin", japaneseName: "ユイ・カシン", commonNames: ["Yui"], height: 148, cwId: 0,
+        _no: "170", _id: "10840005_080b9baf", fullName: "Yui Kasin", japaneseName: "ユイ・カシン", commonNames: ["Yui"], height: 148, cwId: 22,
         baseStats: { _str: 4, _vit: 4, _agi: 12, _dex: 13, _int: 32, _pie: 9, _luk: 5},
         maxStats0: { _str: 153, _vit: 153, _agi: 234, _dex: 247, _int: 477, _pie: 233, _luk: 216},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -632,7 +632,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "180", _id: "10130009_4364e1e1", fullName: "Nadege Lolona", japaneseName: "ナデージュ・ロロナ", commonNames: ["Nadege"], height: 166, cwId: 0,
+        _no: "180", _id: "10130009_4364e1e1", fullName: "Nadege Lolona", japaneseName: "ナデージュ・ロロナ", commonNames: ["Nadege"], height: 166, cwId: 23,
         baseStats: { _str: 13, _vit: 14, _agi: 11, _dex: 10, _int: 1, _pie: 2, _luk: 3},
         maxStats0: { _str: 342, _vit: 318, _agi: 238, _dex: 240, _int: 201, _pie: 169, _luk: 159},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
