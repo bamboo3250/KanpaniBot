@@ -21,7 +21,7 @@ var functionHelper  = require('./helpers/FunctionHelper');
 var urlHelper       = require('./helpers/UrlHelper');
 
 var dailyCommand                = require('./commands/DailyCommand');
-var maintenanceCommand          = require('./commands/MaintenanceCommand');
+var scheduleCommand             = require('./commands/ScheduleCommand');
 var basicGreetingCommand        = require('./commands/BasicGreetingCommand');
 var specialCommand              = require('./commands/SpecialCommand');
 var breadCommand                = require('./commands/BreadCommand');
@@ -110,11 +110,15 @@ function EmployeeBot() {
 
     this.battleController = null;
 
-    this.dmmMaintenanceList = [
+    this.schedule = [
         {
             name: "DMM KG Maintenance",
             startTime: "Mar 17 2017 14:00:00 GMT+0900",
             endTime: "Mar 17 2017 17:00:00 GMT+0900"
+        },{
+            name: "DMM.com OVERRIDE Presents Kanpani x Clash of Panzers ~Long Awaited New Title~",
+            startTime: "Mar 19 2017 21:00:00 GMT+0900",
+            endTime: "Mar 19 2017 22:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
@@ -127,7 +131,6 @@ function EmployeeBot() {
     };
     this.nutakuDailyRemind = "Oct 20 2016 3:45:00 GMT+0000";
     this.dmmDailyRemind = "Oct 20 2016 3:45:00 GMT+0900";
-    this.nutakuMaintenanceList = [];
     this.greetings = [];
     this.idleTalks = [];
     this.commonGreetings = [
@@ -314,7 +317,7 @@ EmployeeBot.prototype.handleCommonCommand = function(message) {
     
     try {
         dailyCommand.handle(message, this);
-        maintenanceCommand.handle(message, this);
+        scheduleCommand.handle(message, this);
         basicGreetingCommand.handle(message, this);
         specialCommand.handle(message, this);
         breadCommand.handle(message, this);
