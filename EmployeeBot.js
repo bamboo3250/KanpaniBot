@@ -113,12 +113,16 @@ function EmployeeBot() {
     this.schedule = [
         {
             name: "DMM KG Maintenance",
-            startTime: "Mar 17 2017 14:00:00 GMT+0900",
-            endTime: "Mar 17 2017 17:00:00 GMT+0900"
+            startTime: "Mar 24 2017 14:00:00 GMT+0900",
+            endTime: "Mar 24 2017 17:00:00 GMT+0900"
         },{
             name: "DMM.com OVERRIDE Presents Kanpani x Clash of Panzers ~Long Awaited New Title~",
             startTime: "Mar 19 2017 21:00:00 GMT+0900",
             endTime: "Mar 19 2017 22:00:00 GMT+0900"
+        },{
+            name: "Kanpani☆Storytelling Campaign",
+            startTime: "Mar 17 2017 17:00:00 GMT+0900",
+            endTime: "Mar 24 2017 14:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
