@@ -31,7 +31,6 @@ module.exports = {
             itemName: "EXP Palace Invitation",
             quantity: 1
         }
-
     ],
     handle: function(message, bot) {
         if (!bot.isAdmin(message)) return;
@@ -43,7 +42,10 @@ module.exports = {
         var itemText = command.substring(14).trim();
         var item = null;
         if (itemText === "random") {
-            item = bot.functionHelper.randomObject(this.giftList);
+            while(true) {
+                item = bot.functionHelper.randomObject(this.giftList);
+                if (bot.dailyGift && item.itemName != bot.dailyGift.item) break;    
+            }
         } else {
             var args = itemText.split(" ");
             var amount = 1;

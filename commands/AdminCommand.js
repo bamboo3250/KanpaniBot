@@ -48,7 +48,7 @@ module.exports = {
             }
             bot.saveShop();
 
-            bot.sendMessageToMarketChannel(bot.getRole("Trainee") + " The Shop Items have been restocked.");
+            bot.sendMessageToMarketChannel("The Shop Items have been restocked.");
         }
     }
 }
