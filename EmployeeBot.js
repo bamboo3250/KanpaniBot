@@ -112,13 +112,9 @@ function EmployeeBot() {
 
     this.schedule = [
         {
-            name: "DMM KG Maintenance",
+            name: "[DMM] Kanpani☆Girls Maintenance",
             startTime: "Mar 24 2017 14:00:00 GMT+0900",
             endTime: "Mar 24 2017 17:00:00 GMT+0900"
-        },{
-            name: "DMM.com OVERRIDE Presents Kanpani x Clash of Panzers ~Long Awaited New Title~",
-            startTime: "Mar 19 2017 21:00:00 GMT+0900",
-            endTime: "Mar 19 2017 22:00:00 GMT+0900"
         },{
             name: "[DMM] Kanpani☆Storytelling Campaign",
             startTime: "Mar 17 2017 17:00:00 GMT+0900",
@@ -126,15 +122,15 @@ function EmployeeBot() {
         }
     ];
     this.nutakuDaily = {
-        name: "Nutaku KG Daily Draw Reset",
-        time: "Oct 20 2016 4:00:00 GMT+0000",
+        name: "[Nutaku] Kanpani☆Girls Daily Draw Reset",
+        time: "Mar 18 2017 4:00:00 GMT+0000",
     };
     this.dmmDaily = {
-        name: "DMM KG Daily Draw Reset",
-        time: "Oct 20 2016 4:00:00 GMT+0900", 
+        name: "[DMM] Kanpani☆Girls Daily Draw Reset",
+        time: "Mar 18 2017 4:00:00 GMT+0900", 
     };
-    this.nutakuDailyRemind = "Oct 20 2016 3:45:00 GMT+0000";
-    this.dmmDailyRemind = "Oct 20 2016 3:45:00 GMT+0900";
+    this.nutakuDailyRemind = "Mar 18 2017 3:45:00 GMT+0000";
+    this.dmmDailyRemind = "Mar 18 2017 3:45:00 GMT+0900";
     this.greetings = [];
     this.idleTalks = [];
     this.commonGreetings = [
