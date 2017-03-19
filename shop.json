@@ -1,6 +1,6 @@
 {
     "Promotion Badge": {
-        "amount": 0,
+        "amount": 1,
         "maxAmount": 3,
         "price": {
             "amount": 100000000,
@@ -48,7 +48,7 @@
         }
     },
     "Food Pack": {
-        "amount": 80,
+        "amount": 100,
         "maxAmount": 100,
         "price": {
             "amount": 5000000,
