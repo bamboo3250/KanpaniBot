@@ -1054,7 +1054,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "130", _id: "10830007_229f667a", fullName: "Margeret Belle", japaneseName: "マルグレット・ベル", commonNames: ["Margeret"], height: 156, cwId: 16,
+        _no: "130", _id: "10830007_229f667a", fullName: "Margaret Belle", japaneseName: "マルグレット・ベル", commonNames: ["Margaret"], height: 156, cwId: 16,
         baseStats: { _str: 3, _vit: 3, _agi: 9, _dex: 8, _int: 22, _pie: 5, _luk: 6},
         maxStats0: { _str: 158, _vit: 159, _agi: 240, _dex: 239, _int: 448, _pie: 236, _luk: 219},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
