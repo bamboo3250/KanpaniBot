@@ -113,12 +113,16 @@ function EmployeeBot() {
     this.schedule = [
         {
             name: "[DMM] Kanpani☆Girls Maintenance",
-            startTime: "Mar 24 2017 14:00:00 GMT+0900",
-            endTime: "Mar 24 2017 17:00:00 GMT+0900"
+            startTime: "Mar 31 2017 14:00:00 GMT+0900",
+            endTime: "Mar 31 2017 17:00:00 GMT+0900"
         },{
             name: "[DMM] Kanpani☆Storytelling Campaign",
             startTime: "Mar 17 2017 17:00:00 GMT+0900",
             endTime: "Mar 24 2017 14:00:00 GMT+0900"
+        },{
+            name: "[DMM] Presidents! It's Level Up Time Again! Campaign",
+            startTime: "Mar 24 2017 17:00:00 GMT+0900",
+            endTime: "Mar 31 2017 14:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
