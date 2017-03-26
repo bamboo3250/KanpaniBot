@@ -5,25 +5,25 @@ module.exports = {
         
         var now = new Date();
 
-        text = "";
+        text = "```Markdown\n";
         for(var i=0;i<bot.schedule.length;i++) {
+
             var startTime = new Date(bot.schedule[i].startTime);
             var endTime = new Date(bot.schedule[i].endTime);
-            text += "**" + bot.schedule[i].name + "**\n";
+            text += "<" + bot.schedule[i].name + ">\n";
 
             if (now.valueOf() < startTime.valueOf()) {
                 var time = bot.functionHelper.parseTime(startTime.valueOf() - now.valueOf());
-                text += "Starts in: " + time;
+                text += "[Starts in][" + time + "]";
             } else if (now.valueOf() < endTime.valueOf()) {
                 var time = bot.functionHelper.parseTime(endTime.valueOf() - now.valueOf());
-                text += "Ends in: " + time;
+                text += "[Ends in][" + time + "]";
             } else {
-                text += "Not Available.";
+                text += "[Not Available][]";
             }
             text += '\n\n';
         }
-        if (text.length > 1) {
-            message.channel.sendMessage(text);
-        }
+        text += "```";
+        message.channel.sendMessage(text);
     }
 }

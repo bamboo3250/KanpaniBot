@@ -112,25 +112,25 @@ function EmployeeBot() {
 
     this.schedule = [
         {
-            name: "[DMM] Kanpani☆Girls Maintenance",
+            name: "DMM Kanpani☆Girls Maintenance",
             startTime: "Mar 31 2017 14:00:00 GMT+0900",
             endTime: "Mar 31 2017 17:00:00 GMT+0900"
         },{
-            name: "[DMM] Kanpani☆Storytelling Campaign",
+            name: "DMM Kanpani☆Storytelling Campaign",
             startTime: "Mar 17 2017 17:00:00 GMT+0900",
             endTime: "Mar 24 2017 14:00:00 GMT+0900"
         },{
-            name: "[DMM] Presidents! It's Level Up Time Again! Campaign",
+            name: "DMM Presidents! It's Level Up Time Again! Campaign",
             startTime: "Mar 24 2017 17:00:00 GMT+0900",
             endTime: "Mar 31 2017 14:00:00 GMT+0900"
         }
     ];
     this.nutakuDaily = {
-        name: "[Nutaku] Kanpani☆Girls Daily Draw Reset",
+        name: "Nutaku Kanpani☆Girls Daily Draw Reset",
         time: "Mar 18 2017 4:00:00 GMT+0000",
     };
     this.dmmDaily = {
-        name: "[DMM] Kanpani☆Girls Daily Draw Reset",
+        name: "DMM Kanpani☆Girls Daily Draw Reset",
         time: "Mar 18 2017 4:00:00 GMT+0900", 
     };
     this.nutakuDailyRemind = "Mar 18 2017 3:45:00 GMT+0000";
