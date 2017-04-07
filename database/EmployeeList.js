@@ -18,7 +18,7 @@ var employees = [
         maxStats1: { _str: 515, _vit: 468, _agi: 407, _dex: 328, _int: 549, _pie: 184, _luk: 141},
         maxStats2: { _str: 722, _vit: 650, _agi: 565, _dex: 457, _int: 792, _pie: 264, _luk: 214},
     },{
-        _no: "203", _id: "10150004_806e0314", fullName: "Lido Cromwell", japaneseName: "リド・クロムウェル", commonNames: ["Lido", "Reed"], height: 0, cwId: 0,
+        _no: "203", _id: "10150004_806e0314", fullName: "Lido Cromwell", japaneseName: "リド・クロムウェル", commonNames: ["Lido", "Reed"], height: 0, cwId: 25,
         baseStats: { _str: 35, _vit: 28, _agi: 17, _dex: 20, _int: 6, _pie: 5, _luk: 5},
         maxStats0: { _str: 395, _vit: 337, _agi: 268, _dex: 288, _int: 255, _pie: 185, _luk: 164},
         maxStats1: { _str: 520, _vit: 461, _agi: 368, _dex: 379, _int: 333, _pie: 268, _luk: 228},
@@ -332,7 +332,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "182", _id: "10340005_af755beb", fullName: "Hazuki Nasu", japaneseName: "ハヅキ・ナス", commonNames: ["Hazuki"], height: 172, cwId: 0,
+        _no: "182", _id: "10340005_af755beb", fullName: "Hazuki Nasu", japaneseName: "ハヅキ・ナス", commonNames: ["Hazuki"], height: 172, cwId: 24,
         baseStats: { _str: 9, _vit: 2, _agi: 24, _dex: 28, _int: 3, _pie: 5, _luk: 3},
         maxStats0: { _str: 162, _vit: 209, _agi: 388, _dex: 460, _int: 159, _pie: 160, _luk: 174},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -774,7 +774,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "158", _id: "10330009_562eaa8e", fullName: "Meia Nasu", japaneseName: "メイア・ナス", commonNames: ["Meia"], height: 153, cwId: 0,
+        _no: "158", _id: "10330009_562eaa8e", fullName: "Meia Nasu", japaneseName: "メイア・ナス", commonNames: ["Meia"], height: 153, cwId: 25,
         baseStats: { _str: 3, _vit: 4, _agi: 17, _dex: 22, _int: 2, _pie: 2, _luk: 5},
         maxStats0: { _str: 158, _vit: 204, _agi: 387, _dex: 448, _int: 157, _pie: 158, _luk: 159},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
