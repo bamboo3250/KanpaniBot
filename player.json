@@ -28524,22 +28524,5 @@
         "position": "front",
         "partnerId": null,
         "ceoPower": false
-    },
-    "205677386363174912": {
-        "_id": "205677386363174912",
-        "characterId": "",
-        "promotion": 0,
-        "exp": 0,
-        "gold": 0,
-        "equipedWeapon": null,
-        "equipedArmor": null,
-        "equipedAccessory": null,
-        "materialList": {},
-        "weaponList": {},
-        "armorList": {},
-        "accessoryList": {},
-        "position": "front",
-        "partnerId": null,
-        "ceoPower": false
     }
 }
