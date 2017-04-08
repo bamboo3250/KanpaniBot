@@ -48,7 +48,7 @@
         }
     },
     "Food Pack": {
-        "amount": 93,
+        "amount": 87,
         "maxAmount": 100,
         "price": {
             "amount": 5000000,
