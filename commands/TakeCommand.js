@@ -28,13 +28,16 @@ module.exports = {
             return;
         }
 
-        var curEmployee = new Employee(bot.employeeDatabase.getEmployeeById(player.characterId));
-        var takingEmployee = new Employee(bot.employeeDatabase.getEmployeeById(bot.rollResult[userId]));
+        if (player.characterId) {
+            var curEmployee = new Employee(bot.employeeDatabase.getEmployeeById(player.characterId));
+            var takingEmployee = new Employee(bot.employeeDatabase.getEmployeeById(bot.rollResult[userId]));
 
-        if (player.promotion > 0 && curEmployee.getBaseRarity() != takingEmployee.getBaseRarity()) {
-            message.reply("You cannot take this character.");
-            return;
+            if (player.promotion > 0 && curEmployee.getBaseRarity() != takingEmployee.getBaseRarity()) {
+                message.reply("You cannot take this character.");
+                return;
+            }    
         }
+        
 
         player.characterId = bot.rollResult[userId];
         var expToPay = Math.ceil(player.exp*0.1);
