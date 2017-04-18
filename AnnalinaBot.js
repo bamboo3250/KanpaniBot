@@ -138,7 +138,7 @@ myBot.commonThanks = myBot.commonThanks.concat(dialog.annalina.commonThanks);
 // }
 
 myBot.bot.on("message", function(message) {
-    if (message.channel.type === "text" && message.channel.name === myBot.nutakuChannelName 
+    if (message.channel.type === "text" && message.channel.name === myBot.mainChannelName 
             && message.author.id != myBot.bot.user.id) {
         myBot.hasNewMessage = true;
     }

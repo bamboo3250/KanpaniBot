@@ -66,7 +66,7 @@ module.exports = {
 
         } else {
             var goldToDeduct = 10000;
-            if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) {
+            if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.mainChannelName) {
                 goldToDeduct *= 2;
             }
 

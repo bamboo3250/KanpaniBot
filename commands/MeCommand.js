@@ -67,7 +67,7 @@ module.exports = {
 
 
         var goldToDeduct = employee.levelCached * 1000;
-        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) {
+        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.mainChannelName) {
             goldToDeduct *= 2;
         }
         if (typeof bot.freeMe[userId] === "undefined") bot.freeMe[userId] = 2;

@@ -275,7 +275,7 @@ module.exports = {
     handle: function(message, bot) {
         var text = message.content.trim().toLowerCase();
         if (!text.startsWith("~grind ") && !text.startsWith("~fullgrind ")) return;
-        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.nutakuChannelName) return;
+        if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.mainChannelName) return;
 
         var userId = message.author.id;
         var isFullGrind = text.startsWith("~fullgrind ");

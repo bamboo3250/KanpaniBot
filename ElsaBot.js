@@ -151,7 +151,7 @@ function handlePatCommand(message) {
     var userId = message.author.id;
     if (typeof lastTimePat[userId] === "undefined") lastTimePat[userId] = 0;
     if (typeof affection[userId] === "undefined") affection[userId] = 0;
-    if (message.channel.name === myBot.dmmChannelName) return;
+    if (message.channel.name === myBot.mainChannelName) return;
     if (!myBot.consumeBread(message)) return;
 
     var now = new Date();
@@ -409,7 +409,7 @@ myBot.commonThanks = myBot.commonThanks.concat(dialog.elsa.commonThanks);
 // }
 
 myBot.bot.on("message", function(message) {
-    if (message.channel.type === "text" && message.channel.name === myBot.nutakuChannelName 
+    if (message.channel.type === "text" && message.channel.name === myBot.mainChannelName 
             && message.author.id != myBot.bot.user.id) {
         myBot.hasNewMessage = true;
     }

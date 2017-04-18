@@ -81,7 +81,7 @@ var focusCommand                = require('./commands/FocusCommand');
 
 function EmployeeBot() {
     this.token = null;
-
+    this.dmmChannelName = "dmm_games";
     this.mainChannelName = "kanpani_girls";
     this.bot = new Discord.Client();
     
@@ -119,11 +119,11 @@ function EmployeeBot() {
             startTime   : "Mar 17 2017 17:00:00 GMT+0900",
             endTime     : "Mar 24 2017 14:00:00 GMT+0900"
         },{
-            name        : "Presidents! It's Level Up Time Again! Campaign",
+            name        : "Presidents!_It's_Level_Up_Time_Again! Campaign",
             startTime   : "Mar 24 2017 17:00:00 GMT+0900",
             endTime     : "Mar 31 2017 14:00:00 GMT+0900"
         },{
-            name        : "Kanpani☆Lukas' Hospitality Campaign!",
+            name        : "Kanpani☆Lukas'_Hospitality Campaign!",
             startTime   : "April 14 2017 17:00:00 GMT+0900",
             endTime     : "April 21 2017 14:00:00 GMT+0900"
         }
