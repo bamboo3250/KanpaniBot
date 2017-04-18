@@ -5,13 +5,8 @@ module.exports = {
         
         var text = "```Markdown\n";
 
-        text += "<" + bot.nutakuDaily.name + ">\n";
-        nextDaily = bot.functionHelper.getTimeUntilDaily(bot.nutakuDaily.time);
-        var time = bot.functionHelper.parseTime(nextDaily);
-        text += "[Resets in][" + time + "]\n\n";
-
-        text += "<" + bot.dmmDaily.name + ">\n";
-        nextDaily = bot.functionHelper.getTimeUntilDaily(bot.dmmDaily.time);
+        text += "<" + bot.daily.name + ">\n";
+        nextDaily = bot.functionHelper.getTimeUntilDaily(bot.daily.time);
         var time = bot.functionHelper.parseTime(nextDaily);
         text += "[Resets in][" + time + "]\n\n";
 
