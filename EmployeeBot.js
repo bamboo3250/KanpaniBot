@@ -82,8 +82,7 @@ var focusCommand                = require('./commands/FocusCommand');
 function EmployeeBot() {
     this.token = null;
 
-    this.dmmChannelName = "dmm_games";
-    this.nutakuChannelName = "kanpani_girls";
+    this.mainChannelName = "kanpani_girls";
     this.bot = new Discord.Client();
     
     this.employeeDatabase = employeeDatabase;
@@ -112,33 +111,28 @@ function EmployeeBot() {
 
     this.schedule = [
         {
-            name        : "DMM Kanpani☆Girls Maintenance",
-            startTime   : "April 14 2017 13:00:00 GMT+0900",
-            endTime     : "April 14 2017 17:00:00 GMT+0900"
+            name        : "Kanpani☆Girls Maintenance",
+            startTime   : "April 21 2017 14:00:00 GMT+0900",
+            endTime     : "April 21 2017 17:00:00 GMT+0900"
         },{
-            name        : "DMM Kanpani☆Storytelling Campaign",
+            name        : "Kanpani☆Storytelling Campaign",
             startTime   : "Mar 17 2017 17:00:00 GMT+0900",
             endTime     : "Mar 24 2017 14:00:00 GMT+0900"
         },{
-            name        : "DMM Presidents! It's Level Up Time Again! Campaign",
+            name        : "Presidents! It's Level Up Time Again! Campaign",
             startTime   : "Mar 24 2017 17:00:00 GMT+0900",
             endTime     : "Mar 31 2017 14:00:00 GMT+0900"
         },{
-            name        : "DMM Kamui Campaign",
-            startTime   : "April 07 2017 17:00:00 GMT+0900",
-            endTime     : "April 14 2017 13:00:00 GMT+0900"
+            name        : "Kanpani☆Lukas' Hospitality Campaign!",
+            startTime   : "April 14 2017 17:00:00 GMT+0900",
+            endTime     : "April 21 2017 14:00:00 GMT+0900"
         }
     ];
-    this.nutakuDaily = {
-        name: "Nutaku Kanpani☆Girls Daily Draw Reset",
-        time: "Mar 18 2017 4:00:00 GMT+0000",
-    };
-    this.dmmDaily = {
-        name: "DMM Kanpani☆Girls Daily Draw Reset",
+    this.daily = {
+        name: "Kanpani☆Girls Daily Draw Reset",
         time: "Mar 18 2017 4:00:00 GMT+0900", 
     };
-    this.nutakuDailyRemind = "Mar 18 2017 3:45:00 GMT+0000";
-    this.dmmDailyRemind = "Mar 18 2017 3:45:00 GMT+0900";
+    this.dailyRemind = "Mar 18 2017 3:45:00 GMT+0900";
     this.greetings = [];
     this.idleTalks = [];
     this.commonGreetings = [
@@ -403,24 +397,13 @@ EmployeeBot.prototype.greeting = function(channel) {
     this.sayRandomMessages(channel, this.greetings);
 }
 
-EmployeeBot.prototype.setDailyDrawReminderForNutaku = function() {
-    var time = this.functionHelper.getTimeUntilDaily(this.nutakuDailyRemind); 
-    var that = this;
-    setTimeout(function() {
-        that.sendMessageToMainChannel(that.getRole('Nutaku') + "\n**Reminder: 15 minutes until Daily Draw Reset**")
-        setTimeout(function(){
-            that.setDailyDrawReminderForNutaku();    
-        }, 30*1000);
-    }, time);
-}
-
-EmployeeBot.prototype.setDailyDrawReminderForDmm = function() {
-    var time = this.functionHelper.getTimeUntilDaily(this.dmmDailyRemind); 
+EmployeeBot.prototype.setDailyDrawReminder = function() {
+    var time = this.functionHelper.getTimeUntilDaily(this.dailyRemind); 
     var that = this;
     setTimeout(function() {
         that.sendMessageToMainChannel(that.getRole('DMM') + "\n**Reminder: 15 minutes until Daily Draw Reset**")
         setTimeout(function(){
-            that.setDailyDrawReminderForDmm();
+            that.setDailyDrawReminder();
         }, 30*1000);
     }, time);
 }
@@ -799,7 +782,7 @@ EmployeeBot.prototype.ready = function() {
     if (this.firstTimeReady) {
         var channels = this.bot.channels.array();
         for(var i=0;i<channels.length;i++) {
-            if (channels[i].type === "text" && channels[i].name === this.nutakuChannelName) {
+            if (channels[i].type === "text" && channels[i].name === this.mainChannelName) {
                 this.mainChannel = channels[i];
             }
             if (channels[i].type === "text" && channels[i].name === "log") {
@@ -823,9 +806,7 @@ EmployeeBot.prototype.ready = function() {
 
         var that = this;
 
-        //this.setIdleTalk();
-        this.setDailyDrawReminderForNutaku();
-        this.setDailyDrawReminderForDmm();
+        this.setDailyDrawReminder();
         this.breadManager.setBreadRegeneration();
         this.firstTimeReady = false;
         this.loadSoul();
