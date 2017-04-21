@@ -50,7 +50,7 @@ var employees = [
         maxStats1: { _str: 521, _vit: 372, _agi: 506, _dex: 414, _int: 225, _pie: 262, _luk: 325},
         maxStats2: { _str: 912, _vit: 674, _agi: 874, _dex: 730, _int: 399, _pie: 457, _luk: 569},
     },{
-        _no: "217", _id: "10250004_7239eeec", fullName: "Levie Yethan", japaneseName: "レヴィ・イェザン", commonNames: ["Levie"], height: 0, cwId: 0,
+        _no: "217", _id: "10250004_7239eeec", fullName: "Levie Yethan", japaneseName: "レヴィ・イェザン", commonNames: ["Levie"], height: 0, cwId: 25,
         baseStats: { _str: 34, _vit: 14, _agi: 25, _dex: 22, _int: 6, _pie: 3, _luk: 10},
         maxStats0: { _str: 398, _vit: 273, _agi: 367, _dex: 301, _int: 157, _pie: 173, _luk: 240},
         maxStats1: { _str: 521, _vit: 372, _agi: 506, _dex: 414, _int: 225, _pie: 262, _luk: 325},
@@ -376,7 +376,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "169", _id: "10440004_e86ca353", fullName: "Virna Caffi", japaneseName: "ヴィルナ・カフィ", commonNames: ["Virna"], height: 178, cwId: 0,
+        _no: "169", _id: "10440004_e86ca353", fullName: "Virna Caffi", japaneseName: "ヴィルナ・カフィ", commonNames: ["Virna"], height: 178, cwId: 24,
         baseStats: { _str: 11, _vit: 39, _agi: 12, _dex: 10, _int: 7, _pie: 1, _luk: 2},
         maxStats0: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -564,7 +564,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "155", _id: "10840004_97d11831", fullName: "Veronica Rosen", japaneseName: "ヴェロニカ・ローゼン", commonNames: ["Veronica"], height: 148, cwId: 0,
+        _no: "155", _id: "10840004_97d11831", fullName: "Veronica Rosen", japaneseName: "ヴェロニカ・ローゼン", commonNames: ["Veronica"], height: 148, cwId: 26,
         baseStats: { _str: 5, _vit: 4, _agi: 11, _dex: 13, _int: 32, _pie: 9, _luk: 4},
         maxStats0: { _str: 153, _vit: 153, _agi: 234, _dex: 247, _int: 477, _pie: 233, _luk: 216},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
