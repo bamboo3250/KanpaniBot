@@ -112,20 +112,44 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "April 28 2017 12:00:00 GMT+0900",
-            endTime     : "April 28 2017 17:00:00 GMT+0900"
+            startTime   : "May 5 2017 14:00:00 GMT+0900",
+            endTime     : "May 5 2017 17:00:00 GMT+0900"
+        // },{
+        //     name        : "Kanpani☆Storytelling Campaign",
+        //     startTime   : "Mar 17 2017 17:00:00 GMT+0900",
+        //     endTime     : "Mar 24 2017 14:00:00 GMT+0900"
+        // },{
+        //     name        : "Presidents!_It's_Level_Up_Time_Again! Campaign",
+        //     startTime   : "Mar 24 2017 17:00:00 GMT+0900",
+        //     endTime     : "Mar 31 2017 14:00:00 GMT+0900"
         },{
-            name        : "Kanpani☆Storytelling Campaign",
-            startTime   : "Mar 17 2017 17:00:00 GMT+0900",
-            endTime     : "Mar 24 2017 14:00:00 GMT+0900"
+            name        : "[Fate/kaleid_liner_Prisma☆Illya_3rei!!]_Collaboration Event",
+            startTime   : "April 28 2017 17:00:00 GMT+0900",
+            endTime     : "May 26 2017 14:00:00 GMT+0900"
         },{
-            name        : "Presidents!_It's_Level_Up_Time_Again! Campaign",
-            startTime   : "Mar 24 2017 17:00:00 GMT+0900",
-            endTime     : "Mar 31 2017 14:00:00 GMT+0900"
+            name        : "Magical_Doll_Factory Quest",
+            startTime   : "April 28 2017 21:00:00 GMT+0900",
+            endTime     : "April 28 2017 21:30:00 GMT+0900"            
         },{
-            name        : "Kanpani☆Collaboration_Pre-Event_Festival! Campaign",
-            startTime   : "April 21 2017 17:00:00 GMT+0900",
-            endTime     : "April 28 2017 12:00:00 GMT+0900"
+            name        : "???",
+            startTime   : "April 29 2017 00:00:00 GMT+0900",
+            endTime     : "April 29 2017 00:30:00 GMT+0900"            
+        },{
+            name        : "Angel's_Robe Quest",
+            startTime   : "April 29 2017 03:00:00 GMT+0900",
+            endTime     : "April 29 2017 03:30:00 GMT+0900"            
+        },{
+            name        : "???",
+            startTime   : "April 29 2017 11:00:00 GMT+0900",
+            endTime     : "April 29 2017 11:30:00 GMT+0900"            
+        },{
+            name        : "Magical_Doll_Factory Quest",
+            startTime   : "April 29 2017 16:00:00 GMT+0900",
+            endTime     : "April 29 2017 16:30:00 GMT+0900"            
+        },{
+            name        : "???",
+            startTime   : "April 29 2017 22:00:00 GMT+0900",
+            endTime     : "April 29 2017 22:30:00 GMT+0900"            
         }
     ];
     this.daily = {
