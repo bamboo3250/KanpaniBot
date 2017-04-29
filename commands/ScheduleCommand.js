@@ -7,9 +7,9 @@ module.exports = {
 
         text = '';
         for(var i=0;i<bot.schedule.length;i++) {
+            var startTime = new Date(bot.schedule[i].startTime);
+            var endTime = new Date(bot.schedule[i].endTime);
             if (now.valueOf() < endTime.valueOf()) {
-                var startTime = new Date(bot.schedule[i].startTime);
-                var endTime = new Date(bot.schedule[i].endTime);
                 text += "<" + bot.schedule[i].name + ">\n";
 
                 if (now.valueOf() < startTime.valueOf()) {
