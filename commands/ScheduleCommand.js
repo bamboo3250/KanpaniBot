@@ -5,25 +5,30 @@ module.exports = {
         
         var now = new Date();
 
-        text = "```Markdown\n";
+        text = '';
         for(var i=0;i<bot.schedule.length;i++) {
+            if (now.valueOf() < endTime.valueOf()) {
+                var startTime = new Date(bot.schedule[i].startTime);
+                var endTime = new Date(bot.schedule[i].endTime);
+                text += "<" + bot.schedule[i].name + ">\n";
 
-            var startTime = new Date(bot.schedule[i].startTime);
-            var endTime = new Date(bot.schedule[i].endTime);
-            text += "<" + bot.schedule[i].name + ">\n";
-
-            if (now.valueOf() < startTime.valueOf()) {
-                var time = bot.functionHelper.parseTime(startTime.valueOf() - now.valueOf());
-                text += "[Starts in][" + time + "]";
-            } else if (now.valueOf() < endTime.valueOf()) {
-                var time = bot.functionHelper.parseTime(endTime.valueOf() - now.valueOf());
-                text += "[Ends in][" + time + "]";
-            } else {
-                text += "[Not Available][]";
+                if (now.valueOf() < startTime.valueOf()) {
+                    var time = bot.functionHelper.parseTime(startTime.valueOf() - now.valueOf());
+                    text += "[Starts in][" + time + "]";
+                } else if (now.valueOf() < endTime.valueOf()) {
+                    var time = bot.functionHelper.parseTime(endTime.valueOf() - now.valueOf());
+                    text += "[Ends in][" + time + "]";
+                } else {
+                    text += "[Not Available][]";
+                }
+                text += '\n\n';
             }
-            text += '\n\n';
         }
-        text += "```";
+        if (text.length == 0) {
+            text = 'No Event/Maintenance schedule is available.';
+        }
+
+        text = "```Markdown\n" + text + "```";
         message.channel.sendMessage(text);
     }
 }
