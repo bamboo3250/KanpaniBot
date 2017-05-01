@@ -114,50 +114,18 @@ function EmployeeBot() {
             name        : "Kanpani☆Girls Maintenance",
             startTime   : "May 5 2017 14:00:00 GMT+0900",
             endTime     : "May 5 2017 17:00:00 GMT+0900"
-        // },{
-        //     name        : "Kanpani☆Storytelling Campaign",
-        //     startTime   : "Mar 17 2017 17:00:00 GMT+0900",
-        //     endTime     : "Mar 24 2017 14:00:00 GMT+0900"
-        // },{
-        //     name        : "Presidents!_It's_Level_Up_Time_Again! Campaign",
-        //     startTime   : "Mar 24 2017 17:00:00 GMT+0900",
-        //     endTime     : "Mar 31 2017 14:00:00 GMT+0900"
+        },{
+            name        : "Kanpani☆Storytelling Campaign",
+            startTime   : "Mar 17 2017 17:00:00 GMT+0900",
+            endTime     : "Mar 24 2017 14:00:00 GMT+0900"
+        },{
+            name        : "Presidents!_It's_Level_Up_Time_Again! Campaign",
+            startTime   : "Mar 24 2017 17:00:00 GMT+0900",
+            endTime     : "Mar 31 2017 14:00:00 GMT+0900"
         },{
             name        : "[Fate/kaleid_liner_Prisma☆Illya_3rei!!]_Collaboration Event",
             startTime   : "April 28 2017 17:00:00 GMT+0900",
             endTime     : "May 26 2017 14:00:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "April 29 2017 22:00:00 GMT+0900",
-            endTime     : "April 29 2017 22:30:00 GMT+0900"            
-        },{
-            name        : "???",
-            startTime   : "April 30 2017 01:00:00 GMT+0900",
-            endTime     : "April 30 2017 01:30:00 GMT+0900"            
-        },{
-            name        : "???",
-            startTime   : "April 30 2017 09:00:00 GMT+0900",
-            endTime     : "April 30 2017 09:30:00 GMT+0900"            
-        },{
-            name        : "Angel's_Robe Quest",
-            startTime   : "April 30 2017 13:00:00 GMT+0900",
-            endTime     : "April 30 2017 13:30:00 GMT+0900"            
-        },{
-            name        : "???",
-            startTime   : "April 30 2017 23:00:00 GMT+0900",
-            endTime     : "April 30 2017 23:30:00 GMT+0900"            
-        },{
-            name        : "Manufacturing_Guide Quest",
-            startTime   : "May 01 2017 01:00:00 GMT+0900",
-            endTime     : "May 01 2017 01:30:00 GMT+0900"            
-        },{
-            name        : "???",
-            startTime   : "May 01 2017 07:00:00 GMT+0900",
-            endTime     : "May 01 2017 07:30:00 GMT+0900"            
-        },{
-            name        : "Magical_Doll_Factory Quest",
-            startTime   : "May 01 2017 12:00:00 GMT+0900",
-            endTime     : "May 01 2017 12:30:00 GMT+0900"            
         },{
             name        : "Manufacturing_Guide Quest",
             startTime   : "May 01 2017 20:00:00 GMT+0900",
@@ -166,6 +134,42 @@ function EmployeeBot() {
             name        : "Angel's_Robe Quest",
             startTime   : "May 01 2017 23:00:00 GMT+0900",
             endTime     : "May 01 2017 23:30:00 GMT+0900"            
+        },{
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "May 02 2017 07:00:00 GMT+0900",
+            endTime     : "May 02 2017 07:30:00 GMT+0900"            
+        },{
+            name        : "Magical_Doll_Factory Quest",
+            startTime   : "May 02 2017 12:00:00 GMT+0900",
+            endTime     : "May 02 2017 12:30:00 GMT+0900"            
+        },{
+            name        : "Angel's_Robe Quest",
+            startTime   : "May 02 2017 20:00:00 GMT+0900",
+            endTime     : "May 02 2017 20:30:00 GMT+0900"            
+        },{
+            name        : "Magical_Doll_Factory Quest",
+            startTime   : "May 02 2017 22:00:00 GMT+0900",
+            endTime     : "May 02 2017 22:30:00 GMT+0900"            
+        },{
+            name        : "Angel's_Robe Quest",
+            startTime   : "May 03 2017 03:00:00 GMT+0900",
+            endTime     : "May 03 2017 03:30:00 GMT+0900"            
+        },{
+            name        : "Magical_Doll_Factory Quest",
+            startTime   : "May 03 2017 09:00:00 GMT+0900",
+            endTime     : "May 03 2017 09:30:00 GMT+0900"            
+        },{
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "May 03 2017 13:00:00 GMT+0900",
+            endTime     : "May 03 2017 13:30:00 GMT+0900"            
+        },{
+            name        : "???",
+            startTime   : "May 03 2017 20:00:00 GMT+0900",
+            endTime     : "May 03 2017 20:30:00 GMT+0900"            
+        },{
+            name        : "Angel's_Robe Quest",
+            startTime   : "May 03 2017 23:00:00 GMT+0900",
+            endTime     : "May 03 2017 23:30:00 GMT+0900"
         }
     ];
     this.daily = {
