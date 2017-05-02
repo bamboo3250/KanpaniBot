@@ -6,10 +6,14 @@ module.exports = {
         var now = new Date();
 
         text = '';
+        var shownCount = 0;
+
         for(var i=0;i<bot.schedule.length;i++) {
             var startTime = new Date(bot.schedule[i].startTime);
             var endTime = new Date(bot.schedule[i].endTime);
             if (now.valueOf() < endTime.valueOf()) {
+                if (shownCount >= 5) continue;
+
                 text += "<" + bot.schedule[i].name + ">\n";
 
                 if (now.valueOf() < startTime.valueOf()) {
@@ -22,6 +26,7 @@ module.exports = {
                     text += "[Not Available][]";
                 }
                 text += '\n\n';
+                shownCount++;
             }
         }
         if (text.length == 0) {
