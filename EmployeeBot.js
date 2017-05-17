@@ -516,9 +516,9 @@ EmployeeBot.prototype.greeting = function(channel) {
 EmployeeBot.prototype.setDailyDrawReminder = function() {
     var time = this.functionHelper.getTimeUntilDaily(this.dailyRemind); 
     var that = this;
-    that.setTimeout(function() {
+    that.bot.setTimeout(function() {
         that.sendMessageToMainChannel(that.getRole('CEO') + "\n**Reminder: 15 minutes until Daily Draw Reset**");
-        that.setTimeout(function(){
+        that.bot.setTimeout(function(){
             that.setDailyDrawReminder();
         }, 30*1000);
     }, time);
@@ -526,7 +526,7 @@ EmployeeBot.prototype.setDailyDrawReminder = function() {
 
 EmployeeBot.prototype.setAlarm = function(text, time) {
     var that = this;
-    this.setTimeout(function() {
+    this.bot.setTimeout(function() {
         that.sendMessageToMainChannel(that.getRole('CEO') + '\n' + text)
     }, time);
 }
