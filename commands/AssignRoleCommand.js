@@ -5,42 +5,22 @@ module.exports = {
         if (member == null) return;
 
         switch(text) {
-        case '~setnutaku':
+        case '~setceo':
             if (bot.preventPM(message)) return;
 
-            var nutakuRole = message.guild.roles.find('name', 'Nutaku');
-            member.addRole(nutakuRole).then(output => {
-                message.reply("Nutaku Role added.");
-            }).catch(err => {
-                message.reply("Sorry, I don't have permission to add this Role.");
-            });
-            break;
-        case '~removenutaku':
-            if (bot.preventPM(message)) return;
-
-            var nutakuRole = message.guild.roles.find('name', 'Nutaku');
-            member.removeRole(nutakuRole).then(output => {
-                message.reply("Nutaku Role removed.");
-            }).catch(err => {
-                message.reply("Sorry, I don't have permission to remove this Role.");
-            });
-            break;
-        case '~setdmm':
-            if (bot.preventPM(message)) return;
-
-            var dmmRole = message.guild.roles.find('name', 'DMM');
+            var dmmRole = message.guild.roles.find('name', 'CEO');
             member.addRole(dmmRole).then(output => {
-                message.reply("DMM Role added.");
+                message.reply("CEO Role added.");
             }).catch(err => {
                 message.reply("Sorry, I don't have permission to add this Role.");
             });
             break;
-        case '~removedmm':
+        case '~removeceo':
             if (bot.preventPM(message)) return;
 
-            var dmmRole = message.guild.roles.find('name', 'DMM');
+            var dmmRole = message.guild.roles.find('name', 'CEO');
             member.removeRole(dmmRole).then(output => {
-                message.reply("DMM Role removed.");
+                message.reply("CEO Role removed.");
             }).catch(err => {
                 message.reply("Sorry, I don't have permission to remove this Role.");
             });

@@ -516,12 +516,31 @@ EmployeeBot.prototype.greeting = function(channel) {
 EmployeeBot.prototype.setDailyDrawReminder = function() {
     var time = this.functionHelper.getTimeUntilDaily(this.dailyRemind); 
     var that = this;
-    setTimeout(function() {
-        that.sendMessageToMainChannel(that.getRole('DMM') + "\n**Reminder: 15 minutes until Daily Draw Reset**")
-        setTimeout(function(){
+    that.setTimeout(function() {
+        that.sendMessageToMainChannel(that.getRole('CEO') + "\n**Reminder: 15 minutes until Daily Draw Reset**");
+        that.setTimeout(function(){
             that.setDailyDrawReminder();
         }, 30*1000);
     }, time);
+}
+
+EmployeeBot.prototype.setAlarm = function(text, time) {
+    var that = this;
+    this.setTimeout(function() {
+        that.sendMessageToMainChannel(that.getRole('CEO') + '\n' + text)
+    }, time);
+}
+
+EmployeeBot.prototype.setAlarmForSchedule = function() {
+    var now = new Date();
+    for(var i=0;i<this.schedule.length;i++) {
+        var name = this.schedule[i].name;
+        var startTime = new Date(this.schedule[i].startTime);
+        startTime.setTime(startTime.getTime() - 15*60*1000);
+        if (startTime.valueOf() < now.valueOf()) {
+            this.setAlarm('**' + name + '** will start in 15 minutes', now.valueOf() - startTime.valueOf());
+        }
+    }
 }
 
 var soulFileName = "soul.json";
@@ -922,6 +941,7 @@ EmployeeBot.prototype.ready = function() {
 
         var that = this;
 
+        this.setAlarmForSchedule();
         this.setDailyDrawReminder();
         this.breadManager.setBreadRegeneration();
         this.firstTimeReady = false;
