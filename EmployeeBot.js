@@ -536,9 +536,10 @@ EmployeeBot.prototype.setAlarmForSchedule = function() {
     for(var i=0;i<this.schedule.length;i++) {
         var name = this.schedule[i].name;
         var startTime = new Date(this.schedule[i].startTime);
+        
         startTime.setTime(startTime.getTime() - 15*60*1000);
-        if (startTime.valueOf() < now.valueOf()) {
-            this.setAlarm('**' + name + '** will start in 15 minutes', now.valueOf() - startTime.valueOf());
+        if (now.valueOf() < startTime.valueOf()) {
+            this.setAlarm('**' + name + '** will start in 15 minutes', startTime.valueOf() - now.valueOf());
         }
     }
 }
