@@ -250,7 +250,7 @@ var employees = [
         maxStats1: { _str: 494, _vit: 444, _agi: 362, _dex: 361, _int: 309, _pie: 261, _luk: 227},
         maxStats2: { _str: 648, _vit: 583, _agi: 496, _dex: 496, _int: 411, _pie: 348, _luk: 319},
     },{
-        _no: "153", _id: "10140004_25e5931a", fullName: "Ouka Kusanagi", japaneseName: "オウカ・クサナギ", commonNames: ["Ouka"], height: 170, cwId: 0,
+        _no: "153", _id: "10140004_25e5931a", fullName: "Ouka Kusanagi", japaneseName: "オウカ・クサナギ", commonNames: ["Ouka"], height: 170, cwId: 26,
         baseStats: { _str: 22, _vit: 22, _agi: 14, _dex: 13, _int: 2, _pie: 3, _luk: 3},
         maxStats0: { _str: 345, _vit: 303, _agi: 256, _dex: 253, _int: 207, _pie: 172, _luk: 160},
         maxStats1: { _str: 494, _vit: 444, _agi: 357, _dex: 357, _int: 308, _pie: 270, _luk: 261},
@@ -312,7 +312,7 @@ var employees = [
         maxStats1: { _str: 497, _vit: 355, _agi: 458, _dex: 402, _int: 222, _pie: 227, _luk: 314},
         maxStats2: { _str: 852, _vit: 615, _agi: 788, _dex: 687, _int: 381, _pie: 400, _luk: 539},
     },{
-        _no: "206", _id: "10240006_33767f9f", fullName: "Enju Imakurusu", japaneseName: "エンジュ・イマクルス", commonNames: ["Enju"], height: 0, cwId: 0,
+        _no: "206", _id: "10240006_33767f9f", fullName: "Enju Imakurusu", japaneseName: "エンジュ・イマクルス", commonNames: ["Enju"], height: 0, cwId: 26,
         baseStats: { _str: 22, _vit: 9, _agi: 17, _dex: 15, _int: 5, _pie: 2, _luk: 6},
         maxStats0: { _str: 360, _vit: 241, _agi: 331, _dex: 259, _int: 189, _pie: 115, _luk: 210},
         maxStats1: { _str: 502, _vit: 355, _agi: 459, _dex: 365, _int: 271, _pie: 175, _luk: 281},
@@ -494,7 +494,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "174", _id: "10640005_62fc6ba2", fullName: "Shirayuri Sakura", japaneseName: "シラユリ・サクラ", commonNames: ["Shirayuri"], height: 148, cwId: 0,
+        _no: "174", _id: "10640005_62fc6ba2", fullName: "Shirayuri Sakura", japaneseName: "シラユリ・サクラ", commonNames: ["Shirayuri"], height: 148, cwId: 25,
         baseStats: { _str: 8, _vit: 8, _agi: 14, _dex: 7, _int: 10, _pie: 25, _luk: 7},
         maxStats0: { _str: 166, _vit: 246, _agi: 213, _dex: 210, _int: 290, _pie: 395, _luk: 219},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
