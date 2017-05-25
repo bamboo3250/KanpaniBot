@@ -112,8 +112,8 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "May 19 2017 14:00:00 GMT+0900",
-            endTime     : "May 19 2017 17:00:00 GMT+0900"
+            startTime   : "May 26 2017 13:00:00 GMT+0900",
+            endTime     : "May 26 2017 17:00:00 GMT+0900"
         },{
             name        : "Kanpani☆Storytelling Campaign",
             startTime   : "Mar 17 2017 17:00:00 GMT+0900",
