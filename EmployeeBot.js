@@ -112,8 +112,8 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "May 26 2017 13:00:00 GMT+0900",
-            endTime     : "May 26 2017 17:00:00 GMT+0900"
+            startTime   : "May 31 2017 14:00:00 GMT+0900",
+            endTime     : "May 31 2017 17:00:00 GMT+0900"
         },{
             name        : "Kanpani☆Storytelling Campaign",
             startTime   : "Mar 17 2017 17:00:00 GMT+0900",
@@ -123,129 +123,9 @@ function EmployeeBot() {
             startTime   : "Mar 24 2017 17:00:00 GMT+0900",
             endTime     : "Mar 31 2017 14:00:00 GMT+0900"
         },{
-            name        : "[Fate/kaleid_liner_Prisma☆Illya_3rei!!]_Collaboration Event",
-            startTime   : "April 28 2017 17:00:00 GMT+0900",
-            endTime     : "May 26 2017 13:00:00 GMT+0900"
-        },{
-            name        : "Training!_Training! Quest",
-            startTime   : "May 20 2017 00:00:00 GMT+0900",
-            endTime     : "May 20 2017 00:30:00 GMT+0900"
-        },{
-            name        : "Magical_Doll_Factory Quest",
-            startTime   : "May 20 2017 02:00:00 GMT+0900",
-            endTime     : "May 20 2017 02:30:00 GMT+0900"
-        },{
-            name        : "Angel's_Robe Quest",
-            startTime   : "May 20 2017 13:00:00 GMT+0900",
-            endTime     : "May 20 2017 13:30:00 GMT+0900"
-        },{
-            name        : "Treasure_Legend Quest",
-            startTime   : "May 20 2017 20:00:00 GMT+0900",
-            endTime     : "May 20 2017 20:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "May 20 2017 23:00:00 GMT+0900",
-            endTime     : "May 20 2017 23:30:00 GMT+0900"
-        },{
-            name        : "Angel's_Robe Quest",
-            startTime   : "May 21 2017 03:00:00 GMT+0900",
-            endTime     : "May 21 2017 03:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "May 21 2017 12:00:00 GMT+0900",
-            endTime     : "May 21 2017 12:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "May 21 2017 20:00:00 GMT+0900",
-            endTime     : "May 21 2017 20:30:00 GMT+0900"
-        },{
-            name        : "Fairy's_Garden Quest",
-            startTime   : "May 21 2017 22:00:00 GMT+0900",
-            endTime     : "May 21 2017 22:30:00 GMT+0900"
-        },{
-            name        : "Fairy's_Garden Quest",
-            startTime   : "May 22 2017 00:00:00 GMT+0900",
-            endTime     : "May 22 2017 00:30:00 GMT+0900"
-        },{
-            name        : "Magical_Doll_Factory Quest",
-            startTime   : "May 22 2017 02:00:00 GMT+0900",
-            endTime     : "May 22 2017 02:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Guide Quest",
-            startTime   : "May 22 2017 11:00:00 GMT+0900",
-            endTime     : "May 22 2017 11:30:00 GMT+0900"
-        },{
-            name        : "Treasure_Legend Quest",
-            startTime   : "May 22 2017 13:00:00 GMT+0900",
-            endTime     : "May 22 2017 13:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "May 22 2017 20:00:00 GMT+0900",
-            endTime     : "May 22 2017 20:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Guide Quest",
-            startTime   : "May 22 2017 22:00:00 GMT+0900",
-            endTime     : "May 22 2017 22:30:00 GMT+0900"
-        },{
-            name        : "Angel's_Robe Quest",
-            startTime   : "May 23 2017 11:00:00 GMT+0900",
-            endTime     : "May 23 2017 11:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "May 23 2017 13:00:00 GMT+0900",
-            endTime     : "May 23 2017 13:30:00 GMT+0900"
-        },{
-            name        : "Fairy's_Garden Quest",
-            startTime   : "May 23 2017 20:00:00 GMT+0900",
-            endTime     : "May 23 2017 20:30:00 GMT+0900"
-        },{
-            name        : "Training!_Training! Quest",
-            startTime   : "May 23 2017 23:00:00 GMT+0900",
-            endTime     : "May 23 2017 23:30:00 GMT+0900"
-        },{
-            name        : "Treasure_Legend Quest",
-            startTime   : "May 24 2017 11:00:00 GMT+0900",
-            endTime     : "May 24 2017 11:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "May 24 2017 16:00:00 GMT+0900",
-            endTime     : "May 24 2017 16:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "May 24 2017 21:00:00 GMT+0900",
-            endTime     : "May 24 2017 21:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Guide Quest",
-            startTime   : "May 24 2017 23:00:00 GMT+0900",
-            endTime     : "May 24 2017 23:30:00 GMT+0900"
-        },{
-            name        : "Angel's_Robe Quest",
-            startTime   : "May 25 2017 01:00:00 GMT+0900",
-            endTime     : "May 25 2017 01:30:00 GMT+0900"
-        },{
-            name        : "Magical_Doll_Factory Quest",
-            startTime   : "May 25 2017 11:00:00 GMT+0900",
-            endTime     : "May 25 2017 11:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "May 25 2017 21:00:00 GMT+0900",
-            endTime     : "May 25 2017 21:30:00 GMT+0900"
-        },{
-            name        : "Training!_Training! Quest",
-            startTime   : "May 26 2017 00:00:00 GMT+0900",
-            endTime     : "May 26 2017 00:30:00 GMT+0900"
-        },{
-            name        : "Treasure_Legend Quest",
-            startTime   : "May 26 2017 02:00:00 GMT+0900",
-            endTime     : "May 26 2017 02:30:00 GMT+0900"
-        },{
-            name        : "Magical_Doll_Factory Quest",
-            startTime   : "May 26 2017 07:00:00 GMT+0900",
-            endTime     : "May 26 2017 07:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "May 26 2017 12:00:00 GMT+0900",
-            endTime     : "May 26 2017 12:30:00 GMT+0900"
+            name        : "Kanpani☆Spring President Support Campaign",
+            startTime   : "May 26 2017 17:00:00 GMT+0900",
+            endTime     : "May 31 2017 14:00:00 GMT+0900"
         }
     ];
     this.daily = {
