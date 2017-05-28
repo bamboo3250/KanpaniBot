@@ -934,7 +934,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "EX007", _id: "10539001_1f2a27d0", fullName: "Teresia Wieck", japaneseName: "テレージア・ヴィーク", commonNames: ["EX Teresia", "Teresia EX"], height: 0, cwId: 0,
+        _no: "EX007", _id: "10539001_1f2a27d0", fullName: "Teresia Wieck", japaneseName: "テレージア・ヴィーク", commonNames: ["EX Teresia", "Teresia EX"], height: 0, cwId: 1,
         baseStats: { _str: 22, _vit: 9, _agi: 7, _dex: 4, _int: 1, _pie: 2, _luk: 7},
         maxStats0: { _str: 458, _vit: 269, _agi: 207, _dex: 159, _int: 147, _pie: 167, _luk: 265},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
