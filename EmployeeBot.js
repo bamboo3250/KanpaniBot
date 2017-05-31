@@ -112,8 +112,8 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "May 31 2017 13:00:00 GMT+0900",
-            endTime     : "May 31 2017 17:00:00 GMT+0900"
+            startTime   : "June 09 2017 14:00:00 GMT+0900",
+            endTime     : "June 09 2017 17:00:00 GMT+0900"
         },{
             name        : "Kanpani☆Storytelling Campaign",
             startTime   : "Mar 17 2017 17:00:00 GMT+0900",
@@ -123,9 +123,9 @@ function EmployeeBot() {
             startTime   : "Mar 24 2017 17:00:00 GMT+0900",
             endTime     : "Mar 31 2017 14:00:00 GMT+0900"
         },{
-            name        : "Kanpani☆Spring President Support Campaign",
-            startTime   : "May 26 2017 17:00:00 GMT+0900",
-            endTime     : "May 31 2017 13:00:00 GMT+0900"
+            name        : "Kanpani☆June_Illness_and_Demon's_Newcomer_Training Event",
+            startTime   : "May 31 2017 17:00:00 GMT+0900",
+            endTime     : "June 16 2017 13:00:00 GMT+0900"
         }
     ];
     this.daily = {
