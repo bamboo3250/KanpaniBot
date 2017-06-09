@@ -206,7 +206,7 @@ var employees = [
         maxStats1: { _str: 228, _vit: 224, _agi: 375, _dex: 369, _int: 706, _pie: 364, _luk: 290},
         maxStats2: { _str: 332, _vit: 319, _agi: 545, _dex: 524, _int: 995, _pie: 508, _luk: 423},
     },{
-        _no: "205", _id: "10850004_325a883f", fullName: "Saga Nordgren", japaneseName: "サーガ・ノルドグレン", commonNames: ["Saga"], height: 0, cwId: 0,
+        _no: "205", _id: "10850004_325a883f", fullName: "Saga Nordgren", japaneseName: "サーガ・ノルドグレン", commonNames: ["Saga"], height: 0, cwId: 28,
         baseStats: { _str: 5, _vit: 5, _agi: 23, _dex: 22, _int: 42, _pie: 12, _luk: 6},
         maxStats0: { _str: 156, _vit: 154, _agi: 291, _dex: 281, _int: 523, _pie: 263, _luk: 228},
         maxStats1: { _str: 224, _vit: 223, _agi: 409, _dex: 404, _int: 701, _pie: 366, _luk: 318},
@@ -1138,13 +1138,13 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "162", _id: "10830009_f1506aca", fullName: "Siv Roman", japaneseName: "シーヴ・ルーマン", commonNames: ["Siv", "Syv"], height: 171, cwId: 0,
+        _no: "162", _id: "10830009_f1506aca", fullName: "Siv Roman", japaneseName: "シーヴ・ルーマン", commonNames: ["Siv", "Syv"], height: 171, cwId: 25,
         baseStats: { _str: 3, _vit: 4, _agi: 8, _dex: 9, _int: 21, _pie: 6, _luk: 6},
         maxStats0: { _str: 158, _vit: 159, _agi: 240, _dex: 239, _int: 448, _pie: 236, _luk: 219},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "192", _id: "10830010_5c5084e2", fullName: "Sonja Nobel", japaneseName: "ソーニャ・ノベール", commonNames: ["Sonja"], height: 144, cwId: 0,
+        _no: "192", _id: "10830010_5c5084e2", fullName: "Sonja Nobel", japaneseName: "ソーニャ・ノベール", commonNames: ["Sonja"], height: 144, cwId: 27,
         baseStats: { _str: 3, _vit: 4, _agi: 9, _dex: 9, _int: 22, _pie: 5, _luk: 5},
         maxStats0: { _str: 158, _vit: 159, _agi: 240, _dex: 239, _int: 448, _pie: 236, _luk: 219},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
