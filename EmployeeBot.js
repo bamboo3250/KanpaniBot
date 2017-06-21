@@ -112,7 +112,7 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "June 23 2017 14:00:00 GMT+0900",
+            startTime   : "June 23 2017 13:00:00 GMT+0900",
             endTime     : "June 23 2017 17:00:00 GMT+0900"
         },{
             name        : "Kanpani☆Storytelling Campaign",
@@ -121,7 +121,7 @@ function EmployeeBot() {
         },{
             name        : "Presidents!_It's_Level_Up_Time_Again! Campaign",
             startTime   : "June 16 2017 17:00:00 GMT+0900",
-            endTime     : "June 23 2017 14:00:00 GMT+0900"
+            endTime     : "June 23 2017 13:00:00 GMT+0900"
         },{
             name        : "Kanpani☆June_Illness_and_Demon's_Newcomer_Training Event",
             startTime   : "May 31 2017 17:00:00 GMT+0900",
