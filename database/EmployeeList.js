@@ -76,7 +76,7 @@ var employees = [
         maxStats1: { _str: 270, _vit: 323, _agi: 597, _dex: 695, _int: 234, _pie: 262, _luk: 237},
         maxStats2: { _str: 354, _vit: 430, _agi: 783, _dex: 911, _int: 321, _pie: 348, _luk: 323},
     },{
-        _no: "207", _id: "10350004_9524487b", fullName: "Canahart Vinokurov", japaneseName: "カナハ・ヴィノクロフ", commonNames: ["Canahart", "Canaha", "Kanaha"], height: 0, cwId: 0,
+        _no: "207", _id: "10350004_9524487b", fullName: "Canahart Vinokurov", japaneseName: "カナハ・ヴィノクロフ", commonNames: ["Canahart", "Canaha", "Kanaha"], height: 0, cwId: 26,
         baseStats: { _str: 9, _vit: 1, _agi: 38, _dex: 47, _int: 7, _pie: 7, _luk: 9},
         maxStats0: { _str: 155, _vit: 230, _agi: 439, _dex: 510, _int: 220, _pie: 173, _luk: 177},
         maxStats1: { _str: 224, _vit: 320, _agi: 600, _dex: 694, _int: 314, _pie: 262, _luk: 236},
@@ -462,7 +462,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "166", _id: "10540005_90ab865a", fullName: "Fine Eimert", japaneseName: "フィーネ・アイメルト", commonNames: ["Fine"], height: 173, cwId: 0,
+        _no: "166", _id: "10540005_90ab865a", fullName: "Fine Eimert", japaneseName: "フィーネ・アイメルト", commonNames: ["Fine"], height: 173, cwId: 31,
         baseStats: { _str: 26, _vit: 16, _agi: 10, _dex: 4, _int: 1, _pie: 3, _luk: 12},
         maxStats0: { _str: 473, _vit: 277, _agi: 225, _dex: 160, _int: 151, _pie: 171, _luk: 275},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -680,7 +680,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "196", _id: "10130008_dcbe627f", fullName: "Aleksia Deneuve", japaneseName: "アレクシア・ドヌーヴ", commonNames: ["Aleksia"], height: 150, cwId: 0,
+        _no: "196", _id: "10130008_dcbe627f", fullName: "Aleksia Deneuve", japaneseName: "アレクシア・ドヌーヴ", commonNames: ["Aleksia"], height: 150, cwId: 24,
         baseStats: { _str: 14, _vit: 14, _agi: 10, _dex: 8, _int: 3, _pie: 2, _luk: 4},
         maxStats0: { _str: 342, _vit: 318, _agi: 238, _dex: 240, _int: 201, _pie: 169, _luk: 159},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
