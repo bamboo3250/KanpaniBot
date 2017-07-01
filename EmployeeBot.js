@@ -127,7 +127,7 @@ function EmployeeBot() {
             startTime   : "June 30 2017 17:00:00 GMT+0900",
             endTime     : "July 21 2017 13:00:00 GMT+0900"
         },{
-            name        : "\"Ice Dragon\"_appears!_Subjugation_Support Campaign",
+            name        : "\"Ice_Dragon\"_appears!_Subjugation_Support Campaign",
             startTime   : "June 30 2017 17:00:00 GMT+0900",
             endTime     : "July 7 2017 14:00:00 GMT+0900"
         },{
