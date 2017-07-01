@@ -285,6 +285,12 @@ var employees = [
         maxStats0: { _str: 331, _vit: 299, _agi: 248, _dex: 235, _int: 271, _pie: 160, _luk: 172},
         maxStats1: { _str: 487, _vit: 442, _agi: 358, _dex: 351, _int: 399, _pie: 255, _luk: 261},
         maxStats2: { _str: 648, _vit: 594, _agi: 485, _dex: 465, _int: 547, _pie: 341, _luk: 351},
+    },{
+        _no: "EX008", _id: "10149001_fbee4da6", fullName: "[Magic Knight] Monique Waroquier", japaneseName: "[魔騎士]モニク・ワロキエ", commonNames: ["Ex Monique", "Monique Ex"], height: 0, cwId: 1,
+        baseStats: { _str: 18, _vit: 18, _agi: 13, _dex: 12, _int: 12, _pie: 1, _luk: 1},
+        maxStats0: { _str: 331, _vit: 299, _agi: 248, _dex: 235, _int: 271, _pie: 160, _luk: 172},
+        maxStats1: { _str: 487, _vit: 442, _agi: 358, _dex: 351, _int: 399, _pie: 255, _luk: 261},
+        maxStats2: { _str: 648, _vit: 594, _agi: 485, _dex: 465, _int: 547, _pie: 341, _luk: 351},
     },
 
     {
@@ -380,7 +386,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "EX001", _id: "10349001_eea406c9", fullName: "[Apprentice of The Spirit] Liliana Bartek", japaneseName: "[精霊の熾徒]リリアナ・バールテク", commonNames: ["Ex Liliana", "Liliana EX"], height: 0, cwId: 1,
+        _no: "EX001", _id: "10349001_eea406c9", fullName: "[Apprentice of The Spirit] Liliana Bartek", japaneseName: "[精霊の熾徒]リリアナ・バールテク", commonNames: ["Ex Liliana", "Liliana Ex"], height: 0, cwId: 1,
         baseStats: { _str: 9, _vit: 6, _agi: 28, _dex: 38, _int: 4, _pie: 5, _luk: 6},
         maxStats0: { _str: 162, _vit: 209, _agi: 388, _dex: 460, _int: 159, _pie: 160, _luk: 174},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -430,7 +436,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "EX005", _id: "10449001_36677def", fullName: "[The Quiet Blue Flame] Luna Diana", japaneseName: "[静かなる蒼炎] ルーナ・ディアーナ", commonNames: ["Ex Luna", "Luna EX"], height: 0, cwId: 1,
+        _no: "EX005", _id: "10449001_36677def", fullName: "[The Quiet Blue Flame] Luna Diana", japaneseName: "[静かなる蒼炎] ルーナ・ディアーナ", commonNames: ["Ex Luna", "Luna Ex"], height: 0, cwId: 1,
         baseStats: { _str: 20, _vit: 50, _agi: 12, _dex: 10, _int: 1, _pie: 10, _luk: 1},
         maxStats0: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -580,7 +586,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "EX006", _id: "10749001_c4309017", fullName: "[Illusion] Elmi Leino", japaneseName: "[幻影] エルミ・レイノ", commonNames: ["EX Elmi", "Elmi EX"], height: 0, cwId: 1,
+        _no: "EX006", _id: "10749001_c4309017", fullName: "[Illusion] Elmi Leino", japaneseName: "[幻影] エルミ・レイノ", commonNames: ["Ex Elmi", "Elmi Ex"], height: 0, cwId: 1,
         baseStats: { _str: 20, _vit: 5, _agi: 24, _dex: 14, _int: 3, _pie: 3, _luk: 14},
         maxStats0: { _str: 296, _vit: 174, _agi: 378, _dex: 307, _int: 152, _pie: 161, _luk: 250},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -755,6 +761,12 @@ var employees = [
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
         _no: "165", _id: "10230010_1c33e231", fullName: "Recca Kujo", japaneseName: "レッカ・クジョウ", commonNames: ["Recca"], height: 152, cwId: 22,
+        baseStats: { _str: 17, _vit: 7, _agi: 13, _dex: 9, _int: 2, _pie: 2, _luk: 4},
+        maxStats0: { _str: 359, _vit: 245, _agi: 328, _dex: 253, _int: 149, _pie: 158, _luk: 205},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
+        _no: "228", _id: "10230011_83e961af", fullName: "Lunaria Lem", japaneseName: "ルナリア・レム", commonNames: ["Lunaria"], height: 0, cwId: 0,
         baseStats: { _str: 17, _vit: 7, _agi: 13, _dex: 9, _int: 2, _pie: 2, _luk: 4},
         maxStats0: { _str: 359, _vit: 245, _agi: 328, _dex: 253, _int: 149, _pie: 158, _luk: 205},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
