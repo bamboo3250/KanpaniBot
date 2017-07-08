@@ -47,6 +47,6 @@ module.exports = {
             text += (i+1) + ". " + result[i].username + " (" + result[i].contribution + ")\n";
         }
 
-        message.channel.sendFile(xmasTreeImageFileName, "png", text);
+        message.channel.send(text,{'files':[xmasTreeImageFileName]});
     }
 }

@@ -243,8 +243,9 @@ EmployeeBot.prototype.sendPM = function(userId, text, photoFileName) {
 
     if (photoFileName) {
         user.sendFile(photoFileName, 'png', text);
+        user.send(text, { 'files': [photoFileName] });
     } else {
-        user.sendMessage(text);
+        user.send(text);
     }
 }
 
@@ -795,7 +796,7 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
                     }
                     var imageName = "images/battle_ko/" + userId + ".png";
                     image.write(imageName, function() {
-                        that.battleChannel.sendFile(imageName, "png", "");
+                        that.battleChannel.send('', { 'files': [imageName] });
                     });
                 });
             });

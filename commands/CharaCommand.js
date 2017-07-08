@@ -155,7 +155,7 @@ module.exports = {
                                 for(var i=0;i<employee.getBaseRarity();i++) text += ':star:';
                                 text += '\n';
                                 text += 'Height: **' + (employee.height > 0 ? employee.height + ' cm' : '???') + '**\n';
-                                channel.sendFile(imageName, 'png', text);
+                                channel.send(text, { 'files': [imageName] });
                                 if (player && player.gold >= goldToDeduct) {
                                     player.gold -= goldToDeduct;
                                     bot.savePlayer();

@@ -79,7 +79,7 @@ module.exports = {
                 }
             }
             if (imageFileName) {
-                message.channel.sendFile(imageFileName, "png", text)
+                message.channel.send(text, { 'files': [imageFileName] })
                 .then(msg => {
                     bot.postKoImage(userId, koList);
                 }).catch(err => bot.log(err));

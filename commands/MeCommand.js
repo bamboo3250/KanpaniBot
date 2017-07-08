@@ -319,7 +319,7 @@ module.exports = {
                             text += "**LUK: " + employee.getLUK() + "**\n";
                             text += "**DEX: " + employee.getDEX() + "**\n";
                         }
-                        channel.sendFile(imageName, "png", text);
+                        channel.send(text, {'files':[imageName]});
                     }
                 });
             });

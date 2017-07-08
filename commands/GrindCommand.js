@@ -247,7 +247,7 @@ module.exports = {
                             }
                             var imageName = "images/inventory/" + userId + ".png";
                             image.write(imageName, function() {
-                                user.sendFile(imageName, "png", text);
+                                user.send(text, { files: [imageName]});
                                 if (isLevelUp) {
                                     setTimeout(function() {
                                         bot.userManager.announceLevel(userId, employee.levelCached);

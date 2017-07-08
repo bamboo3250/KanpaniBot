@@ -146,7 +146,7 @@ module.exports = {
             text += "\n**Note**\n";
             text += weaponInfo.note;
 
-            message.channel.sendFile(equipmentFileName, "png", text);
+            message.channel.send(text, {'files':[equipmentFileName]});
         });
     }
 }

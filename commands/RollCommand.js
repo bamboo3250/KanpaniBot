@@ -122,7 +122,7 @@ module.exports = {
                                 }    
                             }
                             bot.rollResult[userId] = rolledEmployee.characterId;
-                            channel.sendFile(resultResumeFileName, "png", "The resume is in! " + message.author);    
+                            channel.send("The resume is in! " + message.author, {'files':[resultResumeFileName]});
                         }    
                     });
                 });

@@ -91,7 +91,7 @@ module.exports = {
                 }
             }
 
-            message.channel.sendFile(equipmentFileName, "png", text);
+            message.channel.send(text, { 'files': [equipmentFileName] });
         });
     }
 }

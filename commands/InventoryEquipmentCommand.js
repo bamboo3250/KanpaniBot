@@ -177,7 +177,7 @@ module.exports = {
                         image.write(imageName, function() {
                             var channel = message.channel;
                             if (channel.type === "text" || channel.type === "dm") {
-                                message.author.sendFile(imageName, "png", text);
+                                message.author.send(text, {'files':[imageName]});
                             }   
                         });
                     });

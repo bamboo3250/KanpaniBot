@@ -209,7 +209,7 @@ module.exports = {
                                 }
                                 
                                 bot.savePlayer();
-                                message.channel.sendFile(equipmentFileName, "png", "");
+                                message.channel.send('', { 'files': [equipmentFileName] });
                             } else {
                                 message.reply("You don't have enough material!");
                             }
