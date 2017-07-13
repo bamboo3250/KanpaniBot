@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/bamboo3250/AnnalinaBot#readme",
   "dependencies": {
-    "discord.js": "github:hydrabolt/discord.js#indev",
+    "discord.js": "^11.1.0",
     "jimp": "^0.2.27",
     "node-opus": "^0.2.4",
     "opusscript": "0.0.1"

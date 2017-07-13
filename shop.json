@@ -1,6 +1,6 @@
 {
     "Promotion Badge": {
-        "amount": 2,
+        "amount": 1,
         "maxAmount": 3,
         "price": {
             "amount": 100000000,
