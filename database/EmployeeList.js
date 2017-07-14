@@ -24,7 +24,7 @@ var employees = [
         maxStats1: { _str: 520, _vit: 461, _agi: 368, _dex: 379, _int: 333, _pie: 268, _luk: 228},
         maxStats2: { _str: 746, _vit: 646, _agi: 523, _dex: 558, _int: 486, _pie: 385, _luk: 333},
     },{
-        _no: "220", _id: "10150005_1fb4808a", fullName: "Nomadoa Nihil", japaneseName: "ノマドア・ニヒル", commonNames: ["Nomada", "Nomadoa"], height: 0, cwId: 0,
+        _no: "220", _id: "10150005_1fb4808a", fullName: "Nomadoa Nihil", japaneseName: "ノマドア・ニヒル", commonNames: ["Nomada", "Nomadoa"], height: 0, cwId: 27,
         baseStats: { _str: 34, _vit: 31, _agi: 15, _dex: 12, _int: 6, _pie: 10, _luk: 5},
         maxStats0: { _str: 395, _vit: 337, _agi: 268, _dex: 288, _int: 255, _pie: 185, _luk: 164},
         maxStats1: { _str: 520, _vit: 461, _agi: 368, _dex: 379, _int: 333, _pie: 268, _luk: 228},
@@ -524,7 +524,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "202", _id: "10640006_19e2e941", fullName: "Lara Swan", japaneseName: "ララ・スワン", commonNames: ["Lara", "Lala"], height: 0, cwId: 0,
+        _no: "202", _id: "10640006_19e2e941", fullName: "Lara Swan", japaneseName: "ララ・スワン", commonNames: ["Lara", "Lala"], height: 0, cwId: 24,
         baseStats: { _str: 9, _vit: 10, _agi: 11, _dex: 6, _int: 9, _pie: 22, _luk: 10},
         maxStats0: { _str: 166, _vit: 246, _agi: 213, _dex: 210, _int: 290, _pie: 395, _luk: 219},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -946,7 +946,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "154", _id: "10530008_f62af4a1", fullName: "Aisha Wayne", japaneseName: "アイシャ・ウェイン", commonNames: ["Aisha"], height: 178, cwId: 0,
+        _no: "154", _id: "10530008_f62af4a1", fullName: "Aisha Wayne", japaneseName: "アイシャ・ウェイン", commonNames: ["Aisha"], height: 178, cwId: 29,
         baseStats: { _str: 22, _vit: 9, _agi: 9, _dex: 3, _int: 2, _pie: 2, _luk: 8},
         maxStats0: { _str: 458, _vit: 269, _agi: 207, _dex: 159, _int: 147, _pie: 167, _luk: 265},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
