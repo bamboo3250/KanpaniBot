@@ -262,7 +262,7 @@ var employees = [
         maxStats1: { _str: 496, _vit: 445, _agi: 358, _dex: 358, _int: 312, _pie: 270, _luk: 255},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "187", _id: "10140006_c1219267", fullName: "Carole La Tour", japaneseName: "カロル・ラ・トゥール", commonNames: ["Carole"], height: 170, cwId: 0,
+        _no: "187", _id: "10140006_c1219267", fullName: "Carole La Tour", japaneseName: "カロル・ラ・トゥール", commonNames: ["Carole"], height: 170, cwId: 28,
         baseStats: { _str: 23, _vit: 19, _agi: 12, _dex: 12, _int: 7, _pie: 4, _luk: 2},
         maxStats0: { _str: 347, _vit: 300, _agi: 244, _dex: 244, _int: 219, _pie: 173, _luk: 171},
         maxStats1: { _str: 495, _vit: 442, _agi: 350, _dex: 350, _int: 315, _pie: 262, _luk: 261},
@@ -462,7 +462,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "186", _id: "10540004_0f7105c4", fullName: "Leni Herzog", japaneseName: "レニ・ヘルツォーク", commonNames: ["Leni"], height: 174, cwId: 0,
+        _no: "186", _id: "10540004_0f7105c4", fullName: "Leni Herzog", japaneseName: "レニ・ヘルツォーク", commonNames: ["Leni"], height: 174, cwId: 25,
         baseStats: { _str: 35, _vit: 11, _agi: 12, _dex: 3, _int: 2, _pie: 2, _luk: 12},
         maxStats0: { _str: 473, _vit: 277, _agi: 225, _dex: 160, _int: 151, _pie: 171, _luk: 275},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -1088,7 +1088,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "188", _id: "10730009_7cba3c50", fullName: "Mikage Shiranui", japaneseName: "ミカゲ・シラヌイ", commonNames: ["Mikage"], height: 158, cwId: 0,
+        _no: "188", _id: "10730009_7cba3c50", fullName: "Mikage Shiranui", japaneseName: "ミカゲ・シラヌイ", commonNames: ["Mikage"], height: 158, cwId: 25,
         baseStats: { _str: 10, _vit: 2, _agi: 22, _dex: 12, _int: 4, _pie: 5, _luk: 1},
         maxStats0: { _str: 284, _vit: 170, _agi: 364, _dex: 287, _int: 157, _pie: 158, _luk: 244},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
