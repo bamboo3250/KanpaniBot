@@ -112,8 +112,8 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "July 21 2017 14:00:00 GMT+0900",
-            endTime     : "July 21 2017 17:00:00 GMT+0900"
+            startTime   : "July 28 2017 14:00:00 GMT+0900",
+            endTime     : "July 28 2017 17:00:00 GMT+0900"
         },{
             name        : "Kanpani☆Storytelling Campaign",
             startTime   : "June 23 2017 17:00:00 GMT+0900",
@@ -123,13 +123,57 @@ function EmployeeBot() {
             startTime   : "June 16 2017 17:00:00 GMT+0900",
             endTime     : "June 23 2017 13:00:00 GMT+0900"
         },{
-            name        : "[Demon_From_Another_World] Season_7",
-            startTime   : "June 30 2017 17:00:00 GMT+0900",
-            endTime     : "July 21 2017 13:00:00 GMT+0900"
+            name        : "1.6m_Users_Celebration Campaign",
+            startTime   : "July 21 2017 17:00:00 GMT+0900",
+            endTime     : "July 28 2017 14:00:00 GMT+0900"
         },{
-            name        : "Shinestone_Purchasing Campaign_4",
-            startTime   : "June 30 2017 17:00:00 GMT+0900",
-            endTime     : "July 17 2017 23:59:00 GMT+0900"
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "July 25 2017 00:00:00 GMT+0900",
+            endTime     : "July 25 2017 00:30:00 GMT+0900"
+        },{
+            name        : "Treasure_Legend Quest",
+            startTime   : "July 25 2017 12:00:00 GMT+0900",
+            endTime     : "July 25 2017 12:30:00 GMT+0900"
+        },{
+            name        : "Fairy's_Garden Quest",
+            startTime   : "July 25 2017 21:00:00 GMT+0900",
+            endTime     : "July 25 2017 21:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Horizon Quest",
+            startTime   : "July 25 2017 23:00:00 GMT+0900",
+            endTime     : "July 25 2017 23:30:00 GMT+0900"
+        },{
+            name        : "Treasure_Legend Quest",
+            startTime   : "July 26 2017 12:00:00 GMT+0900",
+            endTime     : "July 26 2017 12:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "July 26 2017 18:00:00 GMT+0900",
+            endTime     : "July 26 2017 18:30:00 GMT+0900"
+        },{
+            name        : "Treasure_Legend Quest",
+            startTime   : "July 26 2017 23:00:00 GMT+0900",
+            endTime     : "July 26 2017 23:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Horizon Quest",
+            startTime   : "July 27 2017 13:00:00 GMT+0900",
+            endTime     : "July 27 2017 13:30:00 GMT+0900"
+        },{
+            name        : "??? Quest",
+            startTime   : "July 27 2017 20:00:00 GMT+0900",
+            endTime     : "July 27 2017 20:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "July 27 2017 22:00:00 GMT+0900",
+            endTime     : "July 27 2017 22:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "July 28 2017 00:00:00 GMT+0900",
+            endTime     : "July 28 2017 00:30:00 GMT+0900"
+        },{
+            name        : "Training!_Training! Quest",
+            startTime   : "July 28 2017 12:00:00 GMT+0900",
+            endTime     : "July 28 2017 12:30:00 GMT+0900"
         }
     ];
     this.daily = {
