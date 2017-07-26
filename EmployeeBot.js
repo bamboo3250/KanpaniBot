@@ -112,7 +112,7 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "July 28 2017 14:00:00 GMT+0900",
+            startTime   : "July 28 2017 13:00:00 GMT+0900",
             endTime     : "July 28 2017 17:00:00 GMT+0900"
         },{
             name        : "Kanpani☆Storytelling Campaign",
@@ -125,7 +125,7 @@ function EmployeeBot() {
         },{
             name        : "1.6m_Users_Celebration Campaign",
             startTime   : "July 21 2017 17:00:00 GMT+0900",
-            endTime     : "July 28 2017 14:00:00 GMT+0900"
+            endTime     : "July 28 2017 13:00:00 GMT+0900"
         },{
             name        : "Manufacturing_Guide Quest",
             startTime   : "July 25 2017 00:00:00 GMT+0900",
