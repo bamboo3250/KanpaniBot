@@ -122,8 +122,7 @@ function EmployeeBot() {
             name        : "Presidents!_It's_Level_Up_Time_Again! Campaign",
             startTime   : "June 16 2017 17:00:00 GMT+0900",
             endTime     : "June 23 2017 13:00:00 GMT+0900"
-        },
-        ,{
+        },{
             name        : "It's_Back!_Kanpani☆Exciting_Swimsuit_Filled_Uninhabited_Island Event",
             startTime   : "July 28 2017 17:00:00 GMT+0900",
             endTime     : "Aug 10 2017 13:00:00 GMT+0900"
