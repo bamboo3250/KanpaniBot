@@ -430,7 +430,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "190", _id: "10440006_0ca8a22e", fullName: "Nicola Lombroso", japaneseName: "ニコラ・ロンブローゾ", commonNames: ["Nicola"], height: 173, cwId: 0,
+        _no: "190", _id: "10440006_0ca8a22e", fullName: "Nicola Lombroso", japaneseName: "ニコラ・ロンブローゾ", commonNames: ["Nicola"], height: 173, cwId: 26,
         baseStats: { _str: 15, _vit: 33, _agi: 6, _dex: 10, _int: 5, _pie: 7, _luk: 4},
         maxStats0: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -766,7 +766,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "209", _id: "10230009_b1330c19", fullName: "Yuzuriha Agata", japaneseName: "ユズリハ・アガタ", commonNames: ["Yuzuriha"], height: 0, cwId: 0,
+        _no: "209", _id: "10230009_b1330c19", fullName: "Yuzuriha Agata", japaneseName: "ユズリハ・アガタ", commonNames: ["Yuzuriha"], height: 0, cwId: 28,
         baseStats: { _str: 17, _vit: 8, _agi: 14, _dex: 10, _int: 3, _pie: 3, _luk: 4},
         maxStats0: { _str: 359, _vit: 245, _agi: 328, _dex: 253, _int: 149, _pie: 158, _luk: 205},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -908,7 +908,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "184", _id: "10430009_8eedd1a8", fullName: "Aitana Ferrin", japaneseName: "アイタナ・フェリン", commonNames: ["Aitana"], height: 139, cwId: 0,
+        _no: "184", _id: "10430009_8eedd1a8", fullName: "Aitana Ferrin", japaneseName: "アイタナ・フェリン", commonNames: ["Aitana"], height: 139, cwId: 25,
         baseStats: { _str: 7, _vit: 33, _agi: 3, _dex: 5, _int: 2, _pie: 2, _luk: 2},
         maxStats0: { _str: 249, _vit: 458, _agi: 162, _dex: 236, _int: 158, _pie: 246, _luk: 158},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
