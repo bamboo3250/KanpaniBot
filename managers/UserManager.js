@@ -63,10 +63,14 @@ UserManager.prototype.doesMemberHaveRole = function(id, roleName) {
 
 UserManager.prototype.addRole = function(id, roleName, callback) {
     var member = this.getMember(id);
+    this.bot.log(id);
+    this.bot.log(member);
+    
     if (!member) return;
     if (this.doesMemberHaveRole(id, roleName)) return;
 
     var role = member.guild.roles.find('name', roleName);
+    this.bot.log(role);
     if (!role) return;
     var that = this;
     member.addRole(role).then(outputMember => {
