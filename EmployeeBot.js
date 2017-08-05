@@ -252,6 +252,7 @@ EmployeeBot.prototype.checkNoSoul = function(message) {
 }
 
 EmployeeBot.prototype.isHR = function(message) {
+    if (!message.guild) return false;
     var hrRole = message.guild.roles.find('name', 'HR Manager');
     return (hrRole && message.member && message.member.roles.has(hrRole.id));
 }
