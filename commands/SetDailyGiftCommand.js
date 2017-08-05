@@ -79,7 +79,7 @@ module.exports = {
             if (user && !isUnsubscribe) {
                 var text = "The Daily Gift has been sent. You can receive it by using command `~dailygift`.\n";
                 text += "To unsubscribe this message, you can use `~unsubscribe`.";
-                user.sendMessage(text);
+                user.send(text);
             }
         }
     }

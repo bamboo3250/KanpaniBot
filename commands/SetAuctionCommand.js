@@ -58,7 +58,7 @@ module.exports = {
             
             var highestBidder = bot.auctionManager.getHighestBidder(userId);
             if (!highestBidder) {
-                sellerUser.sendMessage("Nobody bidded for your **" + itemName + "**. The item will be returned to your Inventory.");
+                sellerUser.send("Nobody bidded for your **" + itemName + "**. The item will be returned to your Inventory.");
                 that.moveItem(bot, userId, userId);
                 bot.savePlayer();
                 bot.saveAuction();
@@ -78,15 +78,15 @@ module.exports = {
                     bot.playerManager.addGold(bidderId, auction.bidders[bidderId]);
                     var bidderUser = bot.userManager.getUser(bidderId);
                     if (bidderUser) {
-                        bidderUser.sendMessage("**" + auction.bidders[bidderId] + " Gold** has been returned to your account from Auction " + userId + ".");
+                        bidderUser.send("**" + auction.bidders[bidderId] + " Gold** has been returned to your account from Auction " + userId + ".");
                     }
                 }
             }
 
             that.moveItem(bot, userId, highestBidder);
             
-            winnerUser.sendMessage("Congratulations! You have won **" + itemName + "** from " + sellerUser.username);
-            sellerUser.sendMessage("Your item **" + itemName + "** has been sold to **" + winnerUser.username + "** for " + gainGold + " Gold (5% deducted).");
+            winnerUser.send("Congratulations! You have won **" + itemName + "** from " + sellerUser.username);
+            sellerUser.send("Your item **" + itemName + "** has been sold to **" + winnerUser.username + "** for " + gainGold + " Gold (5% deducted).");
 
             bot.savePlayer();
             bot.saveAuction();

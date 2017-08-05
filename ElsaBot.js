@@ -218,9 +218,9 @@ function handleRankingCommand(message) {
             var member = guild.members.get(result[i].userId);
             if (member) updateRole(message, member);
         }
-        message.channel.sendMessage(text);
+        message.channel.send(text);
     }).catch(err => {
-        message.channel.sendMessage("Fetching member error!");
+        message.channel.send("Fetching member error!");
     });
 }
 
@@ -270,9 +270,9 @@ function handleMyRankingCommand(message) {
             var member = guild.members.get(result[i].userId);
             if (member) updateRole(message, member);
         }
-        message.channel.sendMessage(text);
+        message.channel.send(text);
     }).catch(err => {
-        message.channel.sendMessage("Fetching member error!");
+        message.channel.send("Fetching member error!");
     });
 }
 

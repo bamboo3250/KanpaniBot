@@ -102,7 +102,7 @@ UserManager.prototype.removeRole = function(id, roleName, callback) {
 UserManager.prototype.announceLevel = function(id, newLevel) {
     var user = this.getUser(id);
     if (user) {
-        user.sendMessage("Congratulations! Your level has increased to **" + newLevel + "**");
+        user.send("Congratulations! Your level has increased to **" + newLevel + "**");
     }
 }
 

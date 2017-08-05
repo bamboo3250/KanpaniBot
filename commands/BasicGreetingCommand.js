@@ -16,7 +16,7 @@ module.exports = {
         //     bot.lastTimeSayingHiToPlayers[userId] = now.valueOf();
 
         //     var reply = bot.getRandomMessages(bot.commonGreetings);
-        //     message.channel.sendMessage(reply);
+        //     message.channel.send(reply);
         //     bot.lastTimeSayingHi = now.valueOf();
         // } else if (cleanedText === "gm" || cleanedText === "good morning" || cleanedText === "morning") {
         //     if (now.valueOf() - bot.lastTimeGoodMorning < 60*1000) return;
@@ -27,7 +27,7 @@ module.exports = {
         //     bot.lastTimeGoodMorningToPlayers[userId] = now.valueOf();
             
         //     var reply = bot.getRandomMessages(bot.commonGoodMorning);
-        //     message.channel.sendMessage(reply);
+        //     message.channel.send(reply);
         //     bot.lastTimeGoodMorning = now.valueOf();
         // } else if (cleanedText === "gn" || cleanedText === "good night" || cleanedText === "nite" || cleanedText === "night") {
         //     if (now.valueOf() - bot.lastTimeGoodNight < 60*1000) return;
@@ -38,18 +38,18 @@ module.exports = {
         //     bot.lastTimeGoodNightToPlayers[userId] = now.valueOf();
             
         //     var reply = bot.getRandomMessages(bot.commonGoodNight);
-        //     message.channel.sendMessage(reply);
+        //     message.channel.send(reply);
         //     bot.lastTimeGoodNight = now.valueOf();
         // } else 
         if (text === "~thank" || text === "~thanks" || text === "~tks" || text === "~ty") {
             if (now.valueOf() - bot.lastTimeThanks < 60*1000) return;
             var reply = bot.getRandomMessages(bot.commonThanks);
-            message.channel.sendMessage(reply);
+            message.channel.send(reply);
             bot.lastTimeThanks = now.valueOf();
         } 
         // else if (cleanedText === "happy halloween") {
         //     var reply = bot.getRandomMessages(bot.halloween);
-        //     message.channel.sendMessage(reply);
+        //     message.channel.send(reply);
         // } else if (cleanedText === "trick or treat" || cleanedText === "treat or trick") {
         //     if (typeof bot.lastTimeGiveCandyToPlayers[userId] == "undefined") {
         //         bot.lastTimeGiveCandyToPlayers[userId] = 0;

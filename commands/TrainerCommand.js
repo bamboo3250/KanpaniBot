@@ -57,9 +57,9 @@ module.exports = {
         }
         
         if (text.length > 0) {
-            message.channel.sendMessage(text);    
+            message.channel.send(text);    
         } else {
-            message.channel.sendMessage("There is no trainer at the moment.");
+            message.channel.send("There is no trainer at the moment.");
         }
     }
 };

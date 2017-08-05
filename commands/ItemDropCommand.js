@@ -19,6 +19,6 @@ module.exports = {
                 text += questList[i] + ".";
             }
         }
-        message.channel.sendMessage(text);
+        message.channel.send(text);
     }
 }

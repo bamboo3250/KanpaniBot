@@ -18,7 +18,7 @@ function MAtkDownStatus(bot, ownerId, targetId) {
         
         if (!targetUnit.isFainted()) {
             var text = "Matk Down has expired on " + targetName + ".";
-            that.bot.battleChannel.sendMessage(text);
+            that.bot.battleChannel.send(text);
         }
         that.destroy();
     }, INTERVAL);

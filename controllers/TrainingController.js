@@ -143,7 +143,7 @@ TrainingController.prototype.setRespawnTimer = function(duration) {
         }
 
         var traineeRole = that.bot.battleChannel.guild.roles.find('name', 'Trainee');
-        that.bot.battleChannel.sendMessage(traineeRole + " All Trainers are ready for new battle.");
+        that.bot.battleChannel.send(traineeRole + " All Trainers are ready for new battle.");
         that.setEndTimer();
     }, duration);
 }
@@ -196,7 +196,7 @@ TrainingController.prototype.endBattle = function(endBattleByTimeout) {
             this.bot.playerManager.addExp(userId, expReward);
             var user = this.bot.userManager.getUser(userId);
             if (user) {
-                user.sendMessage(text);
+                user.send(text);
             }
             this.bot.playerManager.refreshUnitForPlayerId(userId);
         }
@@ -1060,7 +1060,7 @@ TrainingController.prototype.attemptToEncourage = function(unit, field) {
             }
         }
     }
-    this.bot.battleChannel.sendMessage(text);
+    this.bot.battleChannel.send(text);
 }
 
 TrainingController.prototype.attemptToSneak = function(unit, field) {
@@ -1090,7 +1090,7 @@ TrainingController.prototype.attemptToSneak = function(unit, field) {
             }
         }
     }
-    this.bot.battleChannel.sendMessage(text);
+    this.bot.battleChannel.send(text);
 }
 
 TrainingController.prototype.attemptToFocus = function(unit) {
@@ -1107,7 +1107,7 @@ TrainingController.prototype.attemptToFocus = function(unit) {
     
     var text = name + " used Focus.\n";
     this.bot.playerManager.applyFocus(unit.playerId, unit.playerId);
-    this.bot.battleChannel.sendMessage(text);
+    this.bot.battleChannel.send(text);
 }
 
 

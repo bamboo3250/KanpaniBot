@@ -185,13 +185,13 @@ module.exports = {
             var equipmentName = "";
             equipmentName = equipmentResult.name;
             text += "Crafting **" + equipmentName + "**...";
-            message.channel.sendMessage(text);
+            message.channel.send(text);
             setTimeout(function() {
-                message.channel.sendMessage("Kan...");
+                message.channel.send("Kan...");
                 setTimeout(function() {
-                    message.channel.sendMessage("Kan...");
+                    message.channel.send("Kan...");
                     setTimeout(function() {
-                        message.channel.sendMessage("Kan...");
+                        message.channel.send("Kan...");
                         setTimeout(function() {
                             if (hasEnoughMaterial(player, equipmentResult.recipe, hasForgeEffect)) {
                                 for(var i=0;i<equipmentResult.recipe.length;i++) {

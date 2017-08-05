@@ -11,6 +11,6 @@ module.exports = {
         text += "[Resets in][" + time + "]\n\n";
 
         text += "```";
-        message.channel.sendMessage(text);
+        message.channel.send(text);
     }
 }

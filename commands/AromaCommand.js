@@ -4,7 +4,7 @@ module.exports = {
         if (command.commandName != "~aroma") return;
         
         if (!bot.aromaEffect) {
-            message.channel.sendMessage("No one has used Aroma Oil.");
+            message.channel.send("No one has used Aroma Oil.");
             return;
         }
 
@@ -29,6 +29,6 @@ module.exports = {
         text += "Total Aroma Oil: " + bot.aromaEffect.totalAroma + "\n";
         text += "Elapsed Time: " + bot.functionHelper.parseTime(now.valueOf() - bot.aromaEffect.startTime) + "\n";
         text += "Remaining Time: " + bot.functionHelper.parseTime(bot.aromaEffect.endTime - now.valueOf()) + "\n";
-        message.channel.sendMessage(text);
+        message.channel.send(text);
     }
 }

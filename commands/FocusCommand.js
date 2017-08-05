@@ -69,6 +69,6 @@ module.exports = {
         var text = name + " used Focus.\n";
         bot.playerManager.applyFocus(userId, userId);
         
-        bot.battleChannel.sendMessage(text);
+        bot.battleChannel.send(text);
     }
 }

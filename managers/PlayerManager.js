@@ -441,7 +441,7 @@ PlayerManager.prototype.setRespawn = function(userId) {
             unit.respawnTime = null;
             if (user) {
                 that.bot.userManager.removeRole(userId, "Fainted");
-                user.sendMessage("Your character has respawned.");
+                user.send("Your character has respawned.");
             }
         }, respawnDuration);
     }

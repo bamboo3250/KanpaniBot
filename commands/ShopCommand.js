@@ -17,6 +17,6 @@ module.exports = {
             text += "\n";
         }
 
-        message.channel.sendMessage(text);
+        message.channel.send(text);
     }
 }

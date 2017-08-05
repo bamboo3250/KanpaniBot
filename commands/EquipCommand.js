@@ -9,14 +9,14 @@ module.exports = {
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
         if (player === null) {
-            message.author.sendMessage("You haven't selected your character.");
+            message.author.send("You haven't selected your character.");
             return;
         }
         
         var ARGUMENT_NOT_CORRECT_ERROR = "Arguments are not correct.";
         var commandArgs = command.split(" ");
         if (commandArgs.length < 2) {
-            message.author.sendMessage(ARGUMENT_NOT_CORRECT_ERROR);
+            message.author.send(ARGUMENT_NOT_CORRECT_ERROR);
             return;
         }
         var category = commandArgs[1];
@@ -42,7 +42,7 @@ module.exports = {
         }
 
         if ((category != "ar") && (category != "wp") && (category != "cw") && (category != "acc")) {
-            message.author.sendMessage("The equipment category is not correct. It should be `wp` for weapon, `cw` for character weapon, `ar` for armor or `acc` for accessory.")
+            message.author.send("The equipment category is not correct. It should be `wp` for weapon, `cw` for character weapon, `ar` for armor or `acc` for accessory.")
             return;
         }
 
@@ -60,7 +60,7 @@ module.exports = {
             equipmentResult = bot.weaponDatabase.getWeaponByCodeName("cw", employee.characterId);
         }
         if (!equipmentResult) {
-            message.author.sendMessage("No information.")
+            message.author.send("No information.")
             return;
         }
 
@@ -76,11 +76,11 @@ module.exports = {
 
         if (typeof equipmentList[equipmentResult._id] === "undefined") {
 
-            message.author.sendMessage("You don't have any **" + equipmentName + "**.");
+            message.author.send("You don't have any **" + equipmentName + "**.");
             return;
         }
         if (typeof equipmentList[equipmentResult._id]["+" + plus] === "undefined" || equipmentList[equipmentResult._id]["+" + plus] <= 0) {
-            message.author.sendMessage("You don't have any **" + equipmentName + " +" + plus + "**.");
+            message.author.send("You don't have any **" + equipmentName + " +" + plus + "**.");
             return;
         }
         if (category == "wp" || category == "cw") {
@@ -92,6 +92,6 @@ module.exports = {
         }
         bot.savePlayer();
         bot.playerManager.refreshUnitForPlayerId(userId);
-        message.author.sendMessage("You have equipped **" + equipmentName + " +" + plus + "**");
+        message.author.send("You have equipped **" + equipmentName + " +" + plus + "**");
     }
 }

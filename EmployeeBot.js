@@ -395,7 +395,7 @@ EmployeeBot.prototype.sayRandomMessages = function(channel, messageList) {
     var length = messageList.length;
     if (length > 0) {
         var message = this.getRandomMessages(messageList);
-        channel.sendMessage(message);    
+        channel.send(message);    
     }
 }
 
@@ -872,15 +872,15 @@ EmployeeBot.prototype.getRole = function(roleName) {
 }
 
 EmployeeBot.prototype.sendMessageToMainChannel = function(text) {
-    if (this.mainChannel) this.mainChannel.sendMessage(text);
+    if (this.mainChannel) this.mainChannel.send(text);
 }
 
 EmployeeBot.prototype.sendMessageToMarketChannel = function(text) {
-    if (this.marketChannel) this.marketChannel.sendMessage(text);
+    if (this.marketChannel) this.marketChannel.send(text);
 }
 
 EmployeeBot.prototype.log = function(text) {
-    if (this.logChannel) this.logChannel.sendMessage(text);
+    if (this.logChannel) this.logChannel.send(text);
 }
 
 EmployeeBot.prototype.login = function() {
@@ -895,7 +895,7 @@ employee.bot.on('guildMemberAdd', (member) => {
         if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
             var text = "**" + member.user.username + "** has joined.\n";
             text += "Member count: " + member.guild.memberCount;
-            channels[i].sendMessage(text);
+            channels[i].send(text);
         } 
     }
     employee.userManager.fetchAllMembers();
@@ -907,7 +907,7 @@ employee.bot.on('guildMemberRemove', (member) => {
         if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
             var text = "**" + member.user.username + "** has leaved.\n";
             text += "Member count: " + member.guild.memberCount;
-            channels[i].sendMessage(text);
+            channels[i].send(text);
         } 
     }
 });

@@ -44,7 +44,7 @@ function sendMyTop(message, bot, result) {
                 }
             }
         }
-        message.channel.sendMessage(text);
+        message.channel.send(text);
     }
 }
 

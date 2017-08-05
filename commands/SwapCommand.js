@@ -8,12 +8,12 @@ module.exports = {
         var unit = bot.playerManager.getPlayerUnit(userId);
         
         if (!player) {
-            message.author.sendMessage("You have to select character first.");
+            message.author.send("You have to select character first.");
             return;
         }
 
         if (!player.partnerId) {
-            message.author.sendMessage("You don't have any partner to swap with.");
+            message.author.send("You don't have any partner to swap with.");
             return;
         }        
 
@@ -27,6 +27,6 @@ module.exports = {
         bot.playerManager.refreshUnitForPlayerId(userId);
         bot.playerManager.refreshUnitForPlayerId(player.partnerId);
         var text = "Now you are in " + player.position + "line and your partner is in " + partner.position + "line.";
-        message.author.sendMessage(text);
+        message.author.send(text);
     }
 }

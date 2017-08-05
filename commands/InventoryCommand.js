@@ -45,16 +45,16 @@ module.exports = {
         }
 
         var text = "Your Inventory:\n";
-        message.author.sendMessage(text + backupItemDropText);
+        message.author.send(text + backupItemDropText);
 
         // bot.imageHelper.download(queue, function(err) {
         //     if (err) {
-        //         message.author.sendMessage(text + backupItemDropText);
+        //         message.author.send(text + backupItemDropText);
         //         return;
         //     }
         //     bot.imageHelper.read(itemFileNameList, function (err, imageDict) {
         //         if (err) {
-        //             message.author.sendMessage(text + backupItemDropText);
+        //             message.author.send(text + backupItemDropText);
         //             return;
         //         }
 
@@ -70,7 +70,7 @@ module.exports = {
 
         //         var image = new Jimp(imageWidth, imageHeight, 0xFFFFFFFF, function (err, image) {
         //             if (err) {
-        //                 message.author.sendMessage(text + backupItemDropText);
+        //                 message.author.send(text + backupItemDropText);
         //                 return;
         //             }
 

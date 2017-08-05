@@ -28,7 +28,7 @@ module.exports = {
                 text += bot.report[reportedUser.id][reporterId] + " ";
             }
         }
-        message.channel.sendMessage(text);
+        message.channel.send(text);
 
         if (Object.keys(bot.report[reportedUser.id]).length >= 5) {
             var count = 0;
@@ -46,7 +46,7 @@ module.exports = {
                         guildMember.addRole(reportedRole).then(output => {
                             bot.silenced[reportedUser.id] = true;
                             bot.saveSilenced();
-                            message.channel.sendMessage(guildMember.user + " is now silenced.");
+                            message.channel.send(guildMember.user + " is now silenced.");
                         }).catch(err => {
                             bot.log("[Report] Adding Reported role failed.");
                         });

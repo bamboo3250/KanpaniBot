@@ -19,7 +19,7 @@ function PDefDownStatus(bot, ownerId, targetId) {
         
         if (!targetUnit.isFainted()) {
             var text = "Pdef Down has expired on " + targetName + ".";
-            that.bot.battleChannel.sendMessage(text);    
+            that.bot.battleChannel.send(text);    
         }
         that.destroy();
     }, INTERVAL);
@@ -41,7 +41,7 @@ PDefDownStatus.prototype.destroy = function() {
         var text = attackerName + " gained " + exp + " exp from Pdef Down.\n";    
         this.bot.playerManager.addExp(this.ownerId, exp);
         this.bot.playerManager.refreshUnitForPlayerId(this.ownerId);
-        this.bot.battleChannel.sendMessage(text);
+        this.bot.battleChannel.send(text);
     }
 
     var unit = this.bot.playerManager.getPlayerUnit(this.targetId);

@@ -15,7 +15,7 @@ module.exports = {
         if (message.author.id === "147305572012654592") {   // uzies special case
             var text = message.content.trim().toLowerCase();
             if (text === ":p" || text === ";p") {
-                message.channel.sendMessage(text);
+                message.channel.send(text);
             }
             return;
         }
@@ -32,7 +32,7 @@ module.exports = {
             var targetId = bot.functionHelper.getIdFromMention(content);
             if (targetId === "") return;
             if (targetId === message.author.id) {
-                message.channel.sendMessage("Ewww " + message.author + ", that's disgusting... Are you sure you want to do that?");
+                message.channel.send("Ewww " + message.author + ", that's disgusting... Are you sure you want to do that?");
                 return;
             }
 
@@ -42,12 +42,12 @@ module.exports = {
                 bot.saveSoul();
 
                 message.guild.fetchMember(targetId).then(targetMember => {
-                    message.channel.sendMessage(targetMember + " is now haunted. " + message.author + " devoured your Soul :ghost: and rendered the " + breadEmoji + " useless! " + lolEmoji);
+                    message.channel.send(targetMember + " is now haunted. " + message.author + " devoured your Soul :ghost: and rendered the " + breadEmoji + " useless! " + lolEmoji);
                 }).catch(err => {
                     bot.log("Error in fetching member. " + err)
                 });
             } else {
-                message.channel.sendMessage(message.author + ", I understand that your hunger is insatiable, but only one Soul :ghost: for each person. Relax a bit!")
+                message.channel.send(message.author + ", I understand that your hunger is insatiable, but only one Soul :ghost: for each person. Relax a bit!")
             }
             
         } else if (text.startsWith("-givesoul ")) {
@@ -60,7 +60,7 @@ module.exports = {
             var targetId = bot.functionHelper.getIdFromMention(content);
             if (targetId === "") return;
             if (targetId === message.author.id) {
-                message.channel.sendMessage("Whose soul should I get for you, master " + message.author + "?");
+                message.channel.send("Whose soul should I get for you, master " + message.author + "?");
                 return;
             }
 
@@ -70,13 +70,13 @@ module.exports = {
                 bot.saveSoul();
 
                 message.guild.fetchMember(targetId).then(targetMember => {
-                    message.channel.sendMessage(message.author + " decided to return the Soul :ghost: back to " + targetMember + ". Use it wisely. The same with the " + breadEmoji + "!");
+                    message.channel.send(message.author + " decided to return the Soul :ghost: back to " + targetMember + ". Use it wisely. The same with the " + breadEmoji + "!");
                 }).catch(err => {
                     bot.log("Error in fetching member.")
                 });
             } else {
                 message.guild.fetchMember(targetId).then(targetMember => {
-                    message.channel.sendMessage(targetMember + " already has a Soul :ghost: . There's only so many that can fit in a single body.")    
+                    message.channel.send(targetMember + " already has a Soul :ghost: . There's only so many that can fit in a single body.")    
                 }).catch(err => {
                     bot.log("Error in fetching member.")
                 });

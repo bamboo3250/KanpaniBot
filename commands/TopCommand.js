@@ -27,7 +27,7 @@ function sendTop(message, bot, result) {
         var levelText = "Lv.**" + result[i].employee.levelCached  + "**";
         text += (rank+1) + ". " + memberName + " (**" + result[i].employee.shortName + "** " + (classEmoji == null?"":classEmoji) +", " + promotionText + levelText + (partnerName!=""?", Partner: **" + partnerName +"**":"") + ")\n";
     }
-    message.channel.sendMessage(text);
+    message.channel.send(text);
 }
 
 module.exports = {

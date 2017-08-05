@@ -207,7 +207,7 @@ module.exports = {
                         text += itemName + " x" + receivedItems[itemName] + "\n";
                         bot.playerManager.addItem(contributorId, itemName, receivedItems[itemName]);
                     }
-                    contributorUser.sendMessage(text);
+                    contributorUser.send(text);
                     var member = bot.userManager.getMember(contributorId);
                     var aromaRole = member.guild.roles.find('name', 'Aroma Dreamer');
                     member.removeRole(aromaRole).then(output => {
@@ -284,7 +284,7 @@ module.exports = {
                     itemName: "",
                     endTime: 0
                 }
-                message.author.sendMessage("The effect of **" + materialInfo.itemName + "** has faded away.");
+                message.author.send("The effect of **" + materialInfo.itemName + "** has faded away.");
             }, effectDuration);
 
             bot.playerManager.spendItem(userId, materialInfo.itemName);
@@ -322,7 +322,7 @@ module.exports = {
                     endTime: 0,
                     effectTimeout: null
                 }
-                message.author.sendMessage("The effect of **" + materialInfo.itemName + "** has faded away.");
+                message.author.send("The effect of **" + materialInfo.itemName + "** has faded away.");
             }, effectDuration);
 
             bot.playerManager.spendItem(userId, materialInfo.itemName);
@@ -356,7 +356,7 @@ module.exports = {
                     itemName: "",
                     endTime: 0
                 }
-                message.author.sendMessage("The effect of **" + materialInfo.itemName + "** has faded away.");
+                message.author.send("The effect of **" + materialInfo.itemName + "** has faded away.");
             }, effectDuration);
 
             bot.playerManager.spendItem(userId, materialInfo.itemName);
@@ -423,7 +423,7 @@ module.exports = {
                         if (user) {
                             var text2 = "Congratulations! The Sacred Tree now has **" + total + " Eld Light**.\n";
                             text2 += "Every contributor will receive **" + rewardToGive.amount + " " + rewardToGive.itemName + "**.";
-                            user.sendMessage(text2);
+                            user.send(text2);
                         }
                     }
                 }
@@ -560,7 +560,7 @@ module.exports = {
                     itemName: "",
                     endTime: 0
                 }
-                message.author.sendMessage("The effect of **" + materialInfo.itemName + "** has faded away.");
+                message.author.send("The effect of **" + materialInfo.itemName + "** has faded away.");
             }, effectDuration);
 
             bot.playerManager.spendItem(userId, materialInfo.itemName);
@@ -610,7 +610,7 @@ module.exports = {
                     itemName: "",
                     endTime: 0
                 }
-                message.author.sendMessage("The effect of **" + materialInfo.itemName + "** has faded away.");
+                message.author.send("The effect of **" + materialInfo.itemName + "** has faded away.");
             }, effectDuration);
 
             bot.playerManager.spendItem(userId, materialInfo.itemName);

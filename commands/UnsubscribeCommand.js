@@ -9,7 +9,7 @@ module.exports = {
 
         var text = "You have unsubscribed daily gift\n";
         text += "You won't receive any announcement about daily gift anymore but you still can receive it via command `~dailygift`.";
-        message.author.sendMessage(text);
+        message.author.send(text);
         bot.log(message.author.username + " unsubscribed.");
     }
 }

@@ -103,12 +103,12 @@ module.exports = {
 
         bot.imageHelper.download(queue, function(err) {
             if (err) {
-                message.author.sendMessage(text + backupText);
+                message.author.send(text + backupText);
                 return;
             }
             bot.imageHelper.read(equipmentFileNameList, function (err, imageDict) {
                 if (err) {
-                    message.author.sendMessage(text + backupText);
+                    message.author.send(text + backupText);
                     return;
                 }
 
@@ -124,7 +124,7 @@ module.exports = {
 
                 var image = new Jimp(imageWidth, imageHeight, 0xFFFFFFFF, function (err, image) {
                     if (err) {
-                        message.author.sendMessage(text + backupText);
+                        message.author.send(text + backupText);
                         return;
                     }
 

@@ -74,6 +74,6 @@ module.exports = {
             }
         }
 
-        bot.battleChannel.sendMessage(text);
+        bot.battleChannel.send(text);
     }
 }

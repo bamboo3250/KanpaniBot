@@ -36,7 +36,7 @@ CurseStatus.prototype.evoke = function(damage) {
         text += targetName + " is KO-ed by Curse from " + attackerName + "!\n";
         this.bot.userManager.addRole(this.targetId, "Fainted");
     }
-    this.bot.battleChannel.sendMessage(text);
+    this.bot.battleChannel.send(text);
 
     if (this.counter <= 0 || isKO) {
         this.destroy();

@@ -168,7 +168,7 @@ module.exports = {
                             bot.userManager.announceLevel(partnerId, partnerEmployee.levelCached);
                         }, 5000);
                     }
-                    partnerUser.sendMessage(partnerText);
+                    partnerUser.send(partnerText);
                 }
             }
 
@@ -207,10 +207,10 @@ module.exports = {
 
             bot.imageHelper.download(queue, function(err) {
                 if (err) {
-                    user.sendMessage(text + backupItemDropText);
+                    user.send(text + backupItemDropText);
                     if (isLevelUp) {
                         setTimeout(function() {
-                            user.sendMessage(levelUpText);
+                            user.send(levelUpText);
                         }, 5*1000);
                     }
                     return;
@@ -220,10 +220,10 @@ module.exports = {
                     for(key in imageDict) imageList.push(imageDict[key]);
 
                     if (err || imageList.length == 0) {
-                        user.sendMessage(text + backupItemDropText);
+                        user.send(text + backupItemDropText);
                         if (isLevelUp) {
                             setTimeout(function() {
-                                user.sendMessage(levelUpText);
+                                user.send(levelUpText);
                             }, 5*1000);
                         }
                         return;

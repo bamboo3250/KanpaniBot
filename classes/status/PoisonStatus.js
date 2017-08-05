@@ -31,13 +31,13 @@ function PoisonStatus(bot, ownerId, targetId) {
                 // text += attackerName + " gained " + exp + " exp.\n";    
                 that.bot.playerManager.addExp(that.ownerId, exp);
                 that.bot.playerManager.refreshUnitForPlayerId(that.ownerId);
-                // attackerUser.sendMessage(text);
+                // attackerUser.send(text);
             }
 
             if (isKoed) {
                 that.bot.postKoImage(that.ownerId, [that.targetId]);
                 var text = targetName + " is KO-ed by poison from " + attackerUser.username + "!\n";
-                that.bot.battleChannel.sendMessage(text);
+                that.bot.battleChannel.send(text);
                 bot.userManager.addRole(that.targetId, "Fainted");
             }
 
