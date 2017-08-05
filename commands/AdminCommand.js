@@ -4,7 +4,7 @@ module.exports = {
 
         if (bot.isHR(message) || bot.isAdmin(message)) {
             if (command.commandName === "~unsilence") {
-                var userId = command.mentions.users.first();
+                var userId = command.mentions.users.first().id;
                 if (!userId) return;
                 bot.userManager.removeRole(userId, "Reported");
                 bot.silenced[userId] = false;
@@ -12,7 +12,7 @@ module.exports = {
                 return;
             }
             if (command.commandName === "~silence") {
-                var userId = command.mentions.users.first();
+                var userId = command.mentions.users.first().id;
                 if (!userId) return;
                 bot.userManager.addRole(userId, "Reported");
                 bot.silenced[userId] = true;
