@@ -112,7 +112,7 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "Aug 10 2017 13:00:00 GMT+0900",
+            startTime   : "Aug 10 2017 14:00:00 GMT+0900",
             endTime     : "Aug 10 2017 17:00:00 GMT+0900"
         },{
             name        : "Kanpani☆Storytelling Campaign",
@@ -125,7 +125,7 @@ function EmployeeBot() {
         },{
             name        : "It's_Back!_Kanpani☆Exciting_Swimsuit_Filled_Uninhabited_Island Event",
             startTime   : "July 28 2017 17:00:00 GMT+0900",
-            endTime     : "Aug 10 2017 13:00:00 GMT+0900"
+            endTime     : "Aug 10 2017 14:00:00 GMT+0900"
         }
     ];
     this.daily = {
