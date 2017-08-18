@@ -8,7 +8,7 @@
         }
     },
     "Weapon Hammer": {
-        "amount": 500,
+        "amount": 497,
         "maxAmount": 500,
         "price": {
             "amount": 2000000,
@@ -48,7 +48,7 @@
         }
     },
     "Food Pack": {
-        "amount": 100,
+        "amount": 98,
         "maxAmount": 100,
         "price": {
             "amount": 5000000,
