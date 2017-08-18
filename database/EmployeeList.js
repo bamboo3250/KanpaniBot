@@ -56,7 +56,7 @@ var employees = [
         maxStats1: { _str: 521, _vit: 372, _agi: 506, _dex: 414, _int: 225, _pie: 262, _luk: 325},
         maxStats2: { _str: 912, _vit: 674, _agi: 874, _dex: 730, _int: 399, _pie: 457, _luk: 569},
     },{
-        _no: "229", _id: "10250005_ede36d72", fullName: "Rean Reinbell", japaneseName: "リィン・リーンベル", commonNames: ["Rean", "Reinbell"], height: 0, cwId: 0,
+        _no: "229", _id: "10250005_ede36d72", fullName: "Rean Reinbell", japaneseName: "リィン・リーンベル", commonNames: ["Rean", "Reinbell"], height: 0, cwId: 27,
         baseStats: { _str: 34, _vit: 14, _agi: 25, _dex: 22, _int: 6, _pie: 3, _luk: 10},
         maxStats0: { _str: 398, _vit: 273, _agi: 367, _dex: 301, _int: 157, _pie: 173, _luk: 240},
         maxStats1: { _str: 521, _vit: 372, _agi: 506, _dex: 414, _int: 225, _pie: 262, _luk: 325},
@@ -437,6 +437,12 @@ var employees = [
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
         _no: "194", _id: "10440007_937221b0", fullName: "Ashtena Rothe", japaneseName: "アシュテナ・ロッテ", commonNames: ["Ashtena"], height: 182, cwId: 0,
+        baseStats: { _str: 14, _vit: 31, _agi: 8, _dex: 10, _int: 9, _pie: 4, _luk: 4},
+        maxStats0: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
+        _no: "???", _id: "10440008_df67ae9e", fullName: "Francesca Doni", japaneseName: "フランチェスカ・ドニ", commonNames: ["Francesca"], height: 0, cwId: 29,
         baseStats: { _str: 14, _vit: 31, _agi: 8, _dex: 10, _int: 9, _pie: 4, _luk: 4},
         maxStats0: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -834,7 +840,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "171", _id: "10330008_c9f42910", fullName: "Gilmir Xia", japaneseName: "ギルミア・シア", commonNames: ["Gilmir"], height: 142, cwId: 0,
+        _no: "171", _id: "10330008_c9f42910", fullName: "Gilmir Xia", japaneseName: "ギルミア・シア", commonNames: ["Gilmir"], height: 142, cwId: 27,
         baseStats: { _str: 4, _vit: 3, _agi: 17, _dex: 22, _int: 3, _pie: 2, _luk: 4},
         maxStats0: { _str: 158, _vit: 204, _agi: 387, _dex: 448, _int: 157, _pie: 158, _luk: 159},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -1100,7 +1106,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "167", _id: "10730008_e360bfce", fullName: "Yayi Ziyi", japaneseName: "ヤーイー・ツィイー", commonNames: ["Yayi"], height: 171, cwId: 0,
+        _no: "167", _id: "10730008_e360bfce", fullName: "Yayi Ziyi", japaneseName: "ヤーイー・ツィイー", commonNames: ["Yayi"], height: 171, cwId: 26,
         baseStats: { _str: 12, _vit: 2, _agi: 20, _dex: 13, _int: 1, _pie: 2, _luk: 9},
         maxStats0: { _str: 284, _vit: 170, _agi: 364, _dex: 287, _int: 157, _pie: 158, _luk: 244},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
