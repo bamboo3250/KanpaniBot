@@ -132,8 +132,8 @@ function EmployeeBot() {
             endTime     : "Aug 31 2017 14:00:00 GMT+0900"
         },{
             name        : "3rd_Anniversary_Thank_You_Festival Live_Broadcast",
-            startTime   : "Aug 27 2017 20:00:00 GMT+0900",
-            endTime     : "Aug 27 2017 22:00:00 GMT+0900"
+            startTime   : "Aug 27 2017 21:00:00 GMT+0900",
+            endTime     : "Aug 27 2017 23:00:00 GMT+0900"
         }
     ];
     this.daily = {
