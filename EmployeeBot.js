@@ -900,6 +900,7 @@ var employee = new EmployeeBot();
 
 employee.bot.on('guildMemberAdd', (member) => {
     var channels = member.guild.channels.array();
+
     for(var i=0;i<channels.length;i++) {
         if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
             var text = "**" + member.user.username + "** has joined.\n";
@@ -907,6 +908,9 @@ employee.bot.on('guildMemberAdd', (member) => {
             channels[i].send(text);
         } 
     }
+
+    member.send('Welcome~! Message me with a `~roll` and try to find your dream waifu. You can ask more about them and be more involved in `#kanpani_girls` , talk about other dmm games on `#dmm_games` or talk everything random in `#offtopic_general`. Chats are SFW.');
+
     employee.userManager.fetchAllMembers();
 });
 
@@ -914,7 +918,7 @@ employee.bot.on('guildMemberRemove', (member) => {
     var channels = member.guild.channels.array();
     for(var i=0;i<channels.length;i++) {
         if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
-            var text = "**" + member.user.username + "** has leaved.\n";
+            var text = "**" + member.user.username + "** has left.\n";
             text += "Member count: " + member.guild.memberCount;
             channels[i].send(text);
         } 
