@@ -3,6 +3,8 @@ var config = require('./config');
 var dialog = require('./Dialog');
 var fs = require('fs');
 
+myBot.name = "Elsa Novem";
+
 var trainingController = require('./controllers/TrainingController');
 
 var lastTimePat = {};

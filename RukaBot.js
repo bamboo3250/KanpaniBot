@@ -2,6 +2,8 @@ var myBot = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
 
+myBot.name = "Ruka";
+
 var trainingController = require('./controllers/TrainingController');
 
 myBot.declineNotEnoughBread = myBot.declineNotEnoughBread.concat(dialog.ruka.decline);

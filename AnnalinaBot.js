@@ -2,6 +2,8 @@ var myBot = require('./EmployeeBot');
 var config = require('./config');
 var dialog = require('./Dialog');
 
+myBot.name = "Annalina Rehn";
+
 var trainingController = require('./controllers/TrainingController');
 
 var answerTexts = dialog.annalina.answers;

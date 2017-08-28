@@ -909,7 +909,12 @@ employee.bot.on('guildMemberAdd', (member) => {
         } 
     }
 
-    member.send('Welcome~! Message me with a `~roll` and try to find your dream waifu. You can ask more about them and be more involved in `#kanpani_girls` , talk about other dmm games on `#dmm_games` or talk everything random in `#offtopic_general`. Chats are SFW.');
+    member.send(
+        'Welcome ' + member.user.username + '-san~!\n\n' 
+        + 'Message me with a `~roll` and try to find your dream waifu. ' 
+        + 'You can ask more about them and be more involved in `#kanpani_girls`, talk about other dmm games on `#dmm_games` or talk everything random in `#offtopic_general`.\n\n'
+        + 'Chats are SFW!\n\n'
+        + 'Regards,\n' + employee.name);
 
     employee.userManager.fetchAllMembers();
 });
