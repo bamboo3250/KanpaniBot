@@ -112,7 +112,7 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "Aug 31 2017 14:00:00 GMT+0900",
+            startTime   : "Aug 31 2017 10:00:00 GMT+0900",
             endTime     : "Aug 31 2017 17:00:00 GMT+0900"
         },{
             name        : "Kanpani☆Storytelling Campaign",
@@ -125,15 +125,11 @@ function EmployeeBot() {
         },{
             name        : "Kanpani☆Comic_Anthology_Sale_Commemoration Campaign",
             startTime   : "Aug 18 2017 17:00:00 GMT+0900",
-            endTime     : "Aug 31 2017 14:00:00 GMT+0900"
+            endTime     : "Aug 31 2017 10:00:00 GMT+0900"
         },{
             name        : "Kanpani☆3-Year_Anniversary_Event_Prefestival! Campaign",
             startTime   : "Aug 25 2017 17:00:00 GMT+0900",
-            endTime     : "Aug 31 2017 14:00:00 GMT+0900"
-        },{
-            name        : "3rd_Anniversary_Thank_You_Festival Live_Broadcast",
-            startTime   : "Aug 27 2017 21:00:00 GMT+0900",
-            endTime     : "Aug 27 2017 23:00:00 GMT+0900"
+            endTime     : "Aug 31 2017 10:00:00 GMT+0900"
         }
     ];
     this.daily = {
