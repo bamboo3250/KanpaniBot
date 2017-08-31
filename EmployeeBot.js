@@ -112,8 +112,8 @@ function EmployeeBot() {
     this.schedule = [
         {
             name        : "Kanpani☆Girls Maintenance",
-            startTime   : "Aug 31 2017 10:00:00 GMT+0900",
-            endTime     : "Aug 31 2017 17:00:00 GMT+0900"
+            startTime   : "Sep 8 2017 14:00:00 GMT+0900",
+            endTime     : "Sep 8 2017 17:00:00 GMT+0900"
         },{
             name        : "Kanpani☆Storytelling Campaign",
             startTime   : "June 23 2017 17:00:00 GMT+0900",
@@ -123,13 +123,93 @@ function EmployeeBot() {
             startTime   : "June 16 2017 17:00:00 GMT+0900",
             endTime     : "June 23 2017 13:00:00 GMT+0900"
         },{
-            name        : "Kanpani☆Comic_Anthology_Sale_Commemoration Campaign",
-            startTime   : "Aug 18 2017 17:00:00 GMT+0900",
-            endTime     : "Aug 31 2017 10:00:00 GMT+0900"
+            name        : "Training!_Training! Quest",
+            startTime   : "Aug 31 2017 20:00:00 GMT+0900",
+            endTime     : "Aug 31 2017 20:30:00 GMT+0900"
         },{
-            name        : "Kanpani☆3-Year_Anniversary_Event_Prefestival! Campaign",
-            startTime   : "Aug 25 2017 17:00:00 GMT+0900",
-            endTime     : "Aug 31 2017 10:00:00 GMT+0900"
+            name        : "Manufacturing_Horizon Quest",
+            startTime   : "Aug 31 2017 23:00:00 GMT+0900",
+            endTime     : "Aug 31 2017 23:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "Sep 1 2017 12:00:00 GMT+0900",
+            endTime     : "Sep 1 2017 12:30:00 GMT+0900"
+        },{
+            name        : "???",
+            startTime   : "Sep 1 2017 19:00:00 GMT+0900",
+            endTime     : "Sep 1 2017 19:30:00 GMT+0900"
+        },{
+            name        : "Treasure_Legend Quest",
+            startTime   : "Sep 1 2017 21:00:00 GMT+0900",
+            endTime     : "Sep 1 2017 21:30:00 GMT+0900"
+        },{
+            name        : "???",
+            startTime   : "Sep 2 2017 01:00:00 GMT+0900",
+            endTime     : "Sep 2 2017 01:30:00 GMT+0900"
+        },{
+            name        : "Treasure_Legend Quest",
+            startTime   : "Sep 2 2017 12:00:00 GMT+0900",
+            endTime     : "Sep 2 2017 12:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "Sep 2 2017 18:00:00 GMT+0900",
+            endTime     : "Sep 2 2017 18:30:00 GMT+0900"
+        },{
+            name        : "???",
+            startTime   : "Sep 2 2017 22:00:00 GMT+0900",
+            endTime     : "Sep 2 2017 22:30:00 GMT+0900"
+        },{
+            name        : "Treasure_Legend Quest",
+            startTime   : "Sep 3 2017 00:00:00 GMT+0900",
+            endTime     : "Sep 3 2017 00:30:00 GMT+0900"
+        },{
+            name        : "???",
+            startTime   : "Sep 3 2017 11:00:00 GMT+0900",
+            endTime     : "Sep 3 2017 11:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Horizon Quest",
+            startTime   : "Sep 3 2017 20:00:00 GMT+0900",
+            endTime     : "Sep 3 2017 20:30:00 GMT+0900"
+        },{
+            name        : "???",
+            startTime   : "Sep 3 2017 23:00:00 GMT+0900",
+            endTime     : "Sep 3 2017 23:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Horizon Quest",
+            startTime   : "Sep 4 2017 19:00:00 GMT+0900",
+            endTime     : "Sep 4 2017 19:30:00 GMT+0900"
+        },{
+            name        : "Treasure_Legend Quest",
+            startTime   : "Sep 4 2017 22:00:00 GMT+0900",
+            endTime     : "Sep 4 2017 22:30:00 GMT+0900"
+        },{
+            name        : "???",
+            startTime   : "Sep 5 2017 21:00:00 GMT+0900",
+            endTime     : "Sep 5 2017 21:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "Sep 5 2017 23:00:00 GMT+0900",
+            endTime     : "Sep 5 2017 23:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Horizon Quest",
+            startTime   : "Sep 6 2017 20:00:00 GMT+0900",
+            endTime     : "Sep 6 2017 20:30:00 GMT+0900"
+        },{
+            name        : "Treasure_Legend Quest",
+            startTime   : "Sep 6 2017 22:00:00 GMT+0900",
+            endTime     : "Sep 6 2017 22:30:00 GMT+0900"
+        },{
+            name        : "???",
+            startTime   : "Sep 7 2017 00:00:00 GMT+0900",
+            endTime     : "Sep 7 2017 00:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Guide Quest",
+            startTime   : "Sep 7 2017 20:00:00 GMT+0900",
+            endTime     : "Sep 7 2017 20:30:00 GMT+0900"
+        },{
+            name        : "Manufacturing_Horizon Quest",
+            startTime   : "Sep 8 2017 12:00:00 GMT+0900",
+            endTime     : "Sep 8 2017 12:30:00 GMT+0900"
         }
     ];
     this.daily = {

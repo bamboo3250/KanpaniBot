@@ -113,6 +113,12 @@ var employees = [
         maxStats0: { _str: 269, _vit: 537, _agi: 180, _dex: 260, _int: 166, _pie: 318, _luk: 166},
         maxStats1: { _str: 398, _vit: 737, _agi: 265, _dex: 364, _int: 230, _pie: 452, _luk: 230},
         maxStats2: { _str: 570, _vit: 1069, _agi: 373, _dex: 535, _int: 340, _pie: 657, _luk: 340},
+    },{
+        _no: "232", _id: "10450005_d23db0c3", fullName: "Yan Shi", japaneseName: "イェン・シ", commonNames: ["Yan"], height: 167, cwId: 0,
+        baseStats: { _str: 18, _vit: 49, _agi: 10, _dex: 11, _int: 7, _pie: 9, _luk: 7},
+        maxStats0: { _str: 269, _vit: 537, _agi: 180, _dex: 260, _int: 166, _pie: 318, _luk: 166},
+        maxStats1: { _str: 398, _vit: 737, _agi: 265, _dex: 364, _int: 230, _pie: 452, _luk: 230},
+        maxStats2: { _str: 570, _vit: 1069, _agi: 373, _dex: 535, _int: 340, _pie: 657, _luk: 340},
     },
 
     {
@@ -559,6 +565,12 @@ var employees = [
         maxStats0: { _str: 166, _vit: 246, _agi: 213, _dex: 210, _int: 290, _pie: 395, _luk: 219},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
+        _no: "233", _id: "10640009_55f7666f", fullName: "Perlita Badia", japaneseName: "ペルリタ・バディア", commonNames: ["Perlita"], height: 155, cwId: 0,
+        baseStats: { _str: 9, _vit: 12, _agi: 9, _dex: 8, _int: 10, _pie: 25, _luk: 8},
+        maxStats0: { _str: 166, _vit: 246, _agi: 213, _dex: 210, _int: 290, _pie: 395, _luk: 219},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },
 
     {
@@ -717,6 +729,12 @@ var employees = [
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
         _no: "216", _id: "10130010_ee640fc9", fullName: "Rhiwril Noler", japaneseName: "リウリル・ノレア", commonNames: ["Rhiwril"], height: 0, cwId: 0,
+        baseStats: { _str: 14, _vit: 14, _agi: 11, _dex: 10, _int: 1, _pie: 3, _luk: 2},
+        maxStats0: { _str: 342, _vit: 318, _agi: 238, _dex: 240, _int: 201, _pie: 169, _luk: 159},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
+        _no: "234", _id: "10130011_71be8c57", fullName: "Ghislaine Chanel", japaneseName: "ジスレーヌ・シャネル", commonNames: ["Ghislaine"], height: 164, cwId: 0,
         baseStats: { _str: 14, _vit: 14, _agi: 11, _dex: 10, _int: 1, _pie: 3, _luk: 2},
         maxStats0: { _str: 342, _vit: 318, _agi: 238, _dex: 240, _int: 201, _pie: 169, _luk: 159},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
