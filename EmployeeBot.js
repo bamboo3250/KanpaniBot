@@ -123,6 +123,10 @@ function EmployeeBot() {
             startTime   : "June 16 2017 17:00:00 GMT+0900",
             endTime     : "June 23 2017 13:00:00 GMT+0900"
         },{
+            name        : "Kanpani☆3-Year_Anniversary Event",
+            startTime   : "Aug 31 2017 17:00:00 GMT+0900",
+            endTime     : "Oct 06 2017 14:00:00 GMT+0900"
+        },{
             name        : "Training!_Training! Quest",
             startTime   : "Aug 31 2017 20:00:00 GMT+0900",
             endTime     : "Aug 31 2017 20:30:00 GMT+0900"
