@@ -34,6 +34,6 @@ module.exports = {
         }
 
         text = "```Markdown\n" + text + "```";
-        message.channel.send(text);
+        message.author.send(text);
     }
 }
