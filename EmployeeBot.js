@@ -19,6 +19,7 @@ var Jimp            = require('jimp');
 var imageHelper     = require('./helpers/ImageHelper');
 var functionHelper  = require('./helpers/FunctionHelper');
 var urlHelper       = require('./helpers/UrlHelper');
+var requestHelper   = require('./helpers/RequestHelper');
 
 var dailyCommand                = require('./commands/DailyCommand');
 var scheduleCommand             = require('./commands/ScheduleCommand');
@@ -96,7 +97,8 @@ function EmployeeBot() {
     this.imageHelper = imageHelper;
     this.functionHelper = functionHelper;
     this.urlHelper = urlHelper;
-    
+    this.requestHelper = requestHelper;
+
     this.fs = require('fs');
 
     this.playerManager      = new PlayerManager(this);
@@ -109,113 +111,7 @@ function EmployeeBot() {
 
     this.battleController = null;
 
-    this.schedule = [
-        {
-            name        : "Kanpani☆Girls Maintenance",
-            startTime   : "Sep 8 2017 13:00:00 GMT+0900",
-            endTime     : "Sep 8 2017 17:00:00 GMT+0900"
-        },{
-            name        : "Kanpani☆Storytelling Campaign",
-            startTime   : "June 23 2017 17:00:00 GMT+0900",
-            endTime     : "June 30 2017 13:00:00 GMT+0900"
-        },{
-            name        : "Presidents!_It's_Level_Up_Time_Again! Campaign",
-            startTime   : "June 16 2017 17:00:00 GMT+0900",
-            endTime     : "June 23 2017 13:00:00 GMT+0900"
-        },{
-            name        : "Kanpani☆3-Year_Anniversary Event",
-            startTime   : "Aug 31 2017 17:00:00 GMT+0900",
-            endTime     : "Oct 06 2017 14:00:00 GMT+0900"
-        },{
-            name        : "Training!_Training! Quest",
-            startTime   : "Aug 31 2017 20:00:00 GMT+0900",
-            endTime     : "Aug 31 2017 20:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "Aug 31 2017 23:00:00 GMT+0900",
-            endTime     : "Aug 31 2017 23:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Guide Quest",
-            startTime   : "Sep 1 2017 12:00:00 GMT+0900",
-            endTime     : "Sep 1 2017 12:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "Sep 1 2017 19:00:00 GMT+0900",
-            endTime     : "Sep 1 2017 19:30:00 GMT+0900"
-        },{
-            name        : "Treasure_Legend Quest",
-            startTime   : "Sep 1 2017 21:00:00 GMT+0900",
-            endTime     : "Sep 1 2017 21:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "Sep 2 2017 01:00:00 GMT+0900",
-            endTime     : "Sep 2 2017 01:30:00 GMT+0900"
-        },{
-            name        : "Treasure_Legend Quest",
-            startTime   : "Sep 2 2017 12:00:00 GMT+0900",
-            endTime     : "Sep 2 2017 12:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Guide Quest",
-            startTime   : "Sep 2 2017 18:00:00 GMT+0900",
-            endTime     : "Sep 2 2017 18:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "Sep 2 2017 22:00:00 GMT+0900",
-            endTime     : "Sep 2 2017 22:30:00 GMT+0900"
-        },{
-            name        : "Treasure_Legend Quest",
-            startTime   : "Sep 3 2017 00:00:00 GMT+0900",
-            endTime     : "Sep 3 2017 00:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "Sep 3 2017 11:00:00 GMT+0900",
-            endTime     : "Sep 3 2017 11:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "Sep 3 2017 20:00:00 GMT+0900",
-            endTime     : "Sep 3 2017 20:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "Sep 3 2017 23:00:00 GMT+0900",
-            endTime     : "Sep 3 2017 23:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "Sep 4 2017 19:00:00 GMT+0900",
-            endTime     : "Sep 4 2017 19:30:00 GMT+0900"
-        },{
-            name        : "Treasure_Legend Quest",
-            startTime   : "Sep 4 2017 22:00:00 GMT+0900",
-            endTime     : "Sep 4 2017 22:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "Sep 5 2017 21:00:00 GMT+0900",
-            endTime     : "Sep 5 2017 21:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Guide Quest",
-            startTime   : "Sep 5 2017 23:00:00 GMT+0900",
-            endTime     : "Sep 5 2017 23:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "Sep 6 2017 20:00:00 GMT+0900",
-            endTime     : "Sep 6 2017 20:30:00 GMT+0900"
-        },{
-            name        : "Treasure_Legend Quest",
-            startTime   : "Sep 6 2017 22:00:00 GMT+0900",
-            endTime     : "Sep 6 2017 22:30:00 GMT+0900"
-        },{
-            name        : "???",
-            startTime   : "Sep 7 2017 00:00:00 GMT+0900",
-            endTime     : "Sep 7 2017 00:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Guide Quest",
-            startTime   : "Sep 7 2017 20:00:00 GMT+0900",
-            endTime     : "Sep 7 2017 20:30:00 GMT+0900"
-        },{
-            name        : "Manufacturing_Horizon Quest",
-            startTime   : "Sep 8 2017 12:00:00 GMT+0900",
-            endTime     : "Sep 8 2017 12:30:00 GMT+0900"
-        }
-    ];
+    this.schedule = [];
     this.daily = {
         name: "Kanpani☆Girls Daily Draw Reset",
         time: "Mar 18 2017 4:00:00 GMT+0900", 
@@ -494,27 +390,27 @@ EmployeeBot.prototype.greeting = function(channel) {
 
 EmployeeBot.prototype.setDailyDrawReminder = function() {
     var time = this.functionHelper.getTimeUntilDaily(this.dailyRemind); 
-    var that = this;
-    that.bot.setTimeout(function() {
-        that.sendMessageToMainChannel(that.getRole('CEO') + "\n**Reminder: 15 minutes until Daily Draw Reset**");
-        that.bot.setTimeout(function(){
-            that.setDailyDrawReminder();
+    var self = this;
+    self.bot.setTimeout(function() {
+        self.sendMessageToMainChannel(self.getRole('CEO') + "\n**Reminder: 15 minutes until Daily Draw Reset**");
+        self.bot.setTimeout(function(){
+            self.setDailyDrawReminder();
         }, 30*1000);
     }, time);
 }
 
 EmployeeBot.prototype.setAlarm = function(text, time) {
-    var that = this;
+    var self = this;
     this.bot.setTimeout(function() {
-        that.sendMessageToMainChannel(that.getRole('CEO') + '\n' + text)
+        self.sendMessageToMainChannel(self.getRole('CEO') + '\n' + text)
     }, time);
 }
 
 EmployeeBot.prototype.setAlarmForSchedule = function() {
     var now = new Date();
     for(var i=0;i<this.schedule.length;i++) {
-        var name = this.schedule[i].name;
-        var startTime = new Date(this.schedule[i].startTime);
+        var name = this.schedule[i].title;
+        var startTime = new Date(this.schedule[i].start_time);
         
         startTime.setTime(startTime.getTime() - 15*60*1000);
         if (now.valueOf() < startTime.valueOf()) {
@@ -526,75 +422,75 @@ EmployeeBot.prototype.setAlarmForSchedule = function() {
 var soulFileName = "soul.json";
 EmployeeBot.prototype.saveSoul = function() {
     var textToWrite = JSON.stringify(this.hasSoul, null, 4);
-    var that = this;
+    var self = this;
     this.fs.writeFile(soulFileName, textToWrite, function(err) {
         if(err) {
-            that.log(err);
+            self.log(err);
             return;
         }
     }); 
 }
 
 EmployeeBot.prototype.loadSoul = function() {
-    var that = this;
+    var self = this;
     this.fs.readFile(soulFileName, 'utf8', function (err, data) {
         if (err) {
-            that.log(err);
+            self.log(err);
             return;
         }
-        that.hasSoul = JSON.parse(data);
+        self.hasSoul = JSON.parse(data);
     });
 }
 
 var silencedFileName = "silenced.json";
 EmployeeBot.prototype.saveSilenced = function() {
     var textToWrite = JSON.stringify(this.silenced, null, 4);
-    var that = this;
+    var self = this;
     this.fs.writeFile(silencedFileName, textToWrite, function(err) {
         if(err) {
-            that.log(err);
+            self.log(err);
             return;
         }
-        that.log("Saved Silenced");
+        self.log("Saved Silenced");
     }); 
 }
 
 EmployeeBot.prototype.loadSilenced = function() {
-    var that = this;
+    var self = this;
     this.fs.readFile(silencedFileName, 'utf8', function (err, data) {
         if (err) {
-            that.log(err);
+            self.log(err);
             return;
         }
-        that.silenced = JSON.parse(data);
+        self.silenced = JSON.parse(data);
     });
 }
 
 var unsubscribeFileName = "unsubscribe.json";
 EmployeeBot.prototype.saveUnsubscribe = function() {
     var textToWrite = JSON.stringify(this.unsubscribe, null, 4);
-    var that = this;
+    var self = this;
     this.fs.writeFile(unsubscribeFileName, textToWrite, function(err) {
         if(err) {
-            that.log(err);
+            self.log(err);
             return;
         }
     }); 
 }
 
 EmployeeBot.prototype.loadUnsubscribe = function() {
-    var that = this;
+    var self = this;
     this.fs.readFile(unsubscribeFileName, 'utf8', function (err, data) {
         if (err) {
-            that.log(err);
+            self.log(err);
             return;
         }
         try {
-            that.unsubscribe = JSON.parse(data);
+            self.unsubscribe = JSON.parse(data);
         }
         catch (err) {
-            that.log(err);
-            that.unsubscribe = {};   
+            self.log(err);
+            self.unsubscribe = {};   
         }
     });
 }
@@ -614,27 +510,27 @@ EmployeeBot.prototype.getUser = function(userId) {
 var dailyGiftFileName = "dailygift.json";
 EmployeeBot.prototype.saveDailyGift = function() {
     var textToWrite = JSON.stringify(this.dailyGift, null, 4);
-    var that = this;
+    var self = this;
     this.fs.writeFile(dailyGiftFileName, textToWrite, function(err) {
         if(err) {
-            that.log(err);
+            self.log(err);
             return;  
         } 
     }); 
 }
 
 EmployeeBot.prototype.loadDailyGift = function() {
-    var that = this;
+    var self = this;
     this.fs.readFile(dailyGiftFileName, 'utf8', function (err, data) {
         if (err) {
-            that.log("[loadDailyGift] Read file error.\n" + err);
+            self.log("[loadDailyGift] Read file error.\n" + err);
             return;
         }
         try {
-            that.dailyGift = JSON.parse(data);
+            self.dailyGift = JSON.parse(data);
         }
         catch (err) {
-            that.log(err);
+            self.log(err);
         }
     });
 }
@@ -642,30 +538,30 @@ EmployeeBot.prototype.loadDailyGift = function() {
 var shopFileName = "shop.json";
 EmployeeBot.prototype.saveShop = function() {
     var textToWrite = JSON.stringify(this.shop, null, 4);
-    var that = this;
+    var self = this;
     this.fs.writeFile(shopFileName, textToWrite, function(err) {
         if(err) {
-            that.log(err);
+            self.log(err);
             return;  
         } 
     }); 
 }
 
 EmployeeBot.prototype.loadShop = function() {
-    var that = this;
+    var self = this;
     this.log("loadShop");
     console.log("loadShop");
     this.fs.readFile(shopFileName, 'utf8', function (err, data) {
         if (err) {
-            that.log("[loadShop] Read file error.\n" + err);
+            self.log("[loadShop] Read file error.\n" + err);
             return;
         }
         try {
-            that.shop = JSON.parse(data);
+            self.shop = JSON.parse(data);
         }
         catch (err) {
             console.log(err);
-            that.log(err);
+            self.log(err);
         }
     });
 }
@@ -673,32 +569,32 @@ EmployeeBot.prototype.loadShop = function() {
 var kettleFileName = "kettle.json";
 EmployeeBot.prototype.saveKettle = function() {
     var textToWrite = JSON.stringify(this.kettle, null, 4);
-    var that = this;
+    var self = this;
     this.fs.writeFile(kettleFileName, textToWrite, function(err) {
         if(err) {
-            that.log(err);
+            self.log(err);
             return;  
         } 
     });
 }
 
 EmployeeBot.prototype.loadKettle = function() {
-    var that = this;
+    var self = this;
     this.log("loadKettle");
     console.log("load Kettle")
     this.fs.readFile(kettleFileName, 'utf8', function (err, data) {
         console.log("Read Kettle");
         if (err) {
-            that.log("[loadKettle] Read file error.\n" + err);
-            that.startKettle();
+            self.log("[loadKettle] Read file error.\n" + err);
+            self.startKettle();
             return;
         }
         try {
-            that.kettle = JSON.parse(data);
-            that.startKettle();
+            self.kettle = JSON.parse(data);
+            self.startKettle();
         }
         catch (err) {
-            that.log(err);
+            self.log(err);
             console.log(err);
         }
     });
@@ -733,73 +629,73 @@ EmployeeBot.prototype.getKettleProduction = function() {
 
 EmployeeBot.prototype.startKettle = function() {
     console.log("started Kettle")
-    var that = this;
+    var self = this;
     setInterval(function() {
-        var production = that.getKettleProduction();
-        for(key in that.kettle.contribution) {
+        var production = self.getKettleProduction();
+        for(key in self.kettle.contribution) {
             var userId = key;
-            if (that.kettle.contribution[userId] > 0) {
-                that.kettle.contribution[userId]--;
+            if (self.kettle.contribution[userId] > 0) {
+                self.kettle.contribution[userId]--;
 
-                if (typeof that.kettle.chocolate[userId] == "undefined") {
-                    that.kettle.chocolate[userId] = 0;
+                if (typeof self.kettle.chocolate[userId] == "undefined") {
+                    self.kettle.chocolate[userId] = 0;
                 }
-                that.kettle.chocolate[userId] += production;
+                self.kettle.chocolate[userId] += production;
             }
         }
 
-        that.saveKettle();
+        self.saveKettle();
     }, 60*1000);
 }
 
 var runQuestStatusFileName = "runQuestStatus.json";
 EmployeeBot.prototype.saveRunQuestStatus = function() {
     var textToWrite = JSON.stringify(this.runQuestStatus, null, 4);
-    var that = this;
+    var self = this;
     this.fs.writeFile(runQuestStatusFileName, textToWrite, function(err) {
         if(err) {
-            that.log(err);
+            self.log(err);
             return;  
         } 
     }); 
 }
 
 EmployeeBot.prototype.loadRunQuestStatus = function() {
-    var that = this;
+    var self = this;
     this.log("loadRunQuestStatus");
     console.log("loadRunQuestStatus");
     this.fs.readFile(runQuestStatusFileName, 'utf8', function (err, data) {
         if (err) {
-            that.log("[loadRunQuestStatus] " + err);
+            self.log("[loadRunQuestStatus] " + err);
             return;
         }
         try {
-            that.runQuestStatus = JSON.parse(data);
+            self.runQuestStatus = JSON.parse(data);
         }
         catch (err) {
-            that.runQuestStatus = {};
-            that.log(err);
+            self.runQuestStatus = {};
+            self.log(err);
         }
         var text = "";
-        for(key in that.userManager.members) {
+        for(key in self.userManager.members) {
             var userId = key;
-            that.initBreadIfNeed(userId);
-            var member = that.userManager.members[userId];
+            self.initBreadIfNeed(userId);
+            var member = self.userManager.members[userId];
 
-            if ((typeof that.runQuestStatus[userId] !== "undefined") && (that.runQuestStatus[userId].quest != "")) {
-                var questName = that.runQuestStatus[userId].quest;
-                var endTime = that.runQuestStatus[userId].endTime;
+            if ((typeof self.runQuestStatus[userId] !== "undefined") && (self.runQuestStatus[userId].quest != "")) {
+                var questName = self.runQuestStatus[userId].quest;
+                var endTime = self.runQuestStatus[userId].endTime;
                 var now = new Date();
                 var remainingTime = endTime - now.valueOf();
-                var time = that.functionHelper.parseTime(remainingTime);
+                var time = self.functionHelper.parseTime(remainingTime);
                 var bread = -1;
-                if (typeof that.runQuestStatus[userId].bread != "undefined") {
-                    bread = that.runQuestStatus[userId].bread;
+                if (typeof self.runQuestStatus[userId].bread != "undefined") {
+                    bread = self.runQuestStatus[userId].bread;
                 }
-                grindCommand.runQuest(that, questName, bread, member.user, false, remainingTime);
+                grindCommand.runQuest(self, questName, bread, member.user, false, remainingTime);
 
                 text = "Resume quest " + questName + " for player " + member.user.username + " (Bread: " + bread + "). Remaining Time: " + time + "\n";
-                that.log(text);
+                self.log(text);
             }
         }
     });
@@ -808,35 +704,35 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
 var auctionFileName = "auction.json";
 EmployeeBot.prototype.saveAuction = function() {
     var textToWrite = JSON.stringify(this.auctionManager.auctions, null, 4);
-    var that = this;
+    var self = this;
     this.fs.writeFile(auctionFileName, textToWrite, function(err) {
         if(err) {
-            that.log(err);
+            self.log(err);
             return;  
         } 
     }); 
 }
 
 EmployeeBot.prototype.loadAuction = function() {
-    var that = this;
+    var self = this;
     this.log("loadAuction");
     console.log("loadAuction");
     this.fs.readFile(auctionFileName, 'utf8', function (err, data) {
         if (err) {
-            that.log("[loadAuction] " + err);
+            self.log("[loadAuction] " + err);
             return;
         }
         try {
-            that.auctionManager.auctions = JSON.parse(data);
+            self.auctionManager.auctions = JSON.parse(data);
         }
         catch (err) {
-            that.auctionManager.auctions = {};
-            that.log(err);
+            self.auctionManager.auctions = {};
+            self.log(err);
         }
         var text = "";
-        for(key in that.auctionManager.auctions) {
+        for(key in self.auctionManager.auctions) {
             var userId = key;
-            setAuctionCommand.setNotice(that, userId);
+            setAuctionCommand.setNotice(self, userId);
         }
     });
 }
@@ -861,33 +757,47 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
             queueToRead.push(fileName);
         }
 
-        var that = this;
+        var self = this;
         this.imageHelper.download(queue, function(err) {
             if (err) {
-                that.log(err);
+                self.log(err);
                 return;
             }
 
-            that.imageHelper.read(queueToRead, function (err, imageList) {
+            self.imageHelper.read(queueToRead, function (err, imageList) {
                 if (err) {
-                    that.log(err);
+                    self.log(err);
                     return;
                 }
                 image = new Jimp(1001 * koList.length, 1162, 0xFFFFFF00, function (err, image) {
                     for(var i=0;i<koList.length;i++) {
                         var koUserId = koList[i];
-                        var koUnit = that.playerManager.getPlayerUnit(koUserId);
+                        var koUnit = self.playerManager.getPlayerUnit(koUserId);
                         var fileName = "images/chara_ko/" + koUnit.characterId + ".png";
                         image.composite(imageList[fileName], 1001 * i, 0);
                     }
                     var imageName = "images/battle_ko/" + userId + ".png";
                     image.write(imageName, function() {
-                        that.battleChannel.send('', { 'files': [imageName] });
+                        self.battleChannel.send('', { 'files': [imageName] });
                     });
                 });
             });
         });
     }
+}
+
+EmployeeBot.prototype.retrieveSchedule = function(callback) {
+    var self = this;
+    this.requestHelper.get('https://https://kanpanitools.com/schedule_list', function(body, error) {
+        if (error) {
+            self.log('Download Schedule list failed!');
+            callback();
+            return;
+        }
+
+        self.schedule = JSON.parse(body);
+        callback();
+    });
 }
 
 EmployeeBot.prototype.ready = function() {
@@ -919,9 +829,11 @@ EmployeeBot.prototype.ready = function() {
         this.log(text);
         console.log(text);
 
-        var that = this;
+        var self = this;
 
-        this.setAlarmForSchedule();
+        this.retrieveSchedule(function() {
+            self.setAlarmForSchedule();
+        })
         this.setDailyDrawReminder();
         this.breadManager.setBreadRegeneration();
         this.firstTimeReady = false;
@@ -933,12 +845,12 @@ EmployeeBot.prototype.ready = function() {
         this.loadShop();
         this.loadSilenced();
         this.playerManager.loadPlayer(function() {
-            that.userManager.fetchAllMembers(function() {
-                that.loadRunQuestStatus();
-                that.loadAuction();
-                that.removeFaintedRole();
-                that.saveSilenced();
-                that.breadManager.setTimer();
+            self.userManager.fetchAllMembers(function() {
+                self.loadRunQuestStatus();
+                self.loadAuction();
+                self.removeFaintedRole();
+                self.saveSilenced();
+                self.breadManager.setTimer();
             });
         });
         //this.loadKettle();

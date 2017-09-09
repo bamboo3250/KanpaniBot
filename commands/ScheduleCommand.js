@@ -1,20 +1,17 @@
 module.exports = {
-    handle: function(message, bot) {
-        var text = message.content.trim().toLowerCase();
-        if (text !== "~schedule") return;
-        
+    postSchedule: function(message, bot) {
         var now = new Date();
 
         text = '';
         var shownCount = 0;
 
         for(var i=0;i<bot.schedule.length;i++) {
-            var startTime = new Date(bot.schedule[i].startTime);
-            var endTime = new Date(bot.schedule[i].endTime);
+            var startTime = new Date(bot.schedule[i].start_time);
+            var endTime = new Date(bot.schedule[i].end_time);
             if (now.valueOf() < endTime.valueOf()) {
                 if (shownCount >= 5) continue;
 
-                text += "<" + bot.schedule[i].name + ">\n";
+                text += "<" + bot.schedule[i].title + ">\n";
 
                 if (now.valueOf() < startTime.valueOf()) {
                     var time = bot.functionHelper.parseTime(startTime.valueOf() - now.valueOf());
@@ -35,5 +32,17 @@ module.exports = {
 
         text = "```Markdown\n" + text + "```";
         message.author.send(text);
+    },
+
+    handle: function(message, bot) {
+        var text = message.content.trim().toLowerCase();
+        if (text !== "~schedule") return;
+        
+        var self = this;
+        bot.retrieveSchedule(function() {
+            self.postSchedule(message, bot);
+        });
+
+        
     }
 }
