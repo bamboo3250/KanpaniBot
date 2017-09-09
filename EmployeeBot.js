@@ -796,8 +796,15 @@ EmployeeBot.prototype.retrieveSchedule = function(callback) {
             return;
         }
 
-        self.schedule = JSON.parse(body);
+        try {
+            self.schedule = JSON.parse(body);
+        }
+        catch(err) {
+            self.log('Parsing Json error: ' + err);
+            self.log('Body: ' + body);
+        }
         callback();
+        
     });
 }
 
