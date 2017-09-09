@@ -791,7 +791,7 @@ EmployeeBot.prototype.retrieveSchedule = function(callback) {
     this.requestHelper.get('https://kanpanitools.com/schedule_list', function(body, error) {
         if (error) {
             self.log('Download Schedule list failed!');
-            self.log(error);
+            self.log('Error: ' + error);
             callback();
             return;
         }
