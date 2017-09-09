@@ -1,22 +1,22 @@
-var https = require('https');
+'use strict';
+
+var request = require('request'); 
+var rootCas = require('ssl-root-cas/latest').create();
+ 
+rootCas.addFile('/etc/ssl/certs/kanpanitools_com.crt');
+ 
+// will work with all https requests will all libraries (i.e. request.js) 
+require('https').globalAgent.options.ca = rootCas;
 
 function RequestHelper() {}
 
-RequestHelper.prototype.getHttps = function(url, callback) {
-
-    https.get(url, (res) => {
-        var body = "";
-        res.on('data', function(data) {
-            body += data;
-        });
-
-        res.on('end', function() {
-            //here we have the full response, html or json object
+RequestHelper.prototype.get = function(url, callback) {
+    request(url, function (error, response, body) {
+        if (!error && response && response.statusCode == 200) {
             callback(body, null);
-        })
-
-    }).on('error', (error) => {
-        callback(null, error);
+        } else {
+            callback(null, error);
+        }
     });
 };
 
