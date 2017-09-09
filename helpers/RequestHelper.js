@@ -1,4 +1,12 @@
-var request = require('request');
+'use strict';
+
+var request = require('request'); 
+var rootCas = require('ssl-root-cas/latest').create();
+ 
+rootCas.addFile('/etc/ssl/cert/ssl-cert-snakeoil.pem');
+ 
+// will work with all https requests will all libraries (i.e. request.js) 
+require('https').globalAgent.options.ca = rootCas;
 
 function RequestHelper() {}
 
