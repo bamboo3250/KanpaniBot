@@ -801,7 +801,7 @@ EmployeeBot.prototype.retrieveSchedule = function(callback) {
         }
         catch(err) {
             self.log('Parsing Json error: ' + err);
-            self.log('Body: ' + body);
+            console.log('Body: ' + body);
         }
         callback();
         
