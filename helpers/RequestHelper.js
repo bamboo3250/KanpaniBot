@@ -4,7 +4,7 @@ function RequestHelper() {}
 
 RequestHelper.prototype.getHttps = function(url, callback) {
 
-    https.get('https://encrypted.google.com/', (res) => {
+    https.get(url, (res) => {
         var body = "";
         res.on('data', function(data) {
             body += data;
