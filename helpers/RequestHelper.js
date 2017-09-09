@@ -1,22 +1,22 @@
-'use strict';
-
-var request = require('request'); 
-var rootCas = require('ssl-root-cas/latest').create();
- 
-rootCas.addFile('/etc/ssl/certs/ssl-cert-snakeoil.pem');
-
-// will work with all https requests will all libraries (i.e. request.js) 
-require('https').globalAgent.options.ca = rootCas;
+var https = require('https');
 
 function RequestHelper() {}
 
-RequestHelper.prototype.get = function(url, callback) {
-    request(url, function (error, response, body) {
-        if (!error && response && response.statusCode == 200) {
+RequestHelper.prototype.getHttps = function(url, callback) {
+
+    https.get('https://encrypted.google.com/', (res) => {
+        var body = "";
+        res.on('data', function(data) {
+            body += data;
+        });
+
+        res.on('end', function() {
+            //here we have the full response, html or json object
             callback(body, null);
-        } else {
-            callback(null, error);
-        }
+        })
+
+    }).on('error', (e) => {
+        callback(null, error);
     });
 };
 

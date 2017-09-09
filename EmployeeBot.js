@@ -788,7 +788,7 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
 
 EmployeeBot.prototype.retrieveSchedule = function(callback) {
     var self = this;
-    this.requestHelper.get('https://kanpanitools.com/schedule_list', function(body, error) {
+    this.requestHelper.getHttps('https://kanpanitools.com/schedule_list', function(body, error) {
         if (error) {
             self.log('Download Schedule list failed!');
             self.log('Error: ' + error);
