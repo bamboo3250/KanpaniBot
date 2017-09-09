@@ -796,6 +796,7 @@ EmployeeBot.prototype.retrieveSchedule = function(callback) {
         catch (err) {
             self.bot.log(err);
         }
+        callback();
     });
 }
 
