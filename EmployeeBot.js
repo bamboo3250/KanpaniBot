@@ -791,10 +791,10 @@ EmployeeBot.prototype.retrieveSchedule = function(callback) {
         if (err) { console.log(err); return; }
 
         try {
-            that.schedule = JSON.parse(data);
+            self.schedule = JSON.parse(data);
         }
         catch (err) {
-            that.bot.log(err);
+            self.bot.log(err);
         }
     });
 }
