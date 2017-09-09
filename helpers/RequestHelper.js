@@ -15,7 +15,7 @@ RequestHelper.prototype.getHttps = function(url, callback) {
             callback(body, null);
         })
 
-    }).on('error', (e) => {
+    }).on('error', (error) => {
         callback(null, error);
     });
 };
