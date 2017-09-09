@@ -19,7 +19,6 @@ var Jimp            = require('jimp');
 var imageHelper     = require('./helpers/ImageHelper');
 var functionHelper  = require('./helpers/FunctionHelper');
 var urlHelper       = require('./helpers/UrlHelper');
-var requestHelper   = require('./helpers/RequestHelper');
 
 var dailyCommand                = require('./commands/DailyCommand');
 var scheduleCommand             = require('./commands/ScheduleCommand');
@@ -97,7 +96,6 @@ function EmployeeBot() {
     this.imageHelper = imageHelper;
     this.functionHelper = functionHelper;
     this.urlHelper = urlHelper;
-    this.requestHelper = requestHelper;
 
     this.fs = require('fs');
 
@@ -788,23 +786,16 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
 
 EmployeeBot.prototype.retrieveSchedule = function(callback) {
     var self = this;
-    this.requestHelper.get('https://kanpanitools.com/schedule_list', function(body, error) {
-        if (error) {
-            self.log('Download Schedule list failed!');
-            self.log('Error: ' + error);
-            callback();
-            return;
-        }
+
+    this.fs.readFile('schedule.json', 'utf8', function (err, data) {
+        if (err) { console.log(err); return; }
 
         try {
-            self.schedule = JSON.parse(body);
+            that.schedule = JSON.parse(data);
         }
-        catch(err) {
-            self.log('Parsing Json error: ' + err);
-            console.log('Body: ' + body);
+        catch (err) {
+            that.bot.log(err);
         }
-        callback();
-        
     });
 }
 

@@ -38,11 +38,6 @@ module.exports = {
         var text = message.content.trim().toLowerCase();
         if (text !== "~schedule") return;
         
-        var self = this;
-        bot.retrieveSchedule(function() {
-            self.postSchedule(message, bot);
-        });
-
-        
+        this.postSchedule(message, bot);        
     }
 }
