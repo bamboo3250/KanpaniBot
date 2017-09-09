@@ -3,8 +3,8 @@
 var request = require('request'); 
 var rootCas = require('ssl-root-cas/latest').create();
  
-rootCas.addFile('/etc/ssl/cert/ssl-cert-snakeoil.pem');
- 
+rootCas.addFile('/etc/ssl/certs/ssl-cert-snakeoil.pem');
+
 // will work with all https requests will all libraries (i.e. request.js) 
 require('https').globalAgent.options.ca = rootCas;
 
