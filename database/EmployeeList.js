@@ -1,6 +1,6 @@
 var employees = [
     {
-        _no: "106", _id: "10150001_0d4d8431", fullName: "Rose Le Verrier", japaneseName: "ローズ・ル・ヴァリエ", commonNames: ["Rose"], height: 168, cwId: 4,
+        _no: "106", _id: "10150001_0d4d8431", fullName: "Rose Le Verrier", japaneseName: "ローズ・ル・ヴァリエ", commonNames: ["Rose"], height: 168, cwId: 31,
         baseStats: { _str: 34, _vit: 31, _agi: 18, _dex: 17, _int: 5, _pie: 5, _luk: 5},
         maxStats0: { _str: 385, _vit: 361, _agi: 269, _dex: 268, _int: 234, _pie: 206, _luk: 175},
         maxStats1: { _str: 515, _vit: 502, _agi: 369, _dex: 368, _int: 322, _pie: 279, _luk: 263},
@@ -122,7 +122,7 @@ var employees = [
     },
 
     {
-        _no: "108", _id: "10550001_27d912ef", fullName: "Siegrid Ende", japaneseName: "ジークリット・エンデ", commonNames: ["Siegrid", "Sieg"], height: 165, cwId: 10,
+        _no: "108", _id: "10550001_27d912ef", fullName: "Siegrid Ende", japaneseName: "ジークリット・エンデ", commonNames: ["Siegrid", "Sieg"], height: 165, cwId: 35,
         baseStats: { _str: 46, _vit: 19, _agi: 17, _dex: 8, _int: 3, _pie: 3, _luk: 16},
         maxStats0: { _str: 510, _vit: 311, _agi: 246, _dex: 188, _int: 162, _pie: 184, _luk: 308},
         maxStats1: { _str: 694, _vit: 448, _agi: 328, _dex: 270, _int: 228, _pie: 268, _luk: 418},
@@ -145,10 +145,16 @@ var employees = [
         maxStats0: { _str: 514, _vit: 286, _agi: 248, _dex: 182, _int: 233, _pie: 139, _luk: 312},
         maxStats1: { _str: 696, _vit: 406, _agi: 329, _dex: 266, _int: 322, _pie: 216, _luk: 420},
         maxStats2: { _str: 962, _vit: 565, _agi: 467, _dex: 361, _int: 444, _pie: 289, _luk: 589},
+    },{
+        _no: "235", _id: "10550005_35201654", fullName: "Ques e'Quel", japaneseName: "クウェス・イクウェル", commonNames: ["Ques"], height: 148, cwId: 0,
+        baseStats: { _str: 50, _vit: 17, _agi: 10, _dex: 12, _int: 4, _pie: 1, _luk: 20},
+        maxStats0: { _str: 514, _vit: 286, _agi: 248, _dex: 182, _int: 233, _pie: 139, _luk: 312},
+        maxStats1: { _str: 696, _vit: 406, _agi: 329, _dex: 266, _int: 322, _pie: 216, _luk: 420},
+        maxStats2: { _str: 962, _vit: 565, _agi: 467, _dex: 361, _int: 444, _pie: 289, _luk: 589},
     },
 
     {
-        _no: "110", _id: "10650001_d58eff17", fullName: "Holly Balbirnie", japaneseName: "ホリー・バルバーニー", commonNames: ["Holly"], height: 142, cwId: 5,
+        _no: "110", _id: "10650001_d58eff17", fullName: "Holly Balbirnie", japaneseName: "ホリー・バルバーニー", commonNames: ["Holly"], height: 142, cwId: 28,
         baseStats: { _str: 12, _vit: 19, _agi: 11, _dex: 9, _int: 12, _pie: 36, _luk: 12},
         maxStats0: { _str: 182, _vit: 270, _agi: 240, _dex: 238, _int: 321, _pie: 444, _luk: 250},
         maxStats1: { _str: 266, _vit: 369, _agi: 325, _dex: 324, _int: 454, _pie: 603, _luk: 330},
@@ -442,7 +448,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "194", _id: "10440007_937221b0", fullName: "Ashtena Rothe", japaneseName: "アシュテナ・ロッテ", commonNames: ["Ashtena"], height: 182, cwId: 0,
+        _no: "194", _id: "10440007_937221b0", fullName: "Ashtena Rothe", japaneseName: "アシュテナ・ロッテ", commonNames: ["Ashtena"], height: 182, cwId: 27,
         baseStats: { _str: 14, _vit: 31, _agi: 8, _dex: 10, _int: 9, _pie: 4, _luk: 4},
         maxStats0: { _str: 245, _vit: 476, _agi: 165, _dex: 242, _int: 161, _pie: 269, _luk: 161},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -498,7 +504,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "195", _id: "10540007_746f8727", fullName: "Rulushe Neher", japaneseName: "ルルシエ・ネエル", commonNames: ["Rulushe"], height: 143, cwId: 0,
+        _no: "195", _id: "10540007_746f8727", fullName: "Rulushe Neher", japaneseName: "ルルシエ・ネエル", commonNames: ["Rulushe"], height: 143, cwId: 32,
         baseStats: { _str: 32, _vit: 12, _agi: 11, _dex: 4, _int: 2, _pie: 13, _luk: 2},
         maxStats0: { _str: 473, _vit: 277, _agi: 225, _dex: 160, _int: 151, _pie: 171, _luk: 275},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -686,7 +692,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "90", _id: "10130003_8252e9ea", fullName: "Monique Waroquier", japaneseName: "モニク・ワロキエ", commonNames: ["Monique"], height: 138, cwId: 1,
+        _no: "90", _id: "10130003_8252e9ea", fullName: "Monique Waroquier", japaneseName: "モニク・ワロキエ", commonNames: ["Monique"], height: 138, cwId: 32,
         baseStats: { _str: 15, _vit: 14, _agi: 9, _dex: 9, _int: 3, _pie: 2, _luk: 3},
         maxStats0: { _str: 338, _vit: 288, _agi: 248, _dex: 239, _int: 203, _pie: 169, _luk: 170},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -1056,7 +1062,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "211", _id: "10630008_047d1959", fullName: "Norma Sheen", japaneseName: "ノーマ・シーン", commonNames: ["Norma"], height: 0, cwId: 0,
+        _no: "211", _id: "10630008_047d1959", fullName: "Norma Sheen", japaneseName: "ノーマ・シーン", commonNames: ["Norma"], height: 0, cwId: 27,
         baseStats: { _str: 5, _vit: 8, _agi: 7, _dex: 5, _int: 7, _pie: 18, _luk: 5},
         maxStats0: { _str: 160, _vit: 238, _agi: 207, _dex: 218, _int: 280, _pie: 386, _luk: 205},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
