@@ -90,7 +90,7 @@ var employees = [
     },
 
     {
-        _no: "107", _id: "10450001_c0c4b478", fullName: "Adelina Olmi", japaneseName: "アデリーナ・オルミ", commonNames: ["Adelina", "Aderina"], height: 182, cwId: 10,
+        _no: "107", _id: "10450001_c0c4b478", fullName: "Adelina Olmi", japaneseName: "アデリーナ・オルミ", commonNames: ["Adelina", "Aderina"], height: 182, cwId: 22,
         baseStats: { _str: 20, _vit: 47, _agi: 11, _dex: 12, _int: 8, _pie: 7, _luk: 7},
         maxStats0: { _str: 271, _vit: 527, _agi: 191, _dex: 263, _int: 178, _pie: 275, _luk: 177},
         maxStats1: { _str: 399, _vit: 731, _agi: 271, _dex: 395, _int: 264, _pie: 401, _luk: 264},
@@ -114,7 +114,7 @@ var employees = [
         maxStats1: { _str: 398, _vit: 737, _agi: 265, _dex: 364, _int: 230, _pie: 452, _luk: 230},
         maxStats2: { _str: 570, _vit: 1069, _agi: 373, _dex: 535, _int: 340, _pie: 657, _luk: 340},
     },{
-        _no: "232", _id: "10450005_d23db0c3", fullName: "Yan Shi", japaneseName: "イェン・シ", commonNames: ["Yan"], height: 167, cwId: 0,
+        _no: "232", _id: "10450005_d23db0c3", fullName: "Yan Shi", japaneseName: "イェン・シ", commonNames: ["Yan"], height: 167, cwId: 28,
         baseStats: { _str: 18, _vit: 49, _agi: 10, _dex: 11, _int: 7, _pie: 9, _luk: 7},
         maxStats0: { _str: 269, _vit: 537, _agi: 180, _dex: 260, _int: 166, _pie: 318, _luk: 166},
         maxStats1: { _str: 398, _vit: 737, _agi: 265, _dex: 364, _int: 230, _pie: 452, _luk: 230},
@@ -734,7 +734,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "216", _id: "10130010_ee640fc9", fullName: "Rhiwril Noler", japaneseName: "リウリル・ノレア", commonNames: ["Rhiwril"], height: 0, cwId: 0,
+        _no: "216", _id: "10130010_ee640fc9", fullName: "Rhiwril Noler", japaneseName: "リウリル・ノレア", commonNames: ["Rhiwril"], height: 0, cwId: 29,
         baseStats: { _str: 14, _vit: 14, _agi: 11, _dex: 10, _int: 1, _pie: 3, _luk: 2},
         maxStats0: { _str: 342, _vit: 318, _agi: 238, _dex: 240, _int: 201, _pie: 169, _luk: 159},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -1006,7 +1006,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "214", _id: "10530010_c4f09917", fullName: "Inga Lowlein", japaneseName: "インガ・レーヴライン", commonNames: ["Inga"], height: 0, cwId: 0,
+        _no: "214", _id: "10530010_c4f09917", fullName: "Inga Lowlein", japaneseName: "インガ・レーヴライン", commonNames: ["Inga"], height: 0, cwId: 33,
         baseStats: { _str: 22, _vit: 9, _agi: 7, _dex: 4, _int: 1, _pie: 2, _luk: 7},
         maxStats0: { _str: 458, _vit: 269, _agi: 207, _dex: 159, _int: 147, _pie: 167, _luk: 265},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
