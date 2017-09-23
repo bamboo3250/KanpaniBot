@@ -24,6 +24,7 @@
     "discord.js": "^11.1.0",
     "jimp": "^0.2.27",
     "node-opus": "^0.2.4",
-    "opusscript": "0.0.1"
+    "opusscript": "0.0.1",
+    "ssl-root-cas": "^1.2.3"
   }
 }
