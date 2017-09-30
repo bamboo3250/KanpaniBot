@@ -64,7 +64,7 @@ var employees = [
     },
 
     {
-        _no: "111", _id: "10350001_1807cf5e", fullName: "Judita Jicha", japaneseName: "ユディタ・イーハ", commonNames: ["Judita"], height: 170, cwId: 8,
+        _no: "111", _id: "10350001_1807cf5e", fullName: "Judita Jicha", japaneseName: "ユディタ・イーハ", commonNames: ["Judita"], height: 170, cwId: 29,
         baseStats: { _str: 9, _vit: 7, _agi: 36, _dex: 44, _int: 5, _pie: 5, _luk: 8},
         maxStats0: { _str: 179, _vit: 236, _agi: 435, _dex: 507, _int: 175, _pie: 175, _luk: 178},
         maxStats1: { _str: 265, _vit: 323, _agi: 599, _dex: 693, _int: 263, _pie: 269, _luk: 264},
@@ -83,6 +83,12 @@ var employees = [
         maxStats2: { _str: 354, _vit: 430, _agi: 783, _dex: 911, _int: 321, _pie: 348, _luk: 323},
     },{
         _no: "207", _id: "10350004_9524487b", fullName: "Canahart Vinokurov", japaneseName: "カナハ・ヴィノクロフ", commonNames: ["Canahart", "Canaha", "Kanaha"], height: 0, cwId: 26,
+        baseStats: { _str: 9, _vit: 1, _agi: 38, _dex: 47, _int: 7, _pie: 7, _luk: 9},
+        maxStats0: { _str: 155, _vit: 230, _agi: 439, _dex: 510, _int: 220, _pie: 173, _luk: 177},
+        maxStats1: { _str: 224, _vit: 320, _agi: 600, _dex: 694, _int: 314, _pie: 262, _luk: 236},
+        maxStats2: { _str: 286, _vit: 428, _agi: 784, _dex: 910, _int: 407, _pie: 348, _luk: 322},
+    },{
+        _no: "236", _id: "10350005_0afecbe5", fullName: "Ada Cromwell", japaneseName: "エイダ・クロムウェル", commonNames: ["Ada"], height: 147, cwId: 0,
         baseStats: { _str: 9, _vit: 1, _agi: 38, _dex: 47, _int: 7, _pie: 7, _luk: 9},
         maxStats0: { _str: 155, _vit: 230, _agi: 439, _dex: 510, _int: 220, _pie: 173, _luk: 177},
         maxStats1: { _str: 224, _vit: 320, _agi: 600, _dex: 694, _int: 314, _pie: 262, _luk: 236},
@@ -672,6 +678,12 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
+        _no: "237", _id: "10840008_a0da15fc", fullName: "Astrid Linni", japaneseName: "アストリッド・リンネ", commonNames: ["Astrid"], height: 153, cwId: 0,
+        baseStats: { _str: 3, _vit: 1, _agi: 22, _dex: 14, _int: 32, _pie: 8, _luk: 5},
+        maxStats0: { _str: 153, _vit: 153, _agi: 234, _dex: 247, _int: 477, _pie: 233, _luk: 216},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
         _no: "EX004", _id: "10849001_49dac68d", fullName: "Aurora Hard", japaneseName: "アウロラ・ホード", commonNames: ["Ex Aurora", "Aurora EX"], height: 0, cwId: 1,
         baseStats: { _str: 4, _vit: 6, _agi: 14, _dex: 14, _int: 34, _pie: 8, _luk: 5},
         maxStats0: { _str: 153, _vit: 153, _agi: 234, _dex: 247, _int: 477, _pie: 233, _luk: 216},
@@ -1143,6 +1155,12 @@ var employees = [
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
         _no: "222", _id: "10730010_d1bad278", fullName: "Palvi Kaasinen", japaneseName: "パルヴィ・カーシネン", commonNames: ["Palvi"], height: 0, cwId: 0,
+        baseStats: { _str: 10, _vit: 2, _agi: 22, _dex: 12, _int: 4, _pie: 5, _luk: 1},
+        maxStats0: { _str: 284, _vit: 170, _agi: 364, _dex: 287, _int: 157, _pie: 158, _luk: 244},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
+        _no: "238", _id: "10730011_4e6051e6", fullName: "Kasumi Akuta", japaneseName: "カスミ・アクタ", commonNames: ["Kasumi"], height: 158, cwId: 0,
         baseStats: { _str: 10, _vit: 2, _agi: 22, _dex: 12, _int: 4, _pie: 5, _luk: 1},
         maxStats0: { _str: 284, _vit: 170, _agi: 364, _dex: 287, _int: 157, _pie: 158, _luk: 244},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
