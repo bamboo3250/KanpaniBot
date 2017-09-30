@@ -8,7 +8,7 @@
         }
     },
     "Weapon Hammer": {
-        "amount": 493,
+        "amount": 492,
         "maxAmount": 500,
         "price": {
             "amount": 2000000,
@@ -16,7 +16,7 @@
         }
     },
     "Armor Hammer": {
-        "amount": 500,
+        "amount": 499,
         "maxAmount": 500,
         "price": {
             "amount": 2000000,
