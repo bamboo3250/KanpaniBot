@@ -616,7 +616,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "198", _id: "10740006_feff4fd6", fullName: "Nouvelia Noin", japaneseName: "ヌーヴェリア・ノイン", commonNames: ["Nouvelia"], height: 141, cwId: 0,
+        _no: "198", _id: "10740006_feff4fd6", fullName: "Nouvelia Noin", japaneseName: "ヌーヴェリア・ノイン", commonNames: ["Nouvelia"], height: 141, cwId: 27,
         baseStats: { _str: 17, _vit: 5, _agi: 25, _dex: 13, _int: 2, _pie: 3, _luk: 16},
         maxStats0: { _str: 296, _vit: 174, _agi: 378, _dex: 307, _int: 152, _pie: 161, _luk: 250},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -944,7 +944,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "204", _id: "10430008_11375236", fullName: "Chloe Verlaine", japaneseName: "クロエ・ヴェルレーヌ", commonNames: ["Chloe"], height: 0, cwId: 0,
+        _no: "204", _id: "10430008_11375236", fullName: "Chloe Verlaine", japaneseName: "クロエ・ヴェルレーヌ", commonNames: ["Chloe"], height: 0, cwId: 30,
         baseStats: { _str: 11, _vit: 24, _agi: 4, _dex: 5, _int: 2, _pie: 4, _luk: 5},
         maxStats0: { _str: 249, _vit: 458, _agi: 162, _dex: 236, _int: 158, _pie: 246, _luk: 158},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -1012,7 +1012,7 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "200", _id: "10530009_69f0773f", fullName: "Mireille Rinbaud", japaneseName: "ミレイユ・ランボー", commonNames: ["Mireille"], height: 0, cwId: 0,
+        _no: "200", _id: "10530009_69f0773f", fullName: "Mireille Rinbaud", japaneseName: "ミレイユ・ランボー", commonNames: ["Mireille"], height: 0, cwId: 36,
         baseStats: { _str: 22, _vit: 8, _agi: 9, _dex: 4, _int: 1, _pie: 2, _luk: 7},
         maxStats0: { _str: 458, _vit: 269, _agi: 207, _dex: 159, _int: 147, _pie: 167, _luk: 265},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
