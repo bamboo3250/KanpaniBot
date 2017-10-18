@@ -1,8 +1,11 @@
 module.exports = {
+    names: ['daily'],
+    usage: '`~daily',
+    description: 'display remaining time until daily draw reset', 
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName !== "~daily") return;
-        
+        if (!command.isCommand(this.names)) return;
+
         var text = "```Markdown\n";
 
         text += "<" + bot.daily.name + ">\n";

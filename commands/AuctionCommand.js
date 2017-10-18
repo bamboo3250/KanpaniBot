@@ -1,7 +1,8 @@
 module.exports = {
+    names: ['auction'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~auction") return;
+        if (!command.isCommand(this.names)) return;
 
         if (!bot.isPM(message)) {
             message.reply("You can only use this command in PM.");

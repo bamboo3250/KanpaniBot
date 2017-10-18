@@ -233,5 +233,6 @@ myBot.bot.on("ready", function() {
     }
 });
 
-myBot.token = config.ruka;
+var token = (config.isTest ? config.test : config.ruka);
+myBot.token = token;
 myBot.login();

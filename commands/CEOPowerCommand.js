@@ -1,8 +1,9 @@
 module.exports = {
+    names: ['ceopower'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~ceopower") return;
-        
+        if (!command.isCommand(this.names)) return;
+
         var userId = message.author.id;
         var player = bot.playerManager.getPlayer(userId);
         if (!player) {

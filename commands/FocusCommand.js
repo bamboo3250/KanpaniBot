@@ -1,7 +1,8 @@
 module.exports = {
+    names: ['focus'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~focus") return;
+        if (!command.isCommand(this.names)) return;
 
         if (message.channel.name != "battlefield") {
             message.reply("You can only use this command in Battlefield.");

@@ -1,83 +1,88 @@
-var Discord = require('discord.js');
+const Discord = require('discord.js');
 
-var employeeDatabase    = require('./database/EmployeeDatabase');
-var questDatabase       = require('./database/QuestDatabase');
-var itemInfoDatabase    = require('./database/ItemInfoDatabase');
-var weaponDatabase      = require('./database/WeaponDatabase');
-var armorDatabase       = require('./database/ArmorDatabase');
-var accessoryDatabase   = require('./database/AccessoryDatabase');
-var skillDatabase       = require('./database/SkillDatabase');
+const Jimp              = require('jimp');
+const imageHelper       = require('./helpers/ImageHelper');
+const functionHelper    = require('./helpers/FunctionHelper');
+const urlHelper         = require('./helpers/UrlHelper');
+const https             = require('https');
 
-var PlayerManager       = require('./managers/PlayerManager');
-var UserManager         = require('./managers/UserManager');
-var BackgroundManager   = require('./managers/BackgroundManager');
-var AuctionManager      = require('./managers/AuctionManager');
-var ImageManager        = require('./managers/ImageManager');
-var BreadManager        = require('./managers/BreadManager');
+const employeeDatabase    = require('./database/EmployeeDatabase');
+const questDatabase       = require('./database/QuestDatabase');
+const itemInfoDatabase    = require('./database/ItemInfoDatabase');
+const weaponDatabase      = require('./database/WeaponDatabase');
+const armorDatabase       = require('./database/ArmorDatabase');
+const accessoryDatabase   = require('./database/AccessoryDatabase');
+const skillDatabase       = require('./database/SkillDatabase');
 
-var Jimp            = require('jimp');
-var imageHelper     = require('./helpers/ImageHelper');
-var functionHelper  = require('./helpers/FunctionHelper');
-var urlHelper       = require('./helpers/UrlHelper');
+const PlayerManager       = require('./managers/PlayerManager');
+const UserManager         = require('./managers/UserManager');
+const BackgroundManager   = require('./managers/BackgroundManager');
+const AuctionManager      = require('./managers/AuctionManager');
+const ImageManager        = require('./managers/ImageManager');
+const BreadManager        = require('./managers/BreadManager');
 
-var dailyCommand                = require('./commands/DailyCommand');
-var scheduleCommand             = require('./commands/ScheduleCommand');
-var basicGreetingCommand        = require('./commands/BasicGreetingCommand');
-var specialCommand              = require('./commands/SpecialCommand');
-var breadCommand                = require('./commands/BreadCommand');
-var setBreadCommand             = require('./commands/SetBreadCommand');
-var ingameBreadCommand          = require('./commands/InGameBreadCommand');
-var assignRoleCommand           = require('./commands/AssignRoleCommand');
-var giveBreadCommand            = require('./commands/GiveBreadCommand');
-var charaCommand                = require('./commands/CharaCommand');
-var meCommand                   = require('./commands/MeCommand');
-var topCommand                  = require('./commands/TopCommand');
-var myTopCommand                = require('./commands/MyTopCommand');
-var rollCommand                 = require('./commands/RollCommand');
-var takeCommand                 = require('./commands/TakeCommand');
-var grindCommand                = require('./commands/GrindCommand');
-var adminCommand                = require('./commands/AdminCommand');
-var questCommand                = require('./commands/QuestCommand');
-var inventoryCommand            = require('./commands/InventoryCommand');
-var sellCommand                 = require('./commands/SellCommand');
-var useCommand                  = require('./commands/UseCommand');
-var craftCommand                = require('./commands/CraftCommand');
-var inventoryEquipmentCommand   = require('./commands/InventoryEquipmentCommand');
-var equipCommand                = require('./commands/EquipCommand');
-var reportCommand               = require('./commands/ReportCommand');
-var setDailyGiftCommand         = require('./commands/SetDailyGiftCommand');
-var dailyGiftCommand            = require('./commands/DailyGiftCommand');
-var effectCommand               = require('./commands/EffectCommand');
-var toFrontCommand              = require('./commands/ToFrontCommand');
-var toBackCommand               = require('./commands/ToBackCommand');
-var itemDropCommand             = require('./commands/ItemDropCommand');
-var unsubscribeCommand          = require('./commands/UnsubscribeCommand');
-var retreatCommand              = require('./commands/RetreatCommand');
-var xmasTreeCommand             = require('./commands/XmasTreeCommand');
-var weaponCommand               = require('./commands/WeaponCommand');
-var armorCommand                = require('./commands/ArmorCommand');
-var accessoryCommand            = require('./commands/AccessoryCommand');
-var setAuctionCommand           = require('./commands/SetAuctionCommand');
-var auctionCommand              = require('./commands/AuctionCommand');
-var bidCommand                  = require('./commands/BidCommand');
-var wakeUpCommand               = require('./commands/WakeUpCommand');
-var aromaCommand                = require('./commands/AromaCommand');
-var sellPageCommand             = require('./commands/SellPageCommand');
-var ceoPowerCommand             = require('./commands/CEOPowerCommand');
-var shopCommand                 = require('./commands/ShopCommand');
-var buyCommand                  = require('./commands/BuyCommand');
-var promoteCommand              = require('./commands/PromoteCommand');
+const dailyCommand                = require('./commands/DailyCommand');
+const scheduleCommand             = require('./commands/ScheduleCommand');
+const basicGreetingCommand        = require('./commands/BasicGreetingCommand');
+const specialCommand              = require('./commands/SpecialCommand');
+const breadCommand                = require('./commands/BreadCommand');
+const setBreadCommand             = require('./commands/SetBreadCommand');
+const ingameBreadCommand          = require('./commands/InGameBreadCommand');
+const giveBreadCommand            = require('./commands/GiveBreadCommand');
+const charaCommand                = require('./commands/CharaCommand');
+const meCommand                   = require('./commands/MeCommand');
+const topCommand                  = require('./commands/TopCommand');
+const myTopCommand                = require('./commands/MyTopCommand');
+const rollCommand                 = require('./commands/RollCommand');
+const takeCommand                 = require('./commands/TakeCommand');
+const grindCommand                = require('./commands/GrindCommand');
+const adminCommand                = require('./commands/AdminCommand');
+const questCommand                = require('./commands/QuestCommand');
+const inventoryCommand            = require('./commands/InventoryCommand');
+const sellCommand                 = require('./commands/SellCommand');
+const useCommand                  = require('./commands/UseCommand');
+const craftCommand                = require('./commands/CraftCommand');
+const inventoryEquipmentCommand   = require('./commands/InventoryEquipmentCommand');
+const equipCommand                = require('./commands/EquipCommand');
+const reportCommand               = require('./commands/ReportCommand');
+const setDailyGiftCommand         = require('./commands/SetDailyGiftCommand');
+const dailyGiftCommand            = require('./commands/DailyGiftCommand');
+const effectCommand               = require('./commands/EffectCommand');
+const toFrontCommand              = require('./commands/ToFrontCommand');
+const toBackCommand               = require('./commands/ToBackCommand');
+const itemDropCommand             = require('./commands/ItemDropCommand');
+const unsubscribeCommand          = require('./commands/UnsubscribeCommand');
+const retreatCommand              = require('./commands/RetreatCommand');
+const xmasTreeCommand             = require('./commands/XmasTreeCommand');
+const weaponCommand               = require('./commands/WeaponCommand');
+const armorCommand                = require('./commands/ArmorCommand');
+const accessoryCommand            = require('./commands/AccessoryCommand');
+const setAuctionCommand           = require('./commands/SetAuctionCommand');
+const auctionCommand              = require('./commands/AuctionCommand');
+const bidCommand                  = require('./commands/BidCommand');
+const wakeUpCommand               = require('./commands/WakeUpCommand');
+const aromaCommand                = require('./commands/AromaCommand');
+const sellPageCommand             = require('./commands/SellPageCommand');
+const ceoPowerCommand             = require('./commands/CEOPowerCommand');
+const shopCommand                 = require('./commands/ShopCommand');
+const buyCommand                  = require('./commands/BuyCommand');
+const promoteCommand              = require('./commands/PromoteCommand');
 
-var attackCommand               = require('./commands/AttackCommand');
-var healCommand                 = require('./commands/HealCommand');
-var trainerCommand              = require('./commands/TrainerCommand');
-var joinTrainingCommand         = require('./commands/JoinTrainingCommand');
-var quitTrainingCommand         = require('./commands/QuitTrainingCommand');
-var ceoReviveCommand            = require('./commands/CeoReviveCommand');
-var swapCommand                 = require('./commands/SwapCommand');
-var encourageCommand            = require('./commands/EncourageCommand');
-var sneakCommand                = require('./commands/SneakCommand');
-var focusCommand                = require('./commands/FocusCommand');
+const attackCommand               = require('./commands/AttackCommand');
+const healCommand                 = require('./commands/HealCommand');
+const trainerCommand              = require('./commands/TrainerCommand');
+const joinTrainingCommand         = require('./commands/JoinTrainingCommand');
+const quitTrainingCommand         = require('./commands/QuitTrainingCommand');
+const ceoReviveCommand            = require('./commands/CeoReviveCommand');
+const swapCommand                 = require('./commands/SwapCommand');
+const encourageCommand            = require('./commands/EncourageCommand');
+const sneakCommand                = require('./commands/SneakCommand');
+const focusCommand                = require('./commands/FocusCommand');
+
+const setCEOCommand               = require('./commands/SetCEOCommand');
+const removeCEOCommand            = require('./commands/RemoveCEOCommand');
+
+const helpCommand                = require('./commands/HelpCommand');
 
 function EmployeeBot() {
     this.token = null;
@@ -186,6 +191,7 @@ function EmployeeBot() {
     this.logChannel = null;
     this.marketChannel = null;
     this.battleChannel = null;
+    this.joinLeaveChannel = null;
 
     this.disconnectTimer = null;
    
@@ -219,6 +225,10 @@ EmployeeBot.prototype.sendPM = function(userId, text, photoFileName) {
         user.sendFile(photoFileName, 'png', text);
         user.send(text, { 'files': [photoFileName] });
     } else {
+        if (!text || !text.toString().trim()) {
+            console.trace();
+            return;
+        }
         user.send(text);
     }
 }
@@ -303,63 +313,84 @@ EmployeeBot.prototype.getItemNameFromAuction = function(auction) {
     return itemName;
 }
 
+const COMMAND_LIST = [
+    dailyCommand,
+    scheduleCommand,
+    basicGreetingCommand,
+    specialCommand,
+    
+    breadCommand,
+    setBreadCommand,
+    ingameBreadCommand,
+    charaCommand,
+    
+    rollCommand,
+    takeCommand,
+    meCommand,
+    grindCommand,
+    retreatCommand,
+    ceoPowerCommand,
+    questCommand,
+    itemDropCommand,
+    equipCommand,
+    topCommand,
+    myTopCommand,
+    
+    adminCommand,
+    
+    inventoryCommand,
+    craftCommand,
+    sellCommand,
+    useCommand,
+    effectCommand,
+    inventoryEquipmentCommand,
+    setDailyGiftCommand,
+    dailyGiftCommand,
+    unsubscribeCommand,
+    
+    toFrontCommand,
+    toBackCommand,
+    swapCommand,
+    
+    weaponCommand,
+    armorCommand,
+    accessoryCommand,
+    
+    setAuctionCommand,
+    auctionCommand,
+    bidCommand,
+    sellPageCommand,
+    //attackCommand,
+    //healCommand,
+    //trainerCommand,
+    //joinTrainingCommand,
+    //quitTrainingCommand,
+    //ceoReviveCommand,
+    //encourageCommand,
+    //sneakCommand,
+    //focusCommand,
+    shopCommand,
+    buyCommand,
+    promoteCommand,
+    
+    setCEOCommand,
+    removeCEOCommand,
+
+    reportCommand,
+    helpCommand
+];
+
+EmployeeBot.prototype.commands = function() {
+    return COMMAND_LIST;
+}
+
 EmployeeBot.prototype.handleCommonCommand = function(message) {
-    if (message.author.bot === true) return;
+    if (message.author.bot) return;
     
     try {
-        dailyCommand.handle(message, this);
-        scheduleCommand.handle(message, this);
-        basicGreetingCommand.handle(message, this);
-        specialCommand.handle(message, this);
-        breadCommand.handle(message, this);
-        setBreadCommand.handle(message, this);
-        ingameBreadCommand.handle(message, this);
-        assignRoleCommand.handle(message, this);
-        charaCommand.handle(message, this);
-        meCommand.handle(message, this);
-        topCommand.handle(message, this);
-        myTopCommand.handle(message, this);
-        rollCommand.handle(message, this);
-        takeCommand.handle(message, this);
-        grindCommand.handle(message, this);
-        adminCommand.handle(message, this);
-        questCommand.handle(message, this);
-        inventoryCommand.handle(message, this);
-        sellCommand.handle(message, this);
-        useCommand.handle(message, this);
-        craftCommand.handle(message, this);
-        inventoryEquipmentCommand.handle(message, this);
-        equipCommand.handle(message, this);
-        reportCommand.handle(message, this);
-        setDailyGiftCommand.handle(message, this);
-        dailyGiftCommand.handle(message, this);
-        effectCommand.handle(message, this);
-        toFrontCommand.handle(message, this);
-        toBackCommand.handle(message, this);
-        itemDropCommand.handle(message, this);
-        unsubscribeCommand.handle(message, this);
-        retreatCommand.handle(message, this);
-        weaponCommand.handle(message, this);
-        armorCommand.handle(message, this);
-        accessoryCommand.handle(message, this);
-        setAuctionCommand.handle(message, this);
-        auctionCommand.handle(message, this);
-        bidCommand.handle(message, this);
-        sellPageCommand.handle(message, this);
-        ceoPowerCommand.handle(message, this);
-        //attackCommand.handle(message, this);
-        //healCommand.handle(message, this);
-        //trainerCommand.handle(message, this);
-        //joinTrainingCommand.handle(message, this);
-        //quitTrainingCommand.handle(message, this);
-        //ceoReviveCommand.handle(message, this);
-        swapCommand.handle(message, this);
-        //encourageCommand.handle(message, this);
-        //sneakCommand.handle(message, this);
-        //focusCommand.handle(message, this);
-        shopCommand.handle(message, this);
-        buyCommand.handle(message, this);
-        promoteCommand.handle(message, this);
+        for (var i=0;i<COMMAND_LIST.length;i++) {
+            COMMAND_LIST[i].handle(message, this);
+        }
     }
     catch (err) {
         this.log("===========COMMAND ERROR========\n" + err.stack);
@@ -422,8 +453,8 @@ EmployeeBot.prototype.saveSoul = function() {
     var textToWrite = JSON.stringify(this.hasSoul, null, 4);
     var self = this;
     this.fs.writeFile(soulFileName, textToWrite, function(err) {
-        if(err) {
-            self.log(err);
+        if (err) {
+            self.log('[saveSoul]: ' + err);
             return;
         }
     }); 
@@ -433,7 +464,7 @@ EmployeeBot.prototype.loadSoul = function() {
     var self = this;
     this.fs.readFile(soulFileName, 'utf8', function (err, data) {
         if (err) {
-            self.log(err);
+            self.log('[loadSoul]: ' + err);
             return;
         }
         self.hasSoul = JSON.parse(data);
@@ -445,8 +476,8 @@ EmployeeBot.prototype.saveSilenced = function() {
     var textToWrite = JSON.stringify(this.silenced, null, 4);
     var self = this;
     this.fs.writeFile(silencedFileName, textToWrite, function(err) {
-        if(err) {
-            self.log(err);
+        if (err) {
+            self.log('[saveSilenced]: ' + err);
             return;
         }
         self.log("Saved Silenced");
@@ -457,7 +488,7 @@ EmployeeBot.prototype.loadSilenced = function() {
     var self = this;
     this.fs.readFile(silencedFileName, 'utf8', function (err, data) {
         if (err) {
-            self.log(err);
+            self.log('[loadSilenced]: ' + err);
             return;
         }
         self.silenced = JSON.parse(data);
@@ -470,7 +501,7 @@ EmployeeBot.prototype.saveUnsubscribe = function() {
     var self = this;
     this.fs.writeFile(unsubscribeFileName, textToWrite, function(err) {
         if(err) {
-            self.log(err);
+            self.log('[saveUnsubscribe]: ' + err);
             return;
         }
     }); 
@@ -480,14 +511,14 @@ EmployeeBot.prototype.loadUnsubscribe = function() {
     var self = this;
     this.fs.readFile(unsubscribeFileName, 'utf8', function (err, data) {
         if (err) {
-            self.log(err);
+            self.log('[loadUnsubscribe]: ' + err);
             return;
         }
         try {
             self.unsubscribe = JSON.parse(data);
         }
         catch (err) {
-            self.log(err);
+            self.log('[loadUnsubscribe]: ' + err);
             self.unsubscribe = {};   
         }
     });
@@ -511,7 +542,7 @@ EmployeeBot.prototype.saveDailyGift = function() {
     var self = this;
     this.fs.writeFile(dailyGiftFileName, textToWrite, function(err) {
         if(err) {
-            self.log(err);
+            self.log('[saveDailyGift]: ' + err);
             return;  
         } 
     }); 
@@ -521,14 +552,14 @@ EmployeeBot.prototype.loadDailyGift = function() {
     var self = this;
     this.fs.readFile(dailyGiftFileName, 'utf8', function (err, data) {
         if (err) {
-            self.log("[loadDailyGift] Read file error.\n" + err);
+            self.log("[loadDailyGift]: " + err);
             return;
         }
         try {
             self.dailyGift = JSON.parse(data);
         }
         catch (err) {
-            self.log(err);
+            self.log('[loadDailyGift]: ' + err);
         }
     });
 }
@@ -539,7 +570,7 @@ EmployeeBot.prototype.saveShop = function() {
     var self = this;
     this.fs.writeFile(shopFileName, textToWrite, function(err) {
         if(err) {
-            self.log(err);
+            self.log('[saveShop]: ' + err);
             return;  
         } 
     }); 
@@ -551,15 +582,14 @@ EmployeeBot.prototype.loadShop = function() {
     console.log("loadShop");
     this.fs.readFile(shopFileName, 'utf8', function (err, data) {
         if (err) {
-            self.log("[loadShop] Read file error.\n" + err);
+            self.log('[loadShop]: ' + err);
             return;
         }
         try {
             self.shop = JSON.parse(data);
         }
         catch (err) {
-            console.log(err);
-            self.log(err);
+            self.log('[loadShop]: ' + err);
         }
     });
 }
@@ -570,7 +600,7 @@ EmployeeBot.prototype.saveKettle = function() {
     var self = this;
     this.fs.writeFile(kettleFileName, textToWrite, function(err) {
         if(err) {
-            self.log(err);
+            self.log('[saveKettle]: ' + err);
             return;  
         } 
     });
@@ -581,7 +611,6 @@ EmployeeBot.prototype.loadKettle = function() {
     this.log("loadKettle");
     console.log("load Kettle")
     this.fs.readFile(kettleFileName, 'utf8', function (err, data) {
-        console.log("Read Kettle");
         if (err) {
             self.log("[loadKettle] Read file error.\n" + err);
             self.startKettle();
@@ -592,8 +621,7 @@ EmployeeBot.prototype.loadKettle = function() {
             self.startKettle();
         }
         catch (err) {
-            self.log(err);
-            console.log(err);
+            self.log('[loadKettle]: ' + err);
         }
     });
 }
@@ -652,7 +680,7 @@ EmployeeBot.prototype.saveRunQuestStatus = function() {
     var self = this;
     this.fs.writeFile(runQuestStatusFileName, textToWrite, function(err) {
         if(err) {
-            self.log(err);
+            self.log('[saveRunQuestStatus]: ' + err);
             return;  
         } 
     }); 
@@ -672,7 +700,7 @@ EmployeeBot.prototype.loadRunQuestStatus = function() {
         }
         catch (err) {
             self.runQuestStatus = {};
-            self.log(err);
+            self.log('[loadRunQuestStatus]: ' + err);
         }
         var text = "";
         for(key in self.userManager.members) {
@@ -705,7 +733,7 @@ EmployeeBot.prototype.saveAuction = function() {
     var self = this;
     this.fs.writeFile(auctionFileName, textToWrite, function(err) {
         if(err) {
-            self.log(err);
+            self.log('[saveAuction]: ' + err);
             return;  
         } 
     }); 
@@ -725,7 +753,7 @@ EmployeeBot.prototype.loadAuction = function() {
         }
         catch (err) {
             self.auctionManager.auctions = {};
-            self.log(err);
+            self.log('[loadAuction]: ' + err);
         }
         var text = "";
         for(key in self.auctionManager.auctions) {
@@ -758,13 +786,13 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
         var self = this;
         this.imageHelper.download(queue, function(err) {
             if (err) {
-                self.log(err);
+                self.log('[postKoImage]: ' + err);
                 return;
             }
 
             self.imageHelper.read(queueToRead, function (err, imageList) {
                 if (err) {
-                    self.log(err);
+                    self.log('[postKoImage]: ' + err);
                     return;
                 }
                 image = new Jimp(1001 * koList.length, 1162, 0xFFFFFF00, function (err, image) {
@@ -776,7 +804,7 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
                     }
                     var imageName = "images/battle_ko/" + userId + ".png";
                     image.write(imageName, function() {
-                        self.battleChannel.send('', { 'files': [imageName] });
+                        self.battleChannel.send({ 'files': [imageName] });
                     });
                 });
             });
@@ -784,17 +812,31 @@ EmployeeBot.prototype.postKoImage = function(userId, koList) {
     }
 }
 
+EmployeeBot.prototype.sendGetRequest = function(url, callback) {
+    const self = this;
+    var data = '';
+    https.get(url, (res) => {
+        res.on('data', (d) => {
+            data += d;
+        });
+
+        res.on('end', function() {
+            callback(data);
+        });
+
+    }).on('error', (e) => {
+        self.log('[GET ' + url + ']: ' + e);
+    });
+}
+
 EmployeeBot.prototype.retrieveSchedule = function(callback) {
     var self = this;
-
-    this.fs.readFile('schedule.json', 'utf8', function (err, data) {
-        if (err) { console.log(err); return; }
-
+    this.sendGetRequest('https://kanpanitools.com/schedule_list', function(data) {
         try {
             self.schedule = JSON.parse(data);
         }
         catch (err) {
-            self.bot.log(err);
+            self.bot.log('[retrieveSchedule]: ' + err);
         }
         callback();
     });
@@ -816,6 +858,9 @@ EmployeeBot.prototype.ready = function() {
             // if (channels[i].type === "text" && channels[i].name === "battlefield") {
             //     this.battleChannel = channels[i];
             // }
+            if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
+                this.joinLeaveChannel = channels[i];
+            }
             if (channels[i].type === "text" && channels[i].name === "market") {
                 this.marketChannel = channels[i];
             }
@@ -824,7 +869,8 @@ EmployeeBot.prototype.ready = function() {
         console.log("logChannel is " + (this.logChannel?"on":"off"));    
         //console.log("battleChannel is " + (this.battleChannel?"on":"off"));
         console.log("marketChannel is " + (this.marketChannel?"on":"off"));
-
+        console.log("joinLeaveChannel is " + (this.joinLeaveChannel?"on":"off"));
+        
         var text = "Bot is on. Serving on " + channels.length + " channels\n-----";
         this.log(text);
         console.log(text);
@@ -873,19 +919,39 @@ EmployeeBot.prototype.getRole = function(roleName) {
 }
 
 EmployeeBot.prototype.sendMessageToMainChannel = function(text) {
-    if (this.mainChannel) this.mainChannel.send(text);
+    if (!text || !text.toString().trim()) {
+        console.trace();
+        return;
+    }
+    if (!this.mainChannel) return;
+
+    this.mainChannel.send(text);
 }
 
 EmployeeBot.prototype.sendMessageToMarketChannel = function(text) {
-    if (this.marketChannel) this.marketChannel.send(text);
+    if (!text || !text.toString().trim()) {
+        console.trace();
+        return;
+    }
+    if (!this.marketChannel) return;
+
+    this.marketChannel.send(text);
 }
 
 EmployeeBot.prototype.log = function(text) {
-    if (this.logChannel) this.logChannel.send(text);
+    if (!text || !text.toString().trim()) {
+        console.trace();
+        return;
+    }
+    if (!this.logChannel) return;
+
+    this.logChannel.send(text);
 }
 
 EmployeeBot.prototype.login = function() {
-    if (this.token) this.bot.login(this.token);
+    if (!this.token) return;
+
+    this.bot.login(this.token);
 }
 
 var employee = new EmployeeBot();
@@ -893,12 +959,10 @@ var employee = new EmployeeBot();
 employee.bot.on('guildMemberAdd', (member) => {
     var channels = member.guild.channels.array();
 
-    for(var i=0;i<channels.length;i++) {
-        if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
-            var text = "**" + member.user.username + "** has joined.\n";
-            text += "Member count: " + member.guild.memberCount;
-            channels[i].send(text);
-        } 
+    if (this.joinLeaveChannel) {
+        var text = "**" + member.user.username + "** has joined.\n";
+        text += "Member count: " + member.guild.memberCount;
+        this.joinLeaveChannel.send(text);
     }
 
     member.send(
@@ -913,12 +977,10 @@ employee.bot.on('guildMemberAdd', (member) => {
 
 employee.bot.on('guildMemberRemove', (member) => {
     var channels = member.guild.channels.array();
-    for(var i=0;i<channels.length;i++) {
-        if (channels[i].type === "text" && channels[i].name === "player_join_leave_server") {
-            var text = "**" + member.user.username + "** has left.\n";
-            text += "Member count: " + member.guild.memberCount;
-            channels[i].send(text);
-        } 
+    if (this.joinLeaveChannel) {
+        var text = "**" + member.user.username + "** has left.\n";
+        text += "Member count: " + member.guild.memberCount;
+        this.joinLeaveChannel.send(text);
     }
 });
 

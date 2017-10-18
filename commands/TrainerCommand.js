@@ -1,7 +1,8 @@
 module.exports = {
+    names: ['trainer'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~trainer") return;
+        if (!command.isCommand(this.names)) return;
 
         if (!bot.battleController.trainerField) {
             message.reply("Trainer is not available at the moment.");

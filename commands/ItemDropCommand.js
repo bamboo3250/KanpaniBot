@@ -1,7 +1,9 @@
 module.exports = {
+    names: ['itemdrop'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~itemdrop") return;
+        if (!command.isCommand(this.names)) return;
+
         var itemName = command.args.join(" ");
         var item = bot.itemInfoDatabase.getItemInfoByName(itemName);
         var questList = bot.questDatabase.getQuestsForItem(itemName);

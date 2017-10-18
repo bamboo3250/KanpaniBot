@@ -1,8 +1,9 @@
 module.exports = {
+    names: ['heal'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~heal") return;
-        
+        if (!command.isCommand(this.names)) return;
+
         if (message.channel.name != "battlefield") {
             message.reply("You can only use this command in Battlefield.");
             return;

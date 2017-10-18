@@ -1,7 +1,8 @@
 module.exports = {
+    names: ['bid'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~bid") return;
+        if (!command.isCommand(this.names)) return;
 
         if (!bot.isPM(message) && message.channel.name != 'market') {
             message.reply('You can only bid either in PM or in Market channel.');

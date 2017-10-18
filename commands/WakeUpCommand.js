@@ -1,8 +1,9 @@
 module.exports = {
+    names: ['wakeup'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~wakeup") return;
-
+        if (!command.isCommand(this.names)) return;
+        
         var userId = message.author.id;
         if (!bot.aromaEffect) {
             message.reply("You aren't under the effect of Aroma Oil.");

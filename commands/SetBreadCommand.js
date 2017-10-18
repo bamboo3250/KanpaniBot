@@ -1,7 +1,10 @@
 module.exports = {
+    names: ['setbread', 'sb'],
+    usage: '`~setbread current_bread max_bread regen_rate',
+    description: 'simulate your bread in actual game with the information provided', 
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~setbread") return;
+        if (!command.isCommand(this.names)) return;
 
         var userId = command.userId;
         bot.breadManager.initIngameBreadIfNeed(userId);

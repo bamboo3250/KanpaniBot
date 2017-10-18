@@ -110,8 +110,8 @@ var affectionFileName = "affection.json";
 function saveAffection() {
     var textToWrite = JSON.stringify(affection, null, 4);
     fs.writeFile(affectionFileName, textToWrite, function(err) {
-        if(err) {
-            myBot.log(err);
+        if (err) {
+            myBot.log('[saveAffection]: ' + err);
             return;
         }
     }); 
@@ -120,7 +120,7 @@ function saveAffection() {
 function loadAffection() {
     fs.readFile(affectionFileName, 'utf8', function (err, data) {
         if (err) {
-            myBot.log(err);
+            myBot.log('[loadAffection]: ' + err);
             return;
         }
         affection = JSON.parse(data);
@@ -470,5 +470,6 @@ myBot.bot.on("ready", function() {
     
 });
 
-myBot.token = config.elsa;
+var token = (config.isTest ? config.test : config.elsa);
+myBot.token = token;
 myBot.login();

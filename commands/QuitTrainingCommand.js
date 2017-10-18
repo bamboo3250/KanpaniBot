@@ -1,7 +1,9 @@
 module.exports = {
+    names: ['quittraining'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~quittraining") return;
+        if (!command.isCommand(this.names)) return;
+
         var userId = message.author.id;
         
         if (!bot.userManager.doesMemberHaveRole(userId, "Trainee")) {

@@ -1,12 +1,16 @@
 module.exports = {
+    names: ['report', 'rp'],
+    usage: '`~report @username`',
+    description: 'report other members for misbehavior',
     handle: function(message, bot) {
-        var command = message.content.trim().toLowerCase();
-        if (!command.startsWith("~report ")) return;
+        var command = bot.functionHelper.parseCommand(message);
+        if (!command.isCommand(this.names)) return;
+
         if (bot.isPM(message)) {
             message.reply("You cannot use this command in Private Message.");
             return;
         }
-        var reportedUser = message.mentions.users.first();
+        var reportedUser = command.mentions.users.first();
         if (!reportedUser) return;
 
         if (reportedUser.id === message.author.id) {
@@ -48,11 +52,11 @@ module.exports = {
                             bot.saveSilenced();
                             message.channel.send(guildMember.user + " is now silenced.");
                         }).catch(err => {
-                            bot.log("[Report] Adding Reported role failed.");
+                            bot.log("[Report]" + err);
                         });
                     }
                 }).catch(err => {
-                    bot.log("[Report] Fetching member failed.\n" + err);
+                    bot.log("[Report]" + err);
                 });
             }
         }

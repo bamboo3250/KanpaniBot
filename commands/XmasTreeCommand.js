@@ -1,7 +1,9 @@
 module.exports = {
+    names: ['xmastree'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~xmastree") return;
+        if (!command.isCommand(this.names)) return;
+        
         var total = 0;
         for(key in bot.christmasTreeContribution) {
             total += bot.christmasTreeContribution[key];

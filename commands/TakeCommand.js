@@ -1,6 +1,9 @@
 var Employee = require('../classes/Employee');
 
 module.exports = {
+    names: ['take'],
+    usage: '~take',
+    description: 'take the character after rolling',
     handle: function(message, bot) {
         var text = message.content.trim().toLowerCase();
         if (text != "~take") return;

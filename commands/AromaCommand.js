@@ -1,8 +1,9 @@
 module.exports = {
+    names: ['aroma'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~aroma") return;
-        
+        if (!command.isCommand(this.names)) return;
+
         if (!bot.aromaEffect) {
             message.channel.send("No one has used Aroma Oil.");
             return;

@@ -1,7 +1,8 @@
 module.exports = {
+    names: ['retreat'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~retreat") return;
+        if (!command.isCommand(this.names)) return;
 
         var userId = message.author.id;
         if (!bot.grindId[userId]) {

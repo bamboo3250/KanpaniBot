@@ -1,7 +1,8 @@
 module.exports = {
+    names: ['ceorevive'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~ceorevive") return;
+        if (!command.isCommand(this.names)) return;
 
         if (!bot.consumeBread(message, 2)) return;
         var userId = message.author.id;

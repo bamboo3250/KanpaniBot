@@ -1,7 +1,9 @@
 module.exports = {
+    names: ['sellpage'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~sellpage") return;
+        if (!command.isCommand(this.names)) return;
+
         if (!bot.isPM(message)) {
             message.reply("You can only sell items in Private Message.");
             return;

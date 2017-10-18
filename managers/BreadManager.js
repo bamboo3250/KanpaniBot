@@ -66,14 +66,20 @@ BreadManager.prototype.saveBread = function() {
     var textToWrite = JSON.stringify(this.bread, null, 4);
     var that = this;
     fs.writeFile(BREAD_FILE_NAME, textToWrite, function(err) {
-        if (err) { that.bot.log(err); return; }
+        if (err) { 
+            that.bot.log('[saveBread]: ' +err); 
+            return; 
+        }
     }); 
 }
 
 BreadManager.prototype.loadBread = function() {
     var that = this;
     fs.readFile(BREAD_FILE_NAME, 'utf8', function (err, data) {
-        if (err) { that.bot.log(err); return; }
+        if (err) { 
+            that.bot.log('[loadBread]: ' + err); 
+            return; 
+        }
         that.bread = JSON.parse(data);
         for(key in that.bread) {
             var userId = key;
@@ -156,14 +162,20 @@ BreadManager.prototype.saveIngameBread = function() {
     var textToWrite = JSON.stringify(this.ingameBread, null, 4);
     var that = this;
     fs.writeFile(INGAME_BREAD_FILE_NAME, textToWrite, function(err) {
-        if (err) { that.bot.log(err); return; }
+        if (err) { 
+            that.bot.log('[saveIngameBread]: ' + err); 
+            return;
+        }
     }); 
 }
 
 BreadManager.prototype.loadIngameBread = function() {
     var that = this;
     fs.readFile(INGAME_BREAD_FILE_NAME, 'utf8', function (err, data) {
-        if (err) { that.bot.log(err); return; }
+        if (err) {
+            that.bot.log('[loadIngameBread]: ' + err); 
+            return; 
+        }
         that.ingameBread = JSON.parse(data);
     });
 }

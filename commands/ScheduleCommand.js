@@ -1,5 +1,11 @@
 module.exports = {
-    postSchedule: function(message, bot) {
+    names: ['schedule'],
+    usage: '`~schedule`',
+    description: 'show going-on and upcoming schedule',
+    handle: function(message, bot) {
+        var command = bot.functionHelper.parseCommand(message);
+        if (!command.isCommand(this.names)) return;
+        
         var now = new Date();
 
         text = '';
@@ -32,12 +38,5 @@ module.exports = {
 
         text = "```Markdown\n" + text + "```";
         message.author.send(text);
-    },
-
-    handle: function(message, bot) {
-        var text = message.content.trim().toLowerCase();
-        if (text !== "~schedule") return;
-        
-        this.postSchedule(message, bot);        
     }
 }

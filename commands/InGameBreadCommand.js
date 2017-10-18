@@ -1,7 +1,10 @@
 module.exports = {
+    names: ['igbread', 'igb'],
+    usage: '`~igbread` or `~igb`',
+    description: 'check in-game bread configured by ~setbread command', 
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName !== "~igbread") return;
+        if (!command.isCommand(this.names)) return;
 
         var userId = command.userId;
         bot.breadManager.syncBread(userId);

@@ -1,7 +1,8 @@
 module.exports = {
+    names: ['kettle'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~kettle") return;
+        if (!command.isCommand(this.names)) return;
 
         var text = "\nKettle Level: **" + bot.getKettleLevel() + "**\n";
         text += "Total Cacao: **" + bot.kettle.totalCacao + "** (To next Level: **" + bot.getCacaoRequiredUntilNextLevel() + "**)\n";

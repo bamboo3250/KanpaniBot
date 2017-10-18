@@ -1,47 +1,18 @@
 var Employee = require('../classes/Employee');
 var Jimp = require('jimp');
 
-const COSTUME_CODE = {
-    'xmas1'             : 99,
-    'valentine1'        : 98,
-    'formal'            : 97,
-    'kemomin-cat'       : 96,
-    'kemomin-dog'       : 95,
-    'kemomin-rabbit'    : 94,
-    'summer-blue'       : 93,
-    'summer-yellow'     : 92,
-    'summer-red'        : 91,
-    'halloween-orange'  : 90,
-    'halloween-white'   : 89,
-    'xmas2-white'       : 88,
-    'xmas2-red'         : 87,
-    'valentine2-white'  : 86,
-    'valentine2-black'  : 85,
-    'school-sailor'     : 84,
-    'school-blazer'     : 83,
-    'plate'             : 82,
-    'bikini'            : 81,
-    'onsen'             : 80,
-    'xmas3-white'       : 79,
-    'xmas3-black'       : 78,
-    'alice-white'       : 77,
-    'alice-red'         : 76
-}
-
 module.exports = {
+    names: ['chara', 'chara2'],
+    usage: '`~chara name|no.|class` or `~chara2 name|no.|class`',
+    description: 'show brief information of the character',
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName !== '~chara' && command.commandName !== '~chara2') return;
-        var isChara2 = (command.commandName === '~chara2');
+        if (!command.isCommand(this.names)) return;
+
+        var isChara2 = (command.name == 'chara2');
 
         var costume = -1;
-        // if (command.args.length > 0) {
-        //     if (typeof COSTUME_CODE[command.args[0]] != 'undefined') {
-        //         costume = COSTUME_CODE[command.args[0]];
-        //         command.args.splice(0, 1);
-        //     }
-        // }
-
+        
         var name = command.args.join(' ');
         if (name === '') return;
         if (name.length > 100) {

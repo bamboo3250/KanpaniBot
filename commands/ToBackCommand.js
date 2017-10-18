@@ -1,7 +1,11 @@
 module.exports = {
+    names: ['toback'],
+    usage: '`~toback @username`',
+    description: 'move to the back side of mentioned player',
     handle: function(message, bot) {
-        var command = message.content.trim().toLowerCase();
-        if (!command.startsWith("~toback")) return;
+        var command = bot.functionHelper.parseCommand(message);
+        if (!command.isCommand(this.names)) return;
+
         if (bot.isPM(message)) {
             message.reply("You cannot use this command in Private Message.");
             return;

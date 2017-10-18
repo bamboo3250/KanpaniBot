@@ -193,7 +193,6 @@ module.exports = {
             bot.savePlayer();
 
             var itemInfoList = bot.itemInfoDatabase.getItemInfosByNames(itemNameList);
-            
             var queue = [];
             var itemFileNameList = [];
             for(var i=0;i<itemInfoList.length;i++) {
@@ -258,28 +257,22 @@ module.exports = {
                     });
                 });
             });
-            // if (userId && quest) {
-            //     var thisUser = bot.userManager.getUser(userId);
-            //     if (thisUser) {
-            //         bot.log(thisUser.username + " " + quest.commonNames[0] + " finished " + (new Date()));        
-            //     } else {
-            //         bot.log("User of " + userId + " is null.");   
-            //     }
-                
-            // }
             
         }, timeInMillis);
 
     },
 
+    names: ['grind', 'fullgrind', 'fg'],
+    usage: '`~grind quest_code`\n`quest_code` can be `1-1`, `2-3`, `2-3-1` and so on.',
+    description: 'run a specific quest. (PM and #offtopic_general only)', 
     handle: function(message, bot) {
-        var text = message.content.trim().toLowerCase();
-        if (!text.startsWith("~grind ") && !text.startsWith("~fullgrind ")) return;
+        var command = bot.functionHelper.parseCommand(message);
+        if (!command.isCommand(this.names)) return;
         if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.mainChannelName) return;
 
         var userId = message.author.id;
-        var isFullGrind = text.startsWith("~fullgrind ");
-        var questName = text.substring(7 + (isFullGrind?4:0)).trim().toLowerCase();
+        var isFullGrind = (command.name == 'fullgrind') || (command.name == 'fg');
+        var questName = command.args[0].trim().toLowerCase();
         var quest = bot.questDatabase.getQuestByName(questName);
         if (quest == null) {
             message.reply("No information.");
@@ -366,8 +359,6 @@ module.exports = {
         }
 
         bot.saveRunQuestStatus();
-        // bot.log(message.author.username + " " + text + " " + (new Date()));
-
         this.runQuest(bot, questName, breadNeeded, message.author, message, timeCost * 1000);
     }
 }

@@ -58,15 +58,30 @@ FunctionHelper.prototype.parseCommand = function(message) {
     for (var i = 0; i < args.length; i++) {
         if (this.isMention(args[i])) mentionIds.push(this.getIdFromMention(args[i]));
     };
-    var result = {
-        userId: message.author.id,
-        commandName: args[0],
-        args: [],
-        mentions: message.mentions,
-        mentionIds: mentionIds
-    };
+
+    var commandName = args[0];
+    if (commandName.charAt(0) == '~') {
+        commandName = commandName.substring(1);
+    }
+
+    var result = new Command(message.author.id, commandName, [], message.mentions, mentionIds);
     for(var i=1;i<args.length;i++) result.args.push(args[i]);
     return result;
+}
+
+function Command(userId, name, args, mentions, mentionIds) {
+    this.userId = userId;
+    this.name = name;
+    this.args = args;
+    this.mentions = mentions;
+    this.mentionIds = mentionIds;
+}
+
+Command.prototype.isCommand = function(names) {
+    for(var i=0;i<names.length;i++) {
+        if (this.name == names[i]) return true;
+    }
+    return false;
 }
 
 /**

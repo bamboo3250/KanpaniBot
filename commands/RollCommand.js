@@ -2,10 +2,13 @@ var Employee = require('../classes/Employee');
 var Jimp = require("jimp");
 
 module.exports = {
+    names: ['roll', 'pull', 'draw'],
+    usage: '`~roll`, `~pull` or `~draw`',
+    description: 'draw a random character',
     handle: function(message, bot) {
-
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~roll") return;
+        if (!command.isCommand(this.names)) return;
+
         if (!bot.isPM(message)) {
             message.reply("You can roll in Private Message only.");
             return;

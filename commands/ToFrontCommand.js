@@ -1,7 +1,11 @@
 module.exports = {
+    names: ['tofront'],
+    usage: '`~tofront @username`',
+    description: 'move to the front side of mentioned player',
     handle: function(message, bot) {
-        var command = message.content.trim().toLowerCase();
-        if (!command.startsWith("~tofront")) return;
+        var command = bot.functionHelper.parseCommand(message);
+        if (!command.isCommand(this.names)) return;
+
         if (bot.isPM(message)) {
             message.reply("You cannot use this command in Private Message.");
             return;

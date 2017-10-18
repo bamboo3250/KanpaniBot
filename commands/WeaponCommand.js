@@ -19,10 +19,11 @@ function getElementName(elementId) {
 }
 
 module.exports = {
+    names: ['weapon'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~weapon") return;
-
+        if (!command.isCommand(this.names)) return;
+        
         if (command.args.length < 2) {
             message.reply("The arguments are not correct.");
             return;

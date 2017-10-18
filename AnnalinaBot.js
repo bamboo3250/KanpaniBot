@@ -182,5 +182,6 @@ myBot.bot.on("ready", function() {
     }
 });
 
-myBot.token = config.annalina;
+var token = (config.isTest ? config.test : config.annalina);
+myBot.token = token;
 myBot.login();

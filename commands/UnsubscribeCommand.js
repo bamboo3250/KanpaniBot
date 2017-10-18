@@ -1,8 +1,9 @@
 module.exports = {
+    names: ['unsubscribe'],
     handle: function(message, bot) {
         var command = bot.functionHelper.parseCommand(message);
-        if (command.commandName != "~unsubscribe") return;
-            
+        if (!command.isCommand(this.names)) return;
+        
         var userId = message.author.id;
         bot.unsubscribe[userId] = true;
         bot.saveUnsubscribe();
