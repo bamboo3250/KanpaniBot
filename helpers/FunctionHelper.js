@@ -62,6 +62,8 @@ FunctionHelper.prototype.parseCommand = function(message) {
     var commandName = args[0];
     if (commandName.charAt(0) == '~') {
         commandName = commandName.substring(1);
+    } else {
+        commandName = null;
     }
 
     var result = new Command(message.author.id, commandName, [], message.mentions, mentionIds);
