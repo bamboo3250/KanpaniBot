@@ -270,6 +270,11 @@ module.exports = {
         if (!command.isCommand(this.names)) return;
         if (message.channel.name === bot.dmmChannelName || message.channel.name === bot.mainChannelName) return;
 
+        if (!command.args[0]) {
+            message.reply("Wrong usage!\n" + this.usage);
+            return;
+        }
+
         var userId = message.author.id;
         var isFullGrind = (command.name == 'fullgrind') || (command.name == 'fg');
         var questName = command.args[0].trim().toLowerCase();
