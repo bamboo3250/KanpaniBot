@@ -957,12 +957,11 @@ EmployeeBot.prototype.login = function() {
 var employee = new EmployeeBot();
 
 employee.bot.on('guildMemberAdd', (member) => {
-    var channels = member.guild.channels.array();
-
-    if (this.joinLeaveChannel) {
+    
+    if (employee.joinLeaveChannel) {
         var text = "**" + member.user.username + "** has joined.\n";
         text += "Member count: " + member.guild.memberCount;
-        this.joinLeaveChannel.send(text);
+        employee.joinLeaveChannel.send(text);
     }
 
     member.send(
@@ -976,11 +975,11 @@ employee.bot.on('guildMemberAdd', (member) => {
 });
 
 employee.bot.on('guildMemberRemove', (member) => {
-    var channels = member.guild.channels.array();
-    if (this.joinLeaveChannel) {
+    
+    if (employee.joinLeaveChannel) {
         var text = "**" + member.user.username + "** has left.\n";
         text += "Member count: " + member.guild.memberCount;
-        this.joinLeaveChannel.send(text);
+        employee.joinLeaveChannel.send(text);
     }
 });
 
