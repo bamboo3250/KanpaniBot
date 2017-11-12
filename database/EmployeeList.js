@@ -209,6 +209,12 @@ var employees = [
         maxStats0: { _str: 336, _vit: 204, _agi: 418, _dex: 334, _int: 243, _pie: 150, _luk: 246},
         maxStats1: { _str: 460, _vit: 278, _agi: 560, _dex: 459, _int: 327, _pie: 221, _luk: 328},
         maxStats2: { _str: 641, _vit: 408, _agi: 784, _dex: 641, _int: 477, _pie: 307, _luk: 456},
+    },{
+        _no: "239", _id: "10750005_206a5d3b", fullName: "Caterina De Carna", japaneseName: "カタリナ・デ・カルナ", commonNames: ["Caterina"], height: 158, cwId: 0,
+        baseStats: { _str: 26, _vit: 3, _agi: 37, _dex: 24, _int: 6, _pie: 2, _luk: 17},
+        maxStats0: { _str: 336, _vit: 204, _agi: 418, _dex: 334, _int: 243, _pie: 150, _luk: 246},
+        maxStats1: { _str: 460, _vit: 278, _agi: 560, _dex: 459, _int: 327, _pie: 221, _luk: 328},
+        maxStats2: { _str: 641, _vit: 408, _agi: 784, _dex: 641, _int: 477, _pie: 307, _luk: 456},
     },
 
     {
@@ -622,7 +628,13 @@ var employees = [
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
-        _no: "221", _id: "10740007_6125cc48", fullName: "Paty Baty", japaneseName: "パティー・バティー", commonNames: ["Paty"], height: 0, cwId: 0,
+        _no: "221", _id: "10740007_6125cc48", fullName: "Paty Baty", japaneseName: "パティー・バティー", commonNames: ["Paty"], height: 146, cwId: 0,
+        baseStats: { _str: 17, _vit: 5, _agi: 25, _dex: 13, _int: 2, _pie: 3, _luk: 16},
+        maxStats0: { _str: 296, _vit: 174, _agi: 378, _dex: 307, _int: 152, _pie: 161, _luk: 250},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
+        _no: "240", _id: "10740009_b2eac0f8", fullName: "Yidi Liang", japaneseName: "イーディ・リァン", commonNames: ["Yidi"], height: 165, cwId: 0,
         baseStats: { _str: 17, _vit: 5, _agi: 25, _dex: 13, _int: 2, _pie: 3, _luk: 16},
         maxStats0: { _str: 296, _vit: 174, _agi: 378, _dex: 307, _int: 152, _pie: 161, _luk: 250},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
@@ -1223,6 +1235,12 @@ var employees = [
         maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
     },{
         _no: "192", _id: "10830010_5c5084e2", fullName: "Sonja Nobel", japaneseName: "ソーニャ・ノベール", commonNames: ["Sonja"], height: 144, cwId: 27,
+        baseStats: { _str: 3, _vit: 4, _agi: 9, _dex: 9, _int: 22, _pie: 5, _luk: 5},
+        maxStats0: { _str: 158, _vit: 159, _agi: 240, _dex: 239, _int: 448, _pie: 236, _luk: 219},
+        maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+        maxStats2: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
+    },{
+        _no: "241", _id: "10830011_c38a077c", fullName: "Noqur Aclua", japaneseName: "ノクゥア・アクルア", commonNames: ["Noqur"], height: 147, cwId: 0,
         baseStats: { _str: 3, _vit: 4, _agi: 9, _dex: 9, _int: 22, _pie: 5, _luk: 5},
         maxStats0: { _str: 158, _vit: 159, _agi: 240, _dex: 239, _int: 448, _pie: 236, _luk: 219},
         maxStats1: { _str: 0, _vit: 0, _agi: 0, _dex: 0, _int: 0, _pie: 0, _luk: 0},
