@@ -196,6 +196,7 @@ function EmployeeBot() {
     this.marketChannel = null;
     this.battleChannel = null;
     this.joinLeaveChannel = null;
+    this.floatingContinentChannel = null;
 
     this.disconnectTimer = null;
    
@@ -871,12 +872,16 @@ EmployeeBot.prototype.ready = function() {
             if (channels[i].type === "text" && channels[i].name === "market") {
                 this.marketChannel = channels[i];
             }
+            if (channels[i].type === "text" && channels[i].name === "floating_continent") {
+                this.floatingContinentChannel = channels[i];
+            }
         }
         console.log("mainChannel is " + (this.mainChannel?"on":"off"));    
         console.log("logChannel is " + (this.logChannel?"on":"off"));    
         //console.log("battleChannel is " + (this.battleChannel?"on":"off"));
         console.log("marketChannel is " + (this.marketChannel?"on":"off"));
         console.log("joinLeaveChannel is " + (this.joinLeaveChannel?"on":"off"));
+        console.log("floatingContinentChannel is " + (this.floatingContinentChannel?"on":"off"));
         
         var text = "Bot is on. Serving on " + channels.length + " channels\n-----";
         this.log(text);
@@ -935,6 +940,16 @@ EmployeeBot.prototype.sendMessageToMainChannel = function(text) {
     if (!this.mainChannel) return;
 
     this.mainChannel.send(text);
+}
+
+EmployeeBot.prototype.sendMessageToFloatingContinentChannel = function(text) {
+    if (!text || !text.toString().trim()) {
+        console.trace();
+        return;
+    }
+    if (!this.floatingContinentChannel) return;
+
+    this.floatingContinentChannel.send(text);
 }
 
 EmployeeBot.prototype.sendMessageToMarketChannel = function(text) {

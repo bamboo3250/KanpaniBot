@@ -40,7 +40,7 @@ NewsManager.prototype.startTimer = function() {
                                 message += messages[j]['text'];
                             }
                         }
-                        self.bot.sendMessageToMainChannel(role + message);
+                        self.bot.sendMessageToFloatingContinentChannel(role + message);
                     }
                 });
                 self.fetchGameLogs(function(gameLogList) {
@@ -89,7 +89,7 @@ NewsManager.prototype.startTimer = function() {
                                 self.bot.log('Server Role ' + server + ' is not found.');
                                 continue;
                             }
-                            self.bot.sendMessageToMainChannel(role + content);
+                            self.bot.sendMessageToFloatingContinentChannel(role + content);
                         }
                     }
                 });
