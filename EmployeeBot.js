@@ -932,14 +932,14 @@ EmployeeBot.prototype.getRole = function(roleName) {
     return this.mainChannel.guild.roles.find('name', roleName);    
 }
 
-EmployeeBot.prototype.sendMessageToMainChannel = function(text) {
+EmployeeBot.prototype.sendMessageToMainChannel = function(text, options) {
     if (!text || !text.toString().trim()) {
         console.trace();
         return;
     }
     if (!this.mainChannel) return;
 
-    this.mainChannel.send(text);
+    this.mainChannel.send(text, options);
 }
 
 EmployeeBot.prototype.sendMessageToFloatingContinentChannel = function(text) {

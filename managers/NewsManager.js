@@ -89,7 +89,9 @@ NewsManager.prototype.startTimer = function() {
                                 self.bot.log('Server Role ' + server + ' is not found.');
                                 continue;
                             }
-                            self.bot.sendMessageToFloatingContinentChannel(role + content);
+                            self.bot.sendMessageToMainChannel(role + content, {
+                                'files':['../images/misc/track.png']
+                            });
                         }
                     }
                 });
