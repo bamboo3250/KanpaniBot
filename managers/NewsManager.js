@@ -25,10 +25,10 @@ NewsManager.prototype.startTimer = function() {
                         }
                         var message = ' ';
                         for(var j=0;j<news['messages'].length;j++) {
-                            if (typeof news['messages'][j].color != 'undefined') {
-                                message += '**' + news['messages'][j].text + '**';
+                            if (typeof news['messages'][j]['color'] != 'undefined') {
+                                message += '**' + news['messages'][j]['text'] + '**';
                             } else {
-                                message += news['messages'][j].text;
+                                message += news['messages'][j]['text'];
                             }
                         }
                         self.bot.sendMessageToMainChannel(role + message);
