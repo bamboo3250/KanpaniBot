@@ -20,6 +20,7 @@ const BackgroundManager   = require('./managers/BackgroundManager');
 const AuctionManager      = require('./managers/AuctionManager');
 const ImageManager        = require('./managers/ImageManager');
 const BreadManager        = require('./managers/BreadManager');
+const NewsManager         = require('./managers/NewsManager');
 
 const dailyCommand                = require('./commands/DailyCommand');
 const scheduleCommand             = require('./commands/ScheduleCommand');
@@ -81,6 +82,8 @@ const focusCommand                = require('./commands/FocusCommand');
 
 const setCEOCommand               = require('./commands/SetCEOCommand');
 const removeCEOCommand            = require('./commands/RemoveCEOCommand');
+const setServerCommand               = require('./commands/SetServerCommand');
+const removeServerCommand            = require('./commands/RemoveServerCommand');
 
 const helpCommand                = require('./commands/HelpCommand');
 
@@ -110,6 +113,7 @@ function EmployeeBot() {
     this.auctionManager     = new AuctionManager();
     this.breadManager       = new BreadManager(this);
     this.imageManager       = new ImageManager(this);
+    this.newsManager        = new NewsManager(this);
     this.imageManager.init();
 
     this.battleController = null;
@@ -375,6 +379,8 @@ const COMMAND_LIST = [
     
     setCEOCommand,
     removeCEOCommand,
+    setServerCommand,
+    removeServerCommand,
 
     reportCommand,
     helpCommand
@@ -826,6 +832,7 @@ EmployeeBot.prototype.sendGetRequest = function(url, callback) {
 
     }).on('error', (e) => {
         self.log('[GET ' + url + ']: ' + e);
+        callback(null);
     });
 }
 
@@ -882,6 +889,8 @@ EmployeeBot.prototype.ready = function() {
         })
         this.setDailyDrawReminder();
         this.breadManager.setBreadRegeneration();
+        this.newsManager.startTimer();
+
         this.firstTimeReady = false;
         this.loadSoul();
         this.breadManager.loadBread();
