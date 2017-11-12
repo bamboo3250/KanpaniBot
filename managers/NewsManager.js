@@ -23,12 +23,21 @@ NewsManager.prototype.startTimer = function() {
                             self.bot.log('Server Role ' + server + ' is not found.');
                             continue;
                         }
+
+                        var messages = [];
+                        if (typeof news['messages'] == 'string') {
+                            messages = JSON.parse(news['messages']);
+                        
+                        } else if (typeof news['messages'] == 'array') {
+                            messages = news['messages'];
+                        }
+
                         var message = ' ';
-                        for(var j=0;j<news['messages'].length;j++) {
-                            if (typeof news['messages'][j]['color'] != 'undefined') {
-                                message += '**' + news['messages'][j]['text'] + '**';
+                        for(var j=0;j<messages.length;j++) {
+                            if (typeof messages[j]['color'] != 'undefined') {
+                                message += '**' + messages[j]['text'] + '**';
                             } else {
-                                message += news['messages'][j]['text'];
+                                message += messages[j]['text'];
                             }
                         }
                         self.bot.sendMessageToMainChannel(role + message);
