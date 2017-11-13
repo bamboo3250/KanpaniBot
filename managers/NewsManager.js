@@ -90,7 +90,7 @@ NewsManager.prototype.startTimer = function() {
                                 continue;
                             }
                             self.bot.sendMessageToMainChannel(role + content, {
-                                'files':['../images/misc/track.png']
+                                'files':['images/misc/track.png']
                             });
                         }
                     }
