@@ -4,6 +4,36 @@ function NewsManager(bot) {
     this.gameLogsDict = {};
 }
 
+var translation = {
+    "DUNGEON_AREA_アトロナの森"             : "Atrona Forest",
+    "DUNGEON_AREA_ユディシナ群島"           : "Yudeshina Archipelago",
+    "DUNGEON_AREA_フルエリナ雪原"           : "Furuerina Snowfield",
+
+    "DUNGEON_BONUS_宝箱発見率UP"         : "Treasure Chest Discovery Rate UP",
+    "DUNGEON_BONUS_宝箱内容グレードUP"      : "Treasure Chest Contents Grade UP",
+    "DUNGEON_BONUS_宝箱ドロップ率UP"        : "Treasure Chest Drop Rate UP",
+    "DUNGEON_BONUS_ミニバトル遭遇率UP"       : "Mini-battle Encounter Rate UP",
+    "DUNGEON_BONUS_モンスターバトル遭遇率UP"   : "Monster Battle Encounter Rate UP",
+    "DUNGEON_BONUS_《イエティ》遭遇率UP"       : "《Yeti》 Encounter Rate UP",
+    "DUNGEON_BONUS_《ゴブリンズ》遭遇率UP"      : "《Goblin》 Encounter Rate UP",
+    "DUNGEON_BONUS_《ピーヨ》遭遇率UP"        : "《Piyo》 Encounter Rate UP",
+    "DUNGEON_BONUS_《森の知恵者》遭遇率UP"    : "《Forest Sage》 Encounter Rate UP",
+    "DUNGEON_BONUS_《オーシャンシェル》遭遇率UP"  : "《Ocean Shell》 Encounter Rate UP",
+    "DUNGEON_BONUS_《アルブサウルス》遭遇率UP"   : "《Albusaurus》 Encounter Rate UP",
+    "DUNGEON_BONUS_《シーフェアリー》遭遇率UP"   : "《Sea Fairy》 Encounter Rate UP",
+    
+    "DUNGEON_BOSS_《シルフィード》"            : "《Sylpheed》",
+    "DUNGEON_BOSS_《ゴブリンロード》"           : "《Goblin Lord》",
+    "DUNGEON_BOSS_《グーワ》"                : "《Guuwa》",
+    "DUNGEON_BOSS_《シアングレイター》"          : "《Cyan Greater》",
+    "DUNGEON_BOSS_《ギガントイエティ》"          : "《Gigantic Yeti》",
+    "DUNGEON_BOSS_《グラシェサウルス》"          : "《Grassisaurus》",
+    "DUNGEON_BOSS_《森のミネルバ》"            : "《Forest Minerva》",
+    
+    "DUNGEON_REPORT_BONUS_MESSAGE"      : "{area} has {bonus}!",
+    "DUNGEON_REPORT_DEFEAT_MESSAGE"     : "{company} has defeated {boss} in {area}!"
+};
+
 NewsManager.prototype.startTimer = function() {
     var self = this;
 
@@ -32,15 +62,45 @@ NewsManager.prototype.startTimer = function() {
                             messages = news['messages'];
                         }
 
-                        var message = ' ';
-                        for(var j=0;j<messages.length;j++) {
-                            if (typeof messages[j]['color'] != 'undefined') {
-                                message += '**' + messages[j]['text'] + '**';
-                            } else {
-                                message += messages[j]['text'];
+                        var title = ' ';
+
+                        if (messages.length == 5) {
+                            var areaName = messages[1].text;
+                            var translatedAreaName = translation['DUNGEON_AREA_' + areaName];
+                            
+                            var bonusName = messages[3].text;
+                            var translatedBonusName = translation['DUNGEON_BONUS_' + bonusName];
+                            
+                            var message = translation['DUNGEON_REPORT_BONUS_MESSAGE'];
+                            title += message.replace('{area}', translatedAreaName)
+                                            .replace('{bonus}', translatedBonusName);
+
+                        } else if (messages.length == 6) {
+                            var companyName = messages[0].text;
+                            
+                            var areaName = messages[2].text;
+                            var translatedAreaName = translation['DUNGEON_AREA_' + areaName];
+                            
+                            var bossName = messages[4].text;
+                            var translatedBossName = translation['DUNGEON_BOSS_' + bossName];
+
+                            var message = translation['DUNGEON_REPORT_DEFEAT_MESSAGE'];
+                            title += message.replace('{company}', companyName)
+                                            .replace('{area}', translatedAreaName)
+                                            .replace('{boss}', translatedBossName);
+
+                        } else {
+                            for(var j=0;j<messages.length;j++) {
+                                var message = messages[j];
+                                if (typeof message.color != 'undefined') {
+                                    title += '**' + message.text + '**';
+                                } else {
+                                    title += message.text;
+                                }
                             }
                         }
-                        self.bot.sendMessageToFloatingContinentChannel(role + message);
+
+                        self.bot.sendMessageToFloatingContinentChannel(role + ' ' + title);
                     }
                 });
                 self.fetchGameLogs(function(gameLogList) {
@@ -81,7 +141,7 @@ NewsManager.prototype.startTimer = function() {
                                 dungeonName = 'フルエリナ雪原';
                             }
 
-                            content = content.replace(originalText, '**Footprint** on **Floor ' + floorId + '** in **' + dungeonName + '**');
+                            content = content.replace(originalText, '**Footprint** on **Floor ' + floorId + '** in **' + translation['DUNGEON_AREA_'+dungeonName] + '**');
                             content = ' **' + gameLog['player_name'] + '** ' + content + '!';
                             
                             var role = self.bot.getRole(server);
